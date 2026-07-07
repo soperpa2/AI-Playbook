@@ -1,0 +1,117 @@
+{"kind":"deck","id":"pr/s9qgpz","name":"Deck"}
+{"kind":"layout","layoutId":"d4dbaacb-f660-43df-9da7-d7f16397b3cb","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"9071d366-c0e7-4850-a157-c9e94f6120b2","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/k4zdg4","slide":1,"title":"Lesson 21","textShapes":4}
+{"kind":"textbox","id":"sh/nqxs72x4","slide":1,"text":"Lesson 21","textPreview":"Lesson 21","textChars":9,"textLines":1,"bbox":[520,242,240,34]}
+{"kind":"textbox","id":"sh/u54zidon","slide":1,"text":"AI Incident Response","textPreview":"AI Incident Response","textChars":20,"textLines":1,"bbox":[140,292,1000,92]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":1,"text":"Staff Training Module","textPreview":"Staff Training Module","textChars":21,"textLines":1,"bbox":[390,405,500,38]}
+{"kind":"shape","id":"sh/czed8v6p","slide":1,"bbox":[360,472,560,3]}
+{"kind":"textbox","id":"sh/neloj2t8","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[240,515,800,34]}
+{"kind":"image","id":"im/d0z61032","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[515,54,250,160]}
+{"kind":"notes","id":"nt/k4zdg4","slide":1,"text":"Welcome participants to the AI Incident Response lesson.\nExplain that this deck is designed for staff training, leadership orientation, governance preparation, or cross-program discussion.\nFrame the topic in plain language: AI incident response defines how staff report, triage, investigate, correct, communicate, and document problems involving AI-supported systems or outputs.\nInvite participants to think about where this topic already appears in their department's workflows, vendor tools, data systems, communications, or planning conversations."}
+{"kind":"slide","id":"sl/ke43zo","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/0fepkzup","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/bulwval8","slide":2,"text":"Why this topic matters","textPreview":"Why this topic matters","textChars":22,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/i9s36hcr","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/tovahoza","slide":2,"text":"AI incident response defines how staff report, triage, investigate, correct, communicate, and document problems involving AI-supported systems or outputs.","textPreview":"AI incident response defines how staff report, triage, investigate, correct, communicate, and document problems involving AI-supported sy...","textChars":154,"textLines":1,"bbox":[72,180,1080,80]}
+{"kind":"shape","id":"sh/032lszqt","slide":2,"bbox":[72,305,500,230]}
+{"kind":"shape","id":"sh/bi9s36hc","slide":2,"bbox":[72,305,7,230]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":2,"text":"Public health value","textPreview":"Public health value","textChars":19,"textLines":1,"bbox":[96,325,452,34]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":2,"text":"AI incidents can affect privacy, public trust, legal compliance, staff confidence, equity, and operational safety. A clear response pathway reduces harm and improves governance.","textPreview":"AI incidents can affect privacy, public trust, legal compliance, staff confidence, equity, and operational safety. A clear response pathw...","textChars":177,"textLines":1,"bbox":[96,373,452,146]}
+{"kind":"shape","id":"sh/0rqd4vmt","slide":2,"bbox":[625,305,500,230]}
+{"kind":"shape","id":"sh/i9s36hcr","slide":2,"bbox":[625,305,7,230]}
+{"kind":"textbox","id":"sh/bulwval8","slide":2,"text":"Guardrail","textPreview":"Guardrail","textChars":9,"textLines":1,"bbox":[649,325,452,34]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":2,"text":"Without an incident pathway, errors, bias concerns, privacy exposures, and unsafe outputs may be handled inconsistently or too late.","textPreview":"Without an incident pathway, errors, bias concerns, privacy exposures, and unsafe outputs may be handled inconsistently or too late.","textChars":132,"textLines":1,"bbox":[649,373,452,146]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":2,"text":"AI Incident Response","textPreview":"AI Incident Response","textChars":20,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/ke43zo","slide":2,"text":"Use this slide in the AI Incident Response training module.\nUse this slide to explain the practical public health reason for learning this topic before AI tools are approved or deployed.\nConnect the discussion back to the playbook: this topic supports Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46.\nEmphasize the core guardrail: Without an incident pathway, errors, bias concerns, privacy exposures, and unsafe outputs may be handled inconsistently or too late.\nAsk participants how this topic could affect their own program area, staff roles, community relationships, data, or public communications."}
+{"kind":"slide","id":"sl/5xpy4e","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/tovahoza","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/bi9s36hc","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":3,"text":"• Explain AI Incident Response in plain language.\n• Identify appropriate public health uses and limits.\n• Describe human review, governance, equity, privacy, and monitoring expectations.\n• Connect the topic to the related plays and tools.","textPreview":"• Explain AI Incident Response in plain language. | • Identify appropriate public health uses and limits. | • Describe human review, gove...","textChars":238,"textLines":4,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":3,"text":"AI Incident Response","textPreview":"AI Incident Response","textChars":20,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/bulwval8","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/5xpy4e","slide":3,"text":"Use this slide in the AI Incident Response training module.\nWalk through the objectives and connect each one to a practical implementation decision.\nConnect the discussion back to the playbook: this topic supports Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46.\nExplain that participants do not need technical expertise to use this material. The goal is enough shared understanding to participate in governance, readiness assessment, use case review, procurement, deployment, or monitoring."}
+{"kind":"slide","id":"sl/2fhncu","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/gn29gr2p","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/yhgn29gr","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":4,"text":"AI incidents can involve incorrect outputs, privacy exposure, biased results, unsafe recommendations, unauthorized use, vendor failure, staff over-reliance, public misinformation, or model performance drift. Staff need to know what to report and what happens next.","textPreview":"AI incidents can involve incorrect outputs, privacy exposure, biased results, unsafe recommendations, unauthorized use, vendor failure, s...","textChars":264,"textLines":1,"bbox":[72,178,1070,150]}
+{"kind":"shape","id":"sh/gbq1oryt","slide":4,"bbox":[72,370,1045,145]}
+{"kind":"shape","id":"sh/nuxc3ylc","slide":4,"bbox":[72,370,7,145]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":4,"text":"Working definition","textPreview":"Working definition","textChars":18,"textLines":1,"bbox":[96,390,997,34]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":4,"text":"AI incident response defines how staff report, triage, investigate, correct, communicate, and document problems involving AI-supported systems or outputs.","textPreview":"AI incident response defines how staff report, triage, investigate, correct, communicate, and document problems involving AI-supported sy...","textChars":154,"textLines":1,"bbox":[96,438,997,61]}
+{"kind":"textbox","id":"sh/cbulwval","slide":4,"text":"AI Incident Response","textPreview":"AI Incident Response","textChars":20,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/2fhncu","slide":4,"text":"Use this slide in the AI Incident Response training module.\nUse this slide to provide the narrative overview and definition before moving into detailed application.\nConnect the discussion back to the playbook: this topic supports Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46.\nAsk the group to restate the topic in their own words."}
+{"kind":"slide","id":"sl/p5ctu7","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/epkzupwb","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":5,"text":"What this means in practice","textPreview":"What this means in practice","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/wval87ed","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":5,"bbox":[72,190,330,330]}
+{"kind":"shape","id":"sh/e1w7mp0b","slide":5,"bbox":[72,190,7,330]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":5,"text":"Incident Types","textPreview":"Incident Types","textChars":14,"textLines":1,"bbox":[96,210,282,34]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":5,"text":"Harmful or inaccurate output used in a public health workflow. Sensitive data entered into an unapproved AI tool or exposed through a vendor system. Bias or disparate impact concern raised by staff, partners, or community members. Model drift,.","textPreview":"Harmful or inaccurate output used in a public health workflow. Sensitive data entered into an unapproved AI tool or exposed through a ven...","textChars":244,"textLines":1,"bbox":[96,258,282,246]}
+{"kind":"shape","id":"sh/7u54zido","slide":5,"bbox":[447,190,330,330]}
+{"kind":"shape","id":"sh/ed8bat47","slide":5,"bbox":[447,190,7,330]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":5,"text":"Response Steps","textPreview":"Response Steps","textChars":14,"textLines":1,"bbox":[471,210,282,34]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":5,"text":"Capture the issue, system, date, user, output, data involved, and immediate risk. Triage severity and determine whether the system should continue, be limited, paused, or shut off. Notify privacy, security, legal, program leadership,.","textPreview":"Capture the issue, system, date, user, output, data involved, and immediate risk. Triage severity and determine whether the system should...","textChars":234,"textLines":1,"bbox":[471,258,282,246]}
+{"kind":"shape","id":"sh/6hcrmhk3","slide":5,"bbox":[822,190,330,330]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":5,"bbox":[822,190,7,330]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":5,"text":"Implementation Check","textPreview":"Implementation Check","textChars":20,"textLines":1,"bbox":[846,210,282,34]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":5,"text":"Train staff to report concerns without blame. Define emergency contacts and pause authority before deployment. Review incidents regularly through governance and continuous improvement.","textPreview":"Train staff to report concerns without blame. Define emergency contacts and pause authority before deployment. Review incidents regularly...","textChars":184,"textLines":1,"bbox":[846,258,282,246]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":5,"text":"AI Incident Response","textPreview":"AI Incident Response","textChars":20,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/p5ctu7","slide":5,"text":"Use this slide in the AI Incident Response training module.\nUse this slide to turn the concept into practical behaviors, decisions, and safeguards.\nConnect the discussion back to the playbook: this topic supports Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46.\nInvite participants to identify where these practices would need to be documented in their own department.\nStart with Incident Types, then compare it with the other practice areas on the slide."}
+{"kind":"slide","id":"sl/cwloza","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/4nap4r65","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":6,"text":"Public health application","textPreview":"Public health application","textChars":25,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":6,"text":"Use the topic to examine real workflows, not abstract technology.","textPreview":"Use the topic to examine real workflows, not abstract technology.","textChars":65,"textLines":1,"bbox":[72,180,1040,42]}
+{"kind":"shape","id":"sh/4byhgn29","slide":6,"bbox":[72,270,330,235]}
+{"kind":"shape","id":"sh/bq1oryts","slide":6,"bbox":[72,270,7,235]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":6,"text":"Report harmful AI output","textPreview":"Report harmful AI output","textChars":24,"textLines":1,"bbox":[96,290,282,34]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[96,338,282,151]}
+{"kind":"shape","id":"sh/47y1kre1","slide":6,"bbox":[447,270,330,235]}
+{"kind":"shape","id":"sh/adsji5sn","slide":6,"bbox":[447,270,7,235]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":6,"text":"Escalate privacy exposure","textPreview":"Escalate privacy exposure","textChars":25,"textLines":1,"bbox":[471,290,282,34]}
+{"kind":"textbox","id":"sh/sji5snel","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[471,338,282,151]}
+{"kind":"shape","id":"sh/h4byhgn2","slide":6,"bbox":[822,270,330,235]}
+{"kind":"shape","id":"sh/a5gbq1or","slide":6,"bbox":[822,270,7,235]}
+{"kind":"textbox","id":"sh/3m94fu18","slide":6,"text":"Pause a drifting model","textPreview":"Pause a drifting model","textChars":22,"textLines":1,"bbox":[846,290,282,34]}
+{"kind":"textbox","id":"sh/s72x4nap","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[846,338,282,151]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":6,"text":"AI Incident Response","textPreview":"AI Incident Response","textChars":20,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/cwloza","slide":6,"text":"Use this slide in the AI Incident Response training module.\nUse this slide to make the topic concrete through public health workflow examples.\nConnect the discussion back to the playbook: this topic supports Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46.\nFor each example, ask: What problem is being solved? What data would be used? Who reviews the AI output? What decision remains human? What could go wrong?"}
+{"kind":"slide","id":"sl/7bgv9h","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/t83itgfm","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":7,"text":"Facilitated discussion and exercise","textPreview":"Facilitated discussion and exercise","textChars":35,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/4byhgn29","slide":7,"bbox":[72,190,500,310]}
+{"kind":"shape","id":"sh/twra5gbq","slide":7,"bbox":[72,190,7,310]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":7,"text":"Discussion questions","textPreview":"Discussion questions","textChars":20,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":7,"text":"What AI-related problems should staff be required to report? Who has authority to pause an AI-supported workflow? How will lessons from incidents update training, policy, and monitoring?","textPreview":"What AI-related problems should staff be required to report? Who has authority to pause an AI-supported workflow? How will lessons from i...","textChars":186,"textLines":1,"bbox":[96,258,452,226]}
+{"kind":"shape","id":"sh/47y1kre1","slide":7,"bbox":[625,190,500,310]}
+{"kind":"shape","id":"sh/tsvu9kni","slide":7,"bbox":[625,190,7,310]}
+{"kind":"textbox","id":"sh/90je9cvi","slide":7,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":7,"text":"Walk through a tabletop scenario involving an incorrect AI-generated public message or privacy exposure, then document reporting steps, escalation contacts, communications needs, corrective actions, and governance review.","textPreview":"Walk through a tabletop scenario involving an incorrect AI-generated public message or privacy exposure, then document reporting steps, e...","textChars":221,"textLines":1,"bbox":[649,258,452,226]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":7,"text":"AI Incident Response","textPreview":"AI Incident Response","textChars":20,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/7bgv9h","slide":7,"text":"Use this slide in the AI Incident Response training module.\nUse this slide for a facilitated activity near the end of the lesson.\nConnect the discussion back to the playbook: this topic supports Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46.\nGive participants time to work individually or in small groups. Ask them to produce a practical artifact that can feed into readiness assessment, governance review, use case prioritization, or implementation planning.\nExpected takeaways include: AI incident scenario response, Escalation pathway, Corrective action log."}
+{"kind":"slide","id":"sl/k1nah1","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/c7u54zid","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":8,"text":"Next steps and resources","textPreview":"Next steps and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/u18jqh0f","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/1032lszq","slide":8,"bbox":[72,190,500,220]}
+{"kind":"shape","id":"sh/cfa9w3m9","slide":8,"bbox":[72,190,7,220]}
+{"kind":"textbox","id":"sh/judg7ads","slide":8,"text":"Apply the lesson","textPreview":"Apply the lesson","textChars":16,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":8,"text":"Use this topic with Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46. Turn the discussion into a documented question, decision, gap, or implementation artifact.","textPreview":"Use this topic with Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46. Turn the discussion into a documented question, decision, g...","textChars":168,"textLines":1,"bbox":[96,258,452,136]}
+{"kind":"shape","id":"sh/54zidony","slide":8,"bbox":[625,190,500,320]}
+{"kind":"shape","id":"sh/cj6tovah","slide":8,"bbox":[625,190,7,320]}
+{"kind":"textbox","id":"sh/ex0nuxc3","slide":8,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/3itgfmlk","slide":8,"text":"NIST AI Risk Management Framework: Governance and response structure for AI-related harms and failures. WHO: Ethics and governance of artificial intelligence for health: Health AI accountability, safety, and oversight principles. HHS Office.","textPreview":"NIST AI Risk Management Framework: Governance and response structure for AI-related harms and failures. WHO: Ethics and governance of art...","textChars":241,"textLines":1,"bbox":[649,258,452,236]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":8,"text":"AI Incident Response","textPreview":"AI Incident Response","textChars":20,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/k1nah1","slide":8,"text":"Use this slide in the AI Incident Response training module.\nClose by connecting the lesson to next actions and resources.\nConnect the discussion back to the playbook: this topic supports Plays 3, 10, 11, 12, 13 and Tools 17, 18, 38, 44, 45, 46.\nPoint participants to the first resource: NIST AI Risk Management Framework.\nEnd by asking each participant or team to name one follow-up action they will take after the session."}

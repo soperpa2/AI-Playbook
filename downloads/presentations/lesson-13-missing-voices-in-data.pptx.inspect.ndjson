@@ -1,0 +1,117 @@
+{"kind":"deck","id":"pr/rbzbam","name":"Deck"}
+{"kind":"layout","layoutId":"04e033ea-8666-4031-ad1c-56cc96d08c89","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"b4e01920-c1f4-4174-be8d-98f9c5dff6f8","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/0ty2r2","slide":1,"title":"Lesson 13","textShapes":4}
+{"kind":"textbox","id":"sh/83itgfml","slide":1,"text":"Lesson 13","textPreview":"Lesson 13","textChars":9,"textLines":1,"bbox":[520,242,240,34]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":1,"text":"Missing Voices in Data","textPreview":"Missing Voices in Data","textChars":22,"textLines":1,"bbox":[140,292,1000,92]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":1,"text":"Staff Training Module","textPreview":"Staff Training Module","textChars":21,"textLines":1,"bbox":[390,405,500,38]}
+{"kind":"shape","id":"sh/fu18jqh0","slide":1,"bbox":[360,472,560,3]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[240,515,800,34]}
+{"kind":"image","id":"im/ulwval87","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[515,54,250,160]}
+{"kind":"notes","id":"nt/0ty2r2","slide":1,"text":"Welcome participants to the Missing Voices in Data lesson.\nExplain that this deck is designed for staff training, leadership orientation, governance preparation, or cross-program discussion.\nFrame the topic in plain language: Missing voices analysis asks whose experiences, records, language needs, disability access needs, rural context, tribal sovereignty interests, or community knowledge are absent from the data.\nInvite participants to think about where this topic already appears in their department's workflows, vendor tools, data systems, communications, or planning conversations."}
+{"kind":"slide","id":"sl/l0hd75","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":2,"text":"Why this topic matters","textPreview":"Why this topic matters","textChars":22,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/sfil0rqd","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/z61032ls","slide":2,"text":"Missing voices analysis asks whose experiences, records, language needs, disability access needs, rural context, tribal sovereignty interests, or community knowledge are absent from the data.","textPreview":"Missing voices analysis asks whose experiences, records, language needs, disability access needs, rural context, tribal sovereignty inter...","textChars":191,"textLines":1,"bbox":[72,180,1080,80]}
+{"kind":"shape","id":"sh/al87ed8b","slide":2,"bbox":[72,305,500,230]}
+{"kind":"shape","id":"sh/hcrmhk3q","slide":2,"bbox":[72,305,7,230]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":2,"text":"Public health value","textPreview":"Public health value","textChars":19,"textLines":1,"bbox":[96,325,452,34]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":2,"text":"Missing voices analysis helps agencies avoid designing AI systems around only the data and perspectives that are easiest to obtain. It is essential for equity, trust, and real-world performance.","textPreview":"Missing voices analysis helps agencies avoid designing AI systems around only the data and perspectives that are easiest to obtain. It is...","textChars":194,"textLines":1,"bbox":[96,373,452,146]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":2,"bbox":[625,305,500,230]}
+{"kind":"shape","id":"sh/8z25kb6x","slide":2,"bbox":[625,305,7,230]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":2,"text":"Guardrail","textPreview":"Guardrail","textChars":9,"textLines":1,"bbox":[649,325,452,34]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":2,"text":"Models may appear accurate overall while failing communities that are missing, underrepresented, misclassified, or poorly represented.","textPreview":"Models may appear accurate overall while failing communities that are missing, underrepresented, misclassified, or poorly represented.","textChars":134,"textLines":1,"bbox":[649,373,452,146]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":2,"text":"Missing Voices in Data","textPreview":"Missing Voices in Data","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/l0hd75","slide":2,"text":"Use this slide in the Missing Voices in Data training module.\nUse this slide to explain the practical public health reason for learning this topic before AI tools are approved or deployed.\nConnect the discussion back to the playbook: this topic supports Plays 4, 7, 13 and Tools 3, 22, 42.\nEmphasize the core guardrail: Models may appear accurate overall while failing communities that are missing, underrepresented, misclassified, or poorly represented.\nAsk participants how this topic could affect their own program area, staff roles, community relationships, data, or public communications."}
+{"kind":"slide","id":"sl/jltfzq","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/54zidony","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/nyd0z610","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/cvixczed","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":3,"text":"• Explain Missing Voices in Data in plain language.\n• Identify appropriate public health uses and limits.\n• Describe human review, governance, equity, privacy, and monitoring expectations.\n• Connect the topic to the related plays and tools.","textPreview":"• Explain Missing Voices in Data in plain language. | • Identify appropriate public health uses and limits. | • Describe human review, go...","textChars":240,"textLines":4,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":3,"text":"Missing Voices in Data","textPreview":"Missing Voices in Data","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/nap4r65w","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/jltfzq","slide":3,"text":"Use this slide in the Missing Voices in Data training module.\nWalk through the objectives and connect each one to a practical implementation decision.\nConnect the discussion back to the playbook: this topic supports Plays 4, 7, 13 and Tools 3, 22, 42.\nExplain that participants do not need technical expertise to use this material. The goal is enough shared understanding to participate in governance, readiness assessment, use case review, procurement, deployment, or monitoring."}
+{"kind":"slide","id":"sl/xjkb5o","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/lc7u54zi","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":4,"text":"Missing voices analysis asks who is absent from the data, design process, validation testing, governance discussion, or evaluation. Public health AI can look accurate overall while failing groups that are underrepresented, misclassified, or affected differently by the workflow. Missing voices review should happen before use case approval and again during monitoring.","textPreview":"Missing voices analysis asks who is absent from the data, design process, validation testing, governance discussion, or evaluation. Publi...","textChars":368,"textLines":1,"bbox":[72,178,1070,150]}
+{"kind":"shape","id":"sh/7u54zido","slide":4,"bbox":[72,370,1045,145]}
+{"kind":"shape","id":"sh/wfyxobm5","slide":4,"bbox":[72,370,7,145]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":4,"text":"Key definition","textPreview":"Key definition","textChars":14,"textLines":1,"bbox":[96,390,997,34]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":4,"text":"Definition: Missing voices analysis identifies people, communities, settings, and forms of knowledge that are absent or poorly represented in the data, design process, validation evidence, or monitoring plan.","textPreview":"Definition: Missing voices analysis identifies people, communities, settings, and forms of knowledge that are absent or poorly represente...","textChars":208,"textLines":1,"bbox":[96,438,997,61]}
+{"kind":"textbox","id":"sh/7mp0bi9s","slide":4,"text":"Missing Voices in Data","textPreview":"Missing Voices in Data","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/xjkb5o","slide":4,"text":"Use this slide in the Missing Voices in Data training module.\nUse this slide to provide the narrative overview and definition before moving into detailed application.\nConnect the discussion back to the playbook: this topic supports Plays 4, 7, 13 and Tools 3, 22, 42.\nReinforce this definition: Definition: Missing voices analysis identifies people, communities, settings, and forms of knowledge that are absent or poorly represented in the data, design process, validation evidence, or monitoring plan."}
+{"kind":"slide","id":"sl/fe5r05","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/9knih4by","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":5,"text":"What this means in practice","textPreview":"What this means in practice","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/re1w7mp0","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/kb6xkf6d","slide":5,"bbox":[72,190,330,330]}
+{"kind":"shape","id":"sh/9w3m94fu","slide":5,"bbox":[72,190,7,330]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":5,"text":"Who May Be Missing","textPreview":"Who May Be Missing","textChars":18,"textLines":1,"bbox":[96,210,282,34]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":5,"text":"People with limited English proficiency, people with disabilities, rural residents, people experiencing homelessness, immigrant. Frontline staff who understand workflow realities but are not included in planning. Community partners who can.","textPreview":"People with limited English proficiency, people with disabilities, rural residents, people experiencing homelessness, immigrant. Frontlin...","textChars":240,"textLines":1,"bbox":[96,258,282,246]}
+{"kind":"shape","id":"sh/kjm1cfa9","slide":5,"bbox":[447,190,330,330]}
+{"kind":"shape","id":"sh/94fu18jq","slide":5,"bbox":[447,190,7,330]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":5,"text":"How to Apply It","textPreview":"How to Apply It","textChars":15,"textLines":1,"bbox":[471,210,282,34]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":5,"text":"Review whether source data include the populations affected by the decision or communication. Ask whether subgroup performance will be tested before and after deployment. Use community validation when the workflow has public-facing or.","textPreview":"Review whether source data include the populations affected by the decision or communication. Ask whether subgroup performance will be te...","textChars":235,"textLines":1,"bbox":[471,258,282,246]}
+{"kind":"shape","id":"sh/jm1cfa9w","slide":5,"bbox":[822,190,330,330]}
+{"kind":"shape","id":"sh/u18jqh0f","slide":5,"bbox":[822,190,7,330]}
+{"kind":"textbox","id":"sh/1032lszq","slide":5,"text":"Ongoing Monitoring","textPreview":"Ongoing Monitoring","textChars":18,"textLines":1,"bbox":[846,210,282,34]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":5,"text":"Track subgroup performance, service access, complaints, corrections, and unintended impacts. Revisit the analysis when the model, data, policy, population, or workflow changes.","textPreview":"Track subgroup performance, service access, complaints, corrections, and unintended impacts. Revisit the analysis when the model, data, p...","textChars":176,"textLines":1,"bbox":[846,258,282,246]}
+{"kind":"textbox","id":"sh/judg7ads","slide":5,"text":"Missing Voices in Data","textPreview":"Missing Voices in Data","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/fe5r05","slide":5,"text":"Use this slide in the Missing Voices in Data training module.\nUse this slide to turn the concept into practical behaviors, decisions, and safeguards.\nConnect the discussion back to the playbook: this topic supports Plays 4, 7, 13 and Tools 3, 22, 42.\nInvite participants to identify where these practices would need to be documented in their own department.\nStart with Who May Be Missing, then compare it with the other practice areas on the slide."}
+{"kind":"slide","id":"sl/0c209h","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/oj2t83it","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":6,"text":"Public health application","textPreview":"Public health application","textChars":25,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":6,"text":"Use the topic to examine real workflows, not abstract technology.","textPreview":"Use the topic to examine real workflows, not abstract technology.","textChars":65,"textLines":1,"bbox":[72,180,1040,42]}
+{"kind":"shape","id":"sh/o7qpg3ex","slide":6,"bbox":[72,270,330,235]}
+{"kind":"shape","id":"sh/vmtwra5g","slide":6,"bbox":[72,270,7,235]}
+{"kind":"textbox","id":"sh/61032lsz","slide":6,"text":"Identify underrepresented groups","textPreview":"Identify underrepresented groups","textChars":32,"textLines":1,"bbox":[96,290,282,34]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[96,338,282,151]}
+{"kind":"shape","id":"sh/ovahoza1","slide":6,"bbox":[447,270,330,235]}
+{"kind":"shape","id":"sh/mtwra5gb","slide":6,"bbox":[447,270,7,235]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":6,"text":"Add community validation before launch","textPreview":"Add community validation before launch","textChars":38,"textLines":1,"bbox":[471,290,282,34]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[471,338,282,151]}
+{"kind":"shape","id":"sh/xkf6dcbu","slide":6,"bbox":[822,270,330,235]}
+{"kind":"shape","id":"sh/mlkjm1cf","slide":6,"bbox":[822,270,7,235]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":6,"text":"Monitor subgroup performance after deployment","textPreview":"Monitor subgroup performance after deployment","textChars":45,"textLines":1,"bbox":[846,290,282,34]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[846,338,282,151]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":6,"text":"Missing Voices in Data","textPreview":"Missing Voices in Data","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/0c209h","slide":6,"text":"Use this slide in the Missing Voices in Data training module.\nUse this slide to make the topic concrete through public health workflow examples.\nConnect the discussion back to the playbook: this topic supports Plays 4, 7, 13 and Tools 3, 22, 42.\nFor each example, ask: What problem is being solved? What data would be used? Who reviews the AI output? What decision remains human? What could go wrong?"}
+{"kind":"slide","id":"sl/jetei3","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":7,"text":"Facilitated discussion and exercise","textPreview":"Facilitated discussion and exercise","textChars":35,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/m94fu18j","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/xobm58z2","slide":7,"bbox":[72,190,500,310]}
+{"kind":"shape","id":"sh/83itgfml","slide":7,"bbox":[72,190,7,310]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":7,"text":"Discussion questions","textPreview":"Discussion questions","textChars":20,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":7,"text":"Whose data, experience, language needs, disability access needs, rural context, or community knowledge may be missing? Who should validate assumptions before launch? How will subgroup performance and community concerns be monitored after.","textPreview":"Whose data, experience, language needs, disability access needs, rural context, or community knowledge may be missing? Who should validat...","textChars":238,"textLines":1,"bbox":[96,258,452,226]}
+{"kind":"shape","id":"sh/xkf6dcbu","slide":7,"bbox":[625,190,500,310]}
+{"kind":"shape","id":"sh/4zidonyd","slide":7,"bbox":[625,190,7,310]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":7,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":7,"text":"For a selected use case, identify groups that may be missing from the data, planning process, validation sample, or governance review. Define how each gap will be addressed.","textPreview":"For a selected use case, identify groups that may be missing from the data, planning process, validation sample, or governance review. De...","textChars":173,"textLines":1,"bbox":[649,258,452,226]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":7,"text":"Missing Voices in Data","textPreview":"Missing Voices in Data","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/jetei3","slide":7,"text":"Use this slide in the Missing Voices in Data training module.\nUse this slide for a facilitated activity near the end of the lesson.\nConnect the discussion back to the playbook: this topic supports Plays 4, 7, 13 and Tools 3, 22, 42.\nGive participants time to work individually or in small groups. Ask them to produce a practical artifact that can feed into readiness assessment, governance review, use case prioritization, or implementation planning.\nExpected takeaways include: Missing voices analysis, Community validation plan, Subgroup monitoring measures."}
+{"kind":"slide","id":"sl/84kxe5","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":8,"text":"Next steps and resources","textPreview":"Next steps and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/vy90je9c","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/o7qpg3ex","slide":8,"bbox":[72,190,500,220]}
+{"kind":"shape","id":"sh/dsji5sne","slide":8,"bbox":[72,190,7,220]}
+{"kind":"textbox","id":"sh/61032lsz","slide":8,"text":"Apply the lesson","textPreview":"Apply the lesson","textChars":16,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":8,"text":"Use this topic with Plays 4, 7, 13 and Tools 3, 22, 42. Turn the discussion into a documented question, decision, gap, or implementation artifact.","textPreview":"Use this topic with Plays 4, 7, 13 and Tools 3, 22, 42. Turn the discussion into a documented question, decision, gap, or implementation ...","textChars":146,"textLines":1,"bbox":[96,258,452,136]}
+{"kind":"shape","id":"sh/ovahoza1","slide":8,"bbox":[625,190,500,320]}
+{"kind":"shape","id":"sh/dg7adsji","slide":8,"bbox":[625,190,7,320]}
+{"kind":"textbox","id":"sh/1032lszq","slide":8,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":8,"text":"ASPPH AI Framework Report: Introduces missing voices and human-centered AI considerations for public health. CDC Health Equity: Health equity context for identifying who may be missed or harmed by public health systems. NIH Tribal Health.","textPreview":"ASPPH AI Framework Report: Introduces missing voices and human-centered AI considerations for public health. CDC Health Equity: Health eq...","textChars":238,"textLines":1,"bbox":[649,258,452,236]}
+{"kind":"textbox","id":"sh/judg7ads","slide":8,"text":"Missing Voices in Data","textPreview":"Missing Voices in Data","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/84kxe5","slide":8,"text":"Use this slide in the Missing Voices in Data training module.\nClose by connecting the lesson to next actions and resources.\nConnect the discussion back to the playbook: this topic supports Plays 4, 7, 13 and Tools 3, 22, 42.\nPoint participants to the first resource: ASPPH AI Framework Report.\nEnd by asking each participant or team to name one follow-up action they will take after the session."}

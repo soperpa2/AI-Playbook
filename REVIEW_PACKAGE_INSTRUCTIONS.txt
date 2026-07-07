@@ -1,0 +1,21 @@
+AI Playbook and Toolkit for Public Health Departments
+Static Review Package
+
+How to open the site:
+1. Unzip the full folder.
+2. Double-click "Start AI Playbook Review.bat".
+3. If Windows blocks the launcher, open "index.html" directly in Chrome or Edge.
+
+Important review notes:
+- This is a static review build. It is intended for content, navigation, layout, and workflow review.
+- Member login, organization permissions, saved progress, RSS feeds, and production downloads are represented as front-end prototypes until the site is migrated to a dynamic production platform.
+- Reviewers should keep the folder structure intact. The site needs the app.js, styles.css, assets, and downloads folders to remain next to index.html.
+
+Recommended sharing approach:
+- Share the ZIP file through OneDrive, SharePoint, Google Drive, or another trusted file-sharing system.
+- Ask reviewers to unzip the package before opening the site.
+
+Why this is not packaged as an EXE:
+- A true executable is likely to trigger Windows SmartScreen or organizational security warnings unless it is code-signed.
+- A static ZIP package is easier for collaborators to inspect and less likely to be blocked by IT.
+- For broader review, a private web link through Netlify, Vercel, Azure Static Web Apps, GitHub Pages, or SharePoint will be more reliable than an EXE.

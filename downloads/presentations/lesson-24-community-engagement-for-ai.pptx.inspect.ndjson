@@ -1,0 +1,117 @@
+{"kind":"deck","id":"pr/8jhyxw","name":"Deck"}
+{"kind":"layout","layoutId":"154ec71d-da64-4ab7-8d6a-4aad18240002","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"ee658fe7-0ede-4440-a332-ba089b9bb106","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/ee80td","slide":1,"title":"Lesson 24","textShapes":4}
+{"kind":"textbox","id":"sh/bat47y1k","slide":1,"text":"Lesson 24","textPreview":"Lesson 24","textChars":9,"textLines":1,"bbox":[520,242,240,34]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":1,"text":"Community Engagement for AI","textPreview":"Community Engagement for AI","textChars":27,"textLines":1,"bbox":[140,292,1000,92]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":1,"text":"Staff Training Module","textPreview":"Staff Training Module","textChars":21,"textLines":1,"bbox":[390,405,500,38]}
+{"kind":"shape","id":"sh/47y1kre1","slide":1,"bbox":[360,472,560,3]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[240,515,800,34]}
+{"kind":"image","id":"im/xkf6dcbu","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[515,54,250,160]}
+{"kind":"notes","id":"nt/ee80td","slide":1,"text":"Welcome participants to the Community Engagement for AI lesson.\nExplain that this deck is designed for staff training, leadership orientation, governance preparation, or cross-program discussion.\nFrame the topic in plain language: Community engagement helps departments understand how AI-supported workflows may affect trust, access, surveillance concerns, language needs, disability access, and public accountability.\nInvite participants to think about where this topic already appears in their department's workflows, vendor tools, data systems, communications, or planning conversations."}
+{"kind":"slide","id":"sl/mqoxun","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":2,"text":"Why this topic matters","textPreview":"Why this topic matters","textChars":22,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/ed8v6psf","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":2,"text":"Community engagement helps departments understand how AI-supported workflows may affect trust, access, surveillance concerns, language needs, disability access, and public accountability.","textPreview":"Community engagement helps departments understand how AI-supported workflows may affect trust, access, surveillance concerns, language ne...","textChars":187,"textLines":1,"bbox":[72,180,1080,80]}
+{"kind":"shape","id":"sh/0bi9s36h","slide":2,"bbox":[72,305,500,230]}
+{"kind":"shape","id":"sh/7qpg3ex0","slide":2,"bbox":[72,305,7,230]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":2,"text":"Public health value","textPreview":"Public health value","textChars":19,"textLines":1,"bbox":[96,325,452,34]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":2,"text":"Engagement helps departments avoid AI uses that appear efficient internally but create confusion, mistrust, stigma, surveillance concerns, or access barriers externally.","textPreview":"Engagement helps departments avoid AI uses that appear efficient internally but create confusion, mistrust, stigma, surveillance concerns...","textChars":169,"textLines":1,"bbox":[96,373,452,146]}
+{"kind":"shape","id":"sh/0z61032l","slide":2,"bbox":[625,305,500,230]}
+{"kind":"shape","id":"sh/qpg3ex0n","slide":2,"bbox":[625,305,7,230]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":2,"text":"Guardrail","textPreview":"Guardrail","textChars":9,"textLines":1,"bbox":[649,325,452,34]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":2,"text":"Public-facing or community-impacting AI can erode trust if affected groups are not engaged before decisions are made.","textPreview":"Public-facing or community-impacting AI can erode trust if affected groups are not engaged before decisions are made.","textChars":117,"textLines":1,"bbox":[649,373,452,146]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":2,"text":"Community Engagement for AI","textPreview":"Community Engagement for AI","textChars":27,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/mqoxun","slide":2,"text":"Use this slide in the Community Engagement for AI training module.\nUse this slide to explain the practical public health reason for learning this topic before AI tools are approved or deployed.\nConnect the discussion back to the playbook: this topic supports Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46.\nEmphasize the core guardrail: Public-facing or community-impacting AI can erode trust if affected groups are not engaged before decisions are made.\nAsk participants how this topic could affect their own program area, staff roles, community relationships, data, or public communications."}
+{"kind":"slide","id":"sl/8becom","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/4nap4r65","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":3,"text":"• Explain Community Engagement for AI in plain language.\n• Identify appropriate public health uses and limits.\n• Describe human review, governance, equity, privacy, and monitoring expectations.\n• Connect the topic to the related plays and tools.","textPreview":"• Explain Community Engagement for AI in plain language. | • Identify appropriate public health uses and limits. | • Describe human revie...","textChars":245,"textLines":4,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":3,"text":"Community Engagement for AI","textPreview":"Community Engagement for AI","textChars":27,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/8becom","slide":3,"text":"Use this slide in the Community Engagement for AI training module.\nWalk through the objectives and connect each one to a practical implementation decision.\nConnect the discussion back to the playbook: this topic supports Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46.\nExplain that participants do not need technical expertise to use this material. The goal is enough shared understanding to participate in governance, readiness assessment, use case review, procurement, deployment, or monitoring."}
+{"kind":"slide","id":"sl/nsd9oc","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/i5sneloj","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/p4r65wju","slide":4,"text":"Community engagement for AI should happen before use cases are finalized, especially when a system affects public communication, surveillance, outreach, service access, prioritization, or resource allocation. Engagement helps departments surface concerns that technical testing may miss.","textPreview":"Community engagement for AI should happen before use cases are finalized, especially when a system affects public communication, surveill...","textChars":287,"textLines":1,"bbox":[72,178,1070,150]}
+{"kind":"shape","id":"sh/wjudg7ad","slide":4,"bbox":[72,370,1045,145]}
+{"kind":"shape","id":"sh/7y1kre1w","slide":4,"bbox":[72,370,7,145]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":4,"text":"Working definition","textPreview":"Working definition","textChars":18,"textLines":1,"bbox":[96,390,997,34]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":4,"text":"Community engagement helps departments understand how AI-supported workflows may affect trust, access, surveillance concerns, language needs, disability access, and public accountability.","textPreview":"Community engagement helps departments understand how AI-supported workflows may affect trust, access, surveillance concerns, language ne...","textChars":187,"textLines":1,"bbox":[96,438,997,61]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":4,"text":"Community Engagement for AI","textPreview":"Community Engagement for AI","textChars":27,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/nsd9oc","slide":4,"text":"Use this slide in the Community Engagement for AI training module.\nUse this slide to provide the narrative overview and definition before moving into detailed application.\nConnect the discussion back to the playbook: this topic supports Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46.\nAsk the group to restate the topic in their own words."}
+{"kind":"slide","id":"sl/l4r2t1","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/obm58z25","slide":5,"text":"What this means in practice","textPreview":"What this means in practice","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/hwfyxobm","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":5,"bbox":[72,190,330,330]}
+{"kind":"shape","id":"sh/zed8v6ps","slide":5,"bbox":[72,190,7,330]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":5,"text":"Engagement Focus Areas","textPreview":"Engagement Focus Areas","textChars":22,"textLines":1,"bbox":[96,210,282,34]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":5,"text":"What the AI-supported workflow will and will not do. What data are involved and how privacy is protected. What decisions remain human and how concerns can be raised. How language, disability, digital access, rural context, Tribal context,.","textPreview":"What the AI-supported workflow will and will not do. What data are involved and how privacy is protected. What decisions remain human and...","textChars":239,"textLines":1,"bbox":[96,258,282,246]}
+{"kind":"shape","id":"sh/al87ed8b","slide":5,"bbox":[447,190,330,330]}
+{"kind":"shape","id":"sh/z61032ls","slide":5,"bbox":[447,190,7,330]}
+{"kind":"textbox","id":"sh/za1gvy90","slide":5,"text":"Engagement Methods","textPreview":"Engagement Methods","textChars":18,"textLines":1,"bbox":[471,210,282,34]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":5,"text":"Listening sessions, advisory groups, community partner consultation, usability testing, plain-language review, and feedback forms. Internal engagement with frontline staff who understand how communities experience department services. Ongoing.","textPreview":"Listening sessions, advisory groups, community partner consultation, usability testing, plain-language review, and feedback forms. Intern...","textChars":243,"textLines":1,"bbox":[471,258,282,246]}
+{"kind":"shape","id":"sh/hgn29gr2","slide":5,"bbox":[822,190,330,330]}
+{"kind":"shape","id":"sh/svu9knih","slide":5,"bbox":[822,190,7,330]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":5,"text":"Implementation Check","textPreview":"Implementation Check","textChars":20,"textLines":1,"bbox":[846,210,282,34]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":5,"text":"Document who was engaged, what concerns were raised, what changed, and what remains unresolved. Route unresolved community concerns to governance. Close the feedback loop with plain-language summaries.","textPreview":"Document who was engaged, what concerns were raised, what changed, and what remains unresolved. Route unresolved community concerns to go...","textChars":201,"textLines":1,"bbox":[846,258,282,246]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":5,"text":"Community Engagement for AI","textPreview":"Community Engagement for AI","textChars":27,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/l4r2t1","slide":5,"text":"Use this slide in the Community Engagement for AI training module.\nUse this slide to turn the concept into practical behaviors, decisions, and safeguards.\nConnect the discussion back to the playbook: this topic supports Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46.\nInvite participants to identify where these practices would need to be documented in their own department.\nStart with Engagement Focus Areas, then compare it with the other practice areas on the slide."}
+{"kind":"slide","id":"sl/yah8fm","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/je9cvixc","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":6,"text":"Public health application","textPreview":"Public health application","textChars":25,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/1gvy90je","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":6,"text":"Use the topic to examine real workflows, not abstract technology.","textPreview":"Use the topic to examine real workflows, not abstract technology.","textChars":65,"textLines":1,"bbox":[72,180,1040,42]}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":6,"bbox":[72,270,330,235]}
+{"kind":"shape","id":"sh/87ed8bat","slide":6,"bbox":[72,270,7,235]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":6,"text":"Engage affected communities before launch","textPreview":"Engage affected communities before launch","textChars":41,"textLines":1,"bbox":[96,290,282,34]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[96,338,282,151]}
+{"kind":"shape","id":"sh/fyxobm58","slide":6,"bbox":[447,270,330,235]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":6,"bbox":[447,270,7,235]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":6,"text":"Create plain-language AI notices","textPreview":"Create plain-language AI notices","textChars":32,"textLines":1,"bbox":[471,290,282,34]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[471,338,282,151]}
+{"kind":"shape","id":"sh/w7mp0bi9","slide":6,"bbox":[822,270,330,235]}
+{"kind":"shape","id":"sh/7adsji5s","slide":6,"bbox":[822,270,7,235]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":6,"text":"Close the feedback loop","textPreview":"Close the feedback loop","textChars":23,"textLines":1,"bbox":[846,290,282,34]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[846,338,282,151]}
+{"kind":"textbox","id":"sh/wval87ed","slide":6,"text":"Community Engagement for AI","textPreview":"Community Engagement for AI","textChars":27,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/yah8fm","slide":6,"text":"Use this slide in the Community Engagement for AI training module.\nUse this slide to make the topic concrete through public health workflow examples.\nConnect the discussion back to the playbook: this topic supports Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46.\nFor each example, ask: What problem is being solved? What data would be used? Who reviews the AI output? What decision remains human? What could go wrong?"}
+{"kind":"slide","id":"sl/x58mwy","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":7,"text":"Facilitated discussion and exercise","textPreview":"Facilitated discussion and exercise","textChars":35,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/oj2t83it","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/vmtwra5g","slide":7,"bbox":[72,190,500,310]}
+{"kind":"shape","id":"sh/61032lsz","slide":7,"bbox":[72,190,7,310]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":7,"text":"Discussion questions","textPreview":"Discussion questions","textChars":20,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":7,"text":"Which communities or partners may be affected by the proposed AI use? What should be explained in plain language before implementation? How will community feedback change governance, design, monitoring, or communication?","textPreview":"Which communities or partners may be affected by the proposed AI use? What should be explained in plain language before implementation? H...","textChars":220,"textLines":1,"bbox":[96,258,452,226]}
+{"kind":"shape","id":"sh/vahoza1g","slide":7,"bbox":[625,190,500,310]}
+{"kind":"shape","id":"sh/6tovahoz","slide":7,"bbox":[625,190,7,310]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":7,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":7,"text":"Create a community engagement plan for one AI-supported workflow, including audiences, engagement methods, plain-language explanation, feedback documentation, and governance escalation.","textPreview":"Create a community engagement plan for one AI-supported workflow, including audiences, engagement methods, plain-language explanation, fe...","textChars":185,"textLines":1,"bbox":[649,258,452,226]}
+{"kind":"textbox","id":"sh/uxc3ylc7","slide":7,"text":"Community Engagement for AI","textPreview":"Community Engagement for AI","textChars":27,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/x58mwy","slide":7,"text":"Use this slide in the Community Engagement for AI training module.\nUse this slide for a facilitated activity near the end of the lesson.\nConnect the discussion back to the playbook: this topic supports Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46.\nGive participants time to work individually or in small groups. Ask them to produce a practical artifact that can feed into readiness assessment, governance review, use case prioritization, or implementation planning.\nExpected takeaways include: AI community engagement plan, Plain-language AI explanation, Feedback-to-decision log."}
+{"kind":"slide","id":"sl/1fita2","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":8,"text":"Next steps and resources","textPreview":"Next steps and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/7ed8bat4","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/0nuxc3yl","slide":8,"bbox":[72,190,500,220]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":8,"bbox":[72,190,7,220]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":8,"text":"Apply the lesson","textPreview":"Apply the lesson","textChars":16,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":8,"text":"Use this topic with Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46. Turn the discussion into a documented question, decision, gap, or implementation artifact.","textPreview":"Use this topic with Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46. Turn the discussion into a documented question, decisio...","textChars":172,"textLines":1,"bbox":[96,258,452,136]}
+{"kind":"shape","id":"sh/wjudg7ad","slide":8,"bbox":[625,190,500,320]}
+{"kind":"shape","id":"sh/p4r65wju","slide":8,"bbox":[625,190,7,320]}
+{"kind":"textbox","id":"sh/lwval87e","slide":8,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":8,"text":"CDC Health Equity: Public health equity context for community engagement and accountability. ASPPH AI Framework Report: Human-centered AI, missing voices, and public accountability framing. Blueprint for an AI Bill of Rights: Notice,.","textPreview":"CDC Health Equity: Public health equity context for community engagement and accountability. ASPPH AI Framework Report: Human-centered AI...","textChars":234,"textLines":1,"bbox":[649,258,452,236]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":8,"text":"Community Engagement for AI","textPreview":"Community Engagement for AI","textChars":27,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/1fita2","slide":8,"text":"Use this slide in the Community Engagement for AI training module.\nClose by connecting the lesson to next actions and resources.\nConnect the discussion back to the playbook: this topic supports Plays 1, 4, 7, 10, 12, 13 and Tools 1, 3, 19, 20, 21, 22, 46.\nPoint participants to the first resource: CDC Health Equity.\nEnd by asking each participant or team to name one follow-up action they will take after the session."}

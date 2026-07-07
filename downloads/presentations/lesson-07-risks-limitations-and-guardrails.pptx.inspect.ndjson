@@ -1,0 +1,117 @@
+{"kind":"deck","id":"pr/t57gra","name":"Deck"}
+{"kind":"layout","layoutId":"8f0290ff-8b68-47d1-bbfc-aa1d8b4659a8","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"28f7819e-79e3-415f-8b54-02382acf88cd","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/ih95cv","slide":1,"title":"Lesson 7","textShapes":4}
+{"kind":"textbox","id":"sh/fyxobm58","slide":1,"text":"Lesson 7","textPreview":"Lesson 7","textChars":8,"textLines":1,"bbox":[520,242,240,34]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":1,"text":"Risks, Limitations, and Guardrails","textPreview":"Risks, Limitations, and Guardrails","textChars":34,"textLines":1,"bbox":[140,292,1000,92]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":1,"text":"Staff Training Module","textPreview":"Staff Training Module","textChars":21,"textLines":1,"bbox":[390,405,500,38]}
+{"kind":"shape","id":"sh/8v6psfil","slide":1,"bbox":[360,472,560,3]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[240,515,800,34]}
+{"kind":"image","id":"im/xobm58z2","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[515,54,250,160]}
+{"kind":"notes","id":"nt/ih95cv","slide":1,"text":"Welcome participants to the Risks, Limitations, and Guardrails lesson.\nExplain that this deck is designed for staff training, leadership orientation, governance preparation, or cross-program discussion.\nFrame the topic in plain language: Public health AI risks include hallucination, bias, privacy exposure, automation bias, model drift, and performance loss on complex tasks.\nInvite participants to think about where this topic already appears in their department's workflows, vendor tools, data systems, communications, or planning conversations."}
+{"kind":"slide","id":"sl/o9k2wl","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/032lszqt","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":2,"text":"Why this topic matters","textPreview":"Why this topic matters","textChars":22,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/ixczed8v","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":2,"text":"Public health AI risks include hallucination, bias, privacy exposure, automation bias, model drift, and performance loss on complex tasks.","textPreview":"Public health AI risks include hallucination, bias, privacy exposure, automation bias, model drift, and performance loss on complex tasks.","textChars":138,"textLines":1,"bbox":[72,180,1080,80]}
+{"kind":"shape","id":"sh/0fepkzup","slide":2,"bbox":[72,305,500,230]}
+{"kind":"shape","id":"sh/bulwval8","slide":2,"bbox":[72,305,7,230]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":2,"text":"Public health value","textPreview":"Public health value","textChars":19,"textLines":1,"bbox":[96,325,452,34]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":2,"text":"Responsible AI risk management is not a one-time checklist. Public health risks change as data, models, vendors, disease patterns, staff behavior, and community needs change. Agencies need repeatable risk review methods that can be used before.","textPreview":"Responsible AI risk management is not a one-time checklist. Public health risks change as data, models, vendors, disease patterns, staff ...","textChars":244,"textLines":1,"bbox":[96,373,452,146]}
+{"kind":"shape","id":"sh/0je9cvix","slide":2,"bbox":[625,305,500,230]}
+{"kind":"shape","id":"sh/a5gbq1or","slide":2,"bbox":[625,305,7,230]}
+{"kind":"textbox","id":"sh/3m94fu18","slide":2,"text":"Guardrail","textPreview":"Guardrail","textChars":9,"textLines":1,"bbox":[649,325,452,34]}
+{"kind":"textbox","id":"sh/s72x4nap","slide":2,"text":"Governance, documentation, validation, and monitoring are mandatory, not optional.","textPreview":"Governance, documentation, validation, and monitoring are mandatory, not optional.","textChars":82,"textLines":1,"bbox":[649,373,452,146]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":2,"text":"Risks, Limitations, and Guardrails","textPreview":"Risks, Limitations, and Guardrails","textChars":34,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/o9k2wl","slide":2,"text":"Use this slide in the Risks, Limitations, and Guardrails training module.\nUse this slide to explain the practical public health reason for learning this topic before AI tools are approved or deployed.\nConnect the discussion back to the playbook: this topic supports Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17.\nEmphasize the core guardrail: Governance, documentation, validation, and monitoring are mandatory, not optional.\nAsk participants how this topic could affect their own program area, staff roles, community relationships, data, or public communications."}
+{"kind":"slide","id":"sl/l8k6dd","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/psfil0rq","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/wval87ed","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":3,"text":"• Explain Risks, Limitations, and Guardrails in plain language.\n• Identify appropriate public health uses and limits.\n• Describe human review, governance, equity, privacy, and monitoring expectations.\n• Connect the topic to the related plays and tools.","textPreview":"• Explain Risks, Limitations, and Guardrails in plain language. | • Identify appropriate public health uses and limits. | • Describe huma...","textChars":252,"textLines":4,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":3,"text":"Risks, Limitations, and Guardrails","textPreview":"Risks, Limitations, and Guardrails","textChars":34,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/7adsji5s","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/l8k6dd","slide":3,"text":"Use this slide in the Risks, Limitations, and Guardrails training module.\nWalk through the objectives and connect each one to a practical implementation decision.\nConnect the discussion back to the playbook: this topic supports Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17.\nExplain that participants do not need technical expertise to use this material. The goal is enough shared understanding to participate in governance, readiness assessment, use case review, procurement, deployment, or monitoring."}
+{"kind":"slide","id":"sl/cy6bsl","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/je9cvixc","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/1gvy90je","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":4,"text":"AI risks in public health are not limited to technical errors. They include privacy exposure, hallucinated guidance, biased prioritization, automation bias, model drift, vendor opacity, accessibility barriers, environmental burden, and loss of public trust. Risk management should begin before tool selection and continue through deployment and monitoring.","textPreview":"AI risks in public health are not limited to technical errors. They include privacy exposure, hallucinated guidance, biased prioritizatio...","textChars":356,"textLines":1,"bbox":[72,178,1070,150]}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":4,"bbox":[72,370,1045,145]}
+{"kind":"shape","id":"sh/87ed8bat","slide":4,"bbox":[72,370,7,145]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":4,"text":"Working definition","textPreview":"Working definition","textChars":18,"textLines":1,"bbox":[96,390,997,34]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":4,"text":"Public health AI risks include hallucination, bias, privacy exposure, automation bias, model drift, and performance loss on complex tasks.","textPreview":"Public health AI risks include hallucination, bias, privacy exposure, automation bias, model drift, and performance loss on complex tasks.","textChars":138,"textLines":1,"bbox":[96,438,997,61]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":4,"text":"Risks, Limitations, and Guardrails","textPreview":"Risks, Limitations, and Guardrails","textChars":34,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/7mp0bi9s","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/cy6bsl","slide":4,"text":"Use this slide in the Risks, Limitations, and Guardrails training module.\nUse this slide to provide the narrative overview and definition before moving into detailed application.\nConnect the discussion back to the playbook: this topic supports Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17.\nAsk the group to restate the topic in their own words."}
+{"kind":"slide","id":"sl/sqd0sp","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/nyd0z610","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/cj6tovah","slide":5,"text":"What this means in practice","textPreview":"What this means in practice","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/54zidony","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/upwb2hwf","slide":5,"bbox":[72,190,330,330]}
+{"kind":"shape","id":"sh/nap4r65w","slide":5,"bbox":[72,190,7,330]}
+{"kind":"textbox","id":"sh/cvixczed","slide":5,"text":"Common Risk Categories","textPreview":"Common Risk Categories","textChars":22,"textLines":1,"bbox":[96,210,282,34]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":5,"text":"Accuracy risk: the output is wrong, incomplete, out of date, or unsupported by evidence. Equity risk: the system performs worse for a subgroup, language community, rural area, disability group, Tribal community, or. Privacy and security risk:.","textPreview":"Accuracy risk: the output is wrong, incomplete, out of date, or unsupported by evidence. Equity risk: the system performs worse for a sub...","textChars":243,"textLines":1,"bbox":[96,258,282,246]}
+{"kind":"shape","id":"sh/u18jqh0f","slide":5,"bbox":[447,190,330,330]}
+{"kind":"shape","id":"sh/jm1cfa9w","slide":5,"bbox":[447,190,7,330]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":5,"text":"Mitigation Practices","textPreview":"Mitigation Practices","textChars":20,"textLines":1,"bbox":[471,210,282,34]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":5,"text":"Use risk tiers so higher-impact systems receive deeper review, documentation, validation, and monitoring. Require human review, source verification, and documented decision ownership. Test outputs with realistic public health examples before.","textPreview":"Use risk tiers so higher-impact systems receive deeper review, documentation, validation, and monitoring. Require human review, source ve...","textChars":242,"textLines":1,"bbox":[471,258,282,246]}
+{"kind":"shape","id":"sh/tcj6tova","slide":5,"bbox":[822,190,330,330]}
+{"kind":"shape","id":"sh/0rqd4vmt","slide":5,"bbox":[822,190,7,330]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":5,"text":"Governance Triggers","textPreview":"Governance Triggers","textChars":19,"textLines":1,"bbox":[846,210,282,34]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":5,"text":"Escalate to governance when AI affects public communication, eligibility, enforcement, surveillance prioritization, resource. Pause or retire systems when risk controls fail, performance changes, or the use no longer aligns with agency.","textPreview":"Escalate to governance when AI affects public communication, eligibility, enforcement, surveillance prioritization, resource. Pause or re...","textChars":236,"textLines":1,"bbox":[846,258,282,246]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":5,"text":"Risks, Limitations, and Guardrails","textPreview":"Risks, Limitations, and Guardrails","textChars":34,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/0je9cvix","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/sqd0sp","slide":5,"text":"Use this slide in the Risks, Limitations, and Guardrails training module.\nUse this slide to turn the concept into practical behaviors, decisions, and safeguards.\nConnect the discussion back to the playbook: this topic supports Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17.\nInvite participants to identify where these practices would need to be documented in their own department.\nStart with Common Risk Categories, then compare it with the other practice areas on the slide."}
+{"kind":"slide","id":"sl/7o07x5","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":6,"text":"Public health application","textPreview":"Public health application","textChars":25,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/83itgfml","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":6,"text":"Use the topic to examine real workflows, not abstract technology.","textPreview":"Use the topic to examine real workflows, not abstract technology.","textChars":65,"textLines":1,"bbox":[72,180,1040,42]}
+{"kind":"shape","id":"sh/m94fu18j","slide":6,"bbox":[72,270,330,235]}
+{"kind":"shape","id":"sh/x0nuxc3y","slide":6,"bbox":[72,270,7,235]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":6,"text":"Equity audit before scale","textPreview":"Equity audit before scale","textChars":25,"textLines":1,"bbox":[96,290,282,34]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":6,"text":"Review subgroup performance, access barriers, language needs, and potential disparate impacts before a pilot expands.","textPreview":"Review subgroup performance, access barriers, language needs, and potential disparate impacts before a pilot expands.","textChars":117,"textLines":1,"bbox":[96,338,282,151]}
+{"kind":"shape","id":"sh/mlkjm1cf","slide":6,"bbox":[447,270,330,235]}
+{"kind":"shape","id":"sh/gbq1oryt","slide":6,"bbox":[447,270,7,235]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":6,"text":"Hallucination audit for public-facing products","textPreview":"Hallucination audit for public-facing products","textChars":46,"textLines":1,"bbox":[471,290,282,34]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":6,"text":"Test generated content against authoritative sources and require correction before public release.","textPreview":"Test generated content against authoritative sources and require correction before public release.","textChars":98,"textLines":1,"bbox":[471,338,282,151]}
+{"kind":"shape","id":"sh/nuxc3ylc","slide":6,"bbox":[822,270,330,235]}
+{"kind":"shape","id":"sh/gn29gr2p","slide":6,"bbox":[822,270,7,235]}
+{"kind":"textbox","id":"sh/58z25kb6","slide":6,"text":"Incident response for unsafe outputs","textPreview":"Incident response for unsafe outputs","textChars":36,"textLines":1,"bbox":[846,290,282,34]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":6,"text":"Document unsafe, biased, private, or inaccurate outputs and route them through escalation, containment, and corrective action.","textPreview":"Document unsafe, biased, private, or inaccurate outputs and route them through escalation, containment, and corrective action.","textChars":126,"textLines":1,"bbox":[846,338,282,151]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":6,"text":"Risks, Limitations, and Guardrails","textPreview":"Risks, Limitations, and Guardrails","textChars":34,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/7o07x5","slide":6,"text":"Use this slide in the Risks, Limitations, and Guardrails training module.\nUse this slide to make the topic concrete through public health workflow examples.\nConnect the discussion back to the playbook: this topic supports Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17.\nFor each example, ask: What problem is being solved? What data would be used? Who reviews the AI output? What decision remains human? What could go wrong?"}
+{"kind":"slide","id":"sl/2e69ac","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":7,"text":"Facilitated discussion and exercise","textPreview":"Facilitated discussion and exercise","textChars":35,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/47y1kre1","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/bat47y1k","slide":7,"bbox":[72,190,500,310]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":7,"bbox":[72,190,7,310]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":7,"text":"Discussion questions","textPreview":"Discussion questions","textChars":20,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":7,"text":"What harms could occur if the AI output is wrong, biased, delayed, misunderstood, or over-trusted? What data, populations, or workflows are most vulnerable to error? What conditions should trigger pause, review, correction, or retirement?","textPreview":"What harms could occur if the AI output is wrong, biased, delayed, misunderstood, or over-trusted? What data, populations, or workflows a...","textChars":238,"textLines":1,"bbox":[96,258,452,226]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":7,"bbox":[625,190,500,310]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":7,"bbox":[625,190,7,310]}
+{"kind":"textbox","id":"sh/0z61032l","slide":7,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":7,"text":"Select a proposed AI use case and identify risks across accuracy, privacy, security, equity, transparency, workforce burden, legal authority, and public trust. Define one mitigation for each risk.","textPreview":"Select a proposed AI use case and identify risks across accuracy, privacy, security, equity, transparency, workforce burden, legal author...","textChars":196,"textLines":1,"bbox":[649,258,452,226]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":7,"text":"Risks, Limitations, and Guardrails","textPreview":"Risks, Limitations, and Guardrails","textChars":34,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/2e69ac","slide":7,"text":"Use this slide in the Risks, Limitations, and Guardrails training module.\nUse this slide for a facilitated activity near the end of the lesson.\nConnect the discussion back to the playbook: this topic supports Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17.\nGive participants time to work individually or in small groups. Ask them to produce a practical artifact that can feed into readiness assessment, governance review, use case prioritization, or implementation planning.\nExpected takeaways include: Risk register, Mitigation plan, Incident escalation criteria."}
+{"kind":"slide","id":"sl/dg9xw7","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":8,"text":"Next steps and resources","textPreview":"Next steps and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/qd4vmtwr","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/xczed8v6","slide":8,"bbox":[72,190,500,220]}
+{"kind":"shape","id":"sh/8v6psfil","slide":8,"bbox":[72,190,7,220]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":8,"text":"Apply the lesson","textPreview":"Apply the lesson","textChars":16,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":8,"text":"Use this topic with Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17. Turn the discussion into a documented question, decision, gap, or implementation artifact.","textPreview":"Use this topic with Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17. Turn the discussion into a documented question, decision, gap, or im...","textChars":159,"textLines":1,"bbox":[96,258,452,136]}
+{"kind":"shape","id":"sh/1gvy90je","slide":8,"bbox":[625,190,500,320]}
+{"kind":"shape","id":"sh/8z25kb6x","slide":8,"bbox":[625,190,7,320]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":8,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":8,"text":"NIST AI Risk Management Framework: Core framework for identifying, measuring, managing, and governing AI risk. HHS Civil Rights and AI: Civil rights and nondiscrimination considerations for AI in health and human services. WHO: Ethics and.","textPreview":"NIST AI Risk Management Framework: Core framework for identifying, measuring, managing, and governing AI risk. HHS Civil Rights and AI: C...","textChars":239,"textLines":1,"bbox":[649,258,452,236]}
+{"kind":"textbox","id":"sh/sfil0rqd","slide":8,"text":"Risks, Limitations, and Guardrails","textPreview":"Risks, Limitations, and Guardrails","textChars":34,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/dg9xw7","slide":8,"text":"Use this slide in the Risks, Limitations, and Guardrails training module.\nClose by connecting the lesson to next actions and resources.\nConnect the discussion back to the playbook: this topic supports Plays 3, 11, 12, 13 and Tools 3, 16, 14, 42, 17.\nPoint participants to the first resource: NIST AI Risk Management Framework.\nEnd by asking each participant or team to name one follow-up action they will take after the session."}

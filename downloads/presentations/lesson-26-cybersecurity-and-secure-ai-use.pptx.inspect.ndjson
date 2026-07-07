@@ -1,0 +1,117 @@
+{"kind":"deck","id":"pr/izp8az","name":"Deck"}
+{"kind":"layout","layoutId":"032ee4f0-877b-48f3-a826-691f0a49e5ac","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"408060d0-6110-4068-9aae-ae759c4872d5","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/cs04ay","slide":1,"title":"Lesson 26","textShapes":4}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":1,"text":"Lesson 26","textPreview":"Lesson 26","textChars":9,"textLines":1,"bbox":[520,242,240,34]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":1,"text":"Cybersecurity and Secure AI Use","textPreview":"Cybersecurity and Secure AI Use","textChars":31,"textLines":1,"bbox":[140,292,1000,92]}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":1,"text":"Staff Training Module","textPreview":"Staff Training Module","textChars":21,"textLines":1,"bbox":[390,405,500,38]}
+{"kind":"shape","id":"sh/65wjudg7","slide":1,"bbox":[360,472,560,3]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[240,515,800,34]}
+{"kind":"image","id":"im/fu18jqh0","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[515,54,250,160]}
+{"kind":"notes","id":"nt/cs04ay","slide":1,"text":"Welcome participants to the Cybersecurity and Secure AI Use lesson.\nExplain that this deck is designed for staff training, leadership orientation, governance preparation, or cross-program discussion.\nFrame the topic in plain language: Secure AI use requires approved environments, access controls, vendor security review, audit logs, prompt-injection awareness, data-loss prevention, and incident escalation.\nInvite participants to think about where this topic already appears in their department's workflows, vendor tools, data systems, communications, or planning conversations."}
+{"kind":"slide","id":"sl/6p2njt","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/epkzupwb","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":2,"text":"Why this topic matters","textPreview":"Why this topic matters","textChars":22,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/wval87ed","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/7mp0bi9s","slide":2,"text":"Secure AI use requires approved environments, access controls, vendor security review, audit logs, prompt-injection awareness, data-loss prevention, and incident escalation.","textPreview":"Secure AI use requires approved environments, access controls, vendor security review, audit logs, prompt-injection awareness, data-loss ...","textChars":173,"textLines":1,"bbox":[72,180,1080,80]}
+{"kind":"shape","id":"sh/e1w7mp0b","slide":2,"bbox":[72,305,500,230]}
+{"kind":"shape","id":"sh/psfil0rq","slide":2,"bbox":[72,305,7,230]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":2,"text":"Public health value","textPreview":"Public health value","textChars":19,"textLines":1,"bbox":[96,325,452,34]}
+{"kind":"textbox","id":"sh/7u54zido","slide":2,"text":"Cybersecurity protects public health operations, sensitive data, system integrity, and community trust.","textPreview":"Cybersecurity protects public health operations, sensitive data, system integrity, and community trust.","textChars":103,"textLines":1,"bbox":[96,373,452,146]}
+{"kind":"shape","id":"sh/ed8bat47","slide":2,"bbox":[625,305,500,230]}
+{"kind":"shape","id":"sh/onyd0z61","slide":2,"bbox":[625,305,7,230]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":2,"text":"Guardrail","textPreview":"Guardrail","textChars":9,"textLines":1,"bbox":[649,325,452,34]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":2,"text":"AI tools can create new attack surfaces, data leakage pathways, and social engineering risks if security is not built into implementation.","textPreview":"AI tools can create new attack surfaces, data leakage pathways, and social engineering risks if security is not built into implementation.","textChars":138,"textLines":1,"bbox":[649,373,452,146]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":2,"text":"Cybersecurity and Secure AI Use","textPreview":"Cybersecurity and Secure AI Use","textChars":31,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/6p2njt","slide":2,"text":"Use this slide in the Cybersecurity and Secure AI Use training module.\nUse this slide to explain the practical public health reason for learning this topic before AI tools are approved or deployed.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43.\nEmphasize the core guardrail: AI tools can create new attack surfaces, data leakage pathways, and social engineering risks if security is not built into implementation.\nAsk participants how this topic could affect their own program area, staff roles, community relationships, data, or public communications."}
+{"kind":"slide","id":"sl/w4lhnb","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/fepkzupw","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/xkf6dcbu","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":3,"text":"• Explain Cybersecurity and Secure AI Use in plain language.\n• Identify appropriate public health uses and limits.\n• Describe human review, governance, equity, privacy, and monitoring expectations.\n• Connect the topic to the related plays and tools.","textPreview":"• Explain Cybersecurity and Secure AI Use in plain language. | • Identify appropriate public health uses and limits. | • Describe human r...","textChars":249,"textLines":4,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":3,"text":"Cybersecurity and Secure AI Use","textPreview":"Cybersecurity and Secure AI Use","textChars":31,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/w4lhnb","slide":3,"text":"Use this slide in the Cybersecurity and Secure AI Use training module.\nWalk through the objectives and connect each one to a practical implementation decision.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43.\nExplain that participants do not need technical expertise to use this material. The goal is enough shared understanding to participate in governance, readiness assessment, use case review, procurement, deployment, or monitoring."}
+{"kind":"slide","id":"sl/zetxa8","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/u54zidon","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/cbulwval","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/neloj2t8","slide":4,"text":"AI security is broader than protecting the model. It includes user accounts, data flows, integrations, APIs, vendor hosting, prompts, outputs, logs, plugins, browser extensions, and connections to existing systems. Staff need to know how secure AI use differs from general software use.","textPreview":"AI security is broader than protecting the model. It includes user accounts, data flows, integrations, APIs, vendor hosting, prompts, out...","textChars":286,"textLines":1,"bbox":[72,178,1070,150]}
+{"kind":"shape","id":"sh/ytsvu9kn","slide":4,"bbox":[72,370,1045,145]}
+{"kind":"shape","id":"sh/5kb6xkf6","slide":4,"bbox":[72,370,7,145]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":4,"text":"Working definition","textPreview":"Working definition","textChars":18,"textLines":1,"bbox":[96,390,997,34]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":4,"text":"Secure AI use requires approved environments, access controls, vendor security review, audit logs, prompt-injection awareness, data-loss prevention, and incident escalation.","textPreview":"Secure AI use requires approved environments, access controls, vendor security review, audit logs, prompt-injection awareness, data-loss ...","textChars":173,"textLines":1,"bbox":[96,438,997,61]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":4,"text":"Cybersecurity and Secure AI Use","textPreview":"Cybersecurity and Secure AI Use","textChars":31,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/kb6xkf6d","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/zetxa8","slide":4,"text":"Use this slide in the Cybersecurity and Secure AI Use training module.\nUse this slide to provide the narrative overview and definition before moving into detailed application.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43.\nAsk the group to restate the topic in their own words."}
+{"kind":"slide","id":"sl/5bnh0m","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/sji5snel","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":5,"text":"What this means in practice","textPreview":"What this means in practice","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/adsji5sn","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/lszqtcj6","slide":5,"bbox":[72,190,330,330]}
+{"kind":"shape","id":"sh/s72x4nap","slide":5,"bbox":[72,190,7,330]}
+{"kind":"textbox","id":"sh/3m94fu18","slide":5,"text":"Security Concerns","textPreview":"Security Concerns","textChars":17,"textLines":1,"bbox":[96,210,282,34]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":5,"text":"Sensitive data entered into unapproved tools or retained by vendors. Prompt injection or malicious content that manipulates AI behavior. Unauthorized access through weak role controls, shared accounts, or unmanaged integrations. Unverified.","textPreview":"Sensitive data entered into unapproved tools or retained by vendors. Prompt injection or malicious content that manipulates AI behavior. ...","textChars":240,"textLines":1,"bbox":[96,258,282,246]}
+{"kind":"shape","id":"sh/hoza1gvy","slide":5,"bbox":[447,190,330,330]}
+{"kind":"shape","id":"sh/s36hcrmh","slide":5,"bbox":[447,190,7,330]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":5,"text":"Secure Practices","textPreview":"Secure Practices","textChars":16,"textLines":1,"bbox":[471,210,282,34]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":5,"text":"Use only approved AI tools for official work. Apply role-based access, multi-factor authentication, logging, data-loss prevention, and least-privilege access. Review vendor security documentation, hosting, subcontractors, breach notification,.","textPreview":"Use only approved AI tools for official work. Apply role-based access, multi-factor authentication, logging, data-loss prevention, and le...","textChars":243,"textLines":1,"bbox":[471,258,282,246]}
+{"kind":"shape","id":"sh/87ed8bat","slide":5,"bbox":[822,190,330,330]}
+{"kind":"shape","id":"sh/xs72x4na","slide":5,"bbox":[822,190,7,330]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":5,"text":"Implementation Check","textPreview":"Implementation Check","textChars":20,"textLines":1,"bbox":[846,210,282,34]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":5,"text":"Include security review before pilot approval. Test integrations in controlled environments. Coordinate AI incident response with cybersecurity and privacy response plans.","textPreview":"Include security review before pilot approval. Test integrations in controlled environments. Coordinate AI incident response with cyberse...","textChars":171,"textLines":1,"bbox":[846,258,282,246]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":5,"text":"Cybersecurity and Secure AI Use","textPreview":"Cybersecurity and Secure AI Use","textChars":31,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/5bnh0m","slide":5,"text":"Use this slide in the Cybersecurity and Secure AI Use training module.\nUse this slide to turn the concept into practical behaviors, decisions, and safeguards.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43.\nInvite participants to identify where these practices would need to be documented in their own department.\nStart with Security Concerns, then compare it with the other practice areas on the slide."}
+{"kind":"slide","id":"sl/kym616","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":6,"text":"Public health application","textPreview":"Public health application","textChars":25,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/c7u54zid","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/judg7ads","slide":6,"text":"Use the topic to examine real workflows, not abstract technology.","textPreview":"Use the topic to examine real workflows, not abstract technology.","textChars":65,"textLines":1,"bbox":[72,180,1040,42]}
+{"kind":"shape","id":"sh/u9knih4b","slide":6,"bbox":[72,270,330,235]}
+{"kind":"shape","id":"sh/1032lszq","slide":6,"bbox":[72,270,7,235]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":6,"text":"Use approved AI environments","textPreview":"Use approved AI environments","textChars":28,"textLines":1,"bbox":[96,290,282,34]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[96,338,282,151]}
+{"kind":"shape","id":"sh/udg7adsj","slide":6,"bbox":[447,270,330,235]}
+{"kind":"shape","id":"sh/czed8v6p","slide":6,"bbox":[447,270,7,235]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":6,"text":"Review vendor integrations","textPreview":"Review vendor integrations","textChars":26,"textLines":1,"bbox":[471,290,282,34]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[471,338,282,151]}
+{"kind":"shape","id":"sh/neloj2t8","slide":6,"bbox":[822,270,330,235]}
+{"kind":"shape","id":"sh/cbulwval","slide":6,"bbox":[822,270,7,235]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":6,"text":"Train staff on prompt injection","textPreview":"Train staff on prompt injection","textChars":31,"textLines":1,"bbox":[846,290,282,34]}
+{"kind":"textbox","id":"sh/u54zidon","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[846,338,282,151]}
+{"kind":"textbox","id":"sh/nqxs72x4","slide":6,"text":"Cybersecurity and Secure AI Use","textPreview":"Cybersecurity and Secure AI Use","textChars":31,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/kym616","slide":6,"text":"Use this slide in the Cybersecurity and Secure AI Use training module.\nUse this slide to make the topic concrete through public health workflow examples.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43.\nFor each example, ask: What problem is being solved? What data would be used? Who reviews the AI output? What decision remains human? What could go wrong?"}
+{"kind":"slide","id":"sl/it1lb2","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":7,"text":"Facilitated discussion and exercise","textPreview":"Facilitated discussion and exercise","textChars":35,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/cvixczed","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/nyd0z610","slide":7,"bbox":[72,190,500,310]}
+{"kind":"shape","id":"sh/udg7adsj","slide":7,"bbox":[72,190,7,310]}
+{"kind":"textbox","id":"sh/54zidony","slide":7,"text":"Discussion questions","textPreview":"Discussion questions","textChars":20,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/cj6tovah","slide":7,"text":"Which AI tools are approved for official work? Which integrations or data flows require security review? How should staff report suspicious AI behavior, data leakage, or unauthorized access?","textPreview":"Which AI tools are approved for official work? Which integrations or data flows require security review? How should staff report suspicio...","textChars":190,"textLines":1,"bbox":[96,258,452,226]}
+{"kind":"shape","id":"sh/judg7ads","slide":7,"bbox":[625,190,500,310]}
+{"kind":"shape","id":"sh/u9knih4b","slide":7,"bbox":[625,190,7,310]}
+{"kind":"textbox","id":"sh/47y1kre1","slide":7,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":7,"text":"Map the security controls needed for one AI use case, including data classification, access controls, vendor hosting, integrations, logging, incident response, and staff training.","textPreview":"Map the security controls needed for one AI use case, including data classification, access controls, vendor hosting, integrations, loggi...","textChars":179,"textLines":1,"bbox":[649,258,452,226]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":7,"text":"Cybersecurity and Secure AI Use","textPreview":"Cybersecurity and Secure AI Use","textChars":31,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/it1lb2","slide":7,"text":"Use this slide in the Cybersecurity and Secure AI Use training module.\nUse this slide for a facilitated activity near the end of the lesson.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43.\nGive participants time to work individually or in small groups. Ask them to produce a practical artifact that can feed into readiness assessment, governance review, use case prioritization, or implementation planning.\nExpected takeaways include: AI security review notes, Approved-use rules, Security escalation checklist."}
+{"kind":"slide","id":"sl/5pg01r","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/65wjudg7","slide":8,"text":"Next steps and resources","textPreview":"Next steps and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/zqtcj6to","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/oza1gvy9","slide":8,"bbox":[72,190,500,220]}
+{"kind":"shape","id":"sh/hk3q5o7q","slide":8,"bbox":[72,190,7,220]}
+{"kind":"textbox","id":"sh/6xkf6dcb","slide":8,"text":"Apply the lesson","textPreview":"Apply the lesson","textChars":16,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":8,"text":"Use this topic with Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43. Turn the discussion into a documented question, decision, gap, or implementation artifact.","textPreview":"Use this topic with Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43. Turn the discussion into a documented question, decision, gap...","textChars":166,"textLines":1,"bbox":[96,258,452,136]}
+{"kind":"shape","id":"sh/orytsvu9","slide":8,"bbox":[625,190,500,320]}
+{"kind":"shape","id":"sh/hcrmhk3q","slide":8,"bbox":[625,190,7,320]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":8,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":8,"text":"NIST Cybersecurity Framework: Cybersecurity risk management structure for organizational systems. CISA AI and Cybersecurity: Cybersecurity context for AI systems and AI-enabled threats. FedRAMP: Cloud security authorization context for.","textPreview":"NIST Cybersecurity Framework: Cybersecurity risk management structure for organizational systems. CISA AI and Cybersecurity: Cybersecurit...","textChars":236,"textLines":1,"bbox":[649,258,452,236]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":8,"text":"Cybersecurity and Secure AI Use","textPreview":"Cybersecurity and Secure AI Use","textChars":31,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/5pg01r","slide":8,"text":"Use this slide in the Cybersecurity and Secure AI Use training module.\nClose by connecting the lesson to next actions and resources.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 7, 11, 12 and Tools 10, 15, 17, 34, 39, 43.\nPoint participants to the first resource: NIST Cybersecurity Framework.\nEnd by asking each participant or team to name one follow-up action they will take after the session."}

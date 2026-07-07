@@ -1,0 +1,117 @@
+{"kind":"deck","id":"pr/g7lswf","name":"Deck"}
+{"kind":"layout","layoutId":"baae37ef-0942-426f-a8c5-b13e5863cf28","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"3c8097ae-5180-4816-ac63-89b7d4967e53","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/8s9qmt","slide":1,"title":"Lesson 17","textShapes":4}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":1,"text":"Lesson 17","textPreview":"Lesson 17","textChars":9,"textLines":1,"bbox":[520,242,240,34]}
+{"kind":"textbox","id":"sh/eloj2t83","slide":1,"text":"Federal Funding Opportunities","textPreview":"Federal Funding Opportunities","textChars":29,"textLines":1,"bbox":[140,292,1000,92]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":1,"text":"Staff Training Module","textPreview":"Staff Training Module","textChars":21,"textLines":1,"bbox":[390,405,500,38]}
+{"kind":"shape","id":"sh/wfyxobm5","slide":1,"bbox":[360,472,560,3]}
+{"kind":"textbox","id":"sh/7u54zido","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[240,515,800,34]}
+{"kind":"image","id":"im/9w3m94fu","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[515,54,250,160]}
+{"kind":"notes","id":"nt/8s9qmt","slide":1,"text":"Welcome participants to the Federal Funding Opportunities lesson.\nExplain that this deck is designed for staff training, leadership orientation, governance preparation, or cross-program discussion.\nFrame the topic in plain language: AI work can often be positioned as a capability layer on top of data modernization, infrastructure, workforce, and equity investments.\nInvite participants to think about where this topic already appears in their department's workflows, vendor tools, data systems, communications, or planning conversations."}
+{"kind":"slide","id":"sl/zplp94","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/ji5snelo","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":2,"text":"Why this topic matters","textPreview":"Why this topic matters","textChars":22,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/1kre1w7m","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/ulwval87","slide":2,"text":"AI work can often be positioned as a capability layer on top of data modernization, infrastructure, workforce, and equity investments.","textPreview":"AI work can often be positioned as a capability layer on top of data modernization, infrastructure, workforce, and equity investments.","textChars":134,"textLines":1,"bbox":[72,180,1080,80]}
+{"kind":"shape","id":"sh/j6tovaho","slide":2,"bbox":[72,305,500,230]}
+{"kind":"shape","id":"sh/crmhk3q5","slide":2,"bbox":[72,305,7,230]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":2,"text":"Public health value","textPreview":"Public health value","textChars":19,"textLines":1,"bbox":[96,325,452,34]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":2,"text":"AI projects often require resources that are easy to overlook: staff time, governance, training, validation, data modernization, monitoring, accessibility, community engagement, and sustainment. Funding strategy should make the full cost of.","textPreview":"AI projects often require resources that are easy to overlook: staff time, governance, training, validation, data modernization, monitori...","textChars":241,"textLines":1,"bbox":[96,373,452,146]}
+{"kind":"shape","id":"sh/j2t83itg","slide":2,"bbox":[625,305,500,230]}
+{"kind":"shape","id":"sh/byhgn29g","slide":2,"bbox":[625,305,7,230]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":2,"text":"Guardrail","textPreview":"Guardrail","textChars":9,"textLines":1,"bbox":[649,325,452,34]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":2,"text":"Do not approve projects without confirmed pilot, scale, and sustainment resources.","textPreview":"Do not approve projects without confirmed pilot, scale, and sustainment resources.","textChars":82,"textLines":1,"bbox":[649,373,452,146]}
+{"kind":"textbox","id":"sh/0je9cvix","slide":2,"text":"Federal Funding Opportunities","textPreview":"Federal Funding Opportunities","textChars":29,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/zplp94","slide":2,"text":"Use this slide in the Federal Funding Opportunities training module.\nUse this slide to explain the practical public health reason for learning this topic before AI tools are approved or deployed.\nConnect the discussion back to the playbook: this topic supports Plays 8, 9 and Tools 33, 32, 36.\nEmphasize the core guardrail: Do not approve projects without confirmed pilot, scale, and sustainment resources.\nAsk participants how this topic could affect their own program area, staff roles, community relationships, data, or public communications."}
+{"kind":"slide","id":"sl/0q30c5","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/eloj2t83","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/wra5gbq1","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/7u54zido","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":3,"text":"• Explain Federal Funding Opportunities in plain language.\n• Identify appropriate public health uses and limits.\n• Describe human review, governance, equity, privacy, and monitoring expectations.\n• Connect the topic to the related plays and tools.","textPreview":"• Explain Federal Funding Opportunities in plain language. | • Identify appropriate public health uses and limits. | • Describe human rev...","textChars":247,"textLines":4,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":3,"text":"Federal Funding Opportunities","textPreview":"Federal Funding Opportunities","textChars":29,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/0q30c5","slide":3,"text":"Use this slide in the Federal Funding Opportunities training module.\nWalk through the objectives and connect each one to a practical implementation decision.\nConnect the discussion back to the playbook: this topic supports Plays 8, 9 and Tools 33, 32, 36.\nExplain that participants do not need technical expertise to use this material. The goal is enough shared understanding to participate in governance, readiness assessment, use case review, procurement, deployment, or monitoring."}
+{"kind":"slide","id":"sl/ah8lja","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/yxobm58z","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/g3ex0nux","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":4,"text":"AI projects need funding for more than software licenses. Responsible implementation may require data modernization, cloud or secure infrastructure, staff time, training, governance, legal and procurement review, evaluation, monitoring, translation, accessibility, community engagement, and sustainment. Funding strategy should be developed before pilots are approved for scale.","textPreview":"AI projects need funding for more than software licenses. Responsible implementation may require data modernization, cloud or secure infr...","textChars":378,"textLines":1,"bbox":[72,178,1070,150]}
+{"kind":"shape","id":"sh/ylc7u54z","slide":4,"bbox":[72,370,1045,145]}
+{"kind":"shape","id":"sh/9cvixcze","slide":4,"bbox":[72,370,7,145]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":4,"text":"Working definition","textPreview":"Working definition","textChars":18,"textLines":1,"bbox":[96,390,997,34]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":4,"text":"AI work can often be positioned as a capability layer on top of data modernization, infrastructure, workforce, and equity investments.","textPreview":"AI work can often be positioned as a capability layer on top of data modernization, infrastructure, workforce, and equity investments.","textChars":134,"textLines":1,"bbox":[96,438,997,61]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":4,"text":"Federal Funding Opportunities","textPreview":"Federal Funding Opportunities","textChars":29,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/ah8lja","slide":4,"text":"Use this slide in the Federal Funding Opportunities training module.\nUse this slide to provide the narrative overview and definition before moving into detailed application.\nConnect the discussion back to the playbook: this topic supports Plays 8, 9 and Tools 33, 32, 36.\nAsk the group to restate the topic in their own words."}
+{"kind":"slide","id":"sl/esiz3e","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/ji5snelo","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":5,"text":"What this means in practice","textPreview":"What this means in practice","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/1kre1w7m","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/ulwval87","slide":5,"bbox":[72,190,330,330]}
+{"kind":"shape","id":"sh/j6tovaho","slide":5,"bbox":[72,190,7,330]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":5,"text":"Funding Alignment","textPreview":"Funding Alignment","textChars":17,"textLines":1,"bbox":[96,210,282,34]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":5,"text":"Position AI as an enabling capability within data modernization, workforce, equity, emergency preparedness, surveillance,. Match use cases to allowable costs in DMI, PHIG, HRSA, FEMA, EPA, SAMHSA, NIH, NSF, or state and local funding streams.","textPreview":"Position AI as an enabling capability within data modernization, workforce, equity, emergency preparedness, surveillance,. Match use case...","textChars":242,"textLines":1,"bbox":[96,258,282,246]}
+{"kind":"shape","id":"sh/qh0fepkz","slide":5,"bbox":[447,190,330,330]}
+{"kind":"shape","id":"sh/j2t83itg","slide":5,"bbox":[447,190,7,330]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":5,"text":"Budget Categories","textPreview":"Budget Categories","textChars":17,"textLines":1,"bbox":[471,210,282,34]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":5,"text":"Technology licenses, hosting, security review, integration, and vendor support. Staff time for governance, implementation, training, monitoring, and evaluation. Community engagement, accessibility, translation, and communications support..","textPreview":"Technology licenses, hosting, security review, integration, and vendor support. Staff time for governance, implementation, training, moni...","textChars":239,"textLines":1,"bbox":[471,258,282,246]}
+{"kind":"shape","id":"sh/t47y1kre","slide":5,"bbox":[822,190,330,330]}
+{"kind":"shape","id":"sh/0je9cvix","slide":5,"bbox":[822,190,7,330]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":5,"text":"Sustainment Questions","textPreview":"Sustainment Questions","textChars":21,"textLines":1,"bbox":[846,210,282,34]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":5,"text":"Who pays after the pilot? What staffing is required to keep the system safe and useful? What costs increase if the system scales across programs or jurisdictions? What functions can be shared regionally or through partnerships?","textPreview":"Who pays after the pilot? What staffing is required to keep the system safe and useful? What costs increase if the system scales across p...","textChars":227,"textLines":1,"bbox":[846,258,282,246]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":5,"text":"Federal Funding Opportunities","textPreview":"Federal Funding Opportunities","textChars":29,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/0rqd4vmt","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/esiz3e","slide":5,"text":"Use this slide in the Federal Funding Opportunities training module.\nUse this slide to turn the concept into practical behaviors, decisions, and safeguards.\nConnect the discussion back to the playbook: this topic supports Plays 8, 9 and Tools 33, 32, 36.\nInvite participants to identify where these practices would need to be documented in their own department.\nStart with Funding Alignment, then compare it with the other practice areas on the slide."}
+{"kind":"slide","id":"sl/ymtedj","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/nap4r65w","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/cvixczed","slide":6,"text":"Public health application","textPreview":"Public health application","textChars":25,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/5gbq1ory","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":6,"text":"Use the topic to examine real workflows, not abstract technology.","textPreview":"Use the topic to examine real workflows, not abstract technology.","textChars":65,"textLines":1,"bbox":[72,180,1040,42]}
+{"kind":"shape","id":"sh/nyd0z610","slide":6,"bbox":[72,270,330,235]}
+{"kind":"shape","id":"sh/cj6tovah","slide":6,"bbox":[72,270,7,235]}
+{"kind":"textbox","id":"sh/54zidony","slide":6,"text":"DMI-supported data pipelines","textPreview":"DMI-supported data pipelines","textChars":28,"textLines":1,"bbox":[96,290,282,34]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":6,"text":"Use data modernization investments to strengthen interoperability, data quality, cloud readiness, and analytics infrastructure needed for AI.","textPreview":"Use data modernization investments to strengthen interoperability, data quality, cloud readiness, and analytics infrastructure needed for...","textChars":141,"textLines":1,"bbox":[96,338,282,151]}
+{"kind":"shape","id":"sh/judg7ads","slide":6,"bbox":[447,270,330,235]}
+{"kind":"shape","id":"sh/nyd0z610","slide":6,"bbox":[447,270,7,235]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":6,"text":"PHIG-supported workforce and governance","textPreview":"PHIG-supported workforce and governance","textChars":39,"textLines":1,"bbox":[471,290,282,34]}
+{"kind":"textbox","id":"sh/54zidony","slide":6,"text":"Use infrastructure funding to support AI literacy, governance capacity, data staff, policy development, and implementation readiness.","textPreview":"Use infrastructure funding to support AI literacy, governance capacity, data staff, policy development, and implementation readiness.","textChars":133,"textLines":1,"bbox":[471,338,282,151]}
+{"kind":"shape","id":"sh/cj6tovah","slide":6,"bbox":[822,270,330,235]}
+{"kind":"shape","id":"sh/nap4r65w","slide":6,"bbox":[822,270,7,235]}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":6,"text":"Grant-aligned pilots","textPreview":"Grant-aligned pilots","textChars":20,"textLines":1,"bbox":[846,290,282,34]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":6,"text":"Design small pilots that map to allowable funding activities, measurable outputs, evaluation requirements, and sustainment plans.","textPreview":"Design small pilots that map to allowable funding activities, measurable outputs, evaluation requirements, and sustainment plans.","textChars":129,"textLines":1,"bbox":[846,338,282,151]}
+{"kind":"textbox","id":"sh/cvixczed","slide":6,"text":"Federal Funding Opportunities","textPreview":"Federal Funding Opportunities","textChars":29,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/ymtedj","slide":6,"text":"Use this slide in the Federal Funding Opportunities training module.\nUse this slide to make the topic concrete through public health workflow examples.\nConnect the discussion back to the playbook: this topic supports Plays 8, 9 and Tools 33, 32, 36.\nFor each example, ask: What problem is being solved? What data would be used? Who reviews the AI output? What decision remains human? What could go wrong?"}
+{"kind":"slide","id":"sl/bic3gu","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":7,"text":"Facilitated discussion and exercise","textPreview":"Facilitated discussion and exercise","textChars":35,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/lc7u54zi","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/ed8bat47","slide":7,"bbox":[72,190,500,310]}
+{"kind":"shape","id":"sh/7u54zido","slide":7,"bbox":[72,190,7,310]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":7,"text":"Discussion questions","textPreview":"Discussion questions","textChars":20,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":7,"text":"What costs are required before pilot, during deployment, and after scale? Which funding streams align with data, workforce, equity, emergency response, surveillance, or service delivery goals? What happens when short-term funding ends?","textPreview":"What costs are required before pilot, during deployment, and after scale? Which funding streams align with data, workforce, equity, emerg...","textChars":235,"textLines":1,"bbox":[96,258,452,226]}
+{"kind":"shape","id":"sh/e1w7mp0b","slide":7,"bbox":[625,190,500,310]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":7,"bbox":[625,190,7,310]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":7,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/6xkf6dcb","slide":7,"text":"Build a funding map for one approved use case that includes pilot costs, scale costs, sustainment costs, staffing, evaluation, governance, and possible funding sources.","textPreview":"Build a funding map for one approved use case that includes pilot costs, scale costs, sustainment costs, staffing, evaluation, governance...","textChars":168,"textLines":1,"bbox":[649,258,452,226]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":7,"text":"Federal Funding Opportunities","textPreview":"Federal Funding Opportunities","textChars":29,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/bic3gu","slide":7,"text":"Use this slide in the Federal Funding Opportunities training module.\nUse this slide for a facilitated activity near the end of the lesson.\nConnect the discussion back to the playbook: this topic supports Plays 8, 9 and Tools 33, 32, 36.\nGive participants time to work individually or in small groups. Ask them to produce a practical artifact that can feed into readiness assessment, governance review, use case prioritization, or implementation planning.\nExpected takeaways include: Funding alignment table, Sustainment plan, Budget categories for responsible AI implementation."}
+{"kind":"slide","id":"sl/geaffg","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/65wjudg7","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":8,"text":"Next steps and resources","textPreview":"Next steps and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/obm58z25","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/zed8v6ps","slide":8,"bbox":[72,190,500,220]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":8,"bbox":[72,190,7,220]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":8,"text":"Apply the lesson","textPreview":"Apply the lesson","textChars":16,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":8,"text":"Use this topic with Plays 8, 9 and Tools 33, 32, 36. Turn the discussion into a documented question, decision, gap, or implementation artifact.","textPreview":"Use this topic with Plays 8, 9 and Tools 33, 32, 36. Turn the discussion into a documented question, decision, gap, or implementation art...","textChars":143,"textLines":1,"bbox":[96,258,452,136]}
+{"kind":"shape","id":"sh/z61032ls","slide":8,"bbox":[625,190,500,320]}
+{"kind":"shape","id":"sh/al87ed8b","slide":8,"bbox":[625,190,7,320]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":8,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":8,"text":"CDC Data Modernization Initiative: Potential alignment for data infrastructure and AI-ready modernization investments. Public Health Infrastructure Grant: Potential alignment for workforce, data systems, organizational capacity, and equity.","textPreview":"CDC Data Modernization Initiative: Potential alignment for data infrastructure and AI-ready modernization investments. Public Health Infr...","textChars":240,"textLines":1,"bbox":[649,258,452,236]}
+{"kind":"textbox","id":"sh/2x4nap4r","slide":8,"text":"Federal Funding Opportunities","textPreview":"Federal Funding Opportunities","textChars":29,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/vixczed8","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/geaffg","slide":8,"text":"Use this slide in the Federal Funding Opportunities training module.\nClose by connecting the lesson to next actions and resources.\nConnect the discussion back to the playbook: this topic supports Plays 8, 9 and Tools 33, 32, 36.\nPoint participants to the first resource: CDC Data Modernization Initiative.\nEnd by asking each participant or team to name one follow-up action they will take after the session."}

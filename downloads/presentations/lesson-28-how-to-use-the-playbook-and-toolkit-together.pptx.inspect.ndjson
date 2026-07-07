@@ -1,0 +1,117 @@
+{"kind":"deck","id":"pr/8tvxa2","name":"Deck"}
+{"kind":"layout","layoutId":"45979a6b-8b23-45b6-a4cd-d157dff50700","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"af8d10fd-061a-4233-811b-4c4e790ec9a1","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/zszklb","slide":1,"title":"Lesson 28","textShapes":4}
+{"kind":"textbox","id":"sh/bat47y1k","slide":1,"text":"Lesson 28","textPreview":"Lesson 28","textChars":9,"textLines":1,"bbox":[520,242,240,34]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":1,"text":"How to Use the Playbook and Toolkit Together","textPreview":"How to Use the Playbook and Toolkit Together","textChars":44,"textLines":1,"bbox":[140,292,1000,92]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":1,"text":"Staff Training Module","textPreview":"Staff Training Module","textChars":21,"textLines":1,"bbox":[390,405,500,38]}
+{"kind":"shape","id":"sh/47y1kre1","slide":1,"bbox":[360,472,560,3]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[240,515,800,34]}
+{"kind":"image","id":"im/l0rqd4vm","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[515,54,250,160]}
+{"kind":"notes","id":"nt/zszklb","slide":1,"text":"Welcome participants to the How to Use the Playbook and Toolkit Together lesson.\nExplain that this deck is designed for staff training, leadership orientation, governance preparation, or cross-program discussion.\nFrame the topic in plain language: Read the play first to understand the decision and output, then use the linked tools during workshops or governance reviews.\nInvite participants to think about where this topic already appears in their department's workflows, vendor tools, data systems, communications, or planning conversations."}
+{"kind":"slide","id":"sl/i8vnwo","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/72x4nap4","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":2,"text":"Why this topic matters","textPreview":"Why this topic matters","textChars":22,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":2,"text":"Read the play first to understand the decision and output, then use the linked tools during workshops or governance reviews.","textPreview":"Read the play first to understand the decision and output, then use the linked tools during workshops or governance reviews.","textChars":124,"textLines":1,"bbox":[72,180,1080,80]}
+{"kind":"shape","id":"sh/7ed8bat4","slide":2,"bbox":[72,305,500,230]}
+{"kind":"shape","id":"sh/0z61032l","slide":2,"bbox":[72,305,7,230]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":2,"text":"Public health value","textPreview":"Public health value","textChars":19,"textLines":1,"bbox":[96,325,452,34]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":2,"text":"The playbook creates the sequence and the toolkit creates the documentation. Using them together helps departments move from learning to readiness, governance, use case selection, funding, deployment, monitoring, and sustained oversight.","textPreview":"The playbook creates the sequence and the toolkit creates the documentation. Using them together helps departments move from learning to ...","textChars":237,"textLines":1,"bbox":[96,373,452,146]}
+{"kind":"shape","id":"sh/7qpg3ex0","slide":2,"bbox":[625,305,500,230]}
+{"kind":"shape","id":"sh/fu18jqh0","slide":2,"bbox":[625,305,7,230]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":2,"text":"Guardrail","textPreview":"Guardrail","textChars":9,"textLines":1,"bbox":[649,325,452,34]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":2,"text":"The tools support the plays; they should not become a disconnected paperwork exercise.","textPreview":"The tools support the plays; they should not become a disconnected paperwork exercise.","textChars":86,"textLines":1,"bbox":[649,373,452,146]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":2,"text":"How to Use the Playbook and Toolkit Together","textPreview":"How to Use the Playbook and Toolkit Together","textChars":44,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/i8vnwo","slide":2,"text":"Use this slide in the How to Use the Playbook and Toolkit Together training module.\nUse this slide to explain the practical public health reason for learning this topic before AI tools are approved or deployed.\nConnect the discussion back to the playbook: this topic supports Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42.\nEmphasize the core guardrail: The tools support the plays; they should not become a disconnected paperwork exercise.\nAsk participants how this topic could affect their own program area, staff roles, community relationships, data, or public communications."}
+{"kind":"slide","id":"sl/jka6l6","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/at47y1kr","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/l87ed8ba","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/sneloj2t","slide":3,"text":"• Explain How to Use the Playbook and Toolkit Together in plain language.\n• Identify appropriate public health uses and limits.\n• Describe human review, governance, equity, privacy, and monitoring expectations.\n• Connect the topic to the related plays and tools.","textPreview":"• Explain How to Use the Playbook and Toolkit Together in plain language. | • Identify appropriate public health uses and limits. | • Des...","textChars":262,"textLines":4,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":3,"text":"How to Use the Playbook and Toolkit Together","textPreview":"How to Use the Playbook and Toolkit Together","textChars":44,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/jka6l6","slide":3,"text":"Use this slide in the How to Use the Playbook and Toolkit Together training module.\nWalk through the objectives and connect each one to a practical implementation decision.\nConnect the discussion back to the playbook: this topic supports Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42.\nExplain that participants do not need technical expertise to use this material. The goal is enough shared understanding to participate in governance, readiness assessment, use case review, procurement, deployment, or monitoring."}
+{"kind":"slide","id":"sl/h5yv0x","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/0fepkzup","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":4,"text":"The playbook and toolkit are designed to work together. Plays define the decisions, sequence, participants, outputs, and governance gates. Tools help departments complete the work, document decisions, and create reusable artifacts.","textPreview":"The playbook and toolkit are designed to work together. Plays define the decisions, sequence, participants, outputs, and governance gates...","textChars":231,"textLines":1,"bbox":[72,178,1070,150]}
+{"kind":"shape","id":"sh/ixczed8v","slide":4,"bbox":[72,370,1045,145]}
+{"kind":"shape","id":"sh/tovahoza","slide":4,"bbox":[72,370,7,145]}
+{"kind":"textbox","id":"sh/032lszqt","slide":4,"text":"Working definition","textPreview":"Working definition","textChars":18,"textLines":1,"bbox":[96,390,997,34]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":4,"text":"Read the play first to understand the decision and output, then use the linked tools during workshops or governance reviews.","textPreview":"Read the play first to understand the decision and output, then use the linked tools during workshops or governance reviews.","textChars":124,"textLines":1,"bbox":[96,438,997,61]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":4,"text":"How to Use the Playbook and Toolkit Together","textPreview":"How to Use the Playbook and Toolkit Together","textChars":44,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/h5yv0x","slide":4,"text":"Use this slide in the How to Use the Playbook and Toolkit Together training module.\nUse this slide to provide the narrative overview and definition before moving into detailed application.\nConnect the discussion back to the playbook: this topic supports Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42.\nAsk the group to restate the topic in their own words."}
+{"kind":"slide","id":"sl/tfjrrc","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":5,"text":"What this means in practice","textPreview":"What this means in practice","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/z61032ls","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/sfil0rqd","slide":5,"bbox":[72,190,330,330]}
+{"kind":"shape","id":"sh/h0fepkzu","slide":5,"bbox":[72,190,7,330]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":5,"text":"How to Use the Sequence","textPreview":"How to Use the Sequence","textChars":23,"textLines":1,"bbox":[96,210,282,34]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":5,"text":"Start with vision and readiness so the department understands purpose, gaps, and constraints. Establish governance before formal use case selection, vendor engagement, pilots, or deployment. Use stakeholder engagement, workforce planning,.","textPreview":"Start with vision and readiness so the department understands purpose, gaps, and constraints. Establish governance before formal use case...","textChars":239,"textLines":1,"bbox":[96,258,282,246]}
+{"kind":"shape","id":"sh/obm58z25","slide":5,"bbox":[447,190,330,330]}
+{"kind":"shape","id":"sh/hwfyxobm","slide":5,"bbox":[447,190,7,330]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":5,"text":"How to Use the Tools","textPreview":"How to Use the Tools","textChars":20,"textLines":1,"bbox":[471,210,282,34]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":5,"text":"Open tools from the play page when the tool is needed for a decision or output. Save progress and update living tools as decisions change. Use completed tools as governance records, implementation artifacts, and evidence for leadership or.","textPreview":"Open tools from the play page when the tool is needed for a decision or output. Save progress and update living tools as decisions change...","textChars":239,"textLines":1,"bbox":[471,258,282,246]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":5,"bbox":[822,190,330,330]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":5,"bbox":[822,190,7,330]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":5,"text":"Governance Discipline","textPreview":"Governance Discipline","textChars":21,"textLines":1,"bbox":[846,210,282,34]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":5,"text":"Do not skip early plays because a tool or vendor is available. Use assessment recommendations to customize the path based on readiness gaps and completed work. Treat the implementation plan, inventory, monitoring dashboard, and policy log as.","textPreview":"Do not skip early plays because a tool or vendor is available. Use assessment recommendations to customize the path based on readiness ga...","textChars":242,"textLines":1,"bbox":[846,258,282,246]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":5,"text":"How to Use the Playbook and Toolkit Together","textPreview":"How to Use the Playbook and Toolkit Together","textChars":44,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/tfjrrc","slide":5,"text":"Use this slide in the How to Use the Playbook and Toolkit Together training module.\nUse this slide to turn the concept into practical behaviors, decisions, and safeguards.\nConnect the discussion back to the playbook: this topic supports Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42.\nInvite participants to identify where these practices would need to be documented in their own department.\nStart with How to Use the Sequence, then compare it with the other practice areas on the slide."}
+{"kind":"slide","id":"sl/qww7d7","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":6,"text":"Public health application","textPreview":"Public health application","textChars":25,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/pwb2hwfy","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":6,"text":"Use the topic to examine real workflows, not abstract technology.","textPreview":"Use the topic to examine real workflows, not abstract technology.","textChars":65,"textLines":1,"bbox":[72,180,1040,42]}
+{"kind":"shape","id":"sh/7y1kre1w","slide":6,"bbox":[72,270,330,235]}
+{"kind":"shape","id":"sh/wjudg7ad","slide":6,"bbox":[72,270,7,235]}
+{"kind":"textbox","id":"sh/p4r65wju","slide":6,"text":"Use Tool 7 during Play 2","textPreview":"Use Tool 7 during Play 2","textChars":24,"textLines":1,"bbox":[96,290,282,34]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":6,"text":"Complete the readiness self-assessment before selecting pilots so gaps in governance, data, workforce, equity, and security are visible.","textPreview":"Complete the readiness self-assessment before selecting pilots so gaps in governance, data, workforce, equity, and security are visible.","textChars":136,"textLines":1,"bbox":[96,338,282,151]}
+{"kind":"shape","id":"sh/72x4nap4","slide":6,"bbox":[447,270,330,235]}
+{"kind":"shape","id":"sh/zqtcj6to","slide":6,"bbox":[447,270,7,235]}
+{"kind":"textbox","id":"sh/65wjudg7","slide":6,"text":"Use Tools 2 and 12 during Play 3","textPreview":"Use Tools 2 and 12 during Play 3","textChars":32,"textLines":1,"bbox":[471,290,282,34]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":6,"text":"Pair the responsible AI policy template with the governance board charter to define authority, review standards, and decision rights.","textPreview":"Pair the responsible AI policy template with the governance board charter to define authority, review standards, and decision rights.","textChars":133,"textLines":1,"bbox":[471,338,282,151]}
+{"kind":"shape","id":"sh/obm58z25","slide":6,"bbox":[822,270,330,235]}
+{"kind":"shape","id":"sh/zed8v6ps","slide":6,"bbox":[822,270,7,235]}
+{"kind":"textbox","id":"sh/6xkf6dcb","slide":6,"text":"Use Tools 41 and 42 before scaling","textPreview":"Use Tools 41 and 42 before scaling","textChars":34,"textLines":1,"bbox":[846,290,282,34]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":6,"text":"Use the pilot dashboard and scale decision framework to determine whether to scale, revise, pause, or retire a pilot.","textPreview":"Use the pilot dashboard and scale decision framework to determine whether to scale, revise, pause, or retire a pilot.","textChars":117,"textLines":1,"bbox":[846,338,282,151]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":6,"text":"How to Use the Playbook and Toolkit Together","textPreview":"How to Use the Playbook and Toolkit Together","textChars":44,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/z61032ls","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/qww7d7","slide":6,"text":"Use this slide in the How to Use the Playbook and Toolkit Together training module.\nUse this slide to make the topic concrete through public health workflow examples.\nConnect the discussion back to the playbook: this topic supports Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42.\nFor each example, ask: What problem is being solved? What data would be used? Who reviews the AI output? What decision remains human? What could go wrong?"}
+{"kind":"slide","id":"sl/zwarba","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":7,"text":"Facilitated discussion and exercise","textPreview":"Facilitated discussion and exercise","textChars":35,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/rqd4vmtw","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":7,"bbox":[72,190,500,310]}
+{"kind":"shape","id":"sh/9knih4by","slide":7,"bbox":[72,190,7,310]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":7,"text":"Discussion questions","textPreview":"Discussion questions","textChars":20,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":7,"text":"Which plays are required based on the readiness assessment? Which tools document the decisions needed for those plays? Who owns each tool, output, deadline, and governance gate?","textPreview":"Which plays are required based on the readiness assessment? Which tools document the decisions needed for those plays? Who owns each tool...","textChars":177,"textLines":1,"bbox":[96,258,452,226]}
+{"kind":"shape","id":"sh/gvy90je9","slide":7,"bbox":[625,190,500,310]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":7,"bbox":[625,190,7,310]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":7,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":7,"text":"Take assessment results and convert them into a customized workplan with recommended plays, supporting tools, owners, deadlines, and governance milestones.","textPreview":"Take assessment results and convert them into a customized workplan with recommended plays, supporting tools, owners, deadlines, and gove...","textChars":155,"textLines":1,"bbox":[649,258,452,226]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":7,"text":"How to Use the Playbook and Toolkit Together","textPreview":"How to Use the Playbook and Toolkit Together","textChars":44,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/zwarba","slide":7,"text":"Use this slide in the How to Use the Playbook and Toolkit Together training module.\nUse this slide for a facilitated activity near the end of the lesson.\nConnect the discussion back to the playbook: this topic supports Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42.\nGive participants time to work individually or in small groups. Ask them to produce a practical artifact that can feed into readiness assessment, governance review, use case prioritization, or implementation planning.\nExpected takeaways include: Customized play-and-tool workplan, Governance gate checklist, Completed tool package for leadership review."}
+{"kind":"slide","id":"sl/z6kau9","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/0z61032l","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":8,"text":"Next steps and resources","textPreview":"Next steps and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/itgfmlkj","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":8,"bbox":[72,190,500,220]}
+{"kind":"shape","id":"sh/0nuxc3yl","slide":8,"bbox":[72,190,7,220]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":8,"text":"Apply the lesson","textPreview":"Apply the lesson","textChars":16,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":8,"text":"Use this topic with Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42. Turn the discussion into a documented question, decision, gap, or implementation artifact.","textPreview":"Use this topic with Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42. Turn the discussion into a documented question, decision, gap, or imple...","textChars":156,"textLines":1,"bbox":[96,258,452,136]}
+{"kind":"shape","id":"sh/p4r65wju","slide":8,"bbox":[625,190,500,320]}
+{"kind":"shape","id":"sh/wjudg7ad","slide":8,"bbox":[625,190,7,320]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":8,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":8,"text":"NIST AI Risk Management Framework: Use as a shared risk language while completing playbook tools. ASPPH AI Framework Report: Use as background for public health AI governance, workforce, and accountability concepts. CDC STLT resources: Use to.","textPreview":"NIST AI Risk Management Framework: Use as a shared risk language while completing playbook tools. ASPPH AI Framework Report: Use as backg...","textChars":243,"textLines":1,"bbox":[649,258,452,236]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":8,"text":"How to Use the Playbook and Toolkit Together","textPreview":"How to Use the Playbook and Toolkit Together","textChars":44,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/z6kau9","slide":8,"text":"Use this slide in the How to Use the Playbook and Toolkit Together training module.\nClose by connecting the lesson to next actions and resources.\nConnect the discussion back to the playbook: this topic supports Plays 1, 2, 3, 11 and Tools 2, 7, 12, 41, 42.\nPoint participants to the first resource: NIST AI Risk Management Framework.\nEnd by asking each participant or team to name one follow-up action they will take after the session."}

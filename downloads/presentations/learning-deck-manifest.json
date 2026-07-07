@@ -1,0 +1,142 @@
+[
+  {
+    "id": "understanding-ai",
+    "path": "downloads/presentations/lesson-01-understanding-artificial-intelligence-sample-formal-title.pptx",
+    "title": "Understanding Artificial Intelligence"
+  },
+  {
+    "id": "generative-ai",
+    "path": "downloads/presentations/lesson-02-generative-ai.pptx",
+    "title": "Generative AI"
+  },
+  {
+    "id": "agentic-ai",
+    "path": "downloads/presentations/lesson-03-agentic-ai.pptx",
+    "title": "Agentic AI"
+  },
+  {
+    "id": "deep-research",
+    "path": "downloads/presentations/lesson-04-deep-research.pptx",
+    "title": "Deep Research"
+  },
+  {
+    "id": "workflows",
+    "path": "downloads/presentations/lesson-05-ai-supported-public-health-workflows.pptx",
+    "title": "AI-Supported Public Health Workflows"
+  },
+  {
+    "id": "risks",
+    "path": "downloads/presentations/lesson-06-risks-limitations-and-guardrails.pptx",
+    "title": "Risks, Limitations, and Guardrails"
+  },
+  {
+    "id": "systems-shift",
+    "path": "downloads/presentations/lesson-07-ai-as-a-public-health-systems-shift.pptx",
+    "title": "AI as a Public Health Systems Shift"
+  },
+  {
+    "id": "digital-determinants",
+    "path": "downloads/presentations/lesson-08-ai-as-a-digital-determinant-of-health.pptx",
+    "title": "AI as a Digital Determinant of Health"
+  },
+  {
+    "id": "human-centered-ai",
+    "path": "downloads/presentations/lesson-09-human-centered-ai.pptx",
+    "title": "Human-Centered AI"
+  },
+  {
+    "id": "ai-literacy",
+    "path": "downloads/presentations/lesson-10-ai-literacy-for-public-health-staff.pptx",
+    "title": "AI Literacy for Public Health Staff"
+  },
+  {
+    "id": "automation-bias",
+    "path": "downloads/presentations/lesson-11-automation-bias-and-over-trust.pptx",
+    "title": "Automation Bias and Over-Trust"
+  },
+  {
+    "id": "missing-voices",
+    "path": "downloads/presentations/lesson-12-missing-voices-in-data.pptx",
+    "title": "Missing Voices in Data"
+  },
+  {
+    "id": "public-transparency",
+    "path": "downloads/presentations/lesson-13-public-transparency-and-community-trust.pptx",
+    "title": "Public Transparency and Community Trust"
+  },
+  {
+    "id": "tiered-data-use",
+    "path": "downloads/presentations/lesson-14-tiered-data-use-for-ai.pptx",
+    "title": "Tiered Data Use for AI"
+  },
+  {
+    "id": "environmental-impact",
+    "path": "downloads/presentations/lesson-15-environmental-and-resource-impacts.pptx",
+    "title": "Environmental and Resource Impacts"
+  },
+  {
+    "id": "bridge-professional",
+    "path": "downloads/presentations/lesson-16-the-ai-bridge-professional-role.pptx",
+    "title": "The AI Bridge Professional Role"
+  },
+  {
+    "id": "funding",
+    "path": "downloads/presentations/lesson-17-federal-funding-opportunities.pptx",
+    "title": "Federal Funding Opportunities"
+  },
+  {
+    "id": "procurement-vendor-oversight",
+    "path": "downloads/presentations/lesson-18-procurement-and-vendor-oversight.pptx",
+    "title": "Procurement and Vendor Oversight"
+  },
+  {
+    "id": "privacy-confidentiality-public-records",
+    "path": "downloads/presentations/lesson-19-privacy-confidentiality-and-public-records.pptx",
+    "title": "Privacy, Confidentiality, and Public Records"
+  },
+  {
+    "id": "model-validation-evaluation-basics",
+    "path": "downloads/presentations/lesson-20-model-validation-and-evaluation-basics.pptx",
+    "title": "Model Validation and Evaluation Basics"
+  },
+  {
+    "id": "ai-incident-response",
+    "path": "downloads/presentations/lesson-21-ai-incident-response.pptx",
+    "title": "AI Incident Response"
+  },
+  {
+    "id": "role-based-ai-guidelines",
+    "path": "downloads/presentations/lesson-22-role-based-ai-use-guidelines.pptx",
+    "title": "Role-Based AI Use Guidelines"
+  },
+  {
+    "id": "responsible-prompting-review",
+    "path": "downloads/presentations/lesson-23-responsible-prompting-and-review.pptx",
+    "title": "Responsible Prompting and Review"
+  },
+  {
+    "id": "community-engagement-ai",
+    "path": "downloads/presentations/lesson-24-community-engagement-for-ai.pptx",
+    "title": "Community Engagement for AI"
+  },
+  {
+    "id": "accessibility-language-access",
+    "path": "downloads/presentations/lesson-25-accessibility-and-language-access.pptx",
+    "title": "Accessibility and Language Access"
+  },
+  {
+    "id": "cybersecurity-secure-ai-use",
+    "path": "downloads/presentations/lesson-26-cybersecurity-and-secure-ai-use.pptx",
+    "title": "Cybersecurity and Secure AI Use"
+  },
+  {
+    "id": "when-not-to-use-ai",
+    "path": "downloads/presentations/lesson-27-when-not-to-use-ai.pptx",
+    "title": "When Not to Use AI"
+  },
+  {
+    "id": "ai-support-areas",
+    "path": "downloads/presentations/lesson-28-areas-where-ai-can-support-public-health-activities.pptx",
+    "title": "Areas Where AI Can Support Public Health Activities"
+  }
+]

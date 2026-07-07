@@ -1,0 +1,117 @@
+{"kind":"deck","id":"pr/abqrc8","name":"Deck"}
+{"kind":"layout","layoutId":"aa7ca37f-8fce-45a3-9f5c-d72c3c185e10","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"5390d741-3e45-4c72-940f-053fcac5e432","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/72yjk0","slide":1,"title":"Lesson 14","textShapes":4}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":1,"text":"Lesson 14","textPreview":"Lesson 14","textChars":9,"textLines":1,"bbox":[520,242,240,34]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":1,"text":"Tiered Data Use for AI","textPreview":"Tiered Data Use for AI","textChars":22,"textLines":1,"bbox":[140,292,1000,92]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":1,"text":"Staff Training Module","textPreview":"Staff Training Module","textChars":21,"textLines":1,"bbox":[390,405,500,38]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":1,"bbox":[360,472,560,3]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[240,515,800,34]}
+{"kind":"image","id":"im/8bat47y1","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[515,54,250,160]}
+{"kind":"notes","id":"nt/72yjk0","slide":1,"text":"Welcome participants to the Tiered Data Use for AI lesson.\nExplain that this deck is designed for staff training, leadership orientation, governance preparation, or cross-program discussion.\nFrame the topic in plain language: Tiered data use classifies information by sensitivity and defines which AI environments are appropriate for public, internal, confidential, and highly restricted data.\nInvite participants to think about where this topic already appears in their department's workflows, vendor tools, data systems, communications, or planning conversations."}
+{"kind":"slide","id":"sl/2rksqo","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/kb6xkf6d","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":2,"text":"Why this topic matters","textPreview":"Why this topic matters","textChars":22,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/25kb6xkf","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/9knih4by","slide":2,"text":"Tiered data use classifies information by sensitivity and defines which AI environments are appropriate for public, internal, confidential, and highly restricted data.","textPreview":"Tiered data use classifies information by sensitivity and defines which AI environments are appropriate for public, internal, confidentia...","textChars":167,"textLines":1,"bbox":[72,180,1080,80]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":2,"bbox":[72,305,500,230]}
+{"kind":"shape","id":"sh/re1w7mp0","slide":2,"bbox":[72,305,7,230]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":2,"text":"Public health value","textPreview":"Public health value","textChars":19,"textLines":1,"bbox":[96,325,452,34]}
+{"kind":"textbox","id":"sh/9gr2p8nq","slide":2,"text":"Clear data tiers turn privacy and security rules into daily practice. Staff need to know which data can be used in which AI environments, what approvals are needed, and what tools are prohibited for sensitive information.","textPreview":"Clear data tiers turn privacy and security rules into daily practice. Staff need to know which data can be used in which AI environments,...","textChars":221,"textLines":1,"bbox":[96,373,452,146]}
+{"kind":"shape","id":"sh/gvy90je9","slide":2,"bbox":[625,305,500,230]}
+{"kind":"shape","id":"sh/yd0z6103","slide":2,"bbox":[625,305,7,230]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":2,"text":"Guardrail","textPreview":"Guardrail","textChars":9,"textLines":1,"bbox":[649,325,452,34]}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":2,"text":"Without data tiers, staff may unintentionally place confidential, protected, or sovereign data into unsuitable AI environments.","textPreview":"Without data tiers, staff may unintentionally place confidential, protected, or sovereign data into unsuitable AI environments.","textChars":127,"textLines":1,"bbox":[649,373,452,146]}
+{"kind":"textbox","id":"sh/90je9cvi","slide":2,"text":"Tiered Data Use for AI","textPreview":"Tiered Data Use for AI","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/y1kre1w7","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/2rksqo","slide":2,"text":"Use this slide in the Tiered Data Use for AI training module.\nUse this slide to explain the practical public health reason for learning this topic before AI tools are approved or deployed.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 11 and Tools 10, 15, 34.\nEmphasize the core guardrail: Without data tiers, staff may unintentionally place confidential, protected, or sovereign data into unsuitable AI environments.\nAsk participants how this topic could affect their own program area, staff roles, community relationships, data, or public communications."}
+{"kind":"slide","id":"sl/yzzgo5","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/q1orytsv","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/87ed8bat","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":3,"text":"• Explain Tiered Data Use for AI in plain language.\n• Identify appropriate public health uses and limits.\n• Describe human review, governance, equity, privacy, and monitoring expectations.\n• Connect the topic to the related plays and tools.","textPreview":"• Explain Tiered Data Use for AI in plain language. | • Identify appropriate public health uses and limits. | • Describe human review, go...","textChars":240,"textLines":4,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":3,"text":"Tiered Data Use for AI","textPreview":"Tiered Data Use for AI","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/yzzgo5","slide":3,"text":"Use this slide in the Tiered Data Use for AI training module.\nWalk through the objectives and connect each one to a practical implementation decision.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 11 and Tools 10, 15, 34.\nExplain that participants do not need technical expertise to use this material. The goal is enough shared understanding to participate in governance, readiness assessment, use case review, procurement, deployment, or monitoring."}
+{"kind":"slide","id":"sl/wtbad2","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/2x4nap4r","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/k3q5o7qp","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/val87ed8","slide":4,"text":"Tiered data use gives staff practical rules for which AI environments can be used with which kinds of information. Public, internal, confidential, protected, restricted, and sovereign data may require different tools, approvals, vendors, contracts, security controls, and documentation. Without tiers, staff may unintentionally place sensitive data in inappropriate AI systems.","textPreview":"Tiered data use gives staff practical rules for which AI environments can be used with which kinds of information. Public, internal, conf...","textChars":377,"textLines":1,"bbox":[72,178,1070,150]}
+{"kind":"shape","id":"sh/6psfil0r","slide":4,"bbox":[72,370,1045,145]}
+{"kind":"shape","id":"sh/dcbulwva","slide":4,"bbox":[72,370,7,145]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":4,"text":"Working definition","textPreview":"Working definition","textChars":18,"textLines":1,"bbox":[96,390,997,34]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":4,"text":"Tiered data use classifies information by sensitivity and defines which AI environments are appropriate for public, internal, confidential, and highly restricted data.","textPreview":"Tiered data use classifies information by sensitivity and defines which AI environments are appropriate for public, internal, confidentia...","textChars":167,"textLines":1,"bbox":[96,438,997,61]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":4,"text":"Tiered Data Use for AI","textPreview":"Tiered Data Use for AI","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/wtbad2","slide":4,"text":"Use this slide in the Tiered Data Use for AI training module.\nUse this slide to provide the narrative overview and definition before moving into detailed application.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 11 and Tools 10, 15, 34.\nAsk the group to restate the topic in their own words."}
+{"kind":"slide","id":"sl/pxc709","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/1gvy90je","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":5,"text":"What this means in practice","textPreview":"What this means in practice","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/je9cvixc","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/87ed8bat","slide":5,"bbox":[72,190,330,330]}
+{"kind":"shape","id":"sh/xs72x4na","slide":5,"bbox":[72,190,7,330]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":5,"text":"Data Tiers","textPreview":"Data Tiers","textChars":10,"textLines":1,"bbox":[96,210,282,34]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":5,"text":"Public information that can be used in approved public or enterprise tools. Internal information that should stay within approved organizational environments. Confidential or sensitive operational data that require restricted access and.","textPreview":"Public information that can be used in approved public or enterprise tools. Internal information that should stay within approved organiz...","textChars":237,"textLines":1,"bbox":[96,258,282,246]}
+{"kind":"shape","id":"sh/8jqh0fep","slide":5,"bbox":[447,190,330,330]}
+{"kind":"shape","id":"sh/x4nap4r6","slide":5,"bbox":[447,190,7,330]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":5,"text":"Operational Rules","textPreview":"Operational Rules","textChars":17,"textLines":1,"bbox":[471,210,282,34]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":5,"text":"Define which AI tools are approved for each data tier. Require data use agreements, business associate agreements, or vendor addenda when needed. Prohibit restricted information in public consumer AI tools. Document data sources, retention,.","textPreview":"Define which AI tools are approved for each data tier. Require data use agreements, business associate agreements, or vendor addenda when...","textChars":241,"textLines":1,"bbox":[471,258,282,246]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":5,"bbox":[822,190,330,330]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":5,"bbox":[822,190,7,330]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":5,"text":"Implementation Steps","textPreview":"Implementation Steps","textChars":20,"textLines":1,"bbox":[846,210,282,34]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":5,"text":"Train staff using real examples from their workflows. Include tiered data review in intake, procurement, governance, and incident response. Review vendor claims about data retention, training, logging, and deletion.","textPreview":"Train staff using real examples from their workflows. Include tiered data review in intake, procurement, governance, and incident respons...","textChars":215,"textLines":1,"bbox":[846,258,282,246]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":5,"text":"Tiered Data Use for AI","textPreview":"Tiered Data Use for AI","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/pxc709","slide":5,"text":"Use this slide in the Tiered Data Use for AI training module.\nUse this slide to turn the concept into practical behaviors, decisions, and safeguards.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 11 and Tools 10, 15, 34.\nInvite participants to identify where these practices would need to be documented in their own department.\nStart with Data Tiers, then compare it with the other practice areas on the slide."}
+{"kind":"slide","id":"sl/9rc9g4","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/ulwval87","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":6,"text":"Public health application","textPreview":"Public health application","textChars":25,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/crmhk3q5","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":6,"text":"Use the topic to examine real workflows, not abstract technology.","textPreview":"Use the topic to examine real workflows, not abstract technology.","textChars":65,"textLines":1,"bbox":[72,180,1040,42]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":6,"bbox":[72,270,330,235]}
+{"kind":"shape","id":"sh/1kre1w7m","slide":6,"bbox":[72,270,7,235]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":6,"text":"Restrict PHI from public AI tools","textPreview":"Restrict PHI from public AI tools","textChars":33,"textLines":1,"bbox":[96,290,282,34]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[96,338,282,151]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":6,"bbox":[447,270,330,235]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":6,"bbox":[447,270,7,235]}
+{"kind":"textbox","id":"sh/9knih4by","slide":6,"text":"Approve enterprise AI for internal drafts","textPreview":"Approve enterprise AI for internal drafts","textChars":41,"textLines":1,"bbox":[471,290,282,34]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[471,338,282,151]}
+{"kind":"shape","id":"sh/re1w7mp0","slide":6,"bbox":[822,270,330,235]}
+{"kind":"shape","id":"sh/kb6xkf6d","slide":6,"bbox":[822,270,7,235]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":6,"text":"Use in-house/RAG systems for restricted materials","textPreview":"Use in-house/RAG systems for restricted materials","textChars":49,"textLines":1,"bbox":[846,290,282,34]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":6,"text":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would be needed.","textPreview":"Discuss how this could support a public health workflow, what data would be involved, who would review outputs, and what safeguards would...","textChars":148,"textLines":1,"bbox":[846,338,282,151]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":6,"text":"Tiered Data Use for AI","textPreview":"Tiered Data Use for AI","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/9rc9g4","slide":6,"text":"Use this slide in the Tiered Data Use for AI training module.\nUse this slide to make the topic concrete through public health workflow examples.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 11 and Tools 10, 15, 34.\nFor each example, ask: What problem is being solved? What data would be used? Who reviews the AI output? What decision remains human? What could go wrong?"}
+{"kind":"slide","id":"sl/ggbtlc","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/9cvixcze","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/ylc7u54z","slide":7,"text":"Facilitated discussion and exercise","textPreview":"Facilitated discussion and exercise","textChars":35,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/r65wjudg","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/g3ex0nux","slide":7,"bbox":[72,190,500,310]}
+{"kind":"shape","id":"sh/5o7qpg3e","slide":7,"bbox":[72,190,7,310]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":7,"text":"Discussion questions","textPreview":"Discussion questions","textChars":20,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":7,"text":"What data tiers does the department use? Which AI tools are approved for each tier? What vendor, contract, logging, retention, and training restrictions are required?","textPreview":"What data tiers does the department use? Which AI tools are approved for each tier? What vendor, contract, logging, retention, and traini...","textChars":166,"textLines":1,"bbox":[96,258,452,226]}
+{"kind":"shape","id":"sh/g7adsji5","slide":7,"bbox":[625,190,500,310]}
+{"kind":"shape","id":"sh/9s36hcrm","slide":7,"bbox":[625,190,7,310]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":7,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":7,"text":"Create a table that maps public, internal, confidential, protected, restricted, and sovereign data categories to approved AI environments and required review steps.","textPreview":"Create a table that maps public, internal, confidential, protected, restricted, and sovereign data categories to approved AI environments...","textChars":164,"textLines":1,"bbox":[649,258,452,226]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":7,"text":"Tiered Data Use for AI","textPreview":"Tiered Data Use for AI","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/ggbtlc","slide":7,"text":"Use this slide in the Tiered Data Use for AI training module.\nUse this slide for a facilitated activity near the end of the lesson.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 11 and Tools 10, 15, 34.\nGive participants time to work individually or in small groups. Ask them to produce a practical artifact that can feed into readiness assessment, governance review, use case prioritization, or implementation planning.\nExpected takeaways include: Tiered data classification table, Approved AI environment list, Data-use approval pathway."}
+{"kind":"slide","id":"sl/cc2lpv","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/4nap4r65","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":8,"text":"Next steps and resources","textPreview":"Next steps and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/twra5gbq","slide":8,"bbox":[72,190,500,220]}
+{"kind":"shape","id":"sh/4byhgn29","slide":8,"bbox":[72,190,7,220]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":8,"text":"Apply the lesson","textPreview":"Apply the lesson","textChars":16,"textLines":1,"bbox":[96,210,452,34]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":8,"text":"Use this topic with Plays 2, 3, 11 and Tools 10, 15, 34. Turn the discussion into a documented question, decision, gap, or implementation artifact.","textPreview":"Use this topic with Plays 2, 3, 11 and Tools 10, 15, 34. Turn the discussion into a documented question, decision, gap, or implementation...","textChars":147,"textLines":1,"bbox":[96,258,452,136]}
+{"kind":"shape","id":"sh/tsvu9kni","slide":8,"bbox":[625,190,500,320]}
+{"kind":"shape","id":"sh/47y1kre1","slide":8,"bbox":[625,190,7,320]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":8,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[649,210,452,34]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":8,"text":"HIPAA: Privacy requirements when protected health information may be involved. FedRAMP: Cloud security authorization context for systems handling sensitive government data. NIH Tribal Health Research Office: Tribal data governance and tribal.","textPreview":"HIPAA: Privacy requirements when protected health information may be involved. FedRAMP: Cloud security authorization context for systems ...","textChars":242,"textLines":1,"bbox":[649,258,452,236]}
+{"kind":"textbox","id":"sh/sji5snel","slide":8,"text":"Tiered Data Use for AI","textPreview":"Tiered Data Use for AI","textChars":22,"textLines":1,"bbox":[72,675,760,24]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/cc2lpv","slide":8,"text":"Use this slide in the Tiered Data Use for AI training module.\nClose by connecting the lesson to next actions and resources.\nConnect the discussion back to the playbook: this topic supports Plays 2, 3, 11 and Tools 10, 15, 34.\nPoint participants to the first resource: HIPAA.\nEnd by asking each participant or team to name one follow-up action they will take after the session."}

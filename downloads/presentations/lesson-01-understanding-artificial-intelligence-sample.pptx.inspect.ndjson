@@ -1,0 +1,168 @@
+{"kind":"deck","id":"pr/rprzqy","name":"Deck"}
+{"kind":"layout","layoutId":"f3c5411e-cbdc-49b6-8515-bdb5bdf6bb76","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"38e48f27-5e79-4634-bf9c-a718c7003f4e","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/e757xk","slide":1,"title":"Understanding Artificial Intelligence","textShapes":4}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":1,"text":"Understanding Artificial Intelligence","textPreview":"Understanding Artificial Intelligence","textChars":37,"textLines":1,"bbox":[260,92,850,115]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":1,"text":"A staff training module for public health departments","textPreview":"A staff training module for public health departments","textChars":53,"textLines":1,"bbox":[264,220,760,42]}
+{"kind":"shape","id":"sh/0bi9s36h","slide":1,"bbox":[264,305,800,150]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":1,"text":"Use this lesson to build a shared vocabulary before teams select tools, approve pilots, review vendors, or use AI in public health workflows.","textPreview":"Use this lesson to build a shared vocabulary before teams select tools, approve pilots, review vendors, or use AI in public health workfl...","textChars":141,"textLines":1,"bbox":[304,336,720,88]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":1,"text":"AI Playbook and Toolkit for Public Health Departments","textPreview":"AI Playbook and Toolkit for Public Health Departments","textChars":53,"textLines":1,"bbox":[74,650,680,30]}
+{"kind":"image","id":"im/kb6xkf6d","slide":1,"name":"","alt":"AI Playbook for Public Health logo","bbox":[74,56,150,150]}
+{"kind":"notes","id":"nt/e757xk","slide":1,"text":""}
+{"kind":"slide","id":"sl/ht5sx9","slide":2,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":9}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":2,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":2,"text":"Why this lesson comes first","textPreview":"Why this lesson comes first","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/lc7u54zi","slide":2,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":2,"text":"Teams need a shared vocabulary before they can make responsible AI decisions.","textPreview":"Teams need a shared vocabulary before they can make responsible AI decisions.","textChars":77,"textLines":1,"bbox":[72,172,1040,48]}
+{"kind":"shape","id":"sh/7u54zido","slide":2,"bbox":[72,260,520,250]}
+{"kind":"shape","id":"sh/wfyxobm5","slide":2,"bbox":[72,260,7,250]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":2,"text":"Without shared language","textPreview":"Without shared language","textChars":23,"textLines":1,"bbox":[96,280,472,34]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":2,"text":"AI conversations can jump straight to vendors, tools, and pilots before staff agree on what the technology does, what risks it creates, and where humans remain accountable.","textPreview":"AI conversations can jump straight to vendors, tools, and pilots before staff agree on what the technology does, what risks it creates, a...","textChars":172,"textLines":1,"bbox":[96,328,472,166]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":2,"bbox":[636,260,520,250]}
+{"kind":"shape","id":"sh/zed8v6ps","slide":2,"bbox":[636,260,7,250]}
+{"kind":"textbox","id":"sh/6xkf6dcb","slide":2,"text":"With shared language","textPreview":"With shared language","textChars":20,"textLines":1,"bbox":[660,280,472,34]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":2,"text":"Public health teams can set guardrails, review use cases, ask better vendor questions, and explain AI-supported workflows to staff, partners, and communities.","textPreview":"Public health teams can set guardrails, review use cases, ask better vendor questions, and explain AI-supported workflows to staff, partn...","textChars":158,"textLines":1,"bbox":[660,328,472,166]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":2,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/ht5sx9","slide":2,"text":""}
+{"kind":"slide","id":"sl/3fd2p1","slide":3,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":6}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":3,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":3,"text":"Learning objectives","textPreview":"Learning objectives","textChars":19,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":3,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":3,"text":"By the end of this lesson, staff should be able to:","textPreview":"By the end of this lesson, staff should be able to:","textChars":51,"textLines":1,"bbox":[72,174,1000,40]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":3,"text":"• Define artificial intelligence in plain language.\n• Distinguish generative AI, predictive AI, and agentic AI.\n• Identify where AI can support public health work without replacing human judgment.\n• Recognize why privacy, equity, transparency, validation, and monitoring must be planned early.\n• Connect AI concepts to the playbook’s readiness, governance, and use case review steps.","textPreview":"• Define artificial intelligence in plain language. | • Distinguish generative AI, predictive AI, and agentic AI. | • Identify where AI c...","textChars":383,"textLines":5,"bbox":[110,240,990,330]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":3,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/47y1kre1","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/3fd2p1","slide":3,"text":""}
+{"kind":"slide","id":"sl/asiazh","slide":4,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":4,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":4,"text":"Module overview","textPreview":"Module overview","textChars":15,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/8v6psfil","slide":4,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":4,"text":"Artificial intelligence is not one product or one capability.","textPreview":"Artificial intelligence is not one product or one capability.","textChars":61,"textLines":1,"bbox":[72,172,1020,42]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":4,"text":"AI is a family of methods that enable computer systems to learn from data, recognize patterns, generate new content, and support action toward defined goals. In public health, AI should be understood as an operational capability that needs governance, data safeguards, staff training, and monitoring.","textPreview":"AI is a family of methods that enable computer systems to learn from data, recognize patterns, generate new content, and support action t...","textChars":300,"textLines":1,"bbox":[72,235,1070,135]}
+{"kind":"shape","id":"sh/x4nap4r6","slide":4,"bbox":[72,420,500,160]}
+{"kind":"shape","id":"sh/8jqh0fep","slide":4,"bbox":[72,420,7,160]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":4,"text":"Definition","textPreview":"Definition","textChars":10,"textLines":1,"bbox":[96,440,452,34]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":4,"text":"Artificial intelligence enables systems to perform tasks that normally require human-like pattern recognition, language understanding, prediction, generation, or decision support.","textPreview":"Artificial intelligence enables systems to perform tasks that normally require human-like pattern recognition, language understanding, pr...","textChars":179,"textLines":1,"bbox":[96,488,452,76]}
+{"kind":"shape","id":"sh/4nap4r65","slide":4,"bbox":[620,420,500,160]}
+{"kind":"shape","id":"sh/t83itgfm","slide":4,"bbox":[620,420,7,160]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":4,"text":"Public health framing","textPreview":"Public health framing","textChars":21,"textLines":1,"bbox":[644,440,452,34]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":4,"text":"AI should support public health professionals, not quietly replace accountability, community relationships, or final decisions in consequential workflows.","textPreview":"AI should support public health professionals, not quietly replace accountability, community relationships, or final decisions in consequ...","textChars":154,"textLines":1,"bbox":[644,488,452,76]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":4,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/asiazh","slide":4,"text":""}
+{"kind":"slide","id":"sl/bzm8tj","slide":5,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":5,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":5,"text":"The most relevant AI categories are different","textPreview":"The most relevant AI categories are different","textChars":45,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/1w7mp0bi","slide":5,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/qh0fepkz","slide":5,"bbox":[72,185,340,250]}
+{"kind":"shape","id":"sh/j2t83itg","slide":5,"bbox":[72,185,7,250]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":5,"text":"Generative AI","textPreview":"Generative AI","textChars":13,"textLines":1,"bbox":[96,205,292,34]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":5,"text":"Produces new text, images, code, summaries, translations, or synthetic data from prompts and source material.","textPreview":"Produces new text, images, code, summaries, translations, or synthetic data from prompts and source material.","textChars":109,"textLines":1,"bbox":[96,253,292,166]}
+{"kind":"shape","id":"sh/ulwval87","slide":5,"bbox":[470,185,340,250]}
+{"kind":"shape","id":"sh/j6tovaho","slide":5,"bbox":[470,185,7,250]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":5,"text":"Predictive AI","textPreview":"Predictive AI","textChars":13,"textLines":1,"bbox":[494,205,292,34]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":5,"text":"Uses patterns in data to estimate risk, classify records, forecast trends, or detect anomalies.","textPreview":"Uses patterns in data to estimate risk, classify records, forecast trends, or detect anomalies.","textChars":95,"textLines":1,"bbox":[494,253,292,166]}
+{"kind":"shape","id":"sh/18jqh0fe","slide":5,"bbox":[868,185,340,250]}
+{"kind":"shape","id":"sh/8nqxs72x","slide":5,"bbox":[868,185,7,250]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":5,"text":"Agentic AI","textPreview":"Agentic AI","textChars":10,"textLines":1,"bbox":[892,205,292,34]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":5,"text":"Coordinates multi-step workflows across systems under rules, approvals, and audit logs.","textPreview":"Coordinates multi-step workflows across systems under rules, approvals, and audit logs.","textChars":87,"textLines":1,"bbox":[892,253,292,166]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":5,"text":"The category matters because each one creates different review questions, data needs, staffing requirements, and safeguards.","textPreview":"The category matters because each one creates different review questions, data needs, staffing requirements, and safeguards.","textChars":124,"textLines":1,"bbox":[118,500,1010,66]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":5,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/bzm8tj","slide":5,"text":""}
+{"kind":"slide","id":"sl/g70apv","slide":6,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":6,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/g7adsji5","slide":6,"text":"Generative AI drafts, summarizes, and translates","textPreview":"Generative AI drafts, summarizes, and translates","textChars":48,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/9s36hcrm","slide":6,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":6,"text":"Generative AI is useful when the task involves language, structure, synthesis, or first-draft support.","textPreview":"Generative AI is useful when the task involves language, structure, synthesis, or first-draft support.","textChars":102,"textLines":1,"bbox":[72,172,1040,42]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":6,"text":"• Draft health education materials, FAQs, grant narratives, and internal briefings.\n• Summarize long guidance, reports, policies, or literature for expert review.\n• Translate technical findings into plain language for different audiences.\n• Help staff organize evidence, but not certify that the evidence is correct.","textPreview":"• Draft health education materials, FAQs, grant narratives, and internal briefings. | • Summarize long guidance, reports, policies, or li...","textChars":316,"textLines":4,"bbox":[90,245,660,255]}
+{"kind":"shape","id":"sh/gfmlkjm1","slide":6,"bbox":[790,245,340,255]}
+{"kind":"shape","id":"sh/90je9cvi","slide":6,"bbox":[790,245,7,255]}
+{"kind":"textbox","id":"sh/ylc7u54z","slide":6,"text":"Training point","textPreview":"Training point","textChars":14,"textLines":1,"bbox":[814,265,292,34]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":6,"text":"Generated content can sound fluent while being incomplete, unsupported, or wrong. Public-facing and consequential outputs require source checking and subject matter review.","textPreview":"Generated content can sound fluent while being incomplete, unsupported, or wrong. Public-facing and consequential outputs require source ...","textChars":172,"textLines":1,"bbox":[814,313,292,171]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":6,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/g70apv","slide":6,"text":""}
+{"kind":"slide","id":"sl/cjs0lm","slide":7,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":10}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":7,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":7,"text":"Agentic AI can act across workflow steps","textPreview":"Agentic AI can act across workflow steps","textChars":40,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/7qpg3ex0","slide":7,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":7,"text":"Agentic AI can monitor inputs, gather information, prepare outputs, update task queues, and route work. That makes boundaries and oversight essential.","textPreview":"Agentic AI can monitor inputs, gather information, prepare outputs, update task queues, and route work. That makes boundaries and oversig...","textChars":150,"textLines":1,"bbox":[72,172,1060,70]}
+{"kind":"shape","id":"sh/p4r65wju","slide":7,"bbox":[72,285,500,185]}
+{"kind":"shape","id":"sh/ed8v6psf","slide":7,"bbox":[72,285,7,185]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":7,"text":"Appropriate support","textPreview":"Appropriate support","textChars":19,"textLines":1,"bbox":[96,305,452,34]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":7,"text":"Assemble an evidence packet, draft a situation brief, flag a dashboard threshold, or route a task for human review.","textPreview":"Assemble an evidence packet, draft a situation brief, flag a dashboard threshold, or route a task for human review.","textChars":115,"textLines":1,"bbox":[96,353,452,101]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":7,"bbox":[620,285,500,185]}
+{"kind":"shape","id":"sh/xobm58z2","slide":7,"bbox":[620,285,7,185]}
+{"kind":"textbox","id":"sh/83itgfml","slide":7,"text":"Required controls","textPreview":"Required controls","textChars":17,"textLines":1,"bbox":[644,305,452,34]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":7,"text":"Use role-based permissions, audit logs, approved data sources, escalation rules, and human approval before external communication or public health action.","textPreview":"Use role-based permissions, audit logs, approved data sources, escalation rules, and human approval before external communication or publ...","textChars":154,"textLines":1,"bbox":[644,353,452,101]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":7,"text":"Agentic systems should never quietly expand from support tasks into unapproved decisions.","textPreview":"Agentic systems should never quietly expand from support tasks into unapproved decisions.","textChars":89,"textLines":1,"bbox":[145,525,930,48]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":7,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/cjs0lm","slide":7,"text":""}
+{"kind":"slide","id":"sl/9hak7e","slide":8,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":11}
+{"kind":"textbox","id":"sh/l87ed8ba","slide":8,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":8,"text":"Public health AI use should be bounded and reviewable","textPreview":"Public health AI use should be bounded and reviewable","textChars":53,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/32lszqtc","slide":8,"bbox":[72,145,1080,3]}
+{"kind":"shape","id":"sh/szqtcj6t","slide":8,"bbox":[82,190,1050,100]}
+{"kind":"textbox","id":"sh/lkjm1cfa","slide":8,"text":"A good AI use case has a clear public health purpose, known data sources, named human owners, documented limits, and a monitoring plan.","textPreview":"A good AI use case has a clear public health purpose, known data sources, named human owners, documented limits, and a monitoring plan.","textChars":135,"textLines":1,"bbox":[115,220,980,44]}
+{"kind":"shape","id":"sh/at47y1kr","slide":8,"bbox":[72,340,330,180]}
+{"kind":"shape","id":"sh/3ex0nuxc","slide":8,"bbox":[72,340,7,180]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":8,"text":"Before use","textPreview":"Before use","textChars":10,"textLines":1,"bbox":[96,360,282,34]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":8,"text":"Assess readiness, classify data, establish governance, and define what the AI may and may not do.","textPreview":"Assess readiness, classify data, establish governance, and define what the AI may and may not do.","textChars":97,"textLines":1,"bbox":[96,408,282,96]}
+{"kind":"shape","id":"sh/9knih4by","slide":8,"bbox":[475,340,330,180]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":8,"bbox":[475,340,7,180]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":8,"text":"During use","textPreview":"During use","textChars":10,"textLines":1,"bbox":[499,360,282,34]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":8,"text":"Require human review, document decisions, track concerns, and monitor performance across groups.","textPreview":"Require human review, document decisions, track concerns, and monitor performance across groups.","textChars":96,"textLines":1,"bbox":[499,408,282,96]}
+{"kind":"shape","id":"sh/9w3m94fu","slide":8,"bbox":[878,340,330,180]}
+{"kind":"shape","id":"sh/kb6xkf6d","slide":8,"bbox":[878,340,7,180]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":8,"text":"After use","textPreview":"After use","textChars":9,"textLines":1,"bbox":[902,360,282,34]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":8,"text":"Review results, incidents, drift, equity impacts, and whether the system should be changed, scaled, paused, or retired.","textPreview":"Review results, incidents, drift, equity impacts, and whether the system should be changed, scaled, paused, or retired.","textChars":119,"textLines":1,"bbox":[902,408,282,96]}
+{"kind":"textbox","id":"sh/94fu18jq","slide":8,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/9hak7e","slide":8,"text":""}
+{"kind":"slide","id":"sl/x06sy8","slide":9,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":8}
+{"kind":"textbox","id":"sh/0fepkzup","slide":9,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/bulwval8","slide":9,"text":"Training exercise","textPreview":"Training exercise","textChars":17,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/i9s36hcr","slide":9,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/tovahoza","slide":9,"text":"Apply the lesson to one workflow in your department.","textPreview":"Apply the lesson to one workflow in your department.","textChars":52,"textLines":1,"bbox":[72,170,1040,40]}
+{"kind":"textbox","id":"sh/032lszqt","slide":9,"text":"• Choose one workflow where staff are curious about AI support.\n• Identify whether the idea is generative, predictive, agentic, or a combination.\n• Write what AI may support and what humans must still decide.\n• List the data involved, review steps, and likely risks.\n• Name the playbook play or tool that should be completed next.","textPreview":"• Choose one workflow where staff are curious about AI support. | • Identify whether the idea is generative, predictive, agentic, or a co...","textChars":330,"textLines":5,"bbox":[105,245,760,300]}
+{"kind":"shape","id":"sh/bi9s36hc","slide":9,"bbox":[910,255,260,260]}
+{"kind":"shape","id":"sh/ixczed8v","slide":9,"bbox":[910,255,7,260]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":9,"text":"Expected output","textPreview":"Expected output","textChars":15,"textLines":1,"bbox":[934,275,212,34]}
+{"kind":"textbox","id":"sh/0rqd4vmt","slide":9,"text":"A short AI concept note that can feed into readiness assessment, governance review, or use case prioritization.","textPreview":"A short AI concept note that can feed into readiness assessment, governance review, or use case prioritization.","textChars":111,"textLines":1,"bbox":[934,323,212,176]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":9,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/bulwval8","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/x06sy8","slide":9,"text":""}
+{"kind":"slide","id":"sl/bctu72","slide":10,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":12}
+{"kind":"textbox","id":"sh/58z25kb6","slide":10,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":10,"text":"What staff should take away","textPreview":"What staff should take away","textChars":27,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/n29gr2p8","slide":10,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":10,"text":"AI can support public health work, but responsible use starts with shared understanding.","textPreview":"AI can support public health work, but responsible use starts with shared understanding.","textChars":88,"textLines":1,"bbox":[72,172,1060,48]}
+{"kind":"shape","id":"sh/5wjudg7a","slide":10,"bbox":[90,260,300,160]}
+{"kind":"shape","id":"sh/y90je9cv","slide":10,"bbox":[90,260,7,160]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":10,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[114,280,252,34]}
+{"kind":"textbox","id":"sh/cbulwval","slide":10,"text":"AI is a family of capabilities, not one tool.","textPreview":"AI is a family of capabilities, not one tool.","textChars":45,"textLines":1,"bbox":[114,328,252,76]}
+{"kind":"shape","id":"sh/5sneloj2","slide":10,"bbox":[490,260,300,160]}
+{"kind":"shape","id":"sh/tcj6tova","slide":10,"bbox":[490,260,7,160]}
+{"kind":"textbox","id":"sh/0rqd4vmt","slide":10,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[514,280,252,34]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":10,"text":"Different AI categories need different safeguards.","textPreview":"Different AI categories need different safeguards.","textChars":50,"textLines":1,"bbox":[514,328,252,76]}
+{"kind":"shape","id":"sh/il0rqd4v","slide":10,"bbox":[890,260,300,160]}
+{"kind":"shape","id":"sh/t47y1kre","slide":10,"bbox":[890,260,7,160]}
+{"kind":"textbox","id":"sh/0je9cvix","slide":10,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[914,280,252,34]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":10,"text":"Governance, readiness, and human accountability come before deployment.","textPreview":"Governance, readiness, and human accountability come before deployment.","textChars":71,"textLines":1,"bbox":[914,328,252,76]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":10,"text":"Next step: use this lesson before Play 1, Play 2, and Play 3 discussions so staff share a practical vocabulary for AI decisions.","textPreview":"Next step: use this lesson before Play 1, Play 2, and Play 3 discussions so staff share a practical vocabulary for AI decisions.","textChars":128,"textLines":1,"bbox":[130,505,990,62]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":10,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/bctu72","slide":10,"text":""}
+{"kind":"slide","id":"sl/bsfg0a","slide":11,"title":"AI PLAYBOOK AND TOOLKIT","textShapes":7}
+{"kind":"textbox","id":"sh/neloj2t8","slide":11,"text":"AI PLAYBOOK AND TOOLKIT","textPreview":"AI PLAYBOOK AND TOOLKIT","textChars":23,"textLines":1,"bbox":[72,34,620,28]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":11,"text":"References and resources","textPreview":"References and resources","textChars":24,"textLines":1,"bbox":[72,70,1080,70]}
+{"kind":"shape","id":"sh/5kb6xkf6","slide":11,"bbox":[72,145,1080,3]}
+{"kind":"textbox","id":"sh/u54zidon","slide":11,"text":"Use these resources to support staff learning and governance conversations.","textPreview":"Use these resources to support staff learning and governance conversations.","textChars":75,"textLines":1,"bbox":[72,174,1000,38]}
+{"kind":"textbox","id":"sh/nqxs72x4","slide":11,"text":"• NIST AI Risk Management Framework: risk, governance, mapping, measurement, and management.\n• World Health Organization guidance on ethics and governance of AI for health.\n• HHS resources on civil rights, privacy, and responsible AI use in health contexts.\n• AI Playbook and Toolkit pages for Readiness Assessment, Governance, and Use Case Prioritization.","textPreview":"• NIST AI Risk Management Framework: risk, governance, mapping, measurement, and management. | • World Health Organization guidance on et...","textChars":356,"textLines":4,"bbox":[100,250,1020,260]}
+{"kind":"textbox","id":"sh/cbulwval","slide":11,"text":"For training use: adapt discussion questions and exercises to local policies, data systems, community context, and approved AI tools.","textPreview":"For training use: adapt discussion questions and exercises to local policies, data systems, community context, and approved AI tools.","textChars":133,"textLines":1,"bbox":[105,565,1040,48]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":11,"text":"Lesson 1: Understanding Artificial Intelligence","textPreview":"Lesson 1: Understanding Artificial Intelligence","textChars":47,"textLines":1,"bbox":[72,675,640,24]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,675,48,24]}
+{"kind":"notes","id":"nt/bsfg0a","slide":11,"text":""}
