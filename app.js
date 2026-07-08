@@ -794,12 +794,12 @@ const playGuideDeepDive = {
     purpose: "Build the role-based AI literacy, confidence, and support structures staff need before AI tools become part of routine public health work.",
     timing: "Complete this play after readiness gaps are visible and before staff are asked to use AI-supported workflows in pilots, procurement reviews, public communication, analytics, or operational decision support.",
     implementationTips: [
-      "Separate general AI awareness from role-specific competence. All staff need basic literacy, but supervisors, analysts, communications staff, program owners, IT, legal, equity, and governance participants need different skills.",
-      "Use the readiness assessment and stakeholder engagement findings to identify the staff groups most likely to be affected first.",
-      "Convert the learning modules into a role-based training plan that specifies required modules, optional modules, deadlines, completion standards, and who will verify completion for each role or staff group.",
-      "Build training around realistic public health tasks such as drafting messages, reviewing AI summaries, assessing data quality, checking outputs for bias, documenting human review, and escalating incidents.",
-      "Create recurring support structures such as office hours, AI champions, supervisor briefings, and a community of practice so learning continues after formal training.",
-      "Track completion, confidence, adoption barriers, and unresolved concerns so workforce development feeds the roadmap, change plan, and governance agenda."
+      "Start by identifying which staff groups will interact with AI directly, which groups will supervise AI-supported work, and which groups will review or approve AI use. A communications specialist using AI to draft public messages needs different preparation than an epidemiologist reviewing AI-generated surveillance summaries, a program manager approving workflow changes, or a governance member reviewing risk.",
+      "Use the readiness assessment and stakeholder engagement findings to identify workforce gaps. Look for gaps in AI literacy, data interpretation, privacy awareness, equity review, vendor evaluation, prompt use, documentation, and incident reporting. Workforce planning should also identify where staff may feel uncertain, threatened, or unsupported.",
+      "Use the AI Workforce Competency Framework to define expectations by role. At minimum, all staff should understand what AI is, what it can and cannot do, what data may not be entered into AI tools, when human review is required, and how to report concerns. Staff with higher-risk responsibilities need deeper training on validation, bias, public communication, procurement, governance, and monitoring.",
+      "Use the Role-Based Training Plan and Completion Tracker to translate expectations into assigned learning modules, deadlines, owners, and completion evidence. This is especially important for organization accounts because administrators need a practical way to assign modules by role and monitor readiness before pilots or deployment.",
+      "Use the AI Champion Designation and Role Guide to identify staff who can support peers, surface implementation barriers, and connect frontline experience back to governance. Champions should not replace formal governance, but they can make adoption safer by helping staff ask questions early.",
+      "Use the AI Bridge Professional Role Guide when the department needs someone to translate across program needs, legal and privacy requirements, IT constraints, vendor language, data limitations, procurement expectations, and public health goals."
     ],
     decisionChecks: [
       "Which roles can safely use approved AI tools now, and which roles need more preparation?",
@@ -818,11 +818,12 @@ const playGuideDeepDive = {
     purpose: "Prepare the organization for AI-related workflow change before deployment decisions are locked in.",
     timing: "Begin change management planning while use cases, roadmap decisions, staffing needs, and governance conditions are still being shaped.",
     implementationTips: [
-      "Identify the specific workflows, roles, decisions, handoffs, documents, dashboards, and public-facing activities that may change.",
-      "Document what will not change, especially human responsibility, review expectations, escalation authority, and accountability for decisions.",
-      "Create audience-specific messages for leadership, supervisors, frontline staff, program teams, partners, and governance members.",
-      "Use stakeholder feedback to identify concerns about job impact, trust, workload, surveillance, accuracy, equity, and public accountability.",
-      "Assign owners and due dates for communication, training, workflow redesign, feedback review, and escalation before deployment begins."
+      "Begin with a workflow-level change analysis. Identify which tasks, handoffs, documents, approvals, dashboards, public interactions, and decisions may change if the AI use case moves forward. Do not describe the change only as a technology implementation; describe how daily work will feel different for staff and supervisors.",
+      "Use the Change Management Plan to document affected roles, likely concerns, communication needs, training needs, support needs, and escalation pathways. The plan should be created while the workflow can still be adjusted, not after the vendor, pilot design, or timeline is already fixed.",
+      "Use the Resistance and Barrier Identification tool to surface specific concerns about workload, job security, surveillance, accuracy, trust, equity, privacy, community perception, and usability. Treat these concerns as implementation evidence. Some concerns may be resolved through communication; others may require redesign, governance review, or a decision to pause.",
+      "Use the Staff Communication and FAQ Template to prepare messages that answer practical questions: what is changing, why it is changing, what is not changing, what humans still decide, what staff should do if something looks wrong, and where staff can get help. Link communications to CDC CERC and plain-language principles so messages are concrete and trustworthy.",
+      "Build change milestones into the roadmap before deployment begins. Milestones should include communication release dates, supervisor briefings, training deadlines, office hours, feedback review points, and governance checkpoints. The organization hub workplan should make those milestones visible and assignable.",
+      "Define what evidence will show that the organization is ready for deployment. Evidence may include training completion, supervisor readiness, unresolved barrier counts, workflow testing results, communication completion, and governance approval of remaining risks."
     ],
     decisionChecks: [
       "Who is most affected by the proposed AI-supported workflow?",
@@ -841,11 +842,12 @@ const playGuideDeepDive = {
     purpose: "Select AI use cases that are mission-aligned, feasible, governable, equitable, and worth the public health investment.",
     timing: "Use this play after vision, readiness, governance, stakeholder engagement, workforce planning, and change planning have created enough information to compare proposed AI uses responsibly.",
     implementationTips: [
-      "Require every candidate use case to start with a public health problem statement, not a preferred product or model.",
-      "Score use cases across value, feasibility, data readiness, equity impact, privacy and legal risk, security, workforce impact, sustainability, and stakeholder acceptability.",
-      "Separate low-risk internal productivity uses from consequential uses that affect services, surveillance, resource allocation, public communication, or individual or community outcomes.",
-      "Route higher-risk use cases through governance before procurement, vendor demos, pilots, or operational commitments.",
-      "Maintain a record of approved, deferred, revised, and rejected use cases so decisions are transparent and revisitable."
+      "Require every proposed use case to begin with a public health problem statement. A strong problem statement names the affected population or workflow, the current limitation, why the limitation matters, and what improvement would be meaningful. Avoid starting with a model, vendor, or tool and then searching for a problem to fit it.",
+      "Use the Use Case Scoring Matrix to compare public health value, feasibility, data readiness, equity impact, privacy and legal risk, security, workforce impact, sustainability, and stakeholder acceptability. The scoring process should help the governance body understand tradeoffs, not create a false sense of mathematical certainty.",
+      "Apply the Equity Impact Assessment Checklist, Missing Voices Analysis, Human-Centered AI Decision Rule Checklist, and Environmental and Resource Impact Review before ranking use cases. These tools help identify whether the apparent efficiency gain could create disparate impacts, invisible burdens, over-automation, or resource costs that should change the priority decision.",
+      "Separate low-risk internal productivity uses from consequential uses that affect services, surveillance, resource allocation, public communication, individual outcomes, community outcomes, or partner obligations. Consequential uses should move through more formal governance review before vendor engagement, procurement, or pilot approval.",
+      "Document why each use case is approved, deferred, revised, or rejected. The record should include conditions for moving forward, unresolved questions, required tools, assigned owners, and whether additional stakeholder engagement, data readiness work, or funding review is required.",
+      "Use the Resources page to ground use case review in NIST AI RMF, HHS Civil Rights and AI, fairness literature, and ASPPH guidance on human-centered AI, public transparency, missing voices analysis, and systems-level risk."
     ],
     decisionChecks: [
       "Does the use case solve a clearly defined public health problem?",
@@ -864,11 +866,12 @@ const playGuideDeepDive = {
     purpose: "Identify funding sources, cost assumptions, procurement implications, and sustainment strategies before the implementation roadmap is finalized.",
     timing: "Complete this play after use cases have been prioritized and before the agency commits to pilots, procurement, staffing, vendor services, technology changes, or roadmap sequencing that requires ongoing resources.",
     implementationTips: [
-      "Estimate lifecycle costs, including planning, staff time, governance, data preparation, infrastructure, licensing, vendor support, training, change management, validation, monitoring, evaluation, and sustainment.",
-      "Map approved and proposed activities to possible funding sources and allowable cost categories, including data modernization, workforce, infrastructure, preparedness, equity, environmental health, and program-specific funding.",
-      "Identify which activities can be supported by time-limited grants and which require ongoing operating funds.",
-      "Create a funding gap register with decisions needed, contingency options, and consequences if funding is not secured.",
-      "Prepare leadership and governance briefings that distinguish pilot affordability from long-term sustainability."
+      "Start with the full lifecycle, not the pilot budget. Estimate planning time, governance review, staff participation, data preparation, infrastructure, cybersecurity, licensing, vendor support, procurement, training, change management, validation, monitoring, evaluation, public communication, maintenance, and eventual retirement or replacement.",
+      "Use the Funding Opportunity Crosswalk to map each proposed activity to possible allowable funding sources. Data modernization, workforce development, infrastructure, preparedness, health equity, environmental health, and program-specific grants may support different parts of the work, but not every source will support every cost.",
+      "Use the Budget and Sustainability Planning Worksheet to distinguish one-time costs from recurring costs. A pilot may be affordable because staff absorb the work informally, but a production system may require formal support, ongoing licensing, monitoring, retraining, and governance time.",
+      "Use the Environmental and Resource Impact Review when compute, hosting, data storage, vendor infrastructure, or data center impacts may create cost, sustainability, or environmental justice considerations. Those issues should be visible before the roadmap is finalized.",
+      "Create a funding gap register that names each unfunded requirement, the decision needed, the owner, the deadline, and the consequence if funding is not secured. This prevents the department from approving use cases that depend on unfunded infrastructure, staffing, or sustainment.",
+      "Prepare a leadership and governance briefing that separates pilot affordability from long-term sustainability. The briefing should identify which activities can begin now, which require conditional approval, and which should wait until funding or sustainment is clearer."
     ],
     decisionChecks: [
       "Can the agency fund the full lifecycle, not just the pilot?",
@@ -887,11 +890,12 @@ const playGuideDeepDive = {
     purpose: "Convert approved and resourced AI use cases into a sequenced roadmap with dependencies, milestones, decision gates, owners, and resource assumptions.",
     timing: "Develop the roadmap after use cases have been prioritized and funding assumptions are clear, and before build, deployment, or scale activities begin in earnest.",
     implementationTips: [
-      "Sequence projects by dependency and risk, including governance review, data readiness, technology readiness, workforce preparation, change support, funding, and evaluation requirements.",
-      "Create decision gates that define what evidence is needed before moving from concept to pilot, from pilot to deployment, and from deployment to scale.",
-      "Show shared dependencies across use cases, such as data infrastructure, system access, vendor review, communications review, privacy review, funding constraints, and monitoring dashboards.",
-      "Assign owners for milestones and make unresolved risks visible rather than hiding them in project notes.",
-      "Review the roadmap regularly with governance and leadership so priorities can change when capacity, funding, or risk conditions change."
+      "Use the AI Implementation Timeline to convert approved use cases into sequenced work. The timeline should show dependencies, owners, governance gates, funding assumptions, procurement steps, data readiness activities, workforce milestones, change management milestones, validation tasks, and monitoring preparation.",
+      "Sequence work by dependency and risk rather than enthusiasm. A project with strong leadership support may still need to wait if data access, privacy review, stakeholder engagement, procurement terms, or staff training are not ready. Conversely, some foundational work may serve several use cases and should be scheduled early.",
+      "Use the AI Bridge Professional Role Guide to assign someone to translate between program goals, technical dependencies, governance requirements, procurement language, and implementation timing. Without that translation function, roadmap risks often stay hidden until late in the project.",
+      "Create decision gates for moving from concept to pilot, pilot to deployment, and deployment to scale. Each gate should name the evidence required, the approving body, the documents or tools that must be complete, and the conditions that would trigger pause, redesign, or retirement.",
+      "Make shared dependencies visible across use cases. Shared dependencies may include data pipelines, cloud environments, vendor security review, public communication review, legal analysis, monitoring dashboards, training modules, or funding deadlines.",
+      "Review the roadmap regularly with governance and leadership. The roadmap should change when staffing, funding, vendor availability, data quality, policy requirements, or risk conditions change. A roadmap that cannot change will quickly become a presentation, not a management tool."
     ],
     decisionChecks: [
       "Which dependencies must be completed before each use case can safely move forward?",
@@ -910,12 +914,12 @@ const playGuideDeepDive = {
     purpose: "Activate change support while AI-supported workflows are piloted or deployed.",
     timing: "Use this play when staff are preparing to use, test, support, supervise, or respond to an AI-supported workflow in real operational conditions.",
     implementationTips: [
-      "Deliver role-specific training close to the time of actual use, with practice scenarios and clear examples of acceptable and unacceptable AI use.",
-      "Use the role-based training tracker to confirm that affected roles have completed required learning modules before workflow changes go live.",
-      "Publish staff communications and FAQs that explain purpose, workflow impact, human review, limitations, escalation, and where to get help.",
-      "Use office hours, champions, supervisor check-ins, and feedback forms to identify adoption barriers early.",
-      "Track concerns, incidents, confusion, workarounds, and workload impacts as implementation evidence.",
-      "Report unresolved issues to governance so decisions to continue, revise, pause, or scale reflect staff experience."
+      "Use the Change Management Plan as the operational checklist during pilot and deployment. Confirm that communication, training, supervisor support, office hours, feedback collection, escalation routes, and adoption monitoring are active rather than still planned.",
+      "Use the Role-Based Training Plan and Completion Tracker to verify that affected staff completed the required learning modules before they are expected to use the AI-supported workflow. Training should happen close enough to actual use that staff can remember the steps, limitations, and escalation expectations.",
+      "Use the Staff Communication and FAQ Template to publish practical guidance for staff and supervisors. The FAQ should explain the purpose of the AI-supported workflow, what staff must review, what the tool cannot do, what data safeguards apply, what to do when output seems wrong, and where to get help.",
+      "Use the Resistance and Barrier Identification tool during deployment, not only during planning. Capture workarounds, confusion, workload changes, distrust, usability problems, privacy concerns, equity concerns, and supervisor capacity issues. Treat those findings as evidence for governance, not as complaints to be managed away.",
+      "Use the Plain-Language Public Notice Template if deployment affects public-facing services, communications, eligibility, outreach, surveillance, or resource allocation. Public-facing deployment should not rely only on internal staff messaging.",
+      "Create a feedback-to-decision loop. Unresolved barriers, safety concerns, incidents, or evidence of poor adoption should be routed to governance with a recommendation to continue, revise, pause, narrow scope, add supports, or delay expansion."
     ],
     decisionChecks: [
       "Are staff trained on the exact workflow they will use?",
@@ -934,11 +938,12 @@ const playGuideDeepDive = {
     purpose: "Build, validate, pilot, and deploy AI solutions only when governance, data, security, equity, workforce, and change requirements are ready.",
     timing: "Use this play after an AI use case is approved, resourced, supported by change planning, and ready for controlled development or pilot testing.",
     implementationTips: [
-      "Confirm data quality, data access, data use permissions, privacy requirements, security controls, vendor terms, and system integration needs before development starts.",
-      "Define validation criteria before testing, including accuracy, reliability, limitations, human review, subgroup performance, equity concerns, and unacceptable failure modes.",
-      "Keep pilots small, time-bounded, documented, and governed. A pilot should produce evidence, not a presumption of scale.",
-      "Use dashboards, user feedback, incident logs, and validation results to support decisions about revise, scale, pause, retire, or replace.",
-      "Document approval conditions and handoffs to governance, monitoring, evaluation, and operations before deployment expands."
+      "Before development begins, confirm that governance approval covers the actual data, workflow, users, vendor, hosting environment, and decision context. If any of those elements change, the use case may need additional review before moving forward.",
+      "Use Tiered Data Classification to confirm what data can be used, where it can be processed, who can access it, whether vendor access is allowed, whether a business associate agreement or data use agreement is required, and whether a restricted environment is needed.",
+      "Use the Human-Centered AI Decision Rule Checklist to define human review, override, escalation, accountability, and limits on automation. The tool should make clear what the AI may support and what a human must decide.",
+      "Use the Procurement and Vendor Addendum for vendor-supported builds so documentation, model validation, privacy, security, accessibility, support, audit, data rights, and exit requirements are enforceable rather than aspirational.",
+      "Use the Model Testing and Validation Protocol before deployment to define accuracy, reliability, subgroup performance, limitations, unacceptable failure modes, and human review requirements. Vendor demonstrations and general benchmarks are not enough for public health deployment.",
+      "Keep pilots small, time-bounded, documented, and governed. Use the pilot dashboard, user feedback, incident logs, and validation results to decide whether to revise, scale, pause, retire, or replace the system."
     ],
     decisionChecks: [
       "What evidence proves the solution is ready for pilot, deployment, or scale?",
@@ -957,11 +962,12 @@ const playGuideDeepDive = {
     purpose: "Execute governance and oversight after AI systems are approved, piloted, deployed, or placed into ongoing use.",
     timing: "Use this play once AI systems or AI-supported workflows require recurring review, policy updates, incident review, audit, inventory maintenance, or lifecycle decisions.",
     implementationTips: [
-      "Maintain a current AI system inventory with owners, purpose, risk level, approval status, monitoring cadence, review dates, and retirement decisions.",
-      "Schedule recurring governance reviews of incidents, audit findings, monitoring results, validation records, data use agreements, policy changes, and user feedback.",
-      "Use clear criteria for decisions to continue, revise, pause, retire, or replace an AI system.",
-      "Track corrective actions with owners, deadlines, evidence of closure, and unresolved barriers.",
-      "Keep governance records auditable and easy for leadership, legal, privacy, equity, IT, and program owners to use."
+      "Use the AI system inventory as the central record of approved, piloted, deployed, paused, retired, and rejected AI uses. Each entry should identify the owner, purpose, data involved, risk level, approval status, monitoring cadence, review dates, approval conditions, and lifecycle status.",
+      "Schedule recurring governance reviews that examine incidents, audit findings, monitoring results, validation records, data use agreements, public notices, user feedback, equity findings, policy changes, and vendor performance. Oversight should be a standing management process, not an annual compliance exercise.",
+      "Use the Incident Response Checklist to route unsafe outputs, privacy events, bias concerns, technical failures, or unexpected harms through a documented response process. The process should identify who can pause use, who must be notified, what evidence is preserved, and how corrective action is tracked.",
+      "Use the Compliance Audit Checklist to periodically confirm that legal, privacy, security, procurement, accessibility, civil rights, documentation, and governance requirements are being met. Audit results should produce decisions and corrective actions, not just a completed checklist.",
+      "Use the Policy Update and Version Control Log when policies, approval conditions, risk categories, public notices, or review requirements change. Governance records should show what changed, why it changed, who approved it, and when affected users were notified.",
+      "Use clear criteria for decisions to continue, revise, pause, retire, or replace a system. Each decision should include an owner, deadline, required evidence, and follow-up review date."
     ],
     decisionChecks: [
       "Is each approved system still operating within its approved purpose and risk conditions?",
@@ -980,11 +986,12 @@ const playGuideDeepDive = {
     purpose: "Monitor and evaluate whether AI systems remain effective, reliable, equitable, safe, and useful over time.",
     timing: "Use this play for deployed or operational AI-supported workflows that require performance monitoring, equity checks, outcome evaluation, model drift review, user feedback, and continuous improvement.",
     implementationTips: [
-      "Define monitoring indicators before full deployment, including performance, reliability, data quality, equity, subgroup results, incidents, user feedback, adoption, workload, and public health outcomes.",
-      "Use dashboards and periodic reports to show trends over time rather than one-time pilot results.",
-      "Compare AI-supported workflow results with baseline performance, human review findings, and stakeholder experience.",
-      "Escalate signals that show drift, performance loss, unfair impacts, usability problems, privacy concerns, or reduced public health value.",
-      "Feed monitoring results back into governance, workforce development, change support, policy updates, and roadmap decisions."
+      "Define monitoring indicators before full deployment. Measures should include technical performance, reliability, data quality, equity, subgroup results, drift, incidents, user feedback, adoption, workload, public health outcomes, and whether the system still supports the original public health purpose.",
+      "Use the Performance Monitoring Dashboard to track trends over time instead of relying on one-time pilot results. The dashboard should show whether performance is stable, whether data quality has changed, whether staff are using the workflow as intended, and whether incidents or workarounds are increasing.",
+      "Use the Equity and Disparity Impact Monitoring tool to examine subgroup performance, access barriers, language access, geographic differences, disability access, and other context-specific equity concerns. Overall performance can look acceptable while specific groups experience lower accuracy, reduced access, or greater burden.",
+      "Use the AI Evaluation and Outcomes Reporting tool to connect model performance to public health value. Evaluation should ask whether the system improves timeliness, quality, workload, communication, targeting, prevention, service delivery, or outcomes enough to justify continued use.",
+      "Use the Human-Centered AI Decision Rule Checklist during monitoring to confirm that automation has not drifted beyond the approved human role and decision boundaries. Monitoring should include the workflow, not just the model.",
+      "Escalate findings that show drift, performance loss, unfair impacts, usability problems, privacy concerns, staff workarounds, or reduced public health value. Monitoring results should feed governance, workforce development, change support, policy updates, funding decisions, and roadmap revisions."
     ],
     decisionChecks: [
       "Is the system still producing public health value?",
@@ -1106,8 +1113,8 @@ const addedToolGuidanceByPlay = {
   ],
   6: [
     [23, "Use the Change Management Plan to identify workflow changes, affected staff groups, adoption risks, training needs, communication points, and escalation channels before deployment."],
-    [28, "Use the Staff Communication and FAQ Template to prepare clear answers about what is changing, what is not changing, what staff should do, and how concerns will be handled."],
-    [29, "Use the Resistance and Barrier Identification tool to surface workflow, trust, usability, privacy, equity, and workload concerns early enough to adjust the project."]
+    [29, "Use the Staff Communication and FAQ Template to prepare clear answers about what is changing, what is not changing, what staff should do, and how concerns will be handled."],
+    [30, "Use the Resistance and Barrier Identification tool to surface workflow, trust, usability, privacy, equity, and workload concerns early enough to adjust the project."]
   ],
   7: [
     [3, "Use the Equity Impact Assessment Checklist before prioritizing a use case so potential disparate impacts are considered alongside feasibility and expected benefit."],
@@ -1116,18 +1123,22 @@ const addedToolGuidanceByPlay = {
     [22, "Use the Missing Voices Analysis to check whether proposed use cases reflect the needs and risks of the communities most likely to be affected."]
   ],
   8: [
-    [27, "Use the AI Bridge Professional Role Guide to identify who will translate between program goals, technical dependencies, governance gates, procurement, and implementation timing."],
-    [31, "Use the AI Implementation Timeline to turn the roadmap into sequenced work with dependencies, owners, decision gates, and realistic dates."]
+    [33, "Use the Funding Strategy Checklists to match AI activities with allowable funding sources, grant timing, budget categories, and sustainability requirements."],
+    [35, "Use the AI Total Cost of Ownership and Sustainability Worksheet to estimate pilot, scale, operations, staffing, infrastructure, procurement, training, monitoring, and evaluation costs."],
+    [5, "Use the Environmental and Resource Impact Review when compute, hosting, storage, vendor infrastructure, or sustainability concerns may affect funding or procurement decisions."]
   ],
   9: [
-    [5, "Use the Environmental and Resource Impact Review to make sure funding plans account for compute, hosting, vendor, infrastructure, sustainability, and long-term operating costs."],
-    [32, "Use the Vendor Evaluation Checklist to compare vendors against governance, transparency, privacy, security, accessibility, validation, and support expectations."],
-    [34, "Use the Procurement and Vendor Addendum to translate responsible AI requirements into contract language, deliverables, audit rights, documentation, and exit terms."]
+    [36, "Use the AI Implementation Timeline to turn approved and resourced use cases into sequenced work with dependencies, owners, governance gates, milestones, and realistic dates."],
+    [37, "Use the Roadmap Dependency and Risk Register to keep unresolved dependencies, risks, mitigation steps, owners, due dates, and escalation decisions visible."],
+    [27, "Use the AI Bridge Professional Role Guide to identify who will translate between program goals, technical dependencies, governance gates, procurement, and implementation timing."]
   ],
   10: [
     [19, "Use the Plain-Language Public Notice Template when deployment affects public-facing communications, services, eligibility, outreach, surveillance, or other community-impacting workflows."],
     [23, "Use the Change Management Plan as the operational checklist for training, office hours, feedback channels, staff support, and adoption monitoring during deployment."],
-    [29, "Use the Resistance and Barrier Identification tool during deployment to detect adoption issues before they become workarounds, distrust, or failed implementation."]
+    [28, "Use the Role-Based Training Plan and Completion Tracker to confirm required learning modules are assigned, completed, and documented before staff are expected to use the workflow."],
+    [29, "Use the Staff Communication and FAQ Template to publish practical deployment guidance for staff and supervisors."],
+    [30, "Use the Resistance and Barrier Identification tool during deployment to detect adoption issues before they become workarounds, distrust, or failed implementation."],
+    [38, "Use the Change Management Execution Dashboard to track training completion, communication delivery, support activity, barriers, escalations, and deployment readiness."]
   ],
   11: [
     [6, "Use the Human-Centered AI Decision Rule Checklist to confirm human review, escalation, override, and accountability rules before pilots or production deployments begin."],
@@ -1144,8 +1155,9 @@ const addedToolGuidanceByPlay = {
   13: [
     [6, "Use the Human-Centered AI Decision Rule Checklist during monitoring to confirm that automation has not drifted beyond the approved human role and decision boundaries."],
     [22, "Use the Missing Voices Analysis to interpret evaluation findings and determine whether monitoring is capturing the groups most likely to experience unintended effects."],
-    [42, "Use Equity and Disparity Impact Monitoring to track subgroup performance, access barriers, and disparate outcomes after deployment."],
-    [43, "Use AI Evaluation and Outcomes Reporting to connect performance results to public health outcomes, operational value, equity, and governance decisions."]
+    [44, "Use the Performance Monitoring Dashboard to track reliability, performance, equity, incident trends, and improvement actions over time."],
+    [47, "Use Equity and Disparity Impact Monitoring to track subgroup performance, access barriers, and disparate outcomes after deployment."],
+    [48, "Use AI Evaluation and Outcomes Reporting to connect performance results to public health outcomes, operational value, equity, and governance decisions."]
   ]
 };
 
@@ -1427,17 +1439,17 @@ const playResources = {
     ["Mehrabi et al. (2021): A survey on bias and fairness in machine learning", "Peer-reviewed overview of bias sources and fairness considerations.", "https://doi.org/10.1145/3457607"]
   ],
   8: [
-    ["CDC Data Modernization Initiative", "Use to align the roadmap with data infrastructure, interoperability, cloud, and analytics modernization.", "https://www.cdc.gov/surveillance/data-modernization/index.html"],
-    ["ONC Trusted Exchange Framework and Common Agreement", "Interoperability and exchange considerations that may affect roadmap dependencies.", "https://www.healthit.gov/topic/interoperability/policy/trusted-exchange-framework-and-common-agreement-tefca"],
-    ["CSTE", "Peer network and implementation resource for data modernization and surveillance planning.", "https://www.cste.org/"],
-    ["PHAB Standards and Measures", "Useful for connecting AI roadmap work to public health performance, quality, and accreditation expectations.", "https://phaboard.org/accreditation-recognition/version-2022/"]
-  ],
-  9: [
     ["Public Health Infrastructure Grant", "Funding source for workforce, data systems, organizational capacity, governance, and health equity work.", "https://www.cdc.gov/infrastructure-phig/php/index.html"],
     ["CDC Data Modernization Initiative", "Funding and strategy context for data infrastructure, interoperability, and analytics capacity.", "https://www.cdc.gov/surveillance/data-modernization/index.html"],
     ["HRSA digital health and telehealth programs", "Relevant to communication, access, rural health, and digital health use cases.", "https://www.hrsa.gov/rural-health/telehealth"],
     ["EPA environmental justice grants", "Relevant to environmental health, GeoAI, heat risk, and environmental justice applications.", "https://www.epa.gov/environmentaljustice/environmental-justice-grants-funding-and-technical-assistance"],
     ["FEMA grants", "Relevant to emergency preparedness, disaster resilience, and response-oriented AI planning.", "https://www.fema.gov/grants"]
+  ],
+  9: [
+    ["CDC Data Modernization Initiative", "Use to align the roadmap with data infrastructure, interoperability, cloud, and analytics modernization.", "https://www.cdc.gov/surveillance/data-modernization/index.html"],
+    ["ONC Trusted Exchange Framework and Common Agreement", "Interoperability and exchange considerations that may affect roadmap dependencies.", "https://www.healthit.gov/topic/interoperability/policy/trusted-exchange-framework-and-common-agreement-tefca"],
+    ["CSTE", "Peer network and implementation resource for data modernization and surveillance planning.", "https://www.cste.org/"],
+    ["PHAB Standards and Measures", "Useful for connecting AI roadmap work to public health performance, quality, and accreditation expectations.", "https://phaboard.org/accreditation-recognition/version-2022/"]
   ],
   10: [
     ["CDC Crisis and Emergency Risk Communication", "Use to support trusted communications during deployment and workflow change.", "https://emergency.cdc.gov/cerc/"],
@@ -4292,6 +4304,7 @@ function renderImplementationPlayGuide(playId) {
   const guidance = playGuidanceDetails[playId];
   const outputs = playOutputDetails[playId] || [play.output];
   const resources = playResources[playId] || [];
+  const howToItems = guide.implementationTips || [];
   main.innerHTML = pageIntro(`Guidance: Play ${play.id}: ${play.title}`, `${guidance.body}`) + `
     <div class="guide-layout">
       <article class="panel guide-page">
@@ -4313,20 +4326,16 @@ function renderImplementationPlayGuide(playId) {
           <ul class="check-list">${play.who.map(x=>`<li>${x}</li>`).join("")}</ul>
         </section>
         <section class="content-section">
-          <h2>Key Questions</h2>
+          <h2>Key Planning Questions</h2>
           <ul>${play.questions.map(x=>`<li>${x}</li>`).join("")}</ul>
         </section>
         <section class="content-section">
-          <h2>Step-by-Step Implementation Guidance</h2>
-          <ol>${play.actions.map(x=>`<li>${x}</li>`).join("")}</ol>
+          <h2>How to Execute This Play</h2>
+          <ol class="expanded-guidance-list">${howToItems.map(x=>`<li>${x}</li>`).join("")}</ol>
         </section>
         ${addedToolGuidanceSection(play.id)}
         <section class="content-section">
-          <h2>Practical Guidance</h2>
-          <ul>${guide.implementationTips.map(x=>`<li>${x}</li>`).join("")}</ul>
-        </section>
-        <section class="content-section">
-          <h2>Decision Checks</h2>
+          <h2>Decision and Governance Checks</h2>
           <ul>${guide.decisionChecks.map(x=>`<li>${x}</li>`).join("")}</ul>
         </section>
         <section class="content-section">
