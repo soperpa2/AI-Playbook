@@ -2672,6 +2672,92 @@ function phaseName(id) { return phases.find(p => p.id === id)?.name || ""; }
 function phaseStartPlay(id) { return plays.find(p => p.phase === id)?.id || 1; }
 function playLink(id) { const p = plays.find(x => x.id === id); return `<a href="#/plays/${id}">Play ${id}: ${p.title}</a>`; }
 function toolLink(id) { const t = tools.find(x => x.id === id); return `<a href="#/toolkit/${id}">Tool ${id}: ${t.title}</a>`; }
+function normalizeOutputText(text) {
+  return String(text || "").replace(/\.$/, "");
+}
+function outputPurpose(output) {
+  const text = normalizeOutputText(output);
+  const lower = text.toLowerCase();
+  if (lower.includes("vision")) return "Creates a shared statement of what the department wants AI to accomplish and what public value should guide later decisions.";
+  if (lower.includes("principle")) return "Translates responsible AI values into practical commitments that can be reflected in policy, governance review, training, and communications.";
+  if (lower.includes("guardrail") || lower.includes("prohibited") || lower.includes("boundary")) return "Defines the limits of acceptable AI use so staff, leaders, vendors, and partners understand what is allowed, restricted, or not permitted.";
+  if (lower.includes("governance") || lower.includes("committee") || lower.includes("board") || lower.includes("approval")) return "Creates clear authority, review responsibilities, decision rights, and accountability before AI work moves forward.";
+  if (lower.includes("score") || lower.includes("readiness") || lower.includes("stage")) return "Turns assessment evidence into a practical signal about current capability, priority gaps, and the responsible pace for implementation.";
+  if (lower.includes("gap") || lower.includes("weak") || lower.includes("blocking") || lower.includes("parallel")) return "Identifies the specific conditions that must be addressed before pilots, procurement, deployment, or scaling can proceed safely.";
+  if (lower.includes("stakeholder") || lower.includes("engagement") || lower.includes("community") || lower.includes("voices")) return "Documents whose perspectives are needed, how input was gathered, and how concerns shape design, governance, implementation, and monitoring.";
+  if (lower.includes("raci") || lower.includes("owner") || lower.includes("owners") || lower.includes("responsibil")) return "Clarifies who leads the work, who approves it, who contributes expertise, and who must be kept informed.";
+  if (lower.includes("policy") || lower.includes("standard") || lower.includes("documentation")) return "Converts expectations into durable requirements that can be reviewed, updated, audited, and used consistently across programs.";
+  if (lower.includes("inventory")) return "Creates the central record of AI systems, owners, purposes, data involved, approval status, monitoring cadence, and lifecycle decisions.";
+  if (lower.includes("risk") || lower.includes("incident") || lower.includes("safety") || lower.includes("drift") || lower.includes("bias")) return "Makes risks visible, assignable, and trackable so governance can require mitigation, monitoring, pause, or redesign when needed.";
+  if (lower.includes("data") || lower.includes("privacy") || lower.includes("security") || lower.includes("classification")) return "Documents data sensitivity, access limits, privacy/security requirements, and the approved environment for the AI use.";
+  if (lower.includes("training") || lower.includes("workforce") || lower.includes("competenc") || lower.includes("champion")) return "Ensures staff have the knowledge, role clarity, support, and confidence needed to use or oversee AI responsibly.";
+  if (lower.includes("communication") || lower.includes("faq") || lower.includes("notice")) return "Provides clear, plain-language messaging so staff, partners, or the public understand what is changing and how to ask questions or raise concerns.";
+  if (lower.includes("fund") || lower.includes("cost") || lower.includes("sustain")) return "Shows whether the department can fund the full lifecycle of the work, not only the pilot or initial purchase.";
+  if (lower.includes("roadmap") || lower.includes("timeline") || lower.includes("milestone") || lower.includes("dependency")) return "Turns approved work into a sequenced plan with dependencies, owners, decision gates, and update points.";
+  if (lower.includes("validation") || lower.includes("testing") || lower.includes("pilot") || lower.includes("deployment") || lower.includes("go-live")) return "Provides the evidence needed to decide whether the AI-supported workflow is ready to test, deploy, scale, revise, or pause.";
+  if (lower.includes("monitor") || lower.includes("dashboard") || lower.includes("evaluation") || lower.includes("outcome") || lower.includes("improvement")) return "Creates a recurring evidence base for evaluating performance, equity, reliability, usefulness, and the need for corrective action.";
+  return "Documents a decision, artifact, or evidence point needed to move from planning into accountable implementation.";
+}
+function outputUse(output, play) {
+  const text = normalizeOutputText(output);
+  const lower = text.toLowerCase();
+  if (lower.includes("next") || lower.includes("action plan") || lower.includes("due date")) return "Use it to assign work in the organization hub or workplan, set deadlines, and confirm what should happen before the next play begins.";
+  if (lower.includes("briefing") || lower.includes("summary")) return "Use it for leadership, governance, or partner review so decision-makers can see the evidence, constraints, and decisions needed.";
+  if (lower.includes("governance") || lower.includes("approval") || lower.includes("policy") || lower.includes("charter")) return "Use it as a formal governance record and as the basis for approval, revision, escalation, audit, or policy update decisions.";
+  if (lower.includes("stakeholder") || lower.includes("community") || lower.includes("voices")) return "Use it to adjust the use case, workflow, communications, equity review, monitoring plan, and future engagement activities.";
+  if (lower.includes("score") || lower.includes("gap") || lower.includes("readiness") || lower.includes("blocking") || lower.includes("parallel")) return "Use it to decide which plays and tools should be completed first, which work can proceed in parallel, and which activities should wait.";
+  if (lower.includes("risk") || lower.includes("incident") || lower.includes("barrier") || lower.includes("concern")) return "Use it to assign mitigation owners, track resolution, and escalate unresolved issues to governance or leadership.";
+  if (lower.includes("training") || lower.includes("workforce") || lower.includes("competenc")) return "Use it to assign learning modules, verify completion, and determine whether staff are ready for the next implementation step.";
+  if (lower.includes("fund") || lower.includes("cost") || lower.includes("sustain")) return "Use it to make roadmap, grant, procurement, scale, and sustainment decisions before commitments exceed available resources.";
+  if (lower.includes("roadmap") || lower.includes("timeline") || lower.includes("milestone")) return "Use it to manage sequencing, deadlines, dependencies, governance gates, and progress reporting.";
+  if (lower.includes("validation") || lower.includes("testing") || lower.includes("pilot") || lower.includes("deployment") || lower.includes("go-live")) return "Use it as evidence for go/no-go, revise, pause, scale, or retire decisions.";
+  if (lower.includes("monitor") || lower.includes("dashboard") || lower.includes("evaluation") || lower.includes("outcome")) return "Use it during recurring oversight to identify trends, equity issues, performance loss, staff adoption problems, and improvement actions.";
+  return `Use it to document completion of Play ${play.id}, support handoff to the next play, and preserve an auditable record of decisions and assumptions.`;
+}
+function outputsPurposeTable(play, overrideOutputs) {
+  const catalog = masterOutputPurposeCatalog();
+  const outputs = overrideOutputs
+    ? overrideOutputs.map(output => ({ output, purpose: outputPurpose(output), use: outputUse(output, play) }))
+    : catalog.filter(row => row.playId === play.id);
+  return `<div class="table-wrap"><table><thead><tr><th>Output</th><th>Purpose</th><th>How It Should Be Used</th></tr></thead><tbody>
+    ${outputs.map(row=>`<tr><td>${row.output}</td><td>${row.purpose}</td><td>${row.use}</td></tr>`).join("")}
+  </tbody></table></div>`;
+}
+function masterOutputPurposeCatalog() {
+  return plays.flatMap(play => (playOutputDetails[play.id] || [play.output]).map(output => ({
+    playId: play.id,
+    playTitle: play.title,
+    output,
+    purpose: outputPurpose(output),
+    use: outputUse(output, play)
+  })));
+}
+function beforeBeginForPlay(play, guide) {
+  if (play.id === 1) return "Begin with leadership permission to convene the workshop, a facilitator, a preliminary list of known or suspected AI uses, and enough internal participation to discuss strategy, data, privacy, equity, workforce, and operations.";
+  if (play.id === 2) return "Begin after the department has a basic AI vision or interim guardrails. Gather evidence about governance, data infrastructure, workforce capacity, equity and engagement, partnerships, privacy, security, and current AI activity.";
+  if (play.id === 3) return "Begin after leadership agrees that AI use requires formal oversight. Bring forward Play 1 guardrails, Play 2 readiness findings, any known AI uses, and unresolved legal, privacy, IT, equity, procurement, or leadership questions.";
+  if (play.id === 4) return "Begin with the readiness findings, governance pathway, and an initial sense of which workflows or communities may be affected. Engagement should occur early enough that stakeholder input can change decisions.";
+  return `${guide.timing} Bring forward prior play outputs, unresolved decisions, relevant tool results, and any governance conditions that must shape this play.`;
+}
+function involvementGuidanceForPlay(play) {
+  const roles = play.who || [];
+  const lead = roles[0] || "Designated play lead";
+  const reviewers = roles.slice(1, 5).join(", ") || "governance, program, data, legal/privacy, IT/security, equity, communications, and workforce representatives as relevant";
+  return `<p><strong>Lead:</strong> ${lead}. The lead should coordinate meetings, collect inputs, assign tool completion, and bring unresolved decisions to governance or leadership.</p>
+    <p><strong>Contributors and reviewers:</strong> ${reviewers}. Involve contributors when their expertise can still change the plan, not after the play is effectively complete.</p>
+    <p><strong>Participation approach:</strong> Use short working sessions for drafting, targeted review for legal/privacy/security/equity issues, and a decision meeting when approval, pause, revision, or sequencing choices are needed.</p>`;
+}
+function completionCriteriaForPlay(play) {
+  const outputs = playOutputDetails[play.id] || [play.output];
+  const sample = outputs.slice(0, 3);
+  return `<ul class="check-list">
+    <li>The required people have contributed, reviewed, or approved the work appropriate to their role.</li>
+    <li>The supporting tools have been completed or intentionally deferred with a documented reason.</li>
+    <li>Key outputs are complete enough to guide decisions, including ${sample.map(normalizeOutputText).join(", ")}.</li>
+    <li>Open risks, assumptions, disagreements, and governance decisions are documented with owners and due dates.</li>
+    <li>The department knows which play, tool, approval, or implementation action comes next.</li>
+  </ul>`;
+}
 function breadcrumbTrail() {
   const [path, param] = (location.hash || "#/").replace("#/", "").split("/");
   const key = path || "";
@@ -3506,13 +3592,13 @@ function renderVisionWorkshopGuide() {
     <div class="guide-layout">
       <article class="panel guide-page">
         <section class="content-section">
-          <h2>Purpose</h2>
+          <h2>Purpose of This Guidance</h2>
           <p>An AI Vision & Principles Workshop helps a public health department establish a shared direction for responsible AI before individual tools, vendors, or use cases begin driving decisions. The workshop should produce three practical outputs: an agency-level AI vision statement, a set of responsible AI principles, and an initial list of guardrails that define what the department will and will not allow.</p>
           <p>This workshop should be conducted before the department launches formal AI pilots, procures AI-enabled tools, or authorizes staff use of AI in consequential workflows. It anchors later governance, readiness assessment, use case prioritization, and implementation work.</p>
         </section>
 
         <section class="content-section">
-          <h2>Recommended Participants</h2>
+          <h2>Who to Involve and How</h2>
           <p>Invite a cross-functional group of internal stakeholders who can speak to strategy, operations, data, law, equity, workforce, and implementation realities. The workshop should not be limited to IT or data staff.</p>
           <div class="table-wrap"><table><thead><tr><th>Role</th><th>Why They Should Participate</th></tr></thead><tbody>
             ${[
@@ -3531,7 +3617,7 @@ function renderVisionWorkshopGuide() {
         </section>
 
         <section class="content-section">
-          <h2>Preparation Before the Workshop</h2>
+          <h2>Before You Begin</h2>
           <p>Send participants a short pre-read at least one week in advance. Keep it practical and focused.</p>
           <ul class="check-list">
             <li>A plain-language overview of generative and agentic AI.</li>
@@ -3650,17 +3736,12 @@ function renderVisionWorkshopGuide() {
 
         ${addedToolGuidanceSection(1)}
         <section class="content-section">
-          <h2>Recommended Workshop Outputs</h2>
-          <ul class="check-list">
-            <li>Draft AI vision statement.</li>
-            <li>Draft responsible AI principles.</li>
-            <li>Initial guardrails and boundaries.</li>
-            <li>List of current known or suspected AI uses.</li>
-            <li>Initial strategic priority areas.</li>
-            <li>List of unresolved issues requiring legal, privacy, IT, equity, or leadership review.</li>
-            <li>Recommended next steps and owners.</li>
-            <li>Decision on whether to establish or convene an AI governance committee.</li>
-          </ul>
+          <h2>Outputs and How They Are Used</h2>
+          ${outputsPurposeTable(plays.find(p=>p.id===1))}
+        </section>
+        <section class="content-section">
+          <h2>Completion Criteria</h2>
+          ${completionCriteriaForPlay(plays.find(p=>p.id===1))}
         </section>
 
         <section class="content-section">
@@ -3705,7 +3786,7 @@ function renderReadinessAssessmentGuide() {
     <div class="guide-layout">
       <article class="panel guide-page">
         <section class="content-section">
-          <h2>Purpose</h2>
+          <h2>Purpose of This Guidance</h2>
           <p>The AI Readiness Assessment helps a public health department understand whether it has the leadership, governance, data, workforce, equity, partnership, privacy, and security capacity needed to prepare for responsible AI use.</p>
           <p>Use the assessment as a planning tool, not as an audit, compliance test, or pass/fail grade. Its purpose is to identify strengths, gaps, risks, and the next plays to complete before selecting, piloting, or scaling AI use cases.</p>
           <div class="callout blue"><strong>Key rule:</strong> The total score shows the department's overall readiness pattern. The section scores determine what to do next.</div>
@@ -3724,7 +3805,7 @@ function renderReadinessAssessmentGuide() {
         </section>
 
         <section class="content-section">
-          <h2>Who Should Participate</h2>
+          <h2>Who to Involve and How</h2>
           <p>The assessment should be completed by a cross-functional group. It should not be completed by one person alone, and it should not be delegated only to IT, data, or informatics staff.</p>
           <div class="table-wrap"><table><thead><tr><th>Stakeholder Group</th><th>Role in the Assessment</th></tr></thead><tbody>
             ${[
@@ -3898,6 +3979,14 @@ function renderReadinessAssessmentGuide() {
           <p>Each reassessment should compare scores over time and update the gap register.</p>
         </section>
         ${addedToolGuidanceSection(2)}
+        <section class="content-section">
+          <h2>Outputs and How They Are Used</h2>
+          ${outputsPurposeTable(plays.find(p=>p.id===2))}
+        </section>
+        <section class="content-section">
+          <h2>Completion Criteria</h2>
+          ${completionCriteriaForPlay(plays.find(p=>p.id===2))}
+        </section>
       </article>
       <aside class="detail-card-list">
         <section class="panel"><h2>Related Play</h2><p>${playLink(2)}</p></section>
@@ -3914,7 +4003,7 @@ function renderAIGovernanceGuide() {
     <div class="guide-layout">
       <article class="panel guide-page">
         <section class="content-section">
-          <h2>Purpose</h2>
+          <h2>Purpose of This Guidance</h2>
           <p>AI governance is the set of structures, policies, roles, review processes, documentation requirements, and accountability mechanisms that ensure artificial intelligence is used responsibly, equitably, safely, and legally in a public health department.</p>
           <p>The goal is to create a department-wide system that ensures all AI work is authorized, accountable, documented, monitored, and aligned with public health values before any project begins.</p>
           <div class="callout blue"><strong>Core principle:</strong> Governance must exist before use cases are selected, vendors are engaged, or pilots are approved. There should be no situation where "the system decided" without a named human owner accountable for performance and compliance.</div>
@@ -4134,6 +4223,14 @@ function renderAIGovernanceGuide() {
           </ul>
         </section>
         ${addedToolGuidanceSection(3)}
+        <section class="content-section">
+          <h2>Outputs and How They Are Used</h2>
+          ${outputsPurposeTable(plays.find(p=>p.id===3))}
+        </section>
+        <section class="content-section">
+          <h2>Completion Criteria</h2>
+          ${completionCriteriaForPlay(plays.find(p=>p.id===3))}
+        </section>
       </article>
       <aside class="detail-card-list">
         <section class="panel"><h2>Related Play</h2><p>${playLink(3)}</p></section>
@@ -4150,7 +4247,7 @@ function renderStakeholderEngagementGuide() {
     <div class="guide-layout">
       <article class="panel guide-page">
         <section class="content-section">
-          <h2>Purpose</h2>
+          <h2>Purpose of This Guidance</h2>
           <p>Identify, map, and engage the internal and external stakeholders who should shape AI planning, governance, use case selection, implementation, monitoring, and oversight.</p>
         </section>
         <section class="content-section">
@@ -4160,7 +4257,7 @@ function renderStakeholderEngagementGuide() {
           <div class="callout blue"><strong>Sequencing rule:</strong> Engage stakeholders early enough that their input can change the decision.</div>
         </section>
         <section class="content-section">
-          <h2>Who Should Participate</h2>
+          <h2>Who to Involve and How</h2>
           <ul class="check-list">
             ${["AI governance committee or board", "Health officer or executive sponsor", "Program owners", "Informatics, epidemiology, data, and analytics staff", "IT and cybersecurity staff", "Legal, privacy, and compliance staff", "Equity and community engagement staff", "Communications staff", "Workforce development or HR staff", "Frontline public health staff", "Local health departments, regional offices, or field staff, where applicable", "Community-based organizations", "Tribal representatives or tribal public health partners, where applicable", "Health systems, laboratories, providers, or data-sharing partners", "Academic or technical partners", "Vendors or implementation partners, where appropriate", "Members of communities that may be affected by AI-supported decisions, services, communications, outreach, surveillance, or resource allocation"].map(x=>`<li>${x}</li>`).join("")}
           </ul>
@@ -4172,7 +4269,7 @@ function renderStakeholderEngagementGuide() {
           </ul>
         </section>
         <section class="content-section">
-          <h2>Step-by-Step Implementation Guidance</h2>
+          <h2>How to Execute This Play</h2>
           ${[
             ["Define the purpose of engagement.", "Clarify whether engagement is intended to inform governance, identify use cases, assess operational risks, strengthen equity review, support implementation, prepare communications, or monitor deployed systems."],
             ["Identify internal stakeholders.", "Map the internal roles, programs, and offices that may use, approve, support, regulate, or be affected by AI."],
@@ -4279,10 +4376,12 @@ function renderStakeholderEngagementGuide() {
           </ul>
         </section>
         <section class="content-section">
-          <h2>Outputs</h2>
-          <ul class="check-list">
-            ${["Stakeholder map", "Internal stakeholder list", "External stakeholder list", "RACI or role clarification matrix", "Community and partner engagement plan", "Summary of stakeholder concerns and recommendations", "Equity and trust considerations", "Documentation of how stakeholder input will inform governance, use case prioritization, implementation, monitoring, and evaluation", "Recommendations for ongoing engagement or advisory structures"].map(x=>`<li>${x}</li>`).join("")}
-          </ul>
+          <h2>Outputs and How They Are Used</h2>
+          ${outputsPurposeTable(plays.find(p=>p.id===4))}
+        </section>
+        <section class="content-section">
+          <h2>Completion Criteria</h2>
+          ${completionCriteriaForPlay(plays.find(p=>p.id===4))}
         </section>
         ${addedToolGuidanceSection(4)}
       </article>
@@ -4302,28 +4401,29 @@ function renderImplementationPlayGuide(playId) {
     return;
   }
   const guidance = playGuidanceDetails[playId];
-  const outputs = playOutputDetails[playId] || [play.output];
   const resources = playResources[playId] || [];
   const howToItems = guide.implementationTips || [];
   main.innerHTML = pageIntro(`Guidance: Play ${play.id}: ${play.title}`, `${guidance.body}`) + `
     <div class="guide-layout">
       <article class="panel guide-page">
         <section class="content-section">
-          <h2>Purpose</h2>
+          <h2>Purpose of This Guidance</h2>
           <p>${guide.purpose}</p>
         </section>
         <section class="content-section">
-          <h2>Why This Play Matters</h2>
-          <p>${play.matters}</p>
-          <p>${guidance.body}</p>
+          <h2>Before You Begin</h2>
+          <p>${beforeBeginForPlay(play, guide)}</p>
         </section>
         <section class="content-section">
           <h2>When to Use This Play</h2>
           <p>${guide.timing}</p>
         </section>
         <section class="content-section">
-          <h2>Who Should Participate</h2>
-          <ul class="check-list">${play.who.map(x=>`<li>${x}</li>`).join("")}</ul>
+          <h2>Who to Involve and How</h2>
+          ${involvementGuidanceForPlay(play)}
+          <div class="table-wrap"><table><thead><tr><th>Role or Perspective</th><th>How to Involve Them</th></tr></thead><tbody>
+            ${play.who.map((x,i)=>`<tr><td>${x}</td><td>${i === 0 ? "Ask this role to sponsor or lead the play, resolve barriers, and confirm that outputs are ready for decision-making." : "Consult this role while the work is being shaped; ask for review of risks, feasibility, operational impact, and required documentation before decisions are finalized."}</td></tr>`).join("")}
+          </tbody></table></div>
         </section>
         <section class="content-section">
           <h2>Key Planning Questions</h2>
@@ -4343,8 +4443,12 @@ function renderImplementationPlayGuide(playId) {
           <ul>${guide.pitfalls.map(x=>`<li>${x}</li>`).join("")}</ul>
         </section>
         <section class="content-section">
-          <h2>Outputs</h2>
-          <ul class="check-list">${outputs.map(x=>`<li>${x}</li>`).join("")}</ul>
+          <h2>Outputs and How They Are Used</h2>
+          ${outputsPurposeTable(play)}
+        </section>
+        <section class="content-section">
+          <h2>Completion Criteria</h2>
+          ${completionCriteriaForPlay(play)}
         </section>
       </article>
       <aside class="detail-card-list">
