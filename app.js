@@ -2999,7 +2999,7 @@ function renderHome() {
       <div class="page hero-grid">
         <div>
           <h1>Generative and Agentic AI</h1>
-          <h2>AI Playbook and Toolkit for Public Health Departments</h2>
+          <h2>Playbook and Toolkit for Public Health Departments</h2>
           <p class="lead">A guided implementation website for state, territorial, local, and tribal public health departments to learn the foundations, establish a vision, assess readiness, establish governance, prioritize use cases, design a roadmap, fund, deploy, monitor, and sustain oversight.</p>
           <div class="button-row">
             <a class="btn primary" href="#/plays/1">Start with Vision</a>
