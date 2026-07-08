@@ -1,0 +1,19 @@
+AI Playbook Netlify Manual Deploy
+
+Upload the ZIP file named:
+AI_Playbook_UPLOAD_THIS_TO_NETLIFY.zip
+
+Do not upload the individual files one at a time. The site needs the folders to stay intact:
+
+- assets
+- downloads
+- downloads/presentations
+
+How to deploy:
+1. Open your Netlify site dashboard.
+2. Go to Deploys.
+3. Find the manual deploy / drag-and-drop deploy area.
+4. Drag AI_Playbook_UPLOAD_THIS_TO_NETLIFY.zip into Netlify.
+5. Wait for deploy processing to finish.
+
+The ZIP is built so index.html, app.js, styles.css, assets, and downloads are at the top level of the deployed site.
