@@ -10,15 +10,15 @@ const plays = [
   { id: 2, phase: "plan", title: "Readiness Assessment", output: "Readiness profile, 100-point score interpretation, gap register, and prioritized play-and-tool action plan", tools: [3,4,7,8,9,10], goal: "Assess current state across leadership, data infrastructure, workforce, equity, partnerships, privacy, and security so planning reflects organizational reality.", matters: "A frank readiness assessment finds gaps while they are still manageable, before a project discovers midstream that data, skills, infrastructure, or governance are insufficient.", who: ["Leadership", "IT", "Data and analytics", "Programs", "Legal/privacy", "Equity", "Community engagement"], questions: ["Which gaps block pilots?", "Which gaps can be addressed in parallel?", "What constraints shape feasible use cases?"], actions: ["Run a half-day assessment workshop.", "Rate each indicator honestly.", "Identify 5-8 high-priority gaps.", "Assign owners and timelines.", "Brief leadership and the governance sponsors on constraints and next steps."] },
   { id: 3, phase: "plan", title: "Establish AI Governance", output: "AI governance committee or board, responsible AI policy, governance charter, risk-tiered review pathway, intake and approval process, documentation standards, AI system inventory, monitoring and incident response process, and policy update process", tools: [2,3,4,10,11,12,13,14,15,16,17,18,19], goal: "Create the governance structures, policies, decision-making processes, and oversight mechanisms needed to guide responsible AI use before projects begin.", matters: "Governance should not be added after AI tools are already in use. It should be established before use case selection, vendor engagement, pilot approval, or deployment. Public health departments need clear authority, consistent review processes, and documented accountability for AI use. Strong governance helps ensure that AI supports the public health mission while protecting privacy, security, equity, scientific integrity, workforce trust, and community confidence.", who: ["Health officer or executive sponsor", "Executive leadership or designated governance sponsor", "Legal and privacy staff", "IT and cybersecurity staff", "Equity and community engagement staff", "Program owners", "Informatics, epidemiology, data, or analytics staff", "Communications staff", "Procurement or contracting staff, as needed", "External advisors or community representatives, when appropriate", "Governance committee or board members, once appointed"], questions: ["Who has authority to approve, pause, suspend, or retire AI use?", "What types of AI use are allowed, restricted, or prohibited?", "What documentation is required before AI use cases move forward?", "What review is required for privacy, security, equity, data quality, and legal compliance?", "How will AI use cases be classified by risk?", "Who is accountable for each AI-supported workflow or system?", "How will incidents, errors, bias concerns, or harmful outputs be reported and addressed?", "How will policies, standards, and approved-use records be updated over time?"], actions: ["Confirm the governance mandate. Define why AI governance is needed, what decisions it will cover, and how it will support the department's AI vision, principles, and guardrails.", "Establish the governance body. Create or designate a cross-functional AI governance committee or board with clear membership, leadership, authority, and decision rights.", "Adopt responsible AI policy expectations. Define department-wide expectations for transparency, privacy and security, equity, human oversight, safety, legal compliance, scientific integrity, and accountability.", "Create the governance charter. Document the governance body's purpose, scope, membership, meeting cadence, decision process, documentation requirements, and escalation procedures.", "Define the AI review pathway. Establish how proposed AI uses will be submitted, screened, classified by risk, reviewed, approved, paused, or rejected.", "Align governance with existing agency processes. Connect AI oversight with data governance, IT governance, cybersecurity, privacy, legal review, procurement, communications, equity review, program leadership, and quality improvement.", "Set minimum documentation requirements. Define what must be documented for each AI use case, including purpose, owner, users, data involved, risk level, human review process, limitations, approval status, and review schedule.", "Require appropriate review before approval. Ensure that privacy, security, equity, data quality, legal, vendor, and model validation reviews occur when required based on the risk and nature of the AI use case.", "Create an AI system inventory. Maintain a central record of approved AI systems and AI-supported workflows, including owners, purpose, risk level, approval date, monitoring schedule, and review status.", "Establish ongoing oversight. Define how approved AI uses will be monitored, how incidents will be handled, how systems can be paused or retired, and how policies will be updated over time."] },
   { id: 4, phase: "plan", title: "Engage Stakeholders", output: "Stakeholder map, RACI, engagement plan, missing voices analysis, and feedback documentation", tools: [11,19,20,21,22], goal: "Build a structured stakeholder engagement framework for internal and external input throughout planning, implementation, and evaluation.", matters: "Stakeholder and community engagement is an early planning activity, not a late deployment activity. It should begin after the department has a basic readiness picture and governance pathway, but before formal use case selection, roadmap design, funding commitments, pilots, procurement, or deployment. AI systems built without genuine community and workforce input often fail in deployment even when they perform well technically.", who: ["Program leads", "Community advisors", "Equity staff", "Tribal partners where applicable", "Communications", "Governance committee"], questions: ["Who is affected by the AI use case?", "What concerns must shape design?", "How will feedback change the project?", "What stakeholder input is required before use cases can be prioritized?"], actions: ["Map stakeholder groups and assign engagement leads.", "Form advisory groups for community-impacting use cases.", "Share plain-language explanations of what AI will and will not do.", "Hold feedback sessions before use case selection and before design is finalized.", "Document what changed based on feedback.", "Route unresolved stakeholder concerns to the AI governance committee before pilots or procurement move forward."] },
-  { id: 5, phase: "plan", title: "Workforce Development", output: "Competency framework, training needs assessment, champion network, bridge role plan, role-based training plan, and training pathway", tools: [23,24,25,26,27,48], goal: "Develop the workforce capabilities needed to responsibly adopt generative and agentic AI across public health programs.", matters: "Training alone is not enough. Peer learning networks, champions, office hours, and communities of practice help staff build confidence and solve practical problems.", who: ["HR", "Training leads", "AI champions", "Supervisors", "Program staff", "IT and data staff"], questions: ["What AI literacy is needed by role?", "Where are skill gaps?", "Who will support adoption day to day?"], actions: ["Define role-based AI literacy levels.", "Conduct a training needs assessment.", "Designate AI champions across divisions.", "Create training pathways.", "Assign learning modules by role and set completion standards.", "Establish office hours and communities of practice."] },
-  { id: 6, phase: "plan", title: "Plan Change Management", output: "Change management plan, communication materials, barrier inventory, support plan, and escalation pathway", tools: [23,28,29], goal: "Plan for adoption before deployment by identifying affected workflows, staff concerns, communication needs, training requirements, and support structures.", matters: "Change management starts while the project is still being planned. Early planning prevents technically sound AI projects from failing because staff roles, trust, workflow impacts, or communication needs were addressed too late.", who: ["Change leads", "Supervisors", "Communications", "AI champions", "Program staff", "Governance committee"], questions: ["What workflows may change?", "Who needs early communication?", "What concerns or barriers should shape the plan?"], actions: ["Draft a change management plan before pilot launch.", "Identify affected staff groups and workflow impacts.", "Prepare staff communication and FAQ materials.", "Surface resistance, privacy, equity, and usability concerns.", "Define training, support, and feedback channels."] },
-  { id: 7, phase: "plan", title: "Prioritize Use Cases", output: "Governance-approved AI use case portfolio", tools: [3,5,6,8,13,20,22,30], goal: "Identify and prioritize AI use cases aligned with public health priorities and readiness, selecting a small number most likely to deliver meaningful impact.", matters: "Disciplined prioritization keeps resources focused and ensures every project is reviewed for equity risk, data feasibility, legal compliance, change readiness, and alignment with the AI vision.", who: ["Program areas", "Governance committee", "Data owners", "Equity staff", "Community advisors", "IT/security", "Change leads"], questions: ["Which use cases are high impact and feasible?", "Which risks require mitigation?", "Which pilots should start first?"], actions: ["Invite program areas to submit candidate use cases.", "Score impact, feasibility, equity, scalability, sustainability, and data availability.", "Apply the Use Case Fit Test.", "Select 1-3 initial pilots.", "Submit selected use cases for governance approval."] },
-  { id: 8, phase: "build", title: "Develop a Funding Strategy", output: "Funding portfolio and grant alignment", tools: [5,31,32,33,34], goal: "Build a coordinated multi-year funding strategy that maps approved use cases and implementation needs to funding sources, staffing, change management, procurement, infrastructure, monitoring, evaluation, and sustainment investments.", matters: "AI projects often fail when resources are misaligned: funded for one phase but not the next, approved without dedicated staff, missing change supports, or dependent on missing infrastructure. Funding strategy should shape the roadmap before the agency commits to sequencing.", who: ["Finance", "Grants", "Program sponsors", "IT leadership", "Procurement", "Governance committee"], questions: ["Which grants or budgets support each phase?", "What sustainment costs must be covered?", "What contingency plans are needed?"], actions: ["Map each approved or proposed project to potential funding sources.", "Document FTE, contractor, infrastructure, training, evaluation, procurement, and sustainment costs.", "Update DMI, PHIG, and other grant work plans.", "Confirm funding assumptions before roadmap sequencing is finalized.", "Review resource allocation quarterly."] },
-  { id: 9, phase: "build", title: "Design the Roadmap", output: "Governance-approved AI roadmap", tools: [34,35,36], goal: "Translate vision, governance, readiness, change planning, funding assumptions, and approved use cases into a sequenced multi-year roadmap.", matters: "A roadmap prevents isolated pilots and makes shared infrastructure, governance reviews, staffing, funding, change supports, and dependencies visible before implementation starts.", who: ["Project sponsors", "PMO", "Governance committee", "IT", "Data owners", "Finance", "Change leads"], questions: ["What must happen before each pilot?", "Which dependencies are shared?", "Where are governance, funding, and change readiness gates?"], actions: ["Complete a project charter for each approved use case.", "Place projects on the implementation timeline.", "Identify shared dependencies and funding assumptions.", "Present the roadmap to governance for approval.", "Publish a one-page roadmap summary and update every six months."] },
-  { id: 10, phase: "deploy", title: "Execute Change Management", output: "Adoption support, communications, role-based training execution, and training completion tracking", tools: [19,23,25,28,29,37,48], goal: "Execute the change management plan during pilot and deployment by communicating clearly, training staff, supporting adoption, and tracking concerns through governance.", matters: "Deployment is where planned change support becomes real. Staff need timely communication, hands-on support, feedback channels, clear escalation paths, and a visible training tracker as workflows change.", who: ["Change leads", "Supervisors", "Communications", "AI champions", "Pilot users", "Governance committee"], questions: ["Are staff prepared to use the system?", "Which roles have completed the required learning modules?", "What concerns are emerging during deployment?", "How will feedback and errors be reported?"], actions: ["Launch staff communications and FAQs.", "Deliver role-based training and office hours.", "Track completion of required learning modules by role.", "Support change champions with protected time.", "Track staff concerns and barriers.", "Report adoption risks and feedback through governance."] },
-  { id: 11, phase: "deploy", title: "Build and Deploy AI Solutions", output: "AI pilot and production deployments", tools: [3,6,8,9,10,14,15,16,31,33,34,35,36,38,39,40,41,42], goal: "Develop, test, pilot, deploy, and scale AI solutions that support governance-approved use cases and comply with governance, equity, change management, and validation requirements.", matters: "Pilots are for learning. Keep them small, time-bounded, and limited in scope. Scaling is not automatic; it requires explicit governance approval and evidence that adoption support is working.", who: ["Product owners", "Data engineers", "Vendors", "Security", "Pilot users", "Evaluation staff", "Governance committee", "Change leads"], questions: ["Has validation been completed?", "What pilot evidence supports scale?", "Are equity safeguards and adoption supports working?"], actions: ["Confirm technical infrastructure and data pipelines.", "Test with synthetic or de-identified data.", "Run pilots for 90-120 days.", "Evaluate using pilot dashboard and scale decision framework.", "Submit scale-up plans to governance before expansion."] },
-  { id: 12, phase: "govern", title: "Execute Governance and Oversight", output: "Audits, compliance records, governance docs", tools: [6,13,16,17,18,19,36,43,44,45], goal: "Sustain responsible AI through regular governance reviews, policy maintenance, compliance auditing, incident review, version control, and named accountability for every deployed or retired AI system.", matters: "Governance intensifies after go-live. The agency must continually ask whether each AI system is still doing what it was intended to do, whether documentation and approvals remain current, whether incidents or monitoring findings require action, and whether the system should continue, change, pause, or be retired.", who: ["AI governance committee", "Health officer or executive sponsor", "Operational system owners", "Legal and privacy officers", "Compliance and audit staff", "Security and incident response leads", "Evaluation and equity leads", "Program leadership", "Vendor or partner representatives when applicable"], questions: ["Are governance records complete, current, and stored where they can be audited?", "Have monitoring results, incidents, equity findings, or user feedback triggered a governance decision?", "Do policies, data use agreements, validation records, or system documentation need updating?", "Are compliance obligations being met across privacy, security, procurement, accessibility, and civil rights requirements?", "Should the system continue as approved, be revised, paused, scaled, retired, or replaced?"], actions: ["Hold governance reviews monthly during pilots and quarterly in sustainment, using a standard agenda and decision log.", "Review performance monitoring, equity monitoring, incident reports, user feedback, audit findings, and continuous improvement actions.", "Confirm that each AI system has a named operational owner, current documentation, approved data use agreements, validation records, and escalation contacts.", "Conduct annual compliance audits and targeted reviews after incidents, model changes, vendor changes, or major policy updates.", "Update policies, charters, review procedures, approval conditions, and version-control logs when guidance, technology, risks, or agency priorities change.", "Document governance decisions, required corrective actions, owners, deadlines, and evidence of closure.", "Define sunset criteria and retire or replace AI systems that no longer meet performance, equity, safety, legal, operational, or public trust standards."] },
-  { id: 13, phase: "govern", title: "Monitor and Evaluate AI Systems", output: "Performance and equity monitoring reports", tools: [6,22,43,44,46,47], goal: "Assess whether deployed AI systems perform as expected and deliver measurable public health value with continuous attention to equity and adoption.", matters: "Deployment without monitoring is how AI systems cause harm quietly. Monitoring is a core governance function, not an administrative afterthought.", who: ["Operational owners", "Evaluation staff", "Equity staff", "Data scientists", "Governance committee", "Program leadership"], questions: ["Is performance stable?", "Are disparities emerging?", "What improvements or escalation are required?"], actions: ["Monitor reliability monthly and report quarterly.", "Track subgroup performance continuously.", "Conduct hallucination and fabrication audits.", "Evaluate public health outcomes.", "Use a continuous improvement log to track actions."] }
+  { id: 5, phase: "plan", title: "Workforce Development", output: "Competency framework, training needs assessment, champion network, bridge role plan, role-based training plan, and training pathway", tools: [23,24,25,26,27,28], goal: "Develop the workforce capabilities needed to responsibly adopt generative and agentic AI across public health programs.", matters: "Training alone is not enough. Peer learning networks, champions, office hours, and communities of practice help staff build confidence and solve practical problems.", who: ["HR", "Training leads", "AI champions", "Supervisors", "Program staff", "IT and data staff"], questions: ["What AI literacy is needed by role?", "Where are skill gaps?", "Who will support adoption day to day?"], actions: ["Define role-based AI literacy levels.", "Conduct a training needs assessment.", "Designate AI champions across divisions.", "Create training pathways.", "Assign learning modules by role and set completion standards.", "Establish office hours and communities of practice."] },
+  { id: 6, phase: "plan", title: "Plan Change Management", output: "Change management plan, communication materials, barrier inventory, support plan, and escalation pathway", tools: [23,29,30], goal: "Plan for adoption before deployment by identifying affected workflows, staff concerns, communication needs, training requirements, and support structures.", matters: "Change management starts while the project is still being planned. Early planning prevents technically sound AI projects from failing because staff roles, trust, workflow impacts, or communication needs were addressed too late.", who: ["Change leads", "Supervisors", "Communications", "AI champions", "Program staff", "Governance committee"], questions: ["What workflows may change?", "Who needs early communication?", "What concerns or barriers should shape the plan?"], actions: ["Draft a change management plan before pilot launch.", "Identify affected staff groups and workflow impacts.", "Prepare staff communication and FAQ materials.", "Surface resistance, privacy, equity, and usability concerns.", "Define training, support, and feedback channels."] },
+  { id: 7, phase: "plan", title: "Prioritize Use Cases", output: "Governance-approved AI use case portfolio", tools: [3,5,6,8,13,20,22,31], goal: "Identify and prioritize AI use cases aligned with public health priorities and readiness, selecting a small number most likely to deliver meaningful impact.", matters: "Disciplined prioritization keeps resources focused and ensures every project is reviewed for equity risk, data feasibility, legal compliance, change readiness, and alignment with the AI vision.", who: ["Program areas", "Governance committee", "Data owners", "Equity staff", "Community advisors", "IT/security", "Change leads"], questions: ["Which use cases are high impact and feasible?", "Which risks require mitigation?", "Which pilots should start first?"], actions: ["Invite program areas to submit candidate use cases.", "Score impact, feasibility, equity, scalability, sustainability, and data availability.", "Apply the Use Case Fit Test.", "Select 1-3 initial pilots.", "Submit selected use cases for governance approval."] },
+  { id: 8, phase: "build", title: "Develop a Funding Strategy", output: "Funding portfolio and grant alignment", tools: [5,32,33,34,35], goal: "Build a coordinated multi-year funding strategy that maps approved use cases and implementation needs to funding sources, staffing, change management, procurement, infrastructure, monitoring, evaluation, and sustainment investments.", matters: "AI projects often fail when resources are misaligned: funded for one phase but not the next, approved without dedicated staff, missing change supports, or dependent on missing infrastructure. Funding strategy should shape the roadmap before the agency commits to sequencing.", who: ["Finance", "Grants", "Program sponsors", "IT leadership", "Procurement", "Governance committee"], questions: ["Which grants or budgets support each phase?", "What sustainment costs must be covered?", "What contingency plans are needed?"], actions: ["Map each approved or proposed project to potential funding sources.", "Document FTE, contractor, infrastructure, training, evaluation, procurement, and sustainment costs.", "Update DMI, PHIG, and other grant work plans.", "Confirm funding assumptions before roadmap sequencing is finalized.", "Review resource allocation quarterly."] },
+  { id: 9, phase: "build", title: "Design the Roadmap", output: "Governance-approved AI roadmap", tools: [35,36,37], goal: "Translate vision, governance, readiness, change planning, funding assumptions, and approved use cases into a sequenced multi-year roadmap.", matters: "A roadmap prevents isolated pilots and makes shared infrastructure, governance reviews, staffing, funding, change supports, and dependencies visible before implementation starts.", who: ["Project sponsors", "PMO", "Governance committee", "IT", "Data owners", "Finance", "Change leads"], questions: ["What must happen before each pilot?", "Which dependencies are shared?", "Where are governance, funding, and change readiness gates?"], actions: ["Complete a project charter for each approved use case.", "Place projects on the implementation timeline.", "Identify shared dependencies and funding assumptions.", "Present the roadmap to governance for approval.", "Publish a one-page roadmap summary and update every six months."] },
+  { id: 10, phase: "deploy", title: "Execute Change Management", output: "Adoption support, communications, role-based training execution, and training completion tracking", tools: [19,23,25,28,29,30,38], goal: "Execute the change management plan during pilot and deployment by communicating clearly, training staff, supporting adoption, and tracking concerns through governance.", matters: "Deployment is where planned change support becomes real. Staff need timely communication, hands-on support, feedback channels, clear escalation paths, and a visible training tracker as workflows change.", who: ["Change leads", "Supervisors", "Communications", "AI champions", "Pilot users", "Governance committee"], questions: ["Are staff prepared to use the system?", "Which roles have completed the required learning modules?", "What concerns are emerging during deployment?", "How will feedback and errors be reported?"], actions: ["Launch staff communications and FAQs.", "Deliver role-based training and office hours.", "Track completion of required learning modules by role.", "Support change champions with protected time.", "Track staff concerns and barriers.", "Report adoption risks and feedback through governance."] },
+  { id: 11, phase: "deploy", title: "Build and Deploy AI Solutions", output: "AI pilot and production deployments", tools: [3,6,8,9,10,14,15,16,32,34,35,36,37,39,40,41,42,43], goal: "Develop, test, pilot, deploy, and scale AI solutions that support governance-approved use cases and comply with governance, equity, change management, and validation requirements.", matters: "Pilots are for learning. Keep them small, time-bounded, and limited in scope. Scaling is not automatic; it requires explicit governance approval and evidence that adoption support is working.", who: ["Product owners", "Data engineers", "Vendors", "Security", "Pilot users", "Evaluation staff", "Governance committee", "Change leads"], questions: ["Has validation been completed?", "What pilot evidence supports scale?", "Are equity safeguards and adoption supports working?"], actions: ["Confirm technical infrastructure and data pipelines.", "Test with synthetic or de-identified data.", "Run pilots for 90-120 days.", "Evaluate using pilot dashboard and scale decision framework.", "Submit scale-up plans to governance before expansion."] },
+  { id: 12, phase: "govern", title: "Execute Governance and Oversight", output: "Audits, compliance records, governance docs", tools: [6,13,16,17,18,19,37,44,45,46], goal: "Sustain responsible AI through regular governance reviews, policy maintenance, compliance auditing, incident review, version control, and named accountability for every deployed or retired AI system.", matters: "Governance intensifies after go-live. The agency must continually ask whether each AI system is still doing what it was intended to do, whether documentation and approvals remain current, whether incidents or monitoring findings require action, and whether the system should continue, change, pause, or be retired.", who: ["AI governance committee", "Health officer or executive sponsor", "Operational system owners", "Legal and privacy officers", "Compliance and audit staff", "Security and incident response leads", "Evaluation and equity leads", "Program leadership", "Vendor or partner representatives when applicable"], questions: ["Are governance records complete, current, and stored where they can be audited?", "Have monitoring results, incidents, equity findings, or user feedback triggered a governance decision?", "Do policies, data use agreements, validation records, or system documentation need updating?", "Are compliance obligations being met across privacy, security, procurement, accessibility, and civil rights requirements?", "Should the system continue as approved, be revised, paused, scaled, retired, or replaced?"], actions: ["Hold governance reviews monthly during pilots and quarterly in sustainment, using a standard agenda and decision log.", "Review performance monitoring, equity monitoring, incident reports, user feedback, audit findings, and continuous improvement actions.", "Confirm that each AI system has a named operational owner, current documentation, approved data use agreements, validation records, and escalation contacts.", "Conduct annual compliance audits and targeted reviews after incidents, model changes, vendor changes, or major policy updates.", "Update policies, charters, review procedures, approval conditions, and version-control logs when guidance, technology, risks, or agency priorities change.", "Document governance decisions, required corrective actions, owners, deadlines, and evidence of closure.", "Define sunset criteria and retire or replace AI systems that no longer meet performance, equity, safety, legal, operational, or public trust standards."] },
+  { id: 13, phase: "govern", title: "Monitor and Evaluate AI Systems", output: "Performance and equity monitoring reports", tools: [6,22,44,45,47,48], goal: "Assess whether deployed AI systems perform as expected and deliver measurable public health value with continuous attention to equity and adoption.", matters: "Deployment without monitoring is how AI systems cause harm quietly. Monitoring is a core governance function, not an administrative afterthought.", who: ["Operational owners", "Evaluation staff", "Equity staff", "Data scientists", "Governance committee", "Program leadership"], questions: ["Is performance stable?", "Are disparities emerging?", "What improvements or escalation are required?"], actions: ["Monitor reliability monthly and report quarterly.", "Track subgroup performance continuously.", "Conduct hallucination and fabrication audits.", "Evaluate public health outcomes.", "Use a continuous improvement log to track actions."] }
 ];
 
 const playCardDescriptions = {
@@ -69,27 +69,27 @@ const tools = [
   [25,"AI Champion Designation & Role Guide",[5,10],"Select and support AI champions who help peers adopt responsible practices.","Guide","Workforce",["Supervisors","Champions"],"Readiness",false],
   [26,"Training Needs Assessment Checklist",[5],"Identify role-based training gaps before designing training pathways.","Checklist","Workforce",["HR","Training"],"Readiness",false],
   [27,"AI Bridge Professional Role Guide",[5],"Define the cross-functional role that translates between program staff, IT, leadership, legal, vendors, community partners, and data teams.","Guide","Workforce",["Leadership","HR","Training"],"Readiness",false],
-  [28,"Staff Communication & FAQ Template",[6,10],"Prepare transparent staff communications and answers to expected questions.","Template","Change",["Communications","Supervisors"],"Pilots",false],
-  [29,"Resistance & Barrier Identification",[6,10],"Surface operational, cultural, and trust barriers before launch and during deployment.","Worksheet","Change",["Change leads","Staff"],"Pilots",false],
-  [30,"Use Case Scoring & Prioritization Matrix",[7],"Score use cases for impact, feasibility, equity, scalability, sustainability, and risk.","Matrix","Use cases",["Governance","Program leads"],"Pilots",true],
-  [31,"Vendor Evaluation Checklist",[8,11],"Evaluate vendors for privacy, security, transparency, validation, support, and cost.","Checklist","Procurement",["Procurement","IT"],"Pilots",true],
-  [32,"Funding Strategy Checklists",[8],"Align projects with funding sources, grant work plans, sustainment, and contingency plans.","Checklist","Funding",["Finance","Grants"],"Readiness",false],
-  [33,"STLT AI Procurement and Vendor Addendum",[8,11],"Add public-sector AI requirements for data residency, audit rights, model training restrictions, cybersecurity, accessibility, public records, exit terms, and subcontractors.","Checklist","Procurement",["Procurement","Legal","IT"],"Pilots",true],
-  [34,"AI Total Cost of Ownership and Sustainability Worksheet",[8,9,11],"Estimate pilot, scale, sustainment, staffing, infrastructure, vendor, procurement, training, monitoring, and evaluation costs.","Worksheet","Funding",["Finance","Grants","Procurement","IT"],"Readiness",false],
-  [35,"AI Implementation Timeline",[9,11],"Sequence milestones, dependencies, approvals, pilot phases, and scale decisions.","Planning","Roadmap",["PMO","IT"],"Readiness",true],
-  [36,"Roadmap Dependency and Risk Register",[9,11,12],"Track roadmap dependencies, governance gates, risks, owners, due dates, mitigation actions, and escalation decisions.","Register","Roadmap",["PMO","Governance","IT"],"Readiness",true],
-  [37,"Change Management Execution Dashboard",[10],"Track training completion, communication delivery, adoption support, staff feedback, barriers, escalations, and deployment readiness during change execution.","Dashboard","Change",["Change leads","Supervisors","AI champions"],"Deployment",false],
-  [38,"Technical Infrastructure Readiness Checklist",[11],"Confirm environments, access controls, integrations, monitoring, and secure deployment paths.","Checklist","Technology",["IT","Security"],"Pilots",true],
-  [39,"AI Model Testing & Validation Protocol",[11],"Define test design, performance thresholds, human review, and validation evidence.","Protocol","Validation",["Data science"],"Pilots",true],
-  [40,"AI Pilot Evaluation Dashboard",[11],"Track pilot performance, adoption, equity, incidents, and go/no-go evidence.","Dashboard","Evaluation",["Evaluation","Product owners"],"Pilots",true],
-  [41,"Pilot-to-Scale Decision Framework",[11],"Support governance decisions on scale, revise, pause, or retire after pilot evaluation.","Framework","Scale",["Governance","Leadership"],"Pilots",true],
-  [42,"AI Deployment Readiness and Go-Live Checklist",[11],"Confirm governance approval, validation, security, data readiness, staff training, communications, support, rollback plans, and go-live decision criteria before deployment.","Checklist","Deployment",["Product owners","IT","Governance","Change leads"],"Deployment",true],
-  [43,"Performance Monitoring Dashboard",[12,13],"Track reliability, performance, equity, incident trends, and improvement actions.","Dashboard","Monitoring",["Evaluation","Governance"],"Deployment",true],
-  [44,"Continuous Improvement Log",[12,13],"Track improvement actions, owners, timelines, evidence, and closure.","Log","Improvement",["Operational owners"],"Optimization",true],
-  [45,"AI Governance Review Meeting Template",[12],"Structure governance agendas, decisions, escalations, and action tracking.","Template","Governance",["Governance"],"Optimization",true],
-  [46,"Equity & Disparity Impact Monitoring",[13],"Monitor subgroup performance and disparate impacts after deployment.","Dashboard","Equity",["Equity","Evaluation"],"Deployment",true],
-  [47,"AI Evaluation & Outcomes Reporting",[13],"Report public health outcomes, operational effects, and lessons learned.","Template","Evaluation",["Evaluation","Leadership"],"Deployment",true],
-  [48,"Role-Based Training Plan and Completion Tracker",[5,10],"Assign learning modules by role, set completion standards, track deadlines, verify completion, and identify follow-up support needs.","Tracker","Workforce",["Training","Supervisors","Organization administrators","AI champions"],"Readiness",false]
+  [28,"Role-Based Training Plan and Completion Tracker",[5,10],"Assign learning modules by role, set completion standards, track deadlines, verify completion, and identify follow-up support needs.","Tracker","Workforce",["Training","Supervisors","Organization administrators","AI champions"],"Readiness",false],
+  [29,"Staff Communication & FAQ Template",[6,10],"Prepare transparent staff communications and answers to expected questions.","Template","Change",["Communications","Supervisors"],"Pilots",false],
+  [30,"Resistance & Barrier Identification",[6,10],"Surface operational, cultural, and trust barriers before launch and during deployment.","Worksheet","Change",["Change leads","Staff"],"Pilots",false],
+  [31,"Use Case Scoring & Prioritization Matrix",[7],"Score use cases for impact, feasibility, equity, scalability, sustainability, and risk.","Matrix","Use cases",["Governance","Program leads"],"Pilots",true],
+  [32,"Vendor Evaluation Checklist",[8,11],"Evaluate vendors for privacy, security, transparency, validation, support, and cost.","Checklist","Procurement",["Procurement","IT"],"Pilots",true],
+  [33,"Funding Strategy Checklists",[8],"Align projects with funding sources, grant work plans, sustainment, and contingency plans.","Checklist","Funding",["Finance","Grants"],"Readiness",false],
+  [34,"STLT AI Procurement and Vendor Addendum",[8,11],"Add public-sector AI requirements for data residency, audit rights, model training restrictions, cybersecurity, accessibility, public records, exit terms, and subcontractors.","Checklist","Procurement",["Procurement","Legal","IT"],"Pilots",true],
+  [35,"AI Total Cost of Ownership and Sustainability Worksheet",[8,9,11],"Estimate pilot, scale, sustainment, staffing, infrastructure, vendor, procurement, training, monitoring, and evaluation costs.","Worksheet","Funding",["Finance","Grants","Procurement","IT"],"Readiness",false],
+  [36,"AI Implementation Timeline",[9,11],"Sequence milestones, dependencies, approvals, pilot phases, and scale decisions.","Planning","Roadmap",["PMO","IT"],"Readiness",true],
+  [37,"Roadmap Dependency and Risk Register",[9,11,12],"Track roadmap dependencies, governance gates, risks, owners, due dates, mitigation actions, and escalation decisions.","Register","Roadmap",["PMO","Governance","IT"],"Readiness",true],
+  [38,"Change Management Execution Dashboard",[10],"Track training completion, communication delivery, adoption support, staff feedback, barriers, escalations, and deployment readiness during change execution.","Dashboard","Change",["Change leads","Supervisors","AI champions"],"Deployment",false],
+  [39,"Technical Infrastructure Readiness Checklist",[11],"Confirm environments, access controls, integrations, monitoring, and secure deployment paths.","Checklist","Technology",["IT","Security"],"Pilots",true],
+  [40,"AI Model Testing & Validation Protocol",[11],"Define test design, performance thresholds, human review, and validation evidence.","Protocol","Validation",["Data science"],"Pilots",true],
+  [41,"AI Pilot Evaluation Dashboard",[11],"Track pilot performance, adoption, equity, incidents, and go/no-go evidence.","Dashboard","Evaluation",["Evaluation","Product owners"],"Pilots",true],
+  [42,"Pilot-to-Scale Decision Framework",[11],"Support governance decisions on scale, revise, pause, or retire after pilot evaluation.","Framework","Scale",["Governance","Leadership"],"Pilots",true],
+  [43,"AI Deployment Readiness and Go-Live Checklist",[11],"Confirm governance approval, validation, security, data readiness, staff training, communications, support, rollback plans, and go-live decision criteria before deployment.","Checklist","Deployment",["Product owners","IT","Governance","Change leads"],"Deployment",true],
+  [44,"Performance Monitoring Dashboard",[12,13],"Track reliability, performance, equity, incident trends, and improvement actions.","Dashboard","Monitoring",["Evaluation","Governance"],"Deployment",true],
+  [45,"Continuous Improvement Log",[12,13],"Track improvement actions, owners, timelines, evidence, and closure.","Log","Improvement",["Operational owners"],"Optimization",true],
+  [46,"AI Governance Review Meeting Template",[12],"Structure governance agendas, decisions, escalations, and action tracking.","Template","Governance",["Governance"],"Optimization",true],
+  [47,"Equity & Disparity Impact Monitoring",[13],"Monitor subgroup performance and disparate impacts after deployment.","Dashboard","Equity",["Equity","Evaluation"],"Deployment",true],
+  [48,"AI Evaluation & Outcomes Reporting",[13],"Report public health outcomes, operational effects, and lessons learned.","Template","Evaluation",["Evaluation","Leadership"],"Deployment",true]
 ].map(([id,title,playIds,purpose,type,topic,roles,maturity,governance]) => ({id,title,playIds,purpose,type,topic,roles,maturity,governance}));
 
 const toolFormBlueprints = {
@@ -113,33 +113,33 @@ const toolFormBlueprints = {
   24: [["Concern inventory", ["Concern raised", "Source or role", "Concern type", "Frequency raised", "Leadership response"]], ["Barrier analysis", ["Workforce/job security barriers", "Privacy/data barriers", "Equity/fairness barriers", "Technical/usability barriers", "Organizational/resource barriers"]], ["Response plan", ["Actions to address concerns", "Owner", "Due date", "How resolution will be communicated"]]],
   25: [["Use case submission", ["Use case name", "Submitting program/division", "Problem to solve", "Target users", "Data needed", "Expected public health value"]], ["Scoring matrix", ["Impact score/rationale", "Feasibility score/rationale", "Equity score/rationale", "Risk score/rationale", "Sustainability score/rationale"]], ["Prioritization decision", ["Weighted score", "Rank", "Governance conditions", "Pilot recommendation"]]],
   26: [["Roadmap overview", ["Roadmap period", "Strategic priorities", "Approved use cases", "Shared dependencies"]], ["Timeline", ["Quarter 1 milestones", "Quarter 2 milestones", "Quarter 3 milestones", "Quarter 4 milestones", "12-36 month roadmap items"]], ["Governance and resources", ["Approval gates", "Funding dependencies", "Staffing dependencies", "Risks to timeline", "Next update date"]]],
-  28: [["Vendor and solution profile", ["Vendor name", "Product/service", "Use case supported", "Data involved", "Procurement stage"]], ["Evaluation criteria", ["Security and privacy controls", "BAA/FedRAMP or equivalent status", "Transparency and documentation", "Validation evidence", "Equity and bias testing", "Support and exit terms"]], ["Comparison and recommendation", ["Strengths", "Risks", "Contract requirements", "Recommended decision"]]],
-  29: [["Funding landscape", ["AI initiative or portfolio", "Estimated pilot cost", "Estimated scale/sustainment cost", "Existing funding sources"]], ["Funding alignment", ["DMI alignment", "PHIG alignment", "Other federal/state/private opportunities", "Allowable activities", "Grant deadlines"]], ["Sustainment plan", ["Staffing plan", "Infrastructure costs", "Procurement costs", "Evaluation costs", "Contingency plan"]]],
-  30: [["Incident intake", ["Incident date/time", "AI system", "Reported by", "Incident type", "Who or what was affected"]], ["Immediate response", ["Containment steps taken", "System paused or limited?", "Notifications made", "Privacy/security concerns", "Evidence preserved"]], ["Resolution", ["Root cause", "Corrective actions", "Governance review outcome", "Communication needs", "Closure date"]]],
-  35: [["Project readiness profile", ["Project/system name", "Assessment date", "IT lead", "AI program manager"]], ["Infrastructure checklist", ["Cloud/computing readiness", "Integration/API readiness", "Data pipeline readiness", "Backup/recovery readiness"]], ["Security and access", ["Role-based access controls", "Logging/monitoring", "Security review status", "Gaps/actions/timeline"]]],
-  31: [["Testing profile", ["System/model name", "Version", "Testing lead", "Testing period", "Deployment environment"]], ["Testing phases", ["Unit/component testing", "Integration testing", "Performance testing", "Equity/subgroup testing", "User acceptance testing"]], ["Validation decision", ["Pass criteria", "Results", "Open defects", "Required remediation", "Approval recommendation"]]],
-  32: [["Pilot profile", ["AI system/pilot name", "Program area", "Pilot period", "Report date"]], ["Pilot dashboard", ["Pilot scope planned vs actual", "Staff trained/active users", "Performance results", "Equity results", "User feedback", "Incidents"]], ["Pilot conclusion", ["Benefits observed", "Risks or limitations", "Required changes", "Recommendation for Tool 41"]]],
-  38: [["Decision context", ["AI system/pilot name", "Pilot period", "Program area", "Decision review date"]], ["Evidence review", ["Pilot targets vs actual results", "Equity and safety findings", "Operational readiness", "Funding/sustainment readiness"]], ["Scale decision", ["Go / revise / pause / stop recommendation", "Conditions for scale", "Governance decision", "Next review date"]]],
-  39: [["Monitoring setup", ["AI system name", "Program area", "Reporting period", "Operational owner", "Governance review date"]], ["Performance dashboard", ["Reliability/performance metrics", "Usage metrics", "Data quality indicators", "Equity monitoring indicators", "Incidents or anomalies"]], ["Action tracking", ["Findings requiring action", "Improvement actions", "Owners and deadlines", "Escalations to governance"]]],
-  40: [["Monitoring profile", ["AI system name", "Reporting period", "Prepared by", "Date"]], ["Equity dashboard", ["Subgroups monitored", "Sample sizes", "Performance by subgroup", "Disparity thresholds", "Access or language barriers"]], ["Response plan", ["Triggered concerns", "Corrective actions", "Community/stakeholder communication", "Governance escalation"]]],
-  41: [["Report header", ["AI system/program name", "Reporting period", "Report type", "Audience"]], ["Evaluation findings", ["Performance outcomes", "Public health outcomes", "Operational impacts", "Equity impacts", "User/staff feedback"]], ["Recommendations", ["Continue/modify/scale/retire recommendation", "Lessons learned", "Next reporting period actions"]]],
-  43: [["Log entry", ["Log ID", "Date", "AI system", "Source", "Issue/opportunity"]], ["Action plan", ["Priority", "Corrective or improvement action", "Owner", "Due date", "Dependencies"]], ["Closure", ["Status", "Evidence of completion", "Verified by", "Date closed", "Lessons learned"]]],
-  46: [["Pre-meeting preparation", ["Meeting date", "Board chair", "Quorum status", "Dashboard package distributed", "Equity report distributed", "Incidents for review"]], ["Agenda and decisions", ["Project approvals", "Performance review", "Equity review", "Incident review", "Policy/compliance update"]], ["Meeting record", ["Decisions made", "Conditions or follow-ups", "Owners and deadlines", "Next meeting date"]]],
-  47: [["Audit profile", ["Audit period", "Lead auditor", "Date initiated", "Date completed"]], ["Compliance review", ["Governance structure compliance", "Project charter compliance", "Equity impact assessment compliance", "Validation compliance", "Data use agreement compliance", "Community engagement compliance"]], ["Audit summary", ["Compliant count", "Partially compliant count", "Non-compliant count", "Overall rating", "Corrective action plan"]]],
-  44: [["Policy register", ["Policy/document name", "Document number", "Current version", "Effective date", "Next review due", "Owner"]], ["Version history", ["Document name", "Version", "Date changed", "Change summary", "Reason for change", "Approved by"]], ["Annual review", ["Policies reviewed", "Updates required", "Retired documents", "Next review cycle", "Governance approval record"]]],
+  29: [["Vendor and solution profile", ["Vendor name", "Product/service", "Use case supported", "Data involved", "Procurement stage"]], ["Evaluation criteria", ["Security and privacy controls", "BAA/FedRAMP or equivalent status", "Transparency and documentation", "Validation evidence", "Equity and bias testing", "Support and exit terms"]], ["Comparison and recommendation", ["Strengths", "Risks", "Contract requirements", "Recommended decision"]]],
+  30: [["Funding landscape", ["AI initiative or portfolio", "Estimated pilot cost", "Estimated scale/sustainment cost", "Existing funding sources"]], ["Funding alignment", ["DMI alignment", "PHIG alignment", "Other federal/state/private opportunities", "Allowable activities", "Grant deadlines"]], ["Sustainment plan", ["Staffing plan", "Infrastructure costs", "Procurement costs", "Evaluation costs", "Contingency plan"]]],
+  31: [["Incident intake", ["Incident date/time", "AI system", "Reported by", "Incident type", "Who or what was affected"]], ["Immediate response", ["Containment steps taken", "System paused or limited?", "Notifications made", "Privacy/security concerns", "Evidence preserved"]], ["Resolution", ["Root cause", "Corrective actions", "Governance review outcome", "Communication needs", "Closure date"]]],
+  36: [["Project readiness profile", ["Project/system name", "Assessment date", "IT lead", "AI program manager"]], ["Infrastructure checklist", ["Cloud/computing readiness", "Integration/API readiness", "Data pipeline readiness", "Backup/recovery readiness"]], ["Security and access", ["Role-based access controls", "Logging/monitoring", "Security review status", "Gaps/actions/timeline"]]],
+  32: [["Testing profile", ["System/model name", "Version", "Testing lead", "Testing period", "Deployment environment"]], ["Testing phases", ["Unit/component testing", "Integration testing", "Performance testing", "Equity/subgroup testing", "User acceptance testing"]], ["Validation decision", ["Pass criteria", "Results", "Open defects", "Required remediation", "Approval recommendation"]]],
+  33: [["Pilot profile", ["AI system/pilot name", "Program area", "Pilot period", "Report date"]], ["Pilot dashboard", ["Pilot scope planned vs actual", "Staff trained/active users", "Performance results", "Equity results", "User feedback", "Incidents"]], ["Pilot conclusion", ["Benefits observed", "Risks or limitations", "Required changes", "Recommendation for Tool 42"]]],
+  39: [["Decision context", ["AI system/pilot name", "Pilot period", "Program area", "Decision review date"]], ["Evidence review", ["Pilot targets vs actual results", "Equity and safety findings", "Operational readiness", "Funding/sustainment readiness"]], ["Scale decision", ["Go / revise / pause / stop recommendation", "Conditions for scale", "Governance decision", "Next review date"]]],
+  40: [["Monitoring setup", ["AI system name", "Program area", "Reporting period", "Operational owner", "Governance review date"]], ["Performance dashboard", ["Reliability/performance metrics", "Usage metrics", "Data quality indicators", "Equity monitoring indicators", "Incidents or anomalies"]], ["Action tracking", ["Findings requiring action", "Improvement actions", "Owners and deadlines", "Escalations to governance"]]],
+  41: [["Monitoring profile", ["AI system name", "Reporting period", "Prepared by", "Date"]], ["Equity dashboard", ["Subgroups monitored", "Sample sizes", "Performance by subgroup", "Disparity thresholds", "Access or language barriers"]], ["Response plan", ["Triggered concerns", "Corrective actions", "Community/stakeholder communication", "Governance escalation"]]],
+  42: [["Report header", ["AI system/program name", "Reporting period", "Report type", "Audience"]], ["Evaluation findings", ["Performance outcomes", "Public health outcomes", "Operational impacts", "Equity impacts", "User/staff feedback"]], ["Recommendations", ["Continue/modify/scale/retire recommendation", "Lessons learned", "Next reporting period actions"]]],
+  44: [["Log entry", ["Log ID", "Date", "AI system", "Source", "Issue/opportunity"]], ["Action plan", ["Priority", "Corrective or improvement action", "Owner", "Due date", "Dependencies"]], ["Closure", ["Status", "Evidence of completion", "Verified by", "Date closed", "Lessons learned"]]],
+  47: [["Pre-meeting preparation", ["Meeting date", "Board chair", "Quorum status", "Dashboard package distributed", "Equity report distributed", "Incidents for review"]], ["Agenda and decisions", ["Project approvals", "Performance review", "Equity review", "Incident review", "Policy/compliance update"]], ["Meeting record", ["Decisions made", "Conditions or follow-ups", "Owners and deadlines", "Next meeting date"]]],
+  48: [["Audit profile", ["Audit period", "Lead auditor", "Date initiated", "Date completed"]], ["Compliance review", ["Governance structure compliance", "Project charter compliance", "Equity impact assessment compliance", "Validation compliance", "Data use agreement compliance", "Community engagement compliance"]], ["Audit summary", ["Compliant count", "Partially compliant count", "Non-compliant count", "Overall rating", "Corrective action plan"]]],
+  45: [["Policy register", ["Policy/document name", "Document number", "Current version", "Effective date", "Next review due", "Owner"]], ["Version history", ["Document name", "Version", "Date changed", "Change summary", "Reason for change", "Approved by"]], ["Annual review", ["Policies reviewed", "Updates required", "Retired documents", "Next review cycle", "Governance approval record"]]],
   4: [["Policy landscape", ["Jurisdiction or agency", "State/local/tribal/territorial laws", "Agency IT policies", "Public records requirements", "Procurement restrictions"]], ["Risk implications", ["Commercial AI restrictions", "Confidentiality constraints", "HIPAA/privacy implications", "Political or legislative sensitivities", "Approvals required before use"]], ["Action plan", ["Policies to update", "Responsible owner", "Timeline", "Governance decision needed"]]],
   27: [["Role purpose", ["Bridge professional title", "Program or enterprise scope", "Primary problems this role solves", "Reporting relationship"]], ["Core responsibilities", ["Technical translation", "Program and workflow translation", "Community and equity coordination", "Vendor/procurement support", "Governance documentation support"]], ["Capacity plan", ["Required skills", "Training needed", "Time allocation", "Success measures"]]],
   10: [["Data tier profile", ["Dataset or data category", "Data owner", "Classification tier", "Sensitivity rationale"]], ["Allowable AI environments", ["Public AI tool allowed?", "Enterprise AI tool allowed?", "In-house/RAG tool allowed?", "Vendor-hosted tool allowed?", "Highly restricted data prohibitions"]], ["Controls and approvals", ["Access controls", "Retention/destruction rules", "Legal/privacy approval", "Security approval", "Review cadence"]]],
   22: [["Population and context scan", ["Use case or system", "Groups affected", "Groups represented in available data", "Groups missing or underrepresented"]], ["Missing voices review", ["Language access gaps", "Disability access gaps", "Rural or small-population concerns", "Tribal sovereignty considerations", "Community knowledge not captured in data"]], ["Mitigation and validation", ["Engagement needed", "Data supplementation or limitations", "Subgroup validation plan", "Decision conditions", "Monitoring indicators"]]],
   5: [["AI resource profile", ["Use case or vendor", "Model or service type", "Expected scale of use", "Hosting environment"]], ["Environmental considerations", ["Energy intensity", "Water use or cooling concerns", "E-waste or hardware needs", "Data center location or environmental justice concerns", "Vendor sustainability claims"]], ["Decision record", ["Lower-impact alternatives", "Procurement requirements", "Equity or community concerns", "Approval conditions"]]],
   19: [["Notice basics", ["AI system or workflow", "Public health purpose", "Audience", "Where notice will appear"]], ["Plain-language explanation", ["What the AI does", "What data are involved", "What humans still decide", "Known limitations", "How to request help or raise concerns"]], ["Review and publication", ["Legal/privacy review", "Equity and language access review", "Governance approval", "Publication date", "Next review date"]]],
-  33: [["Procurement profile", ["Vendor/product", "Use case supported", "Data involved", "Contract vehicle", "Procurement stage"]], ["STLT requirements", ["Data residency and retention", "No model training on agency data", "Audit rights", "Subcontractor disclosure", "Public records considerations", "Accessibility requirements", "Cybersecurity requirements"]], ["Contract decision", ["Required contract language", "Unresolved risks", "Exit or transition terms", "Recommended decision"]]],
+  34: [["Procurement profile", ["Vendor/product", "Use case supported", "Data involved", "Contract vehicle", "Procurement stage"]], ["STLT requirements", ["Data residency and retention", "No model training on agency data", "Audit rights", "Subcontractor disclosure", "Public records considerations", "Accessibility requirements", "Cybersecurity requirements"]], ["Contract decision", ["Required contract language", "Unresolved risks", "Exit or transition terms", "Recommended decision"]]],
   6: [["Decision context", ["AI system or use case", "Decision or action supported", "Potentially affected populations", "Consequence level"]], ["Human-centered rule", ["AI may summarize/draft/prioritize", "AI may not independently decide", "Named human decision owner", "Required review before action", "Appeal or correction pathway"]], ["Oversight", ["Automation bias safeguards", "Audit trail requirements", "Monitoring metrics", "Governance review cadence"]]],
-  34: [["Cost profile", ["AI initiative or portfolio", "Pilot cost estimate", "Scale cost estimate", "Sustainment period", "Cost owner"]], ["Cost categories", ["Staffing and contractor costs", "Vendor and licensing costs", "Infrastructure and hosting costs", "Procurement and legal costs", "Training and change management costs", "Monitoring and evaluation costs"]], ["Sustainability decision", ["Confirmed funding sources", "Funding gaps", "Contingency plan", "Total cost of ownership risk", "Decision or next action"]]],
-  36: [["Roadmap item", ["Project or dependency", "Related play or use case", "Owner", "Target date", "Current status"]], ["Dependency and risk review", ["Upstream dependency", "Downstream impact", "Governance gate", "Funding dependency", "Infrastructure or staffing dependency", "Risk level"]], ["Mitigation and escalation", ["Mitigation action", "Escalation trigger", "Escalation owner", "Decision needed", "Resolution date"]]],
-  37: [["Deployment change profile", ["AI system or workflow", "Deployment phase", "Affected staff groups", "Change lead", "Reporting period"]], ["Execution dashboard", ["Communications delivered", "Training completion", "Office hours/support provided", "Champion activity", "Adoption indicators", "Staff feedback themes"]], ["Escalation and readiness", ["Open barriers", "Issues escalated to governance", "Corrective actions", "Readiness status", "Lessons learned"]]],
-  42: [["Go-live profile", ["AI system or release", "Program area", "Go-live date", "Product owner", "Technical owner", "Governance review date"]], ["Readiness checks", ["Governance approval complete", "Validation complete", "Security review complete", "Data readiness confirmed", "Training complete", "Communications complete", "Support plan ready"]], ["Launch decision", ["Rollback or pause plan", "Known risks", "Approval conditions", "Go/no-go recommendation", "Post-launch review date"]]],
-  48: [["Training plan profile", ["Training plan name", "Training period", "Training owner", "Organization administrator", "Related play or deployment", "Last updated"]], ["Role-based module assignments", ["Executive leadership required modules", "Governance committee required modules", "Program staff required modules", "Data/analytics staff required modules", "IT/security staff required modules", "Legal/privacy/procurement required modules", "Communications/equity/community engagement required modules"]], ["Completion tracking", ["Role or staff group", "Required completion date", "Completion standard", "Completion status", "Supervisor or administrator verification", "Evidence or notes"]], ["Follow-up and support", ["Staff groups needing additional support", "Office hours or coaching schedule", "Champion or mentor assigned", "Refresher training needs", "Escalation or governance issues"]]]
+  35: [["Cost profile", ["AI initiative or portfolio", "Pilot cost estimate", "Scale cost estimate", "Sustainment period", "Cost owner"]], ["Cost categories", ["Staffing and contractor costs", "Vendor and licensing costs", "Infrastructure and hosting costs", "Procurement and legal costs", "Training and change management costs", "Monitoring and evaluation costs"]], ["Sustainability decision", ["Confirmed funding sources", "Funding gaps", "Contingency plan", "Total cost of ownership risk", "Decision or next action"]]],
+  37: [["Roadmap item", ["Project or dependency", "Related play or use case", "Owner", "Target date", "Current status"]], ["Dependency and risk review", ["Upstream dependency", "Downstream impact", "Governance gate", "Funding dependency", "Infrastructure or staffing dependency", "Risk level"]], ["Mitigation and escalation", ["Mitigation action", "Escalation trigger", "Escalation owner", "Decision needed", "Resolution date"]]],
+  38: [["Deployment change profile", ["AI system or workflow", "Deployment phase", "Affected staff groups", "Change lead", "Reporting period"]], ["Execution dashboard", ["Communications delivered", "Training completion", "Office hours/support provided", "Champion activity", "Adoption indicators", "Staff feedback themes"]], ["Escalation and readiness", ["Open barriers", "Issues escalated to governance", "Corrective actions", "Readiness status", "Lessons learned"]]],
+  43: [["Go-live profile", ["AI system or release", "Program area", "Go-live date", "Product owner", "Technical owner", "Governance review date"]], ["Readiness checks", ["Governance approval complete", "Validation complete", "Security review complete", "Data readiness confirmed", "Training complete", "Communications complete", "Support plan ready"]], ["Launch decision", ["Rollback or pause plan", "Known risks", "Approval conditions", "Go/no-go recommendation", "Post-launch review date"]]],
+  28: [["Training plan profile", ["Training plan name", "Training period", "Training owner", "Organization administrator", "Related play or deployment", "Last updated"]], ["Role-based module assignments", ["Executive leadership required modules", "Governance committee required modules", "Program staff required modules", "Data/analytics staff required modules", "IT/security staff required modules", "Legal/privacy/procurement required modules", "Communications/equity/community engagement required modules"]], ["Completion tracking", ["Role or staff group", "Required completion date", "Completion standard", "Completion status", "Supervisor or administrator verification", "Evidence or notes"]], ["Follow-up and support", ["Staff groups needing additional support", "Office hours or coaching schedule", "Champion or mentor assigned", "Refresher training needs", "Escalation or governance issues"]]]
 };
 
 const legacyToolFormBlueprints = { ...toolFormBlueprints };
@@ -149,30 +149,30 @@ Object.assign(toolFormBlueprints, {
   13: [["Use case intake", ["Use case name", "Submitting program/division", "Business owner", "Intended users", "Public health purpose", "AI functionality requested"]], ["Risk review", ["Data involved", "PHI or sensitive data present?", "Population groups affected", "Privacy/security review required", "Equity review required", "Validation required", "Risk tier"]], ["System inventory record", ["Approval status", "Governance decision date", "Operational owner", "Monitoring cadence", "Review/renewal date", "Retirement or pause conditions"]]],
   14: legacyToolFormBlueprints[13],
   15: legacyToolFormBlueprints[14],
-  16: legacyToolFormBlueprints[30],
-  17: legacyToolFormBlueprints[47],
-  18: legacyToolFormBlueprints[44],
+  16: legacyToolFormBlueprints[31],
+  17: legacyToolFormBlueprints[48],
+  18: legacyToolFormBlueprints[45],
   20: legacyToolFormBlueprints[15],
   21: legacyToolFormBlueprints[16],
   23: legacyToolFormBlueprints[17],
   24: legacyToolFormBlueprints[18],
   25: legacyToolFormBlueprints[20],
   26: legacyToolFormBlueprints[21],
-  28: legacyToolFormBlueprints[23],
-  29: legacyToolFormBlueprints[24],
-  30: legacyToolFormBlueprints[25],
-  35: legacyToolFormBlueprints[26],
-  31: legacyToolFormBlueprints[28],
+  29: legacyToolFormBlueprints[23],
+  30: legacyToolFormBlueprints[24],
+  31: legacyToolFormBlueprints[25],
+  36: legacyToolFormBlueprints[26],
   32: legacyToolFormBlueprints[29],
-  38: legacyToolFormBlueprints[35],
-  39: legacyToolFormBlueprints[31],
+  33: legacyToolFormBlueprints[30],
+  39: legacyToolFormBlueprints[36],
   40: legacyToolFormBlueprints[32],
-  41: legacyToolFormBlueprints[38],
-  43: legacyToolFormBlueprints[39],
-  46: legacyToolFormBlueprints[40],
+  41: legacyToolFormBlueprints[33],
+  42: legacyToolFormBlueprints[39],
+  44: legacyToolFormBlueprints[40],
   47: legacyToolFormBlueprints[41],
-  44: legacyToolFormBlueprints[43],
-  45: legacyToolFormBlueprints[46]
+  48: legacyToolFormBlueprints[42],
+  45: legacyToolFormBlueprints[44],
+  46: legacyToolFormBlueprints[47]
 });
 
 const toolOutputOverrides = {
@@ -364,105 +364,105 @@ const toolOutputOverrides = {
     "Responsibilities for technical translation, workflow translation, community and equity coordination, vendor/procurement support, and governance documentation.",
     "Required skills, training needs, time allocation, and success measures."
   ],
-  28: [
+  29: [
     "Staff communication and FAQ materials.",
     "Announcement draft explaining what the AI does, why it is being used, what staff should expect, and what AI will not do.",
     "FAQ on privacy, data protections, human review, decision authority, training, support, and concern reporting.",
     "Communication audiences, channels, timing, spokesperson, and owner."
   ],
-  29: [
+  30: [
     "Resistance and barrier inventory.",
     "Concerns raised by staff or stakeholders, source, type, frequency, and leadership response.",
     "Workforce, privacy, equity, technical, usability, organizational, and resource barriers.",
     "Response actions, owners, due dates, and communication plan for resolution."
   ],
-  30: [
+  31: [
     "Use case scoring and prioritization matrix.",
     "Use case submission with problem, users, data needed, and expected public health value.",
     "Impact, feasibility, equity, risk, scalability, sustainability, and data readiness scoring.",
     "Weighted score, rank, governance conditions, and pilot recommendation."
   ],
-  35: [
+  36: [
     "AI implementation timeline.",
     "Roadmap period, strategic priorities, approved use cases, and shared dependencies.",
     "Quarterly milestones and 12-36 month roadmap items.",
     "Governance gates, funding dependencies, staffing dependencies, infrastructure dependencies, and risks to timeline.",
     "Roadmap owner and next update date."
   ],
-  31: [
+  32: [
     "Vendor evaluation record.",
     "Vendor, product, supported use case, data involved, and procurement stage.",
     "Security, privacy, documentation, transparency, validation, equity, support, cost, and exit-term review.",
     "Strengths, risks, required contract terms, and recommended decision."
   ],
-  32: [
+  33: [
     "Funding strategy checklist and funding landscape summary.",
     "Estimated pilot, scale, sustainment, staffing, infrastructure, procurement, training, and evaluation costs.",
     "Funding source inventory and alignment with DMI, PHIG, and other relevant opportunities.",
     "Allowable activities, grant deadlines, sustainment plan, and contingency plan."
   ],
-  33: [
+  34: [
     "STLT AI procurement and vendor addendum.",
     "Vendor/product profile, supported use case, data involved, contract vehicle, and procurement stage.",
     "Data residency, retention, model training restrictions, audit rights, subcontractor disclosure, public records, accessibility, cybersecurity, and exit terms.",
     "Required contract language, unresolved risks, and recommended procurement decision."
   ],
-  38: [
+  39: [
     "Technical infrastructure readiness checklist.",
     "Project/system readiness profile with assessment date, IT lead, and AI program manager.",
     "Cloud/computing, integration/API, data pipeline, backup, recovery, logging, monitoring, and deployment readiness.",
     "Role-based access controls, security review status, gaps, actions, and timeline."
   ],
-  39: [
+  40: [
     "AI model testing and validation protocol.",
     "Testing profile with system/model, version, testing lead, testing period, and environment.",
     "Unit, integration, performance, equity/subgroup, safety, and user acceptance testing plan.",
     "Pass criteria, results, open defects, remediation needs, and approval recommendation."
   ],
-  40: [
+  41: [
     "AI pilot evaluation dashboard.",
     "Pilot profile, period, program area, and report date.",
     "Pilot scope planned versus actual, staff trained, active users, performance results, equity results, user feedback, and incidents.",
     "Benefits, risks, limitations, required changes, and pilot conclusion."
   ],
-  41: [
+  42: [
     "Pilot-to-scale decision framework.",
     "Pilot evidence review, operational readiness, equity and safety findings, and sustainment readiness.",
     "Go, revise, pause, stop, or scale recommendation.",
     "Conditions for scale, governance decision, and next review date."
   ],
-  43: [
+  44: [
     "Performance monitoring dashboard.",
     "AI system, program area, reporting period, operational owner, and governance review date.",
     "Reliability, performance, usage, data quality, equity, incident, and anomaly indicators.",
     "Findings requiring action, improvement actions, owners, deadlines, and governance escalations."
   ],
-  44: [
+  45: [
     "Continuous improvement log.",
     "Issue or opportunity log with source, date, system, priority, and description.",
     "Corrective or improvement action, owner, due date, and dependencies.",
     "Status, evidence of completion, verifier, closure date, and lessons learned."
   ],
-  45: [
+  46: [
     "AI governance review meeting template.",
     "Pre-meeting preparation record, quorum status, and distributed dashboard, equity, and incident materials.",
     "Agenda for approvals, performance review, equity review, incident review, policy updates, and compliance updates.",
     "Decisions made, approval conditions, follow-up actions, owners, deadlines, and next meeting date."
   ],
-  46: [
+  47: [
     "Equity and disparity impact monitoring dashboard.",
     "Subgroups monitored, sample sizes, performance by subgroup, and disparity thresholds.",
     "Access, language, geography, disability, local context, and other equity indicators.",
     "Triggered concerns, corrective actions, community or stakeholder communication, and governance escalation."
   ],
-  47: [
+  48: [
     "AI evaluation and outcomes report.",
     "Reporting period, report type, audience, and AI system or program name.",
     "Performance outcomes, public health outcomes, operational impacts, equity impacts, and staff/user feedback.",
     "Lessons learned and recommendation to continue, modify, scale, pause, retire, or replace.",
     "Next reporting period actions."
   ],
-  48: [
+  28: [
     "Role-based AI training plan.",
     "Learning module assignment matrix for each role or staff group.",
     "Required and optional modules by role, including completion standards and deadlines.",
@@ -470,27 +470,27 @@ const toolOutputOverrides = {
     "Completion status, competency evidence, and follow-up support needs.",
     "Office hours, coaching, AI champion, refresher training, or escalation plan for staff needing additional support."
   ],
-  34: [
+  35: [
     "Total cost of ownership and sustainability worksheet.",
     "Pilot, scale, and sustainment cost estimates.",
     "Staffing, contractor, vendor, licensing, hosting, procurement, legal, training, change management, monitoring, and evaluation cost categories.",
     "Confirmed funding sources, funding gaps, contingency plan, and sustainability risk.",
     "Decision or next action for funding strategy and roadmap sequencing."
   ],
-  36: [
+  37: [
     "Roadmap dependency and risk register.",
     "Roadmap item, related play or use case, owner, target date, and status.",
     "Upstream and downstream dependencies across governance, funding, infrastructure, staffing, vendors, data, and change management.",
     "Risk level, mitigation action, escalation trigger, escalation owner, and decision needed.",
     "Resolution date and evidence that dependency or risk was addressed."
   ],
-  37: [
+  38: [
     "Change management execution dashboard.",
     "Deployment change profile, affected staff groups, change lead, and reporting period.",
     "Communications delivered, training completion, support activity, champion activity, adoption indicators, and staff feedback themes.",
     "Open barriers, governance escalations, corrective actions, readiness status, and lessons learned."
   ],
-  42: [
+  43: [
     "AI deployment readiness and go-live checklist.",
     "Go-live profile with system, release, program area, product owner, technical owner, and governance review date.",
     "Readiness checks for governance approval, validation, security, data, training, communications, and support.",
@@ -1002,26 +1002,26 @@ const playGuideDeepDive = {
 };
 
 const learningModules = [
-  { id: "staff-training", title: "Staff Training and Shared Readiness", text: "Use these modules to build a common foundation before AI projects begin. The learning section can support staff training, leadership orientation, governance preparation, and cross-program discussion.", examples: [], risk: "Training should be connected to agency policy, approved tools, data safeguards, escalation expectations, and governance requirements.", plays: [1,2,3,5,6], tools: [1,2,7,23,24,48,28] },
+  { id: "staff-training", title: "Staff Training and Shared Readiness", text: "Use these modules to build a common foundation before AI projects begin. The learning section can support staff training, leadership orientation, governance preparation, and cross-program discussion.", examples: [], risk: "Training should be connected to agency policy, approved tools, data safeguards, escalation expectations, and governance requirements.", plays: [1,2,3,5,6], tools: [1,2,7,23,24,28,29] },
   { id: "understanding-ai", title: "Understanding Artificial Intelligence", text: "AI is a family of methods that enable systems to learn from data, recognize patterns, generate content, and support action toward defined goals.", examples: ["Summarize surveillance reports", "Translate analytic findings into plain language", "Support decision briefings"], risk: "Do not treat AI as a single tool or assume one model fits every public health task.", plays: [1,3], tools: [1,2] },
-  { id: "generative-ai", title: "Generative AI", text: "Generative AI produces new text, images, code, summaries, or synthetic data from prompts and examples.", examples: ["Draft health education materials", "Create first drafts of grant narratives", "Summarize policy documents with human review"], risk: "Outputs can sound plausible while being wrong. Consequential outputs need subject matter review.", plays: [1,3,11], tools: [2,14,39] },
-  { id: "agentic-ai", title: "Agentic AI", text: "Agentic AI can coordinate multi-step workflows across systems under explicit rules and human oversight.", examples: ["Route high-priority surveillance signals", "Create task queues from incoming reports", "Assemble evidence packets for review"], risk: "Agentic systems need strict boundaries, audit logs, and escalation paths.", plays: [3,11,12,13], tools: [12,14,38,17] },
-  { id: "deep-research", title: "Deep Research", text: "Deep Research tools autonomously plan multi-step research tasks, gather sources, and draft citation-based reports for expert review.", examples: ["Literature scans for emerging threats", "Policy scans across jurisdictions", "Comparative program analysis"], risk: "Treat outputs as a research assistant draft, not as validated evidence.", plays: [1,3,13], tools: [2,47] },
-  { id: "workflows", title: "AI-Supported Public Health Workflows", text: "AI can support signal detection, evidence gathering, analysis, synthesis, briefing, communication, and decision support.", examples: ["Detect anomalies", "Synthesize outbreak updates", "Draft situation reports"], risk: "Match the tool to workflow stage and keep humans responsible for decisions.", plays: [7,10,11], tools: [30,28,40] },
-  { id: "risks", title: "Risks, Limitations, and Guardrails", text: "Public health AI risks include hallucination, bias, privacy exposure, automation bias, model drift, and performance loss on complex tasks.", examples: ["Equity audit before scale", "Hallucination audit for public-facing products", "Incident response for unsafe outputs"], risk: "Governance, documentation, validation, and monitoring are mandatory, not optional.", plays: [3,11,12,13], tools: [3,16,14,46,17] },
+  { id: "generative-ai", title: "Generative AI", text: "Generative AI produces new text, images, code, summaries, or synthetic data from prompts and examples.", examples: ["Draft health education materials", "Create first drafts of grant narratives", "Summarize policy documents with human review"], risk: "Outputs can sound plausible while being wrong. Consequential outputs need subject matter review.", plays: [1,3,11], tools: [2,14,40] },
+  { id: "agentic-ai", title: "Agentic AI", text: "Agentic AI can coordinate multi-step workflows across systems under explicit rules and human oversight.", examples: ["Route high-priority surveillance signals", "Create task queues from incoming reports", "Assemble evidence packets for review"], risk: "Agentic systems need strict boundaries, audit logs, and escalation paths.", plays: [3,11,12,13], tools: [12,14,39,17] },
+  { id: "deep-research", title: "Deep Research", text: "Deep Research tools autonomously plan multi-step research tasks, gather sources, and draft citation-based reports for expert review.", examples: ["Literature scans for emerging threats", "Policy scans across jurisdictions", "Comparative program analysis"], risk: "Treat outputs as a research assistant draft, not as validated evidence.", plays: [1,3,13], tools: [2,48] },
+  { id: "workflows", title: "AI-Supported Public Health Workflows", text: "AI can support signal detection, evidence gathering, analysis, synthesis, briefing, communication, and decision support.", examples: ["Detect anomalies", "Synthesize outbreak updates", "Draft situation reports"], risk: "Match the tool to workflow stage and keep humans responsible for decisions.", plays: [7,10,11], tools: [31,29,41] },
+  { id: "risks", title: "Risks, Limitations, and Guardrails", text: "Public health AI risks include hallucination, bias, privacy exposure, automation bias, model drift, and performance loss on complex tasks.", examples: ["Equity audit before scale", "Hallucination audit for public-facing products", "Incident response for unsafe outputs"], risk: "Governance, documentation, validation, and monitoring are mandatory, not optional.", plays: [3,11,12,13], tools: [3,16,14,47,17] },
   { id: "systems-shift", title: "AI as a Public Health Systems Shift", text: "AI changes public health infrastructure, workforce expectations, policy, data systems, procurement, public trust, communications, surveillance, and service delivery.", examples: ["Plan agency-wide governance", "Coordinate data modernization with workforce training", "Align AI pilots with public accountability"], risk: "Treating AI as a one-off technology purchase can create fragmented adoption, uneven safeguards, and unowned risk.", plays: [1,2,3,9,12], tools: [4,10,6] },
   { id: "digital-determinants", title: "AI as a Digital Determinant of Health", text: "AI can shape access to services, quality of information, exposure to misinformation, eligibility decisions, language access, public benefits, and community trust.", examples: ["Review AI effects on language access", "Assess misinformation risk", "Evaluate service access impacts"], risk: "AI-enabled systems can widen inequities if digital access, data representation, and community context are not examined early.", plays: [1,4,7,13], tools: [3,22,19] },
-  { id: "human-centered-ai", title: "Human-Centered AI", text: "Human-centered AI keeps public health professionals, affected communities, and accountable decision-makers at the center of design, review, and action.", examples: ["Define human decision owners", "Require expert review before public communications", "Document appeal or correction pathways"], risk: "AI should support judgment, not replace community relationships, public accountability, or final decisions in consequential workflows.", plays: [1,7,11,12,13], tools: [6,19,45] },
-  { id: "ai-literacy", title: "AI Literacy for Public Health Staff", text: "AI literacy means staff can recognize AI use, understand major failure modes, protect sensitive data, communicate uncertainty, document use, and know when not to use AI.", examples: ["Role-based AI training", "Prompt and privacy coaching", "Staff reporting pathways for concerns"], risk: "Staff should not be asked to use AI tools before they understand privacy, hallucination, bias, documentation, and human review expectations.", plays: [5,6,10], tools: [27,24,26,48,28] },
-  { id: "automation-bias", title: "Automation Bias and Over-Trust", text: "Automation bias occurs when people accept AI outputs too readily because they appear confident, precise, or authoritative.", examples: ["Second-review requirements", "Decision owner sign-off", "Confidence and limitation notes in briefs"], risk: "Repeated exposure to fluent AI outputs can reduce scrutiny unless workflows require deliberate review and documentation.", plays: [3,7,11,12,13], tools: [14,39,45,6] },
-  { id: "missing-voices", title: "Missing Voices in Data", text: "Missing voices analysis asks whose experiences, records, language needs, disability access needs, rural context, tribal sovereignty interests, or community knowledge are absent from the data.", examples: ["Identify underrepresented groups", "Add community validation before launch", "Monitor subgroup performance after deployment"], risk: "Models may appear accurate overall while failing communities that are missing, underrepresented, misclassified, or poorly represented.", plays: [4,7,13], tools: [3,22,46] },
-  { id: "public-transparency", title: "Public Transparency and Community Trust", text: "Public health agencies should be able to explain when AI is used, why it is used, what data are involved, what humans decide, and how concerns can be raised.", examples: ["Public AI use notices", "Community-facing FAQs", "Feedback and correction pathways"], risk: "AI use that is invisible or hard to explain can erode trust even when the technical system performs well.", plays: [3,4,10,12], tools: [19,20,45] },
-  { id: "tiered-data-use", title: "Tiered Data Use for AI", text: "Tiered data use classifies information by sensitivity and defines which AI environments are appropriate for public, internal, confidential, and highly restricted data.", examples: ["Restrict PHI from public AI tools", "Approve enterprise AI for internal drafts", "Use in-house/RAG systems for restricted materials"], risk: "Without data tiers, staff may unintentionally place confidential, protected, or sovereign data into unsuitable AI environments.", plays: [2,3,11], tools: [10,15,33] },
-  { id: "environmental-impact", title: "Environmental and Resource Impacts", text: "AI can carry energy, water, hardware, e-waste, procurement, and environmental justice implications that should be considered before scale.", examples: ["Review vendor sustainability claims", "Compare lower-impact alternatives", "Flag data center environmental justice concerns"], risk: "High-compute AI uses should be justified by public health value and reviewed for resource burden and environmental justice implications.", plays: [1,7,8], tools: [5,30,32] },
-  { id: "bridge-professional", title: "The AI Bridge Professional Role", text: "The bridge professional translates across public health programs, IT, legal/privacy, procurement, vendors, leadership, data teams, and community partners.", examples: ["Coordinate governance submissions", "Translate technical risk for leadership", "Help program staff document AI workflows"], risk: "Without translation capacity, AI efforts can stall between technical, operational, legal, and community expectations.", plays: [5,6,9,11], tools: [27,23,35] },
-  { id: "funding", title: "Federal Funding Opportunities", text: "AI work can often be positioned as a capability layer on top of data modernization, infrastructure, workforce, and equity investments.", examples: ["DMI-supported data pipelines", "PHIG-supported workforce and governance", "Grant-aligned pilots"], risk: "Do not approve projects without confirmed pilot, scale, and sustainment resources.", plays: [8,9], tools: [32,31,35] },
-  { id: "using-together", title: "How to Use the Playbook and Toolkit Together", text: "Read the play first to understand the decision and output, then use the linked tools during workshops or governance reviews.", examples: ["Use Tool 7 during Play 2", "Use Tools 2 and 12 during Play 3", "Use Tools 40 and 41before scaling"], risk: "The tools support the plays; they should not become a disconnected paperwork exercise.", plays: [1,2,3,11], tools: [2,7,12,40,41] },
-  { id: "ai-support-areas", title: "Areas Where AI Can Support Public Health Activities", text: "Expanded examples showing how AI can support specific public health activities, what safeguards are needed, and which plays and tools help agencies move from idea to responsible implementation.", examples: ["Surveillance and outbreak intelligence", "Plain-language communication", "Workflow routing", "Monitoring and evaluation"], risk: "These examples are planning prompts, not automatic recommendations to adopt AI without readiness assessment, governance review, stakeholder engagement, and monitoring.", plays: [2,3,4,7,11,12,13], tools: [3,7,13,14,19,20,22,40,43,46] }
+  { id: "human-centered-ai", title: "Human-Centered AI", text: "Human-centered AI keeps public health professionals, affected communities, and accountable decision-makers at the center of design, review, and action.", examples: ["Define human decision owners", "Require expert review before public communications", "Document appeal or correction pathways"], risk: "AI should support judgment, not replace community relationships, public accountability, or final decisions in consequential workflows.", plays: [1,7,11,12,13], tools: [6,19,46] },
+  { id: "ai-literacy", title: "AI Literacy for Public Health Staff", text: "AI literacy means staff can recognize AI use, understand major failure modes, protect sensitive data, communicate uncertainty, document use, and know when not to use AI.", examples: ["Role-based AI training", "Prompt and privacy coaching", "Staff reporting pathways for concerns"], risk: "Staff should not be asked to use AI tools before they understand privacy, hallucination, bias, documentation, and human review expectations.", plays: [5,6,10], tools: [27,24,26,28,29] },
+  { id: "automation-bias", title: "Automation Bias and Over-Trust", text: "Automation bias occurs when people accept AI outputs too readily because they appear confident, precise, or authoritative.", examples: ["Second-review requirements", "Decision owner sign-off", "Confidence and limitation notes in briefs"], risk: "Repeated exposure to fluent AI outputs can reduce scrutiny unless workflows require deliberate review and documentation.", plays: [3,7,11,12,13], tools: [14,40,46,6] },
+  { id: "missing-voices", title: "Missing Voices in Data", text: "Missing voices analysis asks whose experiences, records, language needs, disability access needs, rural context, tribal sovereignty interests, or community knowledge are absent from the data.", examples: ["Identify underrepresented groups", "Add community validation before launch", "Monitor subgroup performance after deployment"], risk: "Models may appear accurate overall while failing communities that are missing, underrepresented, misclassified, or poorly represented.", plays: [4,7,13], tools: [3,22,47] },
+  { id: "public-transparency", title: "Public Transparency and Community Trust", text: "Public health agencies should be able to explain when AI is used, why it is used, what data are involved, what humans decide, and how concerns can be raised.", examples: ["Public AI use notices", "Community-facing FAQs", "Feedback and correction pathways"], risk: "AI use that is invisible or hard to explain can erode trust even when the technical system performs well.", plays: [3,4,10,12], tools: [19,20,46] },
+  { id: "tiered-data-use", title: "Tiered Data Use for AI", text: "Tiered data use classifies information by sensitivity and defines which AI environments are appropriate for public, internal, confidential, and highly restricted data.", examples: ["Restrict PHI from public AI tools", "Approve enterprise AI for internal drafts", "Use in-house/RAG systems for restricted materials"], risk: "Without data tiers, staff may unintentionally place confidential, protected, or sovereign data into unsuitable AI environments.", plays: [2,3,11], tools: [10,15,34] },
+  { id: "environmental-impact", title: "Environmental and Resource Impacts", text: "AI can carry energy, water, hardware, e-waste, procurement, and environmental justice implications that should be considered before scale.", examples: ["Review vendor sustainability claims", "Compare lower-impact alternatives", "Flag data center environmental justice concerns"], risk: "High-compute AI uses should be justified by public health value and reviewed for resource burden and environmental justice implications.", plays: [1,7,8], tools: [5,31,33] },
+  { id: "bridge-professional", title: "The AI Bridge Professional Role", text: "The bridge professional translates across public health programs, IT, legal/privacy, procurement, vendors, leadership, data teams, and community partners.", examples: ["Coordinate governance submissions", "Translate technical risk for leadership", "Help program staff document AI workflows"], risk: "Without translation capacity, AI efforts can stall between technical, operational, legal, and community expectations.", plays: [5,6,9,11], tools: [27,23,36] },
+  { id: "funding", title: "Federal Funding Opportunities", text: "AI work can often be positioned as a capability layer on top of data modernization, infrastructure, workforce, and equity investments.", examples: ["DMI-supported data pipelines", "PHIG-supported workforce and governance", "Grant-aligned pilots"], risk: "Do not approve projects without confirmed pilot, scale, and sustainment resources.", plays: [8,9], tools: [33,32,36] },
+  { id: "using-together", title: "How to Use the Playbook and Toolkit Together", text: "Read the play first to understand the decision and output, then use the linked tools during workshops or governance reviews.", examples: ["Use Tool 7 during Play 2", "Use Tools 2 and 12 during Play 3", "Use Tools 41 and 42before scaling"], risk: "The tools support the plays; they should not become a disconnected paperwork exercise.", plays: [1,2,3,11], tools: [2,7,12,41,42] },
+  { id: "ai-support-areas", title: "Areas Where AI Can Support Public Health Activities", text: "Expanded examples showing how AI can support specific public health activities, what safeguards are needed, and which plays and tools help agencies move from idea to responsible implementation.", examples: ["Surveillance and outbreak intelligence", "Plain-language communication", "Workflow routing", "Monitoring and evaluation"], risk: "These examples are planning prompts, not automatic recommendations to adopt AI without readiness assessment, governance review, stakeholder engagement, and monitoring.", plays: [2,3,4,7,11,12,13], tools: [3,7,13,14,19,20,22,41,44,47] }
 ];
 
 const lessonDeckDownloads = {
@@ -1057,21 +1057,21 @@ const readinessDomains = [
 ].map(([name, indicators], i) => ({ id: `d${i}`, name, indicators }));
 
 const readinessGapRecommendations = {
-  "Leadership and Governance": { plays: [1, 3, 12], tools: [1,2,12,45,17] },
-  "Data Infrastructure": { plays: [2, 9, 11, 13], tools: [7,9,15,38,43] },
-  "Workforce Capacity": { plays: [5, 6, 10], tools: [23,24,26,48,28,29] },
-  "Equity and Community Engagement": { plays: [4, 7, 13], tools: [3,20,21,46] },
-  "Partnerships and Collaboration": { plays: [4, 7, 8], tools: [20,21,31,32] },
+  "Leadership and Governance": { plays: [1, 3, 12], tools: [1,2,12,46,17] },
+  "Data Infrastructure": { plays: [2, 9, 11, 13], tools: [7,9,15,39,44] },
+  "Workforce Capacity": { plays: [5, 6, 10], tools: [23,24,26,28,29,30] },
+  "Equity and Community Engagement": { plays: [4, 7, 13], tools: [3,20,21,47] },
+  "Partnerships and Collaboration": { plays: [4, 7, 8], tools: [20,21,32,33] },
   "Privacy and Security": { plays: [3, 11, 12], tools: [15,16,17] },
-  "Policy, Procurement, and Public Accountability": { plays: [1, 3, 7, 8, 11, 12], tools: [4,5,6,19,31,33] }
+  "Policy, Procurement, and Public Accountability": { plays: [1, 3, 7, 8, 11, 12], tools: [4,5,6,19,32,34] }
 };
 
 const maturityLevels = [
   { level: 1, title: "Awareness", focus: "Learning and exploration", plays: [1], risks: "Informal ungoverned tool use, PHI exposure, unclear accountability.", activities: "Explore concepts, set interim policy, identify AI lead, establish guardrails.", tools: [1,2] },
-  { level: 2, title: "Readiness", focus: "Planning and preparation", plays: [2,3,4,5,6,7,8,9], risks: "Overcommitting before data, workforce, governance, change, or funding gaps are addressed.", activities: "Assess readiness, establish governance, engage stakeholders, plan workforce and change management, prioritize use cases, align funding, design roadmap.", tools: [7,32,35,23,24,26,48,30,12] },
-  { level: 3, title: "Pilots", focus: "Governed initial development", plays: [7,10,11], risks: "Pilots proceed without validation, staff adoption support, or scale decision criteria.", activities: "Prioritize use cases, execute change management, validate models, evaluate pilots.", tools: [30,28,14,39,40,41] },
-  { level: 4, title: "Deployment", focus: "Operational integration", plays: [11,13], risks: "Model drift, automation bias, equity gaps, insufficient monitoring.", activities: "Deploy into workflows, monitor performance, evaluate outcomes, audit equity.", tools: [43,40,46,47] },
-  { level: 5, title: "Optimization", focus: "Continuous improvement", plays: [12,13], risks: "Policies become stale and documentation falls behind evolving systems.", activities: "Improve systems, sustain governance, audit compliance, update policies.", tools: [44,45,17,18] }
+  { level: 2, title: "Readiness", focus: "Planning and preparation", plays: [2,3,4,5,6,7,8,9], risks: "Overcommitting before data, workforce, governance, change, or funding gaps are addressed.", activities: "Assess readiness, establish governance, engage stakeholders, plan workforce and change management, prioritize use cases, align funding, design roadmap.", tools: [7,33,36,23,24,26,28,31,12] },
+  { level: 3, title: "Pilots", focus: "Governed initial development", plays: [7,10,11], risks: "Pilots proceed without validation, staff adoption support, or scale decision criteria.", activities: "Prioritize use cases, execute change management, validate models, evaluate pilots.", tools: [31,29,14,40,41,42] },
+  { level: 4, title: "Deployment", focus: "Operational integration", plays: [11,13], risks: "Model drift, automation bias, equity gaps, insufficient monitoring.", activities: "Deploy into workflows, monitor performance, evaluate outcomes, audit equity.", tools: [44,41,47,48] },
+  { level: 5, title: "Optimization", focus: "Continuous improvement", plays: [12,13], risks: "Policies become stale and documentation falls behind evolving systems.", activities: "Improve systems, sustain governance, audit compliance, update policies.", tools: [45,46,17,18] }
 ];
 
 const addedToolGuidanceByPlay = {
@@ -1173,16 +1173,16 @@ const exampleDetails = {
   "Grant-aligned pilots": "Design small pilots that map to allowable funding activities, measurable outputs, evaluation requirements, and sustainment plans.",
   "Use Tool 7 during Play 2": "Complete the readiness self-assessment before selecting pilots so gaps in governance, data, workforce, equity, and security are visible.",
   "Use Tools 2 and 12 during Play 3": "Pair the responsible AI policy template with the governance board charter to define authority, review standards, and decision rights.",
-  "Use Tools 40 and 41before scaling": "Use the pilot dashboard and scale decision framework to determine whether to scale, revise, pause, or retire a pilot."
+  "Use Tools 41 and 42before scaling": "Use the pilot dashboard and scale decision framework to determine whether to scale, revise, pause, or retire a pilot."
 };
 
 const workflows = [
-  { title: "Signal Detection", description: "Identify unusual patterns, emerging risks, or priority alerts in surveillance feeds, reports, calls, environmental data, or partner updates.", humanReview: "Staff confirm whether a signal is meaningful, urgent, and actionable before escalation.", plays: [7,11,13], tools: [30,40,46] },
-  { title: "Evidence Gathering", description: "Collect relevant literature, policy guidance, local data, prior decisions, and partner input into one reviewable evidence packet.", humanReview: "Subject matter experts check source quality, jurisdictional relevance, and missing perspectives.", plays: [1,3,4], tools: [2,21,47] },
-  { title: "Analysis", description: "Support coding, statistical review, geospatial analysis, data quality checks, and subgroup comparisons that inform public health action.", humanReview: "Analysts validate methods, assumptions, bias risks, privacy constraints, and interpretation.", plays: [4,11,13], tools: [9,14,39,46] },
-  { title: "Synthesis", description: "Turn multiple reports, datasets, interviews, or evidence sources into a concise summary of what is known, uncertain, and next.", humanReview: "Program and evaluation staff verify the synthesis before it shapes decisions or communications.", plays: [4,10,13], tools: [28,47,44] },
-  { title: "Briefing & Communication", description: "Draft staff updates, leadership briefs, FAQs, public messages, grant narratives, and partner communications.", humanReview: "Communications, legal, equity, and program leads approve language before distribution.", plays: [5,6,10,11], tools: [23,28,15] },
-  { title: "Decision Support", description: "Organize options, risks, constraints, equity considerations, and recommended next steps for governance or leadership decisions.", humanReview: "Humans retain decision authority, document rationale, and monitor downstream impacts.", plays: [3,7,12], tools: [3,30,41,45] }
+  { title: "Signal Detection", description: "Identify unusual patterns, emerging risks, or priority alerts in surveillance feeds, reports, calls, environmental data, or partner updates.", humanReview: "Staff confirm whether a signal is meaningful, urgent, and actionable before escalation.", plays: [7,11,13], tools: [31,41,47] },
+  { title: "Evidence Gathering", description: "Collect relevant literature, policy guidance, local data, prior decisions, and partner input into one reviewable evidence packet.", humanReview: "Subject matter experts check source quality, jurisdictional relevance, and missing perspectives.", plays: [1,3,4], tools: [2,21,48] },
+  { title: "Analysis", description: "Support coding, statistical review, geospatial analysis, data quality checks, and subgroup comparisons that inform public health action.", humanReview: "Analysts validate methods, assumptions, bias risks, privacy constraints, and interpretation.", plays: [4,11,13], tools: [9,14,40,47] },
+  { title: "Synthesis", description: "Turn multiple reports, datasets, interviews, or evidence sources into a concise summary of what is known, uncertain, and next.", humanReview: "Program and evaluation staff verify the synthesis before it shapes decisions or communications.", plays: [4,10,13], tools: [29,48,45] },
+  { title: "Briefing & Communication", description: "Draft staff updates, leadership briefs, FAQs, public messages, grant narratives, and partner communications.", humanReview: "Communications, legal, equity, and program leads approve language before distribution.", plays: [5,6,10,11], tools: [23,29,15] },
+  { title: "Decision Support", description: "Organize options, risks, constraints, equity considerations, and recommended next steps for governance or leadership decisions.", humanReview: "Humans retain decision authority, document rationale, and monitor downstream impacts.", plays: [3,7,12], tools: [3,31,42,46] }
 ];
 
 const caseStudies = [
@@ -1900,7 +1900,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["AI should flag and organize information, not declare outbreaks or issue public alerts.", "Epidemiologists should validate signals and document decisions.", "Data latency, false positives, false negatives, and subgroup effects should be monitored."],
     examples: ["Summarize surveillance reports", "Route high-priority surveillance signals", "Detect anomalies", "Synthesize outbreak updates"],
     plays: [2,3,7,11,13],
-    tools: [7,13,14,40,43,46]
+    tools: [7,13,14,41,44,47]
   },
   {
     title: "Evidence Review, Policy Scans, and Research Synthesis",
@@ -1909,7 +1909,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Require citations and source verification.", "Separate evidence strength from opinion, vendor claims, or early findings.", "Have subject matter experts review conclusions before decisions are made."],
     examples: ["Literature scans for emerging threats", "Policy scans across jurisdictions", "Comparative program analysis", "Summarize policy documents with human review"],
     plays: [1,3,7,8,13],
-    tools: [2,4,31,47]
+    tools: [2,4,32,48]
   },
   {
     title: "Plain-Language Communication and Health Education",
@@ -1918,7 +1918,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Review for accuracy, tone, reading level, cultural context, accessibility, and current guidance.", "Avoid unsupervised public-facing generation.", "Use approved source material and document human review."],
     examples: ["Draft health education materials", "Translate analytic findings into plain language", "Community-facing FAQs", "Public AI use notices"],
     plays: [1,3,4,10,12],
-    tools: [19,20,28,45]
+    tools: [19,20,29,46]
   },
   {
     title: "Leadership Briefings and Decision Support",
@@ -1927,7 +1927,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Clearly label AI-assisted drafts.", "Require decision owner sign-off.", "Include uncertainty, limitations, and source references.", "Prevent AI from making final policy, resource, or emergency decisions."],
     examples: ["Support decision briefings", "Decision owner sign-off", "Confidence and limitation notes in briefs"],
     plays: [1,2,3,7,12],
-    tools: [1,6,7,13,45]
+    tools: [1,6,7,13,46]
   },
   {
     title: "Grants, Funding, and Sustainability Planning",
@@ -1936,7 +1936,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Verify funding requirements, deadlines, eligibility, and allowable costs.", "Avoid committing to AI capabilities that cannot be supported or monitored.", "Include governance, evaluation, accessibility, and change management costs."],
     examples: ["Create first drafts of grant narratives", "DMI-supported data pipelines", "PHIG-supported workforce and governance", "Grant-aligned pilots"],
     plays: [8,9],
-    tools: [35,31,32]
+    tools: [36,32,33]
   },
   {
     title: "Workflow Routing, Task Queues, and Operational Coordination",
@@ -1945,7 +1945,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Define what the AI can create, route, update, or escalate.", "Require audit logs and role-based permissions.", "Give administrators control over assignments, deadlines, and workflow changes.", "Keep humans responsible for final action and external communication."],
     examples: ["Create task queues from incoming reports", "Coordinate governance submissions", "Staff reporting pathways for concerns"],
     plays: [3,6,10,11,12],
-    tools: [12,13,17,23,29,35]
+    tools: [12,13,17,23,30,36]
   },
   {
     title: "Equity, Missing Voices, and Community Validation",
@@ -1954,7 +1954,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Use community expertise and affected-user input, not only data analysis.", "Document who was consulted and what changed as a result.", "Do not deploy systems that cannot be evaluated for disparate impact when they affect access, services, enforcement, or public communication."],
     examples: ["Identify underrepresented groups", "Add community validation before launch", "Monitor subgroup performance after deployment", "Equity audit before scale"],
     plays: [4,7,13],
-    tools: [3,20,22,46]
+    tools: [3,20,22,47]
   },
   {
     title: "Language Access, Accessibility, and Digital Inclusion",
@@ -1963,7 +1963,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Require human review before public use of translated or accessibility-critical materials.", "Test materials with affected users where feasible.", "Provide non-AI or staff-supported alternatives for important services."],
     examples: ["Review AI effects on language access", "Evaluate service access impacts", "Public AI use notices"],
     plays: [1,4,7,10,13],
-    tools: [3,19,20,22,46]
+    tools: [3,19,20,22,47]
   },
   {
     title: "Privacy, Tiered Data Use, and Secure AI Environments",
@@ -1972,7 +1972,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Restrict PHI and sensitive data from public AI tools.", "Use enterprise, in-house, or controlled RAG environments for restricted materials.", "Document data sources, access rules, and human review requirements.", "Escalate incidents through privacy, security, and governance channels."],
     examples: ["Restrict PHI from public AI tools", "Approve enterprise AI for internal drafts", "Use in-house/RAG systems for restricted materials"],
     plays: [2,3,11,12],
-    tools: [10,15,16,33,38]
+    tools: [10,15,16,34,39]
   },
   {
     title: "Procurement, Vendor Review, and Environmental Impact",
@@ -1981,7 +1981,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Do not rely on vendor marketing claims without documentation.", "Require audit rights, data-rights language, model documentation, monitoring obligations, and exit plans.", "Consider lower-impact alternatives where public health value does not justify high compute burden."],
     examples: ["Review vendor sustainability claims", "Compare lower-impact alternatives", "Flag data center environmental justice concerns"],
     plays: [3,7,8,9,12],
-    tools: [4,5,31,33,44]
+    tools: [4,5,32,34,45]
   },
   {
     title: "Workforce Training, AI Literacy, and Bridge Roles",
@@ -1990,7 +1990,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Do not ask staff to use AI before they understand privacy, hallucination, bias, documentation, and escalation expectations.", "Protect staff time for training and implementation support.", "Use feedback loops to identify workload, trust, and usability problems."],
     examples: ["Role-based AI training", "Prompt and privacy coaching", "Coordinate data modernization with workforce training", "Help program staff document AI workflows"],
     plays: [5,6,10],
-    tools: [23,24,25,27,48,28,29]
+    tools: [23,24,25,27,28,29,30]
   },
   {
     title: "Performance Improvement, Metrics, and Quality Dashboards",
@@ -1999,7 +1999,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Staff should approve all measures before use so the dashboard reflects public health priorities rather than whatever data are easiest to collect.", "AI-generated measures should be checked for feasibility, validity, equity relevance, burden, and unintended incentives.", "Agentic monitoring should only use approved data sources and should not alter official records, contact partners, or escalate externally without human review.", "Dashboards should show definitions, data freshness, limitations, subgroup views, and interpretation notes so users do not over-read noisy or incomplete data.", "Performance summaries should distinguish observed trends from AI-generated explanations or improvement suggestions."],
     examples: ["Draft performance measures from an aim statement", "Identify leading and lagging indicators", "Generate PDSA ideas from dashboard trends", "Monitor dashboard thresholds and equity gaps", "Create owner-based improvement action trackers"],
     plays: [2,3,7,9,10,12,13],
-    tools: [7,8,9,13,23,35,40,41,43,44,46,47]
+    tools: [7,8,9,13,23,36,41,42,44,45,47,48]
   },
   {
     title: "Monitoring, Evaluation, Incident Response, and Continuous Improvement",
@@ -2008,7 +2008,7 @@ const publicHealthAiSupportAreas = [
     safeguards: ["Define thresholds for pausing, modifying, or retiring systems.", "Assign owners for monitoring and incident response.", "Review high-impact systems through governance on a regular cadence.", "Document lessons learned and update tools, policies, training, and public notices."],
     examples: ["Hallucination audit for public-facing products", "Incident response for unsafe outputs", "Policy update process", "Monitor subgroup performance after deployment"],
     plays: [12,13],
-    tools: [14,17,18,40,41,43,44,45,46,47]
+    tools: [14,17,18,41,42,44,45,46,47,48]
   }
 ];
 
@@ -2237,7 +2237,7 @@ const learningModuleApplicationDetails = {
 
 const additionalTrainingModules = [
   {
-    module: { id: "procurement-vendor-oversight", title: "Procurement and Vendor Oversight", text: "AI procurement requires public health departments to evaluate vendor claims, contract terms, data rights, model documentation, auditability, accessibility, cybersecurity, support, and exit plans before an AI-enabled product is approved.", examples: ["Review vendor model documentation", "Add AI clauses to contracts", "Require audit and data-use terms"], risk: "Vendor AI should not bypass governance, privacy, security, accessibility, validation, or public accountability requirements.", plays: [3,7,8,11,12], tools: [11,13,15,33,39,42] },
+    module: { id: "procurement-vendor-oversight", title: "Procurement and Vendor Oversight", text: "AI procurement requires public health departments to evaluate vendor claims, contract terms, data rights, model documentation, auditability, accessibility, cybersecurity, support, and exit plans before an AI-enabled product is approved.", examples: ["Review vendor model documentation", "Add AI clauses to contracts", "Require audit and data-use terms"], risk: "Vendor AI should not bypass governance, privacy, security, accessibility, validation, or public accountability requirements.", plays: [3,7,8,11,12], tools: [11,13,15,34,40,43] },
     resources: [
       ["NIST AI Risk Management Framework", "Use to structure vendor risk, documentation, transparency, and accountability review.", "https://www.nist.gov/itl/ai-risk-management-framework"],
       ["FedRAMP", "Cloud security authorization context for vendor-hosted systems that may handle sensitive government data.", "https://www.fedramp.gov/"],
@@ -2253,7 +2253,7 @@ const additionalTrainingModules = [
     application: { matters: "Most departments will buy or inherit AI-enabled systems before they build their own. Vendor oversight protects public health authority, data rights, security, equity, and operational continuity.", questions: ["What AI-enabled vendor tools are already in use or under consideration?", "Which contract terms would prevent the department from auditing or safely exiting the system?", "Who must review vendor claims before a pilot or purchase is approved?"], exercise: "Review a sample AI vendor proposal and identify missing documentation, contract protections, validation evidence, data-use terms, accessibility requirements, and governance questions.", artifacts: ["Vendor AI review checklist", "Procurement questions for governance", "Draft AI contract requirements"] }
   },
   {
-    module: { id: "privacy-confidentiality-public-records", title: "Privacy, Confidentiality, and Public Records", text: "AI use in public health must account for PHI, PII, confidential public health records, investigation data, data-sharing limits, retention rules, and public records obligations.", examples: ["Classify data before AI use", "Review public records implications", "Avoid entering sensitive data in public tools"], risk: "Sensitive or confidential data can be exposed, retained, reused, or disclosed if staff use the wrong AI environment.", plays: [2,3,7,11,12], tools: [7,10,15,17,33] },
+    module: { id: "privacy-confidentiality-public-records", title: "Privacy, Confidentiality, and Public Records", text: "AI use in public health must account for PHI, PII, confidential public health records, investigation data, data-sharing limits, retention rules, and public records obligations.", examples: ["Classify data before AI use", "Review public records implications", "Avoid entering sensitive data in public tools"], risk: "Sensitive or confidential data can be exposed, retained, reused, or disclosed if staff use the wrong AI environment.", plays: [2,3,7,11,12], tools: [7,10,15,17,34] },
     resources: [
       ["HIPAA", "Federal privacy framework when protected health information may be involved.", "https://www.hhs.gov/hipaa/index.html"],
       ["CDC Public Health Data Policy and Standards", "Public health data policy and standards context for responsible data use.", "https://www.cdc.gov/surveillance/data-modernization/policy.html"],
@@ -2269,7 +2269,7 @@ const additionalTrainingModules = [
     application: { matters: "Privacy, confidentiality, and records controls are foundational for STLT public health AI because departments handle sensitive information, regulatory records, investigations, partner data, and public accountability obligations.", questions: ["Which types of department data should never be entered into public AI tools?", "Where should AI prompts and outputs be stored when they support official work?", "Who decides whether a proposed AI use requires privacy, legal, or records review?"], exercise: "Sort example AI tasks into public, internal, confidential, and highly restricted data-use categories, then identify the approved AI environment and review pathway for each.", artifacts: ["AI data classification examples", "Privacy escalation rules", "Public records documentation notes"] }
   },
   {
-    module: { id: "model-validation-evaluation-basics", title: "Model Validation and Evaluation Basics", text: "Validation helps departments decide whether an AI system performs well enough, for the right users and populations, before it is piloted, scaled, or sustained.", examples: ["Test outputs against accepted standards", "Compare subgroup performance", "Set go/no-go thresholds"], risk: "A model that performs well in a demo can fail in local workflows, underrepresented groups, or changing conditions.", plays: [7,11,12,13], tools: [3,14,39,40,41,43,46] },
+    module: { id: "model-validation-evaluation-basics", title: "Model Validation and Evaluation Basics", text: "Validation helps departments decide whether an AI system performs well enough, for the right users and populations, before it is piloted, scaled, or sustained.", examples: ["Test outputs against accepted standards", "Compare subgroup performance", "Set go/no-go thresholds"], risk: "A model that performs well in a demo can fail in local workflows, underrepresented groups, or changing conditions.", plays: [7,11,12,13], tools: [3,14,40,41,42,44,47] },
     resources: [
       ["NIST AI Risk Management Framework", "Risk and measurement framework for validation, monitoring, and governance.", "https://www.nist.gov/itl/ai-risk-management-framework"],
       ["WHO: Regulatory considerations on artificial intelligence for health", "Health AI validation, safety, transparency, and monitoring considerations.", "https://iris.who.int/handle/10665/373421"],
@@ -2285,7 +2285,7 @@ const additionalTrainingModules = [
     application: { matters: "Validation protects agencies from scaling systems that are inaccurate, inequitable, poorly integrated, or untrusted by staff and communities.", questions: ["What would count as acceptable performance for this workflow?", "Which groups or locations need subgroup review?", "What evidence should governance require before scale-up?"], exercise: "Design a validation plan for one proposed AI use case, including test examples, performance measures, subgroup checks, human review expectations, and go/no-go criteria.", artifacts: ["Validation plan outline", "Evaluation metric list", "Governance decision thresholds"] }
   },
   {
-    module: { id: "ai-incident-response", title: "AI Incident Response", text: "AI incident response defines how staff report, triage, investigate, correct, communicate, and document problems involving AI-supported systems or outputs.", examples: ["Report harmful AI output", "Escalate privacy exposure", "Pause a drifting model"], risk: "Without an incident pathway, errors, bias concerns, privacy exposures, and unsafe outputs may be handled inconsistently or too late.", plays: [3,10,11,12,13], tools: [17,18,37,43,44,45] },
+    module: { id: "ai-incident-response", title: "AI Incident Response", text: "AI incident response defines how staff report, triage, investigate, correct, communicate, and document problems involving AI-supported systems or outputs.", examples: ["Report harmful AI output", "Escalate privacy exposure", "Pause a drifting model"], risk: "Without an incident pathway, errors, bias concerns, privacy exposures, and unsafe outputs may be handled inconsistently or too late.", plays: [3,10,11,12,13], tools: [17,18,38,44,45,46] },
     resources: [
       ["NIST AI Risk Management Framework", "Governance and response structure for AI-related harms and failures.", "https://www.nist.gov/itl/ai-risk-management-framework"],
       ["WHO: Ethics and governance of artificial intelligence for health", "Health AI accountability, safety, and oversight principles.", "https://www.who.int/publications/i/item/9789240029200"],
@@ -2301,7 +2301,7 @@ const additionalTrainingModules = [
     application: { matters: "AI incidents can affect privacy, public trust, legal compliance, staff confidence, equity, and operational safety. A clear response pathway reduces harm and improves governance.", questions: ["What AI-related problems should staff be required to report?", "Who has authority to pause an AI-supported workflow?", "How will lessons from incidents update training, policy, and monitoring?"], exercise: "Walk through a tabletop scenario involving an incorrect AI-generated public message or privacy exposure, then document reporting steps, escalation contacts, communications needs, corrective actions, and governance review.", artifacts: ["AI incident scenario response", "Escalation pathway", "Corrective action log"] }
   },
   {
-    module: { id: "role-based-ai-guidelines", title: "Role-Based AI Use Guidelines", text: "Different public health roles need different AI permissions, responsibilities, training expectations, review duties, and escalation pathways.", examples: ["Leadership approval duties", "Communications review rules", "Analyst validation responsibilities"], risk: "A one-size-fits-all AI policy can leave staff unclear about what they are allowed to do and what they must escalate.", plays: [3,5,6,10,12], tools: [2,23,24,26,27,48,28] },
+    module: { id: "role-based-ai-guidelines", title: "Role-Based AI Use Guidelines", text: "Different public health roles need different AI permissions, responsibilities, training expectations, review duties, and escalation pathways.", examples: ["Leadership approval duties", "Communications review rules", "Analyst validation responsibilities"], risk: "A one-size-fits-all AI policy can leave staff unclear about what they are allowed to do and what they must escalate.", plays: [3,5,6,10,12], tools: [2,23,24,26,27,28,29] },
     resources: [
       ["ASPPH AI Framework Report", "Public health workforce, AI literacy, and role preparation framing.", "https://aspph.org/initiatives/ai-for-public-health/ai-framework-report/"],
       ["CDC Public Health Workforce Development", "Public health workforce capability-building context.", "https://www.cdc.gov/workforce/"],
@@ -2317,7 +2317,7 @@ const additionalTrainingModules = [
     application: { matters: "Role clarity prevents inconsistent AI use, unsupported staff experimentation, unreviewed public communications, and unclear accountability.", questions: ["Which roles need permission to use which AI tools?", "Which roles must review outputs before they are used?", "Which roles need advanced training before governance or procurement decisions?"], exercise: "Build a role-based AI use matrix for one department, including allowed uses, prohibited uses, approval requirements, documentation, and escalation contacts.", artifacts: ["Role-based AI use matrix", "Training assignment plan", "Access and approval rules"] }
   },
   {
-    module: { id: "responsible-prompting-review", title: "Responsible Prompting and Review", text: "Responsible prompting helps staff use generative AI safely by protecting data, asking precise questions, requiring sources when needed, and reviewing outputs before use.", examples: ["Write source-grounded prompts", "Review drafts for hallucinations", "Document AI-assisted work"], risk: "A polished AI response can still be inaccurate, biased, outdated, unsupported, or inappropriate for public health use.", plays: [1,3,5,6,10,11], tools: [2,14,23,48,28,39] },
+    module: { id: "responsible-prompting-review", title: "Responsible Prompting and Review", text: "Responsible prompting helps staff use generative AI safely by protecting data, asking precise questions, requiring sources when needed, and reviewing outputs before use.", examples: ["Write source-grounded prompts", "Review drafts for hallucinations", "Document AI-assisted work"], risk: "A polished AI response can still be inaccurate, biased, outdated, unsupported, or inappropriate for public health use.", plays: [1,3,5,6,10,11], tools: [2,14,23,28,29,40] },
     resources: [
       ["NIST Generative AI Profile", "Risk management concepts for generative AI systems and outputs.", "https://www.nist.gov/itl/ai-risk-management-framework"],
       ["WHO: Ethics and governance of artificial intelligence for health", "Ethics and governance principles for health AI use.", "https://www.who.int/publications/i/item/9789240029200"],
@@ -2333,7 +2333,7 @@ const additionalTrainingModules = [
     application: { matters: "Responsible prompting and review reduce the chance that staff use AI in ways that expose data, spread misinformation, create inaccessible communication, or bypass expert review.", questions: ["Which AI-assisted drafting tasks should be allowed for staff?", "Which outputs require source verification, supervisor review, or communications approval?", "How should staff document AI-assisted work?"], exercise: "Rewrite three unsafe prompts into responsible prompts, then review sample AI outputs for data exposure, hallucinations, tone, equity concerns, missing sources, and required approvals.", artifacts: ["Responsible prompt examples", "Output review checklist", "Documentation expectations"] }
   },
   {
-    module: { id: "community-engagement-ai", title: "Community Engagement for AI", text: "Community engagement helps departments understand how AI-supported workflows may affect trust, access, surveillance concerns, language needs, disability access, and public accountability.", examples: ["Engage affected communities before launch", "Create plain-language AI notices", "Close the feedback loop"], risk: "Public-facing or community-impacting AI can erode trust if affected groups are not engaged before decisions are made.", plays: [1,4,7,10,12,13], tools: [1,3,19,20,21,22,45] },
+    module: { id: "community-engagement-ai", title: "Community Engagement for AI", text: "Community engagement helps departments understand how AI-supported workflows may affect trust, access, surveillance concerns, language needs, disability access, and public accountability.", examples: ["Engage affected communities before launch", "Create plain-language AI notices", "Close the feedback loop"], risk: "Public-facing or community-impacting AI can erode trust if affected groups are not engaged before decisions are made.", plays: [1,4,7,10,12,13], tools: [1,3,19,20,21,22,46] },
     resources: [
       ["CDC Health Equity", "Public health equity context for community engagement and accountability.", "https://www.cdc.gov/healthequity/"],
       ["ASPPH AI Framework Report", "Human-centered AI, missing voices, and public accountability framing.", "https://aspph.org/initiatives/ai-for-public-health/ai-framework-report/"],
@@ -2349,7 +2349,7 @@ const additionalTrainingModules = [
     application: { matters: "Engagement helps departments avoid AI uses that appear efficient internally but create confusion, mistrust, stigma, surveillance concerns, or access barriers externally.", questions: ["Which communities or partners may be affected by the proposed AI use?", "What should be explained in plain language before implementation?", "How will community feedback change governance, design, monitoring, or communication?"], exercise: "Create a community engagement plan for one AI-supported workflow, including audiences, engagement methods, plain-language explanation, feedback documentation, and governance escalation.", artifacts: ["AI community engagement plan", "Plain-language AI explanation", "Feedback-to-decision log"] }
   },
   {
-    module: { id: "accessibility-language-access", title: "Accessibility and Language Access", text: "AI-supported public health materials, tools, dashboards, chatbots, translations, and workflows should be reviewed for disability access, language access, readability, cultural context, and usability.", examples: ["Review AI translations", "Test chatbot accessibility", "Check plain-language outputs"], risk: "AI can create or worsen access barriers if outputs are not tested with people who rely on accessible formats, language support, or non-digital pathways.", plays: [1,4,7,10,11,13], tools: [3,19,20,22,28,40,46] },
+    module: { id: "accessibility-language-access", title: "Accessibility and Language Access", text: "AI-supported public health materials, tools, dashboards, chatbots, translations, and workflows should be reviewed for disability access, language access, readability, cultural context, and usability.", examples: ["Review AI translations", "Test chatbot accessibility", "Check plain-language outputs"], risk: "AI can create or worsen access barriers if outputs are not tested with people who rely on accessible formats, language support, or non-digital pathways.", plays: [1,4,7,10,11,13], tools: [3,19,20,22,29,41,47] },
     resources: [
       ["HHS Section 1557", "Nondiscrimination and language access context in health programs and activities.", "https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html"],
       ["ADA.gov", "Federal accessibility requirements and guidance.", "https://www.ada.gov/"],
@@ -2365,7 +2365,7 @@ const additionalTrainingModules = [
     application: { matters: "Accessible and language-appropriate AI-supported communication is essential for equitable public health service delivery and public trust.", questions: ["Which AI-supported outputs will be public-facing or client-facing?", "Who reviews translations, accessibility, readability, and cultural context?", "What non-AI or human pathway remains available?"], exercise: "Review an AI-generated public health message and identify changes needed for plain language, accessibility, language access, cultural context, and human assistance pathways.", artifacts: ["Accessibility and language access review notes", "Revised public message", "Monitoring indicators for access barriers"] }
   },
   {
-    module: { id: "cybersecurity-secure-ai-use", title: "Cybersecurity and Secure AI Use", text: "Secure AI use requires approved environments, access controls, vendor security review, audit logs, prompt-injection awareness, data-loss prevention, and incident escalation.", examples: ["Use approved AI environments", "Review vendor integrations", "Train staff on prompt injection"], risk: "AI tools can create new attack surfaces, data leakage pathways, and social engineering risks if security is not built into implementation.", plays: [2,3,7,11,12], tools: [10,15,17,33,38,42] },
+    module: { id: "cybersecurity-secure-ai-use", title: "Cybersecurity and Secure AI Use", text: "Secure AI use requires approved environments, access controls, vendor security review, audit logs, prompt-injection awareness, data-loss prevention, and incident escalation.", examples: ["Use approved AI environments", "Review vendor integrations", "Train staff on prompt injection"], risk: "AI tools can create new attack surfaces, data leakage pathways, and social engineering risks if security is not built into implementation.", plays: [2,3,7,11,12], tools: [10,15,17,34,39,43] },
     resources: [
       ["NIST Cybersecurity Framework", "Cybersecurity risk management structure for organizational systems.", "https://www.nist.gov/cyberframework"],
       ["CISA AI and Cybersecurity", "Cybersecurity context for AI systems and AI-enabled threats.", "https://www.cisa.gov/ai"],
@@ -2381,7 +2381,7 @@ const additionalTrainingModules = [
     application: { matters: "Cybersecurity protects public health operations, sensitive data, system integrity, and community trust.", questions: ["Which AI tools are approved for official work?", "Which integrations or data flows require security review?", "How should staff report suspicious AI behavior, data leakage, or unauthorized access?"], exercise: "Map the security controls needed for one AI use case, including data classification, access controls, vendor hosting, integrations, logging, incident response, and staff training.", artifacts: ["AI security review notes", "Approved-use rules", "Security escalation checklist"] }
   },
   {
-    module: { id: "when-not-to-use-ai", title: "When Not to Use AI", text: "Departments need a clear decision framework for situations where AI is inappropriate, premature, too risky, unsupported by data, legally uncertain, or not worth the operational burden.", examples: ["Reject low-value automation", "Pause high-risk use cases", "Use human-only pathways"], risk: "AI can consume resources, obscure accountability, or create harm when a simpler, safer, human-centered approach is more appropriate.", plays: [1,2,3,7,12,13], tools: [1,3,6,7,13,41,45] },
+    module: { id: "when-not-to-use-ai", title: "When Not to Use AI", text: "Departments need a clear decision framework for situations where AI is inappropriate, premature, too risky, unsupported by data, legally uncertain, or not worth the operational burden.", examples: ["Reject low-value automation", "Pause high-risk use cases", "Use human-only pathways"], risk: "AI can consume resources, obscure accountability, or create harm when a simpler, safer, human-centered approach is more appropriate.", plays: [1,2,3,7,12,13], tools: [1,3,6,7,13,42,46] },
     resources: [
       ["Blueprint for an AI Bill of Rights", "Principles for human alternatives, notice, and protection from automated harms.", "https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/"],
       ["NIST AI Risk Management Framework", "Risk-based framing for deciding whether and how AI should be used.", "https://www.nist.gov/itl/ai-risk-management-framework"],
@@ -3052,11 +3052,11 @@ function renderHome() {
           <table>
             <thead><tr><th>Tool Group</th><th>Purpose</th><th>Examples</th></tr></thead>
             <tbody>
-        <tr><td>Readiness and planning</td><td>Assess organizational readiness, define project scope, evaluate data quality, and build implementation timelines.</td><td>Tool 7 Readiness Self-Assessment, Tool 8 Project Charter, Tool 35 Implementation Timeline, Tool 9 Data Quality Checklist</td></tr>
+        <tr><td>Readiness and planning</td><td>Assess organizational readiness, define project scope, evaluate data quality, and build implementation timelines.</td><td>Tool 7 Readiness Self-Assessment, Tool 8 Project Charter, Tool 36 Implementation Timeline, Tool 9 Data Quality Checklist</td></tr>
         <tr><td>Governance and policy</td><td>Create the policies, charters, documentation standards, and data-use controls needed before AI projects proceed.</td><td>Tool 2 Responsible AI Policy, Tool 12 Governance Board Charter, Tool 14 Model Validation Standards, Tool 15 Data Use Agreement</td></tr>
         <tr><td>Equity and engagement</td><td>Identify affected communities, assess equity impact, document stakeholder roles, and build engagement plans.</td><td>Tool 3 Equity Impact Assessment, Tool 20 Community Engagement Planning, Tool 21 Stakeholder Mapping and RACI</td></tr>
-        <tr><td>Workforce and change</td><td>Prepare staff for responsible AI adoption through competencies, champions, training, communication, and barrier identification.</td><td>Tool 23 Change Management Plan, Tool 24 Workforce Competency Framework, Tool 28 Staff Communication and FAQ, Tool 29 Barrier Identification</td></tr>
-              <tr><td>Deployment and evaluation</td><td>Support infrastructure readiness, model testing, pilot evaluation, scale decisions, monitoring, audits, and continuous improvement.</td><td>Tools 38-41for deployment, Tools 43-44for monitoring, Tools 17-18 and 45for governance review and policy maintenance</td></tr>
+        <tr><td>Workforce and change</td><td>Prepare staff for responsible AI adoption through competencies, champions, training, communication, and barrier identification.</td><td>Tool 23 Change Management Plan, Tool 24 Workforce Competency Framework, Tool 29 Staff Communication and FAQ, Tool 30 Barrier Identification</td></tr>
+              <tr><td>Deployment and evaluation</td><td>Support infrastructure readiness, model testing, pilot evaluation, scale decisions, monitoring, audits, and continuous improvement.</td><td>Tools 39-42for deployment, Tools 44-45for monitoring, Tools 17-18 and 46for governance review and policy maintenance</td></tr>
             </tbody>
           </table>
         </div>
@@ -3380,7 +3380,7 @@ function updateAssessment() {
   document.getElementById("readiness-level").textContent = level;
   document.getElementById("readiness-action").textContent = action;
   const basePlays = readinessPercent >= 76 ? [10,11,12,13] : readinessPercent >= 51 ? [6,7,8,9] : readinessPercent >= 26 ? [2,3,4,5] : [1,2,4];
-  const baseTools = readinessPercent >= 76 ? [39,40,41,43,46] : readinessPercent >= 51 ? [2,7,12,25,26] : readinessPercent >= 26 ? [1,13,21,24,29] : [1,7,16,17,29];
+  const baseTools = readinessPercent >= 76 ? [40,41,42,44,47] : readinessPercent >= 51 ? [2,7,12,25,26] : readinessPercent >= 26 ? [1,13,21,24,30] : [1,7,16,17,30];
   const priorityGaps = domainScores.filter(d => d.subtotal <= 6).sort((a, b) => a.subtotal - b.subtotal);
   const recPlays = new Set(basePlays);
   const recTools = new Set(baseTools);
@@ -5769,10 +5769,10 @@ function organizationChangeManagementDashboard(state) {
         <div class="change-form-dashboard">
           <div class="change-form-header">
             <div>
-              <h3>${renderSavedToolValue(toolValue("Deployment change profile", "AI system or workflow"), "Saved Tool 37 dashboard")}</h3>
+              <h3>${renderSavedToolValue(toolValue("Deployment change profile", "AI system or workflow"), "Saved Tool 38 dashboard")}</h3>
               <p class="plain-meta">Last saved: ${escapeDoc(savedExecutionDashboard.savedAt || "date not available")}</p>
             </div>
-            <a class="btn small" href="#/toolkit/37">Update Tool 37</a>
+            <a class="btn small" href="#/toolkit/37">Update Tool 38</a>
           </div>
           <div class="change-profile-grid">
             <article><span>Deployment phase</span><strong>${renderSavedToolValue(toolValue("Deployment change profile", "Deployment phase"))}</strong></article>
@@ -5798,17 +5798,17 @@ function organizationChangeManagementDashboard(state) {
             </article>
             <article>
               <h3>Dashboard source</h3>
-              <p>This section is populated from the latest saved Tool 37: Change Management Execution Dashboard.</p>
+              <p>This section is populated from the latest saved Tool 38: Change Management Execution Dashboard.</p>
             </article>
           </div>
         </div>
       ` : `
         <div class="change-form-empty">
           <div>
-            <h3>No saved Tool 37 dashboard yet</h3>
-            <p>Complete and save Tool 37 to populate this dashboard with the AI system or workflow, reporting period, training completion, communications, adoption indicators, barriers, escalations, readiness status, and lessons learned.</p>
+            <h3>No saved Tool 38 dashboard yet</h3>
+            <p>Complete and save Tool 38 to populate this dashboard with the AI system or workflow, reporting period, training completion, communications, adoption indicators, barriers, escalations, readiness status, and lessons learned.</p>
           </div>
-          <a class="btn primary" href="#/toolkit/37">Open Tool 37</a>
+          <a class="btn primary" href="#/toolkit/37">Open Tool 38</a>
         </div>
       `}
       <div class="change-dashboard-grid">
@@ -5852,10 +5852,10 @@ function organizationTrainingPlanDashboard(state) {
           <h2>Learning module assignments and completion tracking</h2>
           <p>Use this dashboard to connect the learning modules to staff roles, deadlines, completion standards, supervisor verification, and follow-up support.</p>
         </div>
-        <a class="btn small" href="#/toolkit/48">Open Tool 48</a>
+        <a class="btn small" href="#/toolkit/28">Open Tool 28</a>
       </div>
       <div class="member-stats change-stats">
-        <article><strong>${escapeDoc(trainingItem.status || "Not started")}</strong><span>Tool 48 status</span></article>
+        <article><strong>${escapeDoc(trainingItem.status || "Not started")}</strong><span>Tool 28 status</span></article>
         <article><strong>${trainingItem.dueDate ? escapeDoc(trainingItem.dueDate) : "No date"}</strong><span>Training plan deadline</span></article>
         <article><strong>${trainingItem.owner ? escapeDoc(trainingItem.owner) : "Unassigned"}</strong><span>Training lead</span></article>
         <article><strong>${savedTrainingPlan ? "Saved" : "Not saved"}</strong><span>Form source</span></article>
@@ -5867,7 +5867,7 @@ function organizationTrainingPlanDashboard(state) {
               <h3>${renderSavedToolValue(toolValue("Training plan profile", "Training plan name"), "Saved role-based training plan")}</h3>
               <p class="plain-meta">Last saved: ${escapeDoc(savedTrainingPlan.savedAt || "date not available")}</p>
             </div>
-            <a class="btn small" href="#/toolkit/48">Update Tool 48</a>
+            <a class="btn small" href="#/toolkit/28">Update Tool 28</a>
           </div>
           <div class="change-profile-grid">
             <article><span>Training period</span><strong>${renderSavedToolValue(toolValue("Training plan profile", "Training period"))}</strong></article>
@@ -5894,17 +5894,17 @@ function organizationTrainingPlanDashboard(state) {
             </article>
             <article>
               <h3>Dashboard source</h3>
-              <p>This section is populated from the latest saved Tool 48: Role-Based Training Plan and Completion Tracker.</p>
+              <p>This section is populated from the latest saved Tool 28: Role-Based Training Plan and Completion Tracker.</p>
             </article>
           </div>
         </div>
       ` : `
         <div class="change-form-empty">
           <div>
-            <h3>No saved Tool 48 training plan yet</h3>
-            <p>Complete and save Tool 48 to populate this dashboard with role-based learning module assignments, completion standards, deadlines, verification, and follow-up support needs.</p>
+            <h3>No saved Tool 28 training plan yet</h3>
+            <p>Complete and save Tool 28 to populate this dashboard with role-based learning module assignments, completion standards, deadlines, verification, and follow-up support needs.</p>
           </div>
-          <a class="btn primary" href="#/toolkit/48">Open Tool 48</a>
+          <a class="btn primary" href="#/toolkit/28">Open Tool 28</a>
         </div>
       `}
     </section>`;
@@ -5972,7 +5972,7 @@ function renderOrganizationTrainingHub() {
         <article><strong>${completed}</strong><span>Completed</span></article>
         <article><strong>${followUp}</strong><span>Need follow-up</span></article>
       </div>
-      <div class="button-row"><button class="btn primary small" type="button" onclick="saveOrganizationTrainingAssignmentsFromForm()" ${isOrgAdmin ? "" : "disabled"}>Save Training Assignments</button><a class="btn small" href="#/organization">Back to Dashboard</a><a class="btn small" href="#/learn">Open Learning Modules</a><a class="btn small" href="#/toolkit/48">Open Tool 48</a></div>
+      <div class="button-row"><button class="btn primary small" type="button" onclick="saveOrganizationTrainingAssignmentsFromForm()" ${isOrgAdmin ? "" : "disabled"}>Save Training Assignments</button><a class="btn small" href="#/organization">Back to Dashboard</a><a class="btn small" href="#/learn">Open Learning Modules</a><a class="btn small" href="#/toolkit/28">Open Tool 28</a></div>
       ${isOrgAdmin ? "" : `<div class="member-access-note locked">Only Organization Administrators can assign modules, change deadlines, or verify completion. Other roles can view the assignment model in this static preview.</div>`}
     </section>
 
