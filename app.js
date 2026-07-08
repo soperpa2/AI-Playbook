@@ -2950,7 +2950,7 @@ function saveProfileFromForm() {
 function memberOnlyNotice(isMember) {
   return isMember
     ? `<p class="member-access-note">Signed in locally as ${currentMemberName()}. Tool progress and downloads are enabled in this preview.</p>`
-    : `<p class="member-access-note locked">Save progress and completed tool downloads are member-only. <a href="#/member-info">Create a member profile</a> to preview these features.</p>`;
+    : `<p class="member-access-note locked">Save progress and completed tool downloads are member-only. <a href="#/member-info">Create a free member profile</a> to access these features.</p>`;
 }
 
 function restoreToolProgress(toolId, blueprint) {
