@@ -994,6 +994,11 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
   font-weight: 700;
   color: var(--navy);
 }
+.tool-form-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+}
 .tool-form label input,
 .tool-form label select,
 .tool-form label textarea {

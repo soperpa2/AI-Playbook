@@ -4556,10 +4556,10 @@ function renderToolDetail(id) {
               <label>Review status<select name="${toolFieldName("Administrative Details", "Review status")}"><option>Draft</option><option>Ready for review</option><option>Submitted to governance</option><option>Approved</option><option>Needs revision</option></select></label>
             </div>
           </section>
-          ${blueprint.map(([section, fields])=>`
+          ${blueprint.map(([section, fields], sectionIndex)=>`
             <section class="tool-section">
               <h3>${section}</h3>
-              <div class="form-grid">
+              <div class="${sectionIndex === 0 ? "form-grid" : "tool-form-stack"}">
                 ${fields.map(field=>`
                   <label>${field}
                     <textarea name="${toolFieldName(section, field)}" rows="4" placeholder="Enter ${field.toLowerCase()}"></textarea>
