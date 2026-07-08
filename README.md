@@ -1,8 +1,24 @@
-# AI Playbook for Public Health Website
+# AI Playbook and Toolkit for Public Health Departments
 
-This folder contains a polished static website prototype for the revised **Generative and Agentic AI Implementation Playbook for Public Health Departments**.
+This repository contains a polished static website prototype for the **AI Playbook and Toolkit for Public Health Departments**.
 
-## Run
+## Live Website
+
+After GitHub Pages is enabled for this repository, the public review site will be available at:
+
+```text
+https://soperpa2.github.io/AI-Playbook/
+```
+
+To enable GitHub Pages:
+
+1. Open the repository **Settings**.
+2. Go to **Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select branch `main` and folder `/root`.
+5. Save the settings and wait for GitHub to publish the site.
+
+## Local Review
 
 Open `index.html` in a browser. No build step is required.
 
@@ -16,13 +32,9 @@ Then visit `http://localhost:5173`.
 
 ## What Is Included
 
-- Responsive Start Here, Learn, Assess, Maturity Model, Plays, Toolkit, Case Studies, Member Hub, Community, Contribute, and Resources sections.
-- Interactive AI Readiness Self-Assessment based on six domains, four indicators per domain, and a 72-point total.
-- Readiness categories:
-  - 60-72: Excellent Readiness
-  - 45-59: Good Readiness
-  - 30-44: Moderate Readiness
-  - Below 30: Early Stage
+- Responsive Start Here, Learn, Assess, Maturity Model, Plays, Toolkit, Case Studies, My Account, Organization Hub, Community, Contribute, Resources, Contact Us, and In the News sections.
+- Interactive AI Readiness Self-Assessment based on six domains with results normalized to a 100-point score.
+- Assessment results recommend relevant plays and tools while still allowing departments to choose the plays and tools most useful for their goals.
 - 13-play planning and implementation framework:
   - PLAN: Plays 1-7
   - BUILD: Plays 8-9
@@ -31,11 +43,12 @@ Then visit `http://localhost:5173`.
 - Individual generated pages for all 13 plays.
 - Searchable and filterable library for all 43 tools.
 - Individual generated pages for all 43 tools with fillable web fields and document download actions.
-- Print styles for assessment results and tool pages.
+- Member and organization workspace prototypes, including progress tracking, workplan/tracker views, training assignment concepts, and export actions.
+- Downloadable Word, PDF, and PowerPoint resources where available.
 
 ## Source Alignment Notes
 
-The site reflects the revised play sequence supplied in the brief and updated documents:
+The site reflects the current play sequence and tool numbering:
 
 - Readiness Assessment is Play 2 and remains accessible from the Assess top menu item.
 - Governance is Play 3 and appears before formal use case prioritization.
@@ -55,20 +68,15 @@ Most reusable content lives in `app.js`:
 
 Edit these arrays to update play numbering, tool mappings, page copy, filters, and generated detail pages.
 
-## Download Placeholders
+## Download Files
 
-Place final downloadable files here when available:
+Downloadable files are stored in:
 
 ```text
 downloads/
-  AI_Playbook_for_Public_Health_Playbook.pdf
-  AI_Playbook_for_Public_Health_Toolkit.pdf
-  tool-1.pdf
-  tool-2.pdf
-  ...
 ```
 
-The current prototype includes links to those expected locations as placeholders.
+The static prototype includes generated documents, tool downloads, and lesson slide decks where available. Some member-only and organization-only actions are represented as front-end prototypes and will require a production backend for real authentication, authorization, persistence, and server-side document generation.
 
 ## Wireframe Guidance Used
 
