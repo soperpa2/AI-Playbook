@@ -41,8 +41,8 @@ Then visit `http://localhost:5173`.
   - DEPLOY: Plays 10-11
   - GOVERN: Plays 12-13
 - Individual generated pages for all 13 plays.
-- Searchable and filterable library for all 43 tools.
-- Individual generated pages for all 43 tools with fillable web fields and document download actions.
+- Searchable and filterable library for all 48 tools.
+- Individual generated pages for all 48 tools with fillable web fields and document download actions.
 - Member and organization workspace prototypes, including progress tracking, workplan/tracker views, training assignment concepts, and export actions.
 - Downloadable Word, PDF, and PowerPoint resources where available.
 
