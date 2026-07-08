@@ -750,7 +750,7 @@ const playGuidanceDetails = {
   10: {
     eyebrow: "Deployment Change Guidance",
     title: "Execute change support during pilot and deployment",
-    body: "Use this play when planned change support becomes active. Staff need clear communication, hands-on training, office hours, workflow support, feedback channels, and a way to escalate concerns while the AI-supported workflow is being piloted or deployed.",
+    body: "This play turns the change management plan into day-to-day deployment support. It should document whether staff are prepared, whether training is complete, what barriers are emerging, which concerns require escalation, and what evidence should be reported back to governance before the AI-supported workflow expands.",
     bullets: ["Deliver role-specific training close to actual use.", "Track adoption barriers, staff concerns, and workflow problems as deployment evidence.", "Report unresolved issues through governance so deployment decisions reflect real-world use."],
     link: ["Open deployment change guidance", "#/play-guides/play-10"]
   },
