@@ -1013,7 +1013,6 @@ const learningModules = [
   { id: "understanding-ai", title: "Understanding Artificial Intelligence", text: "AI is a family of methods that enable systems to learn from data, recognize patterns, generate content, and support action toward defined goals.", examples: ["Summarize surveillance reports", "Translate analytic findings into plain language", "Support decision briefings"], risk: "Do not treat AI as a single tool or assume one model fits every public health task.", plays: [1,3], tools: [1,2] },
   { id: "generative-ai", title: "Generative AI", text: "Generative AI produces new text, images, code, summaries, or synthetic data from prompts and examples.", examples: ["Draft health education materials", "Create first drafts of grant narratives", "Summarize policy documents with human review"], risk: "Outputs can sound plausible while being wrong. Consequential outputs need subject matter review.", plays: [1,3,11], tools: [2,14,40] },
   { id: "agentic-ai", title: "Agentic AI", text: "Agentic AI can coordinate multi-step workflows across systems under explicit rules and human oversight.", examples: ["Route high-priority surveillance signals", "Create task queues from incoming reports", "Assemble evidence packets for review"], risk: "Agentic systems need strict boundaries, audit logs, and escalation paths.", plays: [3,11,12,13], tools: [12,14,39,17] },
-  { id: "deep-research", title: "Deep Research", text: "Deep Research tools autonomously plan multi-step research tasks, gather sources, and draft citation-based reports for expert review.", examples: ["Literature scans for emerging threats", "Policy scans across jurisdictions", "Comparative program analysis"], risk: "Treat outputs as a research assistant draft, not as validated evidence.", plays: [1,3,13], tools: [2,48] },
   { id: "workflows", title: "AI-Supported Public Health Workflows", text: "AI can support signal detection, evidence gathering, analysis, synthesis, briefing, communication, and decision support.", examples: ["Detect anomalies", "Synthesize outbreak updates", "Draft situation reports"], risk: "Match the tool to workflow stage and keep humans responsible for decisions.", plays: [7,10,11], tools: [31,29,41] },
   { id: "risks", title: "Risks, Limitations, and Guardrails", text: "Public health AI risks include hallucination, bias, privacy exposure, automation bias, model drift, and performance loss on complex tasks.", examples: ["Equity audit before scale", "Hallucination audit for public-facing products", "Incident response for unsafe outputs"], risk: "Governance, documentation, validation, and monitoring are mandatory, not optional.", plays: [3,11,12,13], tools: [3,16,14,47,17] },
   { id: "systems-shift", title: "AI as a Public Health Systems Shift", text: "AI changes public health infrastructure, workforce expectations, policy, data systems, procurement, public trust, communications, surveillance, and service delivery.", examples: ["Plan agency-wide governance", "Coordinate data modernization with workforce training", "Align AI pilots with public accountability"], risk: "Treating AI as a one-off technology purchase can create fragmented adoption, uneven safeguards, and unowned risk.", plays: [1,2,3,9,12], tools: [4,10,6] },
@@ -1035,7 +1034,6 @@ const lessonDeckDownloads = {
   "understanding-ai": "downloads/presentations/lesson-01-understanding-artificial-intelligence-sample-formal-title.pptx",
   "generative-ai": "downloads/presentations/lesson-02-generative-ai.pptx",
   "agentic-ai": "downloads/presentations/lesson-03-agentic-ai.pptx",
-  "deep-research": "downloads/presentations/lesson-04-deep-research.pptx",
   "workflows": "downloads/presentations/lesson-05-ai-supported-public-health-workflows.pptx",
   "risks": "downloads/presentations/lesson-06-risks-limitations-and-guardrails.pptx",
   "systems-shift": "downloads/presentations/lesson-07-ai-as-a-public-health-systems-shift.pptx",
@@ -1493,7 +1491,9 @@ const glossaryGroups = [
       ["Generative AI", "AI that creates new content, such as text, summaries, images, code, translations, or synthetic examples. Generative AI can help draft or summarize materials, but its outputs can be incomplete, biased, fabricated, or out of date."],
       ["Large language model (LLM)", "A generative AI model trained on large bodies of text to produce, summarize, classify, translate, or transform language. LLM outputs should be reviewed by qualified humans before use in consequential public health work."],
       ["Agentic AI", "AI configured to pursue a goal through multiple steps, such as gathering information, drafting a brief, updating a task list, or routing work for review. Agentic AI requires clear boundaries, permissions, monitoring, audit logs, and human approval for consequential actions."],
+      ["Deep Research", "An agentic research capability that can plan a multi-step search, gather and compare sources, and draft a citation-based synthesis. Deep Research can accelerate evidence scans, policy scans, funding reviews, and comparative program research, but sources and conclusions still require human verification."],
       ["Prompt", "The instruction, question, source material, or task description provided to a generative AI system. A good prompt states the role, goal, audience, constraints, required sources, format, and review expectations."],
+      ["Predictive AI", "AI that uses data patterns to estimate future events, risks, needs, trends, or outcomes. Predictive AI can support forecasting, prioritization, anomaly detection, or planning, but its outputs should be validated, monitored, and reviewed by humans before affecting consequential public health actions."],
       ["Retrieval-augmented generation (RAG)", "A method that connects a generative AI system to selected source documents or databases so responses can be grounded in approved material. RAG can reduce unsupported answers, but users still need source review and quality checks."],
       ["Synthetic data", "Artificially generated data designed to resemble real data without directly exposing actual individual records. Synthetic data can support testing and training, but it must still be assessed for privacy risk, bias, and fitness for purpose."],
       ["Human-in-the-loop", "A workflow design in which a person reviews, approves, corrects, or overrides AI outputs before they affect decisions, services, communications, or public health action."]
@@ -1504,13 +1504,17 @@ const glossaryGroups = [
     terms: [
       ["Hallucination", "A fluent but false or unsupported AI output. Hallucinations can include fabricated citations, incorrect policy summaries, inaccurate clinical or epidemiologic statements, or confident answers outside the model's knowledge."],
       ["Automation bias", "The tendency to over-trust an automated output because it appears objective, precise, or authoritative. Public health workflows should require deliberate review, documentation, and escalation when AI outputs are uncertain or consequential."],
+      ["Anomaly detection", "A method for identifying unusual patterns, outliers, or signals in data. In public health, anomaly detection can support surveillance or operations when qualified staff review whether a signal is meaningful."],
       ["Model drift", "A decline or change in AI performance over time because data, workflows, disease patterns, populations, vendor systems, or user behavior have changed. Drift is one reason monitoring must continue after deployment."],
       ["Validation", "The process of testing whether an AI system performs well enough for its intended public health use. Validation should include accuracy, reliability, subgroup performance, workflow fit, user review, and risk mitigation."],
       ["Risk tiering", "Classifying AI uses by potential harm, sensitivity, legal implications, public impact, and level of automation. Higher-risk uses require stronger documentation, review, monitoring, and approval before use."],
+      ["Subgroup monitoring", "Checking whether AI performance, access, burden, errors, or outcomes differ across meaningful populations, geographies, languages, programs, facilities, or other relevant groups."],
       ["Bias", "Systematic error or unfairness that can produce different results for different groups. Bias can arise from data gaps, measurement choices, model design, deployment context, or unequal access to services."],
       ["Equity impact assessment", "A structured review of who may benefit, who may be burdened, whose data or experiences are missing, and what safeguards are needed before an AI-supported workflow is approved or scaled."],
       ["Missing voices", "People, communities, languages, settings, or experiences that are absent or underrepresented in the data, design process, review process, or evaluation plan."],
       ["Explainability", "The ability to describe how an AI system produced or contributed to an output in terms that decision-makers, staff, and affected communities can understand."],
+      ["False negative", "A case where an AI system fails to flag a true condition, risk, signal, or problem. False negatives matter in public health because they can delay action or leave people, facilities, or communities without needed review."],
+      ["False positive", "A case where an AI system flags a condition, risk, signal, or problem that is not actually present. False positives matter because they can waste staff time, create unnecessary concern, or burden people and communities unfairly."],
       ["Transparency", "Clear communication about when AI is used, why it is used, what data are involved, what humans decide, what limitations exist, and how concerns can be raised."]
     ]
   },
@@ -1518,6 +1522,8 @@ const glossaryGroups = [
     category: "Governance, Privacy, and Accountability",
     terms: [
       ["AI governance", "The structures, policies, roles, review pathways, and oversight processes used to guide responsible AI use before, during, and after deployment."],
+      ["Access control", "Rules and technical settings that determine who can use a system and what they are allowed to see, change, export, or approve."],
+      ["Audit log", "A record of system activity, such as who accessed data, what an AI tool generated, what actions were taken, and when changes occurred."],
       ["Governance gate", "A required review or decision point before work moves forward, such as before use case approval, vendor selection, pilot launch, scale-up, or retirement."],
       ["AI system inventory", "A maintained record of AI systems and AI-supported workflows, including purpose, owner, data used, risk tier, approval status, monitoring schedule, and review history."],
       ["Responsible AI policy", "An agency policy that defines expectations for transparency, privacy, security, equity, human oversight, safety, legal compliance, scientific integrity, accountability, and monitoring."],
@@ -1541,6 +1547,7 @@ const glossaryGroups = [
       ["Dependency", "A condition that must be addressed before work can responsibly proceed, such as data access, governance approval, training completion, vendor review, funding, cybersecurity testing, or community engagement."],
       ["Bridge role", "A staff role that helps connect public health practice, data, technology, governance, communications, and program operations so AI work does not sit in a single silo."],
       ["Total cost of ownership", "The full cost of an AI system over time, including procurement, licensing, staff time, training, infrastructure, monitoring, evaluation, maintenance, vendor support, and retirement."],
+      ["Vendor review", "A structured review of a vendor's product, data practices, model documentation, security controls, accessibility, pricing, auditability, subcontractors, contract terms, and exit requirements."],
       ["Continuous improvement", "The ongoing process of using monitoring results, user feedback, incidents, equity findings, and evaluation evidence to improve or retire AI-supported workflows."]
     ]
   },
@@ -1553,11 +1560,65 @@ const glossaryGroups = [
       ["Public health informatics", "The application of information, data, technology, and systems thinking to public health practice, including data exchange, surveillance systems, analytics, reporting, and decision support."],
       ["Data modernization", "Work to improve public health data systems, interoperability, quality, timeliness, analytics, governance, and workforce capacity. AI readiness should build on data modernization rather than bypass it."],
       ["Community engagement", "Meaningful involvement of affected communities, partners, and stakeholders in defining problems, reviewing risks, shaping safeguards, and evaluating whether AI use supports public trust and public health goals."],
+      ["Accessibility", "Designing information, tools, services, and workflows so people with disabilities can access and use them."],
       ["Public accountability", "The obligation to explain, document, justify, monitor, and correct AI use because public health agencies act under public authority and serve communities that may be affected by their decisions."],
+      ["Language access", "Meaningful access to information and services for people with limited English proficiency, including qualified translation, interpretation, review, and culturally appropriate communication."],
+      ["Plain language", "Communication written so the intended audience can find, understand, and use the information they need."],
       ["Digital determinant of health", "A digital condition that can shape health access, outcomes, trust, or burden, such as language access, broadband availability, digital literacy, accessibility, service design, algorithmic decisions, or misinformation exposure."]
     ]
   }
 ];
+
+const glossaryAdditionsByCategory = {
+  "AI Fundamentals": [
+    ["Natural language processing (NLP)", "AI methods that process, classify, extract, summarize, or generate language. Public health NLP may support case note abstraction, report review, document search, or message drafting when outputs are validated."],
+    ["Geospatial AI", "AI or machine learning applied to location-based data, maps, spatial patterns, and geographic risk. It can support planning and surveillance but requires review for data quality, privacy, representativeness, and community context."],
+    ["Time-series analysis", "Methods for analyzing data over time to identify trends, seasonality, changes, or unusual patterns. Time-series methods can support surveillance, forecasting, and operational monitoring."],
+    ["Deep Research", "An agentic research capability that can plan a multi-step search, gather and compare sources, and draft a citation-based synthesis. Deep Research can accelerate evidence scans, policy scans, funding reviews, and comparative program research, but sources and conclusions still require human verification."],
+    ["Predictive AI", "AI that uses data patterns to estimate future events, risks, needs, trends, or outcomes. Predictive AI can support forecasting, prioritization, anomaly detection, or planning, but its outputs should be validated, monitored, and reviewed by humans before affecting consequential public health actions."]
+  ],
+  "Risk, Validation, and Trust": [
+    ["False negative", "A case where an AI system fails to flag a true condition, risk, signal, or problem. False negatives matter in public health because they can delay action or leave people, facilities, or communities without needed review."],
+    ["False positive", "A case where an AI system flags a condition, risk, signal, or problem that is not actually present. False positives matter because they can waste staff time, create unnecessary concern, or burden people and communities unfairly."],
+    ["Anomaly detection", "A method for identifying unusual patterns, outliers, or signals in data. In public health, anomaly detection can support surveillance or operations when qualified staff review whether a signal is meaningful."],
+    ["Subgroup monitoring", "Checking whether AI performance, access, burden, errors, or outcomes differ across meaningful populations, geographies, languages, programs, facilities, or other relevant groups."],
+    ["Model card", "A structured summary of an AI model's purpose, data, performance, limitations, intended uses, inappropriate uses, evaluation results, and monitoring expectations."],
+    ["System card", "A structured summary of an AI-enabled system, including workflow context, users, data flows, controls, human review, integrations, risks, and operational safeguards."]
+  ],
+  "Governance, Privacy, and Accountability": [
+    ["Access control", "Rules and technical settings that determine who can use a system and what they are allowed to see, change, export, or approve."],
+    ["Audit log", "A record of system activity, such as who accessed data, what an AI tool generated, what actions were taken, and when changes occurred."],
+    ["Evidence management", "The process of retaining validation records, approvals, meeting notes, incident records, vendor documentation, monitoring reports, and other materials needed for audit readiness and accountability."],
+    ["Risk appetite", "A leadership statement about the level and type of risk an organization is willing to accept in pursuit of public health goals. AI risk appetite should be translated into review thresholds, restricted uses, and no-go decisions."],
+    ["Prompt injection", "A security risk where malicious or hidden instructions attempt to manipulate an AI system into ignoring rules, exposing data, or taking inappropriate actions."]
+  ],
+  "Implementation and Operations": [
+    ["API", "Application programming interface. A defined way for systems to exchange data or trigger actions. AI workflows that use APIs require security, access, logging, and data-use review."],
+    ["Business process analysis", "A structured review of how work currently happens, including triggers, steps, handoffs, decisions, roles, systems, pain points, and outputs."],
+    ["Data pipeline", "A sequence of steps that moves, transforms, validates, and prepares data for reporting, analytics, AI, or operational use."],
+    ["FHIR", "Fast Healthcare Interoperability Resources. A healthcare data exchange standard that can support structured exchange between systems, including some public health use cases."],
+    ["HL7 v2", "A widely used healthcare messaging standard for exchanging clinical, laboratory, and administrative data. Many public health reporting workflows still rely on HL7 v2 messages."],
+    ["Interoperability", "The ability of systems to exchange and use information in a consistent, meaningful, and secure way."],
+    ["LLMOps", "Operational practices for deploying, monitoring, evaluating, securing, and maintaining large language model applications over time."],
+    ["MLOps", "Operational practices for deploying, monitoring, evaluating, securing, and maintaining machine learning models over time."],
+    ["Record linkage", "The process of identifying records that refer to the same person, event, facility, or entity across systems or data sources."],
+    ["User acceptance testing", "Structured testing by intended users to confirm that a system supports real workflow needs, handles realistic cases, and is ready for use."]
+  ],
+  "Public Health Context": [
+    ["Accessibility", "Designing information, tools, services, and workflows so people with disabilities can access and use them."],
+    ["Language access", "Meaningful access to information and services for people with limited English proficiency, including qualified translation, interpretation, review, and culturally appropriate communication."],
+    ["Plain language", "Communication written so the intended audience can find, understand, and use the information they need."],
+    ["Social listening", "A structured approach to monitoring public conversations, questions, concerns, misinformation, or information needs. AI may support analysis, but public health interpretation and response remain human responsibilities."]
+  ]
+};
+
+glossaryGroups.forEach(group => {
+  const additions = glossaryAdditionsByCategory[group.category] || [];
+  const existing = new Set(group.terms.map(([term]) => term.toLowerCase()));
+  additions.forEach(item => {
+    if (!existing.has(item[0].toLowerCase())) group.terms.push(item);
+  });
+});
 
 function resourcesForPlay(play) {
   const resources = playResources[play.id] || [];
@@ -2553,8 +2614,33 @@ const additionalTrainingModules = [
   }
 ];
 
+const predictiveAiModule = {
+  id: "predictive-ai",
+  title: "Predictive AI",
+  text: "Predictive AI uses data patterns to estimate the likelihood of future events, risks, needs, or outcomes. In public health, it can support forecasting, prioritization, planning, and early warning when it is validated, monitored, and kept under human oversight.",
+  examples: ["Forecast disease or service demand", "Prioritize records for human review", "Identify populations that may benefit from outreach", "Monitor operational risk indicators"],
+  risk: "Predictive AI can reproduce historical bias, perform poorly when conditions change, or appear more certain than the evidence supports. Predictions should inform review and planning, not automatically determine services, enforcement, eligibility, or public health action.",
+  plays: [2,3,7,11,13],
+  tools: [7,13,14,40,44,47]
+};
+
 const additionalTrainingInsertAt = learningModules.findIndex(module => module.id === "using-together");
 learningModules.splice(additionalTrainingInsertAt >= 0 ? additionalTrainingInsertAt : learningModules.length, 0, ...additionalTrainingModules.map(item => item.module));
+const deepResearchModule = learningModules.find(module => module.id === "deep-research");
+const deepResearchResources = learningModuleResources["deep-research"] || [];
+const deepResearchIndex = learningModules.findIndex(module => module.id === "deep-research");
+if (deepResearchIndex >= 0) learningModules.splice(deepResearchIndex, 1);
+const predictiveInsertAt = learningModules.findIndex(module => module.id === "generative-ai");
+learningModules.splice(predictiveInsertAt >= 0 ? predictiveInsertAt : 1, 0, predictiveAiModule);
+learningModuleResources["understanding-ai"] = [
+  ...(learningModuleResources["understanding-ai"] || []),
+  ...deepResearchResources
+];
+learningModuleResources["predictive-ai"] = [
+  ["NIST AI Risk Management Framework", "Risk management language for predictive models, validation, measurement, monitoring, and governance.", "https://www.nist.gov/itl/ai-risk-management-framework"],
+  ["CDC Forecasting and Outbreak Analytics", "Public health context for forecasting, outbreak analytics, and analytic modernization.", "https://www.cdc.gov/forecast-outbreak-analytics/index.html"],
+  ["Kahn et al. (2015): Transparent reporting of data quality", "Data quality transparency for predictive and analytic systems that rely on distributed or secondary-use health data.", "https://doi.org/10.13063/2327-9214.1052"]
+];
 
 Object.assign(learningModuleResources, Object.fromEntries(additionalTrainingModules.map(item => [item.module.id, item.resources])));
 Object.assign(learningModuleDeepDive, Object.fromEntries(additionalTrainingModules.map(item => [item.module.id, { overview: item.overview, sections: item.sections }])));
@@ -2586,6 +2672,9 @@ Object.assign(lessonDeckDownloads, {
   "when-not-to-use-ai": "downloads/presentations/lesson-27-when-not-to-use-ai.pptx",
   "ai-support-areas": "downloads/presentations/lesson-28-areas-where-ai-can-support-public-health-activities.pptx"
 });
+delete lessonDeckDownloads["deep-research"];
+lessonDeckDownloads["understanding-ai"] = "downloads/presentations/lesson-01-introduction-to-ai.pptx";
+lessonDeckDownloads["predictive-ai"] = "downloads/presentations/lesson-02-predictive-ai.pptx";
 
 const startHereUsingTogether = learningModules.find(module => module.id === "using-together");
 const startHereUsingTogetherIndex = learningModules.findIndex(module => module.id === "using-together");
@@ -2694,6 +2783,11 @@ function individualizeLearningModules() {
   walk(publicHealthAiSupportAreas);
   walk(backgroundMaterial);
   learningModules.forEach(module => {
+    if (module.id === "understanding-ai") {
+      module.title = "Introduction to AI";
+      module.text = "Use this lesson to build a practical foundation in AI, including predictive AI, generative AI, agentic AI, retrieval-augmented generation, and Deep Research. The goal is to understand what each capability can support, where it can fail, and what safeguards are needed before AI is used in public health work.";
+      module.examples = ["Distinguish predictive, generative, agentic, and Deep Research uses", "Identify where AI may already appear in public health workflows", "Explain why human review and governance are required"];
+    }
     if (module.id === "staff-training") {
       module.title = "Shared Readiness for Responsible AI";
       module.text = "Use this overview to build your own foundation before you participate in AI project work. The learning section can support self-paced learning, onboarding, leadership orientation, governance preparation, and role-specific readiness.";
@@ -2703,6 +2797,46 @@ function individualizeLearningModules() {
 }
 
 individualizeLearningModules();
+
+const predictiveAiBackground = {
+  sections: [
+    { title: "What Predictive AI Means", body: "Predictive AI uses historical or current data to estimate a future event, risk, need, trend, or outcome. It may be called forecasting, risk scoring, prioritization, anomaly detection, or predictive modeling depending on the workflow." },
+    { title: "Why Prediction Requires Caution", body: "A prediction is not a decision. Predictive AI can help focus attention, but it can also reproduce past inequities, perform poorly for underrepresented groups, drift when conditions change, or be misunderstood as a certainty." }
+  ],
+  bulletsTitle: "Predictive AI in public health",
+  bullets: [
+    "Forecasting can help estimate future disease activity, service demand, staffing pressure, inspection volume, or resource needs. Forecasts should be presented with uncertainty and reviewed against current local context.",
+    "Risk stratification can help identify records, facilities, communities, or workflows that may need closer review. It should support human prioritization, not automatically determine benefits, enforcement, outreach, or services.",
+    "Anomaly detection can flag unusual patterns in surveillance, operations, claims, laboratory reporting, environmental signals, or dashboard measures. A flag should initiate investigation by qualified staff rather than automatically trigger public action.",
+    "Predictive systems require validation before use and monitoring after use. Validation should examine data quality, subgroup performance, false positives, false negatives, workflow burden, and whether the prediction improves public health action."
+  ]
+};
+backgroundMaterial["predictive-ai"] = predictiveAiBackground;
+if (backgroundMaterial["understanding-ai"]) {
+  backgroundMaterial["understanding-ai"].sections = [
+    ...(backgroundMaterial["understanding-ai"].sections || []),
+    { title: "Deep Research", body: "Deep Research is an agentic research capability that can plan a multi-step search, gather source materials, compare information, and draft a citation-based synthesis. It can help with literature scans, policy scans, funding reviews, and comparative program analysis, but all sources, dates, claims, and conclusions still need human review." }
+  ];
+  backgroundMaterial["understanding-ai"].bullets = [
+    ...(backgroundMaterial["understanding-ai"].bullets || []),
+    "Deep Research tools can support evidence scans, policy scans, legal or procurement comparisons, and funding research by organizing sources into a structured draft. Treat the output as research support, not as final evidence, and verify every source before using the content in policy, governance, public communication, or funding decisions."
+  ];
+}
+learningModuleApplicationDetails["predictive-ai"] = {
+  matters: "Predictive AI is often attractive because it appears to make planning more proactive. It is only responsible when predictions are validated, interpreted by people who understand the public health context, and monitored for drift, bias, and unintended consequences.",
+  questions: [
+    "What decision or planning activity would the prediction inform?",
+    "What data were used to create the prediction, and who may be missing or misclassified?",
+    "How will false positives, false negatives, uncertainty, and subgroup performance be reviewed?",
+    "Who is accountable for acting on the prediction, and what actions are prohibited without human approval?"
+  ],
+  exercise: "Select one possible predictive AI use case and document the prediction target, data sources, intended users, affected populations, human review points, validation needs, equity checks, and monitoring indicators.",
+  artifacts: ["Predictive AI use case review note", "Validation and monitoring question list", "Human decision boundary statement"]
+};
+learningModuleNarrative["predictive-ai"] = [
+  "Predictive AI can make public health work feel more proactive because it points attention toward possible future conditions. That can be useful for planning, staffing, outreach, inspections, and surveillance, but only when the prediction is connected to a clear public health action. A prediction without a defined response can create confusion, unnecessary work, or false confidence.",
+  "The most important distinction is between using a prediction to support review and using a prediction to make a decision. In responsible public health practice, predictive AI should help qualified people decide where to look, what to prepare, or what question to ask next. It should not silently determine eligibility, enforcement, service access, or public messaging without governance approval and human accountability."
+];
 
 const newsItems = [
   {
@@ -3070,9 +3204,9 @@ function modulePdfTextLines(values = []) {
   return values.flatMap(value => String(value || "").split(/\n+/).map(line => line.trim()).filter(Boolean));
 }
 
-function modulePdfSection(sections, heading, values = []) {
+function modulePdfSection(sections, heading, values = [], type = "paragraphs") {
   const lines = modulePdfTextLines(values);
-  if (lines.length) sections.push({ heading, lines });
+  if (lines.length) sections.push({ heading, lines, type });
 }
 
 function modulePdfFilename(module) {
@@ -3085,23 +3219,28 @@ function collectLearningModulePdfSections(module, background, deepDive, applicat
   const isDefinitionSection = section => /definition|what .* means/i.test(section.title || "");
   const definitionSections = backgroundSections.filter(isDefinitionSection);
   const remainingBackgroundSections = backgroundSections.filter(section => !isDefinitionSection(section));
+  const glossaryDefinitions = learningModuleDefinitionEntries(module.id);
 
-  modulePdfSection(sections, "Learning Objectives", learningObjectiveItems(module, application));
+  modulePdfSection(sections, "Learning Objectives", learningObjectiveItems(module, application), "bullets");
   modulePdfSection(sections, "Module Overview", [deepDive.overview || module.text]);
-  if (definitionSections.length) modulePdfSection(sections, "Definitions", definitionSections.map(section => `${section.title}: ${section.body}`));
+  if (glossaryDefinitions.length) modulePdfSection(sections, "Definitions", glossaryDefinitions.map(([term, definition]) => `${term}: ${definition}`), "bullets");
+  if (definitionSections.length) modulePdfSection(sections, "Additional Definitions", definitionSections.map(section => `${section.title}: ${section.body}`));
   modulePdfSection(sections, "Lesson Context", narrative);
-  if (background.bullets?.length) modulePdfSection(sections, background.bulletsTitle || "Key Points", background.bullets);
+  if (background.bullets?.length) modulePdfSection(sections, background.bulletsTitle || "Key Points", background.bullets, "bullets");
   (deepDive.sections || []).forEach(section => modulePdfSection(sections, section.title, section.paragraphs || section.items || []));
   remainingBackgroundSections.forEach(section => modulePdfSection(sections, section.title, [section.body]));
-  if (background.table?.length) modulePdfSection(sections, module.id === "workflows" ? "Workflow Stages and AI Applications" : "Examples and Applications", background.table.map(row => row.join(" | ")));
-  if (background.risks?.length) modulePdfSection(sections, "Limitations, Risks, and Mitigations", background.risks.map(row => row.join(" | ")));
+  if (background.table?.length) modulePdfSection(sections, module.id === "workflows" ? "Workflow Stages and AI Applications" : "Examples and Applications", background.table.map(row => row.join(" | ")), "bullets");
+  if (background.risks?.length) modulePdfSection(sections, "Limitations, Risks, and Mitigations", background.risks.map(row => row.join(" | ")), "bullets");
   modulePdfSection(sections, "How to Apply This Module", ["Use the linked plays to decide who should be involved, what decisions need to be made, and which safeguards should be documented. Use the linked tools to turn the concept into an agency artifact that can be saved, reviewed, updated, and used during governance or implementation meetings."]);
   modulePdfSection(sections, "Risk or Guardrail", [module.risk]);
   modulePdfSection(sections, "Why This Matters for Your Practice", [application.matters]);
-  modulePdfSection(sections, "Reflection Questions", application.questions || []);
-  if (application.exercise) modulePdfSection(sections, "Practical Exercise", [application.exercise, ...(application.artifacts || []).map(item => `Expected artifact or evidence: ${item}`)]);
-  modulePdfSection(sections, "Knowledge Check", knowledgeCheckQuestions(module).map((question, index) => `${index + 1}. ${question.prompt}`));
-  if (moduleResources.length) modulePdfSection(sections, "References and Resources", moduleResources.map(([title, note, url]) => `${title}: ${note} ${url}`));
+  modulePdfSection(sections, "Reflection Questions", application.questions || [], "bullets");
+  if (application.exercise) {
+    const exerciseLines = [application.exercise, ...(application.artifacts || []).map(item => `Expected artifact or evidence: ${item}`)];
+    modulePdfSection(sections, "Practical Exercise", exerciseLines, "mixed");
+  }
+  modulePdfSection(sections, "Knowledge Check", knowledgeCheckQuestions(module).map((question, index) => `${index + 1}. ${question.prompt}`), "bullets");
+  if (moduleResources.length) modulePdfSection(sections, "References and Resources", moduleResources.map(([title, note, url]) => `${title}: ${note} ${url}`), "bullets");
   return sections;
 }
 
@@ -3150,8 +3289,12 @@ const exerciseGuidanceByModule = {
     example: "For example, a communications specialist might be assigned Generative AI, Responsible Prompting and Review, Public Transparency, Accessibility and Language Access, and AI Incident Response before using AI to draft public messages."
   },
   "understanding-ai": {
-    concepts: [["AI type", "The broad category of AI involved, such as generative AI for drafting, machine learning for prediction, or agentic AI for multi-step workflow support."], ["Human decision owner", "The person or role accountable for the final decision, approval, or public health action."], ["Known or suspected AI use", "Any formal or informal use of AI-enabled tools, including vendor products or staff productivity tools."]],
-    example: "For example, a program area may use AI to summarize partner meeting notes. The task would be classified as generative AI, and the human decision owner might be the program manager who approves the final summary."
+    concepts: [["AI type", "The broad category of AI involved, such as predictive AI for forecasting, generative AI for drafting, Deep Research for evidence scans, or agentic AI for multi-step workflow support."], ["Human decision owner", "The person or role accountable for the final decision, approval, or public health action."], ["Known or suspected AI use", "Any formal or informal use of AI-enabled tools, including vendor products or staff productivity tools."]],
+    example: "For example, a program area may use AI to summarize partner meeting notes, use Deep Research to scan funding guidance, or use predictive analytics to forecast service demand. The task should be classified by AI type, and a human decision owner should approve any official use of the output."
+  },
+  "predictive-ai": {
+    concepts: [["Prediction target", "The event, need, risk, trend, or outcome the system is trying to estimate."], ["False positive", "A case where the system flags something that is not actually present."], ["False negative", "A case where the system misses something that is actually present."], ["Model drift", "A change in performance over time because data, populations, workflows, or conditions have changed."]],
+    example: "For example, a health department might explore a model that forecasts inspection workload or flags facilities for staff review. The exercise should identify what the prediction would inform, what data are used, how staff validate the output, and what actions are not allowed without human approval."
   },
   "generative-ai": {
     concepts: [["Source material", "The approved documents, data, policies, or examples the AI should rely on."], ["Human review", "A person checks accuracy, tone, equity, accessibility, privacy, and policy alignment before the output is used."], ["Approved-source guidance", "Rules explaining which source documents may be used and what sources are not acceptable."]],
@@ -3266,6 +3409,128 @@ const exerciseGuidanceByModule = {
     example: "For example, if a proposal would use AI to rank people for scarce services without validated data, clear appeal rights, and governance approval, the safer decision may be to reject or redesign it."
   }
 };
+
+function sentenceJoin(parts = []) {
+  return parts.filter(Boolean).join(" ");
+}
+
+function conceptParagraph(module, term, explanation) {
+  return sentenceJoin([
+    `${term} is a core concept for this lesson because it turns ${module.title.toLowerCase()} from an abstract AI topic into something you can recognize in daily public health work.`,
+    explanation,
+    `When you encounter this concept, ask what data are involved, who is accountable for the result, what human review is required, and how the work should be documented.`,
+    `That habit helps you connect the lesson to concrete governance, privacy, equity, workforce, procurement, implementation, and monitoring decisions rather than treating AI as a stand-alone technology issue.`
+  ]);
+}
+
+function exampleApplicationParagraph(module, example) {
+  const detail = exampleDetails[example] || `This example should be examined as a workflow, not simply as a possible AI feature. Start by identifying the public health problem, the source information, the users, the people affected, and the decision that remains human. Then document the safeguards needed before the idea could become an approved use case.`;
+  return sentenceJoin([
+    `${example} is a useful way to apply this lesson because it gives you a concrete workflow to test against the concept.`,
+    detail,
+    `In practice, you should identify the expected public health value, the staff role responsible for review, the data sensitivity, and the point where governance approval is required.`,
+    `If those elements cannot be described clearly, the idea should remain in exploration rather than moving into procurement, piloting, or deployment.`
+  ]);
+}
+
+function implementationGuidanceParagraph(module, application = {}) {
+  return sentenceJoin([
+    `To apply this module, begin with a real or realistic public health workflow and describe the task in plain language before naming an AI tool.`,
+    `Use the related plays (${module.plays.map(id => `Play ${id}`).join(", ") || "as applicable"}) to identify the decisions, approvals, people, and timing needed for responsible implementation.`,
+    `Use the related tools (${module.tools.map(id => `Tool ${id}`).join(", ") || "as applicable"}) to create documentation that can be reviewed, saved, revised, and used as evidence of readiness.`,
+    application.exercise ? `The practical exercise asks you to produce evidence that can feed into that work: ${application.exercise}` : `The practical exercise should produce a short artifact that can support readiness, governance, implementation, or monitoring decisions.`
+  ]);
+}
+
+function riskGuidanceParagraph(module) {
+  return sentenceJoin([
+    `The main guardrail for this lesson is that ${module.risk}`,
+    `Treat that guardrail as an operational requirement, not a warning label at the end of the lesson.`,
+    `Before using AI in this area, identify what could go wrong, who would notice the problem, how the concern would be escalated, and what authority exists to pause or change the work.`,
+    `That approach makes risk management part of routine public health practice rather than a separate technical review.`
+  ]);
+}
+
+function enrichLearningModulesFromUnderstandingModel() {
+  learningModules.forEach(module => {
+    if (module.id === "understanding-ai") return;
+    const guidance = exerciseGuidanceByModule[module.id] || {};
+    const application = learningModuleApplicationDetails[module.id] || {};
+    const original = learningModuleDeepDive[module.id] || {};
+    const existingOverview = original.overview || module.text;
+    const conceptParagraphs = (guidance.concepts || []).map(([term, explanation]) => conceptParagraph(module, term, explanation));
+    const exampleParagraphs = (module.examples || []).slice(0, 4).map(example => exampleApplicationParagraph(module, example));
+    const contextParagraphs = learningModuleNarrative[module.id] || [];
+    learningModuleDeepDive[module.id] = {
+      overview: existingOverview,
+      sections: [
+        {
+          title: "Core Concepts",
+          paragraphs: conceptParagraphs.length ? conceptParagraphs : [
+            sentenceJoin([
+              `${module.title} should be understood as a practical public health capability, risk area, or decision point rather than a technical label.`,
+              `Use the concept to ask what problem is being solved, what data are involved, what people or communities are affected, and what safeguards are required.`,
+              `The goal is to build enough working knowledge to participate in planning, governance, implementation, and monitoring conversations.`,
+              `You do not need to become a technical expert, but you do need enough fluency to ask the right questions and document the answers.`
+            ])
+          ]
+        },
+        {
+          title: "Public Health Application",
+          paragraphs: exampleParagraphs.length ? exampleParagraphs : [
+            sentenceJoin([
+              `Apply this lesson by selecting one public health activity that is familiar to your role.`,
+              `Describe the current workflow, the pain point, the data involved, the people affected, and the decision or output that the workflow produces.`,
+              `Then decide whether AI could responsibly support drafting, summarizing, routing, analysis, monitoring, or documentation without replacing accountable human judgment.`,
+              guidance.example || `The strongest application is one that improves a real public health function while preserving privacy, equity, transparency, and human review.`
+            ])
+          ]
+        },
+        {
+          title: "Implementation Guidance",
+          paragraphs: [
+            implementationGuidanceParagraph(module, application),
+            riskGuidanceParagraph(module),
+            sentenceJoin([
+              `If your department already has a relevant process, such as data governance, technology governance, quality improvement, procurement review, privacy review, emergency response planning, or workforce development, use that process as the starting point.`,
+              `The playbook tools are meant to fill gaps where a method or documentation process does not already exist.`,
+              `There is no need to recreate the wheel when an existing process can be extended to include AI-specific questions, evidence, approval points, and monitoring expectations.`,
+              `This keeps AI governance connected to normal public health operations instead of creating a parallel paperwork system.`
+            ])
+          ]
+        },
+        {
+          title: "Using Plays and Tools",
+          paragraphs: [
+            sentenceJoin([
+              `The related plays help you decide where this topic fits in the planning and implementation sequence.`,
+              `The related tools help you convert the lesson into a documented artifact, such as a review checklist, inventory record, policy scan, implementation note, communication plan, training assignment, risk register, or monitoring record.`,
+              `Use the assessment results as a starting recommendation, but adjust the path based on what your department has already completed and what is most useful for your public health goals.`,
+              `When a play or tool is not needed, document why it was deferred so future reviewers understand the decision.`
+            ]),
+            application.matters ? sentenceJoin([
+              `This matters for your practice because ${application.matters}`,
+              `Use that purpose to decide how much documentation, governance review, stakeholder input, and monitoring are proportionate to the risk and public health impact of the work.`,
+              `A low-risk internal learning activity may need only basic documentation, while a public-facing or decision-support workflow may need formal review, validation, transparency, and ongoing oversight.`
+            ]) : ""
+          ].filter(Boolean)
+        }
+      ]
+    };
+    if (!contextParagraphs.length) {
+      learningModuleNarrative[module.id] = [
+        sentenceJoin([
+          `This lesson is written for you as an individual learner in a public health setting.`,
+          `As you read, connect each concept to your own role, the data or systems you use, the communities your work affects, and the decisions you help prepare or make.`,
+          `The purpose is not to promote AI use in every situation.`,
+          `The purpose is to help you recognize when AI may be useful, when it may be risky, and what must be true before it can be used responsibly.`
+        ])
+      ];
+    }
+  });
+}
+
+enrichLearningModulesFromUnderstandingModel();
 
 function renderExerciseSupport(module, application = {}) {
   const guidance = exerciseGuidanceByModule[module.id];
@@ -3672,7 +3937,8 @@ function renderHome() {
 }
 
 function renderLearn(moduleId = "understanding-ai") {
-  const module = learningModules.find(m => m.id === moduleId) || learningModules[0];
+  const resolvedModuleId = moduleId === "deep-research" ? "understanding-ai" : moduleId;
+  const module = learningModules.find(m => m.id === resolvedModuleId) || learningModules[0];
   const background = backgroundMaterial[module.id] || {};
   const moduleResources = learningModuleResources[module.id] || [];
   const deepDive = learningModuleDeepDive[module.id] || {};
@@ -3684,11 +3950,9 @@ function renderLearn(moduleId = "understanding-ai") {
   const isDefinitionSection = section => /definition|what .* means/i.test(section.title || "");
   const definitionSections = backgroundSections.filter(isDefinitionSection);
   const remainingBackgroundSections = backgroundSections.filter(section => !isDefinitionSection(section));
-  const moduleNav = `<aside class="filter-panel">
-        <h2>Learning Topics</h2>
-        <a class="side-link prominent" href="#/glossary">Glossary of Terms</a>
-        <div class="side-list">${learningModules.map(m=>`<button class="${m.id===module.id ? "active" : ""}" onclick="location.hash='#/learn/${m.id}'">${m.title.replace("Artificial Intelligence","AI")}</button>`).join("")}</div>
-      </aside>`;
+  const glossaryDefinitions = learningModuleDefinitionEntries(module.id);
+  const definitionsBlock = glossaryDefinitions.length ? `<section class="content-section lesson-prose definitions-section"><h3>Definitions</h3><dl class="definition-list">${glossaryDefinitions.map(([term, definition])=>`<dt>${term}</dt><dd>${definition}</dd>`).join("")}</dl></section>` : "";
+  const moduleNav = renderLearningModuleNav(module.id);
   const glossaryCta = `<section class="content-section glossary-cta">
             <h3>Need a Definition?</h3>
             <p>Use the glossary for plain-language explanations of AI, governance, privacy, validation, implementation, and public health terms used throughout the learning modules.</p>
@@ -3706,6 +3970,7 @@ function renderLearn(moduleId = "understanding-ai") {
           ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
+          ${definitionsBlock}
           ${narrative.length ? `<section class="content-section lesson-prose training-section"><h3>How to Use the Learning Section</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose training-section"><h3>${section.title}</h3>${renderLearningSection(section)}</section>`).join("")}
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Learning</h3>${paragraphBlock(application.matters)}</section>` : ""}
@@ -3729,6 +3994,7 @@ function renderLearn(moduleId = "understanding-ai") {
           ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
+          ${definitionsBlock}
           <section class="content-section">
             <h3>How to Use These Examples</h3>
             <p>Use these support areas during early learning, readiness review, stakeholder engagement, use case prioritization, governance review, and implementation planning. As you review each example, consider your department's legal authority, data environment, workforce capacity, community context, and governance requirements.</p>
@@ -3786,7 +4052,8 @@ function renderLearn(moduleId = "understanding-ai") {
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
           ${deepDive.overview ? `<section class="content-section lesson-prose"><h3>Module Overview</h3>${paragraphBlock(deepDive.overview)}</section>` : ""}
-          ${definitionSections.length ? `<section class="content-section lesson-prose"><h3>Definitions</h3>${definitionSections.map(section=>`<p><strong>${section.title}:</strong> ${section.body}</p>`).join("")}</section>` : ""}
+          ${definitionsBlock}
+          ${definitionSections.length ? `<section class="content-section lesson-prose"><h3>Additional Definitions</h3>${definitionSections.map(section=>`<p><strong>${section.title}:</strong> ${section.body}</p>`).join("")}</section>` : ""}
           ${narrative.length ? `<section class="content-section lesson-prose"><h3>Lesson Context</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${module.id === "understanding-ai" && background.bullets ? `<section class="content-section"><h3>${background.bulletsTitle || "Key points"}</h3><ul class="check-list">${background.bullets.map(x=>`<li>${x}</li>`).join("")}</ul></section>` : ""}
           ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose"><h3>${section.title}</h3>${renderLearningSection(section)}</section>`).join("")}
@@ -5521,6 +5788,15 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections)
     if (y < margin + size + 8) addPage();
     drawText(line, x, size, color, bold);
   };
+  const drawWrappedParagraph = (value, maxChars = 88) => {
+    wrapPdfText(value, maxChars).forEach(line => text(line, 10, "0.13 0.20 0.28"));
+    y -= 5;
+  };
+  const drawWrappedBullet = (value, maxChars = 82) => {
+    const lines = wrapPdfText(value, maxChars);
+    lines.forEach((line, index) => text(`${index === 0 ? "- " : "  "}${line}`, 10, "0.13 0.20 0.28", false, index === 0 ? margin : margin + 12));
+    y -= 3;
+  };
   const rule = color => {
     commands.push(`${color} RG`);
     commands.push(`1.2 w ${margin} ${y} m ${pageWidth - margin} ${y} l S`);
@@ -5557,7 +5833,13 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections)
       });
     }
     if (section.lines) {
-      section.lines.forEach(line => wrapPdfText(line, 88).forEach(wrapped => text(`- ${wrapped}`, 10, "0.13 0.20 0.28")));
+      if (section.type === "bullets") {
+        section.lines.forEach(line => drawWrappedBullet(line));
+      } else if (section.type === "mixed") {
+        section.lines.forEach((line, index) => index === 0 ? drawWrappedParagraph(line) : drawWrappedBullet(line.replace(/^Expected artifact or evidence:\s*/i, "")));
+      } else {
+        section.lines.forEach(line => drawWrappedParagraph(line));
+      }
     }
     y -= 5;
   });
@@ -7126,6 +7408,151 @@ function renderReferences() {
 function sortedGlossaryTerms(terms = []) {
   return [...terms].sort(([a], [b]) => String(a).localeCompare(String(b), undefined, { sensitivity: "base", ignorePunctuation: true }));
 }
+
+function glossaryDefinitionMap() {
+  const map = {};
+  glossaryGroups.forEach(group => {
+    group.terms.forEach(([term, definition]) => { map[term] = definition; });
+  });
+  return map;
+}
+
+const learningModuleDefinitionTerms = {
+  "staff-training": ["AI governance", "Responsible AI policy", "Use case", "Human-in-the-loop"],
+  "understanding-ai": ["Agentic AI", "Artificial intelligence (AI)", "Deep Research", "Generative AI", "Human-in-the-loop", "Large language model (LLM)", "Machine learning", "Predictive AI", "Retrieval-augmented generation (RAG)"],
+  "predictive-ai": ["Anomaly detection", "Bias", "False negative", "False positive", "Model drift", "Predictive AI", "Risk tiering", "Validation"],
+  "generative-ai": ["Generative AI", "Hallucination", "Large language model (LLM)", "Prompt", "Retrieval-augmented generation (RAG)", "Synthetic data"],
+  "agentic-ai": ["Agentic AI", "AI system inventory", "Audit log", "Governance gate", "Human-in-the-loop", "Incident response"],
+  "workflows": ["Bridge role", "Dependency", "Human-in-the-loop", "Public health workflow", "Systems map", "Use case"],
+  "risks": ["Automation bias", "Bias", "Equity impact assessment", "Hallucination", "Model drift", "Risk tiering", "Validation"],
+  "systems-shift": ["AI governance", "Bridge role", "Data modernization", "Implementation playbook", "Public accountability", "Systems map"],
+  "digital-determinants": ["Accessibility", "Bias", "Digital determinant of health", "Equity impact assessment", "Missing voices", "Transparency"],
+  "human-centered-ai": ["Community engagement", "Explainability", "Human-in-the-loop", "Public accountability", "Scale decision", "Transparency"],
+  "ai-literacy": ["AI governance", "Data classification", "Hallucination", "Human-in-the-loop", "Prompt", "Responsible AI policy"],
+  "automation-bias": ["Automation bias", "Explainability", "False negative", "False positive", "Human-in-the-loop", "Validation"],
+  "missing-voices": ["Bias", "Community engagement", "Equity impact assessment", "Missing voices", "Subgroup monitoring", "Tribal data sovereignty"],
+  "public-transparency": ["Explainability", "Incident response", "Public accountability", "Responsible AI policy", "Transparency"],
+  "tiered-data-use": ["Data classification", "Data use agreement", "Personally identifiable information (PII)", "Protected health information (PHI)", "Tribal data sovereignty"],
+  "environmental-impact": ["Total cost of ownership", "Use case", "Vendor review"],
+  "bridge-professional": ["Bridge role", "Dependency", "Governance gate", "Implementation playbook", "Public health informatics"],
+  "funding": ["Data modernization", "Dependency", "Pilot", "Scale decision", "Total cost of ownership"],
+  "procurement-vendor-oversight": ["Data use agreement", "Risk tiering", "Total cost of ownership", "Vendor review"],
+  "privacy-confidentiality-public-records": ["Data classification", "Data use agreement", "Personally identifiable information (PII)", "Protected health information (PHI)", "Public records"],
+  "model-validation-evaluation-basics": ["Bias", "False negative", "False positive", "Model drift", "Subgroup monitoring", "Validation"],
+  "ai-incident-response": ["Incident response", "Model drift", "Pause authority", "Public accountability"],
+  "role-based-ai-guidelines": ["Allowed use", "Data classification", "Prohibited use", "Responsible AI policy"],
+  "responsible-prompting-review": ["Hallucination", "Prompt", "Retrieval-augmented generation (RAG)", "Unsafe prompt"],
+  "community-engagement-ai": ["Community engagement", "Equity impact assessment", "Missing voices", "Public accountability", "Transparency"],
+  "accessibility-language-access": ["Accessibility", "Language access", "Plain language", "Public accountability"],
+  "cybersecurity-secure-ai-use": ["Access control", "Audit log", "Data classification", "Incident response", "Prompt injection"],
+  "when-not-to-use-ai": ["No-go decision", "Non-AI alternative", "Restricted use", "Risk tiering"],
+  "ai-support-areas": ["Public health workflow", "Use case", "Validation", "Governance gate"]
+};
+
+const supplementalGlossaryDefinitions = {
+  "Accessibility": "Designing information, tools, services, and workflows so people with disabilities can access and use them. In AI-supported public health work, accessibility includes readable content, screen-reader compatibility, captioning, plain language, alternate formats, and human assistance pathways.",
+  "Access control": "Rules and technical settings that determine who can use a system and what they are allowed to see, change, export, or approve.",
+  "Allowed use": "An AI use that is permitted for a role, workflow, or data type under defined conditions, safeguards, and documentation requirements.",
+  "Anomaly detection": "A method for identifying unusual patterns, outliers, or signals in data. In public health, anomaly detection can support surveillance or operations when qualified staff review whether a signal is meaningful.",
+  "Audit log": "A record of system activity, such as who accessed data, what an AI tool generated, what actions were taken, and when changes occurred.",
+  "Language access": "Meaningful access to information and services for people with limited English proficiency, including qualified translation, interpretation, review, and culturally appropriate communication.",
+  "No-go decision": "A documented decision that AI should not be used for a proposed task because the risk, data limitations, legal uncertainty, public impact, or operational burden outweighs the expected benefit.",
+  "Non-AI alternative": "A simpler process, checklist, dashboard, staffing change, policy update, workflow redesign, or quality improvement activity that can solve a problem without AI.",
+  "Pause authority": "The person, role, or governance body authorized to stop, limit, suspend, or retire an AI use when risk, harm, poor performance, or noncompliance is identified.",
+  "Plain language": "Communication written so the intended audience can find, understand, and use the information they need.",
+  "Prohibited use": "An AI use that is not allowed, such as entering protected data into a public tool, replacing required human judgment, or using AI for a purpose outside agency policy.",
+  "Prompt injection": "A security risk where malicious or hidden instructions attempt to manipulate an AI system into ignoring rules, exposing data, or taking inappropriate actions.",
+  "Public records": "Records created or received in official agency work that may be subject to retention, disclosure, or public records requirements.",
+  "Restricted use": "An AI use that may be allowed only with added conditions, such as governance approval, limited data, stronger human review, monitoring, or legal review.",
+  "Subgroup monitoring": "Checking whether AI performance, access, burden, errors, or outcomes differ across meaningful populations, geographies, languages, programs, facilities, or other relevant groups.",
+  "Unsafe prompt": "A prompt that includes sensitive data, requests unsupported or inappropriate conclusions, bypasses required review, or asks the system to act outside approved boundaries.",
+  "Vendor review": "A structured review of a vendor's product, data practices, model documentation, security controls, accessibility, pricing, auditability, subcontractors, contract terms, and exit requirements."
+};
+
+function learningModuleDefinitionEntries(moduleId) {
+  const map = { ...glossaryDefinitionMap(), ...supplementalGlossaryDefinitions };
+  const terms = learningModuleDefinitionTerms[moduleId] || [];
+  return sortedGlossaryTerms(terms.map(term => [term, map[term]]).filter(([, definition]) => definition));
+}
+
+const learningTracks = [
+  {
+    title: "All Modules",
+    ids: []
+  },
+  {
+    title: "Shared Foundational Course",
+    ids: ["staff-training", "understanding-ai", "predictive-ai", "generative-ai", "agentic-ai", "workflows", "risks", "human-centered-ai", "ai-literacy", "automation-bias", "missing-voices", "public-transparency", "tiered-data-use", "privacy-confidentiality-public-records", "responsible-prompting-review", "cybersecurity-secure-ai-use", "when-not-to-use-ai", "ai-incident-response", "ai-support-areas"]
+  },
+  {
+    title: "Technical Architecture Track",
+    ids: ["tiered-data-use", "cybersecurity-secure-ai-use", "responsible-prompting-review", "procurement-vendor-oversight", "role-based-ai-guidelines"]
+  },
+  {
+    title: "Analytics and Modeling Track",
+    ids: ["predictive-ai", "model-validation-evaluation-basics", "missing-voices", "automation-bias", "ai-support-areas"]
+  },
+  {
+    title: "Operations and Data Quality Track",
+    ids: ["workflows", "ai-incident-response", "systems-shift", "bridge-professional", "ai-support-areas"]
+  },
+  {
+    title: "Governance and Security Track",
+    ids: ["role-based-ai-guidelines", "tiered-data-use", "privacy-confidentiality-public-records", "cybersecurity-secure-ai-use", "procurement-vendor-oversight", "ai-incident-response", "public-transparency", "community-engagement-ai", "funding", "when-not-to-use-ai"]
+  },
+  {
+    title: "Communications Track",
+    ids: ["generative-ai", "responsible-prompting-review", "public-transparency", "accessibility-language-access", "human-centered-ai", "missing-voices", "digital-determinants", "ai-incident-response", "when-not-to-use-ai"]
+  },
+  {
+    title: "Epidemiology Track",
+    ids: ["understanding-ai", "predictive-ai", "workflows", "automation-bias", "missing-voices", "model-validation-evaluation-basics", "ai-support-areas"]
+  },
+  {
+    title: "Policy Track",
+    ids: ["systems-shift", "digital-determinants", "public-transparency", "community-engagement-ai", "privacy-confidentiality-public-records", "procurement-vendor-oversight", "funding", "when-not-to-use-ai"]
+  },
+  {
+    title: "Public Health Executive Leadership Track",
+    ids: ["staff-training", "systems-shift", "digital-determinants", "procurement-vendor-oversight", "ai-incident-response", "funding", "ai-support-areas"]
+  },
+  {
+    title: "Program Management Track",
+    ids: ["workflows", "bridge-professional", "procurement-vendor-oversight", "role-based-ai-guidelines", "ai-incident-response", "funding", "ai-support-areas"]
+  }
+];
+
+function learningModuleButton(module, activeId) {
+  return `<button class="${module.id===activeId ? "active" : ""}" onclick="location.hash='#/learn/${module.id}'">${module.title.replace("Artificial Intelligence","AI")}</button>`;
+}
+
+function renderLearningModuleNav(activeId) {
+  const moduleById = Object.fromEntries(learningModules.map(module => [module.id, module]));
+  return `<aside class="filter-panel learning-topic-panel">
+        <h2>Learning Topics</h2>
+        <a class="side-link prominent" href="#/glossary">Glossary of Terms</a>
+        <div class="learning-track-list">
+          ${learningTracks.map(track => {
+            const modules = track.title === "All Modules"
+              ? learningModules
+              : (track.ids || []).map(id => moduleById[id]).filter(Boolean);
+            return `<section class="learning-track">
+              <h3>${track.title}</h3>
+              <div class="side-list">${modules.map(module => learningModuleButton(module, activeId)).join("")}</div>
+            </section>`;
+          }).join("")}
+        </div>
+      </aside>`;
+}
+
+function moduleDeckFilename(module, index) {
+  const slug = String(module.title || module.id).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return `downloads/presentations/lesson-${String(index + 1).padStart(2, "0")}-${slug}.pptx`;
+}
+
+learningModules.forEach((module, index) => {
+  lessonDeckDownloads[module.id] = moduleDeckFilename(module, index);
+});
 
 function renderGlossary() {
   const categoryLinks = glossaryGroups.map((group, index) => `<button type="button" onclick="document.getElementById('glossary-${index}').scrollIntoView({ behavior: 'smooth', block: 'start' })">${group.category}</button>`).join("");
