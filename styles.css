@@ -582,6 +582,11 @@ p { margin: 0 0 1rem; }
   border-color: var(--blue);
   background: #eef7fc;
 }
+.side-link.prominent {
+  margin: .25rem 0 1rem;
+  border-left: 4px solid var(--green);
+  background: linear-gradient(135deg, #ffffff, #eef8ee);
+}
 .support-areas-intro {
   margin: 1.5rem 0;
   border-left: 4px solid var(--green);
@@ -965,6 +970,17 @@ p { margin: 0 0 1rem; }
 }
 .glossary-intro {
   border-left: 4px solid var(--green);
+}
+.glossary-cta {
+  border-left: 4px solid var(--green) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f2f8f4 100%) !important;
+}
+.glossary-cta h2,
+.glossary-cta h3 {
+  color: var(--navy);
+}
+.resources-glossary-cta {
+  margin: 1rem 0 1.5rem;
 }
 .glossary-index {
   display: flex;

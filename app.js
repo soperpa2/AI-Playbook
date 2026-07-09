@@ -3500,9 +3500,14 @@ function renderLearn(moduleId = "understanding-ai") {
   const remainingBackgroundSections = backgroundSections.filter(section => !isDefinitionSection(section));
   const moduleNav = `<aside class="filter-panel">
         <h2>Learning Topics</h2>
+        <a class="side-link prominent" href="#/glossary">Glossary of Terms</a>
         <div class="side-list">${learningModules.map(m=>`<button class="${m.id===module.id ? "active" : ""}" onclick="location.hash='#/learn/${m.id}'">${m.title.replace("Artificial Intelligence","AI")}</button>`).join("")}</div>
-        <a class="side-link" href="#/glossary">Glossary of Terms</a>
       </aside>`;
+  const glossaryCta = `<section class="content-section glossary-cta">
+            <h3>Need a Definition?</h3>
+            <p>Use the glossary for plain-language explanations of AI, governance, privacy, validation, implementation, and public health terms used throughout the learning modules.</p>
+            <a class="btn small" href="#/glossary">Open Glossary of Terms</a>
+          </section>`;
   if (module.id === "staff-training") {
     main.innerHTML = pageIntro("Learn: AI Foundations for Public Health", "Use these lessons to build the knowledge you need before tool selection, pilot planning, readiness assessment, or governance review.") + `
     <div class="learn-layout">
@@ -3512,6 +3517,7 @@ function renderLearn(moduleId = "understanding-ai") {
           <p class="eyebrow">Training Overview</p>
           <h2>${module.title}</h2>
           ${paragraphBlock(module.text)}
+          ${glossaryCta}
           ${narrative.length ? `<section class="content-section lesson-prose training-section"><h3>How to Use the Learning Section</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose training-section"><h3>${section.title}</h3>${trainingSectionBlock(section.items)}</section>`).join("")}
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Learning</h3>${paragraphBlock(application.matters)}</section>` : ""}
@@ -3534,6 +3540,7 @@ function renderLearn(moduleId = "understanding-ai") {
           <h2>${module.title}</h2>
           ${paragraphBlock(module.text)}
           ${deckDownload ? `<div class="button-row"><a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a></div>` : ""}
+          ${glossaryCta}
           <section class="content-section">
             <h3>How to Use These Examples</h3>
             <p>Use these support areas during early learning, readiness review, stakeholder engagement, use case prioritization, governance review, and implementation planning. As you review each example, consider your department's legal authority, data environment, workforce capacity, community context, and governance requirements.</p>
@@ -3589,6 +3596,7 @@ function renderLearn(moduleId = "understanding-ai") {
           <h2>${module.title}</h2>
           ${paragraphBlock(module.text)}
           ${deckDownload ? `<div class="button-row"><a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a></div>` : ""}
+          ${glossaryCta}
           <section class="content-section">
             <h3>Learning Objectives</h3>
             <ul class="check-list">
@@ -6903,6 +6911,11 @@ function renderReferences() {
         <a class="btn" href="downloads/AI_Playbook_and_Toolkit_Website_Complete_Reference.docx">Complete Reference Word</a>
         <a class="btn" href="#/glossary">Open Glossary</a>
       </div>
+    </section>
+    <section class="panel glossary-cta resources-glossary-cta">
+      <h2>Glossary of Terms</h2>
+      <p>Need plain-language definitions while reviewing resources? The glossary explains AI, governance, privacy, validation, implementation, and public health terms used across the site.</p>
+      <a class="btn small" href="#/glossary">Open Glossary of Terms</a>
     </section>
     <div class="references-grid">
       ${references.map(group=>`
