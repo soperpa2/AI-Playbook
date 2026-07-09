@@ -201,6 +201,20 @@ main { min-height: calc(100vh - 144px); }
   margin: -.25rem auto 1rem;
 }
 .learn-layout { grid-template-columns: 260px 1fr; gap: 2.5rem; }
+.learn-layout > aside.panel {
+  position: sticky;
+  top: 6.5rem;
+  align-self: start;
+  max-height: calc(100vh - 8rem);
+  display: flex;
+  flex-direction: column;
+}
+.learn-layout > aside.panel .side-list {
+  overflow-y: auto;
+  padding-right: .35rem;
+  scrollbar-color: rgba(0, 104, 183, .45) rgba(222, 238, 247, .75);
+  scrollbar-width: thin;
+}
 .toolkit-layout { grid-template-columns: 260px 1fr; gap: 2.5rem; }
 h1, h2, h3, h4 {
   color: var(--ink);
@@ -2168,6 +2182,13 @@ th { color: var(--ink); background: var(--sky); }
   }
   .primary-nav.open { display: flex; }
   .hero-grid, .two-col, .toolkit-layout, .learn-layout, .assessment-grid, .detail-grid, .guide-layout, .plays-overview-grid, .community-layout, .community-hero, .case-study-grid, .support-area-header, .support-area-grid, .member-dashboard, .member-workspace-grid, .member-list.compact, .org-workspace-header, .org-form, .org-grid, .change-profile-grid, .change-metric-grid { grid-template-columns: 1fr; }
+  .learn-layout > aside.panel {
+    position: static;
+    max-height: none;
+  }
+  .learn-layout > aside.panel .side-list {
+    max-height: 360px;
+  }
   .framework-intro { grid-template-columns: 1fr; }
   .framework-intro aside { margin-top: 0; }
   .use-playbook-panel ul { columns: 1; }

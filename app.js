@@ -3395,6 +3395,7 @@ function renderHome() {
             <p>Every health department will have a customized path through the plays and tools. The readiness assessment helps identify which gaps need attention first, while work already completed by the department can be documented, validated, and used to move more quickly into the next responsible steps.</p>
             <p>The integrated toolkit provides ${tools.length} fillable tools, templates, checklists, scoring frameworks, dashboards, and logs. Read the play first to understand the decision and intended output, then use the supporting tools to complete and document the work.</p>
             <p>The tools are meant to fill gaps where a health department does not already have a method, template, policy, checklist, or process. If your department already has a similar tool that works well, use it, adapt it, or document it as evidence for the relevant play. There is no need to recreate the wheel.</p>
+            <p>If your department already has data governance, technology governance, privacy review, cybersecurity review, IT governance, records management, or project management infrastructure in place, build on those structures wherever possible. AI governance should connect to existing approval pathways and strengthen them rather than creating a parallel process.</p>
           </div>
         </div>
         <aside class="journey-sidebar" aria-label="Recommended journey">
@@ -3878,6 +3879,7 @@ function renderPlays() {
             <li>Use the play sequence to manage dependencies, but adapt the path when your department has already completed a step or needs a different starting point.</li>
             <li>Complete the linked tools as working documents so decisions, owners, governance reviews, timelines, and unresolved issues are documented as implementation moves forward.</li>
             <li>Use the toolkit to fill gaps where your department does not already have a method or process. If you already have comparable plans, templates, checklists, dashboards, policies, or governance records, use those existing materials and document where they satisfy the play.</li>
+            <li>Leverage existing data and technology governance infrastructure wherever possible, including data governance councils, IT governance, cybersecurity review, privacy review, records management, procurement review, and project management processes.</li>
             <li>Use governance gates before use case approval, vendor decisions, pilots, deployment, and scale so AI work remains accountable, equitable, secure, and aligned with public health goals.</li>
             <li>Review the playbook regularly as funding, staffing, risk, technology, stakeholder input, or legal requirements change.</li>
           </ul>
@@ -4856,6 +4858,7 @@ function renderToolkit() {
         <section class="panel tool-fit-note">
           <h2>Use Tools to Fill Gaps</h2>
           <p>These tools are provided to help health departments document work when they do not already have a method, template, checklist, dashboard, policy, or process. If your department already has a similar tool that meets the need, use your existing tool instead and note it as evidence for the relevant play. The goal is responsible documentation and implementation, not recreating work you have already done.</p>
+          <p>Where data governance, technology governance, privacy, cybersecurity, procurement, records-management, or IT review processes already exist, use those processes as the starting point and adapt the toolkit only where AI creates new decisions, documentation needs, or oversight gaps.</p>
         </section>
         <div id="tool-count" class="eyebrow"></div>
         <div id="tools-grid" class="tools-grid"></div>
