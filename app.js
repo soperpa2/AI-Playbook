@@ -2574,7 +2574,22 @@ function individualLearningLanguage(text) {
     .replace(/This module gives teams/g, "This module gives you")
     .replace(/This module helps departments/g, "This module helps you")
     .replace(/This topic explains how the learning section can function/g, "This overview explains how you can use the learning section")
-    .replace(/Health departments can assign modules before workshops, use them during facilitated team sessions, or incorporate them into onboarding for staff who will participate in AI-supported work\./g, "You can use the modules before workshops, during facilitated sessions, or as onboarding if you will participate in AI-supported work.")
+    .replace(/Health departments can assign modules before workshops, use them during facilitated team sessions, or incorporate them into onboarding for staff who will participate in AI-supported work\./g, "You can use the modules before workshops, during guided learning sessions, or as onboarding if you will participate in AI-supported work.")
+    .replace(/facilitated team sessions/g, "guided learning sessions")
+    .replace(/Health departments can/g, "Your department can")
+    .replace(/Health departments should/g, "Your department should")
+    .replace(/Public health departments can/g, "Your department can")
+    .replace(/Public health departments should/g, "Your department should")
+    .replace(/Departments can/g, "Your department can")
+    .replace(/Departments should/g, "Your department should")
+    .replace(/Departments need/g, "Your department needs")
+    .replace(/departments can/g, "your department can")
+    .replace(/departments should/g, "your department should")
+    .replace(/departments need/g, "your department needs")
+    .replace(/staff training curriculum/g, "self-paced learning path")
+    .replace(/staff training/g, "role-based learning")
+    .replace(/training sessions/g, "learning sessions")
+    .replace(/staff exercise/g, "practical exercise")
     .replace(/The goal is to create shared readiness across roles\./g, "The goal is to help you understand your role in shared readiness.")
     .replace(/Program staff need to understand/g, "You may need to understand")
     .replace(/Leaders need to understand/g, "If you are in a leadership role, you need to understand")
@@ -2587,6 +2602,8 @@ function individualLearningLanguage(text) {
     .replace(/staff should be able to/g, "you should be able to")
     .replace(/What Staff Should Be Able to Do/g, "What You Should Be Able to Do")
     .replace(/How Departments Can Use the Learning Modules/g, "How You Can Use the Learning Modules")
+    .replace(/Recommended Training Sequence/g, "Recommended Learning Sequence")
+    .replace(/Facilitation Tips/g, "How to Apply the Module")
     .replace(/Start with Understanding Artificial Intelligence, Generative AI, and Agentic AI so staff share basic vocabulary\./g, "Start with Understanding Artificial Intelligence, Generative AI, and Agentic AI so you have the basic vocabulary.")
     .replace(/Use AI Support Areas after foundational topics so teams can discuss/g, "Use AI Support Areas after foundational topics so you can discuss")
     .replace(/Use one module at a time as a 30- to 60-minute staff training session\./g, "Work through one module at a time as a 30- to 60-minute learning session.")
@@ -2602,7 +2619,16 @@ function individualLearningLanguage(text) {
     .replace(/staff may not recognize/g, "you may not recognize")
     .replace(/Staff may feel/g, "You may feel")
     .replace(/Staff do not all need/g, "You may not need")
+    .replace(/Staff need/g, "You need")
+    .replace(/staff need/g, "you need")
     .replace(/staff experimentation/g, "individual experimentation")
+    .replace(/staff who will/g, "people who will")
+    .replace(/staff understand/g, "you understand")
+    .replace(/staff use/g, "you use")
+    .replace(/staff learn/g, "you learn")
+    .replace(/staff review/g, "you review")
+    .replace(/staff connect/g, "you connect")
+    .replace(/staff move/g, "you move")
     .replace(/program staff/g, "program colleagues")
     .replace(/Program staff/g, "Program colleagues")
     .replace(/implementation teams/g, "implementation work")
@@ -2616,7 +2642,11 @@ function individualLearningLanguage(text) {
     .replace(/These takeaways are designed to feed directly into the playbook tools, governance discussions, or implementation planning\./g, "Use these takeaways as inputs to playbook tools, governance discussions, or implementation planning.")
     .replace(/public health professionals/g, "you and other public health professionals")
     .replace(/teams turn/g, "you turn")
-    .replace(/help teams/g, "help you");
+    .replace(/help teams/g, "help you")
+    .replace(/This module should help staff/g, "This module helps you")
+    .replace(/This module should help you/g, "This module helps you")
+    .replace(/This module should give staff/g, "This module gives you")
+    .replace(/This module should prepare staff/g, "This module prepares you");
 }
 
 function individualizeLearningModules() {
@@ -2632,10 +2662,12 @@ function individualizeLearningModules() {
   walk(learningModuleNarrative);
   walk(learningModuleDeepDive);
   walk(learningModuleApplicationDetails);
+  walk(publicHealthAiSupportAreas);
   walk(backgroundMaterial);
   learningModules.forEach(module => {
     if (module.id === "staff-training") {
-      module.text = "Use these modules to build your own foundation before you participate in AI project work. The learning section can support self-paced learning, onboarding, leadership orientation, governance preparation, and role-specific readiness.";
+      module.title = "Shared Readiness for Responsible AI";
+      module.text = "Use this overview to build your own foundation before you participate in AI project work. The learning section can support self-paced learning, onboarding, leadership orientation, governance preparation, and role-specific readiness.";
       module.risk = "Connect your learning to agency policy, approved tools, data safeguards, escalation expectations, and governance requirements.";
     }
   });
