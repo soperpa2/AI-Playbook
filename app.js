@@ -2165,6 +2165,30 @@ const learningModuleApplicationDetails = {
     matters: "AI changes public health infrastructure, not just individual tasks. Departments need to align AI adoption with data modernization, workforce development, procurement, legal review, community engagement, funding, and evaluation so AI does not become a series of disconnected pilots.",
     questions: ["Which agency systems must change for AI to be governed and sustained?", "Where do existing policies already apply, and where are AI-specific standards needed?", "How will leadership coordinate AI work across programs rather than approving isolated tools?"],
     exercise: "Create a systems map showing how AI adoption affects governance, data, technology, workforce, procurement, communications, equity, and funding. Identify gaps that must be addressed before pilots scale.",
+    exerciseTemplate: {
+      title: "Systems Map Template",
+      intro: "Use this template to map the public health system changes required for one proposed AI use case or agency-wide AI adoption effort. The goal is to make dependencies, risks, owners, and governance gates visible before pilots scale.",
+      rows: [
+        ["Center of the map", "Name the AI-supported workflow, decision, service, or operational process being considered. Keep the center specific enough that the affected systems can be identified."],
+        ["Public health purpose", "State the public health goal, population served, expected benefit, and the problem the AI use is meant to address."],
+        ["Governance and authority", "Identify the approval body, decision owner, review pathway, risk tier, documentation requirements, and pause or retirement authority."],
+        ["Data and interoperability", "List data sources, data quality issues, data sharing limits, interoperability needs, retention rules, and whether existing data modernization work can be leveraged."],
+        ["Technology and cybersecurity", "Identify the AI environment, integrations, access controls, cybersecurity review, vendor dependencies, testing needs, and system maintenance responsibilities."],
+        ["Workforce and change management", "Document affected roles, training needs, workflow changes, supervision expectations, help desk or office-hour support, and staff feedback channels."],
+        ["Procurement, legal, and finance", "Map procurement steps, contracting language, legal or privacy review, funding source, sustainability plan, and total cost of ownership."],
+        ["Equity, access, and community trust", "Identify communities affected, missing voices, language or disability access needs, public transparency expectations, and community engagement or feedback mechanisms."],
+        ["Communications and public accountability", "Define what must be explained publicly, who approves messages, how limitations will be described, and how concerns or corrections will be handled."],
+        ["Monitoring and evaluation", "Specify performance measures, outcome measures, equity checks, incident triggers, review cadence, dashboard needs, and continuous improvement actions."],
+        ["Dependencies and sequence", "Show what must happen first, what can happen in parallel, where governance gates occur, and what would block responsible implementation."],
+        ["Owners and next actions", "Assign an owner for each gap or dependency, document the next action, and set a realistic deadline or decision point."]
+      ],
+      steps: [
+        { title: "1. Start with one use case", text: "Place the proposed AI-supported workflow in the center of the map. Avoid mapping AI in general; a specific workflow makes ownership and dependencies easier to see." },
+        { title: "2. Draw affected systems around it", text: "Add governance, data, technology, workforce, procurement, communications, equity, funding, and evaluation as surrounding domains. Connect each domain to the center with the change it must support." },
+        { title: "3. Add arrows for dependencies", text: "Mark prerequisites, handoffs, feedback loops, escalation points, and governance gates. The arrows should show the sequence required for responsible implementation." },
+        { title: "4. Convert gaps into actions", text: "For every unresolved dependency, assign an owner, deadline, and decision point so the map becomes an implementation agenda rather than a static diagram." }
+      ]
+    },
     artifacts: ["AI systems-change map", "Cross-program implementation dependencies", "Leadership decision agenda"]
   },
   "digital-determinants": {
@@ -2889,6 +2913,7 @@ function renderPracticalExercise(module, application = {}) {
   return `<section class="content-section training-section practical-exercise-section">
     <h3>Practical Exercise</h3>
     ${paragraphBlock(application.exercise)}
+    ${renderExerciseTemplate(application.exerciseTemplate)}
     ${application.artifacts ? `<h4>Expected artifact or evidence</h4><ul class="check-list">${application.artifacts.map(item => `<li>${item}</li>`).join("")}</ul>` : ""}
     <label class="exercise-evidence-label">Your exercise evidence or verification note
       <textarea id="exercise-evidence-${module.id}" rows="5" placeholder="Summarize the artifact you created, paste a link/reference, or document supervisor verification.">${progress.exerciseEvidence || ""}</textarea>
@@ -2896,6 +2921,22 @@ function renderPracticalExercise(module, application = {}) {
     <div class="button-row"><button class="btn small" type="button" onclick="saveLearningExercise('${module.id}')">Save Exercise Evidence</button></div>
     <p id="exercise-result-${module.id}" class="tool-note">${progress.exerciseSavedAt ? `Exercise evidence saved: ${progress.exerciseSavedAt}` : "Your exercise evidence can support administrator or supervisor verification."}</p>
   </section>`;
+}
+function renderExerciseTemplate(template) {
+  if (!template) return "";
+  const rows = template.rows || [];
+  const steps = template.steps || [];
+  return `<div class="exercise-template">
+    <h4>${escapeDoc(template.title || "Exercise Template")}</h4>
+    ${template.intro ? `<p>${escapeDoc(template.intro)}</p>` : ""}
+    ${rows.length ? `<div class="table-wrap exercise-template-table"><table>
+      <thead><tr><th>Map element</th><th>What to document</th></tr></thead>
+      <tbody>${rows.map(([label, detail]) => `<tr><td>${escapeDoc(label)}</td><td>${escapeDoc(detail)}</td></tr>`).join("")}</tbody>
+    </table></div>` : ""}
+    ${steps.length ? `<div class="exercise-template-steps">
+      ${steps.map(step => `<article class="exercise-template-step"><h5>${escapeDoc(step.title)}</h5><p>${escapeDoc(step.text)}</p></article>`).join("")}
+    </div>` : ""}
+  </div>`;
 }
 function addedToolGuidanceSection(playId) {
   const items = addedToolGuidanceByPlay[playId] || [];
