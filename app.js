@@ -3105,11 +3105,11 @@ function renderHome() {
           <h3>Recommended Journey</h3>
           <div class="journey-list">
             ${[
-              ["Plan: Vision, readiness, governance, stakeholders, workforce, change planning, and use cases", "#/plays/1"],
-              ["Build: Funding strategy and implementation roadmap", "#/plays/8"],
-              ["Deploy: Change execution, build, validation, deployment, and scale decisions", "#/plays/10"],
-              ["Govern: Oversight, monitoring, evaluation, incidents, and continuous improvement", "#/plays/12"]
-            ].map((item,i)=>`<a class="journey-item" href="${item[1]}"><span class="number-badge">${i+1}</span><span>${item[0]}</span></a>`).join("")}
+              ["Plan", "Vision, readiness, governance, stakeholders, workforce, change planning, and use cases", "#/plays/1"],
+              ["Build", "Funding strategy and implementation roadmap", "#/plays/8"],
+              ["Deploy", "Change execution, build, validation, deployment, and scale decisions", "#/plays/10"],
+              ["Govern", "Oversight, monitoring, evaluation, incidents, and continuous improvement", "#/plays/12"]
+            ].map((item,i)=>`<a class="journey-item" href="${item[2]}"><span class="number-badge">${i+1}</span><span><strong>${item[0]}:</strong> ${item[1]}</span></a>`).join("")}
           </div>
         </aside>
       </div>
