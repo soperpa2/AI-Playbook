@@ -1,6 +1,6 @@
 ﻿const phases = [
   { id: "plan", name: "PLAN", range: "Plays 1-7", summary: "Vision, readiness, governance, stakeholders, workforce, change planning, use cases" },
-  { id: "build", name: "BUILD", range: "Plays 8-9", summary: "Funding and roadmap" },
+  { id: "build", name: "BUILD", range: "Plays 8-9", summary: "Funding and implementation playbook" },
   { id: "deploy", name: "DEPLOY", range: "Plays 10-11", summary: "Change execution, build, deploy" },
   { id: "govern", name: "GOVERN", range: "Plays 12-13", summary: "Monitor, evaluate, oversight" }
 ];
@@ -9,12 +9,12 @@ const plays = [
   { id: 1, phase: "plan", title: "Vision & Guardrails", output: "AI vision, principles, guardrails, priority areas, unresolved issues, next steps, and governance committee decision", tools: [1,2,3,4,5,6], goal: "Establish a clear strategic vision for how AI will support the agency's public health mission while defining principles that ensure responsible, ethical, and legally compliant use.", matters: "Every AI initiative begins with leadership alignment. Setting guardrails early around equity, human oversight, privacy, and prohibited uses prevents downstream harms and builds institutional trust.", who: ["Executive leadership", "Program leads", "Legal and privacy", "Equity leaders", "IT and data leaders"], questions: ["Which strategic public health problems should AI help address?", "Which uses are prohibited?", "What level of human review is required?"], actions: ["Convene a 60-90 minute leadership session.", "Agree on non-negotiable guardrails for human oversight, equity, privacy, and prohibited uses.", "Draft a 1-2 page AI Vision and Principles document.", "Align principles with NIST AI RMF 1.0.", "Identify executive sponsorship and update annually."] },
   { id: 2, phase: "plan", title: "Readiness Assessment", output: "Readiness profile, 100-point score interpretation, gap register, and prioritized play-and-tool action plan", tools: [3,4,7,8,9,10], goal: "Assess current state across leadership, data infrastructure, workforce, equity, partnerships, privacy, and security so planning reflects organizational reality.", matters: "A frank readiness assessment finds gaps while they are still manageable, before a project discovers midstream that data, skills, infrastructure, or governance are insufficient.", who: ["Leadership", "IT", "Data and analytics", "Programs", "Legal/privacy", "Equity", "Community engagement"], questions: ["Which gaps block pilots?", "Which gaps can be addressed in parallel?", "What constraints shape feasible use cases?"], actions: ["Run a half-day assessment workshop.", "Rate each indicator honestly.", "Identify 5-8 high-priority gaps.", "Assign owners and timelines.", "Brief leadership and the governance sponsors on constraints and next steps."] },
   { id: 3, phase: "plan", title: "Establish AI Governance", output: "AI governance committee or board, responsible AI policy, governance charter, risk-tiered review pathway, intake and approval process, documentation standards, AI system inventory, monitoring and incident response process, and policy update process", tools: [2,3,4,10,11,12,13,14,15,16,17,18,19], goal: "Create the governance structures, policies, decision-making processes, and oversight mechanisms needed to guide responsible AI use before projects begin.", matters: "Governance should not be added after AI tools are already in use. It should be established before use case selection, vendor engagement, pilot approval, or deployment. Public health departments need clear authority, consistent review processes, and documented accountability for AI use. Strong governance helps ensure that AI supports the public health mission while protecting privacy, security, equity, scientific integrity, workforce trust, and community confidence.", who: ["Health officer or executive sponsor", "Executive leadership or designated governance sponsor", "Legal and privacy staff", "IT and cybersecurity staff", "Equity and community engagement staff", "Program owners", "Informatics, epidemiology, data, or analytics staff", "Communications staff", "Procurement or contracting staff, as needed", "External advisors or community representatives, when appropriate", "Governance committee or board members, once appointed"], questions: ["Who has authority to approve, pause, suspend, or retire AI use?", "What types of AI use are allowed, restricted, or prohibited?", "What documentation is required before AI use cases move forward?", "What review is required for privacy, security, equity, data quality, and legal compliance?", "How will AI use cases be classified by risk?", "Who is accountable for each AI-supported workflow or system?", "How will incidents, errors, bias concerns, or harmful outputs be reported and addressed?", "How will policies, standards, and approved-use records be updated over time?"], actions: ["Confirm the governance mandate. Define why AI governance is needed, what decisions it will cover, and how it will support the department's AI vision, principles, and guardrails.", "Establish the governance body. Create or designate a cross-functional AI governance committee or board with clear membership, leadership, authority, and decision rights.", "Adopt responsible AI policy expectations. Define department-wide expectations for transparency, privacy and security, equity, human oversight, safety, legal compliance, scientific integrity, and accountability.", "Create the governance charter. Document the governance body's purpose, scope, membership, meeting cadence, decision process, documentation requirements, and escalation procedures.", "Define the AI review pathway. Establish how proposed AI uses will be submitted, screened, classified by risk, reviewed, approved, paused, or rejected.", "Align governance with existing agency processes. Connect AI oversight with data governance, IT governance, cybersecurity, privacy, legal review, procurement, communications, equity review, program leadership, and quality improvement.", "Set minimum documentation requirements. Define what must be documented for each AI use case, including purpose, owner, users, data involved, risk level, human review process, limitations, approval status, and review schedule.", "Require appropriate review before approval. Ensure that privacy, security, equity, data quality, legal, vendor, and model validation reviews occur when required based on the risk and nature of the AI use case.", "Create an AI system inventory. Maintain a central record of approved AI systems and AI-supported workflows, including owners, purpose, risk level, approval date, monitoring schedule, and review status.", "Establish ongoing oversight. Define how approved AI uses will be monitored, how incidents will be handled, how systems can be paused or retired, and how policies will be updated over time."] },
-  { id: 4, phase: "plan", title: "Engage Stakeholders", output: "Stakeholder map, RACI, engagement plan, missing voices analysis, and feedback documentation", tools: [11,19,20,21,22], goal: "Build a structured stakeholder engagement framework for internal and external input throughout planning, implementation, and evaluation.", matters: "Stakeholder and community engagement is an early planning activity, not a late deployment activity. It should begin after the department has a basic readiness picture and governance pathway, but before formal use case selection, roadmap design, funding commitments, pilots, procurement, or deployment. AI systems built without genuine community and workforce input often fail in deployment even when they perform well technically.", who: ["Program leads", "Community advisors", "Equity staff", "Tribal partners where applicable", "Communications", "Governance committee"], questions: ["Who is affected by the AI use case?", "What concerns must shape design?", "How will feedback change the project?", "What stakeholder input is required before use cases can be prioritized?"], actions: ["Map stakeholder groups and assign engagement leads.", "Form advisory groups for community-impacting use cases.", "Share plain-language explanations of what AI will and will not do.", "Hold feedback sessions before use case selection and before design is finalized.", "Document what changed based on feedback.", "Route unresolved stakeholder concerns to the AI governance committee before pilots or procurement move forward."] },
+  { id: 4, phase: "plan", title: "Engage Stakeholders", output: "Stakeholder map, RACI, engagement plan, missing voices analysis, and feedback documentation", tools: [11,19,20,21,22], goal: "Build a structured stakeholder engagement framework for internal and external input throughout planning, implementation, and evaluation.", matters: "Stakeholder and community engagement is an early planning activity, not a late deployment activity. It should begin after the department has a basic readiness picture and governance pathway, but before formal use case selection, playbook design, funding commitments, pilots, procurement, or deployment. AI systems built without genuine community and workforce input often fail in deployment even when they perform well technically.", who: ["Program leads", "Community advisors", "Equity staff", "Tribal partners where applicable", "Communications", "Governance committee"], questions: ["Who is affected by the AI use case?", "What concerns must shape design?", "How will feedback change the project?", "What stakeholder input is required before use cases can be prioritized?"], actions: ["Map stakeholder groups and assign engagement leads.", "Form advisory groups for community-impacting use cases.", "Share plain-language explanations of what AI will and will not do.", "Hold feedback sessions before use case selection and before design is finalized.", "Document what changed based on feedback.", "Route unresolved stakeholder concerns to the AI governance committee before pilots or procurement move forward."] },
   { id: 5, phase: "plan", title: "Workforce Development", output: "Competency framework, training needs assessment, champion network, bridge role plan, role-based training plan, and training pathway", tools: [23,24,25,26,27,28], goal: "Develop the workforce capabilities needed to responsibly adopt generative and agentic AI across public health programs.", matters: "Training alone is not enough. Peer learning networks, champions, office hours, and communities of practice help staff build confidence and solve practical problems.", who: ["HR", "Training leads", "AI champions", "Supervisors", "Program staff", "IT and data staff"], questions: ["What AI literacy is needed by role?", "Where are skill gaps?", "Who will support adoption day to day?"], actions: ["Define role-based AI literacy levels.", "Conduct a training needs assessment.", "Designate AI champions across divisions.", "Create training pathways.", "Assign learning modules by role and set completion standards.", "Establish office hours and communities of practice."] },
   { id: 6, phase: "plan", title: "Plan Change Management", output: "Change management plan, communication materials, barrier inventory, support plan, and escalation pathway", tools: [23,29,30], goal: "Plan for adoption before deployment by identifying affected workflows, staff concerns, communication needs, training requirements, and support structures.", matters: "Change management starts while the project is still being planned. Early planning prevents technically sound AI projects from failing because staff roles, trust, workflow impacts, or communication needs were addressed too late.", who: ["Change leads", "Supervisors", "Communications", "AI champions", "Program staff", "Governance committee"], questions: ["What workflows may change?", "Who needs early communication?", "What concerns or barriers should shape the plan?"], actions: ["Draft a change management plan before pilot launch.", "Identify affected staff groups and workflow impacts.", "Prepare staff communication and FAQ materials.", "Surface resistance, privacy, equity, and usability concerns.", "Define training, support, and feedback channels."] },
   { id: 7, phase: "plan", title: "Prioritize Use Cases", output: "Governance-approved AI use case portfolio", tools: [3,5,6,8,13,20,22,31], goal: "Identify and prioritize AI use cases aligned with public health priorities and readiness, selecting a small number most likely to deliver meaningful impact.", matters: "Disciplined prioritization keeps resources focused and ensures every project is reviewed for equity risk, data feasibility, legal compliance, change readiness, and alignment with the AI vision.", who: ["Program areas", "Governance committee", "Data owners", "Equity staff", "Community advisors", "IT/security", "Change leads"], questions: ["Which use cases are high impact and feasible?", "Which risks require mitigation?", "Which pilots should start first?"], actions: ["Invite program areas to submit candidate use cases.", "Score impact, feasibility, equity, scalability, sustainability, and data availability.", "Apply the Use Case Fit Test.", "Select 1-3 initial pilots.", "Submit selected use cases for governance approval."] },
-  { id: 8, phase: "build", title: "Develop a Funding Strategy", output: "Funding portfolio and grant alignment", tools: [5,32,33,34,35], goal: "Build a coordinated multi-year funding strategy that maps approved use cases and implementation needs to funding sources, staffing, change management, procurement, infrastructure, monitoring, evaluation, and sustainment investments.", matters: "AI projects often fail when resources are misaligned: funded for one phase but not the next, approved without dedicated staff, missing change supports, or dependent on missing infrastructure. Funding strategy should shape the roadmap before the agency commits to sequencing.", who: ["Finance", "Grants", "Program sponsors", "IT leadership", "Procurement", "Governance committee"], questions: ["Which grants or budgets support each phase?", "What sustainment costs must be covered?", "What contingency plans are needed?"], actions: ["Map each approved or proposed project to potential funding sources.", "Document FTE, contractor, infrastructure, training, evaluation, procurement, and sustainment costs.", "Update DMI, PHIG, and other grant work plans.", "Confirm funding assumptions before roadmap sequencing is finalized.", "Review resource allocation quarterly."] },
-  { id: 9, phase: "build", title: "Design the Roadmap", output: "Governance-approved AI roadmap", tools: [35,36,37], goal: "Translate vision, governance, readiness, change planning, funding assumptions, and approved use cases into a sequenced multi-year roadmap.", matters: "A roadmap prevents isolated pilots and makes shared infrastructure, governance reviews, staffing, funding, change supports, and dependencies visible before implementation starts.", who: ["Project sponsors", "PMO", "Governance committee", "IT", "Data owners", "Finance", "Change leads"], questions: ["What must happen before each pilot?", "Which dependencies are shared?", "Where are governance, funding, and change readiness gates?"], actions: ["Complete a project charter for each approved use case.", "Place projects on the implementation timeline.", "Identify shared dependencies and funding assumptions.", "Present the roadmap to governance for approval.", "Publish a one-page roadmap summary and update every six months."] },
+  { id: 8, phase: "build", title: "Develop a Funding Strategy", output: "Funding portfolio and grant alignment", tools: [5,32,33,34,35], goal: "Build a coordinated multi-year funding strategy that maps approved use cases and implementation needs to funding sources, staffing, change management, procurement, infrastructure, monitoring, evaluation, and sustainment investments.", matters: "AI projects often fail when resources are misaligned: funded for one phase but not the next, approved without dedicated staff, missing change supports, or dependent on missing infrastructure. Funding strategy should shape the playbook before the agency commits to sequencing.", who: ["Finance", "Grants", "Program sponsors", "IT leadership", "Procurement", "Governance committee"], questions: ["Which grants or budgets support each phase?", "What sustainment costs must be covered?", "What contingency plans are needed?"], actions: ["Map each approved or proposed project to potential funding sources.", "Document FTE, contractor, infrastructure, training, evaluation, procurement, and sustainment costs.", "Update DMI, PHIG, and other grant work plans.", "Confirm funding assumptions before playbook sequencing is finalized.", "Review resource allocation quarterly."] },
+  { id: 9, phase: "build", title: "Design the Playbook", output: "Governance-approved AI playbook", tools: [35,36,37], goal: "Translate vision, governance, readiness, change planning, funding assumptions, and approved use cases into a sequenced multi-year playbook.", matters: "A playbook prevents isolated pilots and makes shared infrastructure, governance reviews, staffing, funding, change supports, and dependencies visible before implementation starts.", who: ["Project sponsors", "PMO", "Governance committee", "IT", "Data owners", "Finance", "Change leads"], questions: ["What must happen before each pilot?", "Which dependencies are shared?", "Where are governance, funding, and change readiness gates?"], actions: ["Complete a project charter for each approved use case.", "Place projects on the implementation timeline.", "Identify shared dependencies and funding assumptions.", "Present the playbook to governance for approval.", "Publish a one-page playbook summary and update every six months."] },
   { id: 10, phase: "deploy", title: "Execute Change Management", output: "Adoption support, communications, role-based training execution, and training completion tracking", tools: [19,23,25,28,29,30,38], goal: "Execute the change management plan during pilot and deployment by communicating clearly, training staff, supporting adoption, and tracking concerns through governance.", matters: "Deployment is where planned change support becomes real. Staff need timely communication, hands-on support, feedback channels, clear escalation paths, and a visible training tracker as workflows change.", who: ["Change leads", "Supervisors", "Communications", "AI champions", "Pilot users", "Governance committee"], questions: ["Are staff prepared to use the system?", "Which roles have completed the required learning modules?", "What concerns are emerging during deployment?", "How will feedback and errors be reported?"], actions: ["Launch staff communications and FAQs.", "Deliver role-based training and office hours.", "Track completion of required learning modules by role.", "Support change champions with protected time.", "Track staff concerns and barriers.", "Report adoption risks and feedback through governance."] },
   { id: 11, phase: "deploy", title: "Build and Deploy AI Solutions", output: "AI pilot and production deployments", tools: [3,6,8,9,10,14,15,16,32,34,35,36,37,39,40,41,42,43], goal: "Develop, test, pilot, deploy, and scale AI solutions that support governance-approved use cases and comply with governance, equity, change management, and validation requirements.", matters: "Pilots are for learning. Keep them small, time-bounded, and limited in scope. Scaling is not automatic; it requires explicit governance approval and evidence that adoption support is working.", who: ["Product owners", "Data engineers", "Vendors", "Security", "Pilot users", "Evaluation staff", "Governance committee", "Change leads"], questions: ["Has validation been completed?", "What pilot evidence supports scale?", "Are equity safeguards and adoption supports working?"], actions: ["Confirm technical infrastructure and data pipelines.", "Test with synthetic or de-identified data.", "Run pilots for 90-120 days.", "Evaluate using pilot dashboard and scale decision framework.", "Submit scale-up plans to governance before expansion."] },
   { id: 12, phase: "govern", title: "Execute Governance and Oversight", output: "Audits, compliance records, governance docs", tools: [6,13,16,17,18,19,37,44,45,46], goal: "Sustain responsible AI through regular governance reviews, policy maintenance, compliance auditing, incident review, version control, and named accountability for every deployed or retired AI system.", matters: "Governance intensifies after go-live. The agency must continually ask whether each AI system is still doing what it was intended to do, whether documentation and approvals remain current, whether incidents or monitoring findings require action, and whether the system should continue, change, pause, or be retired.", who: ["AI governance committee", "Health officer or executive sponsor", "Operational system owners", "Legal and privacy officers", "Compliance and audit staff", "Security and incident response leads", "Evaluation and equity leads", "Program leadership", "Vendor or partner representatives when applicable"], questions: ["Are governance records complete, current, and stored where they can be audited?", "Have monitoring results, incidents, equity findings, or user feedback triggered a governance decision?", "Do policies, data use agreements, validation records, or system documentation need updating?", "Are compliance obligations being met across privacy, security, procurement, accessibility, and civil rights requirements?", "Should the system continue as approved, be revised, paused, scaled, retired, or replaced?"], actions: ["Hold governance reviews monthly during pilots and quarterly in sustainment, using a standard agenda and decision log.", "Review performance monitoring, equity monitoring, incident reports, user feedback, audit findings, and continuous improvement actions.", "Confirm that each AI system has a named operational owner, current documentation, approved data use agreements, validation records, and escalation contacts.", "Conduct annual compliance audits and targeted reviews after incidents, model changes, vendor changes, or major policy updates.", "Update policies, charters, review procedures, approval conditions, and version-control logs when guidance, technology, risks, or agency priorities change.", "Document governance decisions, required corrective actions, owners, deadlines, and evidence of closure.", "Define sunset criteria and retire or replace AI systems that no longer meet performance, equity, safety, legal, operational, or public trust standards."] },
@@ -29,8 +29,8 @@ const playCardDescriptions = {
   5: "Define the AI literacy, role-based competencies, training pathways, champions, and communities of practice needed for staff to use AI responsibly and confidently.",
   6: "Plan the communications, workflow supports, training, feedback channels, and barrier mitigation needed before pilots or deployment change how staff work.",
   7: "Identify, screen, and prioritize AI use cases based on public health value, feasibility, data readiness, equity risk, governance requirements, and sustainability.",
-  8: "Align approved AI priorities with grants, budgets, staffing, procurement, infrastructure, evaluation, and sustainment resources before roadmap commitments are finalized.",
-  9: "Translate approved use cases, readiness gaps, funding assumptions, governance gates, infrastructure needs, staffing, and dependencies into a sequenced implementation roadmap.",
+  8: "Align approved AI priorities with grants, budgets, staffing, procurement, infrastructure, evaluation, and sustainment resources before playbook commitments are finalized.",
+  9: "Translate approved use cases, readiness gaps, funding assumptions, governance gates, infrastructure needs, staffing, and dependencies into a sequenced implementation playbook.",
   10: "Execute the change plan during pilot and deployment through staff communications, training, office hours, adoption support, feedback tracking, and escalation.",
   11: "Build, test, validate, pilot, and deploy AI solutions with secure infrastructure, data quality controls, vendor review, equity safeguards, and governance approval.",
   12: "Operate governance after go-live through review meetings, incident response, compliance audits, policy updates, version control, and documented accountability.",
@@ -77,8 +77,8 @@ const tools = [
   [33,"Funding Strategy Checklists",[8],"Align projects with funding sources, grant work plans, sustainment, and contingency plans.","Checklist","Funding",["Finance","Grants"],"Readiness",false],
   [34,"STLT AI Procurement and Vendor Addendum",[8,11],"Add public-sector AI requirements for data residency, audit rights, model training restrictions, cybersecurity, accessibility, public records, exit terms, and subcontractors.","Checklist","Procurement",["Procurement","Legal","IT"],"Pilots",true],
   [35,"AI Total Cost of Ownership and Sustainability Worksheet",[8,9,11],"Estimate pilot, scale, sustainment, staffing, infrastructure, vendor, procurement, training, monitoring, and evaluation costs.","Worksheet","Funding",["Finance","Grants","Procurement","IT"],"Readiness",false],
-  [36,"AI Implementation Timeline",[9,11],"Sequence milestones, dependencies, approvals, pilot phases, and scale decisions.","Planning","Roadmap",["PMO","IT"],"Readiness",true],
-  [37,"Roadmap Dependency and Risk Register",[9,11,12],"Track roadmap dependencies, governance gates, risks, owners, due dates, mitigation actions, and escalation decisions.","Register","Roadmap",["PMO","Governance","IT"],"Readiness",true],
+  [36,"AI Implementation Timeline",[9,11],"Sequence milestones, dependencies, approvals, pilot phases, and scale decisions.","Planning","Playbook",["PMO","IT"],"Readiness",true],
+  [37,"Playbook Dependency and Risk Register",[9,11,12],"Track playbook dependencies, governance gates, risks, owners, due dates, mitigation actions, and escalation decisions.","Register","Playbook",["PMO","Governance","IT"],"Readiness",true],
   [38,"Change Management Execution Dashboard",[10],"Track training completion, communication delivery, adoption support, staff feedback, barriers, escalations, and deployment readiness during change execution.","Dashboard","Change",["Change leads","Supervisors","AI champions"],"Deployment",false],
   [39,"Technical Infrastructure Readiness Checklist",[11],"Confirm environments, access controls, integrations, monitoring, and secure deployment paths.","Checklist","Technology",["IT","Security"],"Pilots",true],
   [40,"AI Model Testing & Validation Protocol",[11],"Define test design, performance thresholds, human review, and validation evidence.","Protocol","Validation",["Data science"],"Pilots",true],
@@ -112,7 +112,7 @@ const toolFormBlueprints = {
   23: [["Announcement draft", ["Subject line", "What the AI does", "Why it is being used", "What staff should expect", "What AI will not do"]], ["FAQ", ["Privacy and data protections", "Human review and decision authority", "Training and support", "How to report concerns"]], ["Communication plan", ["Audiences", "Channels", "Timing", "Spokesperson/owner"]]],
   24: [["Concern inventory", ["Concern raised", "Source or role", "Concern type", "Frequency raised", "Leadership response"]], ["Barrier analysis", ["Workforce/job security barriers", "Privacy/data barriers", "Equity/fairness barriers", "Technical/usability barriers", "Organizational/resource barriers"]], ["Response plan", ["Actions to address concerns", "Owner", "Due date", "How resolution will be communicated"]]],
   25: [["Use case submission", ["Use case name", "Submitting program/division", "Problem to solve", "Target users", "Data needed", "Expected public health value"]], ["Scoring matrix", ["Impact score/rationale", "Feasibility score/rationale", "Equity score/rationale", "Risk score/rationale", "Sustainability score/rationale"]], ["Prioritization decision", ["Weighted score", "Rank", "Governance conditions", "Pilot recommendation"]]],
-  26: [["Roadmap overview", ["Roadmap period", "Strategic priorities", "Approved use cases", "Shared dependencies"]], ["Timeline", ["Quarter 1 milestones", "Quarter 2 milestones", "Quarter 3 milestones", "Quarter 4 milestones", "12-36 month roadmap items"]], ["Governance and resources", ["Approval gates", "Funding dependencies", "Staffing dependencies", "Risks to timeline", "Next update date"]]],
+  26: [["Playbook overview", ["Playbook period", "Strategic priorities", "Approved use cases", "Shared dependencies"]], ["Timeline", ["Quarter 1 milestones", "Quarter 2 milestones", "Quarter 3 milestones", "Quarter 4 milestones", "12-36 month playbook items"]], ["Governance and resources", ["Approval gates", "Funding dependencies", "Staffing dependencies", "Risks to timeline", "Next update date"]]],
   29: [["Vendor and solution profile", ["Vendor name", "Product/service", "Use case supported", "Data involved", "Procurement stage"]], ["Evaluation criteria", ["Security and privacy controls", "BAA/FedRAMP or equivalent status", "Transparency and documentation", "Validation evidence", "Equity and bias testing", "Support and exit terms"]], ["Comparison and recommendation", ["Strengths", "Risks", "Contract requirements", "Recommended decision"]]],
   30: [["Funding landscape", ["AI initiative or portfolio", "Estimated pilot cost", "Estimated scale/sustainment cost", "Existing funding sources"]], ["Funding alignment", ["DMI alignment", "PHIG alignment", "Other federal/state/private opportunities", "Allowable activities", "Grant deadlines"]], ["Sustainment plan", ["Staffing plan", "Infrastructure costs", "Procurement costs", "Evaluation costs", "Contingency plan"]]],
   31: [["Incident intake", ["Incident date/time", "AI system", "Reported by", "Incident type", "Who or what was affected"]], ["Immediate response", ["Containment steps taken", "System paused or limited?", "Notifications made", "Privacy/security concerns", "Evidence preserved"]], ["Resolution", ["Root cause", "Corrective actions", "Governance review outcome", "Communication needs", "Closure date"]]],
@@ -136,7 +136,7 @@ const toolFormBlueprints = {
   34: [["Procurement profile", ["Vendor/product", "Use case supported", "Data involved", "Contract vehicle", "Procurement stage"]], ["STLT requirements", ["Data residency and retention", "No model training on agency data", "Audit rights", "Subcontractor disclosure", "Public records considerations", "Accessibility requirements", "Cybersecurity requirements"]], ["Contract decision", ["Required contract language", "Unresolved risks", "Exit or transition terms", "Recommended decision"]]],
   6: [["Decision context", ["AI system or use case", "Decision or action supported", "Potentially affected populations", "Consequence level"]], ["Human-centered rule", ["AI may summarize/draft/prioritize", "AI may not independently decide", "Named human decision owner", "Required review before action", "Appeal or correction pathway"]], ["Oversight", ["Automation bias safeguards", "Audit trail requirements", "Monitoring metrics", "Governance review cadence"]]],
   35: [["Cost profile", ["AI initiative or portfolio", "Pilot cost estimate", "Scale cost estimate", "Sustainment period", "Cost owner"]], ["Cost categories", ["Staffing and contractor costs", "Vendor and licensing costs", "Infrastructure and hosting costs", "Procurement and legal costs", "Training and change management costs", "Monitoring and evaluation costs"]], ["Sustainability decision", ["Confirmed funding sources", "Funding gaps", "Contingency plan", "Total cost of ownership risk", "Decision or next action"]]],
-  37: [["Roadmap item", ["Project or dependency", "Related play or use case", "Owner", "Target date", "Current status"]], ["Dependency and risk review", ["Upstream dependency", "Downstream impact", "Governance gate", "Funding dependency", "Infrastructure or staffing dependency", "Risk level"]], ["Mitigation and escalation", ["Mitigation action", "Escalation trigger", "Escalation owner", "Decision needed", "Resolution date"]]],
+  37: [["Playbook item", ["Project or dependency", "Related play or use case", "Owner", "Target date", "Current status"]], ["Dependency and risk review", ["Upstream dependency", "Downstream impact", "Governance gate", "Funding dependency", "Infrastructure or staffing dependency", "Risk level"]], ["Mitigation and escalation", ["Mitigation action", "Escalation trigger", "Escalation owner", "Decision needed", "Resolution date"]]],
   38: [["Deployment change profile", ["AI system or workflow", "Deployment phase", "Affected staff groups", "Change lead", "Reporting period"]], ["Execution dashboard", ["Communications delivered", "Training completion", "Office hours/support provided", "Champion activity", "Adoption indicators", "Staff feedback themes"]], ["Escalation and readiness", ["Open barriers", "Issues escalated to governance", "Corrective actions", "Readiness status", "Lessons learned"]]],
   43: [["Go-live profile", ["AI system or release", "Program area", "Go-live date", "Product owner", "Technical owner", "Governance review date"]], ["Readiness checks", ["Governance approval complete", "Validation complete", "Security review complete", "Data readiness confirmed", "Training complete", "Communications complete", "Support plan ready"]], ["Launch decision", ["Rollback or pause plan", "Known risks", "Approval conditions", "Go/no-go recommendation", "Post-launch review date"]]],
   28: [["Training plan profile", ["Training plan name", "Training period", "Training owner", "Organization administrator", "Related play or deployment", "Last updated"]], ["Role-based module assignments", ["Executive leadership required modules", "Governance committee required modules", "Program staff required modules", "Data/analytics staff required modules", "IT/security staff required modules", "Legal/privacy/procurement required modules", "Communications/equity/community engagement required modules"]], ["Completion tracking", ["Role or staff group", "Required completion date", "Completion standard", "Completion status", "Supervisor or administrator verification", "Evidence or notes"]], ["Follow-up and support", ["Staff groups needing additional support", "Office hours or coaching schedule", "Champion or mentor assigned", "Refresher training needs", "Escalation or governance issues"]]]
@@ -384,10 +384,10 @@ const toolOutputOverrides = {
   ],
   36: [
     "AI implementation timeline.",
-    "Roadmap period, strategic priorities, approved use cases, and shared dependencies.",
-    "Quarterly milestones and 12-36 month roadmap items.",
+    "Playbook period, strategic priorities, approved use cases, and shared dependencies.",
+    "Quarterly milestones and 12-36 month playbook items.",
     "Governance gates, funding dependencies, staffing dependencies, infrastructure dependencies, and risks to timeline.",
-    "Roadmap owner and next update date."
+    "Playbook owner and next update date."
   ],
   32: [
     "Vendor evaluation record.",
@@ -475,11 +475,11 @@ const toolOutputOverrides = {
     "Pilot, scale, and sustainment cost estimates.",
     "Staffing, contractor, vendor, licensing, hosting, procurement, legal, training, change management, monitoring, and evaluation cost categories.",
     "Confirmed funding sources, funding gaps, contingency plan, and sustainability risk.",
-    "Decision or next action for funding strategy and roadmap sequencing."
+    "Decision or next action for funding strategy and playbook sequencing."
   ],
   37: [
-    "Roadmap dependency and risk register.",
-    "Roadmap item, related play or use case, owner, target date, and status.",
+    "Playbook dependency and risk register.",
+    "Playbook item, related play or use case, owner, target date, and status.",
     "Upstream and downstream dependencies across governance, funding, infrastructure, staffing, vendors, data, and change management.",
     "Risk level, mitigation action, escalation trigger, escalation owner, and decision needed.",
     "Resolution date and evidence that dependency or risk was addressed."
@@ -596,7 +596,7 @@ const playOutputDetails = {
     "Deferred or rejected use cases with rationale."
   ],
   8: [
-    "Funding strategy for the AI roadmap.",
+    "Funding strategy for the AI playbook.",
     "Funding source inventory and eligibility notes.",
     "Grant alignment table for approved or proposed AI activities.",
     "Pilot, scale, sustainment, staffing, infrastructure, training, and evaluation cost estimates.",
@@ -607,15 +607,15 @@ const playOutputDetails = {
     "Leadership or governance briefing on resource needs."
   ],
   9: [
-    "Governance-approved AI roadmap.",
+    "Governance-approved AI playbook.",
     "Sequenced implementation timeline.",
     "Project charters for approved use cases.",
     "Shared dependencies across data, technology, governance, workforce, funding, and procurement.",
     "Milestones, decision gates, and review points.",
     "Resource, staffing, vendor, funding, and infrastructure assumptions.",
-    "Roadmap dependency and risk register.",
-    "Risk register for roadmap delivery.",
-    "Roadmap update cadence and ownership."
+    "Playbook dependency and risk register.",
+    "Risk register for playbook delivery.",
+    "Playbook update cadence and ownership."
   ],
   10: [
     "Executed staff communication plan.",
@@ -735,17 +735,17 @@ const playGuidanceDetails = {
   },
   8: {
     eyebrow: "Funding Guidance",
-    title: "Align AI priorities with funding and sustainment before the roadmap is finalized",
-    body: "Use this play to make sure AI work is not approved without resources for the full lifecycle. Funding strategy should cover pilot development, secure infrastructure, staffing, training, governance, vendor costs, monitoring, evaluation, scale, and sustainment before the agency commits to a roadmap sequence.",
+    title: "Align AI priorities with funding and sustainment before the playbook is finalized",
+    body: "Use this play to make sure AI work is not approved without resources for the full lifecycle. Funding strategy should cover pilot development, secure infrastructure, staffing, training, governance, vendor costs, monitoring, evaluation, scale, and sustainment before the agency commits to a playbook sequence.",
     bullets: ["Map approved and proposed activities to allowable funding sources and grant timelines.", "Estimate costs beyond the pilot period, including operations and maintenance.", "Identify funding gaps and contingency decisions before projects become dependent on temporary resources."],
     link: ["Open funding guidance", "#/play-guides/play-8"]
   },
   9: {
-    eyebrow: "Roadmap Guidance",
-    title: "Turn resourced use cases into a sequenced implementation roadmap",
-    body: "Use this play to connect approved use cases and funding assumptions to timelines, dependencies, governance gates, staffing, infrastructure, procurement, training, change support, and evaluation. The roadmap should prevent isolated pilots by showing what needs to happen before each project can safely move forward.",
-    bullets: ["Sequence work by dependency, readiness, and resourcing, not enthusiasm alone.", "Make governance reviews, readiness gates, funding assumptions, and change supports visible in the timeline.", "Update the roadmap regularly as funding, staffing, technology, and risk conditions change."],
-    link: ["Open roadmap guidance", "#/play-guides/play-9"]
+    eyebrow: "Playbook Guidance",
+    title: "Turn resourced use cases into a sequenced implementation playbook",
+    body: "Use this play to connect approved use cases and funding assumptions to timelines, dependencies, governance gates, staffing, infrastructure, procurement, training, change support, and evaluation. The playbook should prevent isolated pilots by showing what needs to happen before each project can safely move forward.",
+    bullets: ["Sequence work by dependency, readiness, and resourcing, not enthusiasm alone.", "Make governance reviews, readiness gates, funding assumptions, and change supports visible in the timeline.", "Update the playbook regularly as funding, staffing, technology, and risk conditions change."],
+    link: ["Open playbook guidance", "#/play-guides/play-9"]
   },
   10: {
     eyebrow: "Deployment Change Guidance",
@@ -816,13 +816,13 @@ const playGuideDeepDive = {
   },
   6: {
     purpose: "Prepare the organization for AI-related workflow change before deployment decisions are locked in.",
-    timing: "Begin change management planning while use cases, roadmap decisions, staffing needs, and governance conditions are still being shaped.",
+    timing: "Begin change management planning while use cases, playbook decisions, staffing needs, and governance conditions are still being shaped.",
     implementationTips: [
       "Begin with a workflow-level change analysis. Identify which tasks, handoffs, documents, approvals, dashboards, public interactions, and decisions may change if the AI use case moves forward. Do not describe the change only as a technology implementation; describe how daily work will feel different for staff and supervisors.",
       "Use the Change Management Plan to document affected roles, likely concerns, communication needs, training needs, support needs, and escalation pathways. The plan should be created while the workflow can still be adjusted, not after the vendor, pilot design, or timeline is already fixed.",
       "Use the Resistance and Barrier Identification tool to surface specific concerns about workload, job security, surveillance, accuracy, trust, equity, privacy, community perception, and usability. Treat these concerns as implementation evidence. Some concerns may be resolved through communication; others may require redesign, governance review, or a decision to pause.",
       "Use the Staff Communication and FAQ Template to prepare messages that answer practical questions: what is changing, why it is changing, what is not changing, what humans still decide, what staff should do if something looks wrong, and where staff can get help. Link communications to CDC CERC and plain-language principles so messages are concrete and trustworthy.",
-      "Build change milestones into the roadmap before deployment begins. Milestones should include communication release dates, supervisor briefings, training deadlines, office hours, feedback review points, and governance checkpoints. The organization hub workplan should make those milestones visible and assignable.",
+      "Build change milestones into the playbook before deployment begins. Milestones should include communication release dates, supervisor briefings, training deadlines, office hours, feedback review points, and governance checkpoints. The organization hub workplan should make those milestones visible and assignable.",
       "Define what evidence will show that the organization is ready for deployment. Evidence may include training completion, supervisor readiness, unresolved barrier counts, workflow testing results, communication completion, and governance approval of remaining risks."
     ],
     decisionChecks: [
@@ -863,19 +863,19 @@ const playGuideDeepDive = {
     ]
   },
   8: {
-    purpose: "Identify funding sources, cost assumptions, procurement implications, and sustainment strategies before the implementation roadmap is finalized.",
-    timing: "Complete this play after use cases have been prioritized and before the agency commits to pilots, procurement, staffing, vendor services, technology changes, or roadmap sequencing that requires ongoing resources.",
+    purpose: "Identify funding sources, cost assumptions, procurement implications, and sustainment strategies before the implementation playbook is finalized.",
+    timing: "Complete this play after use cases have been prioritized and before the agency commits to pilots, procurement, staffing, vendor services, technology changes, or playbook sequencing that requires ongoing resources.",
     implementationTips: [
       "Start with the full lifecycle, not the pilot budget. Estimate planning time, governance review, staff participation, data preparation, infrastructure, cybersecurity, licensing, vendor support, procurement, training, change management, validation, monitoring, evaluation, public communication, maintenance, and eventual retirement or replacement.",
       "Use the Funding Opportunity Crosswalk to map each proposed activity to possible allowable funding sources. Data modernization, workforce development, infrastructure, preparedness, health equity, environmental health, and program-specific grants may support different parts of the work, but not every source will support every cost.",
       "Use the Budget and Sustainability Planning Worksheet to distinguish one-time costs from recurring costs. A pilot may be affordable because staff absorb the work informally, but a production system may require formal support, ongoing licensing, monitoring, retraining, and governance time.",
-      "Use the Environmental and Resource Impact Review when compute, hosting, data storage, vendor infrastructure, or data center impacts may create cost, sustainability, or environmental justice considerations. Those issues should be visible before the roadmap is finalized.",
+      "Use the Environmental and Resource Impact Review when compute, hosting, data storage, vendor infrastructure, or data center impacts may create cost, sustainability, or environmental justice considerations. Those issues should be visible before the playbook is finalized.",
       "Create a funding gap register that names each unfunded requirement, the decision needed, the owner, the deadline, and the consequence if funding is not secured. This prevents the department from approving use cases that depend on unfunded infrastructure, staffing, or sustainment.",
       "Prepare a leadership and governance briefing that separates pilot affordability from long-term sustainability. The briefing should identify which activities can begin now, which require conditional approval, and which should wait until funding or sustainment is clearer."
     ],
     decisionChecks: [
       "Can the agency fund the full lifecycle, not just the pilot?",
-      "Which funding sources align with the roadmap's public health purpose?",
+      "Which funding sources align with the playbook's public health purpose?",
       "What costs are missing from current estimates?",
       "What work should not begin until sustainment is clearer?"
     ],
@@ -887,21 +887,21 @@ const playGuideDeepDive = {
     ]
   },
   9: {
-    purpose: "Convert approved and resourced AI use cases into a sequenced roadmap with dependencies, milestones, decision gates, owners, and resource assumptions.",
-    timing: "Develop the roadmap after use cases have been prioritized and funding assumptions are clear, and before build, deployment, or scale activities begin in earnest.",
+    purpose: "Convert approved and resourced AI use cases into a sequenced playbook with dependencies, milestones, decision gates, owners, and resource assumptions.",
+    timing: "Develop the playbook after use cases have been prioritized and funding assumptions are clear, and before build, deployment, or scale activities begin in earnest.",
     implementationTips: [
       "Use the AI Implementation Timeline to convert approved use cases into sequenced work. The timeline should show dependencies, owners, governance gates, funding assumptions, procurement steps, data readiness activities, workforce milestones, change management milestones, validation tasks, and monitoring preparation.",
       "Sequence work by dependency and risk rather than enthusiasm. A project with strong leadership support may still need to wait if data access, privacy review, stakeholder engagement, procurement terms, or staff training are not ready. Conversely, some foundational work may serve several use cases and should be scheduled early.",
-      "Use the AI Bridge Professional Role Guide to assign someone to translate between program goals, technical dependencies, governance requirements, procurement language, and implementation timing. Without that translation function, roadmap risks often stay hidden until late in the project.",
+      "Use the AI Bridge Professional Role Guide to assign someone to translate between program goals, technical dependencies, governance requirements, procurement language, and implementation timing. Without that translation function, playbook risks often stay hidden until late in the project.",
       "Create decision gates for moving from concept to pilot, pilot to deployment, and deployment to scale. Each gate should name the evidence required, the approving body, the documents or tools that must be complete, and the conditions that would trigger pause, redesign, or retirement.",
       "Make shared dependencies visible across use cases. Shared dependencies may include data pipelines, cloud environments, vendor security review, public communication review, legal analysis, monitoring dashboards, training modules, or funding deadlines.",
-      "Review the roadmap regularly with governance and leadership. The roadmap should change when staffing, funding, vendor availability, data quality, policy requirements, or risk conditions change. A roadmap that cannot change will quickly become a presentation, not a management tool."
+      "Review the playbook regularly with governance and leadership. The playbook should change when staffing, funding, vendor availability, data quality, policy requirements, or risk conditions change. A playbook that cannot change will quickly become a presentation, not a management tool."
     ],
     decisionChecks: [
       "Which dependencies must be completed before each use case can safely move forward?",
       "Which projects can proceed in parallel, and which must wait?",
       "What governance decisions are required at each stage?",
-      "What roadmap assumptions should trigger a pause or revision?"
+      "What playbook assumptions should trigger a pause or revision?"
     ],
     pitfalls: [
       "Listing projects without showing prerequisites or decision gates.",
@@ -991,7 +991,7 @@ const playGuideDeepDive = {
       "Use the Equity and Disparity Impact Monitoring tool to examine subgroup performance, access barriers, language access, geographic differences, disability access, and other context-specific equity concerns. Overall performance can look acceptable while specific groups experience lower accuracy, reduced access, or greater burden.",
       "Use the AI Evaluation and Outcomes Reporting tool to connect model performance to public health value. Evaluation should ask whether the system improves timeliness, quality, workload, communication, targeting, prevention, service delivery, or outcomes enough to justify continued use.",
       "Use the Human-Centered AI Decision Rule Checklist during monitoring to confirm that automation has not drifted beyond the approved human role and decision boundaries. Monitoring should include the workflow, not just the model.",
-      "Escalate findings that show drift, performance loss, unfair impacts, usability problems, privacy concerns, staff workarounds, or reduced public health value. Monitoring results should feed governance, workforce development, change support, policy updates, funding decisions, and roadmap revisions."
+      "Escalate findings that show drift, performance loss, unfair impacts, usability problems, privacy concerns, staff workarounds, or reduced public health value. Monitoring results should feed governance, workforce development, change support, policy updates, funding decisions, and playbook revisions."
     ],
     decisionChecks: [
       "Is the system still producing public health value?",
@@ -1075,7 +1075,7 @@ const readinessGapRecommendations = {
 
 const maturityLevels = [
   { level: 1, title: "Awareness", focus: "Learning and exploration", plays: [1], risks: "Informal ungoverned tool use, PHI exposure, unclear accountability.", activities: "Explore concepts, set interim policy, identify AI lead, establish guardrails.", tools: [1,2] },
-  { level: 2, title: "Readiness", focus: "Planning and preparation", plays: [2,3,4,5,6,7,8,9], risks: "Overcommitting before data, workforce, governance, change, or funding gaps are addressed.", activities: "Assess readiness, establish governance, engage stakeholders, plan workforce and change management, prioritize use cases, align funding, design roadmap.", tools: [7,33,36,23,24,26,28,31,12] },
+  { level: 2, title: "Readiness", focus: "Planning and preparation", plays: [2,3,4,5,6,7,8,9], risks: "Overcommitting before data, workforce, governance, change, or funding gaps are addressed.", activities: "Assess readiness, establish governance, engage stakeholders, plan workforce and change management, prioritize use cases, align funding, design playbook.", tools: [7,33,36,23,24,26,28,31,12] },
   { level: 3, title: "Pilots", focus: "Governed initial development", plays: [7,10,11], risks: "Pilots proceed without validation, staff adoption support, or scale decision criteria.", activities: "Prioritize use cases, execute change management, validate models, evaluate pilots.", tools: [31,29,14,40,41,42] },
   { level: 4, title: "Deployment", focus: "Operational integration", plays: [11,13], risks: "Model drift, automation bias, equity gaps, insufficient monitoring.", activities: "Deploy into workflows, monitor performance, evaluate outcomes, audit equity.", tools: [44,41,47,48] },
   { level: 5, title: "Optimization", focus: "Continuous improvement", plays: [12,13], risks: "Policies become stale and documentation falls behind evolving systems.", activities: "Improve systems, sustain governance, audit compliance, update policies.", tools: [45,46,17,18] }
@@ -1129,7 +1129,7 @@ const addedToolGuidanceByPlay = {
   ],
   9: [
     [36, "Use the AI Implementation Timeline to turn approved and resourced use cases into sequenced work with dependencies, owners, governance gates, milestones, and realistic dates."],
-    [37, "Use the Roadmap Dependency and Risk Register to keep unresolved dependencies, risks, mitigation steps, owners, due dates, and escalation decisions visible."],
+    [37, "Use the Playbook Dependency and Risk Register to keep unresolved dependencies, risks, mitigation steps, owners, due dates, and escalation decisions visible."],
     [27, "Use the AI Bridge Professional Role Guide to identify who will translate between program goals, technical dependencies, governance gates, procurement, and implementation timing."]
   ],
   10: [
@@ -1229,18 +1229,18 @@ const caseStudies = [
     ]
   },
   {
-    title: "Kansas Local Health Department AI Roadmap and GenAI Tools",
+    title: "Kansas Local Health Department AI Playbook and GenAI Tools",
     agency: "Kansas Public Health Collaborative with Kansas local health departments",
-    type: "Generative AI adoption roadmap and tools",
+    type: "Generative AI adoption playbook and tools",
     challenge: "Local health departments need practical guidance on whether and how to use generative AI for routine operations, communications, grant writing, health literacy, and content review without creating privacy, quality, or trust risks.",
-    solution: "The Kansas Public Health Collaborative created AI guidance and roadmap resources for local health departments, including practical GenAI tools and FAQs for communications, grant writing, health literacy, campaign planning, and content review.",
+    solution: "The Kansas Public Health Collaborative created AI guidance and playbook resources for local health departments, including practical GenAI tools and FAQs for communications, grant writing, health literacy, campaign planning, and content review.",
     data: "Local health department operational needs, communication materials, grant narratives, public health campaign content, health literacy materials, and staff questions about responsible AI use.",
-    workflow: "Local health departments can use the roadmap and tools to move from informal experimentation toward structured, governed use of GenAI in communications and administrative workflows.",
-    outcomes: "The primary documented outcome is the availability of a roadmap, tools, and community-of-practice support for Kansas local health departments. The page should not claim implementation impact until local deployment outcomes are publicly documented.",
+    workflow: "Local health departments can use the playbook and tools to move from informal experimentation toward structured, governed use of GenAI in communications and administrative workflows.",
+    outcomes: "The primary documented outcome is the availability of a playbook, tools, and community-of-practice support for Kansas local health departments. The page should not claim implementation impact until local deployment outcomes are publicly documented.",
     ethics: "Risk controls should address privacy, source verification, human review, accessibility, health literacy, transparency, and whether generated content is appropriate for public-facing communication.",
     sources: [
       ["Kansas Public Health Collaborative: AI in Public Health", "https://www.kansaspublichealthcollaborative.org/ai-in-public-health/"],
-      ["Kansas Health Institute: Why and How Kansas Public Health Could Be Key in Shaping a Statewide AI Roadmap", "https://www.khi.org/articles/why-and-how-kansas-public-health-could-be-key-in-shaping-a-statewide-ai-roadmap/"]
+      ["Kansas Health Institute: Why and How Kansas Public Health Could Be Key in Shaping a Statewide AI Playbook", "https://www.khi.org/articles/why-and-how-kansas-public-health-could-be-key-in-shaping-a-statewide-ai-roadmap/"]
     ]
   },
   {
@@ -1446,10 +1446,10 @@ const playResources = {
     ["FEMA grants", "Relevant to emergency preparedness, disaster resilience, and response-oriented AI planning.", "https://www.fema.gov/grants"]
   ],
   9: [
-    ["CDC Data Modernization Initiative", "Use to align the roadmap with data infrastructure, interoperability, cloud, and analytics modernization.", "https://www.cdc.gov/surveillance/data-modernization/index.html"],
-    ["ONC Trusted Exchange Framework and Common Agreement", "Interoperability and exchange considerations that may affect roadmap dependencies.", "https://www.healthit.gov/topic/interoperability/policy/trusted-exchange-framework-and-common-agreement-tefca"],
+    ["CDC Data Modernization Initiative", "Use to align the playbook with data infrastructure, interoperability, cloud, and analytics modernization.", "https://www.cdc.gov/surveillance/data-modernization/index.html"],
+    ["ONC Trusted Exchange Framework and Common Agreement", "Interoperability and exchange considerations that may affect playbook dependencies.", "https://www.healthit.gov/topic/interoperability/policy/trusted-exchange-framework-and-common-agreement-tefca"],
     ["CSTE", "Peer network and implementation resource for data modernization and surveillance planning.", "https://www.cste.org/"],
-    ["PHAB Standards and Measures", "Useful for connecting AI roadmap work to public health performance, quality, and accreditation expectations.", "https://phaboard.org/accreditation-recognition/version-2022/"]
+    ["PHAB Standards and Measures", "Useful for connecting AI playbook work to public health performance, quality, and accreditation expectations.", "https://phaboard.org/accreditation-recognition/version-2022/"]
   ],
   10: [
     ["CDC Crisis and Emergency Risk Communication", "Use to support trusted communications during deployment and workflow change.", "https://emergency.cdc.gov/cerc/"],
@@ -1787,7 +1787,7 @@ const learningModuleDeepDive = {
     sections: [
       { title: "Useful Assignments", items: ["Scan peer-reviewed and agency sources on an emerging disease, intervention, risk factor, or public health technology.", "Compare AI policies, procurement requirements, or governance models across jurisdictions.", "Summarize grant notices, eligibility requirements, evaluation expectations, and allowable costs.", "Prepare a briefing that separates strong evidence, emerging evidence, implementation examples, and unanswered questions."] },
       { title: "Review Standards", items: ["Require source links and citations for every consequential claim.", "Check publication dates, jurisdiction, population relevance, and whether the source is primary, secondary, vendor-authored, or opinion-based.", "Have subject matter experts review conclusions before they inform policy, funding, public communication, or operational decisions.", "Document what sources were included or excluded when the synthesis supports governance or leadership decisions."] },
-      { title: "Actionable Output", items: ["Ask for a decision-ready format: summary, implications for STLT public health, risks, resource needs, equity considerations, and recommended next steps.", "Convert the research output into a tool artifact such as a policy scan, gap register, governance memo, funding brief, or implementation roadmap.", "Update scans when guidance, funding rules, laws, or evidence change."] }
+      { title: "Actionable Output", items: ["Ask for a decision-ready format: summary, implications for STLT public health, risks, resource needs, equity considerations, and recommended next steps.", "Convert the research output into a tool artifact such as a policy scan, gap register, governance memo, funding brief, or implementation playbook.", "Update scans when guidance, funding rules, laws, or evidence change."] }
     ]
   },
   "workflows": {
@@ -1897,7 +1897,7 @@ const learningModuleDeepDive = {
   "using-together": {
     overview: "The playbook and toolkit are designed to work together. Plays define the decisions, sequence, participants, outputs, and governance gates. Tools help departments complete the work, document decisions, and create reusable artifacts. The tools should be completed as part of implementation, not treated as disconnected forms.",
     sections: [
-      { title: "How to Use the Sequence", items: ["Start with vision and readiness so the department understands purpose, gaps, and constraints.", "Establish governance before formal use case selection, vendor engagement, pilots, or deployment.", "Use stakeholder engagement, workforce planning, change planning, and prioritization to avoid isolated technology projects.", "Use funding, roadmap, deployment, oversight, and evaluation plays to move from planning to sustained responsible use."] },
+      { title: "How to Use the Sequence", items: ["Start with vision and readiness so the department understands purpose, gaps, and constraints.", "Establish governance before formal use case selection, vendor engagement, pilots, or deployment.", "Use stakeholder engagement, workforce planning, change planning, and prioritization to avoid isolated technology projects.", "Use funding, playbook, deployment, oversight, and evaluation plays to move from planning to sustained responsible use."] },
       { title: "How to Use the Tools", items: ["Open tools from the play page when the tool is needed for a decision or output.", "Save progress and update living tools as decisions change.", "Use completed tools as governance records, implementation artifacts, and evidence for leadership or funders.", "Download blank templates when preparing workshops or offline review."] },
       { title: "Governance Discipline", items: ["Do not skip early plays because a tool or vendor is available.", "Use assessment recommendations to customize the path based on readiness gaps and completed work.", "Treat the implementation plan, inventory, monitoring dashboard, and policy log as living records."] }
     ]
@@ -2693,7 +2693,7 @@ function outputPurpose(output) {
   if (lower.includes("training") || lower.includes("workforce") || lower.includes("competenc") || lower.includes("champion")) return "Ensures staff have the knowledge, role clarity, support, and confidence needed to use or oversee AI responsibly.";
   if (lower.includes("communication") || lower.includes("faq") || lower.includes("notice")) return "Provides clear, plain-language messaging so staff, partners, or the public understand what is changing and how to ask questions or raise concerns.";
   if (lower.includes("fund") || lower.includes("cost") || lower.includes("sustain")) return "Shows whether the department can fund the full lifecycle of the work, not only the pilot or initial purchase.";
-  if (lower.includes("roadmap") || lower.includes("timeline") || lower.includes("milestone") || lower.includes("dependency")) return "Turns approved work into a sequenced plan with dependencies, owners, decision gates, and update points.";
+  if (lower.includes("playbook") || lower.includes("timeline") || lower.includes("milestone") || lower.includes("dependency")) return "Turns approved work into a sequenced plan with dependencies, owners, decision gates, and update points.";
   if (lower.includes("validation") || lower.includes("testing") || lower.includes("pilot") || lower.includes("deployment") || lower.includes("go-live")) return "Provides the evidence needed to decide whether the AI-supported workflow is ready to test, deploy, scale, revise, or pause.";
   if (lower.includes("monitor") || lower.includes("dashboard") || lower.includes("evaluation") || lower.includes("outcome") || lower.includes("improvement")) return "Creates a recurring evidence base for evaluating performance, equity, reliability, usefulness, and the need for corrective action.";
   return "Documents a decision, artifact, or evidence point needed to move from planning into accountable implementation.";
@@ -2708,8 +2708,8 @@ function outputUse(output, play) {
   if (lower.includes("score") || lower.includes("gap") || lower.includes("readiness") || lower.includes("blocking") || lower.includes("parallel")) return "Use it to decide which plays and tools should be completed first, which work can proceed in parallel, and which activities should wait.";
   if (lower.includes("risk") || lower.includes("incident") || lower.includes("barrier") || lower.includes("concern")) return "Use it to assign mitigation owners, track resolution, and escalate unresolved issues to governance or leadership.";
   if (lower.includes("training") || lower.includes("workforce") || lower.includes("competenc")) return "Use it to assign learning modules, verify completion, and determine whether staff are ready for the next implementation step.";
-  if (lower.includes("fund") || lower.includes("cost") || lower.includes("sustain")) return "Use it to make roadmap, grant, procurement, scale, and sustainment decisions before commitments exceed available resources.";
-  if (lower.includes("roadmap") || lower.includes("timeline") || lower.includes("milestone")) return "Use it to manage sequencing, deadlines, dependencies, governance gates, and progress reporting.";
+  if (lower.includes("fund") || lower.includes("cost") || lower.includes("sustain")) return "Use it to make playbook, grant, procurement, scale, and sustainment decisions before commitments exceed available resources.";
+  if (lower.includes("playbook") || lower.includes("timeline") || lower.includes("milestone")) return "Use it to manage sequencing, deadlines, dependencies, governance gates, and progress reporting.";
   if (lower.includes("validation") || lower.includes("testing") || lower.includes("pilot") || lower.includes("deployment") || lower.includes("go-live")) return "Use it as evidence for go/no-go, revise, pause, scale, or retire decisions.";
   if (lower.includes("monitor") || lower.includes("dashboard") || lower.includes("evaluation") || lower.includes("outcome")) return "Use it during recurring oversight to identify trends, equity issues, performance loss, staff adoption problems, and improvement actions.";
   return `Use it to document completion of Play ${play.id}, support handoff to the next play, and preserve an auditable record of decisions and assumptions.`;
@@ -3086,7 +3086,7 @@ function renderHome() {
         <div>
           <h1>Generative and Agentic AI</h1>
           <h2>Playbook and Toolkit for Public Health Departments</h2>
-          <p class="lead">A guided implementation website for state, territorial, local, and tribal public health departments to learn the foundations, establish a vision, assess readiness, establish governance, prioritize use cases, design a roadmap, fund, deploy, monitor, and sustain oversight.</p>
+          <p class="lead">A guided implementation website for state, territorial, local, and tribal public health departments to learn the foundations, establish a vision, assess readiness, establish governance, prioritize use cases, design a playbook, fund, deploy, monitor, and sustain oversight.</p>
           <div class="button-row">
             <a class="btn primary" href="#/plays/1">Start with Vision</a>
             <a class="btn" href="#/assess">Take Readiness Assessment</a>
@@ -3106,7 +3106,7 @@ function renderHome() {
           <div class="journey-list">
             ${[
               ["Plan", "Vision, readiness, governance, stakeholders, workforce, change planning, and use cases", "#/plays/1"],
-              ["Build", "Funding strategy and implementation roadmap", "#/plays/8"],
+              ["Build", "Funding strategy and implementation playbook", "#/plays/8"],
               ["Deploy", "Change execution, build, validation, deployment, and scale decisions", "#/plays/10"],
               ["Govern", "Oversight, monitoring, evaluation, incidents, and continuous improvement", "#/plays/12"]
             ].map((item,i)=>`<a class="journey-item" href="${item[2]}"><span class="number-badge">${i+1}</span><span><strong>${item[0]}:</strong> ${item[1]}</span></a>`).join("")}
@@ -3122,7 +3122,7 @@ function renderHome() {
           <article class="mini-card"><h3>Understand AI</h3><p>Build a shared baseline on generative AI, agentic AI, Deep Research, public health workflows, risks, limitations, and guardrails before making implementation decisions.</p></article>
           <article class="mini-card"><h3>Assess readiness</h3><p>Use the six-domain readiness assessment to identify strengths and gaps across leadership, data infrastructure, workforce, equity and engagement, partnerships, privacy, and security.</p></article>
           <article class="mini-card"><h3>Choose responsible use cases</h3><p>Screen and prioritize use cases based on public health value, feasibility, equity impact, sustainability, stakeholder support, data availability, and governance approval.</p></article>
-          <article class="mini-card"><h3>Plan resources</h3><p>Translate approved priorities into a funding strategy, staffing plan, procurement path, roadmap, and dependency map before implementation begins.</p></article>
+          <article class="mini-card"><h3>Plan resources</h3><p>Translate approved priorities into a funding strategy, staffing plan, procurement path, playbook, and dependency map before implementation begins.</p></article>
           <article class="mini-card"><h3>Deploy safely</h3><p>Prepare staff, manage change, validate models, document pilots, evaluate results, and require governance approval before scaling any AI-enabled workflow.</p></article>
           <article class="mini-card"><h3>Sustain oversight</h3><p>Monitor performance, audit equity, track incidents, document improvements, update policies, and maintain governance records after systems go live.</p></article>
         </div>
@@ -3333,7 +3333,7 @@ function renderLearn(moduleId = "understanding-ai") {
 function renderUseAreas() {
   main.innerHTML = pageIntro("Areas Where AI Can Support Public Health Activities", "Expanded public health examples drawn from the learning modules. Each area describes practical uses, implementation activities, safeguards, and related plays and tools so agencies can move from concept to responsible action.") + `
     <section class="panel support-areas-intro">
-      <p>These examples are intended for planning, governance, and implementation conversations. They are not automatic recommendations to adopt AI. A health department should use the readiness assessment, governance review, stakeholder engagement, equity impact assessment, data classification, procurement review, and implementation roadmap before moving any example into a pilot or operational workflow.</p>
+      <p>These examples are intended for planning, governance, and implementation conversations. They are not automatic recommendations to adopt AI. A health department should use the readiness assessment, governance review, stakeholder engagement, equity impact assessment, data classification, procurement review, and implementation playbook before moving any example into a pilot or operational workflow.</p>
       <div class="button-row">
         <a class="btn primary" href="#/learn">Back to Learning Modules</a>
         <a class="btn" href="#/assess">Take Readiness Assessment</a>
@@ -3551,13 +3551,13 @@ function renderMaturity() {
 }
 
 function renderPlays() {
-  main.innerHTML = pageIntro("12-Play Planning and Implementation Playbook", "A guided roadmap for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.") + `
+  main.innerHTML = pageIntro("12-Play Planning and Implementation Playbook", "A guided playbook for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.") + `
     <section class="plays-overview-grid">
       <div class="framework-intro">
         <div>
-          <p class="eyebrow">Implementation Roadmap</p>
+          <p class="eyebrow">Implementation Playbook</p>
           <h2>Run the plays in sequence, with governance gates throughout</h2>
-          <p>The framework moves agencies from vision and guardrails to readiness assessment, governance, stakeholder engagement, workforce preparation, change management planning, use case prioritization, funding strategy, roadmap design, change management execution, deployment, monitoring, and sustained oversight.</p>
+          <p>The framework moves agencies from vision and guardrails to readiness assessment, governance, stakeholder engagement, workforce preparation, change management planning, use case prioritization, funding strategy, playbook design, change management execution, deployment, monitoring, and sustained oversight.</p>
           <section class="use-playbook-panel">
             <h3>How to use this playbook</h3>
             <ul>
@@ -3580,7 +3580,7 @@ function renderPlays() {
         <div class="journey-list">
           ${[
             ["Plan", "Vision, readiness, governance, stakeholders, workforce, change planning, and use cases", "#/plays/1"],
-            ["Build", "Funding strategy and implementation roadmap", "#/plays/8"],
+            ["Build", "Funding strategy and implementation playbook", "#/plays/8"],
             ["Deploy", "Change execution, build, validation, deployment, and scale decisions", "#/plays/10"],
             ["Govern", "Oversight, monitoring, evaluation, incidents, and continuous improvement", "#/plays/12"]
           ].map((item,i)=>`<a class="journey-item" href="${item[2]}"><span class="number-badge">${i+1}</span><span><strong>${item[0]}:</strong> ${item[1]}</span></a>`).join("")}
@@ -3969,7 +3969,7 @@ function renderReadinessAssessmentGuide() {
           <div class="card-grid two-grid">
             <article class="mini-card"><h3>0-25: Early Foundation</h3><p>Do not approve AI pilots yet. Build shared understanding, vision, governance, interim guardrails, current-use inventory, and basic AI literacy.</p></article>
             <article class="mini-card"><h3>26-50: Planning and Readiness</h3><p>Complete the gap register, strengthen governance and approval pathways, map stakeholders, build workforce training plans, and begin conservative use case screening.</p></article>
-            <article class="mini-card"><h3>51-75: Pilot Preparation</h3><p>Prioritize candidate use cases, complete project charters, review equity, data quality, privacy, and security risks, and prepare a governance-approved roadmap.</p></article>
+            <article class="mini-card"><h3>51-75: Pilot Preparation</h3><p>Prioritize candidate use cases, complete project charters, review equity, data quality, privacy, and security risks, and prepare a governance-approved playbook.</p></article>
             <article class="mini-card"><h3>76-100: Implementation Readiness</h3><p>Confirm governance approval, validate and document systems, monitor performance and equity impacts, maintain incident response, and use pilot-to-scale decision criteria.</p></article>
           </div>
         </section>
@@ -4375,7 +4375,7 @@ function renderStakeholderEngagementGuide() {
               ["Play 6: Plan Change Management", "Supports communications, adoption planning, and staff trust."],
               ["Play 7: Prioritize Use Cases", "Helps rank use cases based on public health value, feasibility, risk, equity, and acceptability."],
               ["Play 8: Develop a Funding Strategy", "Identifies partners, resources, procurement assumptions, and sustainability needs."],
-              ["Play 9: Design the Roadmap", "Helps sequence work based on operational dependencies, funding assumptions, and partner readiness."],
+              ["Play 9: Design the Playbook", "Helps sequence work based on operational dependencies, funding assumptions, and partner readiness."],
               ["Play 10: Execute Change Management", "Supports implementation communication, adoption support, and feedback tracking."],
               ["Play 11: Build and Deploy AI Solutions", "Informs workflow design, pilot testing, and safeguards."],
               ["Plays 12-13: Governance, Monitoring, and Evaluation", "Supports feedback loops, equity monitoring, incident reporting, and continuous improvement."]
