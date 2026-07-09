@@ -2812,7 +2812,7 @@ function breadcrumbTrail() {
   }
   return `<nav class="breadcrumbs" aria-label="Breadcrumb">${items.map((item, index) => index === items.length - 1 || !item.href ? `<span aria-current="page">${item.label}</span>` : `<a href="${item.href}">${item.label}</a>`).join("<span class=\"crumb-separator\">/</span>")}</nav>`;
 }
-function pageIntro(title, text) { return `<section class="page">${breadcrumbTrail()}<h1>${title}</h1><p class="lead">${text}</p>`; }
+function pageIntro(title, text, pageClass = "") { return `<section class="page ${pageClass}">${breadcrumbTrail()}<h1>${title}</h1><p class="lead">${text}</p>`; }
 function proseBlock(items = []) {
   return items.map(item => `<p>${item}</p>`).join("");
 }
@@ -3551,7 +3551,7 @@ function renderMaturity() {
 }
 
 function renderPlays() {
-  main.innerHTML = pageIntro("12-Play Planning and Implementation Playbook", "A guided playbook for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.") + `
+  main.innerHTML = pageIntro("12-Play Planning and Implementation Playbook", "A guided playbook for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.", "plays-page") + `
     <section class="plays-overview-grid">
       <div class="framework-intro">
         <div>

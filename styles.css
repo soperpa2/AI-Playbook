@@ -209,6 +209,11 @@ h1, h2, h3, h4 {
   letter-spacing: .01em;
 }
 h1 { font-size: clamp(2rem, 4vw, 3rem); max-width: 980px; }
+.plays-page > h1 {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+}
 h2 { font-size: clamp(1.55rem, 2.5vw, 2rem); }
 h3 { font-size: 1.35rem; }
 p { margin: 0 0 1rem; }
@@ -1949,6 +1954,7 @@ th { color: var(--ink); background: var(--sky); }
   .brand small { font-size: .7rem; }
   .hero-band { padding-top: 2rem; }
   .page { width: min(100% - 1rem, 1280px); }
+  .plays-page > h1 { white-space: normal; }
   .card, .panel, .filter-panel { padding: 1.15rem; }
   .assessment-grid { gap: 1.3rem; }
   .domain-row summary, .indicator { grid-template-columns: 1fr; }
