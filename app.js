@@ -2244,6 +2244,20 @@ const learningModuleApplicationDetails = {
     exerciseTemplate: {
       title: "Systems Map Template",
       intro: "Use this template to map the public health system changes required for one proposed AI use case or agency-wide AI adoption effort. The goal is to make dependencies, risks, owners, and governance gates visible before pilots scale.",
+      diagram: {
+        center: "AI-supported public health workflow",
+        nodes: [
+          ["Governance", "approval, risk tier, decision owner"],
+          ["Data", "sources, quality, sharing limits"],
+          ["Technology", "systems, access, cybersecurity"],
+          ["Workforce", "roles, training, support"],
+          ["Procurement", "vendor, contract, funding"],
+          ["Equity and Access", "missing voices, language, disability access"],
+          ["Communications", "public notice, staff updates, feedback"],
+          ["Monitoring", "metrics, incidents, improvement"]
+        ],
+        note: "Place the workflow in the center, then draw connections to each affected system. Add arrows where one system depends on another, such as governance approval before procurement or data quality checks before pilot testing."
+      },
       rows: [
         ["Center of the map", "Name the AI-supported workflow, decision, service, or operational process being considered. Keep the center specific enough that the affected systems can be identified."],
         ["Public health purpose", "State the public health goal, population served, expected benefit, and the problem the AI use is meant to address."],
@@ -2985,12 +2999,163 @@ function renderLearningQuiz(module) {
     </form>
   </section>`;
 }
+
+const exerciseGuidanceByModule = {
+  "staff-training": {
+    concepts: [["Training plan", "A practical list of who needs which learning modules, by when, and for what role."], ["Module assignment matrix", "A table that connects job roles to required lessons, exercises, and evidence of completion."], ["Completion expectations", "The minimum evidence needed to show that a learner has understood and applied the material."]],
+    example: "For example, a communications specialist might be assigned Generative AI, Responsible Prompting and Review, Public Transparency, Accessibility and Language Access, and AI Incident Response before using AI to draft public messages."
+  },
+  "understanding-ai": {
+    concepts: [["AI type", "The broad category of AI involved, such as generative AI for drafting, machine learning for prediction, or agentic AI for multi-step workflow support."], ["Human decision owner", "The person or role accountable for the final decision, approval, or public health action."], ["Known or suspected AI use", "Any formal or informal use of AI-enabled tools, including vendor products or staff productivity tools."]],
+    example: "For example, a program area may use AI to summarize partner meeting notes. The task would be classified as generative AI, and the human decision owner might be the program manager who approves the final summary."
+  },
+  "generative-ai": {
+    concepts: [["Source material", "The approved documents, data, policies, or examples the AI should rely on."], ["Human review", "A person checks accuracy, tone, equity, accessibility, privacy, and policy alignment before the output is used."], ["Approved-source guidance", "Rules explaining which source documents may be used and what sources are not acceptable."]],
+    example: "For example, AI might draft a first version of a heat safety message using approved CDC and local emergency management guidance, but communications staff would verify facts, plain language, translations, and local instructions before release."
+  },
+  "agentic-ai": {
+    concepts: [["Multi-step workflow", "A process with several connected actions, such as receiving a signal, gathering records, drafting a brief, assigning a task, and routing it for review."], ["Human approval point", "A step where the AI must stop and wait for a person before continuing."], ["Prohibited action", "An action the AI is not allowed to take, such as sending public alerts, making enforcement decisions, or changing records without approval."]],
+    example: "For example, an agentic workflow could gather supporting information for a suspected outbreak signal and draft an internal brief, but an epidemiologist would decide whether the signal is valid and whether any external communication is appropriate."
+  },
+  "deep-research": {
+    concepts: [["Research brief", "A concise document that summarizes evidence, source quality, relevance, limitations, and implications for a decision."], ["Source quality", "How credible, current, applicable, and independently verifiable a source is."], ["Open questions", "Important uncertainties that remain after the evidence scan."]],
+    example: "For example, a research brief on AI translation tools might separate peer-reviewed evidence, federal guidance, vendor claims, implementation examples, and unresolved legal or equity questions."
+  },
+  "workflows": {
+    concepts: [["Trigger", "The event that starts a workflow, such as a lab report, complaint, referral, inspection finding, or leadership request."], ["Handoff", "A transfer of work, information, or responsibility from one person, team, or system to another."], ["Performance measure", "A metric that shows whether the workflow is improving, such as timeliness, completeness, accuracy, staff burden, or equity."]],
+    example: "For example, a complaint inspection workflow may begin with an intake form, move to triage, assignment, field inspection, report drafting, supervisor review, and public record filing. AI might help draft the report, while compliance findings remain human-controlled."
+  },
+  "risks": {
+    concepts: [["Risk register", "A table that records possible harms, likelihood, severity, owner, mitigation, and monitoring plan."], ["Mitigation", "An action that reduces the chance or impact of a risk."], ["Escalation criteria", "Conditions that require review by a supervisor, privacy officer, security lead, legal counsel, or governance body."]],
+    example: "For example, if AI summarizes case notes, one risk is inaccurate clinical abstraction. A mitigation could require epidemiologist review and a threshold for rechecking all summaries if error rates exceed an agreed limit."
+  },
+  "systems-shift": {
+    concepts: [["Systems map", "A visual or structured map that shows how one AI use affects connected parts of the agency."], ["Dependency", "Something that must be in place before another step can proceed."], ["Governance gate", "A required decision point before moving forward."]],
+    example: "For example, an AI inspection-report pilot may depend on procurement review, legal approval, staff training, secure document storage, communications guidance, and monitoring before it can be expanded."
+  },
+  "digital-determinants": {
+    concepts: [["Digital determinant of health", "A digital condition that affects access, burden, trust, or outcomes, such as broadband, language access, accessibility, or algorithmic prioritization."], ["Alternate pathway", "A non-AI or non-digital way for people to receive the same service or support."], ["Access barrier", "Anything that makes it harder for a person or community to understand, reach, use, or benefit from a service."]],
+    example: "For example, a chatbot may improve access for some residents but create barriers for people without reliable internet, people using screen readers, or people needing human language assistance."
+  },
+  "human-centered-ai": {
+    concepts: [["Human decision rule", "A written statement defining what AI may do, what it may recommend, what humans must approve, and what the AI may never do."], ["Correction pathway", "A process for people or staff to challenge, correct, or report a problem with an AI-supported output."], ["Affected users", "Staff, partners, community members, or clients who experience the workflow or its outcomes."]],
+    example: "For example, AI may recommend possible outreach priorities, but a nurse or program lead decides who is contacted, reviews context, and documents the reason for the final decision."
+  },
+  "ai-literacy": {
+    concepts: [["Role-based training matrix", "A table that identifies what each role needs to know, from basic awareness to advanced governance or technical review."], ["AI literacy", "The ability to recognize AI use, understand major risks, protect data, review outputs, and know when to escalate concerns."], ["Concern reporting pathway", "A simple route for staff to report unsafe, biased, inaccurate, or unauthorized AI use."]],
+    example: "For example, all staff may need basic privacy and hallucination training, while procurement staff also need vendor review training and communications staff need public-facing output review training."
+  },
+  "automation-bias": {
+    concepts: [["Automation bias", "Over-trusting an automated output because it seems objective, polished, or precise."], ["Uncertainty", "What is not known, not verified, or not reliable enough to support a decision."], ["Override log", "A record of when staff disagree with or correct an AI output and why."]],
+    example: "For example, if AI labels a disease signal as low priority, staff should still check source data, recent local context, and vulnerable populations before accepting the recommendation."
+  },
+  "missing-voices": {
+    concepts: [["Missing voices", "People or communities whose data, experience, language, geography, disability access needs, or perspectives are absent from planning or validation."], ["Validation sample", "The examples used to test whether an AI system works for different groups or situations."], ["Subgroup monitoring", "Tracking whether performance differs across populations, locations, languages, or other meaningful groups."]],
+    example: "For example, an AI outreach model may underperform for rural residents if transportation barriers, limited broadband, or local service access are missing from the data."
+  },
+  "public-transparency": {
+    concepts: [["AI use notice", "A plain-language explanation that tells people when AI is used, why, what humans decide, and how concerns can be raised."], ["Safeguard", "A protection such as human review, privacy controls, monitoring, or appeal rights."], ["Limitation", "Something the AI cannot reliably do or should not be used for."]],
+    example: "For example, a public notice for an AI-assisted chatbot should say that the chatbot provides general information, does not make eligibility decisions, and offers a way to reach staff for help."
+  },
+  "tiered-data-use": {
+    concepts: [["Data tier", "A sensitivity category that determines what tools, approvals, and protections are required."], ["Approved AI environment", "An AI tool or system the department has reviewed and authorized for a specific type of data or task."], ["Sovereign data", "Data governed by a sovereign authority, such as Tribal data governed by Tribal policies and approvals."]],
+    example: "For example, a public press release may be appropriate for an approved drafting tool, while identifiable case investigation notes would require a restricted environment or should not be used with AI at all."
+  },
+  "environmental-impact": {
+    concepts: [["High-compute option", "An AI approach that requires substantial processing power, energy, infrastructure, or vendor resources."], ["Lower-impact alternative", "A simpler model, retrieval approach, rules-based tool, workflow change, or non-AI option that may meet the same need with less burden."], ["Resource implication", "The cost, energy, staff time, infrastructure, or environmental burden created by a technology choice."]],
+    example: "For example, a small document-grounded tool may be sufficient for internal policy search, while training a custom model could be unnecessary, expensive, and harder to sustain."
+  },
+  "bridge-professional": {
+    concepts: [["Bridge role", "A person who translates between public health operations, data, IT, privacy, legal, procurement, communications, equity, leadership, and vendors."], ["Coordination map", "A map showing who needs to work together and where decisions or handoffs occur."], ["Protected time", "Dedicated work time for coordination, review, training, and issue resolution."]],
+    example: "For example, a bridge professional might help a program manager turn a workflow problem into requirements that IT, procurement, privacy, and governance can review."
+  },
+  "funding": {
+    concepts: [["Funding map", "A table that connects AI activities and costs to possible grants, budgets, or other funding sources."], ["Sustainment cost", "The ongoing cost after a pilot, including licenses, staff time, monitoring, training, maintenance, and evaluation."], ["Allowable activity", "A cost or task that a funding source permits under its rules."]],
+    example: "For example, pilot development might be funded through one grant, while staff training, monitoring, and maintenance may require a different budget line or sustainment plan."
+  },
+  "using-together": {
+    concepts: [["Customized workplan", "A practical plan that turns assessment results into selected plays, tools, owners, deadlines, and governance milestones."], ["Governance milestone", "A planned review or decision point, such as approval to pilot, scale, pause, or retire."], ["Tool package", "The completed templates and records that document decisions and readiness for leadership or governance review."]],
+    example: "For example, a department with strong governance but weak data readiness may skip some governance-building work and focus first on readiness gaps, data classification, and use case screening."
+  },
+  "ai-support-areas": {
+    concepts: [["Support area", "A practical category where AI might help public health work, such as surveillance, communication, grants, quality improvement, or workflow routing."], ["Use case screening", "A structured review of value, feasibility, risk, equity, readiness, and sustainability before a concept becomes a project."], ["Sustainment", "The staffing, funding, monitoring, and governance needed to keep a tool useful after launch."]],
+    example: "For example, AI might support grant writing, but it should still be screened for data sensitivity, staff review, source verification, and whether it truly improves grant quality or timeliness."
+  },
+  "procurement-vendor-oversight": {
+    concepts: [["Vendor proposal", "Information from a vendor about what the product does, how it uses data, what evidence supports it, and what terms apply."], ["Audit right", "A contract term allowing the department to inspect logs, performance, security, documentation, or compliance evidence."], ["Exit plan", "A plan for ending use of a vendor product without losing data, records, continuity, or accountability."]],
+    example: "For example, a vendor may claim its AI improves inspection reports, but the department should ask for validation evidence, data-use terms, accessibility documentation, audit logs, and contract language before a pilot."
+  },
+  "privacy-confidentiality-public-records": {
+    concepts: [["Public records", "Records created or received in official work that may be subject to retention or disclosure rules."], ["Confidential data", "Information protected by law, agreement, investigation status, or agency policy."], ["Review pathway", "The approval process for deciding whether a data type may be used with an AI tool."]],
+    example: "For example, a staff member may summarize public meeting notes in an approved tool, but should not paste identifiable case investigation details into a public chatbot."
+  },
+  "model-validation-evaluation-basics": {
+    concepts: [["Validation plan", "A plan for testing whether an AI system is accurate, safe, equitable, useful, and appropriate for its intended workflow."], ["Go/no-go criteria", "Predefined thresholds that determine whether a pilot can proceed, needs revision, must pause, or should stop."], ["Subgroup check", "A review of whether performance differs across meaningful groups, locations, languages, or settings."]],
+    example: "For example, an AI summary tool might need to meet accuracy targets overall and show no meaningful drop in performance for non-English source documents before pilot approval."
+  },
+  "ai-incident-response": {
+    concepts: [["Tabletop scenario", "A practice exercise where staff walk through a realistic incident without waiting for a real emergency."], ["Corrective action", "A documented fix, such as retraining staff, changing settings, notifying a vendor, updating policy, or pausing a system."], ["Pause authority", "The role or body authorized to stop or limit AI use when risk is identified."]],
+    example: "For example, staff can practice what happens if an AI-generated public message includes outdated isolation guidance and is posted before review."
+  },
+  "role-based-ai-guidelines": {
+    concepts: [["Allowed use", "An AI use that is approved for a role under defined conditions."], ["Prohibited use", "An AI use that is not allowed, such as entering PHI into public tools or using AI to make an enforcement decision."], ["Documentation requirement", "What staff must record when using AI for official work."]],
+    example: "For example, analysts may be allowed to use approved AI to draft code comments or summarize public documents, while public-facing messages require communications review."
+  },
+  "responsible-prompting-review": {
+    concepts: [["Unsafe prompt", "A prompt that includes sensitive data, asks for unsupported conclusions, lacks source material, or bypasses review."], ["Responsible prompt", "A prompt that limits the task, protects data, uses approved sources, and asks for uncertainties or review needs."], ["Output review", "The process of checking facts, sources, privacy, tone, equity, accessibility, and approvals before use."]],
+    example: "For example, instead of asking an AI tool to 'write a final vaccine safety statement,' ask it to draft a plain-language summary using approved source text and list claims that require communications and subject matter review."
+  },
+  "community-engagement-ai": {
+    concepts: [["Engagement plan", "A plan describing who will be engaged, why, how, when, what will be explained, and how feedback will influence decisions."], ["Feedback-to-decision log", "A record showing what feedback was received, what changed, what did not change, and why."], ["Plain-language explanation", "A description that avoids technical jargon and explains the AI use in terms people can understand."]],
+    example: "For example, before launching AI-assisted outreach prioritization, the department could discuss purpose, data, safeguards, human review, and opt-out or correction options with affected community partners."
+  },
+  "accessibility-language-access": {
+    concepts: [["Plain language", "Clear communication written so the intended audience can understand and act on it."], ["Language access", "Providing meaningful access for people with limited English proficiency, including qualified translation or interpretation when needed."], ["Human assistance pathway", "A way for people to get help from a person rather than relying only on an AI or digital tool."]],
+    example: "For example, an AI-drafted emergency message should be checked for reading level, screen-reader compatibility, accurate translation, cultural context, and a phone number or staff contact for assistance."
+  },
+  "cybersecurity-secure-ai-use": {
+    concepts: [["Access control", "Rules that determine who can use a system and what they can see or do."], ["Prompt injection", "Malicious or hidden instructions that try to manipulate an AI system into ignoring rules or exposing data."], ["Logging", "Recording system activity so the department can review what happened during normal use or an incident."]],
+    example: "For example, an AI tool connected to a document repository should use role-based access, log retrieval activity, and be tested for attempts to reveal restricted documents."
+  },
+  "when-not-to-use-ai": {
+    concepts: [["No-go decision", "A documented decision that AI should not be used for a proposed task."], ["Restricted use", "A use that may be allowed only with conditions, such as human review, limited data, or governance approval."], ["Non-AI alternative", "A simpler process, checklist, dashboard, training, staffing change, or workflow redesign that may solve the problem more safely."]],
+    example: "For example, if a proposal would use AI to rank people for scarce services without validated data, clear appeal rights, and governance approval, the safer decision may be to reject or redesign it."
+  }
+};
+
+function renderExerciseSupport(module, application = {}) {
+  const guidance = exerciseGuidanceByModule[module.id];
+  const concepts = guidance?.concepts || [
+    ["Exercise artifact", "The concrete document, table, map, checklist, or decision note you create during the exercise."],
+    ["Human review", "A qualified person checks whether the artifact is accurate, complete, appropriate, and ready to use in planning or governance."],
+    ["Governance use", "How the artifact can support a documented decision, review, approval, or next step."]
+  ];
+  const example = guidance?.example || `For example, you might use a familiar workflow from your own program, identify the AI-related decision or risk, and create a short artifact that could be reviewed by a supervisor, governance group, or implementation lead.`;
+  return `<div class="exercise-support">
+    <h4>Before You Begin</h4>
+    <p>This exercise is meant to produce a practical work product, not a technical assignment. Choose a real or realistic public health workflow, use plain language, and document assumptions or uncertainties that would need review before the artifact is used.</p>
+    <div class="exercise-support-grid">
+      <section>
+        <h5>Concepts Used in This Exercise</h5>
+        <dl>${concepts.map(([term, explanation]) => `<dt>${escapeDoc(term)}</dt><dd>${escapeDoc(explanation)}</dd>`).join("")}</dl>
+      </section>
+      <section>
+        <h5>Example</h5>
+        <p>${escapeDoc(example)}</p>
+        <p>When you save exercise evidence, summarize what you created, which workflow or use case you used, and what questions still need legal, privacy, equity, IT, leadership, or governance review.</p>
+      </section>
+    </div>
+    <p class="tool-note">Need a definition? Use the <a href="#/glossary">Glossary of Terms</a> while completing the exercise.</p>
+  </div>`;
+}
+
 function renderPracticalExercise(module, application = {}) {
   if (!application.exercise) return "";
   const progress = learningProgressFor(module.id);
   return `<section class="content-section training-section practical-exercise-section">
     <h3>Practical Exercise</h3>
     ${paragraphBlock(application.exercise)}
+    ${renderExerciseSupport(module, application)}
     ${renderExerciseTemplate(application.exerciseTemplate)}
     ${application.artifacts ? `<h4>Expected artifact or evidence</h4><ul class="check-list">${application.artifacts.map(item => `<li>${item}</li>`).join("")}</ul>` : ""}
     <label class="exercise-evidence-label">Your exercise evidence or verification note
@@ -3007,6 +3172,7 @@ function renderExerciseTemplate(template) {
   return `<div class="exercise-template">
     <h4>${escapeDoc(template.title || "Exercise Template")}</h4>
     ${template.intro ? `<p>${escapeDoc(template.intro)}</p>` : ""}
+    ${renderGenericSystemsMap(template.diagram)}
     ${rows.length ? `<div class="table-wrap exercise-template-table"><table>
       <thead><tr><th>Map element</th><th>What to document</th></tr></thead>
       <tbody>${rows.map(([label, detail]) => `<tr><td>${escapeDoc(label)}</td><td>${escapeDoc(detail)}</td></tr>`).join("")}</tbody>
@@ -3014,6 +3180,17 @@ function renderExerciseTemplate(template) {
     ${steps.length ? `<div class="exercise-template-steps">
       ${steps.map(step => `<article class="exercise-template-step"><h5>${escapeDoc(step.title)}</h5><p>${escapeDoc(step.text)}</p></article>`).join("")}
     </div>` : ""}
+  </div>`;
+}
+function renderGenericSystemsMap(diagram) {
+  if (!diagram) return "";
+  const nodes = diagram.nodes || [];
+  return `<div class="systems-map-example" aria-label="Generic systems map example">
+    <div class="systems-map-center">${escapeDoc(diagram.center || "Central AI workflow")}</div>
+    <div class="systems-map-nodes">
+      ${nodes.map(([label, note]) => `<article class="systems-map-node"><h5>${escapeDoc(label)}</h5><p>${escapeDoc(note)}</p></article>`).join("")}
+    </div>
+    ${diagram.note ? `<p class="systems-map-note">${escapeDoc(diagram.note)}</p>` : ""}
   </div>`;
 }
 function addedToolGuidanceSection(playId) {

@@ -435,6 +435,98 @@ p { margin: 0 0 1rem; }
   margin: 0;
   line-height: 1.55;
 }
+.exercise-support {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 93, 171, .18);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.exercise-support h4 {
+  margin: 0 0 .55rem;
+  color: var(--navy);
+}
+.exercise-support-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: .75rem;
+}
+.exercise-support-grid section {
+  padding: .9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #f8fbfd;
+}
+.exercise-support-grid h5 {
+  margin: 0 0 .55rem;
+  color: var(--blue-dark);
+  font-size: .98rem;
+}
+.exercise-support dl {
+  margin: 0;
+}
+.exercise-support dt {
+  color: var(--navy);
+  font-weight: 800;
+  margin-top: .7rem;
+}
+.exercise-support dt:first-child {
+  margin-top: 0;
+}
+.exercise-support dd {
+  margin: .2rem 0 0;
+  color: var(--text);
+  line-height: 1.5;
+}
+.systems-map-example {
+  position: relative;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(0, 93, 171, .18);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.systems-map-center {
+  max-width: 360px;
+  margin: 0 auto 1rem;
+  padding: 1rem;
+  border: 2px solid var(--blue);
+  border-radius: var(--radius);
+  background: #eaf4fb;
+  color: var(--navy);
+  font-weight: 900;
+  text-align: center;
+}
+.systems-map-nodes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .75rem;
+}
+.systems-map-node {
+  padding: .75rem;
+  border: 1px solid rgba(46, 125, 28, .25);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  background: #fbfefb;
+}
+.systems-map-node h5 {
+  margin: 0 0 .3rem;
+  color: var(--navy);
+  font-size: .92rem;
+}
+.systems-map-node p {
+  margin: 0;
+  color: var(--text);
+  font-size: .9rem;
+  line-height: 1.4;
+}
+.systems-map-note {
+  margin: 1rem 0 0;
+  color: var(--text);
+  font-size: .95rem;
+}
 .exercise-evidence-label {
   display: grid;
   gap: .45rem;
@@ -2064,7 +2156,7 @@ th { color: var(--ink); background: var(--sky); }
   .framework-intro aside { margin-top: 0; }
   .use-playbook-panel ul { columns: 1; }
   .filter-panel { position: static; }
-  .card-grid, .four-grid, .workflow-grid, .tools-grid, .form-grid, .member-stats, .overview-grid, .output-list, .rating-legend, .reference-list, .news-grid, .rss-model-grid, .glossary-list { grid-template-columns: 1fr; gap: 1rem; }
+  .card-grid, .four-grid, .workflow-grid, .tools-grid, .form-grid, .member-stats, .overview-grid, .output-list, .rating-legend, .reference-list, .news-grid, .rss-model-grid, .glossary-list, .exercise-support-grid, .systems-map-nodes { grid-template-columns: 1fr; gap: 1rem; }
   .phase-label { grid-template-columns: 1fr; align-items: start; }
   .change-form-empty, .change-form-header { flex-direction: column; align-items: flex-start; }
   .play-tile { width: 100%; }
