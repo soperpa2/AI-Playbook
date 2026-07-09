@@ -200,7 +200,7 @@ main { min-height: calc(100vh - 144px); }
   height: auto;
   margin: -.25rem auto 1rem;
 }
-.learn-layout { grid-template-columns: 260px 1fr; gap: 2.5rem; }
+.learn-layout { grid-template-columns: 300px 1fr; gap: 2.5rem; }
 .learn-layout > aside.filter-panel {
   position: sticky;
   top: 6.5rem;
@@ -909,23 +909,26 @@ p { margin: 0 0 1rem; }
   margin-top: 2.5rem;
 }
 .side-list {
-  display: grid;
-  gap: .65rem;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
 }
 .side-list button {
   display: block;
   width: 100%;
-  min-height: 40px;
-  height: auto;
+  min-height: unset;
+  height: auto !important;
+  box-sizing: border-box;
   text-align: left;
-  line-height: 1.35;
+  line-height: 1.32;
   white-space: normal;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
   color: var(--text);
-  padding: .55rem .9rem;
+  padding: .65rem .9rem;
   cursor: pointer;
 }
 .side-list button.active {
