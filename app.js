@@ -7051,6 +7051,10 @@ function renderReferences() {
   </section>`;
 }
 
+function sortedGlossaryTerms(terms = []) {
+  return [...terms].sort(([a], [b]) => String(a).localeCompare(String(b), undefined, { sensitivity: "base", ignorePunctuation: true }));
+}
+
 function renderGlossary() {
   const categoryLinks = glossaryGroups.map((group, index) => `<button type="button" onclick="document.getElementById('glossary-${index}').scrollIntoView({ behavior: 'smooth', block: 'start' })">${group.category}</button>`).join("");
   main.innerHTML = pageIntro("Glossary of Terms", "Plain-language definitions for AI, governance, privacy, risk, implementation, and public health concepts used across the playbook, toolkit, learning modules, and resources.") + `
@@ -7070,7 +7074,7 @@ function renderGlossary() {
             <h2>${group.category}</h2>
           </div>
           <div class="glossary-list">
-            ${group.terms.map(([term, definition])=>`
+            ${sortedGlossaryTerms(group.terms).map(([term, definition])=>`
               <article class="glossary-term">
                 <h3>${term}</h3>
                 <p>${definition}</p>
