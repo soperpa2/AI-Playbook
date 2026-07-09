@@ -3197,6 +3197,26 @@ function renderPracticalExercise(module, application = {}) {
     <p id="exercise-result-${module.id}" class="tool-note">${progress.exerciseSavedAt ? `Exercise evidence saved: ${progress.exerciseSavedAt}` : "Your exercise evidence can support administrator or supervisor verification."}</p>
   </section>`;
 }
+function renderLearningObjectives(module, application = {}) {
+  const baseObjectives = [
+    "Define the concept in plain language for your colleagues and leaders.",
+    "Identify where the concept affects AI planning, governance, procurement, implementation, monitoring, or public trust.",
+    "Apply the concept to concrete public health workflows using the linked plays and tools.",
+    "Complete a practical activity that produces an artifact you can use in implementation planning or governance review."
+  ];
+  const artifactObjectives = (application.artifacts || []).map(item => `Produce or contribute to: ${item}.`);
+  const seen = new Set();
+  const objectives = [...baseObjectives, ...artifactObjectives].filter(item => {
+    const key = item.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  return `<section class="content-section">
+    <h3>Learning Objectives</h3>
+    <ul class="check-list">${objectives.map(item => `<li>${item}</li>`).join("")}</ul>
+  </section>`;
+}
 function renderExerciseTemplate(template) {
   if (!template) return "";
   const rows = template.rows || [];
@@ -3552,13 +3572,13 @@ function renderLearn(moduleId = "understanding-ai") {
           <h2>${module.title}</h2>
           ${paragraphBlock(module.text)}
           ${glossaryCta}
+          ${renderLearningObjectives(module, application)}
           ${narrative.length ? `<section class="content-section lesson-prose training-section"><h3>How to Use the Learning Section</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose training-section"><h3>${section.title}</h3>${trainingSectionBlock(section.items)}</section>`).join("")}
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Learning</h3>${paragraphBlock(application.matters)}</section>` : ""}
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to decide how you will complete, document, and apply the learning module to governance or implementation work.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
-          ${application.artifacts ? `<section class="content-section training-section"><h3>Expected Training Takeaways</h3><ul class="check-list">${application.artifacts.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
         </article>
       </div>
     </div></section>`;
@@ -3575,6 +3595,7 @@ function renderLearn(moduleId = "understanding-ai") {
           ${paragraphBlock(module.text)}
           ${deckDownload ? `<div class="button-row"><a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a></div>` : ""}
           ${glossaryCta}
+          ${renderLearningObjectives(module, application)}
           <section class="content-section">
             <h3>How to Use These Examples</h3>
             <p>Use these support areas during early learning, readiness review, stakeholder engagement, use case prioritization, governance review, and implementation planning. As you review each example, consider your department's legal authority, data environment, workforce capacity, community context, and governance requirements.</p>
@@ -3615,7 +3636,6 @@ function renderLearn(moduleId = "understanding-ai") {
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to compare possible AI support areas and decide which ideas merit readiness review, governance review, or use case screening.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
-          ${application.artifacts ? `<section class="content-section training-section"><h3>Expected Training Takeaways</h3><ul class="check-list">${application.artifacts.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
         </article>
       </div>
     </div></section>`;
@@ -3631,15 +3651,7 @@ function renderLearn(moduleId = "understanding-ai") {
           ${paragraphBlock(module.text)}
           ${deckDownload ? `<div class="button-row"><a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a></div>` : ""}
           ${glossaryCta}
-          <section class="content-section">
-            <h3>Learning Objectives</h3>
-            <ul class="check-list">
-              <li>Define the concept in plain language for your colleagues and leaders.</li>
-              <li>Identify where the concept affects AI planning, governance, procurement, implementation, monitoring, or public trust.</li>
-              <li>Apply the concept to concrete public health workflows using the linked plays and tools.</li>
-              <li>Complete a practical activity that produces an artifact you can use in implementation planning or governance review.</li>
-            </ul>
-          </section>
+          ${renderLearningObjectives(module, application)}
           ${deepDive.overview ? `<section class="content-section lesson-prose"><h3>Module Overview</h3>${paragraphBlock(deepDive.overview)}</section>` : ""}
           ${definitionSections.length ? `<section class="content-section lesson-prose"><h3>Definitions</h3>${definitionSections.map(section=>`<p><strong>${section.title}:</strong> ${section.body}</p>`).join("")}</section>` : ""}
           ${narrative.length ? `<section class="content-section lesson-prose"><h3>Lesson Context</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
@@ -3658,7 +3670,6 @@ function renderLearn(moduleId = "understanding-ai") {
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to connect the concept to your own role, data, authorities, workflows, and community responsibilities.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
-          ${application.artifacts ? `<section class="content-section training-section"><h3>Expected Takeaways</h3><p>By the end of the module, you should be able to produce or contribute to these concrete materials. Use these takeaways as inputs to playbook tools, governance discussions, or implementation planning.</p><ul class="check-list">${application.artifacts.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
           ${moduleResources.length ? `<section class="content-section"><h3>References and Resources</h3><div class="resource-list">${moduleResources.map(([title, note, url])=>`
             <article class="resource-item">
               <h4><a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h4>
