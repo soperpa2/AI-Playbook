@@ -3551,7 +3551,7 @@ function renderMaturity() {
 }
 
 function renderPlays() {
-  main.innerHTML = pageIntro("12-Play Planning and Implementation Playbook", "A guided playbook for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.", "plays-page") + `
+  main.innerHTML = pageIntro("13-Play Planning and Implementation Playbook", "A guided playbook for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.", "plays-page") + `
     <section class="plays-overview-grid">
       <div class="framework-intro">
         <div>
