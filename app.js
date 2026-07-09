@@ -1,4 +1,4 @@
-﻿const phases = [
+const phases = [
   { id: "plan", name: "PLAN", range: "Plays 1-7", summary: "Vision, readiness, governance, stakeholders, workforce, change planning, use cases" },
   { id: "build", name: "BUILD", range: "Plays 8-9", summary: "Funding and implementation playbook" },
   { id: "deploy", name: "DEPLOY", range: "Plays 10-11", summary: "Change execution, build, deploy" },
@@ -2979,6 +2979,23 @@ function trainingSectionBlock(items = []) {
   if (!items.length) return "";
   return `<ul class="check-list lesson-points">${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
 }
+
+function learningObjectiveItems(module, application = {}) {
+  const baseObjectives = [
+    "Define the concept in plain language for colleagues, leaders, partners, and community-facing discussions.",
+    "Identify where the concept affects AI planning, governance, procurement, implementation, monitoring, public trust, or public health decision-making.",
+    "Apply the concept to a concrete public health workflow using the linked plays, tools, safeguards, and documentation expectations.",
+    "Complete a practical activity that produces an artifact you can use in readiness assessment, governance review, implementation planning, or monitoring."
+  ];
+  const artifactObjectives = (application.artifacts || []).map(item => `Produce or contribute to: ${item}.`);
+  const seen = new Set();
+  return [...baseObjectives, ...artifactObjectives].filter(item => {
+    const key = item.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
 function learningProgressFor(moduleId) {
   const state = getMemberState();
   return (state.learningProgress || {})[moduleId] || {};
@@ -3013,6 +3030,66 @@ function knowledgeCheckQuestions(module) {
       answer: 0
     }
   ];
+}
+function modulePdfTextLines(values = []) {
+  return values.flatMap(value => String(value || "").split(/\n+/).map(line => line.trim()).filter(Boolean));
+}
+
+function modulePdfSection(sections, heading, values = []) {
+  const lines = modulePdfTextLines(values);
+  if (lines.length) sections.push({ heading, lines });
+}
+
+function modulePdfFilename(module) {
+  return `lesson-${String(module.id || "module").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.pdf`;
+}
+
+function collectLearningModulePdfSections(module, background, deepDive, application, narrative, moduleResources) {
+  const sections = [];
+  const backgroundSections = background.sections || [];
+  const isDefinitionSection = section => /definition|what .* means/i.test(section.title || "");
+  const definitionSections = backgroundSections.filter(isDefinitionSection);
+  const remainingBackgroundSections = backgroundSections.filter(section => !isDefinitionSection(section));
+
+  modulePdfSection(sections, "Learning Objectives", learningObjectiveItems(module, application));
+  modulePdfSection(sections, "Module Overview", [deepDive.overview || module.text]);
+  if (definitionSections.length) modulePdfSection(sections, "Definitions", definitionSections.map(section => `${section.title}: ${section.body}`));
+  modulePdfSection(sections, "Lesson Context", narrative);
+  (deepDive.sections || []).forEach(section => modulePdfSection(sections, section.title, section.items || []));
+  remainingBackgroundSections.forEach(section => modulePdfSection(sections, section.title, [section.body]));
+  if (background.bullets?.length) modulePdfSection(sections, background.bulletsTitle || "Key Points", background.bullets);
+  if (background.table?.length) modulePdfSection(sections, module.id === "workflows" ? "Workflow Stages and AI Applications" : "Examples and Applications", background.table.map(row => row.join(" | ")));
+  if (background.risks?.length) modulePdfSection(sections, "Limitations, Risks, and Mitigations", background.risks.map(row => row.join(" | ")));
+  modulePdfSection(sections, "How to Apply This Module", ["Use the linked plays to decide who should be involved, what decisions need to be made, and which safeguards should be documented. Use the linked tools to turn the concept into an agency artifact that can be saved, reviewed, updated, and used during governance or implementation meetings."]);
+  modulePdfSection(sections, "Risk or Guardrail", [module.risk]);
+  modulePdfSection(sections, "Why This Matters for Your Practice", [application.matters]);
+  modulePdfSection(sections, "Reflection Questions", application.questions || []);
+  if (application.exercise) modulePdfSection(sections, "Practical Exercise", [application.exercise, ...(application.artifacts || []).map(item => `Expected artifact or evidence: ${item}`)]);
+  modulePdfSection(sections, "Knowledge Check", knowledgeCheckQuestions(module).map((question, index) => `${index + 1}. ${question.prompt}`));
+  if (moduleResources.length) modulePdfSection(sections, "References and Resources", moduleResources.map(([title, note, url]) => `${title}: ${note} ${url}`));
+  return sections;
+}
+
+async function downloadLearningModulePdf(moduleId) {
+  const module = learningModules.find(m => m.id === moduleId) || learningModules[0];
+  const background = backgroundMaterial[module.id] || {};
+  const deepDive = learningModuleDeepDive[module.id] || {};
+  const application = learningModuleApplicationDetails[module.id] || {};
+  const narrative = learningModuleNarrative[module.id] || [];
+  const moduleResources = learningModuleResources[module.id] || [];
+  const pdf = await buildProfessionalPdf(
+    module.title,
+    "Learning Module Curriculum PDF",
+    module.text,
+    [
+      ["Audience", "Individual learners in state, territorial, local, and tribal public health departments"],
+      ["Recommended use", "Self-paced learning, role preparation, governance readiness, and implementation planning"],
+      ["Related plays", module.plays.map(id => `Play ${id}`).join(", ") || "Not specified"],
+      ["Related tools", module.tools.map(id => `Tool ${id}`).join(", ") || "Not specified"]
+    ],
+    collectLearningModulePdfSections(module, background, deepDive, application, narrative, moduleResources)
+  );
+  downloadBlob(modulePdfFilename(module), pdf, "application/pdf");
 }
 function renderLearningQuiz(module) {
   const progress = learningProgressFor(module.id);
@@ -3198,20 +3275,7 @@ function renderPracticalExercise(module, application = {}) {
   </section>`;
 }
 function renderLearningObjectives(module, application = {}) {
-  const baseObjectives = [
-    "Define the concept in plain language for your colleagues and leaders.",
-    "Identify where the concept affects AI planning, governance, procurement, implementation, monitoring, or public trust.",
-    "Apply the concept to concrete public health workflows using the linked plays and tools.",
-    "Complete a practical activity that produces an artifact you can use in implementation planning or governance review."
-  ];
-  const artifactObjectives = (application.artifacts || []).map(item => `Produce or contribute to: ${item}.`);
-  const seen = new Set();
-  const objectives = [...baseObjectives, ...artifactObjectives].filter(item => {
-    const key = item.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+  const objectives = learningObjectiveItems(module, application);
   return `<section class="content-section">
     <h3>Learning Objectives</h3>
     <ul class="check-list">${objectives.map(item => `<li>${item}</li>`).join("")}</ul>
@@ -3548,6 +3612,7 @@ function renderLearn(moduleId = "understanding-ai") {
   const application = learningModuleApplicationDetails[module.id] || {};
   const narrative = learningModuleNarrative[module.id] || [];
   const deckDownload = lessonDeckDownloads[module.id];
+  const lessonDownloadButtons = `<div class="button-row lesson-downloads no-print">${deckDownload ? `<a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a>` : ""}<button class="btn" type="button" onclick="runDocumentDownload(() => downloadLearningModulePdf('${module.id}'), 'Lesson PDF')">Download Lesson PDF</button></div>`;
   const backgroundSections = background.sections || [];
   const isDefinitionSection = section => /definition|what .* means/i.test(section.title || "");
   const definitionSections = backgroundSections.filter(isDefinitionSection);
@@ -3571,6 +3636,7 @@ function renderLearn(moduleId = "understanding-ai") {
           <p class="eyebrow">Training Overview</p>
           <h2>${module.title}</h2>
           ${paragraphBlock(module.text)}
+          ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
           ${narrative.length ? `<section class="content-section lesson-prose training-section"><h3>How to Use the Learning Section</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
@@ -3593,7 +3659,7 @@ function renderLearn(moduleId = "understanding-ai") {
           <p class="eyebrow">Learning Module</p>
           <h2>${module.title}</h2>
           ${paragraphBlock(module.text)}
-          ${deckDownload ? `<div class="button-row"><a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a></div>` : ""}
+          ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
           <section class="content-section">
@@ -3649,7 +3715,7 @@ function renderLearn(moduleId = "understanding-ai") {
           <p class="eyebrow">Learning Module</p>
           <h2>${module.title}</h2>
           ${paragraphBlock(module.text)}
-          ${deckDownload ? `<div class="button-row"><a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a></div>` : ""}
+          ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
           ${deepDive.overview ? `<section class="content-section lesson-prose"><h3>Module Overview</h3>${paragraphBlock(deepDive.overview)}</section>` : ""}
