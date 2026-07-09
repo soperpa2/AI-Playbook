@@ -3306,11 +3306,13 @@ function renderPracticalExercise(module, application = {}) {
     <label class="exercise-evidence-label">Your exercise evidence or verification note
       <textarea id="exercise-evidence-${module.id}" rows="5" placeholder="Summarize the artifact you created, paste a link/reference, or document supervisor verification.">${progress.exerciseEvidence || ""}</textarea>
     </label>
-    <label class="exercise-evidence-label">Upload evidence files
-      <input id="exercise-upload-${module.id}" type="file" multiple>
-      <span class="tool-note">Attach local copies of worksheets, screenshots, notes, slide decks, exported tools, or other evidence. This static preview saves file names and details in your browser; production will store files securely in the member or organization account.</span>
-    </label>
-    <div id="exercise-attachments-${module.id}" class="attachment-list">${renderExerciseAttachments(attachments)}</div>
+    <div class="evidence-upload-panel">
+      <h4>Upload evidence files</h4>
+      <p>Upload worksheets, screenshots, notes, slide decks, exported tools, or other documents that show you completed the exercise.</p>
+      <input id="exercise-upload-${module.id}" type="file" multiple aria-label="Upload evidence files for ${module.title}">
+      <p class="tool-note">This static preview saves file names and details in your browser. Production will store files securely in the member or organization account.</p>
+      <div id="exercise-attachments-${module.id}" class="attachment-list">${renderExerciseAttachments(attachments)}</div>
+    </div>
     <div class="button-row"><button class="btn small" type="button" onclick="saveLearningExercise('${module.id}')">Save Exercise Evidence</button></div>
     <p id="exercise-result-${module.id}" class="tool-note">${progress.exerciseSavedAt ? `Exercise evidence saved: ${progress.exerciseSavedAt}` : "Your exercise evidence can support administrator or supervisor verification."}</p>
   </section>`;

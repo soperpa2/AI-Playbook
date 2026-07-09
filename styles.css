@@ -560,6 +560,37 @@ p { margin: 0 0 1rem; }
   line-height: 1.55;
   resize: vertical;
 }
+.evidence-upload-panel {
+  margin: 1.15rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(0, 91, 150, .28);
+  border-radius: var(--radius);
+  background: #f7fbfe;
+}
+.evidence-upload-panel h4 {
+  margin: 0 0 .45rem;
+  color: var(--navy);
+}
+.evidence-upload-panel p {
+  margin: .35rem 0 .75rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.evidence-upload-panel input[type="file"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: .55rem 0 .65rem;
+  padding: .85rem;
+  border: 1px dashed var(--blue);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+.evidence-upload-panel .attachment-list {
+  margin-top: .75rem;
+}
 .learn-layout .panel > .content-section {
   width: 100%;
   max-width: none;
