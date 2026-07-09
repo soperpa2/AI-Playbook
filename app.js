@@ -3558,21 +3558,23 @@ function renderPlays() {
           <p class="eyebrow">Implementation Playbook</p>
           <h2>Run the plays in sequence, with governance gates throughout</h2>
           <p>The framework moves agencies from vision and guardrails to readiness assessment, governance, stakeholder engagement, workforce preparation, change management planning, use case prioritization, funding strategy, playbook design, change management execution, deployment, monitoring, and sustained oversight.</p>
-          <section class="use-playbook-panel">
-            <h3>How to use this playbook</h3>
-            <ul>
-              <li>Start with the readiness assessment to identify recommended plays, priority gaps, and tools that should be completed first.</li>
-              <li>Use the play sequence to manage dependencies, but adapt the path when your department has already completed a step or needs a different starting point.</li>
-              <li>Complete the linked tools as working documents so decisions, owners, governance reviews, timelines, and unresolved issues are documented as implementation moves forward.</li>
-              <li>Use governance gates before use case approval, vendor decisions, pilots, deployment, and scale so AI work remains accountable, equitable, secure, and aligned with public health goals.</li>
-            </ul>
-          </section>
         </div>
         <aside>
-          <strong>Playbook</strong>
+          <strong>${plays.length} plays</strong>
           <span>${tools.length} supporting tools</span>
           <span>4 implementation phases</span>
         </aside>
+        <section class="use-playbook-panel">
+          <h3>How to use this playbook</h3>
+          <p>Use the playbook as a structured implementation system, not a checklist that every department must complete in exactly the same way. The readiness assessment should guide the starting point, but leadership, governance, prior work, available resources, and public health priorities should shape the final path.</p>
+          <ul>
+            <li>Start with the readiness assessment to identify recommended plays, priority gaps, and tools that should be completed first.</li>
+            <li>Use the play sequence to manage dependencies, but adapt the path when your department has already completed a step or needs a different starting point.</li>
+            <li>Complete the linked tools as working documents so decisions, owners, governance reviews, timelines, and unresolved issues are documented as implementation moves forward.</li>
+            <li>Use governance gates before use case approval, vendor decisions, pilots, deployment, and scale so AI work remains accountable, equitable, secure, and aligned with public health goals.</li>
+            <li>Review the playbook regularly as funding, staffing, risk, technology, stakeholder input, or legal requirements change.</li>
+          </ul>
+        </section>
       </div>
       <aside class="journey-sidebar plays-journey-card" aria-label="Recommended journey by implementation phase">
         <img class="hero-logo" src="assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt="AI Playbook for Public Health" />

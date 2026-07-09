@@ -550,7 +550,7 @@ p { margin: 0 0 1rem; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   margin: 0;
   padding: 1.7rem;
   border-radius: var(--radius);
@@ -565,6 +565,7 @@ p { margin: 0 0 1rem; }
   gap: .6rem;
   border-left: 4px solid var(--green);
   padding-left: 1.2rem;
+  margin-top: 2.35rem;
 }
 .framework-intro aside strong {
   color: var(--blue-dark);
@@ -576,7 +577,7 @@ p { margin: 0 0 1rem; }
   font-weight: 700;
 }
 .use-playbook-panel {
-  margin-top: 1.55rem;
+  grid-column: 1 / -1;
   padding-top: 1.2rem;
   border-top: 1px solid rgba(0, 104, 183, .16);
 }
@@ -585,13 +586,19 @@ p { margin: 0 0 1rem; }
   font-size: 1.2rem;
   margin-bottom: .75rem;
 }
+.use-playbook-panel p {
+  max-width: 980px;
+}
 .use-playbook-panel ul {
-  display: grid;
+  columns: 2;
+  column-gap: 2rem;
   gap: .6rem;
   margin: 0;
   padding-left: 1.15rem;
 }
 .use-playbook-panel li {
+  break-inside: avoid;
+  margin-bottom: .6rem;
   padding-left: .15rem;
 }
 .plays-journey-card {
@@ -1924,6 +1931,9 @@ th { color: var(--ink); background: var(--sky); }
   }
   .primary-nav.open { display: flex; }
   .hero-grid, .two-col, .toolkit-layout, .learn-layout, .assessment-grid, .detail-grid, .guide-layout, .plays-overview-grid, .community-layout, .community-hero, .case-study-grid, .support-area-header, .support-area-grid, .member-dashboard, .member-workspace-grid, .member-list.compact, .org-workspace-header, .org-form, .org-grid, .change-profile-grid, .change-metric-grid { grid-template-columns: 1fr; }
+  .framework-intro { grid-template-columns: 1fr; }
+  .framework-intro aside { margin-top: 0; }
+  .use-playbook-panel ul { columns: 1; }
   .filter-panel { position: static; }
   .card-grid, .four-grid, .workflow-grid, .tools-grid, .form-grid, .member-stats, .overview-grid, .output-list, .rating-legend, .reference-list, .news-grid, .rss-model-grid { grid-template-columns: 1fr; gap: 1rem; }
   .phase-label { grid-template-columns: 1fr; align-items: start; }
