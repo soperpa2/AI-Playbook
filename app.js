@@ -3535,7 +3535,7 @@ async function downloadAssessment(format) {
 function renderMaturity() {
   main.innerHTML = pageIntro("AI Maturity Model", "The maturity model is not a grading system. It helps agencies identify honest current-state capabilities and the next responsible set of plays.") + `
     <figure class="maturity-graphic-panel">
-      <img src="assets/ai-maturity-model-public-health.png?v=play2-readiness" alt="AI maturity model for public health showing five stages from awareness to optimization and five capability dimensions." />
+      <img src="assets/ai-maturity-model-public-health.png?v=cropped-header" alt="AI maturity model for public health showing five stages from awareness to optimization and five capability dimensions." />
       <a class="maturity-hotspot stage stage-1" href="#/learn/understanding-ai" aria-label="Open Awareness learning foundations" title="Awareness: learning foundations" data-tip="Awareness: learning foundations"></a>
       <a class="maturity-hotspot stage stage-2" href="#/assess" aria-label="Open Readiness assessment" title="Readiness: assessment" data-tip="Readiness: assessment"></a>
       <a class="maturity-hotspot stage stage-3" href="#/plays/7" aria-label="Open Pilots use case prioritization" title="Pilots: prioritize use cases" data-tip="Pilots: prioritize use cases"></a>

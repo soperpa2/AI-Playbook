@@ -849,13 +849,13 @@ p { margin: 0 0 1rem; }
 .maturity-hotspot:focus-visible::after {
   opacity: 1;
 }
-.maturity-hotspot.stage { top: 34.5%; width: 16.8%; height: 32.5%; }
+.maturity-hotspot.stage { top: 17.4%; width: 16.8%; height: 41%; }
 .stage-1 { left: 3%; }
 .stage-2 { left: 22.3%; }
 .stage-3 { left: 42%; }
 .stage-4 { left: 61.2%; }
 .stage-5 { left: 80.6%; }
-.maturity-hotspot.dimension { top: 71.2%; width: 17%; height: 15.8%; }
+.maturity-hotspot.dimension { top: 63.7%; width: 17%; height: 19.9%; }
 .dimension-leadership { left: 3.1%; }
 .dimension-data { left: 22%; }
 .dimension-workforce { left: 41%; }
