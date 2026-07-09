@@ -2953,6 +2953,7 @@ function route() {
   menuButton.setAttribute("aria-expanded", "false");
   if (key === "") renderHome();
   else if (key === "learn") renderLearn(param);
+  else if (key === "learn-track") renderLearningTrackPage(param);
   else if (key === "use-areas") renderLearn("ai-support-areas");
   else if (key === "assess") renderAssess();
   else if (key === "maturity") renderMaturity();
@@ -3087,6 +3088,10 @@ function breadcrumbTrail() {
   if (key === "learn") {
     add("Learn", "#/learn");
     if (param) add(module?.title || "Learning Module");
+  } else if (key === "learn-track") {
+    const track = learningTracks.find(item => (item.track_id || "") === param);
+    add("Learn", "#/learn");
+    add(track?.title || "Learning Track");
   } else if (key === "plays") {
     add("Plays", "#/plays");
     if (play) add(`Play ${play.id}: ${play.title}`);
@@ -3170,6 +3175,18 @@ function learningProgressFor(moduleId) {
   return (state.learningProgress || {})[moduleId] || {};
 }
 function knowledgeCheckQuestions(module) {
+  if (module?.curriculumSource && Array.isArray(module.knowledge_check?.questions)) {
+    return module.knowledge_check.questions.map(question => {
+      const options = (question.options || []).map(option => option.text || option.label || String(option));
+      const correctLabel = String(question.correct_answer || "").trim().toUpperCase();
+      const answer = Math.max(0, (question.options || []).findIndex(option => String(option.label || "").trim().toUpperCase() === correctLabel));
+      return {
+        prompt: question.question || "Knowledge check question",
+        options,
+        answer
+      };
+    }).filter(question => question.options.length);
+  }
   const title = module?.title || "this module";
   const risk = module?.risk || "AI use should be reviewed before it affects public health work.";
   return [
@@ -3214,6 +3231,21 @@ function modulePdfFilename(module) {
 }
 
 function collectLearningModulePdfSections(module, background, deepDive, application, narrative, moduleResources) {
+  if (module.curriculumSource) {
+    const sections = [];
+    modulePdfSection(sections, "Learning Objectives", module.learning_objectives || [], "bullets");
+    modulePdfSection(sections, "Module Overview", [module.text]);
+    if (module.definitions?.length) modulePdfSection(sections, "Definitions", module.definitions.map(item => `${item.term}: ${item.definition}`), "bullets");
+    const policyNote = module.jurisdiction_and_agency_policy_note?.text || curriculumSectionText(module, "jurisdiction_and_agency_policy_note");
+    modulePdfSection(sections, "Jurisdiction and Agency Policy Note", [policyNote]);
+    (module.sections || [])
+      .filter(section => !["preamble", "training_overview", "learning_objectives", "definitions", "knowledge_check", "references_and_resources_for_additional_information", "jurisdiction_and_agency_policy_note"].includes(section.key))
+      .forEach(section => modulePdfSection(sections, section.heading, section.paragraphs || []));
+    modulePdfSection(sections, "Expected Artifacts or Evidence", module.expected_artifacts_or_evidence || [], "bullets");
+    modulePdfSection(sections, "Knowledge Check", knowledgeCheckQuestions(module).map((question, index) => `${index + 1}. ${question.prompt}`), "bullets");
+    modulePdfSection(sections, "References and Resources", module.references_and_resources || [], "bullets");
+    return sections;
+  }
   const sections = [];
   const backgroundSections = background.sections || [];
   const isDefinitionSection = section => /definition|what .* means/i.test(section.title || "");
@@ -3258,8 +3290,11 @@ async function downloadLearningModulePdf(moduleId) {
     [
       ["Audience", "Individual learners in state, territorial, local, and tribal public health departments"],
       ["Recommended use", "Self-paced learning, role preparation, governance readiness, and implementation planning"],
-      ["Related plays", module.plays.map(id => `Play ${id}`).join(", ") || "Not specified"],
-      ["Related tools", module.tools.map(id => `Tool ${id}`).join(", ") || "Not specified"]
+      ["Course ID", module.course_id || "Not specified"],
+      ["Primary track", module.primary_track_title || "Not specified"],
+      ["Appears in tracks", (module.tracks || []).join(", ") || "Not specified"],
+      ["Related plays", (module.plays || []).map(id => `Play ${id}`).join(", ") || "Not specified"],
+      ["Related tools", (module.tools || []).map(id => `Tool ${id}`).join(", ") || "Not specified"]
     ],
     collectLearningModulePdfSections(module, background, deepDive, application, narrative, moduleResources)
   );
@@ -3270,7 +3305,7 @@ function renderLearningQuiz(module) {
   const questions = knowledgeCheckQuestions(module);
   return `<section class="content-section training-section quiz-section">
     <h3>Knowledge Check</h3>
-    <p>Answer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record.</p>
+    <p>Answer the questions below. A score of 4 out of 5 or higher, or the equivalent passing score for assigned modules, marks this module complete in your local progress record.</p>
     ${progress.quizScore !== undefined ? `<div class="quiz-status ${progress.completed ? "complete" : "needs-work"}"><strong>Your saved score:</strong> ${progress.quizScore} / ${questions.length}. ${progress.completed ? "Module marked complete." : "Retake the knowledge check or add verification."}</div>` : ""}
     <form class="quiz-form" data-module-id="${module.id}">
       ${questions.map((question, qIndex) => `<fieldset>
@@ -3936,8 +3971,117 @@ function renderHome() {
     </section>`;
 }
 
+function curriculumTrackModules(trackId) {
+  if (trackId === "all-modules") {
+    return [...learningModules].sort((a, b) => String(a.course_id || a.title).localeCompare(String(b.course_id || b.title), undefined, { numeric: true }));
+  }
+  const data = window.CURRICULUM_DATA;
+  if (!data?.track_to_module_crosswalk) return [];
+  const moduleById = Object.fromEntries(learningModules.map(module => [module.id, module]));
+  return data.track_to_module_crosswalk
+    .filter(item => item.track_id === trackId)
+    .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))
+    .map(item => moduleById[item.module_id])
+    .filter(Boolean);
+}
+
+function curriculumModuleTrackLinks(module) {
+  const ids = module?.tracks || [];
+  if (!ids.length) return "";
+  const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
+  return `<section class="content-section">
+    <h3>Also Appears In</h3>
+    <div class="meta-row">${ids.map(id => {
+      const track = trackById[id];
+      return track ? `<a class="tag" href="#/learn-track/${id}">${track.title}</a>` : "";
+    }).join("")}</div>
+  </section>`;
+}
+
+function renderLearningTrackPage(trackId = "all-modules") {
+  const resolvedTrackId = trackId || "all-modules";
+  const track = learningTracks.find(item => item.track_id === resolvedTrackId) || learningTracks[0];
+  const modules = curriculumTrackModules(track.track_id);
+  const moduleNav = renderLearningModuleNav(track.track_id);
+  main.innerHTML = pageIntro("Learn: AI Foundations for Public Health", "Use these tracks to select a coherent sequence of modules for your role, function, or organization assignment.") + `
+    <div class="learn-layout">
+      ${moduleNav}
+      <div>
+        <article class="panel learning-track-detail">
+          <p class="eyebrow">Learning Track</p>
+          <h2>${track.title}</h2>
+          ${paragraphBlock(track.description || "")}
+          <div class="track-detail-grid">
+            ${track.primary_audience?.length ? `<section><h3>Primary Audience</h3><ul class="check-list">${track.primary_audience.map(item => `<li>${item}</li>`).join("")}</ul></section>` : ""}
+            ${track.recommended_use ? `<section><h3>Recommended Use</h3>${paragraphBlock(track.recommended_use)}</section>` : ""}
+            ${track.completion_standard ? `<section><h3>Completion Standard</h3>${paragraphBlock(track.completion_standard)}</section>` : ""}
+          </div>
+          <section class="content-section">
+            <h3>Modules in This Track</h3>
+            <div class="track-module-list">
+              ${modules.map((module, index) => `
+                <a class="track-module-card" href="#/learn/${module.id}">
+                  <span class="module-order">${index + 1}</span>
+                  <span>
+                    <strong>${module.display_title || module.title}</strong>
+                    <small>${module.level_label || "Module"}${module.primary_track_title ? ` · ${module.primary_track_title}` : ""}</small>
+                  </span>
+                </a>`).join("")}
+            </div>
+          </section>
+        </article>
+      </div>
+    </div></section>`;
+}
+
+function renderCurriculumReferences(module) {
+  const resources = module.references_and_resources || [];
+  if (!resources.length) return "";
+  return `<section class="content-section"><h3>References and Resources</h3><ul class="check-list">${resources.map(item => `<li>${item}</li>`).join("")}</ul></section>`;
+}
+
+function renderCurriculumKnowledgeCheck(module) {
+  const questions = knowledgeCheckQuestions(module);
+  if (!questions.length) return "";
+  return renderLearningQuiz(module);
+}
+
+function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossaryCta) {
+  const sectionsToSkip = new Set(["preamble", "training_overview", "learning_objectives", "definitions", "knowledge_check", "references_and_resources_for_additional_information", "jurisdiction_and_agency_policy_note", "practical_exercise", "expected_artifact_or_evidence"]);
+  const sections = (module.sections || []).filter(section => !sectionsToSkip.has(section.key));
+  const policyNote = module.jurisdiction_and_agency_policy_note?.text || curriculumSectionText(module, "jurisdiction_and_agency_policy_note");
+  const definitions = module.definitions || [];
+  const curriculumExercise = curriculumSectionText(module, "practical_exercise");
+  const exerciseApplication = curriculumExercise ? { exercise: curriculumExercise, artifacts: module.expected_artifacts_or_evidence || [] } : {};
+  main.innerHTML = pageIntro("Learn: AI Foundations for Public Health", "Use these lessons to build the knowledge you need before tool selection, pilot planning, readiness assessment, or governance review.") + `
+    <div class="learn-layout">
+      ${moduleNav}
+      <div>
+        <article class="panel">
+          <p class="eyebrow">${module.course_id || "Learning Module"}</p>
+          <h2>${module.display_title || module.title}</h2>
+          ${paragraphBlock(module.text)}
+          ${lessonDownloadButtons}
+          ${glossaryCta}
+          <section class="content-section">
+            <h3>Learning Objectives</h3>
+            <ul class="check-list">${(module.learning_objectives || []).map(item => `<li>${item}</li>`).join("")}</ul>
+          </section>
+          ${definitions.length ? `<section class="content-section lesson-prose definitions-section"><h3>Definitions</h3><dl class="definition-list">${definitions.map(item => `<dt>${item.term}</dt><dd>${item.definition}</dd>`).join("")}</dl></section>` : ""}
+          ${policyNote ? `<section class="content-section lesson-prose"><h3>Jurisdiction and Agency Policy Note</h3>${paragraphBlock(policyNote)}</section>` : ""}
+          ${sections.map(section => `<section class="content-section lesson-prose"><h3>${section.heading}</h3>${renderLearningSection(section)}</section>`).join("")}
+          ${renderPracticalExercise(module, exerciseApplication)}
+          ${curriculumModuleTrackLinks(module)}
+          ${renderCurriculumKnowledgeCheck(module)}
+          ${renderCurriculumReferences(module)}
+        </article>
+      </div>
+    </div></section>`;
+}
+
 function renderLearn(moduleId = "understanding-ai") {
-  const resolvedModuleId = moduleId === "deep-research" ? "understanding-ai" : moduleId;
+  if (!moduleId) return renderLearningTrackPage("all-modules");
+  const resolvedModuleId = curriculumModuleAliases[moduleId] || moduleId;
   const module = learningModules.find(m => m.id === resolvedModuleId) || learningModules[0];
   const background = backgroundMaterial[module.id] || {};
   const moduleResources = learningModuleResources[module.id] || [];
@@ -3958,6 +4102,7 @@ function renderLearn(moduleId = "understanding-ai") {
             <p>Use the glossary for plain-language explanations of AI, governance, privacy, validation, implementation, and public health terms used throughout the learning modules.</p>
             <a class="btn small" href="#/glossary">Open Glossary of Terms</a>
           </section>`;
+  if (module.curriculumSource) return renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossaryCta);
   if (module.id === "staff-training") {
     main.innerHTML = pageIntro("Learn: AI Foundations for Public Health", "Use these lessons to build the knowledge you need before tool selection, pilot planning, readiness assessment, or governance review.") + `
     <div class="learn-layout">
@@ -7522,24 +7667,98 @@ const learningTracks = [
   }
 ];
 
+const curriculumModuleAliases = {
+  "understanding-ai": "int-190-ai-for-social-good",
+  "predictive-ai": "anl-220-predictive-analytics-and-risk-stratification",
+  "generative-ai": "com-200-ai-for-public-health-communications-and-message-development",
+  "agentic-ai": "arc-320-agentic-workflow-design-and-orchestration",
+  "deep-research": "arc-300-retrieval-augmented-generation-for-public-health-knowledge-work",
+  "workflows": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
+  "risks": "gov-410-ai-risk-appetite-and-risk-tolerance-for-public-health",
+  "systems-shift": "arc-200-public-health-data-modernization-and-ai-architecture",
+  "digital-determinants": "pol-330-ai-equity-policy-and-civil-rights-considerations",
+  "human-centered-ai": "ops-220-human-factors-workflow-integration-and-usability-testing",
+  "ai-literacy": "int-200-ai-use-case-intake-and-triage-basics",
+  "automation-bias": "anl-310-evaluation-of-generative-ai-outputs",
+  "missing-voices": "anl-330-equity-evaluation-for-ai-models",
+  "public-transparency": "gov-420-public-accountability-and-ai-transparency-reporting",
+  "tiered-data-use": "gov-330-data-governance-for-ai-ready-public-health-data",
+  "environmental-impact": "exe-450-ai-sustainability-and-lifecycle-funding",
+  "bridge-professional": "exe-440-workforce-strategy-and-ai-role-design",
+  "funding": "pmg-310-grant-and-funding-management-for-ai-projects",
+  "procurement-vendor-oversight": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
+  "privacy-confidentiality-public-records": "gov-310-privacy-preserving-ai-and-de-identification",
+  "model-validation-evaluation-basics": "anl-300-advanced-model-validation-and-evaluation-for-public-health-ai",
+  "ai-incident-response": "exe-470-ai-crisis-communications-and-executive-response",
+  "role-based-ai-guidelines": "gov-350-identity-access-and-permissions-for-ai-workflows",
+  "responsible-prompting-review": "arc-310-prompt-engineering-for-technical-public-health-work",
+  "community-engagement-ai": "gov-430-community-oversight-and-participatory-governance",
+  "accessibility-language-access": "com-210-ai-assisted-translation-language-access-and-readability-review",
+  "cybersecurity-secure-ai-use": "gov-300-ai-security-prompt-injection-and-data-leakage",
+  "when-not-to-use-ai": "gov-410-ai-risk-appetite-and-risk-tolerance-for-public-health",
+  "ai-support-areas": "ops-310-measuring-ai-value-performance-and-operational-impact"
+};
+
+function curriculumSection(module, key) {
+  return (module?.sections || []).find(section => section.key === key);
+}
+
+function curriculumSectionText(module, key, fallback = "") {
+  const section = curriculumSection(module, key);
+  return (section?.paragraphs || []).join("\n\n") || fallback;
+}
+
+function applyCurriculumPackage() {
+  const data = window.CURRICULUM_DATA;
+  if (!data?.modules?.length || !data?.tracks?.length) return;
+  learningModules.length = 0;
+  data.modules.forEach(module => {
+    const overview = curriculumSectionText(module, "training_overview", module.raw_text || "");
+    const risk = curriculumSectionText(module, "risks_failure_modes_and_guardrails", "Use agency governance, legal, privacy, equity, security, and operational review before applying this topic to real public health work.");
+    learningModules.push({
+      ...module,
+      curriculumSource: true,
+      text: overview,
+      risk,
+      examples: [],
+      plays: [],
+      tools: []
+    });
+  });
+  learningTracks.length = 0;
+  learningTracks.push({
+    track_id: "all-modules",
+    title: "All Modules",
+    short_title: "All Modules",
+    description: "Complete index of all curriculum modules across the training catalog. Use this view when you want to browse every available module rather than follow a role-based track.",
+    primary_audience: ["All learners"],
+    recommended_use: "Use to browse the full curriculum catalog.",
+    completion_standard: "Complete modules assigned by your organization or selected for your role.",
+    module_count: learningModules.length
+  });
+  data.tracks.forEach(track => learningTracks.push(track));
+}
+
+applyCurriculumPackage();
+
 function learningModuleButton(module, activeId) {
   return `<button class="${module.id===activeId ? "active" : ""}" onclick="location.hash='#/learn/${module.id}'">${module.title.replace("Artificial Intelligence","AI")}</button>`;
 }
 
-function renderLearningModuleNav(activeId) {
-  const moduleById = Object.fromEntries(learningModules.map(module => [module.id, module]));
+function renderLearningModuleNav(activeId = "") {
+  const activeModule = learningModules.find(module => module.id === activeId);
+  const activeTrackIds = new Set(activeModule?.tracks || []);
   return `<aside class="filter-panel learning-topic-panel">
         <h2>Learning Topics</h2>
         <a class="side-link prominent" href="#/glossary">Glossary of Terms</a>
         <div class="learning-track-list">
           ${learningTracks.map(track => {
-            const modules = track.title === "All Modules"
-              ? learningModules
-              : (track.ids || []).map(id => moduleById[id]).filter(Boolean);
-            return `<section class="learning-track">
-              <h3>${track.title}</h3>
-              <div class="side-list">${modules.map(module => learningModuleButton(module, activeId)).join("")}</div>
-            </section>`;
+            const trackId = track.track_id || track.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+            const active = activeId === trackId || activeTrackIds.has(trackId);
+            return `<a class="learning-track-link ${active ? "active" : ""}" href="#/learn-track/${trackId}">
+              <strong>${track.title}</strong>
+              <span>${track.module_count || 0} modules</span>
+            </a>`;
           }).join("")}
         </div>
       </aside>`;
@@ -7551,7 +7770,7 @@ function moduleDeckFilename(module, index) {
 }
 
 learningModules.forEach((module, index) => {
-  lessonDeckDownloads[module.id] = moduleDeckFilename(module, index);
+  if (!module.curriculumSource) lessonDeckDownloads[module.id] = moduleDeckFilename(module, index);
 });
 
 function renderGlossary() {

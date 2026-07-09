@@ -244,6 +244,76 @@ main { min-height: calc(100vh - 144px); }
   letter-spacing: .12em;
   line-height: 1.25;
 }
+.learning-track-link {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--ink);
+  display: grid;
+  gap: .18rem;
+  padding: .75rem .85rem;
+  text-decoration: none;
+}
+.learning-track-link strong {
+  color: var(--blue);
+  font-size: .98rem;
+  line-height: 1.25;
+}
+.learning-track-link span {
+  color: var(--muted);
+  font-size: .84rem;
+}
+.learning-track-link:hover,
+.learning-track-link.active {
+  background: var(--pale-blue);
+  border-color: var(--blue);
+}
+.track-detail-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1.25rem;
+}
+.track-detail-grid section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.track-module-list {
+  display: grid;
+  gap: .75rem;
+}
+.track-module-card {
+  align-items: start;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--ink);
+  display: grid;
+  gap: .85rem;
+  grid-template-columns: 2.25rem 1fr;
+  padding: .9rem 1rem;
+  text-decoration: none;
+}
+.track-module-card:hover {
+  background: var(--pale-blue);
+  border-color: var(--blue);
+}
+.module-order {
+  align-items: center;
+  background: var(--blue);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-weight: 800;
+  height: 1.75rem;
+  justify-content: center;
+  width: 1.75rem;
+}
+.track-module-card small {
+  color: var(--muted);
+  display: block;
+  margin-top: .2rem;
+}
 .toolkit-layout { grid-template-columns: 260px 1fr; gap: 2.5rem; }
 h1, h2, h3, h4 {
   color: var(--ink);
