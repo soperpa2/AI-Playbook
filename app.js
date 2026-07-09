@@ -3139,12 +3139,12 @@ function renderHome() {
           <article class="mini-card"><h3>3. Save decisions as records</h3><p>Completed tools should become implementation artifacts: readiness profiles, policies, charters, risk reviews, workplans, approval records, dashboards, and monitoring logs.</p></article>
           <article class="mini-card"><h3>4. Customize the path</h3><p>Use readiness assessment findings and work already completed to decide which plays and tools need full completion, update, validation, or governance review.</p></article>
         </div>
-        <div class="button-row"><a class="btn primary" href="#/plays">Open 13-Play Framework</a><a class="btn" href="#/toolkit">Open Toolkit</a><a class="btn" href="#/assess">Take Readiness Assessment</a></div>
+        <div class="button-row"><a class="btn primary" href="#/plays">Open Planning and Implementation Playbook</a><a class="btn" href="#/toolkit">Open Toolkit</a><a class="btn" href="#/assess">Take Readiness Assessment</a></div>
       </section>
       <section class="panel playbook-overview">
         <p class="eyebrow">Toolkit Organization</p>
         <h2>${tools.length} tools, used in the sequence of implementation</h2>
-        <p>The integrated toolkit contains practical, fillable instruments that support the plays. Tools 1-${tools.length} are mapped to the current 13-play sequence and support readiness, governance, stakeholder engagement, workforce development, change management, use case prioritization, deployment, monitoring, auditing, policy maintenance, and ASPPH-informed STLT implementation needs.</p>
+        <p>The integrated toolkit contains practical, fillable instruments that support the plays. Tools 1-${tools.length} are mapped to the current play sequence and support readiness, governance, stakeholder engagement, workforce development, change management, use case prioritization, deployment, monitoring, auditing, policy maintenance, and ASPPH-informed STLT implementation needs.</p>
         <div class="table-wrap">
           <table>
             <thead><tr><th>Tool Group</th><th>Purpose</th><th>Examples</th></tr></thead>
@@ -3172,7 +3172,7 @@ function renderHome() {
         <article class="card"><h3>Start with Vision</h3><p>Create AI vision, principles, and guardrails before projects begin.</p><a class="btn small" href="#/plays/1">Open section</a></article>
         <article class="card"><h3>Take the Assessment</h3><p>Complete the readiness assessment to identify gaps, recommended plays, and planning priorities.</p><a class="btn small" href="#/assess">Open assessment</a></article>
         <article class="card"><h3>Set Governance</h3><p>Form committee, policy, charter, documentation, and data-use controls early.</p><a class="btn small" href="#/plays/3">Open section</a></article>
-        <article class="card"><h3>Run the Framework</h3><p>Use the 13 plays and ${tools.length} tools together as an implementation system.</p><a class="btn small" href="#/plays">Open framework</a></article>
+        <article class="card"><h3>Run the Playbook</h3><p>Use the plays and ${tools.length} tools together as an implementation system.</p><a class="btn small" href="#/plays">Open playbook</a></article>
         <article class="card"><h3>Join the Community</h3><p>Ask questions, exchange implementation lessons, and compare approaches with peers.</p><a class="btn small" href="#/community">Open forum</a></article>
       </div>
       <section class="panel background-panel">
@@ -3551,7 +3551,7 @@ function renderMaturity() {
 }
 
 function renderPlays() {
-  main.innerHTML = pageIntro("13-Play Planning and Implementation Framework", "A guided roadmap for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.") + `
+  main.innerHTML = pageIntro("12-Play Planning and Implementation Playbook", "A guided roadmap for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.") + `
     <section class="plays-overview-grid">
       <div class="framework-intro">
         <div>
@@ -3569,7 +3569,7 @@ function renderPlays() {
           </section>
         </div>
         <aside>
-          <strong>13 plays</strong>
+          <strong>Playbook</strong>
           <span>${tools.length} supporting tools</span>
           <span>4 implementation phases</span>
         </aside>
@@ -5106,7 +5106,7 @@ function renderMember() {
   const bookmarks = state.bookmarks?.length ? state.bookmarks : [
     { title: "AI Foundations", href: "#/learn" },
     { title: "Readiness Assessment", href: "#/assess" },
-    { title: "13-Play Framework", href: "#/plays" },
+    { title: "Planning and Implementation Playbook", href: "#/plays" },
     { title: "Toolkit Library", href: "#/toolkit" },
     { title: "Case Studies", href: "#/case-studies" },
     { title: "References", href: "#/references" }

@@ -35,12 +35,12 @@ Then visit `http://localhost:5173`.
 - Responsive Start Here, Learn, Assess, Maturity Model, Plays, Toolkit, Case Studies, My Account, Organization Hub, Community, Contribute, Resources, Contact Us, and In the News sections.
 - Interactive AI Readiness Self-Assessment based on six domains with results normalized to a 100-point score.
 - Assessment results recommend relevant plays and tools while still allowing departments to choose the plays and tools most useful for their goals.
-- 13-play planning and implementation framework:
+- Planning and implementation playbook:
   - PLAN: Plays 1-7
   - BUILD: Plays 8-9
   - DEPLOY: Plays 10-11
   - GOVERN: Plays 12-13
-- Individual generated pages for all 13 plays.
+- Individual generated pages for each play.
 - Searchable and filterable library for all 48 tools.
 - Individual generated pages for all 48 tools with fillable web fields and document download actions.
 - Member and organization workspace prototypes, including progress tracking, workplan/tracker views, training assignment concepts, and export actions.
