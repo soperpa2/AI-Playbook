@@ -1576,7 +1576,12 @@ const backgroundMaterial = {
       { title: "Why This Comes First", body: "Understanding what these systems can and cannot do is the starting point for responsible adoption. Agencies need a shared vocabulary before they can set guardrails, evaluate vendors, select use cases, or explain AI-supported workflows to staff and communities." }
     ],
     bulletsTitle: "Core concepts",
-    bullets: ["AI is not one technology or one product category.", "Generative AI produces new content from prompts and source material.", "Agentic AI can coordinate a sequence of actions across systems under defined rules.", "Public health use requires human review, privacy protections, equity monitoring, and governance."]
+    bullets: [
+      "AI is not one technology or one product category. In public health, the word AI may refer to predictive models, classification tools, natural-language processing, generative drafting systems, retrieval tools, automation inside vendor platforms, or agentic workflows that coordinate several steps. Treating these as interchangeable can lead to poor procurement choices, weak safeguards, and confusion about who is accountable for decisions.",
+      "Generative AI produces new content from prompts and source material. It can draft, summarize, translate, rewrite, organize, or explain information, but it does not inherently know whether a statement is true, current, equitable, legally appropriate, or consistent with local policy. For public health use, generative outputs should be treated as drafts that require human review and, when possible, grounding in approved source material.",
+      "Agentic AI can coordinate a sequence of actions across systems under defined rules. This may include monitoring an inbox, retrieving documents, creating a task, routing a summary, or updating a dashboard. Because agentic systems can initiate steps rather than simply generate text, they require clearer boundaries, audit logs, role-based access, and human approval points before they are used in public health operations.",
+      "Public health use requires human review, privacy protections, equity monitoring, and governance. AI can affect trust, service access, surveillance, communications, and resource decisions even when the tool seems administrative. A responsible approach makes the workflow, data, human decision owner, review steps, escalation process, and monitoring expectations visible before the tool is used."
+    ]
   },
   "generative-ai": {
     sections: [
@@ -1827,11 +1832,33 @@ const learningModuleResources = {
 
 const learningModuleDeepDive = {
   "understanding-ai": {
-    overview: "Public health staff do not need to become machine learning engineers, but they do need a shared working understanding of what AI is, where it can fail, and what kinds of tasks are appropriate for different AI approaches. This module helps teams distinguish pattern recognition, predictive analytics, generative AI, retrieval-augmented generation, and agentic workflows so planning discussions do not treat every AI product as the same kind of intervention.",
+    overview: "You do not need to become a machine learning engineer to participate in responsible AI planning, but you do need a shared working understanding of what AI is, where it can fail, and what kinds of tasks are appropriate for different AI approaches. This module helps you distinguish pattern recognition, predictive analytics, generative AI, retrieval-augmented generation, and agentic workflows so planning discussions do not treat every AI product as the same kind of intervention. That distinction matters because a tool that drafts a message, a tool that predicts risk, and a tool that routes work across systems require different data protections, review steps, validation methods, and accountability controls.",
     sections: [
-      { title: "What Staff Should Be Able to Do", items: ["Explain AI in plain language to program staff, leaders, partners, and community members.", "Identify whether a proposed use is content generation, search and retrieval, prediction, classification, workflow automation, or decision support.", "Name the human role responsible for reviewing, approving, correcting, or rejecting AI-supported outputs.", "Recognize that data quality, workflow design, governance, and public trust are as important as model performance."] },
-      { title: "Public Health Application", items: ["Use AI concepts to map where an agency already has informal AI use, such as staff drafting messages with public tools or vendors embedding AI into existing platforms.", "Use a common vocabulary during governance review so privacy, IT, program, legal, equity, and communications staff can evaluate the same workflow together.", "Translate technical capabilities into public health value: faster review, better consistency, broader language access, clearer documentation, or earlier signal detection."] },
-      { title: "Implementation Check", items: ["Before any AI project begins, confirm the purpose, data involved, intended users, public impact, review requirements, and escalation pathway.", "Document what the AI is allowed to do and what decisions remain with qualified public health staff.", "Avoid selecting tools before the department has established vision, readiness, governance, and data-use expectations."] }
+      {
+        title: "What You Should Be Able to Do",
+        paragraphs: [
+          "You should be able to explain AI in plain language without relying on technical jargon. A useful explanation is that AI systems use data and rules learned from examples to recognize patterns, generate content, classify information, predict possible outcomes, or support a defined workflow. For public health colleagues, the most important point is not the algorithm name. The important point is what the system does, what information it uses, what output it produces, and what human review is required before the output affects public health work.",
+          "You should be able to classify a proposed AI use by the type of support it provides. Content generation includes drafting a message, summarizing a report, or rewriting text for plain language. Search and retrieval includes finding relevant information from approved documents or policies. Prediction and classification include identifying possible risk, grouping incoming reports, or prioritizing records for review. Workflow automation includes routing tasks, creating reminders, or updating work queues. Decision support includes organizing evidence for a person who remains responsible for judgment and action. Classifying the use correctly helps determine the level of review, documentation, validation, and governance needed.",
+          "You should be able to name the human role responsible for reviewing, approving, correcting, or rejecting AI-supported outputs. Responsible AI use does not end with a technically accurate output. A public health decision may require legal authority, epidemiologic judgment, local context, equity review, plain-language communication, or community trust. The person or role accountable for the workflow should be clear before the AI tool is used, especially when outputs may affect public communication, eligibility, outreach, surveillance prioritization, inspection documentation, or resource allocation.",
+          "You should recognize that data quality, workflow design, governance, and public trust are as important as model performance. A technically impressive model can still be inappropriate if the data are incomplete, the workflow is poorly designed, the review process is unclear, or affected communities cannot understand how AI is being used. Strong AI planning starts with a public health problem and a workflow, then asks whether AI can help safely within existing legal, ethical, operational, and community expectations."
+        ]
+      },
+      {
+        title: "Public Health Application",
+        paragraphs: [
+          "Use these AI concepts to identify where AI may already be present in your department. Informal use can include staff drafting emails or public messages with consumer AI tools, analysts using AI-assisted coding features, communications teams summarizing meeting notes, or programs using vendor platforms that quietly add AI-enabled triage, search, forecasting, translation, or reporting features. An early inventory does not need to be punitive. Its purpose is to understand what is already happening, where sensitive data may be involved, and where staff need clearer guidance.",
+          "A common vocabulary helps different roles evaluate the same workflow together. Privacy staff may focus on the data being entered, legal staff may focus on authority and liability, IT may focus on security and integration, program staff may focus on usefulness and burden, equity staff may focus on differential impact, and communications staff may focus on public understanding. When everyone can distinguish drafting, retrieval, prediction, classification, workflow automation, and decision support, the conversation becomes more precise and less driven by hype or fear.",
+          "Translate technical capabilities into public health value before selecting a tool. AI should not be adopted because it is new or because a vendor says it is innovative. It should help address a defined public health need such as faster review of records, more consistent documentation, clearer plain-language communication, broader language access, earlier signal detection, better routing of work, or more complete preparation for governance decisions. If the public health value is vague, the use case is not ready for approval."
+        ]
+      },
+      {
+        title: "Implementation Check",
+        paragraphs: [
+          "Before any AI project begins, confirm the purpose of the use, the data involved, the intended users, the people or communities affected, the public impact, the review requirements, and the escalation pathway. These questions should be answered before procurement, pilot approval, or workflow redesign. If the department cannot explain what the AI will do and how people will review it, the project should remain in planning rather than moving into implementation.",
+          "Document what the AI is allowed to do and what decisions remain with qualified public health staff. For example, a system may be allowed to draft a situation summary, flag a possible anomaly, translate an internal draft, or prepare a task list. It may not be allowed to issue a public alert, make an enforcement decision, determine eligibility, contact a community member, or change an official record without human approval. Drawing this line early prevents confusion after the tool becomes part of daily work.",
+          "Avoid selecting tools before the department has established vision, readiness, governance, and data-use expectations. Tool selection should follow a clear understanding of the problem, the workflow, the available data, the risk tier, the human decision owner, and the safeguards needed. If your department already has data governance, technology governance, privacy review, procurement standards, or quality improvement processes, use and adapt those processes rather than creating a disconnected AI process from scratch."
+        ]
+      }
     ]
   },
   "staff-training": {
@@ -2980,6 +3007,12 @@ function trainingSectionBlock(items = []) {
   return `<ul class="check-list lesson-points">${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
 }
 
+function renderLearningSection(section) {
+  const paragraphs = section.paragraphs || [];
+  if (paragraphs.length) return paragraphs.map(paragraph => paragraphBlock(paragraph)).join("");
+  return trainingSectionBlock(section.items || []);
+}
+
 function learningObjectiveItems(module, application = {}) {
   const baseObjectives = [
     "Define the concept in plain language for colleagues, leaders, partners, and community-facing discussions.",
@@ -3055,7 +3088,7 @@ function collectLearningModulePdfSections(module, background, deepDive, applicat
   modulePdfSection(sections, "Module Overview", [deepDive.overview || module.text]);
   if (definitionSections.length) modulePdfSection(sections, "Definitions", definitionSections.map(section => `${section.title}: ${section.body}`));
   modulePdfSection(sections, "Lesson Context", narrative);
-  (deepDive.sections || []).forEach(section => modulePdfSection(sections, section.title, section.items || []));
+  (deepDive.sections || []).forEach(section => modulePdfSection(sections, section.title, section.paragraphs || section.items || []));
   remainingBackgroundSections.forEach(section => modulePdfSection(sections, section.title, [section.body]));
   if (background.bullets?.length) modulePdfSection(sections, background.bulletsTitle || "Key Points", background.bullets);
   if (background.table?.length) modulePdfSection(sections, module.id === "workflows" ? "Workflow Stages and AI Applications" : "Examples and Applications", background.table.map(row => row.join(" | ")));
@@ -3640,7 +3673,7 @@ function renderLearn(moduleId = "understanding-ai") {
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
           ${narrative.length ? `<section class="content-section lesson-prose training-section"><h3>How to Use the Learning Section</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
-          ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose training-section"><h3>${section.title}</h3>${trainingSectionBlock(section.items)}</section>`).join("")}
+          ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose training-section"><h3>${section.title}</h3>${renderLearningSection(section)}</section>`).join("")}
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Learning</h3>${paragraphBlock(application.matters)}</section>` : ""}
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to decide how you will complete, document, and apply the learning module to governance or implementation work.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
           ${renderPracticalExercise(module, application)}
@@ -3721,7 +3754,7 @@ function renderLearn(moduleId = "understanding-ai") {
           ${deepDive.overview ? `<section class="content-section lesson-prose"><h3>Module Overview</h3>${paragraphBlock(deepDive.overview)}</section>` : ""}
           ${definitionSections.length ? `<section class="content-section lesson-prose"><h3>Definitions</h3>${definitionSections.map(section=>`<p><strong>${section.title}:</strong> ${section.body}</p>`).join("")}</section>` : ""}
           ${narrative.length ? `<section class="content-section lesson-prose"><h3>Lesson Context</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
-          ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose"><h3>${section.title}</h3>${trainingSectionBlock(section.items)}</section>`).join("")}
+          ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose"><h3>${section.title}</h3>${renderLearningSection(section)}</section>`).join("")}
           ${remainingBackgroundSections.map(section=>`<section class="content-section lesson-prose"><h3>${section.title}</h3>${paragraphBlock(section.body)}</section>`).join("")}
           ${background.bullets ? `<section class="content-section"><h3>${background.bulletsTitle || "Key points"}</h3><ul class="check-list">${background.bullets.map(x=>`<li>${x}</li>`).join("")}</ul></section>` : ""}
           ${background.table ? `<section class="content-section"><h3>${module.id === "workflows" ? "Workflow Stages and AI Applications" : "Funding Sources and AI Applications"}</h3><div class="table-wrap"><table><thead><tr>${module.id === "workflows" ? "<th>Workflow Stage</th><th>Description</th><th>AI Applications</th>" : "<th>Funding Source</th><th>AI Applications</th>"}</tr></thead><tbody>${background.table.map(row=>`<tr>${row.map(cell=>`<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>` : ""}
