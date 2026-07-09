@@ -3101,7 +3101,7 @@ function renderHome() {
           </div>
         </div>
         <aside class="journey-sidebar" aria-label="Recommended journey">
-          <img class="hero-logo" src="assets/ai-playbook-logo-public-health.png" alt="AI Playbook for Public Health" />
+          <img class="hero-logo" src="assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt="AI Playbook for Public Health" />
           <h3>Recommended Journey</h3>
           <div class="journey-list">
             ${[
