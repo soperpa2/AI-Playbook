@@ -3240,7 +3240,7 @@ function collectLearningModulePdfSections(module, background, deepDive, applicat
     modulePdfSection(sections, "Jurisdiction and Agency Policy Note", [policyNote]);
     (module.sections || [])
       .filter(section => !["preamble", "training_overview", "learning_objectives", "definitions", "knowledge_check", "references_and_resources_for_additional_information", "jurisdiction_and_agency_policy_note"].includes(section.key))
-      .forEach(section => modulePdfSection(sections, section.heading, section.paragraphs || []));
+      .forEach(section => modulePdfSection(sections, curriculumSectionHeading(module, section), section.paragraphs || []));
     modulePdfSection(sections, "Expected Artifacts or Evidence", module.expected_artifacts_or_evidence || [], "bullets");
     modulePdfSection(sections, "Knowledge Check", knowledgeCheckQuestions(module).map((question, index) => `${index + 1}. ${question.prompt}`), "bullets");
     modulePdfSection(sections, "References and Resources", module.references_and_resources || [], "bullets");
@@ -4187,6 +4187,21 @@ function renderCurriculumKnowledgeCheck(module) {
   return renderLearningQuiz(module);
 }
 
+function isTechnicalCurriculumModule(module) {
+  const technicalTrackCodes = new Set(["ARC", "ANL", "OPS", "GOV"]);
+  const primaryCode = String(module.primary_track_code || module.course_code || "").toUpperCase();
+  return technicalTrackCodes.has(primaryCode);
+}
+
+function curriculumSectionHeading(module, section) {
+  const heading = section?.heading || "";
+  if (!heading) return heading;
+  if (isTechnicalCurriculumModule(module)) return heading;
+  return heading
+    .replace(/^Technical and Operational Deep Dive$/i, "Topic Deep Dive")
+    .replace(/^Technical Deep Dive$/i, "Topic Deep Dive");
+}
+
 function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossaryCta) {
   const sectionsToSkip = new Set(["preamble", "training_overview", "learning_objectives", "definitions", "knowledge_check", "references_and_resources_for_additional_information", "jurisdiction_and_agency_policy_note", "practical_exercise", "expected_artifact_or_evidence"]);
   const sections = (module.sections || []).filter(section => !sectionsToSkip.has(section.key));
@@ -4210,7 +4225,7 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
           </section>
           ${definitions.length ? `<section class="content-section lesson-prose definitions-section"><h3>Definitions</h3><dl class="definition-list">${definitions.map(item => `<dt>${item.term}</dt><dd>${item.definition}</dd>`).join("")}</dl></section>` : ""}
           ${policyNote ? `<section class="content-section lesson-prose"><h3>Jurisdiction and Agency Policy Note</h3>${paragraphBlock(policyNote)}</section>` : ""}
-          ${sections.map(section => `<section class="content-section lesson-prose"><h3>${section.heading}</h3>${renderLearningSection(section)}</section>`).join("")}
+          ${sections.map(section => `<section class="content-section lesson-prose"><h3>${curriculumSectionHeading(module, section)}</h3>${renderLearningSection(section)}</section>`).join("")}
           ${renderPracticalExercise(module, exerciseApplication)}
           ${curriculumModuleTrackLinks(module)}
           ${renderCurriculumKnowledgeCheck(module)}
