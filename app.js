@@ -3998,6 +3998,147 @@ function curriculumModuleTrackLinks(module) {
   </section>`;
 }
 
+function renderLearnLanding() {
+  const tracks = learningTracks.filter(track => track.track_id !== "all-modules");
+  const technicalTrackIds = ["technical-architecture", "analytics-modeling", "operations-data-quality", "governance-security"];
+  const roleTrackIds = ["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management"];
+  const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
+  const trackButton = id => {
+    const track = trackById[id];
+    return track ? `<a class="curriculum-node ${id}" href="#/learn-track/${id}">${track.short_title || track.title}</a>` : "";
+  };
+  const allModules = curriculumTrackModules("all-modules");
+  main.innerHTML = `<section class="page learn-landing-page">
+    ${breadcrumbTrail()}
+    <section class="learn-hero">
+      <div>
+        <p class="eyebrow">AI Playbook Curriculum</p>
+        <h1>Learn</h1>
+        <p class="lead">Build practical AI knowledge for public health through shared foundational learning, technical tracks, governance and security training, and role-based modules. The curriculum is designed to help staff, leaders, and partners apply AI responsibly in real public health workflows.</p>
+        <div class="button-row">
+          <a class="btn primary" href="#/learn-track/shared-foundational">Start with the Shared Foundation</a>
+          <a class="btn" href="#/learn-track/all-modules">Browse All Modules</a>
+        </div>
+      </div>
+      <div class="learn-hero-visual" aria-hidden="true">
+        <div class="book-icon">
+          <span>AI</span>
+        </div>
+        <div class="knowledge-lines">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel curriculum-overview-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Curriculum Overview</p>
+        <h2>How the Learning Modules Are Organized</h2>
+        <p>The shared foundational course creates a common vocabulary and baseline for responsible AI use. From there, learners can follow technical tracks, governance and security training, or role-based tracks depending on their responsibilities.</p>
+      </div>
+      <div class="curriculum-map-graphic" aria-label="Curriculum structure">
+        <a class="curriculum-base" href="#/learn-track/shared-foundational">
+          <strong>Shared Foundational Course</strong>
+          <span>Common language, risks, safeguards, responsible use, and public health context</span>
+        </a>
+        <div class="curriculum-branches">
+          <section class="curriculum-branch technical">
+            <h3>Technical Tracks</h3>
+            <div class="curriculum-node-grid">
+              ${technicalTrackIds.map(trackButton).join("")}
+            </div>
+          </section>
+          <section class="curriculum-branch role-based">
+            <h3>Role-Based Tracks</h3>
+            <div class="curriculum-node-grid">
+              ${roleTrackIds.map(trackButton).join("")}
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Learning Tracks</p>
+        <h2>Choose the Track That Matches Your Role or Function</h2>
+      </div>
+      <div class="track-card-grid">
+        ${tracks.map(track => `
+          <article class="track-card">
+            <div>
+              <p class="track-code">${track.track_code}</p>
+              <h3>${track.title}</h3>
+              <p>${track.description}</p>
+            </div>
+            <div class="track-card-meta">
+              <p><strong>Audience:</strong> ${(track.primary_audience || []).slice(0, 3).join(", ")}${(track.primary_audience || []).length > 3 ? ", and others" : ""}</p>
+              <p><strong>Use:</strong> ${track.recommended_use || "Use as assigned based on role and implementation responsibilities."}</p>
+              <p><strong>${track.module_count}</strong> modules</p>
+            </div>
+            <a class="btn small" href="#/learn-track/${track.track_id}">View Track</a>
+          </article>`).join("")}
+      </div>
+    </section>
+
+    <section class="panel module-features-panel">
+      <div class="section-heading compact">
+        <p class="eyebrow">Module Features</p>
+        <h2>What You Will Find in the Modules</h2>
+      </div>
+      <div class="feature-card-grid">
+        <article><h3>Learning Objectives</h3><p>Each module states what you should understand, apply, and produce by the end of the lesson.</p></article>
+        <article><h3>Practical Exercises</h3><p>Exercises help you create artifacts that can support readiness, governance, implementation, monitoring, or accountability work.</p></article>
+        <article><h3>Knowledge Checks</h3><p>Short checks help confirm that you understand the key decisions, risks, safeguards, and documentation expectations.</p></article>
+        <article><h3>References and Resources</h3><p>Modules include source material and additional resources for deeper review, policy alignment, and role-specific learning.</p></article>
+      </div>
+    </section>
+
+    <section class="panel how-to-learn-panel">
+      <div class="section-heading compact">
+        <p class="eyebrow">How to Use This Learning Section</p>
+        <h2>Move from Shared Foundation to Applied Practice</h2>
+      </div>
+      <ol class="learning-steps">
+        <li><strong>Start with the shared foundation.</strong><span>Build a common baseline before selecting AI tools, reviewing vendors, approving pilots, or using AI in public health workflows.</span></li>
+        <li><strong>Choose a functional or role-based track.</strong><span>Select the technical, governance, operations, communications, epidemiology, policy, executive, or program management path that fits your responsibilities.</span></li>
+        <li><strong>Use modules to support real implementation work.</strong><span>Apply exercises, knowledge checks, references, and artifacts to plays, tools, governance reviews, procurement, deployment, and monitoring.</span></li>
+      </ol>
+      <div class="callout blue"><strong>Note:</strong> Modules can appear in more than one track to support different roles and levels of responsibility.</div>
+    </section>
+
+    <section class="panel curriculum-crosswalk-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Track / Module Crosswalk</p>
+        <h2>Modules by Track</h2>
+        <p>This list is sourced from the curriculum crosswalk. Course IDs and module order are preserved so modules can pair with their JSON files, PowerPoint decks, track assignments, and future member training records.</p>
+      </div>
+      <div class="track-crosswalk-list">
+        ${tracks.map(track => {
+          const modules = curriculumTrackModules(track.track_id);
+          return `<details class="track-crosswalk" ${track.track_id === "shared-foundational" ? "open" : ""}>
+            <summary><span>${track.title}</span><strong>${modules.length} modules</strong></summary>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Course ID</th><th>Module</th><th>Level</th><th>Primary Track</th><th>Open</th></tr></thead>
+                <tbody>
+                  ${modules.map(module => `<tr>
+                    <td>${module.course_id || ""}</td>
+                    <td>${module.title}</td>
+                    <td>${module.level_label || ""}</td>
+                    <td>${module.primary_track_title || ""}</td>
+                    <td><a href="#/learn/${module.id}">Open module</a></td>
+                  </tr>`).join("")}
+                </tbody>
+              </table>
+            </div>
+          </details>`;
+        }).join("")}
+      </div>
+    </section>
+  </section>`;
+}
+
 function renderLearningTrackPage(trackId = "all-modules") {
   const resolvedTrackId = trackId || "all-modules";
   const track = learningTracks.find(item => item.track_id === resolvedTrackId) || learningTracks[0];
@@ -4080,7 +4221,7 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
 }
 
 function renderLearn(moduleId = "understanding-ai") {
-  if (!moduleId) return renderLearningTrackPage("all-modules");
+  if (!moduleId) return renderLearnLanding();
   const resolvedModuleId = curriculumModuleAliases[moduleId] || moduleId;
   const module = learningModules.find(m => m.id === resolvedModuleId) || learningModules[0];
   const background = backgroundMaterial[module.id] || {};
@@ -4088,7 +4229,7 @@ function renderLearn(moduleId = "understanding-ai") {
   const deepDive = learningModuleDeepDive[module.id] || {};
   const application = learningModuleApplicationDetails[module.id] || {};
   const narrative = learningModuleNarrative[module.id] || [];
-  const deckDownload = lessonDeckDownloads[module.id];
+  const deckDownload = module.deck_path || lessonDeckDownloads[module.id];
   const lessonDownloadButtons = `<div class="button-row lesson-downloads no-print">${deckDownload ? `<a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a>` : ""}<button class="btn" type="button" onclick="runDocumentDownload(() => downloadLearningModulePdf('${module.id}'), 'Lesson PDF')">Download Lesson PDF</button></div>`;
   const backgroundSections = background.sections || [];
   const isDefinitionSection = section => /definition|what .* means/i.test(section.title || "");
