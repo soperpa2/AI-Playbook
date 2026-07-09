@@ -575,6 +575,25 @@ p { margin: 0 0 1rem; }
   color: var(--muted);
   font-weight: 700;
 }
+.use-playbook-panel {
+  margin-top: 1.55rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(0, 104, 183, .16);
+}
+.use-playbook-panel h3 {
+  color: var(--blue-dark);
+  font-size: 1.2rem;
+  margin-bottom: .75rem;
+}
+.use-playbook-panel ul {
+  display: grid;
+  gap: .6rem;
+  margin: 0;
+  padding-left: 1.15rem;
+}
+.use-playbook-panel li {
+  padding-left: .15rem;
+}
 .plays-journey-card {
   align-self: stretch;
 }

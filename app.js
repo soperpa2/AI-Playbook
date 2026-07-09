@@ -3558,6 +3558,15 @@ function renderPlays() {
           <p class="eyebrow">Implementation Roadmap</p>
           <h2>Run the plays in sequence, with governance gates throughout</h2>
           <p>The framework moves agencies from vision and guardrails to readiness assessment, governance, stakeholder engagement, workforce preparation, change management planning, use case prioritization, funding strategy, roadmap design, change management execution, deployment, monitoring, and sustained oversight.</p>
+          <section class="use-playbook-panel">
+            <h3>How to use this playbook</h3>
+            <ul>
+              <li>Start with the readiness assessment to identify recommended plays, priority gaps, and tools that should be completed first.</li>
+              <li>Use the play sequence to manage dependencies, but adapt the path when your department has already completed a step or needs a different starting point.</li>
+              <li>Complete the linked tools as working documents so decisions, owners, governance reviews, timelines, and unresolved issues are documented as implementation moves forward.</li>
+              <li>Use governance gates before use case approval, vendor decisions, pilots, deployment, and scale so AI work remains accountable, equitable, secure, and aligned with public health goals.</li>
+            </ul>
+          </section>
         </div>
         <aside>
           <strong>13 plays</strong>
