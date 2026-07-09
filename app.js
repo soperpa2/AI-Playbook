@@ -1483,6 +1483,82 @@ const playResources = {
   ]
 };
 
+const glossaryGroups = [
+  {
+    category: "AI Fundamentals",
+    terms: [
+      ["Artificial intelligence (AI)", "Computer-based methods that can recognize patterns, generate content, classify information, make predictions, or support action toward a defined goal. In public health, AI should support accountable human work rather than replace public health judgment."],
+      ["Algorithm", "A set of instructions or rules a system follows to complete a task. An algorithm may be simple, such as a scoring rubric, or complex, such as a model that learns patterns from large data sets."],
+      ["Machine learning", "A type of AI that identifies patterns in data and uses those patterns to classify, predict, recommend, or detect unusual activity. Machine learning systems require careful validation because patterns in historical data may not hold in new settings."],
+      ["Generative AI", "AI that creates new content, such as text, summaries, images, code, translations, or synthetic examples. Generative AI can help draft or summarize materials, but its outputs can be incomplete, biased, fabricated, or out of date."],
+      ["Large language model (LLM)", "A generative AI model trained on large bodies of text to produce, summarize, classify, translate, or transform language. LLM outputs should be reviewed by qualified humans before use in consequential public health work."],
+      ["Agentic AI", "AI configured to pursue a goal through multiple steps, such as gathering information, drafting a brief, updating a task list, or routing work for review. Agentic AI requires clear boundaries, permissions, monitoring, audit logs, and human approval for consequential actions."],
+      ["Prompt", "The instruction, question, source material, or task description provided to a generative AI system. A good prompt states the role, goal, audience, constraints, required sources, format, and review expectations."],
+      ["Retrieval-augmented generation (RAG)", "A method that connects a generative AI system to selected source documents or databases so responses can be grounded in approved material. RAG can reduce unsupported answers, but users still need source review and quality checks."],
+      ["Synthetic data", "Artificially generated data designed to resemble real data without directly exposing actual individual records. Synthetic data can support testing and training, but it must still be assessed for privacy risk, bias, and fitness for purpose."],
+      ["Human-in-the-loop", "A workflow design in which a person reviews, approves, corrects, or overrides AI outputs before they affect decisions, services, communications, or public health action."]
+    ]
+  },
+  {
+    category: "Risk, Validation, and Trust",
+    terms: [
+      ["Hallucination", "A fluent but false or unsupported AI output. Hallucinations can include fabricated citations, incorrect policy summaries, inaccurate clinical or epidemiologic statements, or confident answers outside the model's knowledge."],
+      ["Automation bias", "The tendency to over-trust an automated output because it appears objective, precise, or authoritative. Public health workflows should require deliberate review, documentation, and escalation when AI outputs are uncertain or consequential."],
+      ["Model drift", "A decline or change in AI performance over time because data, workflows, disease patterns, populations, vendor systems, or user behavior have changed. Drift is one reason monitoring must continue after deployment."],
+      ["Validation", "The process of testing whether an AI system performs well enough for its intended public health use. Validation should include accuracy, reliability, subgroup performance, workflow fit, user review, and risk mitigation."],
+      ["Risk tiering", "Classifying AI uses by potential harm, sensitivity, legal implications, public impact, and level of automation. Higher-risk uses require stronger documentation, review, monitoring, and approval before use."],
+      ["Bias", "Systematic error or unfairness that can produce different results for different groups. Bias can arise from data gaps, measurement choices, model design, deployment context, or unequal access to services."],
+      ["Equity impact assessment", "A structured review of who may benefit, who may be burdened, whose data or experiences are missing, and what safeguards are needed before an AI-supported workflow is approved or scaled."],
+      ["Missing voices", "People, communities, languages, settings, or experiences that are absent or underrepresented in the data, design process, review process, or evaluation plan."],
+      ["Explainability", "The ability to describe how an AI system produced or contributed to an output in terms that decision-makers, staff, and affected communities can understand."],
+      ["Transparency", "Clear communication about when AI is used, why it is used, what data are involved, what humans decide, what limitations exist, and how concerns can be raised."]
+    ]
+  },
+  {
+    category: "Governance, Privacy, and Accountability",
+    terms: [
+      ["AI governance", "The structures, policies, roles, review pathways, and oversight processes used to guide responsible AI use before, during, and after deployment."],
+      ["Governance gate", "A required review or decision point before work moves forward, such as before use case approval, vendor selection, pilot launch, scale-up, or retirement."],
+      ["AI system inventory", "A maintained record of AI systems and AI-supported workflows, including purpose, owner, data used, risk tier, approval status, monitoring schedule, and review history."],
+      ["Responsible AI policy", "An agency policy that defines expectations for transparency, privacy, security, equity, human oversight, safety, legal compliance, scientific integrity, accountability, and monitoring."],
+      ["Data classification", "Sorting data into sensitivity levels, such as public, internal, confidential, protected, restricted, or sovereign, so staff know which AI environments and safeguards are appropriate."],
+      ["Data use agreement", "A written agreement that defines what data may be shared or used, for what purpose, by whom, under what safeguards, and with what limits on reuse, disclosure, retention, or transfer."],
+      ["Protected health information (PHI)", "Individually identifiable health information protected under HIPAA. PHI should not be entered into public AI tools or unapproved systems."],
+      ["Personally identifiable information (PII)", "Information that can identify a person directly or indirectly, such as name, address, date of birth, record number, or combinations of demographic and contextual details."],
+      ["Tribal data sovereignty", "The authority of Tribal Nations to govern the collection, ownership, application, sharing, and interpretation of their data. This concept is especially relevant when AI work involves Tribal communities, Tribal health departments, or Tribal data."],
+      ["Incident response", "The process for reporting, triaging, containing, investigating, correcting, documenting, and communicating about AI-related errors, harmful outputs, privacy issues, bias concerns, security events, or operational failures."]
+    ]
+  },
+  {
+    category: "Implementation and Operations",
+    terms: [
+      ["Use case", "A specific public health task, workflow, decision support need, or service problem where AI might help. A use case should describe the problem, users, data, value, risks, workflow impact, and governance requirements."],
+      ["Pilot", "A limited, time-bounded test of an AI-supported workflow used to learn whether the system is useful, safe, equitable, feasible, and sustainable before any broader deployment."],
+      ["Scale decision", "A governance decision about whether to expand, revise, pause, stop, or retire an AI pilot based on evidence from validation, user feedback, equity review, performance monitoring, costs, and operational readiness."],
+      ["Change management", "The planning and support needed to help staff, partners, and programs adopt new workflows responsibly. It includes communication, training, office hours, feedback channels, barrier tracking, and escalation pathways."],
+      ["Implementation playbook", "A sequenced plan that connects approved use cases to governance gates, dependencies, staffing, procurement, funding, training, validation, deployment, monitoring, and sustainment."],
+      ["Systems map", "A visual or structured map showing how an AI use affects connected parts of the agency, such as governance, data, technology, workforce, procurement, communications, equity, funding, and evaluation."],
+      ["Dependency", "A condition that must be addressed before work can responsibly proceed, such as data access, governance approval, training completion, vendor review, funding, cybersecurity testing, or community engagement."],
+      ["Bridge role", "A staff role that helps connect public health practice, data, technology, governance, communications, and program operations so AI work does not sit in a single silo."],
+      ["Total cost of ownership", "The full cost of an AI system over time, including procurement, licensing, staff time, training, infrastructure, monitoring, evaluation, maintenance, vendor support, and retirement."],
+      ["Continuous improvement", "The ongoing process of using monitoring results, user feedback, incidents, equity findings, and evaluation evidence to improve or retire AI-supported workflows."]
+    ]
+  },
+  {
+    category: "Public Health Context",
+    terms: [
+      ["STLT", "State, tribal, local, and territorial. The term is used to describe public health departments and partners operating across different governmental contexts."],
+      ["Public health workflow", "A recurring public health process such as surveillance, case investigation, communication, inspection, referral, grant reporting, evidence review, or emergency response."],
+      ["Syndromic surveillance", "A surveillance approach that uses near-real-time indicators, such as emergency department chief complaints, to identify unusual patterns before confirmed diagnoses may be available."],
+      ["Public health informatics", "The application of information, data, technology, and systems thinking to public health practice, including data exchange, surveillance systems, analytics, reporting, and decision support."],
+      ["Data modernization", "Work to improve public health data systems, interoperability, quality, timeliness, analytics, governance, and workforce capacity. AI readiness should build on data modernization rather than bypass it."],
+      ["Community engagement", "Meaningful involvement of affected communities, partners, and stakeholders in defining problems, reviewing risks, shaping safeguards, and evaluating whether AI use supports public trust and public health goals."],
+      ["Public accountability", "The obligation to explain, document, justify, monitor, and correct AI use because public health agencies act under public authority and serve communities that may be affected by their decisions."],
+      ["Digital determinant of health", "A digital condition that can shape health access, outcomes, trust, or burden, such as language access, broadband availability, digital literacy, accessibility, service design, algorithmic decisions, or misinformation exposure."]
+    ]
+  }
+];
+
 function resourcesForPlay(play) {
   const resources = playResources[play.id] || [];
   if (!resources.length) return "";
@@ -2684,6 +2760,7 @@ function route() {
   else if (key === "organization") renderOrganizationHub(param);
   else if (key === "member-info") renderMemberInfo();
   else if (key === "references") renderReferences();
+  else if (key === "glossary") renderGlossary();
   else if (key === "contribute") renderContribute();
   else if (key === "contact") renderContact();
   else if (key === "news") renderNews();
@@ -2830,6 +2907,7 @@ function breadcrumbTrail() {
       contribute: "Contribute",
       contact: "Contact Us",
       references: "Resources",
+      glossary: "Glossary",
       news: "In the News"
     };
     add(labels[key] || "Page");
@@ -3246,6 +3324,7 @@ function renderLearn(moduleId = "understanding-ai") {
   const moduleNav = `<aside class="filter-panel">
         <h2>Learning Topics</h2>
         <div class="side-list">${learningModules.map(m=>`<button class="${m.id===module.id ? "active" : ""}" onclick="location.hash='#/learn/${m.id}'">${m.title.replace("Artificial Intelligence","AI")}</button>`).join("")}</div>
+        <a class="side-link" href="#/glossary">Glossary of Terms</a>
       </aside>`;
   if (module.id === "staff-training") {
     main.innerHTML = pageIntro("Learn: AI Foundations for Public Health", "Use these lessons to build the knowledge you need before tool selection, pilot planning, readiness assessment, or governance review.") + `
@@ -6645,6 +6724,7 @@ function renderReferences() {
       <div class="button-row">
         <a class="btn primary" href="downloads/AI_Playbook_and_Toolkit_Website_Complete_Reference.pdf">Complete Reference PDF</a>
         <a class="btn" href="downloads/AI_Playbook_and_Toolkit_Website_Complete_Reference.docx">Complete Reference Word</a>
+        <a class="btn" href="#/glossary">Open Glossary</a>
       </div>
     </section>
     <div class="references-grid">
@@ -6656,6 +6736,36 @@ function renderReferences() {
               <article class="reference-item">
                 <h3><a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
                 <p>${note}</p>
+              </article>`).join("")}
+          </div>
+        </section>`).join("")}
+    </div>
+  </section>`;
+}
+
+function renderGlossary() {
+  const categoryLinks = glossaryGroups.map((group, index) => `<button type="button" onclick="document.getElementById('glossary-${index}').scrollIntoView({ behavior: 'smooth', block: 'start' })">${group.category}</button>`).join("");
+  main.innerHTML = pageIntro("Glossary of Terms", "Plain-language definitions for AI, governance, privacy, risk, implementation, and public health concepts used across the playbook, toolkit, learning modules, and resources.") + `
+    <section class="panel glossary-intro">
+      <p>Use this glossary when a term appears in a play, tool, learning module, practical exercise, or resource. The definitions are written for public health staff who may not have technical AI, data science, or procurement backgrounds.</p>
+      <div class="button-row">
+        <a class="btn primary" href="#/learn">Back to Learn</a>
+        <a class="btn" href="#/references">Back to Resources</a>
+      </div>
+    </section>
+    <nav class="glossary-index" aria-label="Glossary categories">${categoryLinks}</nav>
+    <div class="glossary-groups">
+      ${glossaryGroups.map((group, index)=>`
+        <section class="panel glossary-group" id="glossary-${index}">
+          <div class="section-heading compact">
+            <p class="eyebrow">Glossary Category</p>
+            <h2>${group.category}</h2>
+          </div>
+          <div class="glossary-list">
+            ${group.terms.map(([term, definition])=>`
+              <article class="glossary-term">
+                <h3>${term}</h3>
+                <p>${definition}</p>
               </article>`).join("")}
           </div>
         </section>`).join("")}

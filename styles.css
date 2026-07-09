@@ -474,6 +474,22 @@ p { margin: 0 0 1rem; }
 .learn-layout .panel > .content-section td {
   color: var(--text);
 }
+.side-link {
+  display: block;
+  margin-top: 1rem;
+  padding: .75rem .85rem;
+  border: 1px solid rgba(0, 93, 171, .22);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+.side-link:hover,
+.side-link:focus {
+  border-color: var(--blue);
+  background: #eef7fc;
+}
 .support-areas-intro {
   margin: 1.5rem 0;
   border-left: 4px solid var(--green);
@@ -854,6 +870,59 @@ p { margin: 0 0 1rem; }
 }
 .content-section h3 {
   color: var(--blue-dark);
+}
+.glossary-intro {
+  border-left: 4px solid var(--green);
+}
+.glossary-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin: 1.5rem 0;
+}
+.glossary-index button {
+  border: 1px solid rgba(0, 93, 171, .24);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--blue);
+  font: inherit;
+  font-weight: 800;
+  padding: .55rem .8rem;
+  cursor: pointer;
+}
+.glossary-index button:hover,
+.glossary-index button:focus {
+  background: #eef7fc;
+  border-color: var(--blue);
+}
+.glossary-groups {
+  display: grid;
+  gap: 1.25rem;
+}
+.glossary-group {
+  scroll-margin-top: 110px;
+}
+.glossary-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem;
+}
+.glossary-term {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 1rem;
+}
+.glossary-term h3 {
+  margin-bottom: .4rem;
+  color: var(--navy);
+  font-size: 1.02rem;
+}
+.glossary-term p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.55;
 }
 .tool-discussion-list {
   display: grid;
@@ -1995,7 +2064,7 @@ th { color: var(--ink); background: var(--sky); }
   .framework-intro aside { margin-top: 0; }
   .use-playbook-panel ul { columns: 1; }
   .filter-panel { position: static; }
-  .card-grid, .four-grid, .workflow-grid, .tools-grid, .form-grid, .member-stats, .overview-grid, .output-list, .rating-legend, .reference-list, .news-grid, .rss-model-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .card-grid, .four-grid, .workflow-grid, .tools-grid, .form-grid, .member-stats, .overview-grid, .output-list, .rating-legend, .reference-list, .news-grid, .rss-model-grid, .glossary-list { grid-template-columns: 1fr; gap: 1rem; }
   .phase-label { grid-template-columns: 1fr; align-items: start; }
   .change-form-empty, .change-form-header { flex-direction: column; align-items: flex-start; }
   .play-tile { width: 100%; }
