@@ -191,6 +191,9 @@ main { min-height: calc(100vh - 144px); }
   padding: 1.35rem;
   box-shadow: var(--soft-shadow);
 }
+.journey-sidebar h3 {
+  text-align: center;
+}
 .hero-logo {
   display: block;
   width: min(170px, 72%);
@@ -536,12 +539,19 @@ p { margin: 0 0 1rem; }
 }
 .maturity-number { width: 50px; height: 50px; font-size: 1.2rem; }
 .phase-overview { margin-top: 2rem; }
+.plays-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 2rem;
+  align-items: stretch;
+  margin: 2rem 0 1.5rem;
+}
 .framework-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
   gap: 2rem;
   align-items: center;
-  margin: 2rem 0 1.5rem;
+  margin: 0;
   padding: 1.7rem;
   border-radius: var(--radius);
   background:
@@ -564,6 +574,18 @@ p { margin: 0 0 1rem; }
 .framework-intro aside span {
   color: var(--muted);
   font-weight: 700;
+}
+.plays-journey-card {
+  align-self: stretch;
+}
+.plays-journey-card .journey-list {
+  gap: 1.15rem;
+}
+.plays-journey-card .journey-item {
+  align-items: start;
+}
+.plays-journey-card .number-badge {
+  margin-top: .15rem;
 }
 .phase-row {
   display: block;
@@ -1882,7 +1904,7 @@ th { color: var(--ink); background: var(--sky); }
     align-items: flex-start;
   }
   .primary-nav.open { display: flex; }
-  .hero-grid, .two-col, .toolkit-layout, .learn-layout, .assessment-grid, .detail-grid, .guide-layout, .community-layout, .community-hero, .case-study-grid, .support-area-header, .support-area-grid, .member-dashboard, .member-workspace-grid, .member-list.compact, .org-workspace-header, .org-form, .org-grid, .change-profile-grid, .change-metric-grid { grid-template-columns: 1fr; }
+  .hero-grid, .two-col, .toolkit-layout, .learn-layout, .assessment-grid, .detail-grid, .guide-layout, .plays-overview-grid, .community-layout, .community-hero, .case-study-grid, .support-area-header, .support-area-grid, .member-dashboard, .member-workspace-grid, .member-list.compact, .org-workspace-header, .org-form, .org-grid, .change-profile-grid, .change-metric-grid { grid-template-columns: 1fr; }
   .filter-panel { position: static; }
   .card-grid, .four-grid, .workflow-grid, .tools-grid, .form-grid, .member-stats, .overview-grid, .output-list, .rating-legend, .reference-list, .news-grid, .rss-model-grid { grid-template-columns: 1fr; gap: 1rem; }
   .phase-label { grid-template-columns: 1fr; align-items: start; }

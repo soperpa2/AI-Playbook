@@ -3552,16 +3552,30 @@ function renderMaturity() {
 
 function renderPlays() {
   main.innerHTML = pageIntro("13-Play Planning and Implementation Framework", "A guided roadmap for moving from vision and readiness to governance, implementation, monitoring, and sustained oversight.") + `
-    <section class="framework-intro">
-      <div>
-        <p class="eyebrow">Implementation Roadmap</p>
-        <h2>Run the plays in sequence, with governance gates throughout</h2>
-        <p>The framework moves agencies from vision and guardrails to readiness assessment, governance, stakeholder engagement, workforce preparation, change management planning, use case prioritization, funding strategy, roadmap design, change management execution, deployment, monitoring, and sustained oversight.</p>
+    <section class="plays-overview-grid">
+      <div class="framework-intro">
+        <div>
+          <p class="eyebrow">Implementation Roadmap</p>
+          <h2>Run the plays in sequence, with governance gates throughout</h2>
+          <p>The framework moves agencies from vision and guardrails to readiness assessment, governance, stakeholder engagement, workforce preparation, change management planning, use case prioritization, funding strategy, roadmap design, change management execution, deployment, monitoring, and sustained oversight.</p>
+        </div>
+        <aside>
+          <strong>13 plays</strong>
+          <span>${tools.length} supporting tools</span>
+          <span>4 implementation phases</span>
+        </aside>
       </div>
-      <aside>
-        <strong>13 plays</strong>
-        <span>${tools.length} supporting tools</span>
-        <span>4 implementation phases</span>
+      <aside class="journey-sidebar plays-journey-card" aria-label="Recommended journey by implementation phase">
+        <img class="hero-logo" src="assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt="AI Playbook for Public Health" />
+        <h3>Recommended Journey</h3>
+        <div class="journey-list">
+          ${[
+            ["Plan", "Vision, readiness, governance, stakeholders, workforce, change planning, and use cases", "#/plays/1"],
+            ["Build", "Funding strategy and implementation roadmap", "#/plays/8"],
+            ["Deploy", "Change execution, build, validation, deployment, and scale decisions", "#/plays/10"],
+            ["Govern", "Oversight, monitoring, evaluation, incidents, and continuous improvement", "#/plays/12"]
+          ].map((item,i)=>`<a class="journey-item" href="${item[2]}"><span class="number-badge">${i+1}</span><span><strong>${item[0]}:</strong> ${item[1]}</span></a>`).join("")}
+        </div>
       </aside>
     </section>
     ${phases.map(p=>`
