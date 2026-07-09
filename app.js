@@ -3296,6 +3296,7 @@ function renderExerciseSupport(module, application = {}) {
 function renderPracticalExercise(module, application = {}) {
   if (!application.exercise) return "";
   const progress = learningProgressFor(module.id);
+  const attachments = Array.isArray(progress.exerciseAttachments) ? progress.exerciseAttachments : [];
   return `<section class="content-section training-section practical-exercise-section">
     <h3>Practical Exercise</h3>
     ${paragraphBlock(application.exercise)}
@@ -3305,9 +3306,24 @@ function renderPracticalExercise(module, application = {}) {
     <label class="exercise-evidence-label">Your exercise evidence or verification note
       <textarea id="exercise-evidence-${module.id}" rows="5" placeholder="Summarize the artifact you created, paste a link/reference, or document supervisor verification.">${progress.exerciseEvidence || ""}</textarea>
     </label>
+    <label class="exercise-evidence-label">Upload evidence files
+      <input id="exercise-upload-${module.id}" type="file" multiple>
+      <span class="tool-note">Attach local copies of worksheets, screenshots, notes, slide decks, exported tools, or other evidence. This static preview saves file names and details in your browser; production will store files securely in the member or organization account.</span>
+    </label>
+    <div id="exercise-attachments-${module.id}" class="attachment-list">${renderExerciseAttachments(attachments)}</div>
     <div class="button-row"><button class="btn small" type="button" onclick="saveLearningExercise('${module.id}')">Save Exercise Evidence</button></div>
     <p id="exercise-result-${module.id}" class="tool-note">${progress.exerciseSavedAt ? `Exercise evidence saved: ${progress.exerciseSavedAt}` : "Your exercise evidence can support administrator or supervisor verification."}</p>
   </section>`;
+}
+function renderExerciseAttachments(attachments = []) {
+  if (!attachments.length) return `<p class="plain-meta">No evidence files saved yet.</p>`;
+  return `<ul class="check-list compact-list">${attachments.map(file => `<li><strong>${escapeDoc(file.name || "Evidence file")}</strong>${file.size ? ` (${formatFileSize(file.size)})` : ""}${file.type ? ` - ${escapeDoc(file.type)}` : ""}</li>`).join("")}</ul>`;
+}
+function formatFileSize(bytes = 0) {
+  const value = Number(bytes) || 0;
+  if (value >= 1048576) return `${(value / 1048576).toFixed(1)} MB`;
+  if (value >= 1024) return `${Math.round(value / 1024)} KB`;
+  return `${value} bytes`;
 }
 function renderLearningObjectives(module, application = {}) {
   const objectives = learningObjectiveItems(module, application);
@@ -3427,17 +3443,31 @@ function submitLearningQuiz(moduleId) {
 
 function saveLearningExercise(moduleId) {
   const field = document.getElementById(`exercise-evidence-${moduleId}`);
+  const upload = document.getElementById(`exercise-upload-${moduleId}`);
   const state = getMemberState();
   state.learningProgress = state.learningProgress || {};
   const existing = state.learningProgress[moduleId] || {};
+  const priorAttachments = Array.isArray(existing.exerciseAttachments) ? existing.exerciseAttachments : [];
+  const newAttachments = Array.from(upload?.files || []).map(file => ({
+    name: file.name,
+    size: file.size,
+    type: file.type || "File",
+    savedAt: new Date().toLocaleString()
+  }));
+  const evidenceText = field?.value || "";
+  const exerciseAttachments = [...priorAttachments, ...newAttachments];
   state.learningProgress[moduleId] = {
     ...existing,
-    exerciseEvidence: field?.value || "",
+    exerciseEvidence: evidenceText,
+    exerciseAttachments,
     exerciseSavedAt: new Date().toLocaleString(),
-    exerciseVerified: Boolean((field?.value || "").trim()),
+    exerciseVerified: Boolean(evidenceText.trim() || exerciseAttachments.length),
     completed: Boolean(existing.completed || existing.quizScore >= 4)
   };
   setMemberState(state);
+  if (upload) upload.value = "";
+  const attachmentList = document.getElementById(`exercise-attachments-${moduleId}`);
+  if (attachmentList) attachmentList.innerHTML = renderExerciseAttachments(exerciseAttachments);
   const result = document.getElementById(`exercise-result-${moduleId}`);
   if (result) result.textContent = `Exercise evidence saved: ${state.learningProgress[moduleId].exerciseSavedAt}`;
 }
@@ -6542,6 +6572,7 @@ function learningProgressCards(state) {
       <p><strong>Status:</strong> ${record.completed ? "Complete" : "In progress"}</p>
       <p><strong>Quiz:</strong> ${record.quizScore !== undefined ? `${record.quizScore} / ${record.quizTotal || 5}` : "Not taken"}</p>
       <p><strong>Exercise:</strong> ${record.exerciseSavedAt ? `Evidence saved ${escapeDoc(record.exerciseSavedAt)}` : "No evidence saved"}</p>
+      ${record.exerciseAttachments?.length ? `<p><strong>Uploaded evidence:</strong> ${record.exerciseAttachments.map(file => escapeDoc(file.name || "Evidence file")).join(", ")}</p>` : ""}
       <a href="#/learn/${module.id}">Open module</a>
     </article>`).join("")}</div>`;
 }
@@ -6857,7 +6888,10 @@ function memberWorkspaceExportSections(state) {
   const learningProgressLines = Object.entries(state.learningProgress || {}).length
     ? Object.entries(state.learningProgress || {}).map(([moduleId, record]) => {
       const module = learningModules.find(item => item.id === moduleId);
-      return `${module?.title || moduleId} | Status: ${record.completed ? "Complete" : "In progress"} | Quiz: ${record.quizScore !== undefined ? `${record.quizScore} / ${record.quizTotal || 5}` : "Not taken"} | Quiz date: ${record.quizCompletedAt || "No date"} | Exercise saved: ${record.exerciseSavedAt || "No"} | Evidence: ${record.exerciseEvidence || "No evidence"}`;
+      const attachments = Array.isArray(record.exerciseAttachments) && record.exerciseAttachments.length
+        ? record.exerciseAttachments.map(file => `${file.name || "Evidence file"} (${file.size ? formatFileSize(file.size) : "size not saved"})`).join(", ")
+        : "No uploaded files";
+      return `${module?.title || moduleId} | Status: ${record.completed ? "Complete" : "In progress"} | Quiz: ${record.quizScore !== undefined ? `${record.quizScore} / ${record.quizTotal || 5}` : "Not taken"} | Quiz date: ${record.quizCompletedAt || "No date"} | Exercise saved: ${record.exerciseSavedAt || "No"} | Evidence note: ${record.exerciseEvidence || "No text evidence"} | Uploaded evidence: ${attachments}`;
     })
     : ["No learning module quiz or exercise progress saved."];
   const ratingLines = Object.values(ratings).length
