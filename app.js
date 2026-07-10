@@ -3328,7 +3328,7 @@ async function downloadLearningModulePdf(moduleId) {
     module.text,
     [
       ["Audience", "Individual learners in state, territorial, local, and tribal public health departments"],
-      ["Recommended use", "Self-paced learning, role preparation, governance readiness, and implementation planning"],
+      ["Recommended use", learnerRecommendedUse(moduleLmsCard(module).when_to_use || "Use this module for self-paced learning, role preparation, governance readiness, and implementation planning.", "module")],
       ["Course ID", module.course_id || "Not specified"],
       ["Primary track", module.primary_track_title || "Not specified"],
       ["Appears in tracks", (module.tracks || []).join(", ") || "Not specified"],
@@ -4070,6 +4070,20 @@ function moduleCompletionRequirement(module) {
   return moduleLmsCard(module).completion_requirement || "Review the module, complete the knowledge check, and save or upload the expected artifact when required.";
 }
 
+function learnerRecommendedUse(value = "", itemType = "module") {
+  const text = String(value || "").trim();
+  if (!text) return itemType === "track"
+    ? "Use this track when it matches your role, responsibilities, or implementation work."
+    : "Use this module when it helps you prepare for your role, a governance review, or implementation work.";
+  return text
+    .replace(/^Assign to staff who\s+/i, itemType === "track" ? "Use this track if you " : "Use this module if you ")
+    .replace(/^Assign to epidemiology staff who\s+/i, "Use this track if you ")
+    .replace(/^Assign to leaders who\s+/i, "Use this track if you ")
+    .replace(/^Use as the first course for everyone\.\s*Learners should complete this track before/i, "Use this as your starting point before")
+    .replace(/^Use before\s+/i, "Use this module before you ")
+    .replace(/^Use to browse\s+/i, "Use this page to browse ");
+}
+
 function moduleTrackTitles(module) {
   const data = window.CURRICULUM_DATA;
   const fromCrosswalk = data?.module_to_track_crosswalk?.find(item => item.module_id === module.id);
@@ -4172,7 +4186,7 @@ function renderModuleCatalogCard(module, plans = learningPlans()) {
       ${renderPrerequisiteBadge(module)}
     </div>
     <h3><a href="#/learn/${module.id}">${module.display_title || module.title}</a></h3>
-    <p>${module.text || moduleLmsCard(module).when_to_use || ""}</p>
+    <p>${learnerRecommendedUse(moduleLmsCard(module).when_to_use || module.text, "module")}</p>
     <div class="module-card-meta">
       <span>${module.level_label || "Module"}</span>
       <span>${moduleEstimatedTime(module)}</span>
@@ -4313,7 +4327,7 @@ function renderLearnLanding() {
             </div>
             <div class="track-card-meta">
               <p><strong>Audience:</strong> ${(track.primary_audience || []).slice(0, 3).join(", ")}${(track.primary_audience || []).length > 3 ? ", and others" : ""}</p>
-              <p><strong>Use:</strong> ${track.recommended_use || "Use as assigned based on role and implementation responsibilities."}</p>
+              <p><strong>Recommended use:</strong> ${learnerRecommendedUse(track.recommended_use, "track")}</p>
               <p><strong>${curriculumTrackModules(track.track_id).length}</strong> modules</p>
             </div>
             <a class="btn small" href="#/learn-track/${track.track_id === "shared-foundational" ? "shared-foundation" : track.track_id}">View Track</a>
@@ -4469,7 +4483,7 @@ function renderLearningTrackPage(trackId = "all-modules") {
           ${paragraphBlock(track.description || "")}
           <div class="track-detail-grid">
             ${track.primary_audience?.length ? `<section><h3>Primary Audience</h3><ul class="check-list">${track.primary_audience.map(item => `<li>${item}</li>`).join("")}</ul></section>` : ""}
-            ${track.recommended_use ? `<section><h3>Recommended Use</h3>${paragraphBlock(track.recommended_use)}</section>` : ""}
+            ${track.recommended_use ? `<section><h3>Recommended Use</h3>${paragraphBlock(learnerRecommendedUse(track.recommended_use, "track"))}</section>` : ""}
             ${track.completion_standard ? `<section><h3>Completion Standard</h3>${paragraphBlock(track.completion_standard)}</section>` : ""}
           </div>
           <section class="content-section">
@@ -4590,6 +4604,7 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
               <article><strong>Level</strong><span>${module.level_label || "Module"}</span></article>
               <article><strong>Audience</strong><span>${moduleAudience(module)}</span></article>
               <article><strong>Primary track</strong><span>${module.primary_track_title || "Curriculum module"}</span></article>
+              <article><strong>Recommended use</strong><span>${learnerRecommendedUse(moduleLmsCard(module).when_to_use, "module")}</span></article>
             </div>
             <div class="course-meta-note"><strong>Completion requirement:</strong> ${moduleCompletionRequirement(module)}</div>
           </section>
