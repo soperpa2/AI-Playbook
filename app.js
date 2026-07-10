@@ -3231,6 +3231,44 @@ function modulePdfFilename(module) {
   return `lesson-${String(module.id || "module").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.pdf`;
 }
 
+const lessonReferenceUrlCatalog = [
+  ["nist ai rmf generative ai profile", "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"],
+  ["nist generative ai profile", "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"],
+  ["nist artificial intelligence risk management framework", "https://www.nist.gov/itl/ai-risk-management-framework"],
+  ["nist ai risk management framework", "https://www.nist.gov/itl/ai-risk-management-framework"],
+  ["cdc public health data strategy", "https://www.cdc.gov/public-health-data-strategy/php/about/index.html"],
+  ["cdc data modernization initiative", "https://www.cdc.gov/data-modernization/php/index.html"],
+  ["cdc evaluation framework", "https://www.cdc.gov/evaluation/"],
+  ["cdc electronic case reporting", "https://www.cdc.gov/ecr/php/index.html"],
+  ["aims ecr triggering", "https://ecr.aimsplatform.org/ehr-implementers/triggering/"],
+  ["hl7 ecr fhir implementation guide", "https://hl7.org/fhir/us/ecr/"],
+  ["hl7 us core implementation guide", "https://build.fhir.org/ig/HL7/US-Core/"],
+  ["hl7 fhir", "https://hl7.org/fhir/"],
+  ["onc uscdi", "https://isp.healthit.gov/united-states-core-data-interoperability-uscdi"],
+  ["onc health it", "https://www.healthit.gov/"],
+  ["cdc phin vocabulary access and distribution system", "https://www.cdc.gov/phin/php/phinvads/"],
+  ["owasp top 10 for large language model applications", "https://owasp.org/www-project-top-10-for-large-language-model-applications/"],
+  ["owasp llm security resources", "https://owasp.org/www-project-top-10-for-large-language-model-applications/"],
+  ["who guidance on large multi-modal models", "https://www.who.int/publications/i/item/9789240084759"],
+  ["who ethics and governance of artificial intelligence for health", "https://www.who.int/publications/i/item/9789240029200"]
+];
+
+function lessonReferenceParts(item) {
+  const raw = String(item || "").trim();
+  const explicitUrl = raw.match(/https?:\/\/[^\s)]+/i)?.[0] || "";
+  const withoutUrl = explicitUrl ? raw.replace(explicitUrl, "").replace(/\s*[:,-]\s*$/, "").trim() : raw;
+  const lower = raw.toLowerCase();
+  const catalogMatch = lessonReferenceUrlCatalog.find(([key]) => lower.includes(key));
+  const url = explicitUrl || catalogMatch?.[1] || "";
+  const title = withoutUrl || raw || url;
+  return { title, url, raw };
+}
+
+function lessonReferenceText(item) {
+  const ref = lessonReferenceParts(item);
+  return ref.url ? `${ref.title}: ${ref.url}` : ref.title;
+}
+
 function collectLearningModulePdfSections(module, background, deepDive, application, narrative, moduleResources) {
   if (module.curriculumSource) {
     const sections = [];
@@ -3244,7 +3282,7 @@ function collectLearningModulePdfSections(module, background, deepDive, applicat
       .forEach(section => modulePdfSection(sections, curriculumSectionHeading(module, section), section.paragraphs || []));
     modulePdfSection(sections, "Expected Artifacts or Evidence", module.expected_artifacts_or_evidence || [], "bullets");
     modulePdfSection(sections, "Knowledge Check", knowledgeCheckQuestions(module).map((question, index) => `${index + 1}. ${question.prompt}`), "bullets");
-    modulePdfSection(sections, "References and Resources", module.references_and_resources || [], "bullets");
+    modulePdfSection(sections, "References and Resources", (module.references_and_resources || []).map(lessonReferenceText), "bullets");
     return sections;
   }
   const sections = [];
@@ -4492,7 +4530,13 @@ function renderLearningPlanPage(planId = "") {
 function renderCurriculumReferences(module) {
   const resources = module.references_and_resources || [];
   if (!resources.length) return "";
-  return `<section class="content-section"><h3>References and Resources</h3><ul class="check-list">${resources.map(item => `<li>${item}</li>`).join("")}</ul></section>`;
+  return `<section class="content-section"><h3>References and Resources</h3><div class="resource-list">${resources.map(item => {
+    const ref = lessonReferenceParts(item);
+    return `<article class="resource-item">
+      <h4>${ref.url ? `<a href="${ref.url}" target="_blank" rel="noopener noreferrer">${ref.title}</a>` : ref.title}</h4>
+      ${ref.url ? `<p><a href="${ref.url}" target="_blank" rel="noopener noreferrer">${ref.url}</a></p>` : `<p>Use the applicable local, agency, or source document for this resource.</p>`}
+    </article>`;
+  }).join("")}</div></section>`;
 }
 
 function renderCurriculumKnowledgeCheck(module) {
