@@ -4011,7 +4011,14 @@ function renderHome() {
     </section>`;
 }
 
+const foundationalCourseIds = ["INT 100", "INT 190", "GOV 100", "ANL 330", "COM 200"];
+
 function curriculumTrackModules(trackId) {
+  const resolvedTrackId = normalizeLearningTrackId(trackId);
+  if (resolvedTrackId === "shared-foundational") {
+    const moduleByCourse = moduleByCourseId();
+    return foundationalCourseIds.map(courseId => moduleByCourse[courseId]).filter(Boolean);
+  }
   if (trackId === "all-modules") {
     return [...learningModules].sort((a, b) => String(a.course_id || a.title).localeCompare(String(b.course_id || b.title), undefined, { numeric: true }));
   }
@@ -4019,7 +4026,7 @@ function curriculumTrackModules(trackId) {
   if (!data?.track_to_module_crosswalk) return [];
   const moduleById = Object.fromEntries(learningModules.map(module => [module.id, module]));
   return data.track_to_module_crosswalk
-    .filter(item => item.track_id === trackId)
+    .filter(item => item.track_id === resolvedTrackId)
     .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))
     .map(item => moduleById[item.module_id])
     .filter(Boolean);
@@ -4252,10 +4259,10 @@ function renderLearnLanding() {
       <div>
         <p class="eyebrow">AI Playbook Curriculum</p>
         <h1>Learn</h1>
-        <p class="lead">Build practical AI knowledge for public health through shared foundational learning, technical tracks, governance and security training, and role-based modules. The curriculum is designed to help staff, leaders, and partners apply AI responsibly in real public health workflows.</p>
+        <p class="lead">Build practical AI knowledge for public health through foundational courses, technical tracks, governance and security training, and role-based modules. The curriculum is designed to help staff, leaders, and partners apply AI responsibly in real public health workflows.</p>
         <p>Use this section to choose a learning plan, explore tracks, and understand how the modules fit together before opening individual courses.</p>
         <div class="button-row">
-          <a class="btn primary" href="#/learn-track/shared-foundation">View Shared Foundation</a>
+          <a class="btn primary" href="#/learn-track/shared-foundation">View Foundational Courses</a>
         </div>
       </div>
       <div class="learn-hero-visual" aria-hidden="true">
@@ -4271,12 +4278,12 @@ function renderLearnLanding() {
     <section class="panel start-foundation-panel">
       <div class="section-heading compact">
         <p class="eyebrow">Start Here</p>
-        <h2>Start with the Shared Foundation</h2>
+        <h2>Start with Foundational Courses</h2>
       </div>
-      <p>All learners should begin with the shared foundational course unless they are completing a targeted executive briefing. The shared foundation introduces core AI concepts, public health context, responsible use, human review, privacy, equity, transparency, and practical safeguards. These modules create a common vocabulary before learners move into technical, governance, or role-based tracks.</p>
+      <p>All learners should begin with the foundational courses unless they are completing a targeted executive briefing. These courses introduce core AI concepts, public health value, governance basics, equity review, communications safeguards, human review, privacy, transparency, and practical safeguards. Together, they create a common vocabulary before learners move into technical, governance, or role-based tracks.</p>
       <div class="button-row">
         <a class="btn primary" href="#/learn/understanding-ai">Open Introduction to AI</a>
-        <a class="btn" href="#/learn-track/shared-foundation">View Shared Foundation</a>
+        <a class="btn" href="#/learn-track/shared-foundation">View Foundational Courses</a>
       </div>
     </section>
 
@@ -4334,11 +4341,11 @@ function renderLearnLanding() {
       <div class="section-heading">
         <p class="eyebrow">Curriculum Overview</p>
         <h2>How the Curriculum Is Organized</h2>
-        <p>The shared foundational course creates a common vocabulary and baseline for responsible AI use. From there, learners can follow technical tracks, governance and security training, or role-based tracks depending on their responsibilities.</p>
+        <p>The foundational courses create a common vocabulary and baseline for responsible AI use. From there, learners can follow technical tracks, governance and security training, or role-based tracks depending on their responsibilities.</p>
       </div>
       <div class="curriculum-map-graphic" aria-label="Curriculum structure">
         <a class="curriculum-base" href="#/learn-track/shared-foundation">
-          <strong>Shared Foundational Course</strong>
+          <strong>Foundational Courses</strong>
           <span>Common language, risks, safeguards, responsible use, and public health context</span>
         </a>
         <div class="curriculum-branches">
@@ -4375,10 +4382,10 @@ function renderLearnLanding() {
     <section class="panel how-to-learn-panel">
       <div class="section-heading compact">
         <p class="eyebrow">How to Use This Learning Section</p>
-        <h2>Move from Shared Foundation to Applied Practice</h2>
+        <h2>Move from Foundational Courses to Applied Practice</h2>
       </div>
       <ol class="learning-steps">
-        <li><strong>Start with the shared foundation.</strong><span>Build a common baseline before selecting AI tools, reviewing vendors, approving pilots, or using AI in public health workflows.</span></li>
+        <li><strong>Start with foundational courses.</strong><span>Build a common baseline before selecting AI tools, reviewing vendors, approving pilots, or using AI in public health workflows.</span></li>
         <li><strong>Choose a functional or role-based track.</strong><span>Select the technical, governance, operations, communications, epidemiology, policy, executive, or program management path that fits your responsibilities.</span></li>
         <li><strong>Use modules to support real implementation work.</strong><span>Apply exercises, knowledge checks, references, and artifacts to plays, tools, governance reviews, procurement, deployment, and monitoring.</span></li>
       </ol>
@@ -8158,7 +8165,7 @@ const learningTracks = [
     ids: []
   },
   {
-    title: "Shared Foundational Course",
+    title: "Foundational Courses",
     ids: ["staff-training", "understanding-ai", "predictive-ai", "generative-ai", "agentic-ai", "workflows", "risks", "human-centered-ai", "ai-literacy", "automation-bias", "missing-voices", "public-transparency", "tiered-data-use", "privacy-confidentiality-public-records", "responsible-prompting-review", "cybersecurity-secure-ai-use", "when-not-to-use-ai", "ai-incident-response", "ai-support-areas"]
   },
   {
@@ -8284,6 +8291,13 @@ function applyCurriculumPackage() {
     module_count: learningModules.length
   });
   data.tracks.forEach(track => learningTracks.push(track));
+  const foundationalTrack = learningTracks.find(track => track.track_id === "shared-foundational");
+  if (foundationalTrack) {
+    foundationalTrack.title = "Foundational Courses";
+    foundationalTrack.short_title = "Foundational Courses";
+    foundationalTrack.description = "Foundational courses that establish common vocabulary, public health value, governance basics, equity review, and communications safeguards before learners move into role-based or technical tracks.";
+    foundationalTrack.module_count = foundationalCourseIds.length;
+  }
 }
 
 applyCurriculumPackage();
@@ -8592,3 +8606,4 @@ function downloadBlob(filename, content, type = "") {
 
 window.addEventListener("hashchange", route);
 route();
+
