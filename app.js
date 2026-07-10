@@ -8231,6 +8231,10 @@ const curriculumModuleAliases = {
   "ai-support-areas": "ops-310-measuring-ai-value-performance-and-operational-impact"
 };
 
+const legacyLearningModuleById = Object.fromEntries(
+  learningModules.map(module => [module.id, { ...module }])
+);
+
 function curriculumSection(module, key) {
   return (module?.sections || []).find(section => section.key === key);
 }
@@ -8258,6 +8262,15 @@ function applyCurriculumPackage() {
       tools: []
     });
   });
+  const introModule = legacyLearningModuleById["understanding-ai"];
+  if (introModule && !learningModules.some(module => module.id === introModule.id)) {
+    learningModules.unshift({
+      ...introModule,
+      title: "Introduction to AI",
+      tracks: ["shared-foundational"],
+      curriculumSource: false
+    });
+  }
   learningTracks.length = 0;
   learningTracks.push({
     track_id: "all-modules",
