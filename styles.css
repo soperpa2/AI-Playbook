@@ -1073,6 +1073,27 @@ p { margin: 0 0 1rem; }
 .evidence-upload-panel .attachment-list {
   margin-top: .75rem;
 }
+.ai-feedback-panel {
+  border-left-color: var(--green) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f7fbfe 100%);
+}
+.checkbox-line {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  margin: 1rem 0;
+  padding: .85rem 1rem;
+  border: 1px solid rgba(0, 91, 150, .22);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.45;
+}
+.checkbox-line input {
+  width: auto;
+  margin-top: .2rem;
+}
 .learn-layout .panel > .content-section {
   width: 100%;
   max-width: none;

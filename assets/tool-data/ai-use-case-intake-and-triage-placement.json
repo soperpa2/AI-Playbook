@@ -1,0 +1,41 @@
+{
+  "tool_id": "AI-USE-CASE-INTAKE-TRIAGE-WORKSHEET",
+  "tool_name": "AI Use Case Intake and Triage Worksheet",
+  "suggested_placement": {
+    "primary": {
+      "play_id": 7,
+      "play_title": "Prioritize use cases through governance, equity, and feasibility review",
+      "placement_type": "primary toolkit tool",
+      "rationale": "This is the best fit because the worksheet is used when an AI idea is being converted into a structured use case that can be scored, triaged, revised, approved for deeper review, deferred, or rejected.",
+      "tool_purpose": "Captures the proposed AI use case, public health purpose, workflow, data, users, affected populations, risks, readiness, equity considerations, and recommended next review pathway."
+    },
+    "secondary": {
+      "play_id": 3,
+      "play_title": "AI Governance Development",
+      "placement_type": "secondary cross-reference",
+      "rationale": "Use it as part of the governance operating model because it defines the front door for AI requests. Governance needs this tool to decide which use cases require privacy, security, legal, equity, procurement, technical, or leadership review."
+    }
+  },
+  "playbook_explanation": "The AI Use Case Intake and Triage Worksheet is completed before a proposed AI use case moves into scoring, vendor discussion, pilot planning, or implementation. It gives the governance body enough information to determine whether the use case is low-risk, needs revision, requires formal review, or should not proceed.",
+  "governance_placement_note": "Use case intake and triage should be part of AI governance. It is the front door to the governance process because it helps an agency identify proposed AI uses early, clarify the public health purpose, screen for risk, determine who needs to review the idea, and decide whether the idea can proceed.",
+  "public_health_example": {
+    "title": "AI-drafted respiratory virus surveillance briefing",
+    "summary": "A local health department proposes using a generative AI tool to help draft plain-language summaries of weekly respiratory virus surveillance trends for internal leadership and partner briefings. The tool would summarize de-identified aggregate trends from an internal dashboard and prior approved messages. Staff would review and approve all outputs before use.",
+    "fields": {
+      "Public health problem": "Staff spend several hours each week translating surveillance trends into leadership updates. Drafts vary in clarity and reading level, and the communications team is often brought in late.",
+      "Proposed AI-supported activity": "Use an approved AI tool to draft a plain-language summary of aggregate respiratory virus trends. The AI output would not be released directly. Staff would review, revise, and approve the final message.",
+      "Data sources": "Aggregate dashboard trends, weekly case counts, hospital utilization summaries, test positivity, and prior approved public health messaging. No identifiable data would be entered.",
+      "Human review": "An epidemiologist verifies accuracy and uncertainty. A communications specialist reviews plain language, tone, and audience fit. A program manager approves the final briefing.",
+      "Equity and accessibility": "Staff check reading level, language access needs, and whether the summary could stigmatize any population or geographic area.",
+      "Initial triage level": "Level 2: Moderate operational use. The use supports internal drafting and partner communication, uses aggregate data, and requires human review. Governance should confirm approved tool use, prompt/data limits, review steps, records expectations, and monitoring.",
+      "Governance decision": "Proceed with conditions: use only approved aggregate data; prohibit identifiable data; document human review; retain final approved summaries; monitor errors and staff feedback for 60 days before expanding."
+    }
+  },
+  "codex_actions": [
+    "Add the actual worksheet as a toolkit item under Play 7: Prioritize use cases through governance, equity, and feasibility review.",
+    "Cross-reference the worksheet in Play 3: AI Governance Development as part of the governance intake pathway.",
+    "Add the worksheet to the Governance and Security toolkit category.",
+    "Add a link from GOV 100: Introduction to AI Governance for Public Health if module/tool linking is supported.",
+    "Use this placement metadata file as the source of truth for Play 7 primary placement and Play 3 secondary reference."
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "tool_id": "AI-USE-CASE-INTAKE-TRIAGE-WORKSHEET",
+  "tool_slug": "ai-use-case-intake-and-triage-worksheet",
+  "tool_name": "AI Use Case Intake and Triage Worksheet",
+  "tool_type": "worksheet",
+  "version": "1.0",
+  "intended_use": "Front-end intake and triage tool for proposed public health AI use cases before scoring, vendor discussion, procurement, pilot planning, or implementation.",
+  "short_description": "Captures the proposed AI use case, public health purpose, workflow, data, users, affected populations, risks, readiness, equity considerations, and recommended governance review pathway.",
+  "audience": [
+    "program staff",
+    "technical staff",
+    "public health informatics staff",
+    "data and analytics staff",
+    "privacy and security staff",
+    "legal and procurement reviewers",
+    "equity and civil rights reviewers",
+    "communications staff",
+    "AI governance bodies",
+    "public health leaders"
+  ],
+  "completion_guidance": [
+    "Complete Part 1 before any AI tool is purchased, piloted, configured, or used with public health data or public-facing work.",
+    "Use Part 2 to describe the proposed use case in plain language, including the public health problem, affected workflow, intended users, and expected benefit.",
+    "Use Parts 3 through 7 to screen data, privacy, security, equity, workflow, vendor, legal, and operational considerations.",
+    "Use Part 8 to assign an initial triage level and Part 9 to document the governance decision, next steps, and required evidence."
+  ],
+  "playbook_integration": {
+    "primary_play_id": 7,
+    "primary_play_title": "Prioritize use cases through governance, equity, and feasibility review",
+    "secondary_play_id": 3,
+    "secondary_play_title": "AI Governance Development",
+    "toolkit_category": "Governance and Security",
+    "recommended_label": "Use Case Intake and Triage",
+    "recommended_route": "#/toolkit/ai-use-case-intake-and-triage-worksheet"
+  },
+  "sections": [
+    {
+      "part": 1,
+      "title": "Intake Summary",
+      "description": "Basic identifying information and early screening details for the proposed AI use case.",
+      "fields": [
+        {
+          "label": "Use case title",
+          "input_type": "text"
+        },
+        {
+          "label": "Submitting program, division, or partner",
+          "input_type": "text"
+        },
+        {
+          "label": "Submitter and contact information",
+          "input_type": "text"
+        },
+        {
+          "label": "Date submitted",
+          "input_type": "date"
+        },
+        {
+          "label": "Requested timeline",
+          "input_type": "text"
+        },
+        {
+          "label": "Proposed AI type",
+          "input_type": "multi_select",
+          "options": [
+            "generative AI",
+            "predictive model",
+            "natural language processing",
+            "computer vision",
+            "agentic workflow",
+            "automation",
+            "decision support",
+            "analytics",
+            "other"
+          ]
+        },
+        {
+          "label": "Current status",
+          "input_type": "single_select",
+          "options": [
+            "Idea only",
+            "exploratory",
+            "vendor discussion",
+            "procurement planning",
+            "pilot proposed",
+            "already in use",
+            "expansion of existing tool"
+          ]
+        },
+        {
+          "label": "Is this an internal productivity use?",
+          "input_type": "single_select",
+          "options": [
+            "Yes",
+            "No",
+            "Unsure"
+          ]
+        },
+        {
+          "label": "Is this a consequential public health use?",
+          "input_type": "single_select",
+          "options": [
+            "Yes",
+            "No",
+            "Unsure"
+          ],
+          "help_text": "Consequential uses may affect services, surveillance, resource allocation, public messaging, eligibility, enforcement, partner obligations, or community outcomes."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Public Health Purpose and Use Case Description",
+      "fields": [
+        {
+          "label": "Public health problem or opportunity",
+          "help_text": "Describe the problem the AI-supported workflow is intended to address. Include who is affected, why the problem matters, and what is not working well today."
+        },
+        {
+          "label": "Proposed AI-supported activity",
+          "help_text": "Describe what the AI system, model, or tool would do. Avoid vendor language. Explain the actual task in plain language."
+        },
+        {
+          "label": "Intended users",
+          "help_text": "List the staff, partners, contractors, or community-facing users who would interact with the AI-supported workflow."
+        },
+        {
+          "label": "Affected population or communities",
+          "help_text": "Identify populations, jurisdictions, facilities, programs, or communities that may be affected by the AI-supported use case."
+        },
+        {
+          "label": "Expected benefit",
+          "help_text": "Describe the expected public health value, such as faster response, improved data quality, better targeting of services, improved communication, workload reduction, or stronger situational awareness."
+        },
+        {
+          "label": "Success measures",
+          "help_text": "List 2 to 5 measurable indicators that would show whether the use case is successful."
+        },
+        {
+          "label": "Alternative approaches",
+          "help_text": "What non-AI or lower-risk approaches have been considered? Why might AI be appropriate here?"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Data, Systems, and Information Flow",
+      "fields": [
+        {
+          "label": "Data sources",
+          "help_text": "List all data sources, systems, documents, databases, APIs, files, or public information that would be used."
+        },
+        {
+          "label": "Data sensitivity",
+          "input_type": "multi_select",
+          "options": [
+            "public data",
+            "internal administrative data",
+            "identifiable health information",
+            "de-identified data",
+            "aggregate data",
+            "vital records",
+            "lab data",
+            "surveillance data",
+            "social services data",
+            "geographic data",
+            "vendor-held data",
+            "other"
+          ]
+        },
+        {
+          "label": "Data quality concerns",
+          "help_text": "Describe completeness, timeliness, standardization, bias, missingness, duplicate records, terminology, or linkage issues."
+        },
+        {
+          "label": "Data sharing or access changes",
+          "help_text": "Will new people, systems, vendors, or partners gain access to data? Describe what changes."
+        },
+        {
+          "label": "System integration needs",
+          "help_text": "Describe whether the use case requires APIs, file transfers, EHR/HIE integration, FHIR, HL7, dashboards, case management systems, cloud services, or other infrastructure."
+        },
+        {
+          "label": "Data retention and records",
+          "help_text": "Describe what input data, outputs, prompts, logs, model results, and decisions would be retained, for how long, and where."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "title": "Workflow, Human Review, and Accountability",
+      "fields": [
+        {
+          "label": "Current workflow",
+          "help_text": "Briefly describe the current workflow, including key steps, handoffs, decisions, and pain points."
+        },
+        {
+          "label": "Proposed workflow change",
+          "help_text": "Describe what would change if the AI-supported workflow is implemented."
+        },
+        {
+          "label": "Human review point",
+          "help_text": "Where will a person review, approve, reject, revise, or override the AI output?"
+        },
+        {
+          "label": "Decision authority",
+          "help_text": "Who remains accountable for decisions, communications, approvals, or actions supported by the AI tool?"
+        },
+        {
+          "label": "User training needs",
+          "help_text": "What staff need training before using, reviewing, or supervising the AI-supported workflow?"
+        },
+        {
+          "label": "Failure response",
+          "help_text": "What should staff do if the AI output appears wrong, biased, unsafe, incomplete, or inappropriate?"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "title": "Equity, Civil Rights, Accessibility, and Community Impact",
+      "fields": [
+        {
+          "label": "Potential equity risks",
+          "help_text": "Could the use case affect groups differently by race, ethnicity, language, disability, geography, age, income, insurance status, housing status, immigration status, or other factors?"
+        },
+        {
+          "label": "Missing voices",
+          "help_text": "Which communities, staff groups, partners, or users should be consulted before moving forward?"
+        },
+        {
+          "label": "Language access and accessibility",
+          "help_text": "Will outputs or communications need plain language, translation, disability accessibility, or culturally appropriate review?"
+        },
+        {
+          "label": "Community trust considerations",
+          "help_text": "Could this use case raise concerns about surveillance, targeting, stigma, eligibility, enforcement, transparency, or public trust?"
+        },
+        {
+          "label": "Mitigation steps",
+          "help_text": "What safeguards, engagement steps, monitoring measures, or review processes are needed to reduce equity and civil rights risks?"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "title": "Privacy, Security, Legal, Procurement, and Vendor Review",
+      "fields": [
+        {
+          "label": "Privacy review needed",
+          "input_type": "single_select",
+          "options": [
+            "Yes",
+            "No",
+            "Unsure"
+          ],
+          "help_text": "Explain whether protected, identifiable, confidential, or sensitive information is involved."
+        },
+        {
+          "label": "Security review needed",
+          "input_type": "single_select",
+          "options": [
+            "Yes",
+            "No",
+            "Unsure"
+          ],
+          "help_text": "Explain hosting, access controls, authentication, logging, vendor access, cloud environment, or data transmission issues."
+        },
+        {
+          "label": "Legal or policy review needed",
+          "input_type": "single_select",
+          "options": [
+            "Yes",
+            "No",
+            "Unsure"
+          ],
+          "help_text": "Note any statutory, regulatory, grant, data use, records, civil rights, procurement, or agency policy issues."
+        },
+        {
+          "label": "Vendor involvement",
+          "help_text": "Name any vendor or external partner. Describe whether data would be shared, stored, processed, or used to train or improve vendor models."
+        },
+        {
+          "label": "Procurement status",
+          "input_type": "single_select",
+          "options": [
+            "No procurement yet",
+            "market scan",
+            "vendor demo",
+            "RFP planned",
+            "contract amendment",
+            "existing contract",
+            "other"
+          ]
+        },
+        {
+          "label": "Transparency needs",
+          "help_text": "Would staff, partners, governance bodies, or the public need to be told that AI is being used? Describe what should be disclosed."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "title": "Initial Risk Screening",
+      "description": "Use yes/no/unsure responses and notes to identify the minimum level of governance review needed.",
+      "risk_questions": [
+        "Does the use case involve identifiable, protected, confidential, or sensitive information?",
+        "Could outputs influence services, eligibility, outreach, enforcement, resource allocation, public messaging, or public health action?",
+        "Could the use case affect communities differently or create disparate impact?",
+        "Will a vendor, external model, or cloud service process agency data?",
+        "Could incorrect output create harm, delay response, misinform the public, or undermine trust?",
+        "Does the workflow require formal human review, override, or documentation?",
+        "Is the use case already in use without documented governance review?",
+        "Does the proposed tool create new records, logs, prompts, or outputs that must be retained?"
+      ]
+    },
+    {
+      "part": 8,
+      "title": "Triage Level and Review Pathway",
+      "triage_levels": [
+        {
+          "level": 1,
+          "label": "Low-risk internal productivity use",
+          "typical_characteristics": "No sensitive data; no public-facing output; no consequential decision; human fully controls final work product.",
+          "minimum_review_pathway": "Program supervisor or designated AI lead confirms acceptable use, data limits, and documentation.",
+          "possible_decision": "Proceed with guardrails / revise / route to Level 2 if uncertainty remains."
+        },
+        {
+          "level": 2,
+          "label": "Moderate operational use",
+          "typical_characteristics": "May support workflow efficiency, summarization, analytics, or internal decisions; limited or controlled sensitive data; requires human review.",
+          "minimum_review_pathway": "AI governance intake review plus privacy/security review if data or systems are involved.",
+          "possible_decision": "Proceed to planning / revise / require additional review / pause."
+        },
+        {
+          "level": 3,
+          "label": "High-impact or consequential use",
+          "typical_characteristics": "May affect services, surveillance, resource allocation, public messaging, partner obligations, community outcomes, or public trust.",
+          "minimum_review_pathway": "Formal AI governance review with privacy, security, legal, equity, program, technical, and operational reviewers.",
+          "possible_decision": "Approve for limited pilot / require redesign / defer / reject."
+        },
+        {
+          "level": 4,
+          "label": "Prohibited or not ready",
+          "typical_characteristics": "Unclear public health purpose; unacceptable privacy/security/equity risk; no human accountability; vendor/data terms are not acceptable; or benefits do not justify risk.",
+          "minimum_review_pathway": "Governance body documents reasons and conditions that would need to change before reconsideration.",
+          "possible_decision": "Do not proceed / redesign and resubmit / escalate to leadership."
+        }
+      ],
+      "fields": [
+        {
+          "label": "Recommended triage level",
+          "input_type": "single_select",
+          "options": [
+            "Level 1",
+            "Level 2",
+            "Level 3",
+            "Level 4"
+          ]
+        },
+        {
+          "label": "Rationale",
+          "help_text": "Explain why this level was selected."
+        },
+        {
+          "label": "Required reviewers",
+          "input_type": "multi_select",
+          "options": [
+            "program",
+            "data",
+            "IT",
+            "privacy",
+            "security",
+            "legal",
+            "procurement",
+            "equity",
+            "communications",
+            "records",
+            "leadership",
+            "community or partner review",
+            "other"
+          ]
+        },
+        {
+          "label": "Required evidence before next step",
+          "help_text": "List the documents, policies, testing results, data descriptions, vendor terms, or engagement evidence needed before approval."
+        }
+      ]
+    },
+    {
+      "part": 9,
+      "title": "Governance Decision Record",
+      "fields": [
+        {
+          "label": "Governance decision",
+          "input_type": "single_select",
+          "options": [
+            "Proceed",
+            "Proceed with conditions",
+            "Revise and resubmit",
+            "Defer",
+            "Do not proceed",
+            "Escalate"
+          ]
+        },
+        {
+          "label": "Decision date",
+          "input_type": "date"
+        },
+        {
+          "label": "Decision-maker or review body",
+          "input_type": "text"
+        },
+        {
+          "label": "Conditions of approval",
+          "help_text": "List required safeguards, limits, training, monitoring, documentation, human review steps, or pilot constraints."
+        },
+        {
+          "label": "Next steps and owner",
+          "help_text": "List action items, owners, and due dates."
+        },
+        {
+          "label": "Monitoring expectations",
+          "help_text": "Define what will be monitored after approval, such as performance, equity, errors, complaints, user adoption, incidents, and public health value."
+        },
+        {
+          "label": "Re-review trigger",
+          "help_text": "Identify events that require re-review: new data source, vendor change, workflow change, expansion, incident, public concern, performance issue, or policy change."
+        }
+      ]
+    }
+  ],
+  "completed_example": {
+    "title": "AI-drafted respiratory virus surveillance briefing",
+    "summary": "A local health department proposes using a generative AI tool to help draft plain-language summaries of weekly respiratory virus surveillance trends for internal leadership and partner briefings. The tool would summarize de-identified aggregate trends from an internal dashboard and prior approved messages. Staff would review and approve all outputs before use.",
+    "fields": {
+      "Public health problem": "Staff spend several hours each week translating surveillance trends into leadership updates. Drafts vary in clarity and reading level, and the communications team is often brought in late.",
+      "Proposed AI-supported activity": "Use an approved AI tool to draft a plain-language summary of aggregate respiratory virus trends. The AI output would not be released directly. Staff would review, revise, and approve the final message.",
+      "Data sources": "Aggregate dashboard trends, weekly case counts, hospital utilization summaries, test positivity, and prior approved public health messaging. No identifiable data would be entered.",
+      "Human review": "An epidemiologist verifies accuracy and uncertainty. A communications specialist reviews plain language, tone, and audience fit. A program manager approves the final briefing.",
+      "Equity and accessibility": "Staff check reading level, language access needs, and whether the summary could stigmatize any population or geographic area.",
+      "Initial triage level": "Level 2: Moderate operational use. The use supports internal drafting and partner communication, uses aggregate data, and requires human review. Governance should confirm approved tool use, prompt/data limits, review steps, records expectations, and monitoring.",
+      "Governance decision": "Proceed with conditions: use only approved aggregate data; prohibit identifiable data; document human review; retain final approved summaries; monitor errors and staff feedback for 60 days before expanding."
+    }
+  }
+}
