@@ -4512,13 +4512,19 @@ function curriculumSectionHeading(module, section) {
 function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossaryCta) {
   const sectionsToSkip = new Set(["preamble", "training_overview", "learning_objectives", "definitions", "knowledge_check", "references_and_resources_for_additional_information", "jurisdiction_and_agency_policy_note", "practical_exercise", "expected_artifact_or_evidence"]);
   const sections = (module.sections || []).filter(section => !sectionsToSkip.has(section.key));
+  const publicHealthExampleSections = sections.filter(section => section.key === "public_health_example" || /^public health example/i.test(section.heading || ""));
+  const contentSections = sections.filter(section => !publicHealthExampleSections.includes(section));
   const policyNote = module.jurisdiction_and_agency_policy_note?.text || curriculumSectionText(module, "jurisdiction_and_agency_policy_note");
   const definitions = module.definitions || [];
   const curriculumExercise = curriculumSectionText(module, "practical_exercise");
   const exerciseApplication = curriculumExercise ? { exercise: curriculumExercise, artifacts: module.expected_artifacts_or_evidence || [] } : {};
   const requiredPrereqs = prerequisiteItems(module, "required");
   const recommendedPrereqs = prerequisiteItems(module, "recommended");
-  const sectionDetails = sections.map((section, index) => `<details class="course-section" ${index < 2 ? "open" : ""}>
+  const exampleBlocks = publicHealthExampleSections.map(section => `<section class="content-section lesson-prose public-health-example-section">
+            <h3>${curriculumSectionHeading(module, section)}</h3>
+            ${renderLearningSection(section)}
+          </section>`).join("");
+  const sectionDetails = contentSections.map((section, index) => `<details class="course-section" ${index < 2 ? "open" : ""}>
     <summary>${curriculumSectionHeading(module, section)}</summary>
     <div class="lesson-prose">${renderLearningSection(section)}</div>
   </details>`).join("");
@@ -4554,6 +4560,7 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
             <ul class="check-list">${(module.learning_objectives || []).map(item => `<li>${item}</li>`).join("")}</ul>
           </section>
           ${definitions.length ? `<section class="content-section lesson-prose definitions-section"><h3>Definitions</h3><dl class="definition-list">${definitions.map(item => `<dt>${item.term}</dt><dd>${item.definition}</dd>`).join("")}</dl></section>` : ""}
+          ${exampleBlocks}
           ${sectionDetails ? `<section class="content-section module-details-stack"><h3>Course Content</h3>${sectionDetails}</section>` : ""}
           ${renderPracticalExercise(module, exerciseApplication)}
           ${renderCurriculumKnowledgeCheck(module)}
