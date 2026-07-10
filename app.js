@@ -2954,6 +2954,7 @@ function route() {
   if (key === "") renderHome();
   else if (key === "learn") renderLearn(param);
   else if (key === "learn-track") renderLearningTrackPage(param);
+  else if (key === "learn-plan") renderLearningPlanPage(param);
   else if (key === "use-areas") renderLearn("ai-support-areas");
   else if (key === "assess") renderAssess();
   else if (key === "maturity") renderMaturity();
@@ -3998,16 +3999,207 @@ function curriculumModuleTrackLinks(module) {
   </section>`;
 }
 
+function normalizeLearningTrackId(trackId = "") {
+  if (trackId === "shared-foundation") return "shared-foundational";
+  if (trackId === "executive-leadership") return "public-health-executive-leadership";
+  return trackId || "all-modules";
+}
+
+function learningPlans() {
+  return window.CURRICULUM_DATA?.learning_plans || [];
+}
+
+function moduleByCourseId() {
+  return Object.fromEntries(learningModules.map(module => [module.course_id, module]));
+}
+
+function moduleLmsCard(module) {
+  return module?.lms_usability_metadata?.catalog_card || {};
+}
+
+function moduleAudience(module) {
+  const audience = moduleLmsCard(module).audience;
+  return Array.isArray(audience) ? audience.join(", ") : (audience || "Public health learners");
+}
+
+function moduleEstimatedTime(module) {
+  const minutes = moduleLmsCard(module).estimated_time_minutes;
+  return minutes ? `${minutes} minutes` : "Self-paced";
+}
+
+function moduleCompletionRequirement(module) {
+  return moduleLmsCard(module).completion_requirement || "Review the module, complete the knowledge check, and save or upload the expected artifact when required.";
+}
+
+function moduleTrackTitles(module) {
+  const data = window.CURRICULUM_DATA;
+  const fromCrosswalk = data?.module_to_track_crosswalk?.find(item => item.module_id === module.id);
+  if (fromCrosswalk?.tracks?.length) return fromCrosswalk.tracks.map(track => track.track_title);
+  const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
+  return (module.tracks || []).map(id => trackById[id]?.title).filter(Boolean);
+}
+
+function prerequisiteItems(module, type = "required") {
+  const prerequisites = module?.prerequisites?.[type] || [];
+  if (Array.isArray(prerequisites)) return prerequisites;
+  return [];
+}
+
+function prerequisiteLinks(module, type = "required") {
+  const byCourse = moduleByCourseId();
+  const items = prerequisiteItems(module, type);
+  if (!items.length) return `<span class="muted">None</span>`;
+  return items.map(item => {
+    const match = byCourse[item.course_id];
+    const label = `${item.course_id}${item.title ? ` - ${item.title}` : ""}`;
+    return match ? `<a href="#/learn/${match.id}">${label}</a>` : `<span>${label}</span>`;
+  }).join(", ");
+}
+
+function planModules(plan) {
+  const seen = new Set();
+  const modules = [];
+  (plan.source_tracks || []).forEach(trackId => {
+    curriculumTrackModules(normalizeLearningTrackId(trackId)).forEach(module => {
+      if (!seen.has(module.id)) {
+        seen.add(module.id);
+        modules.push(module);
+      }
+    });
+  });
+  (plan.required_prefixes || []).forEach(prefix => {
+    learningModules
+      .filter(module => String(module.course_id || "").startsWith(`${prefix} `))
+      .forEach(module => {
+        if (!seen.has(module.id)) {
+          seen.add(module.id);
+          modules.push(module);
+        }
+      });
+  });
+  return modules;
+}
+
+function planEstimatedTime(plan) {
+  const total = planModules(plan).reduce((sum, module) => sum + (Number(moduleLmsCard(module).estimated_time_minutes) || 0), 0);
+  if (!total) return "Varies by assignment";
+  const hours = Math.floor(total / 60);
+  const minutes = total % 60;
+  return hours ? `${hours} hr${hours === 1 ? "" : "s"}${minutes ? ` ${minutes} min` : ""}` : `${minutes} minutes`;
+}
+
+function coursePrefix(module) {
+  return String(module.course_id || "").split(" ")[0] || "";
+}
+
+function catalogTags(module) {
+  return moduleLmsCard(module).catalog_tags || [];
+}
+
+function renderPrerequisiteBadge(module) {
+  const required = prerequisiteItems(module, "required").length;
+  return required ? `<span class="status-pill warn">${required} required prerequisite${required === 1 ? "" : "s"}</span>` : `<span class="status-pill complete">No required prerequisites</span>`;
+}
+
+function renderModuleCatalogCard(module, plans = learningPlans()) {
+  const planIds = plans.filter(plan => planModules(plan).some(item => item.id === module.id)).map(plan => plan.plan_id).join(" ");
+  const tracks = moduleTrackTitles(module);
+  const tags = catalogTags(module);
+  const searchText = [
+    module.course_id,
+    module.title,
+    module.display_title,
+    module.primary_track_title,
+    module.level_label,
+    moduleAudience(module),
+    moduleCompletionRequirement(module),
+    tags.join(" "),
+    tracks.join(" ")
+  ].join(" ").toLowerCase();
+  const requiredCount = prerequisiteItems(module, "required").length;
+  const minutes = Number(moduleLmsCard(module).estimated_time_minutes) || 0;
+  return `<article class="module-catalog-card"
+      data-search="${searchText.replace(/"/g, "&quot;")}"
+      data-track="${(module.tracks || []).join(" ")}"
+      data-plan="${planIds}"
+      data-level="${module.level_label || ""}"
+      data-audience="${moduleAudience(module).replace(/"/g, "&quot;")}"
+      data-prefix="${coursePrefix(module)}"
+      data-prereq="${requiredCount ? "required" : "none"}"
+      data-minutes="${minutes}"
+      data-tags="${tags.join(" ").replace(/"/g, "&quot;")}">
+    <div class="module-card-header">
+      <span class="course-code">${module.course_id || "Module"}</span>
+      ${renderPrerequisiteBadge(module)}
+    </div>
+    <h3><a href="#/learn/${module.id}">${module.display_title || module.title}</a></h3>
+    <p>${module.text || moduleLmsCard(module).when_to_use || ""}</p>
+    <div class="module-card-meta">
+      <span>${module.level_label || "Module"}</span>
+      <span>${moduleEstimatedTime(module)}</span>
+      <span>${moduleAudience(module)}</span>
+    </div>
+    <div class="module-card-badges">
+      ${tracks.slice(0, 3).map(track => `<span>${track}</span>`).join("")}
+      ${tracks.length > 3 ? `<span>+${tracks.length - 3} more</span>` : ""}
+    </div>
+    <div class="module-card-prereqs">
+      <strong>Required:</strong> ${prerequisiteLinks(module, "required")}
+    </div>
+  </article>`;
+}
+
+function filterLearningCatalog() {
+  const form = document.getElementById("learning-catalog-filters");
+  const list = document.getElementById("module-catalog-list");
+  if (!form || !list) return;
+  const search = (document.getElementById("catalog-search")?.value || "").trim().toLowerCase();
+  const track = normalizeLearningTrackId(document.getElementById("catalog-track")?.value || "");
+  const plan = document.getElementById("catalog-plan")?.value || "";
+  const level = document.getElementById("catalog-level")?.value || "";
+  const audience = document.getElementById("catalog-audience")?.value || "";
+  const prefix = document.getElementById("catalog-prefix")?.value || "";
+  const prereq = document.getElementById("catalog-prereq")?.value || "";
+  const time = Number(document.getElementById("catalog-time")?.value || 0);
+  const tag = document.getElementById("catalog-tag")?.value || "";
+  let visible = 0;
+  list.querySelectorAll(".module-catalog-card").forEach(card => {
+    const minutes = Number(card.dataset.minutes || 0);
+    const matches =
+      (!search || card.dataset.search.includes(search)) &&
+      (!track || card.dataset.track.split(" ").includes(track)) &&
+      (!plan || card.dataset.plan.split(" ").includes(plan)) &&
+      (!level || card.dataset.level === level) &&
+      (!audience || card.dataset.audience.includes(audience)) &&
+      (!prefix || card.dataset.prefix === prefix) &&
+      (!prereq || card.dataset.prereq === prereq) &&
+      (!time || (minutes && minutes <= time)) &&
+      (!tag || card.dataset.tags.includes(tag));
+    card.hidden = !matches;
+    if (matches) visible += 1;
+  });
+  const meta = document.getElementById("catalog-results-meta");
+  if (meta) meta.textContent = `${visible} module${visible === 1 ? "" : "s"} shown`;
+}
+
 function renderLearnLanding() {
   const tracks = learningTracks.filter(track => track.track_id !== "all-modules");
   const technicalTrackIds = ["technical-architecture", "analytics-modeling", "operations-data-quality", "governance-security"];
-  const roleTrackIds = ["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management"];
+  const roleTrackIds = ["communications", "epidemiology", "policy", "executive-leadership", "program-management"];
   const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
   const trackButton = id => {
-    const track = trackById[id];
+    const resolvedId = normalizeLearningTrackId(id);
+    const track = trackById[resolvedId];
     return track ? `<a class="curriculum-node ${id}" href="#/learn-track/${id}">${track.short_title || track.title}</a>` : "";
   };
-  const allModules = curriculumTrackModules("all-modules");
+  const plans = learningPlans();
+  const prefixes = [...new Set(learningModules.map(coursePrefix).filter(Boolean))];
+  const levels = [...new Set(learningModules.map(module => module.level_label).filter(Boolean))];
+  const audiences = [...new Set(learningModules.flatMap(module => {
+    const audience = moduleLmsCard(module).audience;
+    return Array.isArray(audience) ? audience : String(audience || "").split(";").map(item => item.trim()).filter(Boolean);
+  }))].sort();
+  const tags = [...new Set(learningModules.flatMap(catalogTags))].sort();
   main.innerHTML = `<section class="page learn-landing-page">
     ${breadcrumbTrail()}
     <section class="learn-hero">
@@ -4015,8 +4207,9 @@ function renderLearnLanding() {
         <p class="eyebrow">AI Playbook Curriculum</p>
         <h1>Learn</h1>
         <p class="lead">Build practical AI knowledge for public health through shared foundational learning, technical tracks, governance and security training, and role-based modules. The curriculum is designed to help staff, leaders, and partners apply AI responsibly in real public health workflows.</p>
+        <p>Use this section to browse learning tracks, choose a role-based learning plan, view module prerequisites, and find training modules by course ID, topic, role, or implementation need.</p>
         <div class="button-row">
-          <a class="btn primary" href="#/learn-track/shared-foundational">Start with the Shared Foundation</a>
+          <a class="btn primary" href="#/learn-track/shared-foundation">View Shared Foundation</a>
           <a class="btn" href="#/learn-track/all-modules">Browse All Modules</a>
         </div>
       </div>
@@ -4030,10 +4223,69 @@ function renderLearnLanding() {
       </div>
     </section>
 
+    <section class="panel start-foundation-panel">
+      <div class="section-heading compact">
+        <p class="eyebrow">Start Here</p>
+        <h2>Start with the Shared Foundation</h2>
+      </div>
+      <p>All learners should begin with the shared foundational course unless they are completing a targeted executive briefing. The shared foundation introduces core AI concepts, public health context, responsible use, human review, privacy, equity, transparency, and practical safeguards. These modules create a common vocabulary before learners move into technical, governance, or role-based tracks.</p>
+      <div class="button-row"><a class="btn primary" href="#/learn-track/shared-foundation">View Shared Foundation</a></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Learning Plans</p>
+        <h2>Choose a Learning Plan</h2>
+        <p>Learning plans provide role-based pathways through the curriculum. They help learners choose the most relevant modules for their responsibilities while still preserving access to the full catalog.</p>
+      </div>
+      <div class="track-card-grid learning-plan-grid">
+        ${plans.map(plan => {
+          const modules = planModules(plan);
+          return `<article class="track-card learning-plan-card">
+            <div>
+              <p class="track-code">Plan</p>
+              <h3>${plan.title}</h3>
+              <p>${plan.description}</p>
+            </div>
+            <div class="track-card-meta">
+              <p><strong>Audience:</strong> ${(plan.primary_audience || []).join(", ")}</p>
+              <p><strong>Estimated time:</strong> ${planEstimatedTime(plan)}</p>
+              <p><strong>${modules.length}</strong> modules</p>
+            </div>
+            <a class="btn small" href="#/learn-plan/${plan.plan_id}">View Plan</a>
+          </article>`;
+        }).join("")}
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Learning Tracks</p>
+        <h2>Explore Learning Tracks</h2>
+        <p>Tracks organize modules by function, responsibility, and level of technical depth. Modules may appear in more than one track because public health AI responsibilities often overlap across leadership, technical, operational, policy, communications, and program roles.</p>
+      </div>
+      <div class="track-card-grid">
+        ${tracks.map(track => `
+          <article class="track-card">
+            <div>
+              <p class="track-code">${track.track_code}</p>
+              <h3>${track.title}</h3>
+              <p>${track.description}</p>
+            </div>
+            <div class="track-card-meta">
+              <p><strong>Audience:</strong> ${(track.primary_audience || []).slice(0, 3).join(", ")}${(track.primary_audience || []).length > 3 ? ", and others" : ""}</p>
+              <p><strong>Use:</strong> ${track.recommended_use || "Use as assigned based on role and implementation responsibilities."}</p>
+              <p><strong>${curriculumTrackModules(track.track_id).length}</strong> modules</p>
+            </div>
+            <a class="btn small" href="#/learn-track/${track.track_id === "shared-foundational" ? "shared-foundation" : track.track_id}">View Track</a>
+          </article>`).join("")}
+      </div>
+    </section>
+
     <section class="panel curriculum-overview-panel">
       <div class="section-heading">
         <p class="eyebrow">Curriculum Overview</p>
-        <h2>How the Learning Modules Are Organized</h2>
+        <h2>How the Curriculum Is Organized</h2>
         <p>The shared foundational course creates a common vocabulary and baseline for responsible AI use. From there, learners can follow technical tracks, governance and security training, or role-based tracks depending on their responsibilities.</p>
       </div>
       <div class="curriculum-map-graphic" aria-label="Curriculum structure">
@@ -4043,7 +4295,7 @@ function renderLearnLanding() {
         </a>
         <div class="curriculum-branches">
           <section class="curriculum-branch technical">
-            <h3>Technical Tracks</h3>
+            <h3>Technical and Governance Tracks</h3>
             <div class="curriculum-node-grid">
               ${technicalTrackIds.map(trackButton).join("")}
             </div>
@@ -4058,26 +4310,26 @@ function renderLearnLanding() {
       </div>
     </section>
 
-    <section class="content-section">
+    <section class="panel module-catalog-panel">
       <div class="section-heading">
-        <p class="eyebrow">Learning Tracks</p>
-        <h2>Choose the Track That Matches Your Role or Function</h2>
+        <p class="eyebrow">Catalog</p>
+        <h2>Browse Learning Modules</h2>
+        <p>Use the catalog to find modules by course ID, track, role, level, estimated time, prerequisite status, or implementation topic.</p>
       </div>
-      <div class="track-card-grid">
-        ${tracks.map(track => `
-          <article class="track-card">
-            <div>
-              <p class="track-code">${track.track_code}</p>
-              <h3>${track.title}</h3>
-              <p>${track.description}</p>
-            </div>
-            <div class="track-card-meta">
-              <p><strong>Audience:</strong> ${(track.primary_audience || []).slice(0, 3).join(", ")}${(track.primary_audience || []).length > 3 ? ", and others" : ""}</p>
-              <p><strong>Use:</strong> ${track.recommended_use || "Use as assigned based on role and implementation responsibilities."}</p>
-              <p><strong>${track.module_count}</strong> modules</p>
-            </div>
-            <a class="btn small" href="#/learn-track/${track.track_id}">View Track</a>
-          </article>`).join("")}
+      <form class="catalog-filters" id="learning-catalog-filters" oninput="filterLearningCatalog()" onchange="filterLearningCatalog()">
+        <label>Search<input id="catalog-search" type="search" placeholder="Course ID, title, topic, or keyword"></label>
+        <label>Track<select id="catalog-track"><option value="">All tracks</option>${tracks.map(track => `<option value="${track.track_id}">${track.title}</option>`).join("")}</select></label>
+        <label>Learning plan<select id="catalog-plan"><option value="">All plans</option>${plans.map(plan => `<option value="${plan.plan_id}">${plan.title}</option>`).join("")}</select></label>
+        <label>Level<select id="catalog-level"><option value="">All levels</option>${levels.map(level => `<option value="${level}">${level}</option>`).join("")}</select></label>
+        <label>Role / audience<select id="catalog-audience"><option value="">All audiences</option>${audiences.map(audience => `<option value="${audience}">${audience}</option>`).join("")}</select></label>
+        <label>Course prefix<select id="catalog-prefix"><option value="">All prefixes</option>${prefixes.map(prefix => `<option value="${prefix}">${prefix}</option>`).join("")}</select></label>
+        <label>Prerequisites<select id="catalog-prereq"><option value="">Any prerequisite status</option><option value="none">No required prerequisites</option><option value="required">Has required prerequisites</option></select></label>
+        <label>Estimated time<select id="catalog-time"><option value="">Any length</option><option value="30">30 minutes or less</option><option value="45">45 minutes or less</option><option value="60">60 minutes or less</option></select></label>
+        <label>Topic / tag<select id="catalog-tag"><option value="">All topics</option>${tags.map(tag => `<option value="${tag}">${tag}</option>`).join("")}</select></label>
+      </form>
+      <div class="catalog-results-meta" id="catalog-results-meta">${learningModules.length} modules shown</div>
+      <div class="module-catalog-list" id="module-catalog-list">
+        ${learningModules.map(module => renderModuleCatalogCard(module, plans)).join("")}
       </div>
     </section>
 
@@ -4088,9 +4340,9 @@ function renderLearnLanding() {
       </div>
       <div class="feature-card-grid">
         <article><h3>Learning Objectives</h3><p>Each module states what you should understand, apply, and produce by the end of the lesson.</p></article>
-        <article><h3>Practical Exercises</h3><p>Exercises help you create artifacts that can support readiness, governance, implementation, monitoring, or accountability work.</p></article>
-        <article><h3>Knowledge Checks</h3><p>Short checks help confirm that you understand the key decisions, risks, safeguards, and documentation expectations.</p></article>
-        <article><h3>References and Resources</h3><p>Modules include source material and additional resources for deeper review, policy alignment, and role-specific learning.</p></article>
+        <article><h3>Public Health Examples</h3><p>Scenarios show how the topic applies to surveillance, operations, governance, communications, analytics, policy, or service delivery.</p></article>
+        <article><h3>Practical Exercises</h3><p>Hands-on activities help you produce useful artifacts for planning, governance, implementation, or monitoring.</p></article>
+        <article><h3>Knowledge Checks and Resources</h3><p>Short checks confirm understanding, while references and resources support deeper learning.</p></article>
       </div>
     </section>
 
@@ -4107,11 +4359,32 @@ function renderLearnLanding() {
       <div class="callout blue"><strong>Note:</strong> Modules can appear in more than one track to support different roles and levels of responsibility.</div>
     </section>
 
+    <section class="panel completion-model-panel">
+      <div class="section-heading compact">
+        <p class="eyebrow">Progress</p>
+        <h2>How Completion Works</h2>
+      </div>
+      <p>A module is complete when the learner reviews the core content, completes the knowledge check, and completes or saves the expected artifact when one is required.</p>
+      <div class="progress-state-grid" aria-label="Learner completion states">
+        ${["Not started", "In progress", "Knowledge check complete", "Artifact complete", "Module complete"].map((state, index) => `<span class="progress-state state-${index}">${state}</span>`).join("")}
+      </div>
+      <p class="muted">For organization or supervisor use, the system can also support assigned modules, due dates, completion status, needs follow-up status, and evidence uploaded status.</p>
+    </section>
+
+    <section class="panel prerequisite-panel">
+      <div class="section-heading compact">
+        <p class="eyebrow">Preparation</p>
+        <h2>Prerequisites and Recommended Preparation</h2>
+      </div>
+      <p>Not every module has prerequisites. Required prerequisites indicate that a later module depends on concepts from an earlier module. Recommended prerequisites are helpful preparation but should not block access.</p>
+      <p>Use the catalog filter to find modules with no required prerequisites when you want a clean starting point.</p>
+    </section>
+
     <section class="panel curriculum-crosswalk-panel">
       <div class="section-heading">
-        <p class="eyebrow">Track / Module Crosswalk</p>
-        <h2>Modules by Track</h2>
-        <p>This list is sourced from the curriculum crosswalk. Course IDs and module order are preserved so modules can pair with their JSON files, PowerPoint decks, track assignments, and future member training records.</p>
+        <p class="eyebrow">Crosswalk</p>
+        <h2>Module-by-Track Crosswalk</h2>
+        <p>Use the crosswalk to see the recommended module order within each learning track. Course IDs and module order are preserved so modules can pair with their JSON files, PowerPoint decks, track assignments, and future member training records.</p>
       </div>
       <div class="track-crosswalk-list">
         ${tracks.map(track => {
@@ -4120,13 +4393,16 @@ function renderLearnLanding() {
             <summary><span>${track.title}</span><strong>${modules.length} modules</strong></summary>
             <div class="table-wrap">
               <table>
-                <thead><tr><th>Course ID</th><th>Module</th><th>Level</th><th>Primary Track</th><th>Open</th></tr></thead>
+                <thead><tr><th>Order</th><th>Course ID</th><th>Module</th><th>Level</th><th>Primary Track</th><th>Required Prerequisites</th><th>Recommended Preparation</th><th>Open</th></tr></thead>
                 <tbody>
-                  ${modules.map(module => `<tr>
+                  ${modules.map((module, index) => `<tr>
+                    <td>${index + 1}</td>
                     <td>${module.course_id || ""}</td>
                     <td>${module.title}</td>
                     <td>${module.level_label || ""}</td>
                     <td>${module.primary_track_title || ""}</td>
+                    <td>${prerequisiteLinks(module, "required")}</td>
+                    <td>${prerequisiteLinks(module, "recommended")}</td>
                     <td><a href="#/learn/${module.id}">Open module</a></td>
                   </tr>`).join("")}
                 </tbody>
@@ -4140,7 +4416,7 @@ function renderLearnLanding() {
 }
 
 function renderLearningTrackPage(trackId = "all-modules") {
-  const resolvedTrackId = trackId || "all-modules";
+  const resolvedTrackId = normalizeLearningTrackId(trackId || "all-modules");
   const track = learningTracks.find(item => item.track_id === resolvedTrackId) || learningTracks[0];
   const modules = curriculumTrackModules(track.track_id);
   const moduleNav = renderLearningModuleNav(track.track_id);
@@ -4168,6 +4444,43 @@ function renderLearningTrackPage(trackId = "all-modules") {
                     <small>${module.level_label || "Module"}${module.primary_track_title ? ` · ${module.primary_track_title}` : ""}</small>
                   </span>
                 </a>`).join("")}
+            </div>
+          </section>
+        </article>
+      </div>
+    </div></section>`;
+}
+
+function renderLearningPlanPage(planId = "") {
+  const plan = learningPlans().find(item => item.plan_id === planId) || learningPlans()[0];
+  if (!plan) return renderLearnLanding();
+  const modules = planModules(plan);
+  const moduleNav = renderLearningModuleNav("all-modules");
+  main.innerHTML = pageIntro("Learn: AI Foundations for Public Health", "Use learning plans to follow a role-based path through the curriculum.") + `
+    <div class="learn-layout">
+      ${moduleNav}
+      <div>
+        <article class="panel learning-plan-detail">
+          <p class="eyebrow">Learning Plan</p>
+          <h2>${plan.title}</h2>
+          ${paragraphBlock(plan.description || "")}
+          <div class="course-meta-grid">
+            <article><strong>Primary audience</strong><span>${(plan.primary_audience || []).join(", ") || "Public health learners"}</span></article>
+            <article><strong>Estimated time</strong><span>${planEstimatedTime(plan)}</span></article>
+            <article><strong>Modules</strong><span>${modules.length}</span></article>
+            <article><strong>Tracks used</strong><span>${(plan.source_tracks || []).map(id => learningTracks.find(track => track.track_id === normalizeLearningTrackId(id))?.title || id).join(", ")}</span></article>
+          </div>
+          <section class="content-section">
+            <h3>Modules in This Plan</h3>
+            <div class="track-module-list">
+              ${modules.map((module, index) => `<a class="track-module-card" href="#/learn/${module.id}">
+                <span class="module-order">${index + 1}</span>
+                <span>
+                  <strong>${module.display_title || module.title}</strong>
+                  <small>${module.course_id || ""} &middot; ${module.level_label || "Module"} &middot; ${moduleEstimatedTime(module)}</small>
+                  <small>${module.primary_track_title || ""} &middot; ${moduleCompletionRequirement(module)}</small>
+                </span>
+              </a>`).join("")}
             </div>
           </section>
         </article>
@@ -4209,6 +4522,12 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
   const definitions = module.definitions || [];
   const curriculumExercise = curriculumSectionText(module, "practical_exercise");
   const exerciseApplication = curriculumExercise ? { exercise: curriculumExercise, artifacts: module.expected_artifacts_or_evidence || [] } : {};
+  const requiredPrereqs = prerequisiteItems(module, "required");
+  const recommendedPrereqs = prerequisiteItems(module, "recommended");
+  const sectionDetails = sections.map((section, index) => `<details class="course-section" ${index < 2 ? "open" : ""}>
+    <summary>${curriculumSectionHeading(module, section)}</summary>
+    <div class="lesson-prose">${renderLearningSection(section)}</div>
+  </details>`).join("");
   main.innerHTML = pageIntro("Learn: AI Foundations for Public Health", "Use these lessons to build the knowledge you need before tool selection, pilot planning, readiness assessment, or governance review.") + `
     <div class="learn-layout">
       ${moduleNav}
@@ -4219,17 +4538,33 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
           ${paragraphBlock(module.text)}
           ${lessonDownloadButtons}
           ${glossaryCta}
+          <section class="content-section course-profile">
+            <h3>Course Profile</h3>
+            <div class="course-meta-grid">
+              <article><strong>Estimated time</strong><span>${moduleEstimatedTime(module)}</span></article>
+              <article><strong>Level</strong><span>${module.level_label || "Module"}</span></article>
+              <article><strong>Audience</strong><span>${moduleAudience(module)}</span></article>
+              <article><strong>Primary track</strong><span>${module.primary_track_title || "Curriculum module"}</span></article>
+            </div>
+            <div class="course-meta-note"><strong>Completion requirement:</strong> ${moduleCompletionRequirement(module)}</div>
+          </section>
+          <section class="content-section course-prerequisites">
+            <h3>Prerequisites and Recommended Preparation</h3>
+            <p><strong>Required prerequisites:</strong> ${requiredPrereqs.length ? prerequisiteLinks(module, "required") : "None"}</p>
+            <p><strong>Recommended preparation:</strong> ${recommendedPrereqs.length ? prerequisiteLinks(module, "recommended") : "None"}</p>
+            ${module.prerequisite_summary ? paragraphBlock(module.prerequisite_summary) : ""}
+          </section>
           <section class="content-section">
             <h3>Learning Objectives</h3>
             <ul class="check-list">${(module.learning_objectives || []).map(item => `<li>${item}</li>`).join("")}</ul>
           </section>
           ${definitions.length ? `<section class="content-section lesson-prose definitions-section"><h3>Definitions</h3><dl class="definition-list">${definitions.map(item => `<dt>${item.term}</dt><dd>${item.definition}</dd>`).join("")}</dl></section>` : ""}
-          ${policyNote ? `<section class="content-section lesson-prose"><h3>Jurisdiction and Agency Policy Note</h3>${paragraphBlock(policyNote)}</section>` : ""}
-          ${sections.map(section => `<section class="content-section lesson-prose"><h3>${curriculumSectionHeading(module, section)}</h3>${renderLearningSection(section)}</section>`).join("")}
+          ${sectionDetails ? `<section class="content-section module-details-stack"><h3>Course Content</h3>${sectionDetails}</section>` : ""}
           ${renderPracticalExercise(module, exerciseApplication)}
-          ${curriculumModuleTrackLinks(module)}
           ${renderCurriculumKnowledgeCheck(module)}
           ${renderCurriculumReferences(module)}
+          ${policyNote ? `<details class="course-section"><summary>Jurisdiction and Agency Policy Note</summary><div class="lesson-prose">${paragraphBlock(policyNote)}</div></details>` : ""}
+          ${curriculumModuleTrackLinks(module)}
         </article>
       </div>
     </div></section>`;
@@ -7873,6 +8208,7 @@ function applyCurriculumPackage() {
     const risk = curriculumSectionText(module, "risks_failure_modes_and_guardrails", "Use agency governance, legal, privacy, equity, security, and operational review before applying this topic to real public health work.");
     learningModules.push({
       ...module,
+      tracks: (module.tracks || []).map(normalizeLearningTrackId),
       curriculumSource: true,
       text: overview,
       risk,
