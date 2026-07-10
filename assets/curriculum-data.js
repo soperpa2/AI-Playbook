@@ -195,7 +195,7 @@ window.CURRICULUM_DATA = {
   "curriculum_map": {
     "schema_version": "public-health-ai-curriculum-map-v2-course-ids",
     "id_format": "<3-letter primary track prefix> <3-digit level/sequence number>, e.g., INT 100",
-    "module_count": 68,
+    "module_count": 70,
     "track_prefixes": {
       "INT": "Shared Foundational / Introductory Course",
       "ARC": "Technical Architecture Track",
@@ -1115,7 +1115,7 @@ window.CURRICULUM_DATA = {
       "prerequisite-graph-edges.csv"
     ],
     "prerequisite_validation": {
-      "module_count": 68,
+      "module_count": 70,
       "modules_with_required_prerequisites": 49,
       "modules_with_recommended_prerequisites": 65,
       "modules_with_no_prerequisites_or_recommendations": 1,
