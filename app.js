@@ -2784,7 +2784,11 @@ function individualizeLearningModules() {
   walk(backgroundMaterial);
   learningModules.forEach(module => {
     if (module.id === "understanding-ai") {
+      module.course_id = "INT 100";
+      module.course_code = "INT 100";
       module.title = "Introduction to AI";
+      module.display_title = "INT 100: Introduction to AI";
+      module.level_label = "Foundational Module";
       module.text = "Use this lesson to build a practical foundation in AI, including predictive AI, generative AI, agentic AI, retrieval-augmented generation, and Deep Research. The goal is to understand what each capability can support, where it can fail, and what safeguards are needed before AI is used in public health work.";
       module.examples = ["Distinguish predictive, generative, agentic, and Deep Research uses", "Identify where AI may already appear in public health workflows", "Explain why human review and governance are required"];
     }
@@ -4110,8 +4114,11 @@ function prerequisiteLinks(module, type = "required") {
   const items = prerequisiteItems(module, type);
   if (!items.length) return `<span class="muted">None</span>`;
   return items.map(item => {
-    const match = byCourse[item.course_id];
-    const label = `${item.course_id}${item.title ? ` - ${item.title}` : ""}`;
+    const normalizedIntro = item.course_id === "INT 110" && /introduction to ai|understanding ai/i.test(item.title || "");
+    const courseId = normalizedIntro ? "INT 100" : item.course_id;
+    const title = normalizedIntro ? "Introduction to AI" : item.title;
+    const match = byCourse[courseId];
+    const label = `${courseId}${title ? ` - ${title}` : ""}`;
     return match ? `<a href="#/learn/${match.id}">${label}</a>` : `<span>${label}</span>`;
   }).join(", ");
 }
@@ -4282,7 +4289,7 @@ function renderLearnLanding() {
       </div>
       <p>All learners should begin with the foundational modules unless they are completing a targeted executive briefing. These modules introduce core AI concepts, public health value, governance basics, equity review, communications safeguards, human review, privacy, transparency, and practical safeguards. Together, they create a common vocabulary before learners move into technical, governance, or role-based tracks.</p>
       <div class="button-row">
-        <a class="btn primary" href="#/learn/understanding-ai">Open Introduction to AI</a>
+        <a class="btn primary" href="#/learn/understanding-ai">Open INT 100: Introduction to AI</a>
         <a class="btn" href="#/learn-track/shared-foundation">View Foundational Modules</a>
       </div>
     </section>
@@ -4589,7 +4596,7 @@ function renderLearn(moduleId = "") {
       <div>
         <article class="panel">
           <p class="eyebrow">Training Overview</p>
-          <h2>${module.title}</h2>
+          <h2>${module.display_title || module.title}</h2>
           ${paragraphBlock(module.text)}
           ${lessonDownloadButtons}
           ${glossaryCta}
@@ -8274,7 +8281,10 @@ function applyCurriculumPackage() {
     learningModules.unshift({
       ...introModule,
       course_id: "INT 100",
+      course_code: "INT 100",
       title: "Introduction to AI",
+      display_title: "INT 100: Introduction to AI",
+      level_label: "Foundational Module",
       tracks: ["shared-foundational"],
       curriculumSource: false
     });
