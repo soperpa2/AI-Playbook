@@ -8314,6 +8314,11 @@ function applyCurriculumPackage() {
     foundationalTrack.short_title = "Foundational Modules";
     foundationalTrack.description = "Foundational modules that establish common vocabulary, public health value, governance basics, equity review, and communications safeguards before learners move into role-based or technical tracks.";
     foundationalTrack.module_count = foundationalCourseIds.length;
+    const foundationalIndex = learningTracks.indexOf(foundationalTrack);
+    if (foundationalIndex > 1) {
+      learningTracks.splice(foundationalIndex, 1);
+      learningTracks.splice(1, 0, foundationalTrack);
+    }
   }
 }
 
