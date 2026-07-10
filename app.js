@@ -3297,7 +3297,8 @@ async function downloadLearningModulePdf(moduleId) {
       ["Related plays", (module.plays || []).map(id => `Play ${id}`).join(", ") || "Not specified"],
       ["Related tools", (module.tools || []).map(id => `Tool ${id}`).join(", ") || "Not specified"]
     ],
-    collectLearningModulePdfSections(module, background, deepDive, application, narrative, moduleResources)
+    collectLearningModulePdfSections(module, background, deepDive, application, narrative, moduleResources),
+    { layout: "learningModule" }
   );
   downloadBlob(modulePdfFilename(module), pdf, "application/pdf");
 }
@@ -6338,6 +6339,17 @@ function wrapPdfText(text, maxChars = 92) {
   return lines.length ? lines : [""];
 }
 
+function pdfParagraphs(value, sentencesPerParagraph = 3) {
+  const explicit = String(value || "").split(/\n{2,}/).map(item => item.trim()).filter(Boolean);
+  if (explicit.length > 1) return explicit;
+  const sentences = String(value || "").replace(/\s+/g, " ").trim().match(/[^.!?]+[.!?]+(?:\s|$)|[^.!?]+$/g) || [];
+  const paragraphs = [];
+  for (let i = 0; i < sentences.length; i += sentencesPerParagraph) {
+    paragraphs.push(sentences.slice(i, i + sentencesPerParagraph).join(" ").trim());
+  }
+  return paragraphs.length ? paragraphs : [String(value || "").trim()].filter(Boolean);
+}
+
 function concatBytes(parts) {
   const length = parts.reduce((sum, part) => sum + part.length, 0);
   const output = new Uint8Array(length);
@@ -6399,7 +6411,7 @@ function buildPdfBinary(pageStreams, logoInfo = null) {
   return concatBytes(parts);
 }
 
-async function buildProfessionalPdf(title, status, subtitle, metaRows, sections) {
+async function buildProfessionalPdf(title, status, subtitle, metaRows, sections, options = {}) {
   const pageWidth = 612;
   const pageHeight = 792;
   const margin = 54;
@@ -6438,6 +6450,12 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections)
     commands.push(`1.2 w ${margin} ${y} m ${pageWidth - margin} ${y} l S`);
     y -= 12;
   };
+  const filledBox = (x, topY, width, height, fill = "0.96 0.99 1", stroke = "0.78 0.86 0.92") => {
+    commands.push(`${fill} rg`);
+    commands.push(`${x} ${topY - height} ${width} ${height} re f`);
+    commands.push(`${stroke} RG`);
+    commands.push(`0.8 w ${x} ${topY - height} ${width} ${height} re S`);
+  };
   const sectionHeading = heading => {
     if (y < margin + 52) addPage();
     y -= 4;
@@ -6445,19 +6463,62 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections)
     rule("0.78 0.86 0.92");
   };
   addPage();
-  if (logo) commands.push(`q 108 0 0 ${Math.round(108 * logo.height / logo.width)} ${margin} ${pageHeight - margin - Math.round(108 * logo.height / logo.width)} cm /Logo Do Q`);
-  const titleX = logo ? 180 : margin;
-  y = pageHeight - margin - 12;
-  text("AI Playbook and Toolkit for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
-  text(status, 9, "0.29 0.38 0.46", false, titleX);
-  wrapPdfText(title, 48).forEach((line, i) => text(line, i === 0 ? 20 : 15, "0 0.24 0.45", true, titleX));
-  wrapPdfText(subtitle, 75).forEach(line => text(line, 10, "0.29 0.38 0.46", false, titleX));
-  y -= 10;
-  rule("0 0.41 0.72");
-  metaRows.forEach(([label, value]) => {
-    wrapPdfText(`${label}: ${value}`, 92).forEach((line, i) => text(line, 9.5, i === 0 ? "0 0.24 0.45" : "0.18 0.28 0.37", i === 0));
-  });
-  y -= metaRows.length ? 8 : 0;
+  if (options.layout === "learningModule") {
+    const logoWidth = logo ? 96 : 0;
+    const logoHeight = logo ? Math.round(logoWidth * logo.height / logo.width) : 0;
+    if (logo) commands.push(`q ${logoWidth} 0 0 ${logoHeight} ${margin} ${pageHeight - margin - logoHeight} cm /Logo Do Q`);
+    const titleX = logo ? margin + logoWidth + 22 : margin;
+    y = pageHeight - margin - 2;
+    text("AI Playbook and Toolkit for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
+    text(status, 8.5, "0.29 0.38 0.46", false, titleX);
+    wrapPdfText(title, 54).forEach((line, i) => text(line, i === 0 ? 21 : 16, "0 0.24 0.45", true, titleX));
+    y = Math.min(y - 6, pageHeight - margin - logoHeight - 20);
+
+    const overviewParagraphs = pdfParagraphs(subtitle, 3);
+    const overviewLines = overviewParagraphs.map(paragraph => wrapPdfText(paragraph, 104));
+    const overviewHeight = overviewLines.reduce((sum, lines) => sum + (lines.length * 13.2) + 8, 28);
+    if (y - overviewHeight < margin + 160) addPage();
+    filledBox(margin, y, pageWidth - margin * 2, overviewHeight, "0.96 0.99 1", "0.72 0.84 0.91");
+    commands.push(`0 0.41 0.72 rg`);
+    commands.push(`${margin} ${y - overviewHeight} 4 ${overviewHeight} re f`);
+    y -= 18;
+    text("Module Overview", 12, "0 0.24 0.45", true, margin + 16);
+    overviewLines.forEach(lines => {
+      lines.forEach(line => text(line, 9.7, "0.13 0.20 0.28", false, margin + 16));
+      y -= 4;
+    });
+    y -= 10;
+
+    const cardGap = 12;
+    const cardWidth = (pageWidth - margin * 2 - cardGap) / 2;
+    metaRows.forEach(([label, value], index) => {
+      const row = Math.floor(index / 2);
+      const col = index % 2;
+      const x = margin + col * (cardWidth + cardGap);
+      const top = y - row * 52;
+      filledBox(x, top, cardWidth, 42, "1 1 1", "0.78 0.86 0.92");
+      const savedY = y;
+      y = top - 12;
+      text(label, 8.2, "0 0.41 0.72", true, x + 10);
+      wrapPdfText(String(value || "Not specified"), 38).slice(0, 2).forEach(line => text(line, 8.8, "0.13 0.20 0.28", false, x + 10));
+      y = savedY;
+    });
+    y -= Math.ceil(metaRows.length / 2) * 52 + 12;
+  } else {
+    if (logo) commands.push(`q 108 0 0 ${Math.round(108 * logo.height / logo.width)} ${margin} ${pageHeight - margin - Math.round(108 * logo.height / logo.width)} cm /Logo Do Q`);
+    const titleX = logo ? 180 : margin;
+    y = pageHeight - margin - 12;
+    text("AI Playbook and Toolkit for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
+    text(status, 9, "0.29 0.38 0.46", false, titleX);
+    wrapPdfText(title, 48).forEach((line, i) => text(line, i === 0 ? 20 : 15, "0 0.24 0.45", true, titleX));
+    wrapPdfText(subtitle, 75).forEach(line => text(line, 10, "0.29 0.38 0.46", false, titleX));
+    y -= 10;
+    rule("0 0.41 0.72");
+    metaRows.forEach(([label, value]) => {
+      wrapPdfText(`${label}: ${value}`, 92).forEach((line, i) => text(line, 9.5, i === 0 ? "0 0.24 0.45" : "0.18 0.28 0.37", i === 0));
+    });
+    y -= metaRows.length ? 8 : 0;
+  }
   sections.forEach(section => {
     sectionHeading(section.heading);
     if (section.rows) {
