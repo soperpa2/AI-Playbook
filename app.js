@@ -4246,13 +4246,6 @@ function renderLearnLanding() {
     return track ? `<a class="curriculum-node ${id}" href="#/learn-track/${id}">${track.short_title || track.title}</a>` : "";
   };
   const plans = learningPlans();
-  const prefixes = [...new Set(learningModules.map(coursePrefix).filter(Boolean))];
-  const levels = [...new Set(learningModules.map(module => module.level_label).filter(Boolean))];
-  const audiences = [...new Set(learningModules.flatMap(module => {
-    const audience = moduleLmsCard(module).audience;
-    return Array.isArray(audience) ? audience : String(audience || "").split(";").map(item => item.trim()).filter(Boolean);
-  }))].sort();
-  const tags = [...new Set(learningModules.flatMap(catalogTags))].sort();
   main.innerHTML = `<section class="page learn-landing-page">
     ${breadcrumbTrail()}
     <section class="learn-hero">
@@ -4260,10 +4253,9 @@ function renderLearnLanding() {
         <p class="eyebrow">AI Playbook Curriculum</p>
         <h1>Learn</h1>
         <p class="lead">Build practical AI knowledge for public health through shared foundational learning, technical tracks, governance and security training, and role-based modules. The curriculum is designed to help staff, leaders, and partners apply AI responsibly in real public health workflows.</p>
-        <p>Use this section to browse learning tracks, choose a role-based learning plan, view module prerequisites, and find training modules by course ID, topic, role, or implementation need.</p>
+        <p>Use this section to choose a learning plan, explore tracks, and understand how the modules fit together before opening individual courses.</p>
         <div class="button-row">
           <a class="btn primary" href="#/learn-track/shared-foundation">View Shared Foundation</a>
-          <a class="btn" href="#/learn-track/all-modules">Browse All Modules</a>
         </div>
       </div>
       <div class="learn-hero-visual" aria-hidden="true">
@@ -4342,7 +4334,7 @@ function renderLearnLanding() {
         <p>The shared foundational course creates a common vocabulary and baseline for responsible AI use. From there, learners can follow technical tracks, governance and security training, or role-based tracks depending on their responsibilities.</p>
       </div>
       <div class="curriculum-map-graphic" aria-label="Curriculum structure">
-        <a class="curriculum-base" href="#/learn-track/shared-foundational">
+        <a class="curriculum-base" href="#/learn-track/shared-foundation">
           <strong>Shared Foundational Course</strong>
           <span>Common language, risks, safeguards, responsible use, and public health context</span>
         </a>
@@ -4363,39 +4355,17 @@ function renderLearnLanding() {
       </div>
     </section>
 
-    <section class="panel module-catalog-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Catalog</p>
-        <h2>Browse Learning Modules</h2>
-        <p>Use the catalog to find modules by course ID, track, role, level, estimated time, prerequisite status, or implementation topic.</p>
-      </div>
-      <form class="catalog-filters" id="learning-catalog-filters" oninput="filterLearningCatalog()" onchange="filterLearningCatalog()">
-        <label>Search<input id="catalog-search" type="search" placeholder="Course ID, title, topic, or keyword"></label>
-        <label>Track<select id="catalog-track"><option value="">All tracks</option>${tracks.map(track => `<option value="${track.track_id}">${track.title}</option>`).join("")}</select></label>
-        <label>Learning plan<select id="catalog-plan"><option value="">All plans</option>${plans.map(plan => `<option value="${plan.plan_id}">${plan.title}</option>`).join("")}</select></label>
-        <label>Level<select id="catalog-level"><option value="">All levels</option>${levels.map(level => `<option value="${level}">${level}</option>`).join("")}</select></label>
-        <label>Role / audience<select id="catalog-audience"><option value="">All audiences</option>${audiences.map(audience => `<option value="${audience}">${audience}</option>`).join("")}</select></label>
-        <label>Course prefix<select id="catalog-prefix"><option value="">All prefixes</option>${prefixes.map(prefix => `<option value="${prefix}">${prefix}</option>`).join("")}</select></label>
-        <label>Prerequisites<select id="catalog-prereq"><option value="">Any prerequisite status</option><option value="none">No required prerequisites</option><option value="required">Has required prerequisites</option></select></label>
-        <label>Estimated time<select id="catalog-time"><option value="">Any length</option><option value="30">30 minutes or less</option><option value="45">45 minutes or less</option><option value="60">60 minutes or less</option></select></label>
-        <label>Topic / tag<select id="catalog-tag"><option value="">All topics</option>${tags.map(tag => `<option value="${tag}">${tag}</option>`).join("")}</select></label>
-      </form>
-      <div class="catalog-results-meta" id="catalog-results-meta">${learningModules.length} modules shown</div>
-      <div class="module-catalog-list" id="module-catalog-list">
-        ${learningModules.map(module => renderModuleCatalogCard(module, plans)).join("")}
-      </div>
-    </section>
-
     <section class="panel module-features-panel">
       <div class="section-heading compact">
         <p class="eyebrow">Module Features</p>
         <h2>What You Will Find in the Modules</h2>
       </div>
+      <p>Each module is designed to support practical learning and implementation, not just awareness. Modules include plain-language explanations, public health examples, applied exercises, expected artifacts, knowledge checks, and resources for additional learning.</p>
       <div class="feature-card-grid">
-        <article><h3>Learning Objectives</h3><p>Each module states what you should understand, apply, and produce by the end of the lesson.</p></article>
-        <article><h3>Public Health Examples</h3><p>Scenarios show how the topic applies to surveillance, operations, governance, communications, analytics, policy, or service delivery.</p></article>
-        <article><h3>Practical Exercises</h3><p>Hands-on activities help you produce useful artifacts for planning, governance, implementation, or monitoring.</p></article>
-        <article><h3>Knowledge Checks and Resources</h3><p>Short checks confirm understanding, while references and resources support deeper learning.</p></article>
+        <article><h3>Learning Objectives</h3><p>Clear goals that define what learners should know or be able to do by the end of the module.</p></article>
+        <article><h3>Public Health Examples</h3><p>Scenarios that show how the topic applies to surveillance, operations, governance, communications, analytics, policy, or service delivery.</p></article>
+        <article><h3>Practical Exercises</h3><p>Hands-on activities that help learners produce useful artifacts for planning, governance, implementation, or monitoring.</p></article>
+        <article><h3>Knowledge Checks and Resources</h3><p>Short checks for understanding, plus references and resources for deeper learning.</p></article>
       </div>
     </section>
 
@@ -4412,59 +4382,7 @@ function renderLearnLanding() {
       <div class="callout blue"><strong>Note:</strong> Modules can appear in more than one track to support different roles and levels of responsibility.</div>
     </section>
 
-    <section class="panel completion-model-panel">
-      <div class="section-heading compact">
-        <p class="eyebrow">Progress</p>
-        <h2>How Completion Works</h2>
-      </div>
-      <p>A module is complete when the learner reviews the core content, completes the knowledge check, and completes or saves the expected artifact when one is required.</p>
-      <div class="progress-state-grid" aria-label="Learner completion states">
-        ${["Not started", "In progress", "Knowledge check complete", "Artifact complete", "Module complete"].map((state, index) => `<span class="progress-state state-${index}">${state}</span>`).join("")}
-      </div>
-      <p class="muted">For organization or supervisor use, the system can also support assigned modules, due dates, completion status, needs follow-up status, and evidence uploaded status.</p>
-    </section>
-
-    <section class="panel prerequisite-panel">
-      <div class="section-heading compact">
-        <p class="eyebrow">Preparation</p>
-        <h2>Prerequisites and Recommended Preparation</h2>
-      </div>
-      <p>Not every module has prerequisites. Required prerequisites indicate that a later module depends on concepts from an earlier module. Recommended prerequisites are helpful preparation but should not block access.</p>
-      <p>Use the catalog filter to find modules with no required prerequisites when you want a clean starting point.</p>
-    </section>
-
-    <section class="panel curriculum-crosswalk-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Crosswalk</p>
-        <h2>Module-by-Track Crosswalk</h2>
-        <p>Use the crosswalk to see the recommended module order within each learning track. Course IDs and module order are preserved so modules can pair with their JSON files, PowerPoint decks, track assignments, and future member training records.</p>
-      </div>
-      <div class="track-crosswalk-list">
-        ${tracks.map(track => {
-          const modules = curriculumTrackModules(track.track_id);
-          return `<details class="track-crosswalk" ${track.track_id === "shared-foundational" ? "open" : ""}>
-            <summary><span>${track.title}</span><strong>${modules.length} modules</strong></summary>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>Order</th><th>Course ID</th><th>Module</th><th>Level</th><th>Primary Track</th><th>Required Prerequisites</th><th>Recommended Preparation</th><th>Open</th></tr></thead>
-                <tbody>
-                  ${modules.map((module, index) => `<tr>
-                    <td>${index + 1}</td>
-                    <td>${module.course_id || ""}</td>
-                    <td>${module.title}</td>
-                    <td>${module.level_label || ""}</td>
-                    <td>${module.primary_track_title || ""}</td>
-                    <td>${prerequisiteLinks(module, "required")}</td>
-                    <td>${prerequisiteLinks(module, "recommended")}</td>
-                    <td><a href="#/learn/${module.id}">Open module</a></td>
-                  </tr>`).join("")}
-                </tbody>
-              </table>
-            </div>
-          </details>`;
-        }).join("")}
-      </div>
-    </section>
+    <p class="muted">A searchable module catalog, prerequisite view, and completion tracking tools will be added in a later release.</p>
   </section>`;
 }
 
@@ -4630,7 +4548,7 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
     </div></section>`;
 }
 
-function renderLearn(moduleId = "understanding-ai") {
+function renderLearn(moduleId = "") {
   if (!moduleId) return renderLearnLanding();
   const resolvedModuleId = curriculumModuleAliases[moduleId] || moduleId;
   const module = learningModules.find(m => m.id === resolvedModuleId) || learningModules[0];
@@ -8361,7 +8279,7 @@ function renderLearningModuleNav(activeId = "") {
   const activeModule = learningModules.find(module => module.id === activeId);
   const activeTrackIds = new Set(activeModule?.tracks || []);
   return `<aside class="filter-panel learning-topic-panel">
-        <h2>Learning Topics</h2>
+        <h2>Learning Tracks</h2>
         <a class="side-link prominent" href="#/glossary">Glossary of Terms</a>
         <div class="learning-track-list">
           ${learningTracks.map(track => {
