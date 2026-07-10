@@ -1010,7 +1010,7 @@ const playGuideDeepDive = {
 
 const learningModules = [
   { id: "staff-training", title: "Staff Training and Shared Readiness", text: "Use these modules to build a common foundation before AI projects begin. The learning section can support staff training, leadership orientation, governance preparation, and cross-program discussion.", examples: [], risk: "Training should be connected to agency policy, approved tools, data safeguards, escalation expectations, and governance requirements.", plays: [1,2,3,5,6], tools: [1,2,7,23,24,28,29] },
-  { id: "understanding-ai", title: "Understanding Artificial Intelligence", text: "AI is a family of methods that enable systems to learn from data, recognize patterns, generate content, and support action toward defined goals.", examples: ["Summarize surveillance reports", "Translate analytic findings into plain language", "Support decision briefings"], risk: "Do not treat AI as a single tool or assume one model fits every public health task.", plays: [1,3], tools: [1,2] },
+  { id: "understanding-ai", course_id: "INT 100", title: "Understanding Artificial Intelligence", text: "AI is a family of methods that enable systems to learn from data, recognize patterns, generate content, and support action toward defined goals.", examples: ["Summarize surveillance reports", "Translate analytic findings into plain language", "Support decision briefings"], risk: "Do not treat AI as a single tool or assume one model fits every public health task.", plays: [1,3], tools: [1,2] },
   { id: "generative-ai", title: "Generative AI", text: "Generative AI produces new text, images, code, summaries, or synthetic data from prompts and examples.", examples: ["Draft health education materials", "Create first drafts of grant narratives", "Summarize policy documents with human review"], risk: "Outputs can sound plausible while being wrong. Consequential outputs need subject matter review.", plays: [1,3,11], tools: [2,14,40] },
   { id: "agentic-ai", title: "Agentic AI", text: "Agentic AI can coordinate multi-step workflows across systems under explicit rules and human oversight.", examples: ["Route high-priority surveillance signals", "Create task queues from incoming reports", "Assemble evidence packets for review"], risk: "Agentic systems need strict boundaries, audit logs, and escalation paths.", plays: [3,11,12,13], tools: [12,14,39,17] },
   { id: "workflows", title: "AI-Supported Public Health Workflows", text: "AI can support signal detection, evidence gathering, analysis, synthesis, briefing, communication, and decision support.", examples: ["Detect anomalies", "Synthesize outbreak updates", "Draft situation reports"], risk: "Match the tool to workflow stage and keep humans responsible for decisions.", plays: [7,10,11], tools: [31,29,41] },
@@ -8266,6 +8266,7 @@ function applyCurriculumPackage() {
   if (introModule && !learningModules.some(module => module.id === introModule.id)) {
     learningModules.unshift({
       ...introModule,
+      course_id: "INT 100",
       title: "Introduction to AI",
       tracks: ["shared-foundational"],
       curriculumSource: false
