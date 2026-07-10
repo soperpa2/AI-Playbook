@@ -4274,7 +4274,10 @@ function renderLearnLanding() {
         <h2>Start with the Shared Foundation</h2>
       </div>
       <p>All learners should begin with the shared foundational course unless they are completing a targeted executive briefing. The shared foundation introduces core AI concepts, public health context, responsible use, human review, privacy, equity, transparency, and practical safeguards. These modules create a common vocabulary before learners move into technical, governance, or role-based tracks.</p>
-      <div class="button-row"><a class="btn primary" href="#/learn-track/shared-foundation">View Shared Foundation</a></div>
+      <div class="button-row">
+        <a class="btn primary" href="#/learn/understanding-ai">Open Introduction to AI</a>
+        <a class="btn" href="#/learn-track/shared-foundation">View Shared Foundation</a>
+      </div>
     </section>
 
     <section class="content-section">
@@ -8197,7 +8200,7 @@ const learningTracks = [
 ];
 
 const curriculumModuleAliases = {
-  "understanding-ai": "int-190-ai-for-social-good",
+  "introduction-to-ai": "understanding-ai",
   "predictive-ai": "anl-220-predictive-analytics-and-risk-stratification",
   "generative-ai": "com-200-ai-for-public-health-communications-and-message-development",
   "agentic-ai": "arc-320-agentic-workflow-design-and-orchestration",
