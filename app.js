@@ -4245,7 +4245,7 @@ function renderLearn(moduleId = "understanding-ai") {
   const application = learningModuleApplicationDetails[module.id] || {};
   const narrative = learningModuleNarrative[module.id] || [];
   const deckDownload = module.deck_path || lessonDeckDownloads[module.id];
-  const lessonDownloadButtons = `<div class="button-row lesson-downloads no-print">${deckDownload ? `<a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a>` : ""}<button class="btn" type="button" onclick="runDocumentDownload(() => downloadLearningModulePdf('${module.id}'), 'Lesson PDF')">Download Lesson PDF</button></div>`;
+  const lessonDownloadButtons = `<div class="button-row lesson-downloads no-print">${deckDownload ? `<a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a>` : ""}<button class="btn" type="button" onclick="runDocumentDownload(() => downloadLearningModulePdf('${module.id}'), 'Lesson PDF', 'lesson-download-status')">Download Lesson PDF</button></div><p id="lesson-download-status" class="save-status no-print" aria-live="polite"></p>`;
   const backgroundSections = background.sections || [];
   const isDefinitionSection = section => /definition|what .* means/i.test(section.title || "");
   const definitionSections = backgroundSections.filter(isDefinitionSection);
