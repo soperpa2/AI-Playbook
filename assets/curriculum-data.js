@@ -9564,7 +9564,7 @@ window.CURRICULUM_DATA = {
     {
       "track_id": "shared-foundational",
       "track_code": "INT",
-      "track_title": "Foundational Courses",
+      "track_title": "Foundational Modules",
       "order": 1,
       "course_id": "INT 190",
       "module_id": "int-190-ai-for-social-good",
@@ -9580,7 +9580,7 @@ window.CURRICULUM_DATA = {
     {
       "track_id": "shared-foundational",
       "track_code": "INT",
-      "track_title": "Foundational Courses",
+      "track_title": "Foundational Modules",
       "order": 2,
       "course_id": "GOV 100",
       "module_id": "gov-100-introduction-to-ai-governance-for-public-health",
@@ -9596,7 +9596,7 @@ window.CURRICULUM_DATA = {
     {
       "track_id": "shared-foundational",
       "track_code": "INT",
-      "track_title": "Foundational Courses",
+      "track_title": "Foundational Modules",
       "order": 3,
       "course_id": "INT 200",
       "module_id": "int-200-ai-use-case-intake-and-triage-basics",
@@ -9612,7 +9612,7 @@ window.CURRICULUM_DATA = {
     {
       "track_id": "shared-foundational",
       "track_code": "INT",
-      "track_title": "Foundational Courses",
+      "track_title": "Foundational Modules",
       "order": 4,
       "course_id": "COM 200",
       "module_id": "com-200-ai-for-public-health-communications-and-message-development",
@@ -9628,7 +9628,7 @@ window.CURRICULUM_DATA = {
     {
       "track_id": "shared-foundational",
       "track_code": "INT",
-      "track_title": "Foundational Courses",
+      "track_title": "Foundational Modules",
       "order": 5,
       "course_id": "COM 210",
       "module_id": "com-210-ai-assisted-translation-language-access-and-readability-review",
@@ -16661,8 +16661,8 @@ window.CURRICULUM_DATA = {
     {
       "track_id": "shared-foundational",
       "track_code": "INT",
-      "title": "Foundational Courses",
-      "short_title": "Foundational Courses",
+      "title": "Foundational Modules",
+      "short_title": "Foundational Modules",
       "description": "Foundational courses that establish common vocabulary, public health value, governance basics, equity review, and communications safeguards before learners move into role-based or technical tracks.",
       "primary_audience": [
         "All public health staff",

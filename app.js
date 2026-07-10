@@ -4259,10 +4259,10 @@ function renderLearnLanding() {
       <div>
         <p class="eyebrow">AI Playbook Curriculum</p>
         <h1>Learn</h1>
-        <p class="lead">Build practical AI knowledge for public health through foundational courses, technical tracks, governance and security training, and role-based modules. The curriculum is designed to help staff, leaders, and partners apply AI responsibly in real public health workflows.</p>
+        <p class="lead">Build practical AI knowledge for public health through foundational modules, technical tracks, governance and security training, and role-based modules. The curriculum is designed to help staff, leaders, and partners apply AI responsibly in real public health workflows.</p>
         <p>Use this section to choose a learning plan, explore tracks, and understand how the modules fit together before opening individual courses.</p>
         <div class="button-row">
-          <a class="btn primary" href="#/learn-track/shared-foundation">View Foundational Courses</a>
+          <a class="btn primary" href="#/learn-track/shared-foundation">View Foundational Modules</a>
         </div>
       </div>
       <div class="learn-hero-visual" aria-hidden="true">
@@ -4278,12 +4278,12 @@ function renderLearnLanding() {
     <section class="panel start-foundation-panel">
       <div class="section-heading compact">
         <p class="eyebrow">Start Here</p>
-        <h2>Start with Foundational Courses</h2>
+        <h2>Start with Foundational Modules</h2>
       </div>
-      <p>All learners should begin with the foundational courses unless they are completing a targeted executive briefing. These courses introduce core AI concepts, public health value, governance basics, equity review, communications safeguards, human review, privacy, transparency, and practical safeguards. Together, they create a common vocabulary before learners move into technical, governance, or role-based tracks.</p>
+      <p>All learners should begin with the foundational modules unless they are completing a targeted executive briefing. These modules introduce core AI concepts, public health value, governance basics, equity review, communications safeguards, human review, privacy, transparency, and practical safeguards. Together, they create a common vocabulary before learners move into technical, governance, or role-based tracks.</p>
       <div class="button-row">
         <a class="btn primary" href="#/learn/understanding-ai">Open Introduction to AI</a>
-        <a class="btn" href="#/learn-track/shared-foundation">View Foundational Courses</a>
+        <a class="btn" href="#/learn-track/shared-foundation">View Foundational Modules</a>
       </div>
     </section>
 
@@ -4341,11 +4341,11 @@ function renderLearnLanding() {
       <div class="section-heading">
         <p class="eyebrow">Curriculum Overview</p>
         <h2>How the Curriculum Is Organized</h2>
-        <p>The foundational courses create a common vocabulary and baseline for responsible AI use. From there, learners can follow technical tracks, governance and security training, or role-based tracks depending on their responsibilities.</p>
+        <p>The foundational modules create a common vocabulary and baseline for responsible AI use. From there, learners can follow technical tracks, governance and security training, or role-based tracks depending on their responsibilities.</p>
       </div>
       <div class="curriculum-map-graphic" aria-label="Curriculum structure">
         <a class="curriculum-base" href="#/learn-track/shared-foundation">
-          <strong>Foundational Courses</strong>
+          <strong>Foundational Modules</strong>
           <span>Common language, risks, safeguards, responsible use, and public health context</span>
         </a>
         <div class="curriculum-branches">
@@ -4382,10 +4382,10 @@ function renderLearnLanding() {
     <section class="panel how-to-learn-panel">
       <div class="section-heading compact">
         <p class="eyebrow">How to Use This Learning Section</p>
-        <h2>Move from Foundational Courses to Applied Practice</h2>
+        <h2>Move from Foundational Modules to Applied Practice</h2>
       </div>
       <ol class="learning-steps">
-        <li><strong>Start with foundational courses.</strong><span>Build a common baseline before selecting AI tools, reviewing vendors, approving pilots, or using AI in public health workflows.</span></li>
+        <li><strong>Start with foundational modules.</strong><span>Build a common baseline before selecting AI tools, reviewing vendors, approving pilots, or using AI in public health workflows.</span></li>
         <li><strong>Choose a functional or role-based track.</strong><span>Select the technical, governance, operations, communications, epidemiology, policy, executive, or program management path that fits your responsibilities.</span></li>
         <li><strong>Use modules to support real implementation work.</strong><span>Apply exercises, knowledge checks, references, and artifacts to plays, tools, governance reviews, procurement, deployment, and monitoring.</span></li>
       </ol>
@@ -8165,7 +8165,7 @@ const learningTracks = [
     ids: []
   },
   {
-    title: "Foundational Courses",
+    title: "Foundational Modules",
     ids: ["staff-training", "understanding-ai", "predictive-ai", "generative-ai", "agentic-ai", "workflows", "risks", "human-centered-ai", "ai-literacy", "automation-bias", "missing-voices", "public-transparency", "tiered-data-use", "privacy-confidentiality-public-records", "responsible-prompting-review", "cybersecurity-secure-ai-use", "when-not-to-use-ai", "ai-incident-response", "ai-support-areas"]
   },
   {
@@ -8293,9 +8293,9 @@ function applyCurriculumPackage() {
   data.tracks.forEach(track => learningTracks.push(track));
   const foundationalTrack = learningTracks.find(track => track.track_id === "shared-foundational");
   if (foundationalTrack) {
-    foundationalTrack.title = "Foundational Courses";
-    foundationalTrack.short_title = "Foundational Courses";
-    foundationalTrack.description = "Foundational courses that establish common vocabulary, public health value, governance basics, equity review, and communications safeguards before learners move into role-based or technical tracks.";
+    foundationalTrack.title = "Foundational Modules";
+    foundationalTrack.short_title = "Foundational Modules";
+    foundationalTrack.description = "Foundational modules that establish common vocabulary, public health value, governance basics, equity review, and communications safeguards before learners move into role-based or technical tracks.";
     foundationalTrack.module_count = foundationalCourseIds.length;
   }
 }
