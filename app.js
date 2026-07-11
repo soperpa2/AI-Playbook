@@ -3721,18 +3721,59 @@ function formatFileSize(bytes = 0) {
 }
 
 function moduleFeedbackRubric(module, application = {}) {
-  const objectives = learningObjectiveItems(module, application).slice(0, 4);
+  const objectives = learningObjectiveItems(module, application)
+    .map(item => String(item).replace(/\.$/, "").trim())
+    .filter(Boolean);
   const base = [
-    "The response clearly addresses the practical exercise prompt.",
-    "The public health context, workflow, or operational problem is clearly described.",
-    "The response identifies relevant people, roles, users, partners, or affected populations.",
-    "The response identifies relevant data, systems, policies, tools, or assumptions.",
-    "The response addresses risks, limitations, and guardrails appropriate to the module topic.",
-    "The response includes equity, accessibility, privacy, security, or public trust considerations when relevant.",
-    "The response produces the expected assignment named in the module.",
-    "The response identifies practical next steps, owners, or review needs."
+    "Completes the practical assignment requested in this module",
+    "Applies the module topic to a realistic public health context, workflow, or decision",
+    "Identifies relevant people, roles, users, partners, data, systems, policies, or assumptions",
+    "Addresses risks, limitations, equity, accessibility, privacy, security, public trust, and guardrails when relevant",
+    "Identifies practical next steps, owners, documentation needs, or review pathways"
   ];
-  return Array.from(new Set([...objectives.map(item => String(item).replace(/\.$/, "")), ...base])).slice(0, 8);
+  return Array.from(new Set([...objectives, ...base])).slice(0, 9).map(criterion => ({
+    criterion,
+    levels: {
+      1: "The assignment does not yet address this criterion, is inaccurate, or lacks enough detail to evaluate.",
+      2: "The assignment partially addresses this criterion but has missing context, unclear assumptions, or limited public health application.",
+      3: "The assignment addresses this criterion accurately with relevant public health context and usable supporting details.",
+      4: "The assignment addresses this criterion thoroughly, applies it to the learner's public health context, identifies assumptions or limitations, and is ready for discussion or formal review."
+    }
+  }));
+}
+
+function renderModuleFeedbackRubricTable(rubric = []) {
+  if (!rubric.length) return "";
+  return `<div class="table-wrap rubric-table-wrap">
+    <table class="rubric-table">
+      <thead>
+        <tr>
+          <th scope="col">Criteria / Performance</th>
+          <th scope="col">1<br><span>Needs Improvement</span></th>
+          <th scope="col">2<br><span>Fair</span></th>
+          <th scope="col">3<br><span>Good</span></th>
+          <th scope="col">4<br><span>Excellent</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rubric.map(item => `<tr>
+          <th scope="row">${escapeDoc(item.criterion)}</th>
+          <td>${escapeDoc(item.levels[1])}</td>
+          <td>${escapeDoc(item.levels[2])}</td>
+          <td>${escapeDoc(item.levels[3])}</td>
+          <td>${escapeDoc(item.levels[4])}</td>
+        </tr>`).join("")}
+      </tbody>
+    </table>
+  </div>`;
+}
+
+function moduleFeedbackRubricPromptText(rubric = []) {
+  return rubric.map((item, index) => `${index + 1}. ${item.criterion}
+   1 - Needs Improvement: ${item.levels[1]}
+   2 - Fair: ${item.levels[2]}
+   3 - Good: ${item.levels[3]}
+   4 - Excellent: ${item.levels[4]}`).join("\n");
 }
 
 function aiFeedbackPrompt(moduleId) {
@@ -3742,8 +3783,8 @@ function aiFeedbackPrompt(moduleId) {
   const progress = learningProgressFor(moduleId);
   const liveAssignment = document.getElementById(`exercise-evidence-${moduleId}`)?.value || "";
   const submission = liveAssignment || progress.exerciseEvidence || "";
-  const rubric = moduleFeedbackRubric(module, application).map((item, index) => `${index + 1}. ${item}`).join("\n");
-  return `You are providing formative learning feedback on a public health AI training practical exercise. Do not approve, certify, grade, or make legal, privacy, procurement, security, or governance determinations. Use the rubric below to provide constructive feedback. Identify strengths, missing information, risks or safeguards, suggested revisions, and questions for human review. Rate the assignment as Needs Revision, Ready for Discussion, or Ready for Review.\n\nCourse ID:\n${module.course_id || module.course_code || module.id}\n\nModule title:\n${module.title}\n\nPractical exercise:\n${application.exercise || "No practical exercise text was found for this module."}\n\nExpected assignment:\n${(application.artifacts || []).join("; ") || "A practical assignment that supports responsible AI planning, governance, implementation, monitoring, or accountability."}\n\nRubric:\n${rubric}\n\nLearner assignment:\n${submission || "[Save or enter the learner assignment on the practical exercise page before generating this prompt.]"}\n\nReturn feedback using this structure:\n1. Overall formative rating\n2. Strengths\n3. Missing or unclear information\n4. Rubric-based feedback\n5. Risks or safeguards to consider\n6. Suggested revisions\n7. Questions for human review\n8. Recommended next step`;
+  const rubric = moduleFeedbackRubricPromptText(moduleFeedbackRubric(module, application));
+  return `You are providing formative learning feedback on a public health AI training practical exercise. Do not approve, certify, grade, or make legal, privacy, procurement, security, or governance determinations. Use the rubric below to provide constructive feedback. Evaluate each criterion on this 1-4 performance scale: 1 Needs Improvement, 2 Fair, 3 Good, 4 Excellent. Identify strengths, missing information, risks or safeguards, suggested revisions, and questions for human review.\n\nCourse ID:\n${module.course_id || module.course_code || module.id}\n\nModule title:\n${module.title}\n\nPractical exercise:\n${application.exercise || "No practical exercise text was found for this module."}\n\nExpected assignment:\n${(application.artifacts || []).join("; ") || "A practical assignment that supports responsible AI planning, governance, implementation, monitoring, or accountability."}\n\nRubric:\n${rubric}\n\nLearner assignment:\n${submission || "[Save or enter the learner assignment on the practical exercise page before generating this prompt.]"}\n\nReturn feedback using this structure:\n1. Overall formative score summary\n2. Criterion-level ratings using the 1-4 scale\n3. Strengths\n4. Missing or unclear information\n5. Risks or safeguards to consider\n6. Suggested revisions\n7. Questions for human review\n8. Recommended next step`;
 }
 
 function generateAiFeedbackPrompt(moduleId) {
@@ -3821,9 +3862,9 @@ function renderAiFormativeFeedback(module, application = {}) {
     <p>Use AI-assisted feedback to help you identify strengths, missing elements, unclear assumptions, and areas that may need revision.</p>
     <div class="callout warning"><strong>Do not enter sensitive data.</strong> Do not include protected health information, personally identifiable information, confidential agency information, security-sensitive information, procurement-sensitive information, or non-public operational details. Use fictional, de-identified, or generalized examples unless your agency has approved this environment for the data type being submitted.</div>
     <p class="plain-meta">AI feedback is advisory and formative. It does not replace instructor review, project lead review, legal review, privacy review, security review, equity review, procurement review, communications review, or governance approval.</p>
-    <details>
-      <summary>View rubric criteria</summary>
-      <ul class="check-list">${rubric.map(item => `<li>${escapeDoc(item)}</li>`).join("")}</ul>
+    <details class="ai-feedback-rubric">
+      <summary>View rubric</summary>
+      ${renderModuleFeedbackRubricTable(rubric)}
     </details>
     <p class="plain-meta">This prompt uses the assignment you saved above. You do not need to copy and paste your assignment again for AI feedback.</p>
     <label class="checkbox-line"><input id="ai-feedback-confirm-${module.id}" type="checkbox"> I confirm that this submission does not include protected health information, personally identifiable information, confidential agency information, security-sensitive information, procurement-sensitive information, or non-public operational details.</label>

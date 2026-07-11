@@ -2817,6 +2817,46 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
 }
 .prev-next { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
 .table-wrap { overflow-x: auto; }
+.rubric-table-wrap { margin-top: 1rem; }
+.rubric-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+.rubric-table th,
+.rubric-table td {
+  border: 1px solid var(--border);
+  padding: 0.9rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.45;
+}
+.rubric-table thead th {
+  background: #e8f4fb;
+  color: var(--navy);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.rubric-table thead th span {
+  display: inline-block;
+  margin-top: 0.15rem;
+  font-size: 0.76rem;
+}
+.rubric-table tbody th {
+  width: 22%;
+  color: var(--navy);
+  font-weight: 800;
+}
+.rubric-table tbody tr:nth-child(even) td,
+.rubric-table tbody tr:nth-child(even) th {
+  background: #f8fbfd;
+}
 table { width: 100%; border-collapse: collapse; background: white; }
 th, td { border-bottom: 1px solid var(--line); padding: .7rem; text-align: left; vertical-align: top; }
 th { color: var(--ink); background: var(--sky); }
