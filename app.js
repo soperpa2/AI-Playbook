@@ -3743,7 +3743,7 @@ function renderAiFormativeFeedback(module, application = {}) {
   const rubric = moduleFeedbackRubric(module, application);
   return `<section class="content-section ai-feedback-panel">
     <h3>AI Formative Feedback</h3>
-    <p>Use AI-assisted formative feedback to review your completed practical exercise before sharing it for discussion or formal review. The feedback can help you identify strengths, missing elements, unclear assumptions, and areas that may need revision.</p>
+    <p>Use AI-assisted feedback to help you identify strengths, missing elements, unclear assumptions, and areas that may need revision.</p>
     <div class="callout warning"><strong>Do not enter sensitive data.</strong> Do not include protected health information, personally identifiable information, confidential agency information, security-sensitive information, procurement-sensitive information, or non-public operational details. Use fictional, de-identified, or generalized examples unless your agency has approved this environment for the data type being submitted.</div>
     <p class="plain-meta">AI feedback is advisory and formative. It does not replace instructor review, project lead review, legal review, privacy review, security review, equity review, procurement review, communications review, or governance approval.</p>
     <details>
