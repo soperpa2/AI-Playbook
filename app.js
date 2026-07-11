@@ -4697,6 +4697,118 @@ function curriculumDefinitionEntries(module) {
   }).filter(item => item.definition);
 }
 
+function relationshipLabel(type = "") {
+  return String(type || "supporting_reference")
+    .split("_")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function lessonToolCrosswalkForModule(moduleId) {
+  return (window.LESSON_TOOL_CROSSWALK || []).find(entry => entry.module_id === moduleId);
+}
+
+function lessonPlayCrosswalkForModule(moduleId) {
+  return (window.LESSON_PLAY_CROSSWALK || []).find(entry => entry.module_id === moduleId);
+}
+
+function lessonToolPlayEntries() {
+  return window.LESSON_TOOL_PLAY_CROSSWALK || [];
+}
+
+function moduleTitleWithCourse(moduleId) {
+  const module = learningModules.find(item => item.id === moduleId);
+  if (!module) return moduleId;
+  return `${module.course_id ? `${module.course_id}: ` : ""}${module.title}`;
+}
+
+function relatedPlayPanelForModule(moduleId) {
+  const entry = lessonPlayCrosswalkForModule(moduleId);
+  if (!entry?.primary_play) return "";
+  const primary = entry.primary_play;
+  const secondary = entry.secondary_plays || [];
+  return `<section class="content-section related-crosswalk-panel">
+    <h3>Related Playbook Plays</h3>
+    <article class="crosswalk-related-item">
+      <div><span class="relationship-badge primary">Primary Play</span><h4>${playLink(primary.play_id)}</h4></div>
+      <p>${escapeDoc(primary.suggested_lesson_page_note || primary.how_the_lesson_informs_the_play || "")}</p>
+    </article>
+    ${secondary.length ? `<div class="crosswalk-related-stack">
+      <h4>Also Supports</h4>
+      ${secondary.map(play => `<article class="crosswalk-related-item compact">
+        <div><span class="relationship-badge">${relationshipLabel(play.relationship_type)}</span><h5>${playLink(play.play_id)}</h5></div>
+        <p>${escapeDoc(play.suggested_lesson_page_note || play.how_the_lesson_informs_the_play || "")}</p>
+      </article>`).join("")}
+    </div>` : ""}
+  </section>`;
+}
+
+function relatedToolPanelForModule(moduleId) {
+  const entry = lessonToolCrosswalkForModule(moduleId);
+  const relatedTools = (entry?.tools || []).slice(0, 5);
+  if (!relatedTools.length) return "";
+  return `<section class="content-section related-crosswalk-panel">
+    <h3>Related Toolkit Resources</h3>
+    <div class="crosswalk-related-stack">
+      ${relatedTools.map(tool => `<article class="crosswalk-related-item">
+        <div><span class="relationship-badge">${tool.relationship_type === "practical_exercise" ? "Use in Practical Exercise" : relationshipLabel(tool.relationship_type)}</span><h4><a href="${tool.tool_route}">${escapeDoc(tool.tool_title)}</a></h4></div>
+        <p>${escapeDoc(tool.practical_exercise_instruction || tool.use_context || tool.example_instruction || "")}</p>
+      </article>`).join("")}
+    </div>
+  </section>`;
+}
+
+function relatedModulesForTool(toolId) {
+  return lessonToolPlayEntries()
+    .filter(entry => (entry.tools || []).some(tool => Number(tool.tool_id) === Number(toolId)))
+    .map(entry => {
+      const tool = (entry.tools || []).find(item => Number(item.tool_id) === Number(toolId));
+      return { entry, tool };
+    })
+    .sort((a, b) => {
+      const score = type => type === "practical_exercise" ? 0 : type === "illustrative_example" ? 1 : type === "supporting_reference" ? 2 : 3;
+      return score(a.tool.relationship_type) - score(b.tool.relationship_type) || String(a.entry.course_id).localeCompare(String(b.entry.course_id), undefined, { numeric: true });
+    });
+}
+
+function relatedModulesForPlay(playId) {
+  return (window.LESSON_PLAY_CROSSWALK || [])
+    .map(entry => {
+      const matches = [entry.primary_play, ...(entry.secondary_plays || [])].filter(play => Number(play?.play_id) === Number(playId));
+      return matches.length ? { entry, play: matches[0], primary: Number(entry.primary_play?.play_id) === Number(playId) } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => Number(b.primary) - Number(a.primary) || String(a.entry.course_id).localeCompare(String(b.entry.course_id), undefined, { numeric: true }));
+}
+
+function relatedLearningModulesPanelForTool(toolId) {
+  const modules = relatedModulesForTool(toolId).slice(0, 8);
+  if (!modules.length) return "";
+  return `<section class="panel related-crosswalk-panel">
+    <h2>Related Learning Modules</h2>
+    <div class="crosswalk-related-stack">
+      ${modules.map(({ entry, tool }) => `<article class="crosswalk-related-item compact">
+        <div><span class="relationship-badge">${relationshipLabel(tool.relationship_type)}</span><h3><a href="#/learn/${entry.module_id}">${escapeDoc(entry.course_id ? `${entry.course_id}: ${entry.module_title}` : entry.module_title)}</a></h3></div>
+        <p>${escapeDoc(tool.use_context || tool.rationale || "")}</p>
+      </article>`).join("")}
+    </div>
+  </section>`;
+}
+
+function relatedLearningModulesPanelForPlay(playId) {
+  const modules = relatedModulesForPlay(playId).slice(0, 10);
+  if (!modules.length) return "";
+  return `<section class="panel related-crosswalk-panel">
+    <h2>Related Learning Modules</h2>
+    <div class="crosswalk-related-stack">
+      ${modules.map(({ entry, play, primary }) => `<article class="crosswalk-related-item compact">
+        <div><span class="relationship-badge ${primary ? "primary" : ""}">${primary ? "Primary Play" : relationshipLabel(play.relationship_type)}</span><h3><a href="#/learn/${entry.module_id}">${escapeDoc(entry.course_id ? `${entry.course_id}: ${entry.module_title}` : entry.module_title)}</a></h3></div>
+        <p>${escapeDoc(play.how_the_lesson_informs_the_play || play.suggested_lesson_page_note || "")}</p>
+      </article>`).join("")}
+    </div>
+  </section>`;
+}
+
 function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossaryCta) {
   const sectionsToSkip = new Set(["preamble", "training_overview", "learning_objectives", "definitions", "knowledge_check", "references_and_resources_for_additional_information", "jurisdiction_and_agency_policy_note", "practical_exercise", "expected_artifact_or_evidence"]);
   const sections = (module.sections || []).filter(section => !sectionsToSkip.has(section.key));
@@ -4747,9 +4859,11 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
             <h3>Learning Objectives</h3>
             <ul class="check-list">${(module.learning_objectives || []).map(item => `<li>${item}</li>`).join("")}</ul>
           </section>
+          ${relatedPlayPanelForModule(module.id)}
           ${definitions.length ? `<section class="content-section lesson-prose definitions-section"><h3>Definitions</h3><dl class="definition-list">${definitions.map(item => `<dt>${item.term}</dt><dd>${item.definition}</dd>`).join("")}</dl></section>` : ""}
           ${exampleBlocks}
           ${sectionDetails ? `<section class="content-section module-details-stack"><h3>Course Content</h3>${sectionDetails}</section>` : ""}
+          ${relatedToolPanelForModule(module.id)}
           ${renderPracticalExercise(module, exerciseApplication)}
           ${renderCurriculumKnowledgeCheck(module)}
           ${renderCurriculumReferences(module)}
@@ -4796,11 +4910,13 @@ function renderLearn(moduleId = "") {
           ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
+          ${relatedPlayPanelForModule(module.id)}
           ${definitionsBlock}
           ${narrative.length ? `<section class="content-section lesson-prose training-section"><h3>How to Use the Learning Section</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose training-section"><h3>${section.title}</h3>${renderLearningSection(section)}</section>`).join("")}
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Learning</h3>${paragraphBlock(application.matters)}</section>` : ""}
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to decide how you will complete, document, and apply the learning module to governance or implementation work.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
+          ${relatedToolPanelForModule(module.id)}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
         </article>
@@ -4820,6 +4936,7 @@ function renderLearn(moduleId = "") {
           ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
+          ${relatedPlayPanelForModule(module.id)}
           ${definitionsBlock}
           <section class="content-section">
             <h3>How to Use These Examples</h3>
@@ -4859,6 +4976,7 @@ function renderLearn(moduleId = "") {
           </div>
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Practice</h3>${paragraphBlock(application.matters)}</section>` : ""}
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to compare possible AI support areas and decide which ideas merit readiness review, governance review, or use case screening.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
+          ${relatedToolPanelForModule(module.id)}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
         </article>
@@ -4877,6 +4995,7 @@ function renderLearn(moduleId = "") {
           ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
+          ${relatedPlayPanelForModule(module.id)}
           ${deepDive.overview ? `<section class="content-section lesson-prose"><h3>Module Overview</h3>${paragraphBlock(deepDive.overview)}</section>` : ""}
           ${definitionsBlock}
           ${definitionSections.length ? `<section class="content-section lesson-prose"><h3>Additional Definitions</h3>${definitionSections.map(section=>`<p><strong>${section.title}:</strong> ${section.body}</p>`).join("")}</section>` : ""}
@@ -4895,6 +5014,7 @@ function renderLearn(moduleId = "") {
           <div class="callout blue"><strong>Risk or guardrail:</strong> ${module.risk}</div>
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Practice</h3>${paragraphBlock(application.matters)}</section>` : ""}
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to connect the concept to your own role, data, authorities, workflows, and community responsibilities.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
+          ${relatedToolPanelForModule(module.id)}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
           ${moduleResources.length ? `<section class="content-section"><h3>References and Resources</h3><div class="resource-list">${moduleResources.map(([title, note, url])=>`
@@ -6102,6 +6222,7 @@ function renderPlayDetail(id) {
       <aside class="detail-card-list">
         <section class="panel"><h2>Outputs</h2>${outputsForPlay(p)}</section>
         <section class="panel"><h2>Supporting Tools</h2><p>${p.tools.map(toolLink).join("<br>")}</p></section>
+        ${relatedLearningModulesPanelForPlay(p.id)}
         ${resourcesForPlay(p)}
         <section class="panel"><h2>Related Plays</h2><p>${[p.id-1,p.id+1].filter(x=>x>0&&x<=plays.length).map(playLink).join("<br>")}</p></section>
       </aside>
@@ -6302,6 +6423,7 @@ function renderToolDetail(id) {
       <aside class="detail-card-list">
         <section class="panel"><h2>Outputs</h2><ul class="compact-list">${outputs.map(item=>`<li>${item}</li>`).join("")}</ul></section>
         <section class="panel"><h2>Supported Plays</h2><p>${t.playIds.map(playLink).join("<br>")}</p></section>
+        ${relatedLearningModulesPanelForTool(t.id)}
         <section class="panel"><h2>Related Tools</h2><p>${tools.filter(x=>x.id!==t.id && x.playIds.some(id=>t.playIds.includes(id))).slice(0,6).map(x=>toolLink(x.id)).join("<br>")}</p></section>
         <section class="panel"><h2>Toolkit Source</h2><p>This form is based on the corresponding tool in the AI Playbook toolkit. Download the full toolkit for the formatted source document.</p><div class="button-row"><a class="btn small" href="downloads/AI_Playbook_for_Public_Health_Toolkit.pdf">Toolkit PDF</a><a class="btn small" href="downloads/AI_Playbook_for_Public_Health_Toolkit.docx">Toolkit Word</a></div></section>
       </aside>

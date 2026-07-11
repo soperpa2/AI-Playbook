@@ -1,0 +1,2834 @@
+[
+  {
+    "course_id": "INT 100",
+    "module_id": "understanding-ai",
+    "module_title": "Introduction to AI",
+    "primary_track": "shared-foundational",
+    "primary_play": {
+      "play_id": 1,
+      "play_title": "Vision & Guardrails",
+      "play_route": "#/plays/1",
+      "relationship_type": "prepares_for_play",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply introduction to ai concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply introduction to ai concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_technical_implementation",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply introduction to ai concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 200",
+    "module_id": "anl-200-natural-language-processing-for-public-health",
+    "module_title": "Natural Language Processing for Public Health",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply natural language processing for public health concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply natural language processing for public health concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply natural language processing for public health concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply natural language processing for public health concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 210",
+    "module_id": "anl-210-machine-learning-basics-for-epidemiology-and-surveillance",
+    "module_title": "Machine Learning Basics for Epidemiology and Surveillance",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 13,
+      "play_title": "Monitor and Evaluate AI Systems",
+      "play_route": "#/plays/13",
+      "relationship_type": "supports_monitoring",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply machine learning basics for epidemiology and surveillance concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply machine learning basics for epidemiology and surveillance concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply machine learning basics for epidemiology and surveillance concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply machine learning basics for epidemiology and surveillance concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 220",
+    "module_id": "anl-220-predictive-analytics-and-risk-stratification",
+    "module_title": "Predictive Analytics and Risk Stratification",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 13,
+      "play_title": "Monitor and Evaluate AI Systems",
+      "play_route": "#/plays/13",
+      "relationship_type": "supports_monitoring",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply predictive analytics and risk stratification concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply predictive analytics and risk stratification concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply predictive analytics and risk stratification concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply predictive analytics and risk stratification concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 230",
+    "module_id": "anl-230-geospatial-ai-and-spatial-epidemiology",
+    "module_title": "Geospatial AI and Spatial Epidemiology",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply geospatial ai and spatial epidemiology concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply geospatial ai and spatial epidemiology concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply geospatial ai and spatial epidemiology concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply geospatial ai and spatial epidemiology concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 240",
+    "module_id": "anl-240-time-series-analysis-anomaly-detection-and-outbreak-signals",
+    "module_title": "Time-Series Analysis, Anomaly Detection, and Outbreak Signals",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 13,
+      "play_title": "Monitor and Evaluate AI Systems",
+      "play_route": "#/plays/13",
+      "relationship_type": "supports_monitoring",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply time-series analysis, anomaly detection, and outbreak signals concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 12,
+        "play_title": "Execute Governance and Oversight",
+        "play_route": "#/plays/12",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply time-series analysis, anomaly detection, and outbreak signals concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply time-series analysis, anomaly detection, and outbreak signals concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply time-series analysis, anomaly detection, and outbreak signals concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 300",
+    "module_id": "anl-300-advanced-model-validation-and-evaluation-for-public-health-ai",
+    "module_title": "Advanced Model Validation and Evaluation for Public Health AI",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 13,
+      "play_title": "Monitor and Evaluate AI Systems",
+      "play_route": "#/plays/13",
+      "relationship_type": "supports_monitoring",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply advanced model validation and evaluation for public health ai concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 12,
+        "play_title": "Execute Governance and Oversight",
+        "play_route": "#/plays/12",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply advanced model validation and evaluation for public health ai concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply advanced model validation and evaluation for public health ai concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply advanced model validation and evaluation for public health ai concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 310",
+    "module_id": "anl-310-evaluation-of-generative-ai-outputs",
+    "module_title": "Evaluation of Generative AI Outputs",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 4,
+      "play_title": "Engage Stakeholders",
+      "play_route": "#/plays/4",
+      "relationship_type": "supports_public_communication",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply evaluation of generative ai outputs concepts while completing Engage Stakeholders activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 4 by helping learners connect the lesson topic to engage stakeholders work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply evaluation of generative ai outputs concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply evaluation of generative ai outputs concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 13,
+        "play_title": "Monitor and Evaluate AI Systems",
+        "play_route": "#/plays/13",
+        "relationship_type": "supports_monitoring",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply evaluation of generative ai outputs concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 320",
+    "module_id": "anl-320-synthetic-data-for-public-health-ai",
+    "module_title": "Synthetic Data for Public Health AI",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply synthetic data for public health ai concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply synthetic data for public health ai concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply synthetic data for public health ai concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply synthetic data for public health ai concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 330",
+    "module_id": "anl-330-equity-evaluation-for-ai-models",
+    "module_title": "Equity Evaluation for AI Models",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 13,
+      "play_title": "Monitor and Evaluate AI Systems",
+      "play_route": "#/plays/13",
+      "relationship_type": "supports_monitoring",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply equity evaluation for ai models concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply equity evaluation for ai models concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 8,
+        "play_title": "Develop a Funding Strategy",
+        "play_route": "#/plays/8",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply equity evaluation for ai models concepts while completing Develop a Funding Strategy activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 8 by helping learners connect the lesson topic to develop a funding strategy work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply equity evaluation for ai models concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 340",
+    "module_id": "anl-340-causal-inference-and-ai-in-public-health-decision-making",
+    "module_title": "Causal Inference and AI in Public Health Decision-Making",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply causal inference and ai in public health decision-making concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply causal inference and ai in public health decision-making concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply causal inference and ai in public health decision-making concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply causal inference and ai in public health decision-making concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ANL 350",
+    "module_id": "anl-350-communicating-model-results-and-uncertainty",
+    "module_title": "Communicating Model Results and Uncertainty",
+    "primary_track": "Analytics and Modeling Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply communicating model results and uncertainty concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply communicating model results and uncertainty concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply communicating model results and uncertainty concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply communicating model results and uncertainty concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 200",
+    "module_id": "arc-200-public-health-data-modernization-and-ai-architecture",
+    "module_title": "Public Health Data Modernization and AI Architecture",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply public health data modernization and ai architecture concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health data modernization and ai architecture concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health data modernization and ai architecture concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health data modernization and ai architecture concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 210",
+    "module_id": "arc-210-data-pipelines-for-public-health-ai",
+    "module_title": "Data Pipelines for Public Health AI",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 12,
+      "play_title": "Execute Governance and Oversight",
+      "play_route": "#/plays/12",
+      "relationship_type": "supports_play_execution",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply data pipelines for public health ai concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data pipelines for public health ai concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 13,
+        "play_title": "Monitor and Evaluate AI Systems",
+        "play_route": "#/plays/13",
+        "relationship_type": "supports_monitoring",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data pipelines for public health ai concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data pipelines for public health ai concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 220",
+    "module_id": "arc-220-public-health-interoperability-hl7-v2-cda-fhir-and-apis",
+    "module_title": "Public Health Interoperability: HL7 v2, CDA, FHIR, and APIs",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply public health interoperability: hl7 v2, cda, fhir, and apis concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health interoperability: hl7 v2, cda, fhir, and apis concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health interoperability: hl7 v2, cda, fhir, and apis concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health interoperability: hl7 v2, cda, fhir, and apis concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 230",
+    "module_id": "arc-230-electronic-case-reporting-technical-workflow",
+    "module_title": "Electronic Case Reporting Technical Workflow",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 13,
+      "play_title": "Monitor and Evaluate AI Systems",
+      "play_route": "#/plays/13",
+      "relationship_type": "supports_monitoring",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply electronic case reporting technical workflow concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply electronic case reporting technical workflow concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 12,
+        "play_title": "Execute Governance and Oversight",
+        "play_route": "#/plays/12",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply electronic case reporting technical workflow concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply electronic case reporting technical workflow concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 240",
+    "module_id": "arc-240-elr-laboratory-data-quality-and-terminology-mapping",
+    "module_title": "ELR, Laboratory Data Quality, and Terminology Mapping",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply elr, laboratory data quality, and terminology mapping concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply elr, laboratory data quality, and terminology mapping concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply elr, laboratory data quality, and terminology mapping concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply elr, laboratory data quality, and terminology mapping concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 250",
+    "module_id": "arc-250-fhir-for-public-health-ai-use-cases",
+    "module_title": "FHIR for Public Health AI Use Cases",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply fhir for public health ai use cases concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply fhir for public health ai use cases concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply fhir for public health ai use cases concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply fhir for public health ai use cases concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 260",
+    "module_id": "arc-260-apis-webhooks-and-event-driven-workflows",
+    "module_title": "APIs, Webhooks, and Event-Driven Workflows",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply apis, webhooks, and event-driven workflows concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply apis, webhooks, and event-driven workflows concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply apis, webhooks, and event-driven workflows concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply apis, webhooks, and event-driven workflows concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 300",
+    "module_id": "arc-300-retrieval-augmented-generation-for-public-health-knowledge-work",
+    "module_title": "Retrieval-Augmented Generation for Public Health Knowledge Work",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 3,
+      "play_title": "Establish AI Governance",
+      "play_route": "#/plays/3",
+      "relationship_type": "provides_governance_context",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply retrieval-augmented generation for public health knowledge work concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 12,
+        "play_title": "Execute Governance and Oversight",
+        "play_route": "#/plays/12",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply retrieval-augmented generation for public health knowledge work concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply retrieval-augmented generation for public health knowledge work concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply retrieval-augmented generation for public health knowledge work concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 310",
+    "module_id": "arc-310-prompt-engineering-for-technical-public-health-work",
+    "module_title": "Prompt Engineering for Technical Public Health Work",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply prompt engineering for technical public health work concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply prompt engineering for technical public health work concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply prompt engineering for technical public health work concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply prompt engineering for technical public health work concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 320",
+    "module_id": "arc-320-agentic-workflow-design-and-orchestration",
+    "module_title": "Agentic Workflow Design and Orchestration",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply agentic workflow design and orchestration concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply agentic workflow design and orchestration concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 12,
+        "play_title": "Execute Governance and Oversight",
+        "play_route": "#/plays/12",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply agentic workflow design and orchestration concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 4,
+        "play_title": "Engage Stakeholders",
+        "play_route": "#/plays/4",
+        "relationship_type": "supports_public_communication",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply agentic workflow design and orchestration concepts while completing Engage Stakeholders activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 4 by helping learners connect the lesson topic to engage stakeholders work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 330",
+    "module_id": "arc-330-cloud-containers-and-secure-deployment-basics",
+    "module_title": "Cloud, Containers, and Secure Deployment Basics",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply cloud, containers, and secure deployment basics concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply cloud, containers, and secure deployment basics concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply cloud, containers, and secure deployment basics concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply cloud, containers, and secure deployment basics concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "ARC 340",
+    "module_id": "arc-340-public-health-system-integration-patterns",
+    "module_title": "Public Health System Integration Patterns",
+    "primary_track": "Technical Architecture Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply public health system integration patterns concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health system integration patterns concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health system integration patterns concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health system integration patterns concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "COM 200",
+    "module_id": "com-200-ai-for-public-health-communications-and-message-development",
+    "module_title": "AI for Public Health Communications and Message Development",
+    "primary_track": "Communications Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for public health communications and message development concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for public health communications and message development concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for public health communications and message development concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for public health communications and message development concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "COM 210",
+    "module_id": "com-210-ai-assisted-translation-language-access-and-readability-review",
+    "module_title": "AI-Assisted Translation, Language Access, and Readability Review",
+    "primary_track": "Communications Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai-assisted translation, language access, and readability review concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai-assisted translation, language access, and readability review concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai-assisted translation, language access, and readability review concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai-assisted translation, language access, and readability review concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "COM 220",
+    "module_id": "com-220-public-comment-social-listening-and-community-feedback-analysis",
+    "module_title": "Public Comment, Social Listening, and Community Feedback Analysis",
+    "primary_track": "Communications Role-Based Track",
+    "primary_play": {
+      "play_id": 1,
+      "play_title": "Vision & Guardrails",
+      "play_route": "#/plays/1",
+      "relationship_type": "prepares_for_play",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply public comment, social listening, and community feedback analysis concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public comment, social listening, and community feedback analysis concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public comment, social listening, and community feedback analysis concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public comment, social listening, and community feedback analysis concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EPI 300",
+    "module_id": "epi-300-ai-for-case-investigation-and-outbreak-response",
+    "module_title": "AI for Case Investigation and Outbreak Response",
+    "primary_track": "Epidemiology Role-Based Track",
+    "primary_play": {
+      "play_id": 7,
+      "play_title": "Prioritize Use Cases",
+      "play_route": "#/plays/7",
+      "relationship_type": "supports_play_execution",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for case investigation and outbreak response concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for case investigation and outbreak response concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for case investigation and outbreak response concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for case investigation and outbreak response concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EPI 310",
+    "module_id": "epi-310-ai-for-surveillance-signal-review-and-epidemiologic-judgment",
+    "module_title": "AI for Surveillance Signal Review and Epidemiologic Judgment",
+    "primary_track": "Epidemiology Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for surveillance signal review and epidemiologic judgment concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for surveillance signal review and epidemiologic judgment concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for surveillance signal review and epidemiologic judgment concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for surveillance signal review and epidemiologic judgment concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EPI 320",
+    "module_id": "epi-320-ethical-use-of-ai-in-resource-prioritization-and-field-response",
+    "module_title": "Ethical Use of AI in Resource Prioritization and Field Response",
+    "primary_track": "Epidemiology Role-Based Track",
+    "primary_play": {
+      "play_id": 1,
+      "play_title": "Vision & Guardrails",
+      "play_route": "#/plays/1",
+      "relationship_type": "prepares_for_play",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ethical use of ai in resource prioritization and field response concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ethical use of ai in resource prioritization and field response concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ethical use of ai in resource prioritization and field response concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ethical use of ai in resource prioritization and field response concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 100",
+    "module_id": "exe-100-executive-ai-briefing-for-public-health-leaders",
+    "module_title": "Executive AI Briefing for Public Health Leaders",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply executive ai briefing for public health leaders concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply executive ai briefing for public health leaders concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply executive ai briefing for public health leaders concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply executive ai briefing for public health leaders concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 400",
+    "module_id": "exe-400-executive-ai-decision-rights-and-accountability",
+    "module_title": "Executive AI Decision Rights and Accountability",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply executive ai decision rights and accountability concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply executive ai decision rights and accountability concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply executive ai decision rights and accountability concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply executive ai decision rights and accountability concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 410",
+    "module_id": "exe-410-ai-portfolio-strategy-and-use-case-prioritization",
+    "module_title": "AI Portfolio Strategy and Use Case Prioritization",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai portfolio strategy and use case prioritization concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai portfolio strategy and use case prioritization concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 8,
+        "play_title": "Develop a Funding Strategy",
+        "play_route": "#/plays/8",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai portfolio strategy and use case prioritization concepts while completing Develop a Funding Strategy activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 8 by helping learners connect the lesson topic to develop a funding strategy work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai portfolio strategy and use case prioritization concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 420",
+    "module_id": "exe-420-ai-investment-strategy-and-business-case-review",
+    "module_title": "AI Investment Strategy and Business Case Review",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai investment strategy and business case review concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai investment strategy and business case review concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai investment strategy and business case review concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai investment strategy and business case review concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 430",
+    "module_id": "exe-430-organizational-change-management-for-ai-adoption",
+    "module_title": "Organizational Change Management for AI Adoption",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply organizational change management for ai adoption concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply organizational change management for ai adoption concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply organizational change management for ai adoption concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply organizational change management for ai adoption concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 440",
+    "module_id": "exe-440-workforce-strategy-and-ai-role-design",
+    "module_title": "Workforce Strategy and AI Role Design",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply workforce strategy and ai role design concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply workforce strategy and ai role design concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply workforce strategy and ai role design concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply workforce strategy and ai role design concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 450",
+    "module_id": "exe-450-ai-sustainability-and-lifecycle-funding",
+    "module_title": "AI Sustainability and Lifecycle Funding",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai sustainability and lifecycle funding concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 8,
+        "play_title": "Develop a Funding Strategy",
+        "play_route": "#/plays/8",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai sustainability and lifecycle funding concepts while completing Develop a Funding Strategy activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 8 by helping learners connect the lesson topic to develop a funding strategy work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai sustainability and lifecycle funding concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai sustainability and lifecycle funding concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 460",
+    "module_id": "exe-460-ai-governance-board-chair-training",
+    "module_title": "AI Governance Board Chair Training",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai governance board chair training concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai governance board chair training concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai governance board chair training concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai governance board chair training concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "EXE 470",
+    "module_id": "exe-470-ai-crisis-communications-and-executive-response",
+    "module_title": "AI Crisis Communications and Executive Response",
+    "primary_track": "Public Health Executive Leadership Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai crisis communications and executive response concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai crisis communications and executive response concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai crisis communications and executive response concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai crisis communications and executive response concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 300",
+    "module_id": "gov-300-ai-security-prompt-injection-and-data-leakage",
+    "module_title": "AI Security, Prompt Injection, and Data Leakage",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai security, prompt injection, and data leakage concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai security, prompt injection, and data leakage concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai security, prompt injection, and data leakage concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 8,
+        "play_title": "Develop a Funding Strategy",
+        "play_route": "#/plays/8",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai security, prompt injection, and data leakage concepts while completing Develop a Funding Strategy activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 8 by helping learners connect the lesson topic to develop a funding strategy work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 310",
+    "module_id": "gov-310-privacy-preserving-ai-and-de-identification",
+    "module_title": "Privacy-Preserving AI and De-identification",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply privacy-preserving ai and de-identification concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply privacy-preserving ai and de-identification concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply privacy-preserving ai and de-identification concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply privacy-preserving ai and de-identification concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 320",
+    "module_id": "gov-320-ai-documentation-model-cards-and-system-cards",
+    "module_title": "AI Documentation, Model Cards, and System Cards",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai documentation, model cards, and system cards concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai documentation, model cards, and system cards concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai documentation, model cards, and system cards concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai documentation, model cards, and system cards concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 330",
+    "module_id": "gov-330-data-governance-for-ai-ready-public-health-data",
+    "module_title": "Data Governance for AI-Ready Public Health Data",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply data governance for ai-ready public health data concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data governance for ai-ready public health data concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data governance for ai-ready public health data concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data governance for ai-ready public health data concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 340",
+    "module_id": "gov-340-ai-audit-readiness-and-evidence-management",
+    "module_title": "AI Audit Readiness and Evidence Management",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 12,
+      "play_title": "Execute Governance and Oversight",
+      "play_route": "#/plays/12",
+      "relationship_type": "supports_play_execution",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai audit readiness and evidence management concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai audit readiness and evidence management concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai audit readiness and evidence management concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 13,
+        "play_title": "Monitor and Evaluate AI Systems",
+        "play_route": "#/plays/13",
+        "relationship_type": "supports_monitoring",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai audit readiness and evidence management concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 350",
+    "module_id": "gov-350-identity-access-and-permissions-for-ai-workflows",
+    "module_title": "Identity, Access, and Permissions for AI Workflows",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply identity, access, and permissions for ai workflows concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply identity, access, and permissions for ai workflows concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply identity, access, and permissions for ai workflows concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply identity, access, and permissions for ai workflows concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 360",
+    "module_id": "gov-360-third-party-ai-risk-management",
+    "module_title": "Third-Party AI Risk Management",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply third-party ai risk management concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply third-party ai risk management concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply third-party ai risk management concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 8,
+        "play_title": "Develop a Funding Strategy",
+        "play_route": "#/plays/8",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply third-party ai risk management concepts while completing Develop a Funding Strategy activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 8 by helping learners connect the lesson topic to develop a funding strategy work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 400",
+    "module_id": "gov-400-ai-governance-charter-and-operating-model",
+    "module_title": "AI Governance Charter and Operating Model",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai governance charter and operating model concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai governance charter and operating model concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai governance charter and operating model concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai governance charter and operating model concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 410",
+    "module_id": "gov-410-ai-risk-appetite-and-risk-tolerance-for-public-health",
+    "module_title": "AI Risk Appetite and Risk Tolerance for Public Health",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai risk appetite and risk tolerance for public health concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai risk appetite and risk tolerance for public health concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai risk appetite and risk tolerance for public health concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai risk appetite and risk tolerance for public health concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 420",
+    "module_id": "gov-420-public-accountability-and-ai-transparency-reporting",
+    "module_title": "Public Accountability and AI Transparency Reporting",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply public accountability and ai transparency reporting concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public accountability and ai transparency reporting concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public accountability and ai transparency reporting concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public accountability and ai transparency reporting concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 430",
+    "module_id": "gov-430-community-oversight-and-participatory-governance",
+    "module_title": "Community Oversight and Participatory Governance",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 7,
+      "play_title": "Prioritize Use Cases",
+      "play_route": "#/plays/7",
+      "relationship_type": "supports_play_execution",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply community oversight and participatory governance concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply community oversight and participatory governance concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply community oversight and participatory governance concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply community oversight and participatory governance concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "INT 190",
+    "module_id": "int-190-ai-for-social-good",
+    "module_title": "AI for Social Good",
+    "primary_track": "Shared Foundational / Introductory Course",
+    "primary_play": {
+      "play_id": 4,
+      "play_title": "Engage Stakeholders",
+      "play_route": "#/plays/4",
+      "relationship_type": "supports_public_communication",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for social good concepts while completing Engage Stakeholders activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 4 by helping learners connect the lesson topic to engage stakeholders work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for social good concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for social good concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 13,
+        "play_title": "Monitor and Evaluate AI Systems",
+        "play_route": "#/plays/13",
+        "relationship_type": "supports_monitoring",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai for social good concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "INT 200",
+    "module_id": "int-200-ai-use-case-intake-and-triage-basics",
+    "module_title": "AI Use Case Intake and Triage Basics",
+    "primary_track": "Shared Foundational / Introductory Course",
+    "primary_play": {
+      "play_id": 7,
+      "play_title": "Prioritize Use Cases",
+      "play_route": "#/plays/7",
+      "relationship_type": "supports_play_execution",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai use case intake and triage basics concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai use case intake and triage basics concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai use case intake and triage basics concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai use case intake and triage basics concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "OPS 200",
+    "module_id": "ops-200-data-quality-engineering-for-ai",
+    "module_title": "Data Quality Engineering for AI",
+    "primary_track": "Operations and Data Quality Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply data quality engineering for ai concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data quality engineering for ai concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data quality engineering for ai concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply data quality engineering for ai concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "OPS 210",
+    "module_id": "ops-210-record-linkage-entity-resolution-and-deduplication",
+    "module_title": "Record Linkage, Entity Resolution, and Deduplication",
+    "primary_track": "Operations and Data Quality Track",
+    "primary_play": {
+      "play_id": 7,
+      "play_title": "Prioritize Use Cases",
+      "play_route": "#/plays/7",
+      "relationship_type": "supports_play_execution",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply record linkage, entity resolution, and deduplication concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply record linkage, entity resolution, and deduplication concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply record linkage, entity resolution, and deduplication concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply record linkage, entity resolution, and deduplication concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "OPS 220",
+    "module_id": "ops-220-human-factors-workflow-integration-and-usability-testing",
+    "module_title": "Human Factors, Workflow Integration, and Usability Testing",
+    "primary_track": "Operations and Data Quality Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply human factors, workflow integration, and usability testing concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply human factors, workflow integration, and usability testing concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply human factors, workflow integration, and usability testing concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply human factors, workflow integration, and usability testing concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "OPS 230",
+    "module_id": "ops-230-ai-workflow-standard-operating-procedures",
+    "module_title": "AI Workflow Standard Operating Procedures",
+    "primary_track": "Operations and Data Quality Track",
+    "primary_play": {
+      "play_id": 1,
+      "play_title": "Vision & Guardrails",
+      "play_route": "#/plays/1",
+      "relationship_type": "prepares_for_play",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai workflow standard operating procedures concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai workflow standard operating procedures concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai workflow standard operating procedures concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai workflow standard operating procedures concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "OPS 240",
+    "module_id": "ops-240-user-acceptance-testing-for-ai-supported-workflows",
+    "module_title": "User Acceptance Testing for AI-Supported Workflows",
+    "primary_track": "Operations and Data Quality Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply user acceptance testing for ai-supported workflows concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply user acceptance testing for ai-supported workflows concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply user acceptance testing for ai-supported workflows concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply user acceptance testing for ai-supported workflows concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "OPS 300",
+    "module_id": "ops-300-mlops-and-llmops-for-public-health",
+    "module_title": "MLOps and LLMOps for Public Health",
+    "primary_track": "Operations and Data Quality Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply mlops and llmops for public health concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply mlops and llmops for public health concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 13,
+        "play_title": "Monitor and Evaluate AI Systems",
+        "play_route": "#/plays/13",
+        "relationship_type": "supports_monitoring",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply mlops and llmops for public health concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply mlops and llmops for public health concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "OPS 310",
+    "module_id": "ops-310-measuring-ai-value-performance-and-operational-impact",
+    "module_title": "Measuring AI Value, Performance, and Operational Impact",
+    "primary_track": "Operations and Data Quality Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply measuring ai value, performance, and operational impact concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply measuring ai value, performance, and operational impact concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply measuring ai value, performance, and operational impact concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 13,
+        "play_title": "Monitor and Evaluate AI Systems",
+        "play_route": "#/plays/13",
+        "relationship_type": "supports_monitoring",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply measuring ai value, performance, and operational impact concepts while completing Monitor and Evaluate AI Systems activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 13 by helping learners connect the lesson topic to monitor and evaluate ai systems work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "OPS 320",
+    "module_id": "ops-320-operational-monitoring-and-continuous-improvement-for-ai",
+    "module_title": "Operational Monitoring and Continuous Improvement for AI",
+    "primary_track": "Operations and Data Quality Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply operational monitoring and continuous improvement for ai concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply operational monitoring and continuous improvement for ai concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply operational monitoring and continuous improvement for ai concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply operational monitoring and continuous improvement for ai concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "PMG 200",
+    "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
+    "module_title": "Business Analysis for AI-Enabled Public Health Systems",
+    "primary_track": "Program Management Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply business analysis for ai-enabled public health systems concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply business analysis for ai-enabled public health systems concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply business analysis for ai-enabled public health systems concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply business analysis for ai-enabled public health systems concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "PMG 210",
+    "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
+    "module_title": "Requirements Writing for AI Procurement and Implementation",
+    "primary_track": "Program Management Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply requirements writing for ai procurement and implementation concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply requirements writing for ai procurement and implementation concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply requirements writing for ai procurement and implementation concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply requirements writing for ai procurement and implementation concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "PMG 220",
+    "module_id": "pmg-220-ai-project-management-and-implementation-planning",
+    "module_title": "AI Project Management and Implementation Planning",
+    "primary_track": "Program Management Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai project management and implementation planning concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai project management and implementation planning concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai project management and implementation planning concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai project management and implementation planning concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "PMG 300",
+    "module_id": "pmg-300-ai-vendor-implementation-management",
+    "module_title": "AI Vendor Implementation Management",
+    "primary_track": "Program Management Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai vendor implementation management concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai vendor implementation management concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai vendor implementation management concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai vendor implementation management concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "PMG 310",
+    "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
+    "module_title": "Grant and Funding Management for AI Projects",
+    "primary_track": "Program Management Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply grant and funding management for ai projects concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply grant and funding management for ai projects concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply grant and funding management for ai projects concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply grant and funding management for ai projects concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "POL 300",
+    "module_id": "pol-300-public-health-ai-policy-landscape-and-regulatory-readiness",
+    "module_title": "Public Health AI Policy Landscape and Regulatory Readiness",
+    "primary_track": "Policy Role-Based Track",
+    "primary_play": {
+      "play_id": 3,
+      "play_title": "Establish AI Governance",
+      "play_route": "#/plays/3",
+      "relationship_type": "provides_governance_context",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply public health ai policy landscape and regulatory readiness concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 12,
+        "play_title": "Execute Governance and Oversight",
+        "play_route": "#/plays/12",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health ai policy landscape and regulatory readiness concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 11,
+        "play_title": "Build and Deploy AI Solutions",
+        "play_route": "#/plays/11",
+        "relationship_type": "supports_procurement_or_vendor_review",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health ai policy landscape and regulatory readiness concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 8,
+        "play_title": "Develop a Funding Strategy",
+        "play_route": "#/plays/8",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply public health ai policy landscape and regulatory readiness concepts while completing Develop a Funding Strategy activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 8 by helping learners connect the lesson topic to develop a funding strategy work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "POL 310",
+    "module_id": "pol-310-ai-policy-development-and-approval-workflow",
+    "module_title": "AI Policy Development and Approval Workflow",
+    "primary_track": "Policy Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai policy development and approval workflow concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai policy development and approval workflow concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai policy development and approval workflow concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai policy development and approval workflow concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "POL 320",
+    "module_id": "pol-320-ai-authority-liability-and-public-health-decision-making",
+    "module_title": "AI Authority, Liability, and Public Health Decision-Making",
+    "primary_track": "Policy Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai authority, liability, and public health decision-making concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai authority, liability, and public health decision-making concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai authority, liability, and public health decision-making concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai authority, liability, and public health decision-making concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "POL 330",
+    "module_id": "pol-330-ai-equity-policy-and-civil-rights-considerations",
+    "module_title": "AI Equity Policy and Civil Rights Considerations",
+    "primary_track": "Policy Role-Based Track",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply ai equity policy and civil rights considerations concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 1,
+        "play_title": "Vision & Guardrails",
+        "play_route": "#/plays/1",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai equity policy and civil rights considerations concepts while completing Vision & Guardrails activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 1 by helping learners connect the lesson topic to vision & guardrails work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 2,
+        "play_title": "Readiness Assessment",
+        "play_route": "#/plays/2",
+        "relationship_type": "prepares_for_play",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai equity policy and civil rights considerations concepts while completing Readiness Assessment activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 2 by helping learners connect the lesson topic to readiness assessment work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply ai equity policy and civil rights considerations concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 100",
+    "module_id": "gov-100-introduction-to-ai-governance-for-public-health",
+    "module_title": "Introduction to AI Governance for Public Health",
+    "primary_track": "Governance and Security Track",
+    "primary_play": {
+      "play_id": 3,
+      "play_title": "Establish AI Governance",
+      "play_route": "#/plays/3",
+      "relationship_type": "provides_governance_context",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply introduction to ai governance for public health concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply introduction to ai governance for public health concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 12,
+        "play_title": "Execute Governance and Oversight",
+        "play_route": "#/plays/12",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply introduction to ai governance for public health concepts while completing Execute Governance and Oversight activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 12 by helping learners connect the lesson topic to execute governance and oversight work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 4,
+        "play_title": "Engage Stakeholders",
+        "play_route": "#/plays/4",
+        "relationship_type": "supports_public_communication",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply introduction to ai governance for public health concepts while completing Engage Stakeholders activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 4 by helping learners connect the lesson topic to engage stakeholders work in the AI Playbook sequence."
+      }
+    ]
+  },
+  {
+    "course_id": "GOV 110",
+    "module_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
+    "module_title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
+    "primary_track": "Governance and Security",
+    "primary_play": {
+      "play_id": 11,
+      "play_title": "Build and Deploy AI Solutions",
+      "play_route": "#/plays/11",
+      "relationship_type": "supports_procurement_or_vendor_review",
+      "how_the_lesson_informs_the_play": "This lesson helps learners apply respecting tribal sovereignty and indigenous data governance in public health ai projects concepts while completing Build and Deploy AI Solutions activities, decisions, documentation, or review steps.",
+      "suggested_lesson_page_note": "This lesson informs Play 11 by helping learners connect the lesson topic to build and deploy ai solutions work in the AI Playbook sequence."
+    },
+    "secondary_plays": [
+      {
+        "play_id": 3,
+        "play_title": "Establish AI Governance",
+        "play_route": "#/plays/3",
+        "relationship_type": "provides_governance_context",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply respecting tribal sovereignty and indigenous data governance in public health ai projects concepts while completing Establish AI Governance activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 3 by helping learners connect the lesson topic to establish ai governance work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 7,
+        "play_title": "Prioritize Use Cases",
+        "play_route": "#/plays/7",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply respecting tribal sovereignty and indigenous data governance in public health ai projects concepts while completing Prioritize Use Cases activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 7 by helping learners connect the lesson topic to prioritize use cases work in the AI Playbook sequence."
+      },
+      {
+        "play_id": 8,
+        "play_title": "Develop a Funding Strategy",
+        "play_route": "#/plays/8",
+        "relationship_type": "supports_play_execution",
+        "how_the_lesson_informs_the_play": "This lesson helps learners apply respecting tribal sovereignty and indigenous data governance in public health ai projects concepts while completing Develop a Funding Strategy activities, decisions, documentation, or review steps.",
+        "suggested_lesson_page_note": "This lesson informs Play 8 by helping learners connect the lesson topic to develop a funding strategy work in the AI Playbook sequence."
+      }
+    ]
+  }
+]
