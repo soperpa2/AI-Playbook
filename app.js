@@ -3331,7 +3331,7 @@ function collectLearningModulePdfSections(module, background, deepDive, applicat
     (module.sections || [])
       .filter(section => !["preamble", "training_overview", "learning_objectives", "definitions", "knowledge_check", "references_and_resources_for_additional_information", "jurisdiction_and_agency_policy_note"].includes(section.key))
       .forEach(section => modulePdfSection(sections, curriculumSectionHeading(module, section), section.paragraphs || []));
-    modulePdfSection(sections, "Expected Artifacts or Evidence", module.expected_artifacts_or_evidence || [], "bullets");
+    modulePdfSection(sections, "Expected Assignment", module.expected_artifacts_or_evidence || [], "bullets");
     modulePdfSection(sections, "Knowledge Check", knowledgeCheckQuestions(module).map((question, index) => `${index + 1}. ${question.prompt}`), "bullets");
     modulePdfSection(sections, "References and Resources", (module.references_and_resources || []).map(lessonReferenceText), "bullets");
     return sections;
@@ -3358,7 +3358,7 @@ function collectLearningModulePdfSections(module, background, deepDive, applicat
   modulePdfSection(sections, "Why This Matters for Your Practice", [application.matters]);
   modulePdfSection(sections, "Reflection Questions", application.questions || [], "bullets");
   if (application.exercise) {
-    const exerciseLines = [application.exercise, ...(application.artifacts || []).map(item => `Expected artifact or evidence: ${item}`)];
+    const exerciseLines = [application.exercise, ...(application.artifacts || []).map(item => `Expected assignment: ${item}`)];
     modulePdfSection(sections, "Practical Exercise", exerciseLines, "mixed");
   }
   modulePdfSection(sections, "Knowledge Check", knowledgeCheckQuestions(module).map((question, index) => `${index + 1}. ${question.prompt}`), "bullets");
@@ -3677,7 +3677,7 @@ function renderExerciseSupport(module, application = {}) {
       <section>
         <h5>Example</h5>
         <p>${escapeDoc(example)}</p>
-        <p>When you save exercise evidence, summarize what you created, which workflow or use case you used, and what questions still need legal, privacy, equity, IT, leadership, or governance review.</p>
+        <p>When you save your assignment, summarize what you created, which workflow or use case you used, and what questions still need legal, privacy, equity, IT, leadership, or governance review.</p>
       </section>
     </div>
     <p class="tool-note">Need a definition? Use the <a href="#/glossary">Glossary of Terms</a> while completing the exercise.</p>
@@ -3693,25 +3693,25 @@ function renderPracticalExercise(module, application = {}) {
     ${paragraphBlock(application.exercise)}
     ${renderExerciseSupport(module, application)}
     ${renderExerciseTemplate(application.exerciseTemplate)}
-    ${application.artifacts ? `<h4>Expected artifact or evidence</h4><ul class="check-list">${application.artifacts.map(item => `<li>${item}</li>`).join("")}</ul>` : ""}
-    <label class="exercise-evidence-label">Your exercise evidence
-      <textarea id="exercise-evidence-${module.id}" rows="5" placeholder="Summarize the artifact you created, paste a link/reference, or document evidence for review.">${progress.exerciseEvidence || ""}</textarea>
+    ${application.artifacts ? `<h4>Expected assignment</h4><ul class="check-list">${application.artifacts.map(item => `<li>${item}</li>`).join("")}</ul>` : ""}
+    <label class="exercise-evidence-label">Your assignment
+      <textarea id="exercise-evidence-${module.id}" rows="5" placeholder="Summarize the assignment you completed, paste a de-identified version, add a link or reference, or document what you created for review.">${progress.exerciseEvidence || ""}</textarea>
     </label>
     <div class="evidence-upload-panel">
-      <h4>Upload evidence files</h4>
+      <h4>Upload assignment files</h4>
       <p>Upload worksheets, screenshots, notes, slide decks, exported tools, or other documents that show you completed the exercise.</p>
-      <input id="exercise-upload-${module.id}" type="file" multiple aria-label="Upload evidence files for ${module.title}">
+      <input id="exercise-upload-${module.id}" type="file" multiple aria-label="Upload assignment files for ${module.title}">
       <p class="tool-note">This static preview saves file names and details in your browser. Production will store files securely in the member or organization account.</p>
       <div id="exercise-attachments-${module.id}" class="attachment-list">${renderExerciseAttachments(attachments)}</div>
     </div>
-    <div class="button-row"><button class="btn small" type="button" onclick="saveLearningExercise('${module.id}')">Save Exercise Evidence</button></div>
-    <p id="exercise-result-${module.id}" class="tool-note">${progress.exerciseSavedAt ? `Exercise evidence saved: ${progress.exerciseSavedAt}` : "Your exercise evidence can support discussion, review, or implementation planning."}</p>
+    <div class="button-row"><button class="btn small" type="button" onclick="saveLearningExercise('${module.id}')">Save Assignment</button></div>
+    <p id="exercise-result-${module.id}" class="tool-note">${progress.exerciseSavedAt ? `Assignment saved: ${progress.exerciseSavedAt}` : "Your assignment can support discussion, review, or implementation planning."}</p>
     ${renderAiFormativeFeedback(module, application)}
   </section>`;
 }
 function renderExerciseAttachments(attachments = []) {
-  if (!attachments.length) return `<p class="plain-meta">No evidence files saved yet.</p>`;
-  return `<ul class="check-list compact-list">${attachments.map(file => `<li><strong>${escapeDoc(file.name || "Evidence file")}</strong>${file.size ? ` (${formatFileSize(file.size)})` : ""}${file.type ? ` - ${escapeDoc(file.type)}` : ""}</li>`).join("")}</ul>`;
+  if (!attachments.length) return `<p class="plain-meta">No assignment files saved yet.</p>`;
+  return `<ul class="check-list compact-list">${attachments.map(file => `<li><strong>${escapeDoc(file.name || "Assignment file")}</strong>${file.size ? ` (${formatFileSize(file.size)})` : ""}${file.type ? ` - ${escapeDoc(file.type)}` : ""}</li>`).join("")}</ul>`;
 }
 function formatFileSize(bytes = 0) {
   const value = Number(bytes) || 0;
@@ -3729,7 +3729,7 @@ function moduleFeedbackRubric(module, application = {}) {
     "The response identifies relevant data, systems, policies, tools, or assumptions.",
     "The response addresses risks, limitations, and guardrails appropriate to the module topic.",
     "The response includes equity, accessibility, privacy, security, or public trust considerations when relevant.",
-    "The response produces the expected artifact or evidence named in the module.",
+    "The response produces the expected assignment named in the module.",
     "The response identifies practical next steps, owners, or review needs."
   ];
   return Array.from(new Set([...objectives.map(item => String(item).replace(/\.$/, "")), ...base])).slice(0, 8);
@@ -3739,9 +3739,11 @@ function aiFeedbackPrompt(moduleId) {
   const module = learningModules.find(item => item.id === moduleId);
   if (!module) return "";
   const application = moduleApplication(module);
-  const submission = document.getElementById(`ai-feedback-submission-${moduleId}`)?.value || "";
+  const progress = learningProgressFor(moduleId);
+  const liveAssignment = document.getElementById(`exercise-evidence-${moduleId}`)?.value || "";
+  const submission = liveAssignment || progress.exerciseEvidence || "";
   const rubric = moduleFeedbackRubric(module, application).map((item, index) => `${index + 1}. ${item}`).join("\n");
-  return `You are providing formative learning feedback on a public health AI training practical exercise. Do not approve, certify, grade, or make legal, privacy, procurement, security, or governance determinations. Use the rubric below to provide constructive feedback. Identify strengths, missing information, risks or safeguards, suggested revisions, and questions for human review. Rate the submission as Needs Revision, Ready for Discussion, or Ready for Review.\n\nCourse ID:\n${module.course_id || module.course_code || module.id}\n\nModule title:\n${module.title}\n\nPractical exercise:\n${application.exercise || "No practical exercise text was found for this module."}\n\nExpected artifact or evidence:\n${(application.artifacts || []).join("; ") || "A practical artifact that supports responsible AI planning, governance, implementation, monitoring, or accountability."}\n\nRubric:\n${rubric}\n\nLearner submission:\n${submission || "[Paste the learner submission here.]"}\n\nReturn feedback using this structure:\n1. Overall formative rating\n2. Strengths\n3. Missing or unclear information\n4. Rubric-based feedback\n5. Risks or safeguards to consider\n6. Suggested revisions\n7. Questions for human review\n8. Recommended next step`;
+  return `You are providing formative learning feedback on a public health AI training practical exercise. Do not approve, certify, grade, or make legal, privacy, procurement, security, or governance determinations. Use the rubric below to provide constructive feedback. Identify strengths, missing information, risks or safeguards, suggested revisions, and questions for human review. Rate the assignment as Needs Revision, Ready for Discussion, or Ready for Review.\n\nCourse ID:\n${module.course_id || module.course_code || module.id}\n\nModule title:\n${module.title}\n\nPractical exercise:\n${application.exercise || "No practical exercise text was found for this module."}\n\nExpected assignment:\n${(application.artifacts || []).join("; ") || "A practical assignment that supports responsible AI planning, governance, implementation, monitoring, or accountability."}\n\nRubric:\n${rubric}\n\nLearner assignment:\n${submission || "[Save or enter the learner assignment on the practical exercise page before generating this prompt.]"}\n\nReturn feedback using this structure:\n1. Overall formative rating\n2. Strengths\n3. Missing or unclear information\n4. Rubric-based feedback\n5. Risks or safeguards to consider\n6. Suggested revisions\n7. Questions for human review\n8. Recommended next step`;
 }
 
 function generateAiFeedbackPrompt(moduleId) {
@@ -3753,6 +3755,44 @@ function generateAiFeedbackPrompt(moduleId) {
     return;
   }
   output.value = aiFeedbackPrompt(moduleId);
+}
+
+function saveAiFeedback(moduleId) {
+  const output = document.getElementById(`ai-feedback-output-${moduleId}`);
+  const feedback = document.getElementById(`ai-feedback-response-${moduleId}`);
+  const assignment = document.getElementById(`exercise-evidence-${moduleId}`);
+  const upload = document.getElementById(`exercise-upload-${moduleId}`);
+  const state = getMemberState();
+  state.learningProgress = state.learningProgress || {};
+  const existing = state.learningProgress[moduleId] || {};
+  const priorAttachments = Array.isArray(existing.exerciseAttachments) ? existing.exerciseAttachments : [];
+  const newAttachments = Array.from(upload?.files || []).map(file => ({
+    name: file.name,
+    size: file.size,
+    type: file.type || "File",
+    savedAt: new Date().toLocaleString()
+  }));
+  const exerciseAttachments = [...priorAttachments, ...newAttachments];
+  const assignmentText = assignment?.value || existing.exerciseEvidence || "";
+  const savedAt = new Date().toLocaleString();
+  state.learningProgress[moduleId] = {
+    ...existing,
+    exerciseEvidence: assignmentText,
+    exerciseAttachments,
+    exerciseSavedAt: assignmentText.trim() || exerciseAttachments.length ? savedAt : existing.exerciseSavedAt,
+    exerciseVerified: Boolean(assignmentText.trim() || exerciseAttachments.length),
+    aiFeedbackPrompt: output?.value || existing.aiFeedbackPrompt || "",
+    aiFeedbackResponse: feedback?.value || "",
+    aiFeedbackSavedAt: savedAt
+  };
+  setMemberState(state);
+  if (upload) upload.value = "";
+  const attachmentList = document.getElementById(`exercise-attachments-${moduleId}`);
+  if (attachmentList) attachmentList.innerHTML = renderExerciseAttachments(exerciseAttachments);
+  const exerciseStatus = document.getElementById(`exercise-result-${moduleId}`);
+  if (exerciseStatus && (assignmentText.trim() || exerciseAttachments.length)) exerciseStatus.textContent = `Assignment saved: ${state.learningProgress[moduleId].exerciseSavedAt}`;
+  const status = document.getElementById(`ai-feedback-save-status-${moduleId}`);
+  if (status) status.textContent = `AI feedback saved: ${state.learningProgress[moduleId].aiFeedbackSavedAt}`;
 }
 
 function copyAiFeedbackPrompt(moduleId) {
@@ -3775,6 +3815,7 @@ function downloadAiFeedbackPrompt(moduleId) {
 
 function renderAiFormativeFeedback(module, application = {}) {
   const rubric = moduleFeedbackRubric(module, application);
+  const progress = learningProgressFor(module.id);
   return `<section class="content-section ai-feedback-panel">
     <h3>AI Formative Feedback</h3>
     <p>Use AI-assisted feedback to help you identify strengths, missing elements, unclear assumptions, and areas that may need revision.</p>
@@ -3784,9 +3825,7 @@ function renderAiFormativeFeedback(module, application = {}) {
       <summary>View rubric criteria</summary>
       <ul class="check-list">${rubric.map(item => `<li>${escapeDoc(item)}</li>`).join("")}</ul>
     </details>
-    <label class="exercise-evidence-label">Paste your practical exercise response
-      <textarea id="ai-feedback-submission-${module.id}" rows="6" placeholder="Paste a de-identified or fictionalized version of your completed exercise artifact."></textarea>
-    </label>
+    <p class="plain-meta">This prompt uses the assignment you saved above. You do not need to copy and paste your assignment again for AI feedback.</p>
     <label class="checkbox-line"><input id="ai-feedback-confirm-${module.id}" type="checkbox"> I confirm that this submission does not include protected health information, personally identifiable information, confidential agency information, security-sensitive information, procurement-sensitive information, or non-public operational details.</label>
     <div class="button-row">
       <button class="btn primary small" type="button" onclick="generateAiFeedbackPrompt('${module.id}')">Generate Formative Feedback Prompt</button>
@@ -3794,8 +3833,13 @@ function renderAiFormativeFeedback(module, application = {}) {
       <button class="btn small" type="button" onclick="downloadAiFeedbackPrompt('${module.id}')">Download Prompt</button>
     </div>
     <label class="exercise-evidence-label">Generated prompt for an approved AI tool
-      <textarea id="ai-feedback-output-${module.id}" rows="10" readonly placeholder="The prompt will appear here after you generate it."></textarea>
+      <textarea id="ai-feedback-output-${module.id}" rows="10" readonly placeholder="The prompt will appear here after you generate it.">${progress.aiFeedbackPrompt || ""}</textarea>
     </label>
+    <label class="exercise-evidence-label">AI feedback received
+      <textarea id="ai-feedback-response-${module.id}" rows="6" placeholder="Paste the feedback returned by your approved AI tool so it is saved with your assignment.">${progress.aiFeedbackResponse || ""}</textarea>
+    </label>
+    <div class="button-row"><button class="btn small" type="button" onclick="saveAiFeedback('${module.id}')">Save Assignment Feedback</button></div>
+    <p id="ai-feedback-save-status-${module.id}" class="tool-note">${progress.aiFeedbackSavedAt ? `AI feedback saved: ${progress.aiFeedbackSavedAt}` : "Save the feedback so your assignment and formative feedback stay together."}</p>
   </section>`;
 }
 
@@ -3911,7 +3955,7 @@ function submitLearningQuiz(moduleId) {
   if (result) {
     result.textContent = completed
       ? `Score: ${score} / ${questions.length}. Module marked complete.`
-      : `Score: ${score} / ${questions.length}. A score of 4 / 5 is recommended for completion; retake the quiz or document evidence for review.`;
+      : `Score: ${score} / ${questions.length}. A score of 4 / 5 is recommended for completion; retake the quiz or complete the assignment for review.`;
   }
 }
 
@@ -3943,7 +3987,7 @@ function saveLearningExercise(moduleId) {
   const attachmentList = document.getElementById(`exercise-attachments-${moduleId}`);
   if (attachmentList) attachmentList.innerHTML = renderExerciseAttachments(exerciseAttachments);
   const result = document.getElementById(`exercise-result-${moduleId}`);
-  if (result) result.textContent = `Exercise evidence saved: ${state.learningProgress[moduleId].exerciseSavedAt}`;
+  if (result) result.textContent = `Assignment saved: ${state.learningProgress[moduleId].exerciseSavedAt}`;
 }
 
 function splitFullName(fullName = "") {
@@ -6678,7 +6722,7 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections,
       if (section.type === "bullets") {
         section.lines.forEach(line => drawWrappedBullet(line));
       } else if (section.type === "mixed") {
-        section.lines.forEach((line, index) => index === 0 ? drawWrappedParagraph(line) : drawWrappedBullet(line.replace(/^Expected artifact or evidence:\s*/i, "")));
+        section.lines.forEach((line, index) => index === 0 ? drawWrappedParagraph(line) : drawWrappedBullet(line.replace(/^Expected (artifact or evidence|assignment):\s*/i, "")));
       } else {
         section.lines.forEach(line => drawWrappedParagraph(line));
       }
@@ -7690,15 +7734,15 @@ function learningProgressCards(state) {
     .map(module => ({ module, record: progress[module.id] || {} }))
     .filter(item => item.record.quizScore !== undefined || item.record.exerciseSavedAt);
   if (!entries.length) {
-    return `<p class="plain-meta">No quiz or exercise progress has been saved in this browser yet. Open a learning module, complete the knowledge check, and save the practical exercise evidence.</p>`;
+    return `<p class="plain-meta">No quiz or exercise progress has been saved in this browser yet. Open a learning module, complete the knowledge check, and save the practical exercise assignment.</p>`;
   }
   return `<div class="org-grid training-progress-grid">${entries.map(({ module, record }) => `
     <article>
       <h3>${escapeDoc(module.title)}</h3>
       <p><strong>Status:</strong> ${record.completed ? "Complete" : "In progress"}</p>
       <p><strong>Quiz:</strong> ${record.quizScore !== undefined ? `${record.quizScore} / ${record.quizTotal || 5}` : "Not taken"}</p>
-      <p><strong>Exercise:</strong> ${record.exerciseSavedAt ? `Evidence saved ${escapeDoc(record.exerciseSavedAt)}` : "No evidence saved"}</p>
-      ${record.exerciseAttachments?.length ? `<p><strong>Uploaded evidence:</strong> ${record.exerciseAttachments.map(file => escapeDoc(file.name || "Evidence file")).join(", ")}</p>` : ""}
+      <p><strong>Exercise:</strong> ${record.exerciseSavedAt ? `Assignment saved ${escapeDoc(record.exerciseSavedAt)}` : "No assignment saved"}</p>
+      ${record.exerciseAttachments?.length ? `<p><strong>Uploaded assignment:</strong> ${record.exerciseAttachments.map(file => escapeDoc(file.name || "Assignment file")).join(", ")}</p>` : ""}
       <a href="#/learn/${module.id}">Open module</a>
     </article>`).join("")}</div>`;
 }
@@ -7756,7 +7800,7 @@ function renderOrganizationTrainingHub() {
 
     <section class="panel">
       <h2>Saved Quiz and Exercise Progress</h2>
-      <p>In this static preview, quiz scores and exercise evidence are saved in the current browser for the current member profile. In production, these records should attach to each signed-in user and roll up to the administrator dashboard.</p>
+      <p>In this static preview, quiz scores, assignments, and AI feedback are saved in the current browser for the current member profile. In production, these records should attach to each signed-in user and roll up to the administrator dashboard.</p>
       ${learningProgressCards(state)}
     </section>
   </section>`;
@@ -8015,9 +8059,9 @@ function memberWorkspaceExportSections(state) {
     ? Object.entries(state.learningProgress || {}).map(([moduleId, record]) => {
       const module = learningModules.find(item => item.id === moduleId);
       const attachments = Array.isArray(record.exerciseAttachments) && record.exerciseAttachments.length
-        ? record.exerciseAttachments.map(file => `${file.name || "Evidence file"} (${file.size ? formatFileSize(file.size) : "size not saved"})`).join(", ")
-        : "No uploaded files";
-      return `${module?.title || moduleId} | Status: ${record.completed ? "Complete" : "In progress"} | Quiz: ${record.quizScore !== undefined ? `${record.quizScore} / ${record.quizTotal || 5}` : "Not taken"} | Quiz date: ${record.quizCompletedAt || "No date"} | Exercise saved: ${record.exerciseSavedAt || "No"} | Evidence note: ${record.exerciseEvidence || "No text evidence"} | Uploaded evidence: ${attachments}`;
+        ? record.exerciseAttachments.map(file => `${file.name || "Assignment file"} (${file.size ? formatFileSize(file.size) : "size not saved"})`).join(", ")
+        : "No uploaded assignment files";
+      return `${module?.title || moduleId} | Status: ${record.completed ? "Complete" : "In progress"} | Quiz: ${record.quizScore !== undefined ? `${record.quizScore} / ${record.quizTotal || 5}` : "Not taken"} | Quiz date: ${record.quizCompletedAt || "No date"} | Assignment saved: ${record.exerciseSavedAt || "No"} | Assignment note: ${record.exerciseEvidence || "No assignment text"} | Uploaded assignment: ${attachments} | AI feedback saved: ${record.aiFeedbackSavedAt || "No"} | AI feedback: ${record.aiFeedbackResponse || "No feedback saved"}`;
     })
     : ["No learning module quiz or exercise progress saved."];
   const ratingLines = Object.values(ratings).length
