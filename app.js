@@ -4713,27 +4713,6 @@ function moduleTitleWithCourse(moduleId) {
   return `${module.course_id ? `${module.course_id}: ` : ""}${module.title}`;
 }
 
-function relatedPlayPanelForModule(moduleId) {
-  const entry = lessonPlayCrosswalkForModule(moduleId);
-  if (!entry?.primary_play) return "";
-  const primary = entry.primary_play;
-  const secondary = entry.secondary_plays || [];
-  return `<section class="content-section related-crosswalk-panel">
-    <h3>Related Playbook Plays</h3>
-    <article class="crosswalk-related-item">
-      <div><span class="relationship-badge primary">Primary Play</span><h4>${playLink(primary.play_id)}</h4></div>
-      <p>${escapeDoc(primary.suggested_lesson_page_note || primary.how_the_lesson_informs_the_play || "")}</p>
-    </article>
-    ${secondary.length ? `<div class="crosswalk-related-stack">
-      <h4>Also Supports</h4>
-      ${secondary.map(play => `<article class="crosswalk-related-item compact">
-        <div><span class="relationship-badge">${relationshipLabel(play.relationship_type)}</span><h5>${playLink(play.play_id)}</h5></div>
-        <p>${escapeDoc(play.suggested_lesson_page_note || play.how_the_lesson_informs_the_play || "")}</p>
-      </article>`).join("")}
-    </div>` : ""}
-  </section>`;
-}
-
 function relatedToolPanelForModule(moduleId) {
   const entry = lessonToolCrosswalkForModule(moduleId);
   const relatedTools = (entry?.tools || []).slice(0, 5);
@@ -4850,7 +4829,6 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
             <h3>Learning Objectives</h3>
             <ul class="check-list">${(module.learning_objectives || []).map(item => `<li>${item}</li>`).join("")}</ul>
           </section>
-          ${relatedPlayPanelForModule(module.id)}
           ${definitions.length ? `<section class="content-section lesson-prose definitions-section"><h3>Definitions</h3><dl class="definition-list">${definitions.map(item => `<dt>${item.term}</dt><dd>${item.definition}</dd>`).join("")}</dl></section>` : ""}
           ${exampleBlocks}
           ${sectionDetails ? `<section class="content-section module-details-stack"><h3>Course Content</h3>${sectionDetails}</section>` : ""}
@@ -4901,7 +4879,6 @@ function renderLearn(moduleId = "") {
           ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
-          ${relatedPlayPanelForModule(module.id)}
           ${definitionsBlock}
           ${narrative.length ? `<section class="content-section lesson-prose training-section"><h3>How to Use the Learning Section</h3>${narrative.map(paragraph=>`<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${(deepDive.sections || []).map(section=>`<section class="content-section lesson-prose training-section"><h3>${section.title}</h3>${renderLearningSection(section)}</section>`).join("")}
@@ -4927,7 +4904,6 @@ function renderLearn(moduleId = "") {
           ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
-          ${relatedPlayPanelForModule(module.id)}
           ${definitionsBlock}
           <section class="content-section">
             <h3>How to Use These Examples</h3>
@@ -4986,7 +4962,6 @@ function renderLearn(moduleId = "") {
           ${lessonDownloadButtons}
           ${glossaryCta}
           ${renderLearningObjectives(module, application)}
-          ${relatedPlayPanelForModule(module.id)}
           ${deepDive.overview ? `<section class="content-section lesson-prose"><h3>Module Overview</h3>${paragraphBlock(deepDive.overview)}</section>` : ""}
           ${definitionsBlock}
           ${definitionSections.length ? `<section class="content-section lesson-prose"><h3>Additional Definitions</h3>${definitionSections.map(section=>`<p><strong>${section.title}:</strong> ${section.body}</p>`).join("")}</section>` : ""}
