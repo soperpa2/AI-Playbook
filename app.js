@@ -4426,10 +4426,16 @@ function renderLearnLanding() {
   const technicalTrackIds = ["technical-architecture", "analytics-modeling", "operations-data-quality", "governance-security"];
   const roleTrackIds = ["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management"];
   const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
+  const trackGraphicLabel = track => {
+    const label = track.short_title || track.title;
+    if (track.track_id === "analytics-modeling") return "Analytics /<br>Modeling";
+    if (track.track_id === "governance-security") return "Governance /<br>Security";
+    return escapeDoc(label);
+  };
   const trackButton = id => {
     const resolvedId = normalizeLearningTrackId(id);
     const track = trackById[resolvedId];
-    return track ? `<a class="curriculum-node ${resolvedId}" href="#/learn-track/${resolvedId}" aria-label="Open ${track.title}">${track.short_title || track.title}</a>` : "";
+    return track ? `<a class="curriculum-node ${resolvedId}" href="#/learn-track/${resolvedId}" aria-label="Open ${track.title}">${trackGraphicLabel(track)}</a>` : "";
   };
   const plans = learningPlans();
   main.innerHTML = `<section class="page learn-landing-page">
