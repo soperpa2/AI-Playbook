@@ -4424,12 +4424,12 @@ function filterLearningCatalog() {
 function renderLearnLanding() {
   const tracks = learningTracks.filter(track => track.track_id !== "all-modules");
   const technicalTrackIds = ["technical-architecture", "analytics-modeling", "operations-data-quality", "governance-security"];
-  const roleTrackIds = ["communications", "epidemiology", "policy", "executive-leadership", "program-management"];
+  const roleTrackIds = ["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management"];
   const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
   const trackButton = id => {
     const resolvedId = normalizeLearningTrackId(id);
     const track = trackById[resolvedId];
-    return track ? `<a class="curriculum-node ${id}" href="#/learn-track/${id}">${track.short_title || track.title}</a>` : "";
+    return track ? `<a class="curriculum-node ${resolvedId}" href="#/learn-track/${resolvedId}" aria-label="Open ${track.title}">${track.short_title || track.title}</a>` : "";
   };
   const plans = learningPlans();
   main.innerHTML = `<section class="page learn-landing-page">
@@ -4454,6 +4454,34 @@ function renderLearnLanding() {
       </div>
     </section>
 
+    <section class="panel curriculum-overview-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Curriculum Overview</p>
+        <h2>How the Learning Modules Are Organized</h2>
+        <p>The curriculum begins with foundational modules that build common language, shared safeguards, and public health context. From there, learners can open technical and governance tracks or role-based tracks depending on their responsibilities.</p>
+      </div>
+      <div class="curriculum-map-graphic" aria-label="Clickable curriculum track structure">
+        <a class="curriculum-base" href="#/learn-track/shared-foundational" aria-label="Open Foundational Modules">
+          <strong>Foundational Modules</strong>
+          <span>Common AI language, responsible use, governance basics, risk, equity, and public health context</span>
+        </a>
+        <div class="curriculum-branches">
+          <section class="curriculum-branch technical">
+            <h3>Technical and Governance Tracks</h3>
+            <div class="curriculum-node-grid">
+              ${technicalTrackIds.map(trackButton).join("")}
+            </div>
+          </section>
+          <section class="curriculum-branch role-based">
+            <h3>Role-Based Tracks</h3>
+            <div class="curriculum-node-grid">
+              ${roleTrackIds.map(trackButton).join("")}
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
     <section class="panel start-foundation-panel">
       <div class="section-heading compact">
         <p class="eyebrow">Start Here</p>
@@ -4466,28 +4494,19 @@ function renderLearnLanding() {
       </div>
     </section>
 
-    <section class="content-section">
+    <section class="panel learning-plan-overview-panel">
       <div class="section-heading">
         <p class="eyebrow">Learning Plans</p>
-        <h2>Choose a Learning Plan</h2>
-        <p>Learning plans provide role-based pathways through the curriculum. They help learners choose the most relevant modules for their responsibilities while still preserving access to the full catalog.</p>
+        <h2>Choose a Role-Based Learning Plan</h2>
+        <p>Learning plans combine modules from multiple tracks into practical pathways for common public health roles. Select the plan that best fits your role or review responsibility; you can still browse the full module catalog at any time.</p>
       </div>
-      <div class="track-card-grid learning-plan-grid">
-        ${plans.map(plan => {
+      <div class="learning-plan-map" aria-label="Clickable learning plan pathways">
+        ${plans.map((plan, index) => {
           const modules = planModules(plan);
-          return `<article class="track-card learning-plan-card">
-            <div>
-              <p class="track-code">Plan</p>
-              <h3>${plan.title}</h3>
-              <p>${plan.description}</p>
-            </div>
-            <div class="track-card-meta">
-              <p><strong>Audience:</strong> ${(plan.primary_audience || []).join(", ")}</p>
-              <p><strong>Estimated time:</strong> ${planEstimatedTime(plan)}</p>
-              <p><strong>${modules.length}</strong> modules</p>
-            </div>
-            <a class="btn small" href="#/learn-plan/${plan.plan_id}">View Plan</a>
-          </article>`;
+          return `<a class="learning-plan-node plan-${index + 1}" href="#/learn-plan/${plan.plan_id}" aria-label="Open ${plan.title}">
+            <strong>${plan.title.replace(/\s+Plan$/i, "")}</strong>
+            <span>${modules.length} modules</span>
+          </a>`;
         }).join("")}
       </div>
     </section>
@@ -4513,34 +4532,6 @@ function renderLearnLanding() {
             </div>
             <a class="btn small" href="#/learn-track/${track.track_id === "shared-foundational" ? "shared-foundation" : track.track_id}">View Track</a>
           </article>`).join("")}
-      </div>
-    </section>
-
-    <section class="panel curriculum-overview-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Curriculum Overview</p>
-        <h2>How the Curriculum Is Organized</h2>
-        <p>The foundational modules create a common vocabulary and baseline for responsible AI use. From there, learners can follow technical tracks, governance and security training, or role-based tracks depending on their responsibilities.</p>
-      </div>
-      <div class="curriculum-map-graphic" aria-label="Curriculum structure">
-        <a class="curriculum-base" href="#/learn-track/shared-foundation">
-          <strong>Foundational Modules</strong>
-          <span>Common language, risks, safeguards, responsible use, and public health context</span>
-        </a>
-        <div class="curriculum-branches">
-          <section class="curriculum-branch technical">
-            <h3>Technical and Governance Tracks</h3>
-            <div class="curriculum-node-grid">
-              ${technicalTrackIds.map(trackButton).join("")}
-            </div>
-          </section>
-          <section class="curriculum-branch role-based">
-            <h3>Role-Based Tracks</h3>
-            <div class="curriculum-node-grid">
-              ${roleTrackIds.map(trackButton).join("")}
-            </div>
-          </section>
-        </div>
       </div>
     </section>
 

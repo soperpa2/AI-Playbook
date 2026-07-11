@@ -392,6 +392,7 @@ main { min-height: calc(100vh - 144px); }
 .knowledge-lines span:nth-child(2) { background: var(--green); }
 .knowledge-lines span:nth-child(3) { background: #d6a631; }
 .curriculum-overview-panel,
+.learning-plan-overview-panel,
 .module-features-panel,
 .how-to-learn-panel,
 .curriculum-crosswalk-panel {
@@ -441,17 +442,31 @@ main { min-height: calc(100vh - 144px); }
 .curriculum-node-grid {
   display: grid;
   gap: .75rem;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .curriculum-node {
+  align-items: center;
   background: #fff;
   border: 1px solid var(--line);
   border-left: 5px solid var(--teal);
   border-radius: 8px;
   color: var(--ink);
+  display: flex;
+  font-size: .92rem;
   font-weight: 800;
+  justify-content: center;
+  line-height: 1.25;
+  min-height: 4.25rem;
+  overflow-wrap: anywhere;
   padding: .8rem .9rem;
+  text-align: center;
   text-decoration: none;
+}
+.curriculum-node:hover,
+.learning-plan-node:hover {
+  box-shadow: var(--soft-shadow);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 .curriculum-node.role-based,
 .curriculum-node.communications,
@@ -462,6 +477,44 @@ main { min-height: calc(100vh - 144px); }
   border-left-color: #7d4d9f;
 }
 .curriculum-node.governance-security { border-left-color: #d6a631; }
+.learning-plan-map {
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.learning-plan-node {
+  background: linear-gradient(135deg, #fff, rgba(232,244,251,.78));
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green);
+  border-radius: 10px;
+  color: var(--ink);
+  display: grid;
+  gap: .35rem;
+  min-height: 7.5rem;
+  padding: 1rem;
+  text-decoration: none;
+}
+.learning-plan-node strong {
+  color: var(--navy);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+.learning-plan-node span {
+  color: var(--muted);
+  font-weight: 800;
+}
+.learning-plan-node.plan-2,
+.learning-plan-node.plan-5 {
+  border-left-color: #d6a631;
+}
+.learning-plan-node.plan-3,
+.learning-plan-node.plan-6 {
+  border-left-color: var(--teal);
+}
+.learning-plan-node.plan-4,
+.learning-plan-node.plan-7 {
+  border-left-color: #7d4d9f;
+}
 .track-card-grid,
 .feature-card-grid {
   display: grid;
