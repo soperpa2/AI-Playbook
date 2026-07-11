@@ -4719,6 +4719,27 @@ function moduleTitleWithCourse(moduleId) {
   return `${module.course_id ? `${module.course_id}: ` : ""}${module.title}`;
 }
 
+function relatedPlayPanelForModule(moduleId) {
+  const entry = lessonPlayCrosswalkForModule(moduleId);
+  if (!entry?.primary_play) return "";
+  const primary = entry.primary_play;
+  const secondary = entry.secondary_plays || [];
+  return `<section class="content-section related-crosswalk-panel">
+    <h3>Related Playbook Plays</h3>
+    <article class="crosswalk-related-item">
+      <div><span class="relationship-badge primary">Primary Play</span><h4>${playLink(primary.play_id)}</h4></div>
+      <p>${escapeDoc(primary.suggested_lesson_page_note || primary.how_the_lesson_informs_the_play || "")}</p>
+    </article>
+    ${secondary.length ? `<div class="crosswalk-related-stack">
+      <h4>Also Supports</h4>
+      ${secondary.map(play => `<article class="crosswalk-related-item compact">
+        <div><span class="relationship-badge">${relationshipLabel(play.relationship_type)}</span><h5>${playLink(play.play_id)}</h5></div>
+        <p>${escapeDoc(play.suggested_lesson_page_note || play.how_the_lesson_informs_the_play || "")}</p>
+      </article>`).join("")}
+    </div>` : ""}
+  </section>`;
+}
+
 function relatedToolPanelForModule(moduleId) {
   const entry = lessonToolCrosswalkForModule(moduleId);
   const relatedTools = (entry?.tools || []).slice(0, 5);
@@ -4839,6 +4860,7 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
           ${exampleBlocks}
           ${sectionDetails ? `<section class="content-section module-details-stack"><h3>Course Content</h3>${sectionDetails}</section>` : ""}
           ${relatedToolPanelForModule(module.id)}
+          ${relatedPlayPanelForModule(module.id)}
           ${renderPracticalExercise(module, exerciseApplication)}
           ${renderCurriculumKnowledgeCheck(module)}
           ${renderCurriculumReferences(module)}
@@ -4891,6 +4913,7 @@ function renderLearn(moduleId = "") {
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Learning</h3>${paragraphBlock(application.matters)}</section>` : ""}
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to decide how you will complete, document, and apply the learning module to governance or implementation work.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
           ${relatedToolPanelForModule(module.id)}
+          ${relatedPlayPanelForModule(module.id)}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
         </article>
@@ -4950,6 +4973,7 @@ function renderLearn(moduleId = "") {
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Practice</h3>${paragraphBlock(application.matters)}</section>` : ""}
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to compare possible AI support areas and decide which ideas merit readiness review, governance review, or use case screening.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
           ${relatedToolPanelForModule(module.id)}
+          ${relatedPlayPanelForModule(module.id)}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
         </article>
@@ -4987,6 +5011,7 @@ function renderLearn(moduleId = "") {
           ${application.matters ? `<section class="content-section training-section"><h3>Why This Matters for Your Practice</h3>${paragraphBlock(application.matters)}</section>` : ""}
           ${application.questions ? `<section class="content-section training-section"><h3>Reflection Questions</h3><p>Use these questions to connect the concept to your own role, data, authorities, workflows, and community responsibilities.</p><ul class="check-list">${application.questions.map(item=>`<li>${item}</li>`).join("")}</ul></section>` : ""}
           ${relatedToolPanelForModule(module.id)}
+          ${relatedPlayPanelForModule(module.id)}
           ${renderPracticalExercise(module, application)}
           ${renderLearningQuiz(module)}
           ${moduleResources.length ? `<section class="content-section"><h3>References and Resources</h3><div class="resource-list">${moduleResources.map(([title, note, url])=>`
