@@ -3291,7 +3291,8 @@ function collectLearningModulePdfSections(module, background, deepDive, applicat
     const sections = [];
     modulePdfSection(sections, "Learning Objectives", module.learning_objectives || [], "bullets");
     modulePdfSection(sections, "Module Overview", [module.text]);
-    if (module.definitions?.length) modulePdfSection(sections, "Definitions", module.definitions.map(item => `${item.term}: ${item.definition}`), "bullets");
+    const definitions = curriculumDefinitionEntries(module);
+    if (definitions.length) modulePdfSection(sections, "Definitions", definitions.map(item => `${item.term}: ${item.definition}`), "bullets");
     const policyNote = module.jurisdiction_and_agency_policy_note?.text || curriculumSectionText(module, "jurisdiction_and_agency_policy_note");
     modulePdfSection(sections, "Jurisdiction and Agency Policy Note", [policyNote]);
     (module.sections || [])
@@ -4603,13 +4604,29 @@ function curriculumSectionHeading(module, section) {
     .replace(/^Technical Deep Dive$/i, "Topic Deep Dive");
 }
 
+function curriculumDefinitionEntries(module) {
+  return (module?.definitions || []).map(item => {
+    if (item && typeof item === "object") {
+      return {
+        term: item.term || item.title || "Definition",
+        definition: item.definition || item.description || item.text || ""
+      };
+    }
+    const text = String(item || "").trim();
+    const match = text.match(/^([^.:]+)[.:]\s+(.+)$/);
+    return match
+      ? { term: match[1].trim(), definition: match[2].trim() }
+      : { term: "Definition", definition: text };
+  }).filter(item => item.definition);
+}
+
 function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossaryCta) {
   const sectionsToSkip = new Set(["preamble", "training_overview", "learning_objectives", "definitions", "knowledge_check", "references_and_resources_for_additional_information", "jurisdiction_and_agency_policy_note", "practical_exercise", "expected_artifact_or_evidence"]);
   const sections = (module.sections || []).filter(section => !sectionsToSkip.has(section.key));
   const publicHealthExampleSections = sections.filter(section => section.key === "public_health_example" || /^public health example/i.test(section.heading || ""));
   const contentSections = sections.filter(section => !publicHealthExampleSections.includes(section));
   const policyNote = module.jurisdiction_and_agency_policy_note?.text || curriculumSectionText(module, "jurisdiction_and_agency_policy_note");
-  const definitions = module.definitions || [];
+  const definitions = curriculumDefinitionEntries(module);
   const curriculumExercise = curriculumSectionText(module, "practical_exercise");
   const exerciseApplication = curriculumExercise ? { exercise: curriculumExercise, artifacts: module.expected_artifacts_or_evidence || [] } : {};
   const requiredPrereqs = prerequisiteItems(module, "required");
