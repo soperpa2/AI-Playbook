@@ -2,7 +2,7 @@ window.LESSON_TOOL_CROSSWALK = [
   {
     "course_id": "INT 100",
     "module_id": "understanding-ai",
-    "module_title": "Introduction to AI",
+    "module_title": "Introduction to AI for Public Health",
     "primary_track": "shared-foundational",
     "tools": [
       {
@@ -9418,7 +9418,7 @@ window.LESSON_PLAY_CROSSWALK = [
   {
     "course_id": "INT 100",
     "module_id": "understanding-ai",
-    "module_title": "Introduction to AI",
+    "module_title": "Introduction to AI for Public Health",
     "primary_track": "shared-foundational",
     "primary_play": {
       "play_id": 1,
@@ -12252,7 +12252,7 @@ window.LESSON_TOOL_PLAY_CROSSWALK = [
   {
     "course_id": "INT 100",
     "module_id": "understanding-ai",
-    "module_title": "Introduction to AI",
+    "module_title": "Introduction to AI for Public Health",
     "primary_track": "shared-foundational",
     "tools": [
       {

@@ -370,14 +370,14 @@ window.CURRICULUM_DATA = {
             "note": "Current website Learn-section module; not included as a full generated module JSON file."
           },
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "note": "Current website Learn-section module; not included as a full generated module JSON file."
           },
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "note": "Current website Learn-section module; not included as a full generated module JSON file."
           },
@@ -1242,14 +1242,14 @@ window.CURRICULUM_DATA = {
           "note": "Current website Learn-section module; not included as a full generated module JSON file."
         },
         {
-          "course_id": "INT 100",
+          "course_id": "INT 090",
           "title": "Shared Readiness for Responsible AI",
           "source": "website_foundational_crosswalk",
           "note": "Current website Learn-section module; not included as a full generated module JSON file."
         },
         {
-          "course_id": "INT 110",
-          "title": "Introduction to AI / Understanding AI",
+          "course_id": "INT 100",
+          "title": "Introduction to AI for Public Health",
           "source": "website_foundational_crosswalk",
           "note": "Current website Learn-section module; not included as a full generated module JSON file."
         },
@@ -3588,8 +3588,8 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "file": null
           },
@@ -3981,14 +3981,14 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "file": null
           },
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "file": null
           },
@@ -5472,14 +5472,14 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "file": null
           },
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "file": null
           }
@@ -5507,14 +5507,14 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "file": null
           },
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "file": null
           },
@@ -6042,7 +6042,7 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "file": null
@@ -7133,7 +7133,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "ANL",
       "level_label": "",
       "required_prerequisites": "",
-      "recommended_prerequisites": "INT 110 - Introduction to AI / Understanding AI (website_foundational_crosswalk); OPS 200 - Data Quality Engineering for AI (module_json)",
+      "recommended_prerequisites": "INT 100 - Introduction to AI for Public Health (website_foundational_crosswalk); OPS 200 - Data Quality Engineering for AI (module_json)",
       "rationale": "Machine learning basics is an analytics entry module; data quality literacy improves interpretation of examples and risks.",
       "note": ""
     },
@@ -7233,7 +7233,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "ARC",
       "level_label": "",
       "required_prerequisites": "",
-      "recommended_prerequisites": "INT 100 - Shared Readiness for Responsible AI (website_foundational_crosswalk); INT 110 - Introduction to AI / Understanding AI (website_foundational_crosswalk); INT 150 - AI-Supported Public Health Workflows (website_foundational_crosswalk)",
+      "recommended_prerequisites": "INT 090 - Shared Readiness for Responsible AI (website_foundational_crosswalk); INT 100 - Introduction to AI for Public Health (website_foundational_crosswalk); INT 150 - AI-Supported Public Health Workflows (website_foundational_crosswalk)",
       "rationale": "This is the entry point for the technical architecture track; only shared AI and workflow concepts are recommended.",
       "note": ""
     },
@@ -7623,7 +7623,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "INT",
       "level_label": "",
       "required_prerequisites": "",
-      "recommended_prerequisites": "INT 100 - Shared Readiness for Responsible AI (website_foundational_crosswalk); INT 110 - Introduction to AI / Understanding AI (website_foundational_crosswalk)",
+      "recommended_prerequisites": "INT 090 - Shared Readiness for Responsible AI (website_foundational_crosswalk); INT 100 - Introduction to AI for Public Health (website_foundational_crosswalk)",
       "rationale": "Social good concepts are most useful after learners understand responsible AI and basic AI terminology.",
       "note": ""
     },
@@ -7633,7 +7633,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "INT",
       "level_label": "",
       "required_prerequisites": "",
-      "recommended_prerequisites": "INT 100 - Shared Readiness for Responsible AI (website_foundational_crosswalk); INT 110 - Introduction to AI / Understanding AI (website_foundational_crosswalk); INT 150 - AI-Supported Public Health Workflows (website_foundational_crosswalk); INT 160 - Risks, Limitations, and Guardrails (website_foundational_crosswalk)",
+      "recommended_prerequisites": "INT 090 - Shared Readiness for Responsible AI (website_foundational_crosswalk); INT 100 - Introduction to AI for Public Health (website_foundational_crosswalk); INT 150 - AI-Supported Public Health Workflows (website_foundational_crosswalk); INT 160 - Risks, Limitations, and Guardrails (website_foundational_crosswalk)",
       "rationale": "Use case intake can be taken early, but learners benefit from shared readiness, basic AI concepts, workflow framing, and guardrail language.",
       "note": ""
     },
@@ -7773,7 +7773,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "POL",
       "level_label": "",
       "required_prerequisites": "",
-      "recommended_prerequisites": "INT 100 - Shared Readiness for Responsible AI (website_foundational_crosswalk); INT 160 - Risks, Limitations, and Guardrails (website_foundational_crosswalk)",
+      "recommended_prerequisites": "INT 090 - Shared Readiness for Responsible AI (website_foundational_crosswalk); INT 160 - Risks, Limitations, and Guardrails (website_foundational_crosswalk)",
       "rationale": "Policy landscape review can be taken early; shared readiness and risk concepts help frame legal and regulatory review.",
       "note": ""
     },
@@ -13055,7 +13055,7 @@ window.CURRICULUM_DATA = {
       "note": "Use this ID when converting existing Learn-section content into JSON modules."
     },
     {
-      "course_id": "INT 100",
+      "course_id": "INT 090",
       "title": "Shared Readiness for Responsible AI",
       "primary_track_code": "INT",
       "primary_track_title": "Shared Foundational / Introductory Course",
@@ -13063,8 +13063,8 @@ window.CURRICULUM_DATA = {
       "note": "Use this ID when converting existing Learn-section content into JSON modules."
     },
     {
-      "course_id": "INT 110",
-      "title": "Introduction to AI / Understanding AI",
+      "course_id": "INT 100",
+      "title": "Introduction to AI for Public Health",
       "primary_track_code": "INT",
       "primary_track_title": "Shared Foundational / Introductory Course",
       "status": "existing website module or recommended site module id",
@@ -13318,7 +13318,7 @@ window.CURRICULUM_DATA = {
       },
       {
         "from_prerequisite_course_id": "INT 110",
-        "from_prerequisite_title": "Introduction to AI / Understanding AI",
+        "from_prerequisite_title": "Introduction to AI for Public Health",
         "from_source": "website_foundational_crosswalk",
         "to_course_id": "ANL 210",
         "to_title": "Machine Learning Basics for Epidemiology and Surveillance",
@@ -13578,7 +13578,7 @@ window.CURRICULUM_DATA = {
         "reason": "Communicating uncertainty requires model validation literacy and benefits from causal reasoning and communications practice."
       },
       {
-        "from_prerequisite_course_id": "INT 100",
+        "from_prerequisite_course_id": "INT 090",
         "from_prerequisite_title": "Shared Readiness for Responsible AI",
         "from_source": "website_foundational_crosswalk",
         "to_course_id": "ARC 200",
@@ -13588,7 +13588,7 @@ window.CURRICULUM_DATA = {
       },
       {
         "from_prerequisite_course_id": "INT 110",
-        "from_prerequisite_title": "Introduction to AI / Understanding AI",
+        "from_prerequisite_title": "Introduction to AI for Public Health",
         "from_source": "website_foundational_crosswalk",
         "to_course_id": "ARC 200",
         "to_title": "Public Health Data Modernization and AI Architecture",
@@ -14550,7 +14550,7 @@ window.CURRICULUM_DATA = {
         "reason": "Participatory governance requires a governance home and benefits from community engagement and social good framing."
       },
       {
-        "from_prerequisite_course_id": "INT 100",
+        "from_prerequisite_course_id": "INT 090",
         "from_prerequisite_title": "Shared Readiness for Responsible AI",
         "from_source": "website_foundational_crosswalk",
         "to_course_id": "INT 190",
@@ -14560,7 +14560,7 @@ window.CURRICULUM_DATA = {
       },
       {
         "from_prerequisite_course_id": "INT 110",
-        "from_prerequisite_title": "Introduction to AI / Understanding AI",
+        "from_prerequisite_title": "Introduction to AI for Public Health",
         "from_source": "website_foundational_crosswalk",
         "to_course_id": "INT 190",
         "to_title": "AI for Social Good",
@@ -14568,7 +14568,7 @@ window.CURRICULUM_DATA = {
         "reason": "Social good concepts are most useful after learners understand responsible AI and basic AI terminology."
       },
       {
-        "from_prerequisite_course_id": "INT 100",
+        "from_prerequisite_course_id": "INT 090",
         "from_prerequisite_title": "Shared Readiness for Responsible AI",
         "from_source": "website_foundational_crosswalk",
         "to_course_id": "INT 200",
@@ -14578,7 +14578,7 @@ window.CURRICULUM_DATA = {
       },
       {
         "from_prerequisite_course_id": "INT 110",
-        "from_prerequisite_title": "Introduction to AI / Understanding AI",
+        "from_prerequisite_title": "Introduction to AI for Public Health",
         "from_source": "website_foundational_crosswalk",
         "to_course_id": "INT 200",
         "to_title": "AI Use Case Intake and Triage Basics",
@@ -14910,7 +14910,7 @@ window.CURRICULUM_DATA = {
         "reason": "Grant and funding management can be taken as a program management module but benefits from investment strategy, project planning, and funding opportunity context."
       },
       {
-        "from_prerequisite_course_id": "INT 100",
+        "from_prerequisite_course_id": "INT 090",
         "from_prerequisite_title": "Shared Readiness for Responsible AI",
         "from_source": "website_foundational_crosswalk",
         "to_course_id": "POL 300",
@@ -16861,14 +16861,14 @@ window.CURRICULUM_DATA = {
           "note": "Current website Learn-section module; not included as a full generated module JSON file."
         },
         {
-          "course_id": "INT 100",
+          "course_id": "INT 090",
           "title": "Shared Readiness for Responsible AI",
           "source": "website_foundational_crosswalk",
           "note": "Current website Learn-section module; not included as a full generated module JSON file."
         },
         {
-          "course_id": "INT 110",
-          "title": "Introduction to AI / Understanding AI",
+          "course_id": "INT 100",
+          "title": "Introduction to AI for Public Health",
           "source": "website_foundational_crosswalk",
           "note": "Current website Learn-section module; not included as a full generated module JSON file."
         },
@@ -18054,8 +18054,8 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "file": null
           },
@@ -22302,14 +22302,14 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "file": null
           },
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "file": null
           },
@@ -38644,14 +38644,14 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "file": null
           },
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "file": null
           }
@@ -39066,14 +39066,14 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "file": null
           },
           {
-            "course_id": "INT 110",
-            "title": "Introduction to AI / Understanding AI",
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
             "source": "website_foundational_crosswalk",
             "file": null
           },
@@ -45060,7 +45060,7 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "INT 100",
+            "course_id": "INT 090",
             "title": "Shared Readiness for Responsible AI",
             "source": "website_foundational_crosswalk",
             "file": null

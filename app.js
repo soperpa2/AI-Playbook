@@ -1021,7 +1021,7 @@ const playGuideDeepDive = {
 
 const learningModules = [
   { id: "staff-training", title: "Staff Training and Shared Readiness", text: "Use these modules to build a common foundation before AI projects begin. The learning section can support staff training, leadership orientation, governance preparation, and cross-program discussion.", examples: [], risk: "Training should be connected to agency policy, approved tools, data safeguards, escalation expectations, and governance requirements.", plays: [1,2,3,5,6], tools: [1,2,7,23,24,28,29] },
-  { id: "understanding-ai", course_id: "INT 100", title: "Understanding Artificial Intelligence", text: "AI is a family of methods that enable systems to learn from data, recognize patterns, generate content, and support action toward defined goals.", examples: ["Summarize surveillance reports", "Translate analytic findings into plain language", "Support decision briefings"], risk: "Do not treat AI as a single tool or assume one model fits every public health task.", plays: [1,3], tools: [1,2] },
+  { id: "understanding-ai", course_id: "INT 100", title: "Introduction to AI for Public Health", text: "AI is a family of methods that enable systems to learn from data, recognize patterns, generate content, and support action toward defined goals.", examples: ["Summarize surveillance reports", "Translate analytic findings into plain language", "Support decision briefings"], risk: "Do not treat AI as a single tool or assume one model fits every public health task.", plays: [1,3], tools: [1,2] },
   { id: "generative-ai", title: "Generative AI", text: "Generative AI produces new text, images, code, summaries, or synthetic data from prompts and examples.", examples: ["Draft health education materials", "Create first drafts of grant narratives", "Summarize policy documents with human review"], risk: "Outputs can sound plausible while being wrong. Consequential outputs need subject matter review.", plays: [1,3,11], tools: [2,14,40] },
   { id: "agentic-ai", title: "Agentic AI", text: "Agentic AI can coordinate multi-step workflows across systems under explicit rules and human oversight.", examples: ["Route high-priority surveillance signals", "Create task queues from incoming reports", "Assemble evidence packets for review"], risk: "Agentic systems need strict boundaries, audit logs, and escalation paths.", plays: [3,11,12,13], tools: [12,14,39,17] },
   { id: "workflows", title: "AI-Supported Public Health Workflows", text: "AI can support signal detection, evidence gathering, analysis, synthesis, briefing, communication, and decision support.", examples: ["Detect anomalies", "Synthesize outbreak updates", "Draft situation reports"], risk: "Match the tool to workflow stage and keep humans responsible for decisions.", plays: [7,10,11], tools: [31,29,41] },
@@ -1974,7 +1974,7 @@ const learningModuleDeepDive = {
     overview: "These learning modules are designed to help health departments create a shared baseline before AI projects begin. They can be used for staff onboarding, leadership orientation, governance preparation, cross-program training, or pre-work before readiness assessment and use case prioritization.",
     sections: [
       { title: "How Departments Can Use the Learning Modules", items: ["Use the modules as self-paced reading before workshops or governance meetings.", "Use one module at a time as a 30- to 60-minute staff training session.", "Assign modules as pre-work before completing the readiness assessment or prioritizing AI use cases.", "Use module exercises to generate artifacts that feed directly into playbook tools, governance review, and implementation planning."] },
-      { title: "Recommended Training Sequence", items: ["Start with Understanding Artificial Intelligence, Generative AI, and Agentic AI so staff share basic vocabulary.", "Move into Risks, Human-Centered AI, Missing Voices, Public Transparency, and Tiered Data Use before use cases are selected.", "Use AI Literacy, Bridge Professional Role, Funding, procurement, privacy, validation, incident response, and role-based guidance when preparing implementation teams.", "Use AI Support Areas after foundational topics so teams can discuss practical opportunities without skipping governance."] },
+      { title: "Recommended Training Sequence", items: ["Start with Introduction to AI for Public Health, Generative AI, and Agentic AI so staff share basic vocabulary.", "Move into Risks, Human-Centered AI, Missing Voices, Public Transparency, and Tiered Data Use before use cases are selected.", "Use AI Literacy, Bridge Professional Role, Funding, procurement, privacy, validation, incident response, and role-based guidance when preparing implementation teams.", "Use AI Support Areas after foundational topics so teams can discuss practical opportunities without skipping governance."] },
       { title: "Facilitation Tips", items: ["Start each session with a concrete public health workflow rather than a general technology discussion.", "Ask participants to identify what AI may support, what humans must decide, and what data safeguards are needed.", "End each session with a documented takeaway: a question for governance, a possible tool to complete, or a readiness gap to address.", "Keep examples local to the department's programs, authorities, data systems, and community context."] }
     ]
   },
@@ -2768,7 +2768,6 @@ function individualLearningLanguage(text) {
     .replace(/How Departments Can Use the Learning Modules/g, "How You Can Use the Learning Modules")
     .replace(/Recommended Training Sequence/g, "Recommended Learning Sequence")
     .replace(/Facilitation Tips/g, "How to Apply the Module")
-    .replace(/Start with Understanding Artificial Intelligence, Generative AI, and Agentic AI so staff share basic vocabulary\./g, "Start with Understanding Artificial Intelligence, Generative AI, and Agentic AI so you have the basic vocabulary.")
     .replace(/Use AI Support Areas after foundational topics so teams can discuss/g, "Use AI Support Areas after foundational topics so you can discuss")
     .replace(/Use one module at a time as a 30- to 60-minute staff training session\./g, "Work through one module at a time as a 30- to 60-minute learning session.")
     .replace(/Assign modules as pre-work/g, "Complete modules as pre-work")
@@ -2832,8 +2831,8 @@ function individualizeLearningModules() {
     if (module.id === "understanding-ai") {
       module.course_id = "INT 100";
       module.course_code = "INT 100";
-      module.title = "Introduction to AI";
-      module.display_title = "INT 100: Introduction to AI";
+      module.title = "Introduction to AI for Public Health";
+      module.display_title = "INT 100: Introduction to AI for Public Health";
       module.level_label = "Foundational Module";
       module.text = "Use this lesson to build a practical foundation in AI, including predictive AI, generative AI, agentic AI, retrieval-augmented generation, and Deep Research. The goal is to understand what each capability can support, where it can fail, and what safeguards are needed before AI is used in public health work.";
       module.examples = ["Distinguish predictive, generative, agentic, and Deep Research uses", "Identify where AI may already appear in public health workflows", "Explain why human review and governance are required"];
@@ -4329,7 +4328,7 @@ function prerequisiteLinks(module, type = "required") {
   return items.map(item => {
     const normalizedIntro = item.course_id === "INT 110" && /introduction to ai|understanding ai/i.test(item.title || "");
     const courseId = normalizedIntro ? "INT 100" : item.course_id;
-    const title = normalizedIntro ? "Introduction to AI" : item.title;
+    const title = normalizedIntro ? "Introduction to AI for Public Health" : item.title;
     const match = byCourse[courseId];
     const label = `${courseId}${title ? ` - ${title}` : ""}`;
     return match ? `<a href="#/learn/${match.id}">${label}</a>` : `<span>${label}</span>`;
@@ -4536,7 +4535,7 @@ function renderLearnLanding() {
       </div>
       <p>All learners should begin with the foundational modules unless they are completing a targeted executive briefing. These modules introduce core AI concepts, public health value, governance basics, equity review, communications safeguards, human review, privacy, transparency, and practical safeguards. Together, they create a common vocabulary before learners move into technical, governance, or role-based tracks.</p>
       <div class="button-row">
-        <a class="btn primary" href="#/learn/understanding-ai">Open INT 100: Introduction to AI</a>
+        <a class="btn primary" href="#/learn/understanding-ai">Open INT 100: Introduction to AI for Public Health</a>
         <a class="btn" href="#/learn-track/shared-foundation">View Foundational Modules</a>
       </div>
     </section>
@@ -8637,8 +8636,8 @@ function applyCurriculumPackage() {
       ...introModule,
       course_id: "INT 100",
       course_code: "INT 100",
-      title: "Introduction to AI",
-      display_title: "INT 100: Introduction to AI",
+      title: "Introduction to AI for Public Health",
+      display_title: "INT 100: Introduction to AI for Public Health",
       level_label: "Foundational Module",
       tracks: ["shared-foundational"],
       curriculumSource: false
