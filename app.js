@@ -1061,6 +1061,7 @@ const lessonDeckDownloads = {
   "using-together": "downloads/presentations/lesson-18-how-to-use-the-playbook-and-toolkit-together.pptx",
   "ai-support-areas": "downloads/presentations/lesson-19-areas-where-ai-can-support-public-health-activities.pptx"
 };
+const lessonPdfDownloads = {};
 
 const readinessDomains = [
   ["Leadership and Governance", ["Leadership has articulated an AI vision aligned with strategic priorities.", "A clear governance structure exists or is planned.", "AI ethics and equity principles have been established.", "Budget authority exists to support AI infrastructure and workforce."]],
@@ -4921,7 +4922,9 @@ function renderLearn(moduleId = "") {
   const application = learningModuleApplicationDetails[module.id] || {};
   const narrative = learningModuleNarrative[module.id] || [];
   const deckDownload = module.deck_path || lessonDeckDownloads[module.id];
-  const lessonDownloadButtons = `<div class="button-row lesson-downloads no-print">${deckDownload ? `<a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a>` : ""}<button class="btn" type="button" onclick="runDocumentDownload(() => downloadLearningModulePdf('${module.id}'), 'Lesson PDF', 'lesson-download-status')">Download Lesson PDF</button></div><p id="lesson-download-status" class="save-status no-print" aria-live="polite"></p>`;
+  const pdfDownload = module.pdf_path || lessonPdfDownloads[module.id];
+  const lessonPdfButton = pdfDownload ? `<a class="btn" href="${pdfDownload}" download>Download Lesson PDF</a>` : `<button class="btn" type="button" onclick="runDocumentDownload(() => downloadLearningModulePdf('${module.id}'), 'Lesson PDF', 'lesson-download-status')">Download Lesson PDF</button>`;
+  const lessonDownloadButtons = `<div class="button-row lesson-downloads no-print">${deckDownload ? `<a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a>` : ""}${lessonPdfButton}</div><p id="lesson-download-status" class="save-status no-print" aria-live="polite"></p>`;
   const backgroundSections = background.sections || [];
   const isDefinitionSection = section => /definition|what .* means/i.test(section.title || "");
   const definitionSections = backgroundSections.filter(isDefinitionSection);
@@ -8660,13 +8663,18 @@ function applyCurriculumPackage() {
     foundationalTrack.title = "Foundational Modules";
     foundationalTrack.short_title = "Foundational Modules";
     foundationalTrack.description = "Foundational modules that establish common vocabulary, public health value, governance basics, equity review, and communications safeguards before learners move into role-based or technical tracks.";
-    foundationalTrack.module_count = foundationalCourseIds.length;
     const foundationalIndex = learningTracks.indexOf(foundationalTrack);
     if (foundationalIndex > 1) {
       learningTracks.splice(foundationalIndex, 1);
       learningTracks.splice(1, 0, foundationalTrack);
     }
   }
+  learningTracks.forEach(track => {
+    const trackId = track.track_id || normalizeLearningTrackId(track.title);
+    track.module_count = trackId === "all-modules"
+      ? learningModules.length
+      : learningModules.filter(module => (module.tracks || []).includes(trackId)).length;
+  });
 }
 
 applyCurriculumPackage();
@@ -8696,11 +8704,17 @@ function renderLearningModuleNav(activeId = "") {
 
 function moduleDeckFilename(module, index) {
   const slug = String(module.title || module.id).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  return `downloads/presentations/lesson-${String(index + 1).padStart(2, "0")}-${slug}.pptx`;
+  return `downloads/presentations/modules/lesson-${String(index + 1).padStart(2, "0")}-${slug}.pptx`;
+}
+
+function moduleStaticPdfFilename(module, index) {
+  const slug = String(module.title || module.id).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return `downloads/learning-modules/lesson-${String(index + 1).padStart(2, "0")}-${slug}.pdf`;
 }
 
 learningModules.forEach((module, index) => {
-  if (!module.curriculumSource) lessonDeckDownloads[module.id] = moduleDeckFilename(module, index);
+  lessonDeckDownloads[module.id] = module.deck_path || moduleDeckFilename(module, index);
+  lessonPdfDownloads[module.id] = module.pdf_path || moduleStaticPdfFilename(module, index);
 });
 
 function renderGlossary() {
