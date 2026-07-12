@@ -4886,8 +4886,8 @@ function renderLearn(moduleId = "") {
   const deepDive = learningModuleDeepDive[module.id] || {};
   const application = learningModuleApplicationDetails[module.id] || {};
   const narrative = learningModuleNarrative[module.id] || [];
-  const deckDownload = module.deck_path || lessonDeckDownloads[module.id];
-  const pdfDownload = module.pdf_path || lessonPdfDownloads[module.id];
+  const deckDownload = lessonDeckDownloads[module.id] || module.deck_path;
+  const pdfDownload = lessonPdfDownloads[module.id] || module.pdf_path;
   const lessonPdfButton = pdfDownload ? `<a class="btn" href="${pdfDownload}" download>Download Lesson PDF</a>` : `<button class="btn" type="button" onclick="runDocumentDownload(() => downloadLearningModulePdf('${module.id}'), 'Lesson PDF', 'lesson-download-status')">Download Lesson PDF</button>`;
   const lessonDownloadButtons = `<div class="button-row lesson-downloads no-print">${deckDownload ? `<a class="btn primary" href="${deckDownload}" download>Download PowerPoint</a>` : ""}${lessonPdfButton}</div><p id="lesson-download-status" class="save-status no-print" aria-live="polite"></p>`;
   const backgroundSections = background.sections || [];
@@ -8704,8 +8704,8 @@ function moduleStaticPdfFilename(module) {
 }
 
 learningModules.forEach((module, index) => {
-  lessonDeckDownloads[module.id] = module.deck_path || moduleDeckFilename(module, index);
-  lessonPdfDownloads[module.id] = module.pdf_path || moduleStaticPdfFilename(module, index);
+  lessonDeckDownloads[module.id] = moduleDeckFilename(module, index);
+  lessonPdfDownloads[module.id] = moduleStaticPdfFilename(module, index);
 });
 
 function renderGlossary() {
