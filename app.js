@@ -8725,14 +8725,18 @@ function renderLearningModuleNav(activeId = "") {
       </aside>`;
 }
 
-function moduleDeckFilename(module, index) {
-  const slug = String(module.title || module.id).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  return `downloads/presentations/modules/lesson-${String(index + 1).padStart(2, "0")}-${slug}.pptx`;
+function moduleDownloadFileBase(module) {
+  const code = String(module.course_id || module.course_code || module.id || "module").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const slug = String(module.title || module.display_title || module.id || "learning-module").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return `${code}-${slug}`.replace(/-+/g, "-").replace(/^-|-$/g, "");
 }
 
-function moduleStaticPdfFilename(module, index) {
-  const slug = String(module.title || module.id).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  return `downloads/learning-modules/lesson-${String(index + 1).padStart(2, "0")}-${slug}.pdf`;
+function moduleDeckFilename(module) {
+  return `downloads/presentations/modules/${moduleDownloadFileBase(module)}.pptx`;
+}
+
+function moduleStaticPdfFilename(module) {
+  return `downloads/learning-modules/${moduleDownloadFileBase(module)}.pdf`;
 }
 
 learningModules.forEach((module, index) => {

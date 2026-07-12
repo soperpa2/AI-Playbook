@@ -3,426 +3,426 @@
     "id": "understanding-ai",
     "course_id": "INT 100",
     "title": "Introduction to AI for Public Health",
-    "file": "downloads/learning-modules/lesson-01-introduction-to-ai-for-public-health.pdf"
+    "file": "downloads/learning-modules/int-100-introduction-to-ai-for-public-health.pdf"
   },
   {
     "id": "anl-200-natural-language-processing-for-public-health",
     "course_id": "ANL 200",
     "title": "Natural Language Processing for Public Health",
-    "file": "downloads/learning-modules/lesson-02-natural-language-processing-for-public-health.pdf"
+    "file": "downloads/learning-modules/anl-200-natural-language-processing-for-public-health.pdf"
   },
   {
     "id": "anl-210-machine-learning-basics-for-epidemiology-and-surveillance",
     "course_id": "ANL 210",
     "title": "Machine Learning Basics for Epidemiology and Surveillance",
-    "file": "downloads/learning-modules/lesson-03-machine-learning-basics-for-epidemiology-and-surveillance.pdf"
+    "file": "downloads/learning-modules/anl-210-machine-learning-basics-for-epidemiology-and-surveillance.pdf"
   },
   {
     "id": "anl-220-predictive-analytics-and-risk-stratification",
     "course_id": "ANL 220",
     "title": "Predictive Analytics and Risk Stratification",
-    "file": "downloads/learning-modules/lesson-04-predictive-analytics-and-risk-stratification.pdf"
+    "file": "downloads/learning-modules/anl-220-predictive-analytics-and-risk-stratification.pdf"
   },
   {
     "id": "anl-230-geospatial-ai-and-spatial-epidemiology",
     "course_id": "ANL 230",
     "title": "Geospatial AI and Spatial Epidemiology",
-    "file": "downloads/learning-modules/lesson-05-geospatial-ai-and-spatial-epidemiology.pdf"
+    "file": "downloads/learning-modules/anl-230-geospatial-ai-and-spatial-epidemiology.pdf"
   },
   {
     "id": "anl-240-time-series-analysis-anomaly-detection-and-outbreak-signals",
     "course_id": "ANL 240",
     "title": "Time-Series Analysis, Anomaly Detection, and Outbreak Signals",
-    "file": "downloads/learning-modules/lesson-06-time-series-analysis-anomaly-detection-and-outbreak-signals.pdf"
+    "file": "downloads/learning-modules/anl-240-time-series-analysis-anomaly-detection-and-outbreak-signals.pdf"
   },
   {
     "id": "anl-300-advanced-model-validation-and-evaluation-for-public-health-ai",
     "course_id": "ANL 300",
     "title": "Advanced Model Validation and Evaluation for Public Health AI",
-    "file": "downloads/learning-modules/lesson-07-advanced-model-validation-and-evaluation-for-public-health-ai.pdf"
+    "file": "downloads/learning-modules/anl-300-advanced-model-validation-and-evaluation-for-public-health-ai.pdf"
   },
   {
     "id": "anl-310-evaluation-of-generative-ai-outputs",
     "course_id": "ANL 310",
     "title": "Evaluation of Generative AI Outputs",
-    "file": "downloads/learning-modules/lesson-08-evaluation-of-generative-ai-outputs.pdf"
+    "file": "downloads/learning-modules/anl-310-evaluation-of-generative-ai-outputs.pdf"
   },
   {
     "id": "anl-320-synthetic-data-for-public-health-ai",
     "course_id": "ANL 320",
     "title": "Synthetic Data for Public Health AI",
-    "file": "downloads/learning-modules/lesson-09-synthetic-data-for-public-health-ai.pdf"
+    "file": "downloads/learning-modules/anl-320-synthetic-data-for-public-health-ai.pdf"
   },
   {
     "id": "anl-330-equity-evaluation-for-ai-models",
     "course_id": "ANL 330",
     "title": "Equity Evaluation for AI Models",
-    "file": "downloads/learning-modules/lesson-10-equity-evaluation-for-ai-models.pdf"
+    "file": "downloads/learning-modules/anl-330-equity-evaluation-for-ai-models.pdf"
   },
   {
     "id": "anl-340-causal-inference-and-ai-in-public-health-decision-making",
     "course_id": "ANL 340",
     "title": "Causal Inference and AI in Public Health Decision-Making",
-    "file": "downloads/learning-modules/lesson-11-causal-inference-and-ai-in-public-health-decision-making.pdf"
+    "file": "downloads/learning-modules/anl-340-causal-inference-and-ai-in-public-health-decision-making.pdf"
   },
   {
     "id": "anl-350-communicating-model-results-and-uncertainty",
     "course_id": "ANL 350",
     "title": "Communicating Model Results and Uncertainty",
-    "file": "downloads/learning-modules/lesson-12-communicating-model-results-and-uncertainty.pdf"
+    "file": "downloads/learning-modules/anl-350-communicating-model-results-and-uncertainty.pdf"
   },
   {
     "id": "arc-200-public-health-data-modernization-and-ai-architecture",
     "course_id": "ARC 200",
     "title": "Public Health Data Modernization and AI Architecture",
-    "file": "downloads/learning-modules/lesson-13-public-health-data-modernization-and-ai-architecture.pdf"
+    "file": "downloads/learning-modules/arc-200-public-health-data-modernization-and-ai-architecture.pdf"
   },
   {
     "id": "arc-210-data-pipelines-for-public-health-ai",
     "course_id": "ARC 210",
     "title": "Data Pipelines for Public Health AI",
-    "file": "downloads/learning-modules/lesson-14-data-pipelines-for-public-health-ai.pdf"
+    "file": "downloads/learning-modules/arc-210-data-pipelines-for-public-health-ai.pdf"
   },
   {
     "id": "arc-220-public-health-interoperability-hl7-v2-cda-fhir-and-apis",
     "course_id": "ARC 220",
     "title": "Public Health Interoperability: HL7 v2, CDA, FHIR, and APIs",
-    "file": "downloads/learning-modules/lesson-15-public-health-interoperability-hl7-v2-cda-fhir-and-apis.pdf"
+    "file": "downloads/learning-modules/arc-220-public-health-interoperability-hl7-v2-cda-fhir-and-apis.pdf"
   },
   {
     "id": "arc-230-electronic-case-reporting-technical-workflow",
     "course_id": "ARC 230",
     "title": "Electronic Case Reporting Technical Workflow",
-    "file": "downloads/learning-modules/lesson-16-electronic-case-reporting-technical-workflow.pdf"
+    "file": "downloads/learning-modules/arc-230-electronic-case-reporting-technical-workflow.pdf"
   },
   {
     "id": "arc-240-elr-laboratory-data-quality-and-terminology-mapping",
     "course_id": "ARC 240",
     "title": "ELR, Laboratory Data Quality, and Terminology Mapping",
-    "file": "downloads/learning-modules/lesson-17-elr-laboratory-data-quality-and-terminology-mapping.pdf"
+    "file": "downloads/learning-modules/arc-240-elr-laboratory-data-quality-and-terminology-mapping.pdf"
   },
   {
     "id": "arc-250-fhir-for-public-health-ai-use-cases",
     "course_id": "ARC 250",
     "title": "FHIR for Public Health AI Use Cases",
-    "file": "downloads/learning-modules/lesson-18-fhir-for-public-health-ai-use-cases.pdf"
+    "file": "downloads/learning-modules/arc-250-fhir-for-public-health-ai-use-cases.pdf"
   },
   {
     "id": "arc-260-apis-webhooks-and-event-driven-workflows",
     "course_id": "ARC 260",
     "title": "APIs, Webhooks, and Event-Driven Workflows",
-    "file": "downloads/learning-modules/lesson-19-apis-webhooks-and-event-driven-workflows.pdf"
+    "file": "downloads/learning-modules/arc-260-apis-webhooks-and-event-driven-workflows.pdf"
   },
   {
     "id": "arc-300-retrieval-augmented-generation-for-public-health-knowledge-work",
     "course_id": "ARC 300",
     "title": "Retrieval-Augmented Generation for Public Health Knowledge Work",
-    "file": "downloads/learning-modules/lesson-20-retrieval-augmented-generation-for-public-health-knowledge-work.pdf"
+    "file": "downloads/learning-modules/arc-300-retrieval-augmented-generation-for-public-health-knowledge-work.pdf"
   },
   {
     "id": "arc-310-prompt-engineering-for-technical-public-health-work",
     "course_id": "ARC 310",
     "title": "Prompt Engineering for Technical Public Health Work",
-    "file": "downloads/learning-modules/lesson-21-prompt-engineering-for-technical-public-health-work.pdf"
+    "file": "downloads/learning-modules/arc-310-prompt-engineering-for-technical-public-health-work.pdf"
   },
   {
     "id": "arc-320-agentic-workflow-design-and-orchestration",
     "course_id": "ARC 320",
     "title": "Agentic Workflow Design and Orchestration",
-    "file": "downloads/learning-modules/lesson-22-agentic-workflow-design-and-orchestration.pdf"
+    "file": "downloads/learning-modules/arc-320-agentic-workflow-design-and-orchestration.pdf"
   },
   {
     "id": "arc-330-cloud-containers-and-secure-deployment-basics",
     "course_id": "ARC 330",
     "title": "Cloud, Containers, and Secure Deployment Basics",
-    "file": "downloads/learning-modules/lesson-23-cloud-containers-and-secure-deployment-basics.pdf"
+    "file": "downloads/learning-modules/arc-330-cloud-containers-and-secure-deployment-basics.pdf"
   },
   {
     "id": "arc-340-public-health-system-integration-patterns",
     "course_id": "ARC 340",
     "title": "Public Health System Integration Patterns",
-    "file": "downloads/learning-modules/lesson-24-public-health-system-integration-patterns.pdf"
+    "file": "downloads/learning-modules/arc-340-public-health-system-integration-patterns.pdf"
   },
   {
     "id": "com-200-ai-for-public-health-communications-and-message-development",
     "course_id": "COM 200",
     "title": "AI for Public Health Communications and Message Development",
-    "file": "downloads/learning-modules/lesson-25-ai-for-public-health-communications-and-message-development.pdf"
+    "file": "downloads/learning-modules/com-200-ai-for-public-health-communications-and-message-development.pdf"
   },
   {
     "id": "com-210-ai-assisted-translation-language-access-and-readability-review",
     "course_id": "COM 210",
     "title": "AI-Assisted Translation, Language Access, and Readability Review",
-    "file": "downloads/learning-modules/lesson-26-ai-assisted-translation-language-access-and-readability-review.pdf"
+    "file": "downloads/learning-modules/com-210-ai-assisted-translation-language-access-and-readability-review.pdf"
   },
   {
     "id": "com-220-public-comment-social-listening-and-community-feedback-analysis",
     "course_id": "COM 220",
     "title": "Public Comment, Social Listening, and Community Feedback Analysis",
-    "file": "downloads/learning-modules/lesson-27-public-comment-social-listening-and-community-feedback-analysis.pdf"
+    "file": "downloads/learning-modules/com-220-public-comment-social-listening-and-community-feedback-analysis.pdf"
   },
   {
     "id": "epi-300-ai-for-case-investigation-and-outbreak-response",
     "course_id": "EPI 300",
     "title": "AI for Case Investigation and Outbreak Response",
-    "file": "downloads/learning-modules/lesson-28-ai-for-case-investigation-and-outbreak-response.pdf"
+    "file": "downloads/learning-modules/epi-300-ai-for-case-investigation-and-outbreak-response.pdf"
   },
   {
     "id": "epi-310-ai-for-surveillance-signal-review-and-epidemiologic-judgment",
     "course_id": "EPI 310",
     "title": "AI for Surveillance Signal Review and Epidemiologic Judgment",
-    "file": "downloads/learning-modules/lesson-29-ai-for-surveillance-signal-review-and-epidemiologic-judgment.pdf"
+    "file": "downloads/learning-modules/epi-310-ai-for-surveillance-signal-review-and-epidemiologic-judgment.pdf"
   },
   {
     "id": "epi-320-ethical-use-of-ai-in-resource-prioritization-and-field-response",
     "course_id": "EPI 320",
     "title": "Ethical Use of AI in Resource Prioritization and Field Response",
-    "file": "downloads/learning-modules/lesson-30-ethical-use-of-ai-in-resource-prioritization-and-field-response.pdf"
+    "file": "downloads/learning-modules/epi-320-ethical-use-of-ai-in-resource-prioritization-and-field-response.pdf"
   },
   {
     "id": "exe-100-executive-ai-briefing-for-public-health-leaders",
     "course_id": "EXE 100",
     "title": "Executive AI Briefing for Public Health Leaders",
-    "file": "downloads/learning-modules/lesson-31-executive-ai-briefing-for-public-health-leaders.pdf"
+    "file": "downloads/learning-modules/exe-100-executive-ai-briefing-for-public-health-leaders.pdf"
   },
   {
     "id": "exe-400-executive-ai-decision-rights-and-accountability",
     "course_id": "EXE 400",
     "title": "Executive AI Decision Rights and Accountability",
-    "file": "downloads/learning-modules/lesson-32-executive-ai-decision-rights-and-accountability.pdf"
+    "file": "downloads/learning-modules/exe-400-executive-ai-decision-rights-and-accountability.pdf"
   },
   {
     "id": "exe-410-ai-portfolio-strategy-and-use-case-prioritization",
     "course_id": "EXE 410",
     "title": "AI Portfolio Strategy and Use Case Prioritization",
-    "file": "downloads/learning-modules/lesson-33-ai-portfolio-strategy-and-use-case-prioritization.pdf"
+    "file": "downloads/learning-modules/exe-410-ai-portfolio-strategy-and-use-case-prioritization.pdf"
   },
   {
     "id": "exe-420-ai-investment-strategy-and-business-case-review",
     "course_id": "EXE 420",
     "title": "AI Investment Strategy and Business Case Review",
-    "file": "downloads/learning-modules/lesson-34-ai-investment-strategy-and-business-case-review.pdf"
+    "file": "downloads/learning-modules/exe-420-ai-investment-strategy-and-business-case-review.pdf"
   },
   {
     "id": "exe-430-organizational-change-management-for-ai-adoption",
     "course_id": "EXE 430",
     "title": "Organizational Change Management for AI Adoption",
-    "file": "downloads/learning-modules/lesson-35-organizational-change-management-for-ai-adoption.pdf"
+    "file": "downloads/learning-modules/exe-430-organizational-change-management-for-ai-adoption.pdf"
   },
   {
     "id": "exe-440-workforce-strategy-and-ai-role-design",
     "course_id": "EXE 440",
     "title": "Workforce Strategy and AI Role Design",
-    "file": "downloads/learning-modules/lesson-36-workforce-strategy-and-ai-role-design.pdf"
+    "file": "downloads/learning-modules/exe-440-workforce-strategy-and-ai-role-design.pdf"
   },
   {
     "id": "exe-450-ai-sustainability-and-lifecycle-funding",
     "course_id": "EXE 450",
     "title": "AI Sustainability and Lifecycle Funding",
-    "file": "downloads/learning-modules/lesson-37-ai-sustainability-and-lifecycle-funding.pdf"
+    "file": "downloads/learning-modules/exe-450-ai-sustainability-and-lifecycle-funding.pdf"
   },
   {
     "id": "exe-460-ai-governance-board-chair-training",
     "course_id": "EXE 460",
     "title": "AI Governance Board Chair Training",
-    "file": "downloads/learning-modules/lesson-38-ai-governance-board-chair-training.pdf"
+    "file": "downloads/learning-modules/exe-460-ai-governance-board-chair-training.pdf"
   },
   {
     "id": "exe-470-ai-crisis-communications-and-executive-response",
     "course_id": "EXE 470",
     "title": "AI Crisis Communications and Executive Response",
-    "file": "downloads/learning-modules/lesson-39-ai-crisis-communications-and-executive-response.pdf"
+    "file": "downloads/learning-modules/exe-470-ai-crisis-communications-and-executive-response.pdf"
   },
   {
     "id": "gov-300-ai-security-prompt-injection-and-data-leakage",
     "course_id": "GOV 300",
     "title": "AI Security, Prompt Injection, and Data Leakage",
-    "file": "downloads/learning-modules/lesson-40-ai-security-prompt-injection-and-data-leakage.pdf"
+    "file": "downloads/learning-modules/gov-300-ai-security-prompt-injection-and-data-leakage.pdf"
   },
   {
     "id": "gov-310-privacy-preserving-ai-and-de-identification",
     "course_id": "GOV 310",
     "title": "Privacy-Preserving AI and De-identification",
-    "file": "downloads/learning-modules/lesson-41-privacy-preserving-ai-and-de-identification.pdf"
+    "file": "downloads/learning-modules/gov-310-privacy-preserving-ai-and-de-identification.pdf"
   },
   {
     "id": "gov-320-ai-documentation-model-cards-and-system-cards",
     "course_id": "GOV 320",
     "title": "AI Documentation, Model Cards, and System Cards",
-    "file": "downloads/learning-modules/lesson-42-ai-documentation-model-cards-and-system-cards.pdf"
+    "file": "downloads/learning-modules/gov-320-ai-documentation-model-cards-and-system-cards.pdf"
   },
   {
     "id": "gov-330-data-governance-for-ai-ready-public-health-data",
     "course_id": "GOV 330",
     "title": "Data Governance for AI-Ready Public Health Data",
-    "file": "downloads/learning-modules/lesson-43-data-governance-for-ai-ready-public-health-data.pdf"
+    "file": "downloads/learning-modules/gov-330-data-governance-for-ai-ready-public-health-data.pdf"
   },
   {
     "id": "gov-340-ai-audit-readiness-and-evidence-management",
     "course_id": "GOV 340",
     "title": "AI Audit Readiness and Evidence Management",
-    "file": "downloads/learning-modules/lesson-44-ai-audit-readiness-and-evidence-management.pdf"
+    "file": "downloads/learning-modules/gov-340-ai-audit-readiness-and-evidence-management.pdf"
   },
   {
     "id": "gov-350-identity-access-and-permissions-for-ai-workflows",
     "course_id": "GOV 350",
     "title": "Identity, Access, and Permissions for AI Workflows",
-    "file": "downloads/learning-modules/lesson-45-identity-access-and-permissions-for-ai-workflows.pdf"
+    "file": "downloads/learning-modules/gov-350-identity-access-and-permissions-for-ai-workflows.pdf"
   },
   {
     "id": "gov-360-third-party-ai-risk-management",
     "course_id": "GOV 360",
     "title": "Third-Party AI Risk Management",
-    "file": "downloads/learning-modules/lesson-46-third-party-ai-risk-management.pdf"
+    "file": "downloads/learning-modules/gov-360-third-party-ai-risk-management.pdf"
   },
   {
     "id": "gov-400-ai-governance-charter-and-operating-model",
     "course_id": "GOV 400",
     "title": "AI Governance Charter and Operating Model",
-    "file": "downloads/learning-modules/lesson-47-ai-governance-charter-and-operating-model.pdf"
+    "file": "downloads/learning-modules/gov-400-ai-governance-charter-and-operating-model.pdf"
   },
   {
     "id": "gov-410-ai-risk-appetite-and-risk-tolerance-for-public-health",
     "course_id": "GOV 410",
     "title": "AI Risk Appetite and Risk Tolerance for Public Health",
-    "file": "downloads/learning-modules/lesson-48-ai-risk-appetite-and-risk-tolerance-for-public-health.pdf"
+    "file": "downloads/learning-modules/gov-410-ai-risk-appetite-and-risk-tolerance-for-public-health.pdf"
   },
   {
     "id": "gov-420-public-accountability-and-ai-transparency-reporting",
     "course_id": "GOV 420",
     "title": "Public Accountability and AI Transparency Reporting",
-    "file": "downloads/learning-modules/lesson-49-public-accountability-and-ai-transparency-reporting.pdf"
+    "file": "downloads/learning-modules/gov-420-public-accountability-and-ai-transparency-reporting.pdf"
   },
   {
     "id": "gov-430-community-oversight-and-participatory-governance",
     "course_id": "GOV 430",
     "title": "Community Oversight and Participatory Governance",
-    "file": "downloads/learning-modules/lesson-50-community-oversight-and-participatory-governance.pdf"
+    "file": "downloads/learning-modules/gov-430-community-oversight-and-participatory-governance.pdf"
   },
   {
     "id": "int-190-ai-for-social-good",
     "course_id": "INT 190",
     "title": "AI for Social Good",
-    "file": "downloads/learning-modules/lesson-51-ai-for-social-good.pdf"
+    "file": "downloads/learning-modules/int-190-ai-for-social-good.pdf"
   },
   {
     "id": "int-200-ai-use-case-intake-and-triage-basics",
     "course_id": "INT 200",
     "title": "AI Use Case Intake and Triage Basics",
-    "file": "downloads/learning-modules/lesson-52-ai-use-case-intake-and-triage-basics.pdf"
+    "file": "downloads/learning-modules/int-200-ai-use-case-intake-and-triage-basics.pdf"
   },
   {
     "id": "ops-200-data-quality-engineering-for-ai",
     "course_id": "OPS 200",
     "title": "Data Quality Engineering for AI",
-    "file": "downloads/learning-modules/lesson-53-data-quality-engineering-for-ai.pdf"
+    "file": "downloads/learning-modules/ops-200-data-quality-engineering-for-ai.pdf"
   },
   {
     "id": "ops-210-record-linkage-entity-resolution-and-deduplication",
     "course_id": "OPS 210",
     "title": "Record Linkage, Entity Resolution, and Deduplication",
-    "file": "downloads/learning-modules/lesson-54-record-linkage-entity-resolution-and-deduplication.pdf"
+    "file": "downloads/learning-modules/ops-210-record-linkage-entity-resolution-and-deduplication.pdf"
   },
   {
     "id": "ops-220-human-factors-workflow-integration-and-usability-testing",
     "course_id": "OPS 220",
     "title": "Human Factors, Workflow Integration, and Usability Testing",
-    "file": "downloads/learning-modules/lesson-55-human-factors-workflow-integration-and-usability-testing.pdf"
+    "file": "downloads/learning-modules/ops-220-human-factors-workflow-integration-and-usability-testing.pdf"
   },
   {
     "id": "ops-230-ai-workflow-standard-operating-procedures",
     "course_id": "OPS 230",
     "title": "AI Workflow Standard Operating Procedures",
-    "file": "downloads/learning-modules/lesson-56-ai-workflow-standard-operating-procedures.pdf"
+    "file": "downloads/learning-modules/ops-230-ai-workflow-standard-operating-procedures.pdf"
   },
   {
     "id": "ops-240-user-acceptance-testing-for-ai-supported-workflows",
     "course_id": "OPS 240",
     "title": "User Acceptance Testing for AI-Supported Workflows",
-    "file": "downloads/learning-modules/lesson-57-user-acceptance-testing-for-ai-supported-workflows.pdf"
+    "file": "downloads/learning-modules/ops-240-user-acceptance-testing-for-ai-supported-workflows.pdf"
   },
   {
     "id": "ops-300-mlops-and-llmops-for-public-health",
     "course_id": "OPS 300",
     "title": "MLOps and LLMOps for Public Health",
-    "file": "downloads/learning-modules/lesson-58-mlops-and-llmops-for-public-health.pdf"
+    "file": "downloads/learning-modules/ops-300-mlops-and-llmops-for-public-health.pdf"
   },
   {
     "id": "ops-310-measuring-ai-value-performance-and-operational-impact",
     "course_id": "OPS 310",
     "title": "Measuring AI Value, Performance, and Operational Impact",
-    "file": "downloads/learning-modules/lesson-59-measuring-ai-value-performance-and-operational-impact.pdf"
+    "file": "downloads/learning-modules/ops-310-measuring-ai-value-performance-and-operational-impact.pdf"
   },
   {
     "id": "ops-320-operational-monitoring-and-continuous-improvement-for-ai",
     "course_id": "OPS 320",
     "title": "Operational Monitoring and Continuous Improvement for AI",
-    "file": "downloads/learning-modules/lesson-60-operational-monitoring-and-continuous-improvement-for-ai.pdf"
+    "file": "downloads/learning-modules/ops-320-operational-monitoring-and-continuous-improvement-for-ai.pdf"
   },
   {
     "id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
     "course_id": "PMG 200",
     "title": "Business Analysis for AI-Enabled Public Health Systems",
-    "file": "downloads/learning-modules/lesson-61-business-analysis-for-ai-enabled-public-health-systems.pdf"
+    "file": "downloads/learning-modules/pmg-200-business-analysis-for-ai-enabled-public-health-systems.pdf"
   },
   {
     "id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
     "course_id": "PMG 210",
     "title": "Requirements Writing for AI Procurement and Implementation",
-    "file": "downloads/learning-modules/lesson-62-requirements-writing-for-ai-procurement-and-implementation.pdf"
+    "file": "downloads/learning-modules/pmg-210-requirements-writing-for-ai-procurement-and-implementation.pdf"
   },
   {
     "id": "pmg-220-ai-project-management-and-implementation-planning",
     "course_id": "PMG 220",
     "title": "AI Project Management and Implementation Planning",
-    "file": "downloads/learning-modules/lesson-63-ai-project-management-and-implementation-planning.pdf"
+    "file": "downloads/learning-modules/pmg-220-ai-project-management-and-implementation-planning.pdf"
   },
   {
     "id": "pmg-300-ai-vendor-implementation-management",
     "course_id": "PMG 300",
     "title": "AI Vendor Implementation Management",
-    "file": "downloads/learning-modules/lesson-64-ai-vendor-implementation-management.pdf"
+    "file": "downloads/learning-modules/pmg-300-ai-vendor-implementation-management.pdf"
   },
   {
     "id": "pmg-310-grant-and-funding-management-for-ai-projects",
     "course_id": "PMG 310",
     "title": "Grant and Funding Management for AI Projects",
-    "file": "downloads/learning-modules/lesson-65-grant-and-funding-management-for-ai-projects.pdf"
+    "file": "downloads/learning-modules/pmg-310-grant-and-funding-management-for-ai-projects.pdf"
   },
   {
     "id": "pol-300-public-health-ai-policy-landscape-and-regulatory-readiness",
     "course_id": "POL 300",
     "title": "Public Health AI Policy Landscape and Regulatory Readiness",
-    "file": "downloads/learning-modules/lesson-66-public-health-ai-policy-landscape-and-regulatory-readiness.pdf"
+    "file": "downloads/learning-modules/pol-300-public-health-ai-policy-landscape-and-regulatory-readiness.pdf"
   },
   {
     "id": "pol-310-ai-policy-development-and-approval-workflow",
     "course_id": "POL 310",
     "title": "AI Policy Development and Approval Workflow",
-    "file": "downloads/learning-modules/lesson-67-ai-policy-development-and-approval-workflow.pdf"
+    "file": "downloads/learning-modules/pol-310-ai-policy-development-and-approval-workflow.pdf"
   },
   {
     "id": "pol-320-ai-authority-liability-and-public-health-decision-making",
     "course_id": "POL 320",
     "title": "AI Authority, Liability, and Public Health Decision-Making",
-    "file": "downloads/learning-modules/lesson-68-ai-authority-liability-and-public-health-decision-making.pdf"
+    "file": "downloads/learning-modules/pol-320-ai-authority-liability-and-public-health-decision-making.pdf"
   },
   {
     "id": "pol-330-ai-equity-policy-and-civil-rights-considerations",
     "course_id": "POL 330",
     "title": "AI Equity Policy and Civil Rights Considerations",
-    "file": "downloads/learning-modules/lesson-69-ai-equity-policy-and-civil-rights-considerations.pdf"
+    "file": "downloads/learning-modules/pol-330-ai-equity-policy-and-civil-rights-considerations.pdf"
   },
   {
     "id": "gov-100-introduction-to-ai-governance-for-public-health",
     "course_id": "GOV 100",
     "title": "Introduction to AI Governance for Public Health",
-    "file": "downloads/learning-modules/lesson-70-introduction-to-ai-governance-for-public-health.pdf"
+    "file": "downloads/learning-modules/gov-100-introduction-to-ai-governance-for-public-health.pdf"
   },
   {
     "id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
     "course_id": "GOV 110",
     "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
-    "file": "downloads/learning-modules/lesson-71-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects.pdf"
+    "file": "downloads/learning-modules/gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects.pdf"
   }
 ]
