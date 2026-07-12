@@ -1041,26 +1041,7 @@ const learningModules = [
   { id: "ai-support-areas", title: "Areas Where AI Can Support Public Health Activities", text: "Expanded examples showing how AI can support specific public health activities, what safeguards are needed, and which plays and tools help agencies move from idea to responsible implementation.", examples: ["Surveillance and outbreak intelligence", "Plain-language communication", "Workflow routing", "Monitoring and evaluation"], risk: "These examples are planning prompts, not automatic recommendations to adopt AI without readiness assessment, governance review, stakeholder engagement, and monitoring.", plays: [2,3,4,7,11,12,13], tools: [3,7,13,14,19,20,22,41,44,47] }
 ];
 
-const lessonDeckDownloads = {
-  "understanding-ai": "downloads/presentations/lesson-01-understanding-artificial-intelligence-sample-formal-title.pptx",
-  "generative-ai": "downloads/presentations/lesson-02-generative-ai.pptx",
-  "agentic-ai": "downloads/presentations/lesson-03-agentic-ai.pptx",
-  "workflows": "downloads/presentations/lesson-05-ai-supported-public-health-workflows.pptx",
-  "risks": "downloads/presentations/lesson-06-risks-limitations-and-guardrails.pptx",
-  "systems-shift": "downloads/presentations/lesson-07-ai-as-a-public-health-systems-shift.pptx",
-  "digital-determinants": "downloads/presentations/lesson-08-ai-as-a-digital-determinant-of-health.pptx",
-  "human-centered-ai": "downloads/presentations/lesson-09-human-centered-ai.pptx",
-  "ai-literacy": "downloads/presentations/lesson-10-ai-literacy-for-public-health-staff.pptx",
-  "automation-bias": "downloads/presentations/lesson-11-automation-bias-and-over-trust.pptx",
-  "missing-voices": "downloads/presentations/lesson-12-missing-voices-in-data.pptx",
-  "public-transparency": "downloads/presentations/lesson-13-public-transparency-and-community-trust.pptx",
-  "tiered-data-use": "downloads/presentations/lesson-14-tiered-data-use-for-ai.pptx",
-  "environmental-impact": "downloads/presentations/lesson-15-environmental-and-resource-impacts.pptx",
-  "bridge-professional": "downloads/presentations/lesson-16-the-ai-bridge-professional-role.pptx",
-  "funding": "downloads/presentations/lesson-17-federal-funding-opportunities.pptx",
-  "using-together": "downloads/presentations/lesson-18-how-to-use-the-playbook-and-toolkit-together.pptx",
-  "ai-support-areas": "downloads/presentations/lesson-19-areas-where-ai-can-support-public-health-activities.pptx"
-};
+const lessonDeckDownloads = {};
 const lessonPdfDownloads = {};
 
 const readinessDomains = [
@@ -2706,22 +2687,6 @@ learningModuleResources["responsible-prompting-review"].unshift(
 learningModuleResources["cybersecurity-secure-ai-use"].push(
   ["OWASP LLM01: Prompt Injection", "Security guidance on prompt injection risks, including malicious instructions, indirect prompt injection, and mitigation considerations for LLM applications.", "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"]
 );
-Object.assign(lessonDeckDownloads, {
-  "procurement-vendor-oversight": "downloads/presentations/lesson-18-procurement-and-vendor-oversight.pptx",
-  "privacy-confidentiality-public-records": "downloads/presentations/lesson-19-privacy-confidentiality-and-public-records.pptx",
-  "model-validation-evaluation-basics": "downloads/presentations/lesson-20-model-validation-and-evaluation-basics.pptx",
-  "ai-incident-response": "downloads/presentations/lesson-21-ai-incident-response.pptx",
-  "role-based-ai-guidelines": "downloads/presentations/lesson-22-role-based-ai-use-guidelines.pptx",
-  "responsible-prompting-review": "downloads/presentations/lesson-23-responsible-prompting-and-review.pptx",
-  "community-engagement-ai": "downloads/presentations/lesson-24-community-engagement-for-ai.pptx",
-  "accessibility-language-access": "downloads/presentations/lesson-25-accessibility-and-language-access.pptx",
-  "cybersecurity-secure-ai-use": "downloads/presentations/lesson-26-cybersecurity-and-secure-ai-use.pptx",
-  "when-not-to-use-ai": "downloads/presentations/lesson-27-when-not-to-use-ai.pptx",
-  "ai-support-areas": "downloads/presentations/lesson-28-areas-where-ai-can-support-public-health-activities.pptx"
-});
-delete lessonDeckDownloads["deep-research"];
-lessonDeckDownloads["understanding-ai"] = "downloads/presentations/lesson-01-introduction-to-ai.pptx";
-lessonDeckDownloads["predictive-ai"] = "downloads/presentations/lesson-02-predictive-ai.pptx";
 
 const startHereUsingTogether = learningModules.find(module => module.id === "using-together");
 const startHereUsingTogetherIndex = learningModules.findIndex(module => module.id === "using-together");
@@ -8727,8 +8692,7 @@ function renderLearningModuleNav(activeId = "") {
 
 function moduleDownloadFileBase(module) {
   const code = String(module.course_id || module.course_code || module.id || "module").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  const slug = String(module.title || module.display_title || module.id || "learning-module").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  return `${code}-${slug}`.replace(/-+/g, "-").replace(/^-|-$/g, "");
+  return code || "module";
 }
 
 function moduleDeckFilename(module) {
