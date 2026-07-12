@@ -6603,7 +6603,11 @@ function buildProfessionalWordHtml(title, status, subtitle, metaRows, sections, 
 <meta charset="utf-8">
 <title>${escapeDoc(title)}</title>
 <style>
-  @page { margin: .7in; }
+  @page WordSection1 {
+    margin: .7in;
+    mso-footer: f1;
+  }
+  div.WordSection1 { page: WordSection1; }
   body { font-family: Aptos, Calibri, Arial, sans-serif; color: #17324d; line-height: 1.44; font-size: 10.5pt; }
   .header { border-bottom: 4px solid #0068b7; padding-bottom: 14px; margin-bottom: 20px; }
   .brand-row { display: table; width: 100%; margin-bottom: 8px; }
@@ -6624,14 +6628,18 @@ function buildProfessionalWordHtml(title, status, subtitle, metaRows, sections, 
   li { margin-bottom: 5px; }
   .blank { color: #7b8b99; }
   .footer { margin-top: 28px; border-top: 1px solid #d7e3ec; padding-top: 10px; color: #62778c; font-size: 9pt; }
+  .word-footer { mso-element: footer; id: f1; font-size: 8.5pt; color: #62778c; border-top: 1px solid #d7e3ec; padding-top: 6px; }
+  .footer-left { float: left; }
+  .footer-right { float: right; }
 </style>
 </head>
 <body>
+<div class="WordSection1">
   <section class="header">
     <div class="brand-row">
       <div class="brand-logo">${logoDataUrl ? `<img src="${logoDataUrl}" alt="AI Playbook for Public Health logo">` : ""}</div>
       <div class="brand-copy">
-        <div class="kicker">AI Playbook and Toolkit for Public Health Departments | ${escapeDoc(status)}</div>
+        <div class="kicker">AI Playbook and Toolkit for Public Health Departments${status ? ` | ${escapeDoc(status)}` : ""}</div>
         <h1>${escapeDoc(title)}</h1>
         <p class="subtitle">${escapeDoc(subtitle)}</p>
       </div>
@@ -6643,6 +6651,11 @@ function buildProfessionalWordHtml(title, status, subtitle, metaRows, sections, 
     ${section.rows ? `<table><tbody>${section.rows.map(([field, value]) => `<tr><th>${escapeDoc(field)}</th><td class="${value ? "" : "blank"}">${escapeDoc(value || "Complete this field.")}</td></tr>`).join("")}</tbody></table>` : ""}
     ${section.lines ? `<ul>${section.lines.map(line => `<li>${escapeDoc(line)}</li>`).join("")}</ul>` : ""}`).join("")}
   <section class="footer">Generated from the AI Playbook and Toolkit for Public Health Departments website.</section>
+  <div class="word-footer">
+    <span class="footer-left">${escapeDoc(title)}</span>
+    <span class="footer-right">Page <span style="mso-field-code: PAGE"></span></span>
+  </div>
+</div>
 </body>
 </html>`;
 }
@@ -6656,7 +6669,7 @@ async function downloadToolWord(tool, blueprint, blank = false) {
   const logo = await getLogoDataUrl();
   const html = buildProfessionalWordHtml(
     `Tool ${tool.id}: ${tool.title}`,
-    blank ? "Blank Template" : "Completed Tool",
+    blank ? "" : "Completed Tool",
     tool.purpose,
     [
       ["Supported plays", tool.playIds.map(id => `Play ${id}`).join(", ")],
@@ -6716,7 +6729,16 @@ function asciiBytes(value) {
   return new TextEncoder().encode(value);
 }
 
-function buildPdfBinary(pageStreams, logoInfo = null) {
+function buildPdfBinary(pageStreams, logoInfo = null, footerTitle = "") {
+  const footerFor = (stream, pageNumber, pageCount) => {
+    const safeTitle = wrapPdfText(footerTitle, 72)[0] || "AI Playbook and Toolkit for Public Health Departments";
+    return `${stream}
+0.78 0.86 0.92 RG
+0.8 w 54 42 m 558 42 l S
+0.38 0.47 0.55 rg
+BT /F1 8 Tf 1 0 0 1 54 26 Tm (${pdfEscape(safeTitle)}) Tj ET
+BT /F1 8 Tf 1 0 0 1 504 26 Tm (${pdfEscape(`Page ${pageNumber} of ${pageCount}`)}) Tj ET`;
+  };
   const objects = [
     null,
     asciiBytes("<< /Type /Catalog /Pages 2 0 R >>"),
@@ -6734,8 +6756,8 @@ function buildPdfBinary(pageStreams, logoInfo = null) {
     ]));
   }
   const pageKids = [];
-  pageStreams.forEach(stream => {
-    const streamBytes = asciiBytes(stream);
+  pageStreams.forEach((stream, index) => {
+    const streamBytes = asciiBytes(footerFor(stream, index + 1, pageStreams.length));
     const contentObj = objects.length;
     objects.push(concatBytes([asciiBytes(`<< /Length ${streamBytes.length} >>\nstream\n`), streamBytes, asciiBytes("\nendstream")]));
     const pageObj = objects.length;
@@ -6821,7 +6843,7 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections,
     const titleX = logo ? margin + logoWidth + 22 : margin;
     y = pageHeight - margin - 2;
     text("AI Playbook and Toolkit for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
-    text(status, 8.5, "0.29 0.38 0.46", false, titleX);
+    if (status) text(status, 8.5, "0.29 0.38 0.46", false, titleX);
     wrapPdfText(title, 54).forEach((line, i) => text(line, i === 0 ? 21 : 16, "0 0.24 0.45", true, titleX));
     y = Math.min(y - 6, pageHeight - margin - logoHeight - 20);
 
@@ -6860,7 +6882,7 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections,
     const titleX = logo ? 180 : margin;
     y = pageHeight - margin - 12;
     text("AI Playbook and Toolkit for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
-    text(status, 9, "0.29 0.38 0.46", false, titleX);
+    if (status) text(status, 9, "0.29 0.38 0.46", false, titleX);
     wrapPdfText(title, 48).forEach((line, i) => text(line, i === 0 ? 20 : 15, "0 0.24 0.45", true, titleX));
     wrapPdfText(subtitle, 75).forEach(line => text(line, 10, "0.29 0.38 0.46", false, titleX));
     y -= 10;
@@ -6892,13 +6914,13 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections,
     y -= 5;
   });
   if (commands.length) pages.push(commands.join("\n"));
-  return buildPdfBinary(pages, logo);
+  return buildPdfBinary(pages, logo, options.footerTitle || title);
 }
 
 async function downloadToolPdf(tool, blueprint, blank = false) {
   const pdf = await buildProfessionalPdf(
     `Tool ${tool.id}: ${tool.title}`,
-    blank ? "Blank PDF Template" : "Completed PDF",
+    blank ? "" : "Completed PDF",
     tool.purpose,
     [
       ["Supported plays", tool.playIds.map(id => `Play ${id}`).join(", ")],
@@ -6906,7 +6928,8 @@ async function downloadToolPdf(tool, blueprint, blank = false) {
       ["Topic", tool.topic],
       ["Maturity level", tool.maturity]
     ],
-    toolDocumentSections(tool, blueprint, blank)
+    toolDocumentSections(tool, blueprint, blank),
+    { footerTitle: `Tool ${tool.id}: ${tool.title}` }
   );
   downloadBlob(`${toolSlug(tool, blank ? "blank-template" : "completed")}.pdf`, pdf, "application/pdf");
 }
