@@ -4429,21 +4429,35 @@ function filterLearningCatalog() {
 
 function renderLearnLanding() {
   const tracks = learningTracks.filter(track => track.track_id !== "all-modules");
-  const technicalTrackIds = ["technical-architecture", "analytics-modeling", "operations-data-quality", "governance-security"];
-  const roleTrackIds = ["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management"];
   const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
+  const foundationalTrack = trackById["shared-foundational"] || trackById["shared-foundation"];
+  const roleBasedTrackIds = new Set(["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management"]);
+  const technicalTracks = tracks.filter(track => track.track_id !== "shared-foundational" && !roleBasedTrackIds.has(track.track_id));
+  const roleTracks = tracks.filter(track => roleBasedTrackIds.has(track.track_id));
   const trackGraphicLabel = track => {
     const label = track.short_title || track.title;
-    if (track.track_id === "analytics-modeling") return "Analytics /<br>Modeling";
-    if (track.track_id === "governance-security") return "Governance /<br>Security";
-    return escapeDoc(label);
+    return escapeDoc(label.replace(/\s+Role-Based Track$/i, "").replace(/\s+Track$/i, ""));
   };
-  const trackButton = id => {
-    const resolvedId = normalizeLearningTrackId(id);
-    const track = trackById[resolvedId];
-    return track ? `<a class="curriculum-node ${resolvedId}" href="#/learn-track/${resolvedId}" aria-label="Open ${track.title}">${trackGraphicLabel(track)}</a>` : "";
+  const trackButton = track => {
+    const resolvedId = normalizeLearningTrackId(track.track_id);
+    return `<a class="curriculum-node ${resolvedId}" href="#/learn-track/${resolvedId}" aria-label="Open ${track.title}">
+      <strong>${trackGraphicLabel(track)}</strong>
+      <span>${curriculumTrackModules(resolvedId).length} modules</span>
+    </a>`;
   };
   const plans = learningPlans();
+  const planButton = (plan, index) => {
+    const modules = planModules(plan);
+    const title = plan.title
+      .replace(/\s+AI Readiness Plan$/i, "")
+      .replace(/\s+AI Briefing Plan$/i, "")
+      .replace(/\s+AI Implementation Plan$/i, "")
+      .replace(/\s+Plan$/i, "");
+    return `<a class="curriculum-node learning-plan-mini plan-${index + 1}" href="#/learn-plan/${plan.plan_id}" aria-label="Open ${plan.title}">
+      <strong>${escapeDoc(title)}</strong>
+      <span>${modules.length} modules</span>
+    </a>`;
+  };
   main.innerHTML = `<section class="page learn-landing-page">
     ${breadcrumbTrail()}
     <section class="learn-hero">
@@ -4474,20 +4488,27 @@ function renderLearnLanding() {
       </div>
       <div class="curriculum-map-graphic" aria-label="Clickable curriculum track structure">
         <a class="curriculum-base" href="#/learn-track/shared-foundational" aria-label="Open Foundational Modules">
-          <strong>Foundational Modules</strong>
-          <span>Common AI language, responsible use, governance basics, risk, equity, and public health context</span>
+          <strong>${escapeDoc(foundationalTrack?.title || "Foundational Modules")}</strong>
+          <span>${escapeDoc(foundationalTrack?.description || "Common AI language, responsible use, governance basics, risk, equity, and public health context.")}</span>
         </a>
         <div class="curriculum-branches">
           <section class="curriculum-branch technical">
-            <h3>Technical and Governance Tracks</h3>
+            <h3>Technical, Data, Analytics, and Governance Tracks</h3>
             <div class="curriculum-node-grid">
-              ${technicalTrackIds.map(trackButton).join("")}
+              ${technicalTracks.map(trackButton).join("")}
             </div>
           </section>
           <section class="curriculum-branch role-based">
             <h3>Role-Based Tracks</h3>
             <div class="curriculum-node-grid">
-              ${roleTrackIds.map(trackButton).join("")}
+              ${roleTracks.map(trackButton).join("")}
+            </div>
+          </section>
+          <section class="curriculum-branch learning-plans">
+            <h3>Role-Based Learning Plans</h3>
+            <p>Plans combine modules from multiple tracks for common public health responsibilities.</p>
+            <div class="curriculum-node-grid plan-node-grid">
+              ${plans.map(planButton).join("")}
             </div>
           </section>
         </div>
