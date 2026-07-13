@@ -4215,7 +4215,7 @@ window.LESSON_TOOL_CROSSWALK = [
         ],
         "related_play_titles": [
           "Develop a Funding Strategy",
-          "Design the Playbook",
+          "Develop the AI Implementation Plan",
           "Build and Deploy AI Solutions"
         ]
       },
@@ -4757,7 +4757,7 @@ window.LESSON_TOOL_CROSSWALK = [
         ],
         "related_play_titles": [
           "Develop a Funding Strategy",
-          "Design the Playbook",
+          "Develop the AI Implementation Plan",
           "Build and Deploy AI Solutions"
         ]
       },
@@ -17545,7 +17545,7 @@ window.LESSON_TOOL_PLAY_CROSSWALK = [
         ],
         "related_play_titles": [
           "Develop a Funding Strategy",
-          "Design the Playbook",
+          "Develop the AI Implementation Plan",
           "Build and Deploy AI Solutions"
         ]
       },
@@ -18223,7 +18223,7 @@ window.LESSON_TOOL_PLAY_CROSSWALK = [
         ],
         "related_play_titles": [
           "Develop a Funding Strategy",
-          "Design the Playbook",
+          "Develop the AI Implementation Plan",
           "Build and Deploy AI Solutions"
         ]
       },
