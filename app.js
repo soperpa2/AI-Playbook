@@ -4431,7 +4431,7 @@ function renderLearnLanding() {
   const tracks = learningTracks.filter(track => track.track_id !== "all-modules");
   const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
   const foundationalTrack = trackById["shared-foundational"] || trackById["shared-foundation"];
-  const roleBasedTrackIds = new Set(["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management"]);
+  const roleBasedTrackIds = new Set(["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management", "health-education"]);
   const technicalTracks = tracks.filter(track => track.track_id !== "shared-foundational" && !roleBasedTrackIds.has(track.track_id));
   const roleTracks = tracks.filter(track => roleBasedTrackIds.has(track.track_id));
   const trackGraphicLabel = track => {
@@ -8580,7 +8580,8 @@ const learningTracks = [
 ];
 
 const curriculumModuleAliases = {
-  "introduction-to-ai": "understanding-ai",
+  "introduction-to-ai": "int-100",
+  "understanding-ai": "int-100",
   "predictive-ai": "anl-220-predictive-analytics-and-risk-stratification",
   "generative-ai": "com-200-ai-for-public-health-communications-and-message-development",
   "agentic-ai": "arc-320-agentic-workflow-design-and-orchestration",
@@ -8642,19 +8643,6 @@ function applyCurriculumPackage() {
       tools: []
     });
   });
-  const introModule = legacyLearningModuleById["understanding-ai"];
-  if (introModule && !learningModules.some(module => module.id === introModule.id)) {
-    learningModules.unshift({
-      ...introModule,
-      course_id: "INT 100",
-      course_code: "INT 100",
-      title: "Introduction to AI for Public Health",
-      display_title: "INT 100: Introduction to AI for Public Health",
-      level_label: "Foundational Module",
-      tracks: ["shared-foundational"],
-      curriculumSource: false
-    });
-  }
   learningTracks.length = 0;
   learningTracks.push({
     track_id: "all-modules",

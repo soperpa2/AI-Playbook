@@ -42,7 +42,7 @@ window.CURRICULUM_DATA = {
       {
         "order": 5,
         "section": "Browse Modules by Course ID",
-        "content": "Provide filters for prefixes INT, ARC, ANL, OPS, GOV, COM, EPI, POL, EXE, and PMG plus level, audience, estimated time, and prerequisites."
+        "content": "Provide filters for prefixes INT, ARC, ANL, OPS, GOV, COM, EPI, POL, EXE, and PGM plus level, audience, estimated time, and prerequisites."
       },
       {
         "order": 6,
@@ -206,7 +206,7 @@ window.CURRICULUM_DATA = {
       "EPI": "Epidemiology Role-Based Track",
       "POL": "Policy Role-Based Track",
       "EXE": "Public Health Executive Leadership Track",
-      "PMG": "Program Management Role-Based Track"
+      "PGM": "Program Management Role-Based Track"
     },
     "course_level_bands": {
       "100": "introductory/shared foundation",
@@ -324,14 +324,14 @@ window.CURRICULUM_DATA = {
           "EXE 470"
         ]
       },
-      "PMG": {
+      "PGM": {
         "title": "Program Management Role-Based Track",
         "modules": [
-          "PMG 200",
-          "PMG 210",
-          "PMG 220",
-          "PMG 300",
-          "PMG 310"
+          "PGM 200",
+          "PGM 210",
+          "PGM 220",
+          "PGM 300",
+          "PGM 310"
         ]
       }
     },
@@ -571,13 +571,13 @@ window.CURRICULUM_DATA = {
           "OPS 200",
           "OPS 210",
           "ANL 200",
-          "PMG 220",
+          "PGM 220",
           "EPI 300",
           "GOV 350",
           "OPS 240",
           "ARC 340",
           "GOV 360",
-          "PMG 300"
+          "PGM 300"
         ],
         "supplemental_website_foundational_modules": []
       },
@@ -632,8 +632,8 @@ window.CURRICULUM_DATA = {
           "ARC 330",
           "OPS 300",
           "OPS 220",
-          "PMG 200",
-          "PMG 210",
+          "PGM 200",
+          "PGM 210",
           "GOV 320",
           "GOV 330",
           "OPS 310",
@@ -686,8 +686,8 @@ window.CURRICULUM_DATA = {
           "EXE 100",
           "EXE 460",
           "EXE 470",
-          "PMG 300",
-          "PMG 310"
+          "PGM 300",
+          "PGM 310"
         ],
         "supplemental_website_foundational_modules": []
       },
@@ -775,7 +775,7 @@ window.CURRICULUM_DATA = {
           "EPI 320",
           "POL 320",
           "POL 330",
-          "PMG 310",
+          "PGM 310",
           "GOV 420",
           "GOV 430",
           "GOV 360"
@@ -810,12 +810,12 @@ window.CURRICULUM_DATA = {
           "GOV 420",
           "EXE 450",
           "EXE 470",
-          "PMG 310"
+          "PGM 310"
         ],
         "supplemental_website_foundational_modules": []
       },
       "program-management": {
-        "track_code": "PMG",
+        "track_code": "PGM",
         "title": "Program Management Role-Based Track",
         "description": "Role-based path for project managers, program managers, implementation leads, product owners, grant managers, and staff coordinating AI-enabled initiatives from intake through procurement, implementation, vendor management, change management, monitoring, and sustainment.",
         "primary_audience": [
@@ -831,7 +831,7 @@ window.CURRICULUM_DATA = {
         "modules": [
           "INT 200",
           "OPS 230",
-          "PMG 220",
+          "PGM 220",
           "POL 300",
           "GOV 340",
           "OPS 240",
@@ -839,10 +839,10 @@ window.CURRICULUM_DATA = {
           "OPS 320",
           "GOV 360",
           "EXE 460",
-          "PMG 300",
-          "PMG 310",
-          "PMG 200",
-          "PMG 210",
+          "PGM 300",
+          "PGM 310",
+          "PGM 200",
+          "PGM 210",
           "GOV 320",
           "EXE 450"
         ],
@@ -875,8 +875,6 @@ window.CURRICULUM_DATA = {
       "ARC 330": "arc-330-cloud-containers-and-secure-deployment-basics",
       "OPS 300": "ops-300-mlops-and-llmops-for-public-health",
       "OPS 220": "ops-220-human-factors-workflow-integration-and-usability-testing",
-      "PMG 200": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
-      "PMG 210": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
       "GOV 320": "gov-320-ai-documentation-model-cards-and-system-cards",
       "GOV 330": "gov-330-data-governance-for-ai-ready-public-health-data",
       "OPS 310": "ops-310-measuring-ai-value-performance-and-operational-impact",
@@ -893,7 +891,6 @@ window.CURRICULUM_DATA = {
       "INT 190": "int-190-ai-for-social-good",
       "INT 200": "int-200-ai-use-case-intake-and-triage-basics",
       "OPS 230": "ops-230-ai-workflow-standard-operating-procedures",
-      "PMG 220": "pmg-220-ai-project-management-and-implementation-planning",
       "ANL 330": "anl-330-equity-evaluation-for-ai-models",
       "POL 300": "pol-300-public-health-ai-policy-landscape-and-regulatory-readiness",
       "COM 200": "com-200-ai-for-public-health-communications-and-message-development",
@@ -916,8 +913,11 @@ window.CURRICULUM_DATA = {
       "EXE 100": "exe-100-executive-ai-briefing-for-public-health-leaders",
       "EXE 460": "exe-460-ai-governance-board-chair-training",
       "EXE 470": "exe-470-ai-crisis-communications-and-executive-response",
-      "PMG 300": "pmg-300-ai-vendor-implementation-management",
-      "PMG 310": "pmg-310-grant-and-funding-management-for-ai-projects"
+      "PGM 200": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
+      "PGM 210": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
+      "PGM 220": "pmg-220-ai-project-management-and-implementation-planning",
+      "PGM 300": "pmg-300-ai-vendor-implementation-management",
+      "PGM 310": "pmg-310-grant-and-funding-management-for-ai-projects"
     },
     "site_foundational_course_id_recommendations_file": "website-foundational-course-id-crosswalk.json",
     "track_catalog_file": "track-catalog.json",
@@ -1092,7 +1092,7 @@ window.CURRICULUM_DATA = {
       },
       "program-management": {
         "track_id": "program-management",
-        "track_code": "PMG",
+        "track_code": "PGM",
         "title": "Program Management Role-Based Track",
         "short_title": "Program Management",
         "description": "Role-based path for project managers, program managers, implementation leads, product owners, grant managers, and staff coordinating AI-enabled initiatives from intake through procurement, implementation, vendor management, change management, monitoring, and sustainment.",
@@ -1568,11 +1568,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 11,
-          "course_id": "PMG 220",
+          "course_id": "PGM 220",
           "module_id": "pmg-220-ai-project-management-and-implementation-planning",
           "title": "AI Project Management and Implementation Planning",
-          "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -1646,11 +1646,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 17,
-          "course_id": "PMG 300",
+          "course_id": "PGM 300",
           "module_id": "pmg-300-ai-vendor-implementation-management",
           "title": "AI Vendor Implementation Management",
-          "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -1935,11 +1935,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 6,
-          "course_id": "PMG 200",
+          "course_id": "PGM 200",
           "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
           "title": "Business Analysis for AI-Enabled Public Health Systems",
-          "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -1948,11 +1948,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 7,
-          "course_id": "PMG 210",
+          "course_id": "PGM 210",
           "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
           "title": "Requirements Writing for AI Procurement and Implementation",
-          "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -2401,11 +2401,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 27,
-          "course_id": "PMG 300",
+          "course_id": "PGM 300",
           "module_id": "pmg-300-ai-vendor-implementation-management",
           "title": "AI Vendor Implementation Management",
-          "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -2414,11 +2414,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 28,
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
           "title": "Grant and Funding Management for AI Projects",
-          "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -2943,11 +2943,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 13,
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
           "title": "Grant and Funding Management for AI Projects",
-          "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -3161,11 +3161,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 12,
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
           "title": "Grant and Funding Management for AI Projects",
-          "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -3177,7 +3177,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "title": "Program Management Role-Based Track",
       "short_title": "Program Management",
       "description": "Role-based path for project managers, program managers, implementation leads, product owners, grant managers, and staff coordinating AI-enabled initiatives from intake through procurement, implementation, vendor management, change management, monitoring, and sustainment.",
@@ -3221,11 +3221,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 3,
-          "course_id": "PMG 220",
+          "course_id": "PGM 220",
           "module_id": "pmg-220-ai-project-management-and-implementation-planning",
           "title": "AI Project Management and Implementation Planning",
-          "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -3325,11 +3325,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 11,
-          "course_id": "PMG 300",
+          "course_id": "PGM 300",
           "module_id": "pmg-300-ai-vendor-implementation-management",
           "title": "AI Vendor Implementation Management",
-          "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -3338,11 +3338,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 12,
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
           "title": "Grant and Funding Management for AI Projects",
-          "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -3351,11 +3351,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 13,
-          "course_id": "PMG 200",
+          "course_id": "PGM 200",
           "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
           "title": "Business Analysis for AI-Enabled Public Health Systems",
-          "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -3364,11 +3364,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 14,
-          "course_id": "PMG 210",
+          "course_id": "PGM 210",
           "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
           "title": "Requirements Writing for AI Procurement and Implementation",
-          "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -3438,9 +3438,12 @@ window.CURRICULUM_DATA = {
         "shared-foundational",
         "governance-security",
         "policy",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
-      "recommended_completion": "Complete foundation and governance/security modules before reviewing high-risk use cases."
+      "recommended_completion": "Complete foundation and governance/security modules before reviewing high-risk use cases.",
+      "required_prefixes": [
+        "GOV"
+      ]
     },
     {
       "plan_id": "epidemiology-ai-readiness",
@@ -3488,7 +3491,7 @@ window.CURRICULUM_DATA = {
         "Governance chairs"
       ],
       "source_tracks": [
-        "executive-leadership",
+        "public-health-executive-leadership",
         "governance-security",
         "policy"
       ],
@@ -3528,9 +3531,54 @@ window.CURRICULUM_DATA = {
         "program-management",
         "operations-data-quality",
         "governance-security",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
-      "recommended_completion": "Complete use case intake and implementation planning before procurement, rollout, or funding decisions."
+      "recommended_completion": "Complete use case intake and implementation planning before procurement, rollout, or funding decisions.",
+      "required_prefixes": [
+        "PGM"
+      ]
+    },
+    {
+      "plan_id": "health-education-ai-readiness",
+      "title": "Health Education AI Readiness Plan",
+      "description": "For health educators, trainers, communications staff, community engagement staff, and program teams using AI to develop, adapt, review, facilitate, or evaluate education materials.",
+      "primary_audience": [
+        "Health educators",
+        "Training leads",
+        "Communications staff",
+        "Community engagement staff",
+        "Program staff"
+      ],
+      "source_tracks": [
+        "shared-foundational",
+        "health-education",
+        "communications"
+      ],
+      "required_prefixes": [
+        "HED"
+      ],
+      "recommended_completion": "Complete foundation modules, then complete the HED sequence before using AI in public-facing education or training work."
+    },
+    {
+      "plan_id": "policy-ai-readiness",
+      "title": "Policy Staff AI Readiness Plan",
+      "description": "For policy, legal, privacy, procurement, legislative affairs, and planning staff who translate AI implications into policy, contract, authority, accountability, and public health practice decisions.",
+      "primary_audience": [
+        "Policy staff",
+        "Legal and privacy staff",
+        "Procurement staff",
+        "Legislative affairs staff",
+        "Public health planners"
+      ],
+      "source_tracks": [
+        "shared-foundational",
+        "policy",
+        "governance-security"
+      ],
+      "required_prefixes": [
+        "POL"
+      ],
+      "recommended_completion": "Complete policy and governance modules before drafting AI policies, clauses, public accountability language, or boundary determinations."
     }
   ],
   "module_index": [
@@ -3931,7 +3979,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "analytics-modeling",
         "communications",
-        "executive-leadership",
+        "public-health-executive-leadership",
         "epidemiology",
         "governance-security"
       ],
@@ -4419,7 +4467,7 @@ window.CURRICULUM_DATA = {
         "communications",
         "shared-foundational",
         "policy",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "word_count": 1162,
       "references_count": 6,
@@ -4459,7 +4507,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "communications",
         "policy",
-        "shared-foundation",
+        "shared-foundational",
         "governance-security"
       ],
       "word_count": 1272,
@@ -4544,7 +4592,7 @@ window.CURRICULUM_DATA = {
         "epidemiology",
         "operations-and-data-quality",
         "technical-architecture",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "word_count": 1125,
       "references_count": 6,
@@ -4633,7 +4681,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "epidemiology",
         "policy",
-        "executive-leadership",
+        "public-health-executive-leadership",
         "ai-for-social-good",
         "governance-security"
       ],
@@ -4680,7 +4728,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "EXE",
       "primary_track_title": "Public Health Executive Leadership Track",
       "tracks": [
-        "executive-leadership",
+        "public-health-executive-leadership",
         "governance-security"
       ],
       "word_count": 1264,
@@ -4793,10 +4841,10 @@ window.CURRICULUM_DATA = {
         ],
         "recommended": [
           {
-            "course_id": "PMG 310",
+            "course_id": "PGM 310",
             "title": "Grant and Funding Management for AI Projects",
             "source": "module_json",
-            "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json"
+            "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json"
           }
         ],
         "rationale": "Investment strategy should follow portfolio prioritization and can be paired with grant/funding management.",
@@ -4825,10 +4873,10 @@ window.CURRICULUM_DATA = {
             "file": "modules/EXE-410-ai-portfolio-strategy-and-use-case-prioritization.json"
           },
           {
-            "course_id": "PMG 220",
+            "course_id": "PGM 220",
             "title": "AI Project Management and Implementation Planning",
             "source": "module_json",
-            "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json"
+            "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json"
           },
           {
             "course_id": "OPS 220",
@@ -4913,7 +4961,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "EXE",
       "primary_track_title": "Public Health Executive Leadership Track",
       "tracks": [
-        "executive-leadership",
+        "public-health-executive-leadership",
         "governance-security",
         "program-management"
       ],
@@ -4960,7 +5008,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "EXE",
       "primary_track_title": "Public Health Executive Leadership Track",
       "tracks": [
-        "executive-leadership",
+        "public-health-executive-leadership",
         "communications",
         "governance-security"
       ],
@@ -5007,10 +5055,10 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "GOV",
       "primary_track_title": "Governance and Security Track",
       "tracks": [
-        "shared-foundational",
-        "governance-security"
+        "governance-security",
+        "shared-foundational"
       ],
-      "word_count": 3272,
+      "word_count": 3205,
       "references_count": 6,
       "jurisdiction_and_agency_policy_note_applies": true,
       "prerequisites": {
@@ -5192,7 +5240,7 @@ window.CURRICULUM_DATA = {
         "governance-and-security",
         "policy",
         "program-management",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "word_count": 1095,
       "references_count": 6,
@@ -5290,10 +5338,10 @@ window.CURRICULUM_DATA = {
         ],
         "recommended": [
           {
-            "course_id": "PMG 210",
+            "course_id": "PGM 210",
             "title": "Requirements Writing for AI Procurement and Implementation",
             "source": "module_json",
-            "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json"
+            "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json"
           },
           {
             "course_id": "GOV 300",
@@ -5498,7 +5546,7 @@ window.CURRICULUM_DATA = {
         "shared-foundational",
         "governance-and-security",
         "program-management",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "word_count": 1388,
       "references_count": 6,
@@ -5596,34 +5644,22 @@ window.CURRICULUM_DATA = {
     },
     {
       "course_id": "OPS 220",
-      "title": "Human Factors, Workflow Integration, and Usability Testing",
-      "file": "modules/OPS-220-human-factors-workflow-integration-and-usability-testing.json",
+      "title": "AI for Environmental Health and Field Operations",
+      "file": "modules/OPS-220-ai-for-environmental-health-and-field-operations.json",
       "primary_track_code": "OPS",
       "primary_track_title": "Operations and Data Quality Track",
       "tracks": [
         "operations-data-quality"
       ],
-      "word_count": 1351,
-      "references_count": 6,
-      "jurisdiction_and_agency_policy_note_applies": false,
+      "word_count": 1190,
+      "references_count": 5,
+      "jurisdiction_and_agency_policy_note_applies": true,
       "prerequisites": {
         "required": [],
         "recommended": [
-          {
-            "course_id": "INT 150",
-            "title": "AI-Supported Public Health Workflows",
-            "source": "website_foundational_crosswalk",
-            "file": null
-          },
-          {
-            "course_id": "INT 160",
-            "title": "Risks, Limitations, and Guardrails",
-            "source": "website_foundational_crosswalk",
-            "file": null
-          }
-        ],
-        "rationale": "Human factors and usability can be taken early, but workflow and guardrail concepts improve application.",
-        "note": ""
+          "INT 105",
+          "OPS 200"
+        ]
       }
     },
     {
@@ -5694,10 +5730,10 @@ window.CURRICULUM_DATA = {
         ],
         "recommended": [
           {
-            "course_id": "PMG 200",
+            "course_id": "PGM 200",
             "title": "Business Analysis for AI-Enabled Public Health Systems",
             "source": "module_json",
-            "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+            "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
           },
           {
             "course_id": "ANL 300",
@@ -5771,10 +5807,10 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "PMG 200",
+            "course_id": "PGM 200",
             "title": "Business Analysis for AI-Enabled Public Health Systems",
             "source": "module_json",
-            "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+            "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
           },
           {
             "course_id": "ANL 300",
@@ -5829,10 +5865,10 @@ window.CURRICULUM_DATA = {
       }
     },
     {
-      "course_id": "PMG 200",
+      "course_id": "PGM 200",
       "title": "Business Analysis for AI-Enabled Public Health Systems",
-      "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "tracks": [
         "operations-data-quality"
@@ -5861,10 +5897,10 @@ window.CURRICULUM_DATA = {
       }
     },
     {
-      "course_id": "PMG 210",
+      "course_id": "PGM 210",
       "title": "Requirements Writing for AI Procurement and Implementation",
-      "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "tracks": [
         "operations-data-quality"
@@ -5875,10 +5911,10 @@ window.CURRICULUM_DATA = {
       "prerequisites": {
         "required": [
           {
-            "course_id": "PMG 200",
+            "course_id": "PGM 200",
             "title": "Business Analysis for AI-Enabled Public Health Systems",
             "source": "module_json",
-            "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+            "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
           }
         ],
         "recommended": [
@@ -5900,16 +5936,16 @@ window.CURRICULUM_DATA = {
       }
     },
     {
-      "course_id": "PMG 220",
+      "course_id": "PGM 220",
       "title": "AI Project Management and Implementation Planning",
-      "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "tracks": [
         "program-management",
         "operations-and-data-quality",
         "technical-architecture",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "word_count": 1148,
       "references_count": 6,
@@ -5925,10 +5961,10 @@ window.CURRICULUM_DATA = {
         ],
         "recommended": [
           {
-            "course_id": "PMG 200",
+            "course_id": "PGM 200",
             "title": "Business Analysis for AI-Enabled Public Health Systems",
             "source": "module_json",
-            "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+            "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
           },
           {
             "course_id": "EXE 410",
@@ -5942,10 +5978,10 @@ window.CURRICULUM_DATA = {
       }
     },
     {
-      "course_id": "PMG 300",
+      "course_id": "PGM 300",
       "title": "AI Vendor Implementation Management",
-      "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "tracks": [
         "program-management",
@@ -5958,10 +5994,10 @@ window.CURRICULUM_DATA = {
       "prerequisites": {
         "required": [
           {
-            "course_id": "PMG 210",
+            "course_id": "PGM 210",
             "title": "Requirements Writing for AI Procurement and Implementation",
             "source": "module_json",
-            "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json"
+            "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json"
           }
         ],
         "recommended": [
@@ -5983,14 +6019,14 @@ window.CURRICULUM_DATA = {
       }
     },
     {
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "title": "Grant and Funding Management for AI Projects",
-      "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "tracks": [
         "program-management",
-        "executive-leadership",
+        "public-health-executive-leadership",
         "policy",
         "governance-security"
       ],
@@ -6007,10 +6043,10 @@ window.CURRICULUM_DATA = {
             "file": "modules/EXE-420-ai-investment-strategy-and-business-case-review.json"
           },
           {
-            "course_id": "PMG 220",
+            "course_id": "PGM 220",
             "title": "AI Project Management and Implementation Planning",
             "source": "module_json",
-            "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json"
+            "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json"
           },
           {
             "course_id": "INT 270",
@@ -6032,7 +6068,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "policy",
         "governance-and-security",
-        "executive-leadership",
+        "public-health-executive-leadership",
         "program-management"
       ],
       "word_count": 1165,
@@ -6067,7 +6103,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "governance-security",
         "policy",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "word_count": 1255,
       "references_count": 6,
@@ -6102,7 +6138,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "policy",
         "governance-security",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "word_count": 1273,
       "references_count": 6,
@@ -6144,7 +6180,7 @@ window.CURRICULUM_DATA = {
         "policy",
         "governance-security",
         "communications",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "word_count": 1268,
       "references_count": 6,
@@ -6183,16 +6219,354 @@ window.CURRICULUM_DATA = {
       }
     },
     {
-      "id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
-      "module_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
       "course_id": "GOV 110",
       "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
-      "display_title": "GOV 110: Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
+      "file": "modules/GOV-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects.json",
       "primary_track_code": "GOV",
-      "primary_track_title": "Governance and Security",
-      "course_level": 100,
-      "level_label": "Introductory",
-      "file": "modules/gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects.json"
+      "primary_track_title": "Governance and Security Track",
+      "tracks": [
+        "governance-security",
+        "shared-foundational",
+        "policy",
+        "program-management"
+      ],
+      "word_count": 4343,
+      "references_count": 7,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          {
+            "course_id": "GOV 100",
+            "title": "Introduction to AI Governance for Public Health",
+            "reason": "Helpful preparation for understanding governance roles and review pathways."
+          },
+          {
+            "course_id": "INT 100",
+            "title": "Introduction to AI for Public Health",
+            "reason": "Helpful preparation for learners new to AI concepts."
+          }
+        ]
+      }
+    },
+    {
+      "course_id": "GOV 120",
+      "title": "AI Incident Response for Public Health",
+      "file": "modules/GOV-120-ai-incident-response-for-public-health.json",
+      "primary_track_code": "GOV",
+      "primary_track_title": "Governance and Security Track",
+      "tracks": [
+        "governance-security"
+      ],
+      "word_count": 1300,
+      "references_count": 5,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "GOV 100",
+          "INT 105"
+        ]
+      }
+    },
+    {
+      "course_id": "GOV 130",
+      "title": "Tribal Consultation and Data Sharing Agreements for AI Projects",
+      "file": "modules/GOV-130-tribal-consultation-and-data-sharing-agreements-for-ai-projects.json",
+      "primary_track_code": "GOV",
+      "primary_track_title": "Governance and Security Track",
+      "tracks": [
+        "governance-security"
+      ],
+      "word_count": 1473,
+      "references_count": 8,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "GOV 100",
+          "GOV 110"
+        ]
+      }
+    },
+    {
+      "course_id": "HED 100",
+      "title": "AI for Health Education and Learning Design",
+      "file": "modules/HED-100-ai-for-health-education-and-learning-design.json",
+      "primary_track_code": "HED",
+      "primary_track_title": "Health Education Role-Based Track",
+      "tracks": [
+        "health-education"
+      ],
+      "word_count": 1379,
+      "references_count": 5,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 100",
+          "INT 105"
+        ]
+      }
+    },
+    {
+      "course_id": "HED 110",
+      "title": "AI, Health Literacy, Plain Language, and Accessibility",
+      "file": "modules/HED-110-ai-health-literacy-plain-language-and-accessibility.json",
+      "primary_track_code": "HED",
+      "primary_track_title": "Health Education Role-Based Track",
+      "tracks": [
+        "health-education"
+      ],
+      "word_count": 1369,
+      "references_count": 7,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "HED 120",
+      "title": "AI-Supported Community Education and Outreach",
+      "file": "modules/HED-120-ai-supported-community-education-and-outreach.json",
+      "primary_track_code": "HED",
+      "primary_track_title": "Health Education Role-Based Track",
+      "tracks": [
+        "health-education"
+      ],
+      "word_count": 1265,
+      "references_count": 6,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "HED 130",
+      "title": "Evaluating AI-Generated Health Education Materials",
+      "file": "modules/HED-130-evaluating-ai-generated-health-education-materials.json",
+      "primary_track_code": "HED",
+      "primary_track_title": "Health Education Role-Based Track",
+      "tracks": [
+        "health-education"
+      ],
+      "word_count": 1160,
+      "references_count": 6,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "HED 140",
+      "title": "AI for Training Facilitation and Learner Feedback",
+      "file": "modules/HED-140-ai-for-training-facilitation-and-learner-feedback.json",
+      "primary_track_code": "HED",
+      "primary_track_title": "Health Education Role-Based Track",
+      "tracks": [
+        "health-education"
+      ],
+      "word_count": 1127,
+      "references_count": 6,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "INT 105",
+      "title": "All-Staff Safe AI Use and Approved Tools Awareness",
+      "file": "modules/INT-105-all-staff-safe-ai-use-and-approved-tools-awareness.json",
+      "primary_track_code": "INT",
+      "primary_track_title": "Foundational Modules",
+      "tracks": [
+        "shared-foundational"
+      ],
+      "word_count": 1523,
+      "references_count": 5,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 100"
+        ]
+      }
+    },
+    {
+      "course_id": "PGM 100",
+      "title": "Managing AI Projects in Public Health Programs",
+      "file": "modules/PGM-100-managing-ai-projects-in-public-health-programs.json",
+      "primary_track_code": "PGM",
+      "primary_track_title": "Program Management Role-Based Track",
+      "tracks": [
+        "program-management"
+      ],
+      "word_count": 1169,
+      "references_count": 4,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "PGM 110",
+      "title": "AI Workflow Readiness and Operational Planning",
+      "file": "modules/PGM-110-ai-workflow-readiness-and-operational-planning.json",
+      "primary_track_code": "PGM",
+      "primary_track_title": "Program Management Role-Based Track",
+      "tracks": [
+        "program-management"
+      ],
+      "word_count": 1088,
+      "references_count": 4,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "PGM 120",
+      "title": "AI Pilot Planning and Governance Coordination",
+      "file": "modules/PGM-120-ai-pilot-planning-and-governance-coordination.json",
+      "primary_track_code": "PGM",
+      "primary_track_title": "Program Management Role-Based Track",
+      "tracks": [
+        "program-management"
+      ],
+      "word_count": 1071,
+      "references_count": 4,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "PGM 130",
+      "title": "AI Implementation Metrics and Value Tracking for Program Managers",
+      "file": "modules/PGM-130-ai-implementation-metrics-and-value-tracking-for-program-managers.json",
+      "primary_track_code": "PGM",
+      "primary_track_title": "Program Management Role-Based Track",
+      "tracks": [
+        "program-management"
+      ],
+      "word_count": 1012,
+      "references_count": 4,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "PGM 140",
+      "title": "Vendor Coordination and Operational Handoff for AI Pilots",
+      "file": "modules/PGM-140-vendor-coordination-and-operational-handoff-for-ai-pilots.json",
+      "primary_track_code": "PGM",
+      "primary_track_title": "Program Management Role-Based Track",
+      "tracks": [
+        "program-management"
+      ],
+      "word_count": 1082,
+      "references_count": 4,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      }
+    },
+    {
+      "course_id": "PGM 150",
+      "title": "Supervisor and Workforce Impacts of AI Adoption",
+      "file": "modules/PGM-150-supervisor-and-workforce-impacts-of-ai-adoption.json",
+      "primary_track_code": "PGM",
+      "primary_track_title": "Program Management Role-Based Track",
+      "tracks": [
+        "program-management"
+      ],
+      "word_count": 1158,
+      "references_count": 5,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "PGM 200"
+        ]
+      }
+    },
+    {
+      "course_id": "POL 210",
+      "title": "AI Procurement Contract Clauses and Vendor Accountability",
+      "file": "modules/POL-210-ai-procurement-contract-clauses-and-vendor-accountability.json",
+      "primary_track_code": "POL",
+      "primary_track_title": "Policy Role-Based Track",
+      "tracks": [
+        "policy"
+      ],
+      "word_count": 1263,
+      "references_count": 5,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "GOV 100",
+          "POL 200"
+        ]
+      }
+    },
+    {
+      "course_id": "POL 220",
+      "title": "Research, Evaluation, Quality Improvement, and Public Health Practice Boundaries in AI Projects",
+      "file": "modules/POL-220-research-evaluation-quality-improvement-and-public-health-practice-boundaries-in-ai-projects.json",
+      "primary_track_code": "POL",
+      "primary_track_title": "Policy Role-Based Track",
+      "tracks": [
+        "policy"
+      ],
+      "word_count": 1294,
+      "references_count": 7,
+      "jurisdiction_and_agency_policy_note_applies": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "GOV 100",
+          "INT 105"
+        ]
+      }
     }
   ],
   "module_lms_usability_metadata": [
@@ -6622,7 +6996,7 @@ window.CURRICULUM_DATA = {
       "audience": "Executive leaders; Health officials; Senior managers; Governance chairs",
       "when_to_use": "Use for executive briefings, governance leadership, portfolio decisions, crisis response, and enterprise AI strategy.",
       "required_prerequisites": "EXE 410",
-      "recommended_prerequisites": "PMG 310",
+      "recommended_prerequisites": "PGM 310",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: AI business case worksheet; total cost of ownership estimate; benefits realization plan; alternatives analysis.."
     },
     {
@@ -6635,7 +7009,7 @@ window.CURRICULUM_DATA = {
       "audience": "Executive leaders; Health officials; Senior managers; Governance chairs",
       "when_to_use": "Use for executive briefings, governance leadership, portfolio decisions, crisis response, and enterprise AI strategy.",
       "required_prerequisites": "",
-      "recommended_prerequisites": "EXE 410; PMG 220; OPS 220",
+      "recommended_prerequisites": "EXE 410; PGM 220; OPS 220",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: AI adoption plan; stakeholder map; communication plan; training plan; feedback and adoption monitoring plan.."
     },
     {
@@ -6813,7 +7187,7 @@ window.CURRICULUM_DATA = {
       "audience": "Governance committee members; Legal/privacy staff; Security staff; Compliance staff; Program owners",
       "when_to_use": "Use before approving AI use cases, procuring AI tools, reviewing risk, setting policies, or monitoring deployed AI systems.",
       "required_prerequisites": "GOV 400",
-      "recommended_prerequisites": "PMG 210; GOV 300; GOV 310",
+      "recommended_prerequisites": "PGM 210; GOV 300; GOV 310",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: Third-Party AI Risk Management artifact."
     },
     {
@@ -6956,7 +7330,7 @@ window.CURRICULUM_DATA = {
       "audience": "Operations leads; Data quality staff; Program managers; Implementation teams; Supervisors",
       "when_to_use": "Use before workflow redesign, data quality improvement, user testing, deployment, monitoring, or continuous improvement.",
       "required_prerequisites": "OPS 220",
-      "recommended_prerequisites": "PMG 200; ANL 300",
+      "recommended_prerequisites": "PGM 200; ANL 300",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: UAT plan."
     },
     {
@@ -6982,7 +7356,7 @@ window.CURRICULUM_DATA = {
       "audience": "Operations leads; Data quality staff; Program managers; Implementation teams; Supervisors",
       "when_to_use": "Use before workflow redesign, data quality improvement, user testing, deployment, monitoring, or continuous improvement.",
       "required_prerequisites": "",
-      "recommended_prerequisites": "PMG 200; ANL 300",
+      "recommended_prerequisites": "PGM 200; ANL 300",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: The expected artifact is a completed AI value and impact measurement plan. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks.."
     },
     {
@@ -6999,7 +7373,7 @@ window.CURRICULUM_DATA = {
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: Operational Monitoring and Continuous Improvement for AI artifact."
     },
     {
-      "course_id": "PMG 200",
+      "course_id": "PGM 200",
       "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
       "title": "Business Analysis for AI-Enabled Public Health Systems",
       "primary_track": "Program Management Role-Based Track",
@@ -7012,7 +7386,7 @@ window.CURRICULUM_DATA = {
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: The expected artifact is a completed AI business analysis package. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks.."
     },
     {
-      "course_id": "PMG 210",
+      "course_id": "PGM 210",
       "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
       "title": "Requirements Writing for AI Procurement and Implementation",
       "primary_track": "Program Management Role-Based Track",
@@ -7020,12 +7394,12 @@ window.CURRICULUM_DATA = {
       "estimated_time_minutes": 45,
       "audience": "Project managers; Program managers; Product owners; Implementation leads; Procurement leads",
       "when_to_use": "Use before project planning, requirements writing, vendor implementation, funding management, or operational rollout.",
-      "required_prerequisites": "PMG 200",
+      "required_prerequisites": "PGM 200",
       "recommended_prerequisites": "INT 280; GOV 360",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: The expected artifact is a completed AI requirements matrix. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks.."
     },
     {
-      "course_id": "PMG 220",
+      "course_id": "PGM 220",
       "module_id": "pmg-220-ai-project-management-and-implementation-planning",
       "title": "AI Project Management and Implementation Planning",
       "primary_track": "Program Management Role-Based Track",
@@ -7034,11 +7408,11 @@ window.CURRICULUM_DATA = {
       "audience": "Project managers; Program managers; Product owners; Implementation leads; Procurement leads",
       "when_to_use": "Use before project planning, requirements writing, vendor implementation, funding management, or operational rollout.",
       "required_prerequisites": "INT 200",
-      "recommended_prerequisites": "PMG 200; EXE 410",
+      "recommended_prerequisites": "PGM 200; EXE 410",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: AI project charter."
     },
     {
-      "course_id": "PMG 300",
+      "course_id": "PGM 300",
       "module_id": "pmg-300-ai-vendor-implementation-management",
       "title": "AI Vendor Implementation Management",
       "primary_track": "Program Management Role-Based Track",
@@ -7046,12 +7420,12 @@ window.CURRICULUM_DATA = {
       "estimated_time_minutes": 50,
       "audience": "Project managers; Program managers; Product owners; Implementation leads; Procurement leads",
       "when_to_use": "Use before project planning, requirements writing, vendor implementation, funding management, or operational rollout.",
-      "required_prerequisites": "PMG 210",
+      "required_prerequisites": "PGM 210",
       "recommended_prerequisites": "GOV 360; ARC 340",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: AI Vendor Implementation Management artifact."
     },
     {
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
       "title": "Grant and Funding Management for AI Projects",
       "primary_track": "Program Management Role-Based Track",
@@ -7060,7 +7434,7 @@ window.CURRICULUM_DATA = {
       "audience": "Project managers; Program managers; Product owners; Implementation leads; Procurement leads",
       "when_to_use": "Use before project planning, requirements writing, vendor implementation, funding management, or operational rollout.",
       "required_prerequisites": "",
-      "recommended_prerequisites": "EXE 420; PMG 220; INT 270",
+      "recommended_prerequisites": "EXE 420; PGM 220; INT 270",
       "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: Grant and Funding Management for AI Projects artifact."
     },
     {
@@ -7443,7 +7817,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "EXE",
       "level_label": "",
       "required_prerequisites": "EXE 410 - AI Portfolio Strategy and Use Case Prioritization (module_json)",
-      "recommended_prerequisites": "PMG 310 - Grant and Funding Management for AI Projects (module_json)",
+      "recommended_prerequisites": "PGM 310 - Grant and Funding Management for AI Projects (module_json)",
       "rationale": "Investment strategy should follow portfolio prioritization and can be paired with grant/funding management.",
       "note": ""
     },
@@ -7453,7 +7827,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "EXE",
       "level_label": "",
       "required_prerequisites": "",
-      "recommended_prerequisites": "EXE 410 - AI Portfolio Strategy and Use Case Prioritization (module_json); PMG 220 - AI Project Management and Implementation Planning (module_json); OPS 220 - Human Factors, Workflow Integration, and Usability Testing (module_json)",
+      "recommended_prerequisites": "EXE 410 - AI Portfolio Strategy and Use Case Prioritization (module_json); PGM 220 - AI Project Management and Implementation Planning (module_json); OPS 220 - Human Factors, Workflow Integration, and Usability Testing (module_json)",
       "rationale": "Change management benefits from a prioritized portfolio, project planning, and human factors concepts.",
       "note": ""
     },
@@ -7573,7 +7947,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "GOV",
       "level_label": "",
       "required_prerequisites": "GOV 400 - AI Governance Charter and Operating Model (module_json)",
-      "recommended_prerequisites": "PMG 210 - Requirements Writing for AI Procurement and Implementation (module_json); GOV 300 - AI Security, Prompt Injection, and Data Leakage (module_json); GOV 310 - Privacy-Preserving AI and De-identification (module_json)",
+      "recommended_prerequisites": "PGM 210 - Requirements Writing for AI Procurement and Implementation (module_json); GOV 300 - AI Security, Prompt Injection, and Data Leakage (module_json); GOV 310 - Privacy-Preserving AI and De-identification (module_json)",
       "rationale": "Third-party risk management should be grounded in governance authority and vendor/procurement, security, and privacy review concepts.",
       "note": ""
     },
@@ -7683,7 +8057,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "OPS",
       "level_label": "",
       "required_prerequisites": "OPS 220 - Human Factors, Workflow Integration, and Usability Testing (module_json)",
-      "recommended_prerequisites": "PMG 200 - Business Analysis for AI-Enabled Public Health Systems (module_json); ANL 300 - Advanced Model Validation and Evaluation for Public Health AI (module_json)",
+      "recommended_prerequisites": "PGM 200 - Business Analysis for AI-Enabled Public Health Systems (module_json); ANL 300 - Advanced Model Validation and Evaluation for Public Health AI (module_json)",
       "rationale": "User acceptance testing builds on workflow/usability concepts and benefits from business analysis and validation literacy.",
       "note": ""
     },
@@ -7703,7 +8077,7 @@ window.CURRICULUM_DATA = {
       "primary_track_code": "OPS",
       "level_label": "",
       "required_prerequisites": "",
-      "recommended_prerequisites": "PMG 200 - Business Analysis for AI-Enabled Public Health Systems (module_json); ANL 300 - Advanced Model Validation and Evaluation for Public Health AI (module_json)",
+      "recommended_prerequisites": "PGM 200 - Business Analysis for AI-Enabled Public Health Systems (module_json); ANL 300 - Advanced Model Validation and Evaluation for Public Health AI (module_json)",
       "rationale": "Measuring value and operational impact benefits from business analysis and validation concepts.",
       "note": ""
     },
@@ -7718,9 +8092,9 @@ window.CURRICULUM_DATA = {
       "note": ""
     },
     {
-      "course_id": "PMG 200",
+      "course_id": "PGM 200",
       "title": "Business Analysis for AI-Enabled Public Health Systems",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "level_label": "",
       "required_prerequisites": "",
       "recommended_prerequisites": "INT 150 - AI-Supported Public Health Workflows (website_foundational_crosswalk); INT 200 - AI Use Case Intake and Triage Basics (module_json)",
@@ -7728,42 +8102,42 @@ window.CURRICULUM_DATA = {
       "note": ""
     },
     {
-      "course_id": "PMG 210",
+      "course_id": "PGM 210",
       "title": "Requirements Writing for AI Procurement and Implementation",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "level_label": "",
-      "required_prerequisites": "PMG 200 - Business Analysis for AI-Enabled Public Health Systems (module_json)",
+      "required_prerequisites": "PGM 200 - Business Analysis for AI-Enabled Public Health Systems (module_json)",
       "recommended_prerequisites": "INT 280 - Procurement and Vendor Oversight (website_foundational_crosswalk); GOV 360 - Third-Party AI Risk Management (module_json)",
       "rationale": "Requirements writing depends on business analysis and benefits from procurement/vendor oversight and third-party risk concepts.",
       "note": ""
     },
     {
-      "course_id": "PMG 220",
+      "course_id": "PGM 220",
       "title": "AI Project Management and Implementation Planning",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "level_label": "",
       "required_prerequisites": "INT 200 - AI Use Case Intake and Triage Basics (module_json)",
-      "recommended_prerequisites": "PMG 200 - Business Analysis for AI-Enabled Public Health Systems (module_json); EXE 410 - AI Portfolio Strategy and Use Case Prioritization (module_json)",
+      "recommended_prerequisites": "PGM 200 - Business Analysis for AI-Enabled Public Health Systems (module_json); EXE 410 - AI Portfolio Strategy and Use Case Prioritization (module_json)",
       "rationale": "Project planning requires a defined use case and benefits from business analysis and portfolio prioritization.",
       "note": ""
     },
     {
-      "course_id": "PMG 300",
+      "course_id": "PGM 300",
       "title": "AI Vendor Implementation Management",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "level_label": "",
-      "required_prerequisites": "PMG 210 - Requirements Writing for AI Procurement and Implementation (module_json)",
+      "required_prerequisites": "PGM 210 - Requirements Writing for AI Procurement and Implementation (module_json)",
       "recommended_prerequisites": "GOV 360 - Third-Party AI Risk Management (module_json); ARC 340 - Public Health System Integration Patterns (module_json)",
       "rationale": "Vendor implementation management depends on requirements and benefits from third-party risk and integration patterns.",
       "note": ""
     },
     {
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "title": "Grant and Funding Management for AI Projects",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "level_label": "",
       "required_prerequisites": "",
-      "recommended_prerequisites": "EXE 420 - AI Investment Strategy and Business Case Review (module_json); PMG 220 - AI Project Management and Implementation Planning (module_json); INT 270 - Federal Funding Opportunities (website_foundational_crosswalk)",
+      "recommended_prerequisites": "EXE 420 - AI Investment Strategy and Business Case Review (module_json); PGM 220 - AI Project Management and Implementation Planning (module_json); INT 270 - Federal Funding Opportunities (website_foundational_crosswalk)",
       "rationale": "Grant and funding management can be taken as a program management module but benefits from investment strategy, project planning, and funding opportunity context.",
       "note": ""
     },
@@ -8342,7 +8716,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 7,
           "assignment_type": "required"
@@ -8723,7 +9097,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 16,
           "assignment_type": "required"
@@ -8748,7 +9122,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 10,
           "assignment_type": "required"
@@ -8790,16 +9164,19 @@ window.CURRICULUM_DATA = {
     {
       "course_id": "GOV 100",
       "module_id": "gov-100-introduction-to-ai-governance-for-public-health",
-      "title": "Introduction to AI Governance for Public Health",
-      "file": "modules/GOV-100-introduction-to-ai-governance-for-public-health.json",
-      "primary_track_code": "GOV",
-      "primary_track_title": "Governance and Security Track",
-      "track_id": "governance-security",
-      "track_code": "GOV",
-      "track_title": "Governance and Security Track",
-      "order": 1,
-      "assignment_type": "required",
-      "source": "generated_module_json"
+      "module_title": "Introduction to AI Governance for Public Health",
+      "tracks": [
+        {
+          "track_id": "governance-security",
+          "track_title": "Governance and Security Track",
+          "primary": true
+        },
+        {
+          "track_id": "shared-foundational",
+          "track_title": "Foundational Modules",
+          "primary": false
+        }
+      ]
     },
     {
       "course_id": "GOV 100",
@@ -8813,7 +9190,8 @@ window.CURRICULUM_DATA = {
       "track_title": "Shared Foundational Course",
       "order": 2,
       "assignment_type": "required",
-      "source": "generated_module_json"
+      "source": "generated_module_json",
+      "tracks": []
     },
     {
       "course_id": "GOV 300",
@@ -8869,7 +9247,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 15,
           "assignment_type": "required"
@@ -8912,7 +9290,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 5,
           "assignment_type": "required"
@@ -8969,7 +9347,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 9,
           "assignment_type": "required"
@@ -9133,7 +9511,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 1,
           "assignment_type": "required"
@@ -9185,19 +9563,13 @@ window.CURRICULUM_DATA = {
     },
     {
       "course_id": "OPS 220",
-      "module_id": "ops-220-human-factors-workflow-integration-and-usability-testing",
-      "title": "Human Factors, Workflow Integration, and Usability Testing",
-      "primary_track_code": "OPS",
-      "primary_track_title": "Operations and Data Quality Track",
-      "file": "modules/OPS-220-human-factors-workflow-integration-and-usability-testing.json",
-      "track_count": 1,
+      "module_id": "ops-220-ai-for-environmental-health-and-field-operations",
+      "module_title": "AI for Environmental Health and Field Operations",
       "tracks": [
         {
           "track_id": "operations-data-quality",
-          "track_code": "OPS",
           "track_title": "Operations and Data Quality Track",
-          "order": 5,
-          "assignment_type": "required"
+          "primary": true
         }
       ]
     },
@@ -9219,7 +9591,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 2,
           "assignment_type": "required"
@@ -9244,7 +9616,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 6,
           "assignment_type": "required"
@@ -9312,7 +9684,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 8,
           "assignment_type": "required"
@@ -9320,12 +9692,12 @@ window.CURRICULUM_DATA = {
       ]
     },
     {
-      "course_id": "PMG 200",
+      "course_id": "PGM 200",
       "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
       "title": "Business Analysis for AI-Enabled Public Health Systems",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
+      "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
       "track_count": 2,
       "tracks": [
         {
@@ -9337,7 +9709,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 13,
           "assignment_type": "required"
@@ -9345,12 +9717,12 @@ window.CURRICULUM_DATA = {
       ]
     },
     {
-      "course_id": "PMG 210",
+      "course_id": "PGM 210",
       "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
       "title": "Requirements Writing for AI Procurement and Implementation",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
+      "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
       "track_count": 2,
       "tracks": [
         {
@@ -9362,7 +9734,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 14,
           "assignment_type": "required"
@@ -9370,12 +9742,12 @@ window.CURRICULUM_DATA = {
       ]
     },
     {
-      "course_id": "PMG 220",
+      "course_id": "PGM 220",
       "module_id": "pmg-220-ai-project-management-and-implementation-planning",
       "title": "AI Project Management and Implementation Planning",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
+      "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
       "track_count": 2,
       "tracks": [
         {
@@ -9387,7 +9759,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 3,
           "assignment_type": "required"
@@ -9395,12 +9767,12 @@ window.CURRICULUM_DATA = {
       ]
     },
     {
-      "course_id": "PMG 300",
+      "course_id": "PGM 300",
       "module_id": "pmg-300-ai-vendor-implementation-management",
       "title": "AI Vendor Implementation Management",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "file": "modules/PMG-300-ai-vendor-implementation-management.json",
+      "file": "modules/PGM-300-ai-vendor-implementation-management.json",
       "track_count": 3,
       "tracks": [
         {
@@ -9419,7 +9791,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 11,
           "assignment_type": "required"
@@ -9427,12 +9799,12 @@ window.CURRICULUM_DATA = {
       ]
     },
     {
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
       "title": "Grant and Funding Management for AI Projects",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
+      "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
       "track_count": 4,
       "tracks": [
         {
@@ -9458,7 +9830,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 12,
           "assignment_type": "required"
@@ -9483,7 +9855,7 @@ window.CURRICULUM_DATA = {
         },
         {
           "track_id": "program-management",
-          "track_code": "PMG",
+          "track_code": "PGM",
           "track_title": "Program Management Role-Based Track",
           "order": 4,
           "assignment_type": "required"
@@ -9573,27 +9945,221 @@ window.CURRICULUM_DATA = {
       ]
     },
     {
-      "module_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
       "course_id": "GOV 110",
-      "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
-      "primary_track_id": "governance-security",
-      "primary_track_title": "Governance and Security Track",
+      "module_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
+      "module_title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
       "tracks": [
         {
-          "track_id": "shared-foundational",
-          "track_title": "Foundational Modules"
+          "track_id": "governance-security",
+          "track_title": "Governance and Security Track",
+          "primary": true
         },
         {
-          "track_id": "governance-security",
-          "track_title": "Governance and Security Track"
+          "track_id": "shared-foundational",
+          "track_title": "Foundational Modules",
+          "primary": false
         },
         {
           "track_id": "policy",
-          "track_title": "Policy Role-Based Track"
+          "track_title": "Policy Role-Based Track",
+          "primary": false
         },
         {
           "track_id": "program-management",
-          "track_title": "Program Management Role-Based Track"
+          "track_title": "Program Management Role-Based Track",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "course_id": "GOV 120",
+      "module_id": "gov-120-ai-incident-response-for-public-health",
+      "module_title": "AI Incident Response for Public Health",
+      "tracks": [
+        {
+          "track_id": "governance-security",
+          "track_title": "Governance and Security Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "GOV 130",
+      "module_id": "gov-130-tribal-consultation-and-data-sharing-agreements-for-ai-projects",
+      "module_title": "Tribal Consultation and Data Sharing Agreements for AI Projects",
+      "tracks": [
+        {
+          "track_id": "governance-security",
+          "track_title": "Governance and Security Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "HED 100",
+      "module_id": "hed-100-ai-for-health-education-and-learning-design",
+      "module_title": "AI for Health Education and Learning Design",
+      "tracks": [
+        {
+          "track_id": "health-education",
+          "track_title": "Health Education Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "HED 110",
+      "module_id": "hed-110-ai-health-literacy-plain-language-and-accessibility",
+      "module_title": "AI, Health Literacy, Plain Language, and Accessibility",
+      "tracks": [
+        {
+          "track_id": "health-education",
+          "track_title": "Health Education Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "HED 120",
+      "module_id": "hed-120-ai-supported-community-education-and-outreach",
+      "module_title": "AI-Supported Community Education and Outreach",
+      "tracks": [
+        {
+          "track_id": "health-education",
+          "track_title": "Health Education Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "HED 130",
+      "module_id": "hed-130-evaluating-ai-generated-health-education-materials",
+      "module_title": "Evaluating AI-Generated Health Education Materials",
+      "tracks": [
+        {
+          "track_id": "health-education",
+          "track_title": "Health Education Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "HED 140",
+      "module_id": "hed-140-ai-for-training-facilitation-and-learner-feedback",
+      "module_title": "AI for Training Facilitation and Learner Feedback",
+      "tracks": [
+        {
+          "track_id": "health-education",
+          "track_title": "Health Education Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "INT 105",
+      "module_id": "int-105-all-staff-safe-ai-use-and-approved-tools-awareness",
+      "module_title": "All-Staff Safe AI Use and Approved Tools Awareness",
+      "tracks": [
+        {
+          "track_id": "shared-foundational",
+          "track_title": "Foundational Modules",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "PGM 100",
+      "module_id": "pgm-100-managing-ai-projects-in-public-health-programs",
+      "module_title": "Managing AI Projects in Public Health Programs",
+      "tracks": [
+        {
+          "track_id": "program-management",
+          "track_title": "Program Management Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "PGM 110",
+      "module_id": "pgm-110-ai-workflow-readiness-and-operational-planning",
+      "module_title": "AI Workflow Readiness and Operational Planning",
+      "tracks": [
+        {
+          "track_id": "program-management",
+          "track_title": "Program Management Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "PGM 120",
+      "module_id": "pgm-120-ai-pilot-planning-and-governance-coordination",
+      "module_title": "AI Pilot Planning and Governance Coordination",
+      "tracks": [
+        {
+          "track_id": "program-management",
+          "track_title": "Program Management Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "PGM 130",
+      "module_id": "pgm-130-ai-implementation-metrics-and-value-tracking-for-program-managers",
+      "module_title": "AI Implementation Metrics and Value Tracking for Program Managers",
+      "tracks": [
+        {
+          "track_id": "program-management",
+          "track_title": "Program Management Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "PGM 140",
+      "module_id": "pgm-140-vendor-coordination-and-operational-handoff-for-ai-pilots",
+      "module_title": "Vendor Coordination and Operational Handoff for AI Pilots",
+      "tracks": [
+        {
+          "track_id": "program-management",
+          "track_title": "Program Management Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "PGM 150",
+      "module_id": "pgm-150-supervisor-and-workforce-impacts-of-ai-adoption",
+      "module_title": "Supervisor and Workforce Impacts of AI Adoption",
+      "tracks": [
+        {
+          "track_id": "program-management",
+          "track_title": "Program Management Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "POL 210",
+      "module_id": "pol-210-ai-procurement-contract-clauses-and-vendor-accountability",
+      "module_title": "AI Procurement Contract Clauses and Vendor Accountability",
+      "tracks": [
+        {
+          "track_id": "policy",
+          "track_title": "Policy Role-Based Track",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "course_id": "POL 220",
+      "module_id": "pol-220-research-evaluation-quality-improvement-and-public-health-practice-boundaries-in-ai-projects",
+      "module_title": "Research, Evaluation, Quality Improvement, and Public Health Practice Boundaries in AI Projects",
+      "tracks": [
+        {
+          "track_id": "policy",
+          "track_title": "Policy Role-Based Track",
+          "primary": true
         }
       ]
     }
@@ -9606,14 +10172,55 @@ window.CURRICULUM_DATA = {
       "order": 1,
       "course_id": "INT 190",
       "module_id": "int-190-ai-for-social-good",
-      "title": "AI for Social Good",
+      "title": "Foundational Modules",
       "file": "modules/INT-190-ai-for-social-good.json",
       "primary_track_code": "INT",
       "primary_track_title": "Shared Foundational / Introductory Course",
       "course_level": 100,
       "level_label": "introductory",
       "assignment_type": "required",
-      "source": "generated_module_json"
+      "source": "generated_module_json",
+      "modules": [
+        {
+          "order": 1,
+          "course_id": "GOV 100",
+          "module_id": "gov-100-introduction-to-ai-governance-for-public-health",
+          "title": "Introduction to AI Governance for Public Health",
+          "file": "modules/GOV-100-introduction-to-ai-governance-for-public-health.json",
+          "primary_track_code": "GOV",
+          "primary_track_title": "Governance and Security Track",
+          "course_level": 100,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 2,
+          "course_id": "GOV 110",
+          "module_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
+          "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
+          "file": "modules/GOV-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects.json",
+          "primary_track_code": "GOV",
+          "primary_track_title": "Governance and Security Track",
+          "course_level": 110,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 3,
+          "course_id": "INT 105",
+          "module_id": "int-105-all-staff-safe-ai-use-and-approved-tools-awareness",
+          "title": "All-Staff Safe AI Use and Approved Tools Awareness",
+          "file": "modules/INT-105-all-staff-safe-ai-use-and-approved-tools-awareness.json",
+          "primary_track_code": "INT",
+          "primary_track_title": "Foundational Modules",
+          "course_level": 105,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        }
+      ]
     },
     {
       "track_id": "shared-foundational",
@@ -9844,11 +10451,11 @@ window.CURRICULUM_DATA = {
       "track_code": "ARC",
       "track_title": "Technical Architecture Track",
       "order": 11,
-      "course_id": "PMG 220",
+      "course_id": "PGM 220",
       "module_id": "pmg-220-ai-project-management-and-implementation-planning",
       "title": "AI Project Management and Implementation Planning",
-      "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 200,
       "level_label": "applied/foundational",
@@ -9940,11 +10547,11 @@ window.CURRICULUM_DATA = {
       "track_code": "ARC",
       "track_title": "Technical Architecture Track",
       "order": 17,
-      "course_id": "PMG 300",
+      "course_id": "PGM 300",
       "module_id": "pmg-300-ai-vendor-implementation-management",
       "title": "AI Vendor Implementation Management",
-      "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 300,
       "level_label": "intermediate/practitioner",
@@ -10166,14 +10773,29 @@ window.CURRICULUM_DATA = {
       "order": 1,
       "course_id": "GOV 310",
       "module_id": "gov-310-privacy-preserving-ai-and-de-identification",
-      "title": "Privacy-Preserving AI and De-identification",
+      "title": "Operations and Data Quality Track",
       "file": "modules/GOV-310-privacy-preserving-ai-and-de-identification.json",
       "primary_track_code": "GOV",
       "primary_track_title": "Governance and Security Track",
       "course_level": 300,
       "level_label": "intermediate/practitioner",
       "assignment_type": "required",
-      "source": "generated_module_json"
+      "source": "generated_module_json",
+      "modules": [
+        {
+          "order": 1,
+          "course_id": "OPS 220",
+          "module_id": "ops-220-ai-for-environmental-health-and-field-operations",
+          "title": "AI for Environmental Health and Field Operations",
+          "file": "modules/OPS-220-ai-for-environmental-health-and-field-operations.json",
+          "primary_track_code": "OPS",
+          "primary_track_title": "Operations and Data Quality Track",
+          "course_level": 220,
+          "level_label": "applied/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        }
+      ]
     },
     {
       "track_id": "operations-data-quality",
@@ -10244,11 +10866,11 @@ window.CURRICULUM_DATA = {
       "track_code": "OPS",
       "track_title": "Operations and Data Quality Track",
       "order": 6,
-      "course_id": "PMG 200",
+      "course_id": "PGM 200",
       "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
       "title": "Business Analysis for AI-Enabled Public Health Systems",
-      "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 200,
       "level_label": "applied/foundational",
@@ -10260,11 +10882,11 @@ window.CURRICULUM_DATA = {
       "track_code": "OPS",
       "track_title": "Operations and Data Quality Track",
       "order": 7,
-      "course_id": "PMG 210",
+      "course_id": "PGM 210",
       "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
       "title": "Requirements Writing for AI Procurement and Implementation",
-      "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 200,
       "level_label": "applied/foundational",
@@ -10374,14 +10996,68 @@ window.CURRICULUM_DATA = {
       "order": 1,
       "course_id": "GOV 100",
       "module_id": "gov-100-introduction-to-ai-governance-for-public-health",
-      "title": "Introduction to AI Governance for Public Health",
+      "title": "Governance and Security Track",
       "file": "modules/GOV-100-introduction-to-ai-governance-for-public-health.json",
       "primary_track_code": "GOV",
       "primary_track_title": "Governance and Security Track",
       "course_level": 100,
       "level_label": "introductory",
       "assignment_type": "required",
-      "source": "generated_module_json"
+      "source": "generated_module_json",
+      "modules": [
+        {
+          "order": 1,
+          "course_id": "GOV 100",
+          "module_id": "gov-100-introduction-to-ai-governance-for-public-health",
+          "title": "Introduction to AI Governance for Public Health",
+          "file": "modules/GOV-100-introduction-to-ai-governance-for-public-health.json",
+          "primary_track_code": "GOV",
+          "primary_track_title": "Governance and Security Track",
+          "course_level": 100,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 2,
+          "course_id": "GOV 110",
+          "module_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
+          "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
+          "file": "modules/GOV-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects.json",
+          "primary_track_code": "GOV",
+          "primary_track_title": "Governance and Security Track",
+          "course_level": 110,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 3,
+          "course_id": "GOV 120",
+          "module_id": "gov-120-ai-incident-response-for-public-health",
+          "title": "AI Incident Response for Public Health",
+          "file": "modules/GOV-120-ai-incident-response-for-public-health.json",
+          "primary_track_code": "GOV",
+          "primary_track_title": "Governance and Security Track",
+          "course_level": 120,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 4,
+          "course_id": "GOV 130",
+          "module_id": "gov-130-tribal-consultation-and-data-sharing-agreements-for-ai-projects",
+          "title": "Tribal Consultation and Data Sharing Agreements for AI Projects",
+          "file": "modules/GOV-130-tribal-consultation-and-data-sharing-agreements-for-ai-projects.json",
+          "primary_track_code": "GOV",
+          "primary_track_title": "Governance and Security Track",
+          "course_level": 130,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        }
+      ]
     },
     {
       "track_id": "governance-security",
@@ -10788,11 +11464,11 @@ window.CURRICULUM_DATA = {
       "track_code": "GOV",
       "track_title": "Governance and Security Track",
       "order": 27,
-      "course_id": "PMG 300",
+      "course_id": "PGM 300",
       "module_id": "pmg-300-ai-vendor-implementation-management",
       "title": "AI Vendor Implementation Management",
-      "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 300,
       "level_label": "intermediate/practitioner",
@@ -10804,11 +11480,11 @@ window.CURRICULUM_DATA = {
       "track_code": "GOV",
       "track_title": "Governance and Security Track",
       "order": 28,
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
       "title": "Grant and Funding Management for AI Projects",
-      "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 300,
       "level_label": "intermediate/practitioner",
@@ -11190,14 +11866,55 @@ window.CURRICULUM_DATA = {
       "order": 1,
       "course_id": "INT 190",
       "module_id": "int-190-ai-for-social-good",
-      "title": "AI for Social Good",
+      "title": "Policy Role-Based Track",
       "file": "modules/INT-190-ai-for-social-good.json",
       "primary_track_code": "INT",
       "primary_track_title": "Shared Foundational / Introductory Course",
       "course_level": 100,
       "level_label": "introductory",
       "assignment_type": "required",
-      "source": "generated_module_json"
+      "source": "generated_module_json",
+      "modules": [
+        {
+          "order": 1,
+          "course_id": "GOV 110",
+          "module_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
+          "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
+          "file": "modules/GOV-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects.json",
+          "primary_track_code": "GOV",
+          "primary_track_title": "Governance and Security Track",
+          "course_level": 110,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 2,
+          "course_id": "POL 210",
+          "module_id": "pol-210-ai-procurement-contract-clauses-and-vendor-accountability",
+          "title": "AI Procurement Contract Clauses and Vendor Accountability",
+          "file": "modules/POL-210-ai-procurement-contract-clauses-and-vendor-accountability.json",
+          "primary_track_code": "POL",
+          "primary_track_title": "Policy Role-Based Track",
+          "course_level": 210,
+          "level_label": "applied/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 3,
+          "course_id": "POL 220",
+          "module_id": "pol-220-research-evaluation-quality-improvement-and-public-health-practice-boundaries-in-ai-projects",
+          "title": "Research, Evaluation, Quality Improvement, and Public Health Practice Boundaries in AI Projects",
+          "file": "modules/POL-220-research-evaluation-quality-improvement-and-public-health-practice-boundaries-in-ai-projects.json",
+          "primary_track_code": "POL",
+          "primary_track_title": "Policy Role-Based Track",
+          "course_level": 220,
+          "level_label": "applied/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        }
+      ]
     },
     {
       "track_id": "policy",
@@ -11380,11 +12097,11 @@ window.CURRICULUM_DATA = {
       "track_code": "POL",
       "track_title": "Policy Role-Based Track",
       "order": 13,
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
       "title": "Grant and Funding Management for AI Projects",
-      "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 300,
       "level_label": "intermediate/practitioner",
@@ -11620,11 +12337,11 @@ window.CURRICULUM_DATA = {
       "track_code": "EXE",
       "track_title": "Public Health Executive Leadership Track",
       "order": 12,
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
       "title": "Grant and Funding Management for AI Projects",
-      "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 300,
       "level_label": "intermediate/practitioner",
@@ -11633,23 +12350,116 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 1,
       "course_id": "INT 200",
       "module_id": "int-200-ai-use-case-intake-and-triage-basics",
-      "title": "AI Use Case Intake and Triage Basics",
+      "title": "Program Management Role-Based Track",
       "file": "modules/INT-200-ai-use-case-intake-and-triage-basics.json",
       "primary_track_code": "INT",
       "primary_track_title": "Shared Foundational / Introductory Course",
       "course_level": 200,
       "level_label": "applied/foundational",
       "assignment_type": "required",
-      "source": "generated_module_json"
+      "source": "generated_module_json",
+      "modules": [
+        {
+          "order": 1,
+          "course_id": "GOV 110",
+          "module_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
+          "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
+          "file": "modules/GOV-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects.json",
+          "primary_track_code": "GOV",
+          "primary_track_title": "Governance and Security Track",
+          "course_level": 110,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 2,
+          "course_id": "PGM 100",
+          "module_id": "pgm-100-managing-ai-projects-in-public-health-programs",
+          "title": "Managing AI Projects in Public Health Programs",
+          "file": "modules/PGM-100-managing-ai-projects-in-public-health-programs.json",
+          "primary_track_code": "PGM",
+          "primary_track_title": "Program Management Role-Based Track",
+          "course_level": 100,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 3,
+          "course_id": "PGM 110",
+          "module_id": "pgm-110-ai-workflow-readiness-and-operational-planning",
+          "title": "AI Workflow Readiness and Operational Planning",
+          "file": "modules/PGM-110-ai-workflow-readiness-and-operational-planning.json",
+          "primary_track_code": "PGM",
+          "primary_track_title": "Program Management Role-Based Track",
+          "course_level": 110,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 4,
+          "course_id": "PGM 120",
+          "module_id": "pgm-120-ai-pilot-planning-and-governance-coordination",
+          "title": "AI Pilot Planning and Governance Coordination",
+          "file": "modules/PGM-120-ai-pilot-planning-and-governance-coordination.json",
+          "primary_track_code": "PGM",
+          "primary_track_title": "Program Management Role-Based Track",
+          "course_level": 120,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 5,
+          "course_id": "PGM 130",
+          "module_id": "pgm-130-ai-implementation-metrics-and-value-tracking-for-program-managers",
+          "title": "AI Implementation Metrics and Value Tracking for Program Managers",
+          "file": "modules/PGM-130-ai-implementation-metrics-and-value-tracking-for-program-managers.json",
+          "primary_track_code": "PGM",
+          "primary_track_title": "Program Management Role-Based Track",
+          "course_level": 130,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 6,
+          "course_id": "PGM 140",
+          "module_id": "pgm-140-vendor-coordination-and-operational-handoff-for-ai-pilots",
+          "title": "Vendor Coordination and Operational Handoff for AI Pilots",
+          "file": "modules/PGM-140-vendor-coordination-and-operational-handoff-for-ai-pilots.json",
+          "primary_track_code": "PGM",
+          "primary_track_title": "Program Management Role-Based Track",
+          "course_level": 140,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 7,
+          "course_id": "PGM 150",
+          "module_id": "pgm-150-supervisor-and-workforce-impacts-of-ai-adoption",
+          "title": "Supervisor and Workforce Impacts of AI Adoption",
+          "file": "modules/PGM-150-supervisor-and-workforce-impacts-of-ai-adoption.json",
+          "primary_track_code": "PGM",
+          "primary_track_title": "Program Management Role-Based Track",
+          "course_level": 150,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        }
+      ]
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 2,
       "course_id": "OPS 230",
@@ -11665,14 +12475,14 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 3,
-      "course_id": "PMG 220",
+      "course_id": "PGM 220",
       "module_id": "pmg-220-ai-project-management-and-implementation-planning",
       "title": "AI Project Management and Implementation Planning",
-      "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 200,
       "level_label": "applied/foundational",
@@ -11681,7 +12491,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 4,
       "course_id": "POL 300",
@@ -11697,7 +12507,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 5,
       "course_id": "GOV 340",
@@ -11713,7 +12523,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 6,
       "course_id": "OPS 240",
@@ -11729,7 +12539,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 7,
       "course_id": "ARC 340",
@@ -11745,7 +12555,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 8,
       "course_id": "OPS 320",
@@ -11761,7 +12571,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 9,
       "course_id": "GOV 360",
@@ -11777,7 +12587,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 10,
       "course_id": "EXE 460",
@@ -11793,14 +12603,14 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 11,
-      "course_id": "PMG 300",
+      "course_id": "PGM 300",
       "module_id": "pmg-300-ai-vendor-implementation-management",
       "title": "AI Vendor Implementation Management",
-      "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 300,
       "level_label": "intermediate/practitioner",
@@ -11809,14 +12619,14 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 12,
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
       "title": "Grant and Funding Management for AI Projects",
-      "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 300,
       "level_label": "intermediate/practitioner",
@@ -11825,14 +12635,14 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 13,
-      "course_id": "PMG 200",
+      "course_id": "PGM 200",
       "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
       "title": "Business Analysis for AI-Enabled Public Health Systems",
-      "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 200,
       "level_label": "applied/foundational",
@@ -11841,14 +12651,14 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 14,
-      "course_id": "PMG 210",
+      "course_id": "PGM 210",
       "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
       "title": "Requirements Writing for AI Procurement and Implementation",
-      "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
-      "primary_track_code": "PMG",
+      "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_level": 200,
       "level_label": "applied/foundational",
@@ -11857,7 +12667,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 15,
       "course_id": "GOV 320",
@@ -11873,7 +12683,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "track_title": "Program Management Role-Based Track",
       "order": 16,
       "course_id": "EXE 450",
@@ -11926,6 +12736,78 @@ window.CURRICULUM_DATA = {
       "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
       "level_label": "Introductory",
       "primary_track": "Governance and Security"
+    },
+    {
+      "track_id": "health-education",
+      "title": "Health Education Role-Based Track",
+      "short_title": "Health Education",
+      "modules": [
+        {
+          "order": 1,
+          "course_id": "HED 100",
+          "module_id": "hed-100-ai-for-health-education-and-learning-design",
+          "title": "AI for Health Education and Learning Design",
+          "file": "modules/HED-100-ai-for-health-education-and-learning-design.json",
+          "primary_track_code": "HED",
+          "primary_track_title": "Health Education Role-Based Track",
+          "course_level": 100,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 2,
+          "course_id": "HED 110",
+          "module_id": "hed-110-ai-health-literacy-plain-language-and-accessibility",
+          "title": "AI, Health Literacy, Plain Language, and Accessibility",
+          "file": "modules/HED-110-ai-health-literacy-plain-language-and-accessibility.json",
+          "primary_track_code": "HED",
+          "primary_track_title": "Health Education Role-Based Track",
+          "course_level": 110,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 3,
+          "course_id": "HED 120",
+          "module_id": "hed-120-ai-supported-community-education-and-outreach",
+          "title": "AI-Supported Community Education and Outreach",
+          "file": "modules/HED-120-ai-supported-community-education-and-outreach.json",
+          "primary_track_code": "HED",
+          "primary_track_title": "Health Education Role-Based Track",
+          "course_level": 120,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 4,
+          "course_id": "HED 130",
+          "module_id": "hed-130-evaluating-ai-generated-health-education-materials",
+          "title": "Evaluating AI-Generated Health Education Materials",
+          "file": "modules/HED-130-evaluating-ai-generated-health-education-materials.json",
+          "primary_track_code": "HED",
+          "primary_track_title": "Health Education Role-Based Track",
+          "course_level": 130,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        },
+        {
+          "order": 5,
+          "course_id": "HED 140",
+          "module_id": "hed-140-ai-for-training-facilitation-and-learner-feedback",
+          "title": "AI for Training Facilitation and Learner Feedback",
+          "file": "modules/HED-140-ai-for-training-facilitation-and-learner-feedback.json",
+          "primary_track_code": "HED",
+          "primary_track_title": "Health Education Role-Based Track",
+          "course_level": 140,
+          "level_label": "introductory/foundational",
+          "assignment_type": "required",
+          "source": "consolidated_new_module_json"
+        }
+      ]
     }
   ],
   "jurisdiction_policy_note_crosswalk": {
@@ -12143,28 +13025,28 @@ window.CURRICULUM_DATA = {
         "file": "modules/OPS-320-operational-monitoring-and-continuous-improvement-for-ai.json"
       },
       {
-        "course_id": "PMG 200",
+        "course_id": "PGM 200",
         "title": "Business Analysis for AI-Enabled Public Health Systems",
         "note_type": "short",
-        "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+        "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
       },
       {
-        "course_id": "PMG 210",
+        "course_id": "PGM 210",
         "title": "Requirements Writing for AI Procurement and Implementation",
         "note_type": "long",
-        "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json"
+        "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json"
       },
       {
-        "course_id": "PMG 300",
+        "course_id": "PGM 300",
         "title": "AI Vendor Implementation Management",
         "note_type": "long",
-        "file": "modules/PMG-300-ai-vendor-implementation-management.json"
+        "file": "modules/PGM-300-ai-vendor-implementation-management.json"
       },
       {
-        "course_id": "PMG 310",
+        "course_id": "PGM 310",
         "title": "Grant and Funding Management for AI Projects",
         "note_type": "long",
-        "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json"
+        "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json"
       },
       {
         "course_id": "POL 300",
@@ -12921,63 +13803,63 @@ window.CURRICULUM_DATA = {
     },
     {
       "legacy_id": "business-analysis-for-ai-enabled-public-health-systems",
-      "course_id": "PMG 200",
+      "course_id": "PGM 200",
       "new_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
       "title": "Business Analysis for AI-Enabled Public Health Systems",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_number": 200,
       "level_label": "applied/foundational",
       "old_file": "026-business-analysis-for-ai-enabled-public-health-systems.json",
-      "new_file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+      "new_file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
     },
     {
       "legacy_id": "requirements-writing-for-ai-procurement-and-implementation",
-      "course_id": "PMG 210",
+      "course_id": "PGM 210",
       "new_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
       "title": "Requirements Writing for AI Procurement and Implementation",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_number": 210,
       "level_label": "applied/foundational",
       "old_file": "027-requirements-writing-for-ai-procurement-and-implementation.json",
-      "new_file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json"
+      "new_file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json"
     },
     {
       "legacy_id": "ai-project-management-and-implementation-planning",
-      "course_id": "PMG 220",
+      "course_id": "PGM 220",
       "new_id": "pmg-220-ai-project-management-and-implementation-planning",
       "title": "AI Project Management and Implementation Planning",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_number": 220,
       "level_label": "applied/foundational",
       "old_file": "044-ai-project-management-and-implementation-planning.json",
-      "new_file": "modules/PMG-220-ai-project-management-and-implementation-planning.json"
+      "new_file": "modules/PGM-220-ai-project-management-and-implementation-planning.json"
     },
     {
       "legacy_id": "ai-vendor-implementation-management",
-      "course_id": "PMG 300",
+      "course_id": "PGM 300",
       "new_id": "pmg-300-ai-vendor-implementation-management",
       "title": "AI Vendor Implementation Management",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_number": 300,
       "level_label": "intermediate/practitioner",
       "old_file": "067-ai-vendor-implementation-management.json",
-      "new_file": "modules/PMG-300-ai-vendor-implementation-management.json"
+      "new_file": "modules/PGM-300-ai-vendor-implementation-management.json"
     },
     {
       "legacy_id": "grant-and-funding-management-for-ai-projects",
-      "course_id": "PMG 310",
+      "course_id": "PGM 310",
       "new_id": "pmg-310-grant-and-funding-management-for-ai-projects",
       "title": "Grant and Funding Management for AI Projects",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
       "course_number": 310,
       "level_label": "intermediate/practitioner",
       "old_file": "068-grant-and-funding-management-for-ai-projects.json",
-      "new_file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json"
+      "new_file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json"
     },
     {
       "legacy_id": "public-health-ai-policy-landscape-and-regulatory-readiness",
@@ -14109,7 +14991,7 @@ window.CURRICULUM_DATA = {
         "reason": "Investment strategy should follow portfolio prioritization and can be paired with grant/funding management."
       },
       {
-        "from_prerequisite_course_id": "PMG 310",
+        "from_prerequisite_course_id": "PGM 310",
         "from_prerequisite_title": "Grant and Funding Management for AI Projects",
         "from_source": "module_json",
         "to_course_id": "EXE 420",
@@ -14127,7 +15009,7 @@ window.CURRICULUM_DATA = {
         "reason": "Change management benefits from a prioritized portfolio, project planning, and human factors concepts."
       },
       {
-        "from_prerequisite_course_id": "PMG 220",
+        "from_prerequisite_course_id": "PGM 220",
         "from_prerequisite_title": "AI Project Management and Implementation Planning",
         "from_source": "module_json",
         "to_course_id": "EXE 430",
@@ -14433,7 +15315,7 @@ window.CURRICULUM_DATA = {
         "reason": "Third-party risk management should be grounded in governance authority and vendor/procurement, security, and privacy review concepts."
       },
       {
-        "from_prerequisite_course_id": "PMG 210",
+        "from_prerequisite_course_id": "PGM 210",
         "from_prerequisite_title": "Requirements Writing for AI Procurement and Implementation",
         "from_source": "module_json",
         "to_course_id": "GOV 360",
@@ -14685,7 +15567,7 @@ window.CURRICULUM_DATA = {
         "reason": "User acceptance testing builds on workflow/usability concepts and benefits from business analysis and validation literacy."
       },
       {
-        "from_prerequisite_course_id": "PMG 200",
+        "from_prerequisite_course_id": "PGM 200",
         "from_prerequisite_title": "Business Analysis for AI-Enabled Public Health Systems",
         "from_source": "module_json",
         "to_course_id": "OPS 240",
@@ -14739,7 +15621,7 @@ window.CURRICULUM_DATA = {
         "reason": "MLOps/LLMOps requires deployment and validation foundations plus security and documentation concepts."
       },
       {
-        "from_prerequisite_course_id": "PMG 200",
+        "from_prerequisite_course_id": "PGM 200",
         "from_prerequisite_title": "Business Analysis for AI-Enabled Public Health Systems",
         "from_source": "module_json",
         "to_course_id": "OPS 310",
@@ -14787,7 +15669,7 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "INT 150",
         "from_prerequisite_title": "AI-Supported Public Health Workflows",
         "from_source": "website_foundational_crosswalk",
-        "to_course_id": "PMG 200",
+        "to_course_id": "PGM 200",
         "to_title": "Business Analysis for AI-Enabled Public Health Systems",
         "relationship_type": "recommended",
         "reason": "Business analysis benefits from workflow framing and use case intake concepts."
@@ -14796,16 +15678,16 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "INT 200",
         "from_prerequisite_title": "AI Use Case Intake and Triage Basics",
         "from_source": "module_json",
-        "to_course_id": "PMG 200",
+        "to_course_id": "PGM 200",
         "to_title": "Business Analysis for AI-Enabled Public Health Systems",
         "relationship_type": "recommended",
         "reason": "Business analysis benefits from workflow framing and use case intake concepts."
       },
       {
-        "from_prerequisite_course_id": "PMG 200",
+        "from_prerequisite_course_id": "PGM 200",
         "from_prerequisite_title": "Business Analysis for AI-Enabled Public Health Systems",
         "from_source": "module_json",
-        "to_course_id": "PMG 210",
+        "to_course_id": "PGM 210",
         "to_title": "Requirements Writing for AI Procurement and Implementation",
         "relationship_type": "required",
         "reason": "Requirements writing depends on business analysis and benefits from procurement/vendor oversight and third-party risk concepts."
@@ -14814,7 +15696,7 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "INT 280",
         "from_prerequisite_title": "Procurement and Vendor Oversight",
         "from_source": "website_foundational_crosswalk",
-        "to_course_id": "PMG 210",
+        "to_course_id": "PGM 210",
         "to_title": "Requirements Writing for AI Procurement and Implementation",
         "relationship_type": "recommended",
         "reason": "Requirements writing depends on business analysis and benefits from procurement/vendor oversight and third-party risk concepts."
@@ -14823,7 +15705,7 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "GOV 360",
         "from_prerequisite_title": "Third-Party AI Risk Management",
         "from_source": "module_json",
-        "to_course_id": "PMG 210",
+        "to_course_id": "PGM 210",
         "to_title": "Requirements Writing for AI Procurement and Implementation",
         "relationship_type": "recommended",
         "reason": "Requirements writing depends on business analysis and benefits from procurement/vendor oversight and third-party risk concepts."
@@ -14832,16 +15714,16 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "INT 200",
         "from_prerequisite_title": "AI Use Case Intake and Triage Basics",
         "from_source": "module_json",
-        "to_course_id": "PMG 220",
+        "to_course_id": "PGM 220",
         "to_title": "AI Project Management and Implementation Planning",
         "relationship_type": "required",
         "reason": "Project planning requires a defined use case and benefits from business analysis and portfolio prioritization."
       },
       {
-        "from_prerequisite_course_id": "PMG 200",
+        "from_prerequisite_course_id": "PGM 200",
         "from_prerequisite_title": "Business Analysis for AI-Enabled Public Health Systems",
         "from_source": "module_json",
-        "to_course_id": "PMG 220",
+        "to_course_id": "PGM 220",
         "to_title": "AI Project Management and Implementation Planning",
         "relationship_type": "recommended",
         "reason": "Project planning requires a defined use case and benefits from business analysis and portfolio prioritization."
@@ -14850,16 +15732,16 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "EXE 410",
         "from_prerequisite_title": "AI Portfolio Strategy and Use Case Prioritization",
         "from_source": "module_json",
-        "to_course_id": "PMG 220",
+        "to_course_id": "PGM 220",
         "to_title": "AI Project Management and Implementation Planning",
         "relationship_type": "recommended",
         "reason": "Project planning requires a defined use case and benefits from business analysis and portfolio prioritization."
       },
       {
-        "from_prerequisite_course_id": "PMG 210",
+        "from_prerequisite_course_id": "PGM 210",
         "from_prerequisite_title": "Requirements Writing for AI Procurement and Implementation",
         "from_source": "module_json",
-        "to_course_id": "PMG 300",
+        "to_course_id": "PGM 300",
         "to_title": "AI Vendor Implementation Management",
         "relationship_type": "required",
         "reason": "Vendor implementation management depends on requirements and benefits from third-party risk and integration patterns."
@@ -14868,7 +15750,7 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "GOV 360",
         "from_prerequisite_title": "Third-Party AI Risk Management",
         "from_source": "module_json",
-        "to_course_id": "PMG 300",
+        "to_course_id": "PGM 300",
         "to_title": "AI Vendor Implementation Management",
         "relationship_type": "recommended",
         "reason": "Vendor implementation management depends on requirements and benefits from third-party risk and integration patterns."
@@ -14877,7 +15759,7 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "ARC 340",
         "from_prerequisite_title": "Public Health System Integration Patterns",
         "from_source": "module_json",
-        "to_course_id": "PMG 300",
+        "to_course_id": "PGM 300",
         "to_title": "AI Vendor Implementation Management",
         "relationship_type": "recommended",
         "reason": "Vendor implementation management depends on requirements and benefits from third-party risk and integration patterns."
@@ -14886,16 +15768,16 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "EXE 420",
         "from_prerequisite_title": "AI Investment Strategy and Business Case Review",
         "from_source": "module_json",
-        "to_course_id": "PMG 310",
+        "to_course_id": "PGM 310",
         "to_title": "Grant and Funding Management for AI Projects",
         "relationship_type": "recommended",
         "reason": "Grant and funding management can be taken as a program management module but benefits from investment strategy, project planning, and funding opportunity context."
       },
       {
-        "from_prerequisite_course_id": "PMG 220",
+        "from_prerequisite_course_id": "PGM 220",
         "from_prerequisite_title": "AI Project Management and Implementation Planning",
         "from_source": "module_json",
-        "to_course_id": "PMG 310",
+        "to_course_id": "PGM 310",
         "to_title": "Grant and Funding Management for AI Projects",
         "relationship_type": "recommended",
         "reason": "Grant and funding management can be taken as a program management module but benefits from investment strategy, project planning, and funding opportunity context."
@@ -14904,7 +15786,7 @@ window.CURRICULUM_DATA = {
         "from_prerequisite_course_id": "INT 270",
         "from_prerequisite_title": "Federal Funding Opportunities",
         "from_source": "website_foundational_crosswalk",
-        "to_course_id": "PMG 310",
+        "to_course_id": "PGM 310",
         "to_title": "Grant and Funding Management for AI Projects",
         "relationship_type": "recommended",
         "reason": "Grant and funding management can be taken as a program management module but benefits from investment strategy, project planning, and funding opportunity context."
@@ -15348,7 +16230,7 @@ window.CURRICULUM_DATA = {
       ],
       "recommended_use": "Assign to epidemiology staff who interpret AI-supported signals or use AI within investigation and response workflows.",
       "completion_standard": "Complete assigned modules and produce surveillance, outbreak response, signal review, validation, or prioritization artifacts.",
-      "module_count": 15,
+      "module_count": 7,
       "modules": [
         {
           "order": 1,
@@ -15567,7 +16449,7 @@ window.CURRICULUM_DATA = {
       ],
       "recommended_use": "Assign to staff who approve, review, audit, secure, or govern AI uses and vendors.",
       "completion_standard": "Complete assigned modules and produce governance, risk, audit, documentation, security, or accountability artifacts.",
-      "module_count": 28,
+      "module_count": 31,
       "modules": [
         {
           "order": 1,
@@ -15909,11 +16791,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 27,
-          "course_id": "PMG 300",
+          "course_id": "PGM 300",
           "module_id": "pmg-300-ai-vendor-implementation-management",
           "title": "AI Vendor Implementation Management",
-          "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -15922,11 +16804,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 28,
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
           "title": "Grant and Funding Management for AI Projects",
-          "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -16021,11 +16903,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 6,
-          "course_id": "PMG 200",
+          "course_id": "PGM 200",
           "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
           "title": "Business Analysis for AI-Enabled Public Health Systems",
-          "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -16034,11 +16916,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 7,
-          "course_id": "PMG 210",
+          "course_id": "PGM 210",
           "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
           "title": "Requirements Writing for AI Procurement and Implementation",
-          "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -16302,11 +17184,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 13,
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
           "title": "Grant and Funding Management for AI Projects",
-          "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -16357,7 +17239,7 @@ window.CURRICULUM_DATA = {
     },
     {
       "track_id": "program-management",
-      "track_code": "PMG",
+      "track_code": "PGM",
       "title": "Program Management Role-Based Track",
       "short_title": "Program Management",
       "description": "Role-based path for project managers, program managers, implementation leads, product owners, grant managers, and staff coordinating AI-enabled initiatives from intake through procurement, implementation, vendor management, change management, monitoring, and sustainment.",
@@ -16371,7 +17253,7 @@ window.CURRICULUM_DATA = {
       ],
       "recommended_use": "Assign to staff who coordinate AI projects, vendor implementation, governance gates, funding, deliverables, testing, and transition to operations.",
       "completion_standard": "Complete assigned modules and produce project, implementation, procurement, testing, vendor, funding, or sustainment artifacts.",
-      "module_count": 16,
+      "module_count": 19,
       "modules": [
         {
           "order": 1,
@@ -16401,11 +17283,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 3,
-          "course_id": "PMG 220",
+          "course_id": "PGM 220",
           "module_id": "pmg-220-ai-project-management-and-implementation-planning",
           "title": "AI Project Management and Implementation Planning",
-          "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -16505,11 +17387,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 11,
-          "course_id": "PMG 300",
+          "course_id": "PGM 300",
           "module_id": "pmg-300-ai-vendor-implementation-management",
           "title": "AI Vendor Implementation Management",
-          "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -16518,11 +17400,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 12,
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
           "title": "Grant and Funding Management for AI Projects",
-          "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -16531,11 +17413,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 13,
-          "course_id": "PMG 200",
+          "course_id": "PGM 200",
           "module_id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
           "title": "Business Analysis for AI-Enabled Public Health Systems",
-          "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -16544,11 +17426,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 14,
-          "course_id": "PMG 210",
+          "course_id": "PGM 210",
           "module_id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
           "title": "Requirements Writing for AI Procurement and Implementation",
-          "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -16602,7 +17484,7 @@ window.CURRICULUM_DATA = {
       ],
       "recommended_use": "Assign to leaders who sponsor, approve, fund, pause, scale, or publicly explain AI-supported work.",
       "completion_standard": "Complete assigned modules and produce executive decision, governance, investment, risk, sustainability, or crisis response artifacts.",
-      "module_count": 12,
+      "module_count": 15,
       "modules": [
         {
           "order": 1,
@@ -16749,11 +17631,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 12,
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "module_id": "pmg-310-grant-and-funding-management-for-ai-projects",
           "title": "Grant and Funding Management for AI Projects",
-          "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -16779,7 +17661,7 @@ window.CURRICULUM_DATA = {
       "recommended_use": "Use as the first course for everyone. Learners should complete this track before role-based or functional specialization.",
       "completion_standard": "Complete required modules, pass knowledge checks, and save at least one practical artifact or verification note when assigned by the organization.",
       "notes": "This track includes generated modules and a separate website-foundational crosswalk for current Learn-section modules that were not converted into full JSON records.",
-      "module_count": 5,
+      "module_count": 8,
       "modules": [
         {
           "order": 1,
@@ -17187,11 +18069,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 11,
-          "course_id": "PMG 220",
+          "course_id": "PGM 220",
           "module_id": "pmg-220-ai-project-management-and-implementation-planning",
           "title": "AI Project Management and Implementation Planning",
-          "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 200,
           "level_label": "applied/foundational",
@@ -17265,11 +18147,11 @@ window.CURRICULUM_DATA = {
         },
         {
           "order": 17,
-          "course_id": "PMG 300",
+          "course_id": "PGM 300",
           "module_id": "pmg-300-ai-vendor-implementation-management",
           "title": "AI Vendor Implementation Management",
-          "file": "modules/PMG-300-ai-vendor-implementation-management.json",
-          "primary_track_code": "PMG",
+          "file": "modules/PGM-300-ai-vendor-implementation-management.json",
+          "primary_track_code": "PGM",
           "primary_track_title": "Program Management Role-Based Track",
           "course_level": 300,
           "level_label": "intermediate/practitioner",
@@ -17278,6 +18160,23 @@ window.CURRICULUM_DATA = {
         }
       ],
       "supplemental_website_foundational_modules": []
+    },
+    {
+      "track_id": "health-education",
+      "track_code": "HED",
+      "title": "Health Education Role-Based Track",
+      "short_title": "Health Education",
+      "description": "Role-based path for health educators, training leads, communications staff, community engagement staff, and program teams using AI to design, adapt, review, facilitate, and evaluate public health education materials.",
+      "primary_audience": [
+        "Health educators",
+        "Training leads",
+        "Communications staff",
+        "Community engagement staff",
+        "Program staff"
+      ],
+      "recommended_use": "Use this track if you create, adapt, review, facilitate, or evaluate AI-supported health education or learning materials.",
+      "completion_standard": "Complete assigned modules and produce reviewed education, plain-language, accessibility, outreach, facilitation, or evaluation artifacts.",
+      "module_count": 5
     }
   ],
   "modules": [
@@ -21535,7 +22434,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "analytics-modeling",
         "communications",
-        "executive-leadership",
+        "public-health-executive-leadership",
         "epidemiology",
         "governance-security"
       ],
@@ -27050,7 +27949,7 @@ window.CURRICULUM_DATA = {
         "communications",
         "shared-foundational",
         "policy",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -27481,7 +28380,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "communications",
         "policy",
-        "shared-foundation",
+        "shared-foundational",
         "governance-security"
       ],
       "template_version": "public-health-ai-training-module-v1",
@@ -28398,7 +29297,7 @@ window.CURRICULUM_DATA = {
         "epidemiology",
         "operations-and-data-quality",
         "technical-architecture",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -29283,7 +30182,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "epidemiology",
         "policy",
-        "executive-leadership",
+        "public-health-executive-leadership",
         "ai-for-social-good",
         "governance-security"
       ],
@@ -29747,7 +30646,7 @@ window.CURRICULUM_DATA = {
       "source_collection": "Gap-Filling Modules: Remaining Role and Governance Gaps",
       "module_number_in_source": 13,
       "tracks": [
-        "executive-leadership",
+        "public-health-executive-leadership",
         "governance-security"
       ],
       "template_version": "public-health-ai-training-module-v1",
@@ -31349,10 +32248,10 @@ window.CURRICULUM_DATA = {
         ],
         "recommended": [
           {
-            "course_id": "PMG 310",
+            "course_id": "PGM 310",
             "title": "Grant and Funding Management for AI Projects",
             "source": "module_json",
-            "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json"
+            "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json"
           }
         ],
         "rationale": "Investment strategy should follow portfolio prioritization and can be paired with grant/funding management.",
@@ -31384,7 +32283,7 @@ window.CURRICULUM_DATA = {
             "EXE 410"
           ],
           "recommended_prerequisites": [
-            "PMG 310"
+            "PGM 310"
           ],
           "catalog_tags": [
             "Public Health Executive Leadership Track",
@@ -31749,10 +32648,10 @@ window.CURRICULUM_DATA = {
             "file": "modules/EXE-410-ai-portfolio-strategy-and-use-case-prioritization.json"
           },
           {
-            "course_id": "PMG 220",
+            "course_id": "PGM 220",
             "title": "AI Project Management and Implementation Planning",
             "source": "module_json",
-            "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json"
+            "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json"
           },
           {
             "course_id": "OPS 220",
@@ -31789,7 +32688,7 @@ window.CURRICULUM_DATA = {
           "required_prerequisites": [],
           "recommended_prerequisites": [
             "EXE 410",
-            "PMG 220",
+            "PGM 220",
             "OPS 220"
           ],
           "catalog_tags": [
@@ -32651,7 +33550,7 @@ window.CURRICULUM_DATA = {
       "source_collection": "Gap-Filling Modules: Remaining Role and Governance Gaps",
       "module_number_in_source": 14,
       "tracks": [
-        "executive-leadership",
+        "public-health-executive-leadership",
         "governance-security",
         "program-management"
       ],
@@ -33116,7 +34015,7 @@ window.CURRICULUM_DATA = {
       "source_collection": "Gap-Filling Modules: Remaining Role and Governance Gaps",
       "module_number_in_source": 15,
       "tracks": [
-        "executive-leadership",
+        "public-health-executive-leadership",
         "communications",
         "governance-security"
       ],
@@ -35298,7 +36197,7 @@ window.CURRICULUM_DATA = {
         "governance-and-security",
         "policy",
         "program-management",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -36530,10 +37429,10 @@ window.CURRICULUM_DATA = {
         ],
         "recommended": [
           {
-            "course_id": "PMG 210",
+            "course_id": "PGM 210",
             "title": "Requirements Writing for AI Procurement and Implementation",
             "source": "module_json",
-            "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json"
+            "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json"
           },
           {
             "course_id": "GOV 300",
@@ -36578,7 +37477,7 @@ window.CURRICULUM_DATA = {
             "GOV 400"
           ],
           "recommended_prerequisites": [
-            "PMG 210",
+            "PGM 210",
             "GOV 300",
             "GOV 310"
           ],
@@ -38295,6 +39194,285 @@ window.CURRICULUM_DATA = {
       }
     },
     {
+      "id": "int-100",
+      "title": "Introduction to AI for Public Health",
+      "source_heading": "INT 100. Introduction to AI for Public Health",
+      "source_collection": "AI Playbook learning curriculum",
+      "module_number_in_source": "INT 100",
+      "tracks": [
+        "shared-foundational"
+      ],
+      "template_version": "full_curriculum_module_v1",
+      "course_id": "INT 100",
+      "course_code": "INT 100",
+      "course_prefix": "INT",
+      "course_number": "100",
+      "course_level": "100",
+      "level_label": "Foundational Module",
+      "primary_track_code": "INT",
+      "primary_track_title": "Foundational Modules",
+      "display_title": "INT 100: Introduction to AI for Public Health",
+      "prerequisites": [],
+      "prerequisite_summary": "No required prerequisites. This module is designed as the starting point for learners who are new to AI concepts in public health.",
+      "learning_objectives": [
+        "Define artificial intelligence in practical public health terms.",
+        "Distinguish predictive AI, generative AI, retrieval-augmented generation, deep research, and agentic AI.",
+        "Explain why AI outputs require human review, governance, privacy protections, and equity review.",
+        "Identify appropriate and inappropriate uses of AI in public health workflows.",
+        "Describe the first questions to ask before an AI tool is used, procured, piloted, or deployed."
+      ],
+      "definitions": [
+        {
+          "term": "Artificial intelligence (AI)",
+          "definition": "A broad set of computational methods that can recognize patterns, generate content, support prediction, or assist action toward defined goals."
+        },
+        {
+          "term": "Predictive AI",
+          "definition": "AI that uses data patterns to estimate a future event, risk, classification, or outcome."
+        },
+        {
+          "term": "Generative AI",
+          "definition": "AI that creates new text, images, code, summaries, translations, or other content from prompts and source material."
+        },
+        {
+          "term": "Retrieval-augmented generation (RAG)",
+          "definition": "A method that connects a generative AI system to approved source materials so responses can be grounded in specific documents or knowledge bases."
+        },
+        {
+          "term": "Deep research",
+          "definition": "An AI-assisted research workflow that plans searches, reviews sources, synthesizes findings, and produces a structured report for human validation."
+        },
+        {
+          "term": "Agentic AI",
+          "definition": "AI that can coordinate multiple steps or actions within defined boundaries, often across tools or systems, while still requiring human oversight."
+        },
+        {
+          "term": "Human-in-the-loop",
+          "definition": "A workflow design in which a qualified person reviews, approves, corrects, or rejects AI outputs before consequential action occurs."
+        }
+      ],
+      "knowledge_check": [
+        {
+          "question": "Which statement best describes AI in a public health context?",
+          "options": [
+            "AI is one specific software product that can be used the same way in every workflow.",
+            "AI is a family of methods that may support prediction, content generation, retrieval, automation, or decision support.",
+            "AI is always appropriate when a task is repetitive.",
+            "AI removes the need for human review when results appear accurate."
+          ],
+          "answer": "AI is a family of methods that may support prediction, content generation, retrieval, automation, or decision support.",
+          "rationale": "AI is not one tool. Public health staff need to understand the type of AI, workflow purpose, data involved, risk level, and review requirements before use."
+        },
+        {
+          "question": "Why should generative AI outputs usually be treated as drafts?",
+          "options": [
+            "They are never useful for public health work.",
+            "They may be fluent but incorrect, incomplete, outdated, biased, or inconsistent with local policy.",
+            "They are always based on confidential agency data.",
+            "They are legally approved once produced by an enterprise tool."
+          ],
+          "answer": "They may be fluent but incorrect, incomplete, outdated, biased, or inconsistent with local policy.",
+          "rationale": "Generative outputs can help with drafting and summarizing, but public health use requires review for accuracy, context, equity, privacy, and policy fit."
+        },
+        {
+          "question": "What is the safest first step when a staff member proposes a new AI use case?",
+          "options": [
+            "Begin procurement so the department can test the tool quickly.",
+            "Enter real data into a public AI tool and compare outputs.",
+            "Document the purpose, workflow, users, data, affected populations, risks, and review pathway before moving forward.",
+            "Ask the vendor whether the tool is accurate."
+          ],
+          "answer": "Document the purpose, workflow, users, data, affected populations, risks, and review pathway before moving forward.",
+          "rationale": "Structured intake and governance review help departments avoid unreviewed pilots, privacy exposure, inequitable impacts, and unclear accountability."
+        }
+      ],
+      "references_and_resources": [
+        {
+          "title": "National Institute of Standards and Technology. Artificial Intelligence Risk Management Framework (AI RMF 1.0).",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        },
+        {
+          "title": "World Health Organization. Regulatory considerations on artificial intelligence for health.",
+          "url": "https://iris.who.int/handle/10665/373421"
+        },
+        {
+          "title": "White House Office of Science and Technology Policy. Blueprint for an AI Bill of Rights.",
+          "url": "https://www.whitehouse.gov/ostp/ai-bill-of-rights/"
+        },
+        {
+          "title": "Association of Schools and Programs of Public Health. AI for Public Health Framework Report.",
+          "url": "https://aspph.org/initiatives/ai-for-public-health/ai-framework-report/"
+        }
+      ],
+      "expected_artifacts_or_evidence": [
+        "A short description of a public health workflow where AI might be used.",
+        "A list of the data, users, affected populations, and human decision points in that workflow.",
+        "A preliminary note describing why the use case may need governance, privacy, equity, security, procurement, or leadership review.",
+        "A reflection on where AI should not be used or where human judgment must remain primary."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "title": "Module Overview",
+          "paragraphs": [
+            "Artificial intelligence is a broad family of computational methods that can recognize patterns, generate content, support prediction, retrieve information, or assist with multi-step workflows. In public health, AI is not a single product or a single capability. It may appear inside analytics platforms, dashboards, document tools, translation systems, vendor products, chatbots, surveillance workflows, or administrative systems.",
+            "This module gives you the vocabulary and judgment needed to participate in AI discussions before a tool is selected or a pilot begins. The goal is not to turn every learner into a data scientist. The goal is to help you recognize different kinds of AI, ask the right implementation questions, and understand why governance, privacy, equity, security, and human review are necessary.",
+            "You should use this module before completing the readiness assessment, reviewing vendors, prioritizing use cases, or participating in governance discussions. A shared foundation helps prevent confusion between predictive models, generative tools, retrieval systems, deep research, and agentic workflows."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "learning_objectives",
+          "title": "Learning Objectives",
+          "paragraphs": [
+            "By the end of this module, you should be able to define artificial intelligence in practical public health terms.",
+            "You should be able to distinguish predictive AI, generative AI, retrieval-augmented generation, deep research, and agentic AI.",
+            "You should be able to explain why AI outputs require human review, governance, privacy protections, and equity review.",
+            "You should be able to identify appropriate and inappropriate uses of AI in public health workflows.",
+            "You should be able to describe the first questions to ask before an AI tool is used, procured, piloted, or deployed."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "title": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "AI use must be interpreted within your own jurisdiction's legal, policy, privacy, procurement, public records, labor, civil rights, and data governance requirements. A use that is appropriate in one health department may require additional review or may be prohibited in another because of data sensitivity, statutory authority, vendor terms, local policy, or community context.",
+            "If your department already has data governance, technology governance, privacy review, cybersecurity review, records management, procurement, accessibility, equity review, or quality improvement processes, AI governance should leverage those structures whenever possible. The playbook and tools are meant to fill gaps, not replace effective processes that already exist."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "title": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Public health agencies make decisions that affect communities, services, communications, surveillance, emergency response, and public trust. AI can support that work, but it can also introduce errors, bias, privacy exposure, automation over-trust, or confusion about accountability if it is adopted without a shared understanding.",
+            "AI systems are often described with broad marketing language that hides important differences between tools. A chatbot that drafts plain-language material, a predictive model that estimates outbreak risk, a retrieval system that searches internal policy, and an agentic workflow that creates tasks across systems all require different safeguards.",
+            "Understanding these differences helps you participate in responsible use case selection. It also helps you recognize when a proposed AI use belongs in learning and exploration, when it needs formal governance review, and when it should not proceed."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "definitions",
+          "title": "Definitions",
+          "paragraphs": [
+            "Artificial intelligence (AI) is a broad set of computational methods that can recognize patterns, generate content, support prediction, or assist action toward defined goals.",
+            "Predictive AI uses data patterns to estimate a future event, risk, classification, or outcome. In public health, predictive AI may support risk stratification, forecasting, anomaly detection, or prioritization, but it should not automatically determine services or enforcement actions without review.",
+            "Generative AI creates new text, images, code, summaries, translations, or other content from prompts and source material. It can be useful for drafting and synthesis, but it can also produce inaccurate or unsupported statements.",
+            "Retrieval-augmented generation connects a generative AI system to approved source materials so responses can be grounded in specific documents or knowledge bases. It can reduce hallucination risk but still requires source checking and human review.",
+            "Deep research is an AI-assisted research workflow that plans searches, reviews sources, synthesizes findings, and produces a structured report for human validation. It can accelerate evidence review but should not replace expert judgment.",
+            "Agentic AI can coordinate multiple steps or actions within defined boundaries, often across tools or systems. Because agentic systems may initiate actions, they require explicit rules, permissions, audit logs, escalation paths, and human approval points."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "public_health_example",
+          "title": "Public Health Example",
+          "paragraphs": [
+            "A preparedness team wants to use AI to help summarize after-action reports and identify recurring improvement themes. A generative AI tool might draft summaries from approved documents, while a retrieval system could point reviewers back to the relevant source passages. The team would still need a human reviewer to verify accuracy, remove sensitive information, identify local context, and decide which findings should become improvement actions.",
+            "The same workflow could become riskier if staff entered confidential incident details into an unapproved public tool or accepted the summary without checking the source documents. This example shows why the first AI question is not simply whether the tool can produce a useful draft. The first question is whether the workflow, data, review process, and accountability structure are appropriate."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "title": "Core Concepts",
+          "paragraphs": [
+            "AI should be understood as a set of capabilities rather than a single technology. Predictive AI estimates patterns or outcomes, generative AI creates content, retrieval systems connect responses to source documents, deep research supports structured evidence gathering, and agentic AI coordinates steps in a workflow. Each capability can be useful, but each creates different risks and review needs.",
+            "The public health workflow matters as much as the model. A low-risk drafting task using public information is different from a workflow that influences inspections, benefits, outbreak response, case prioritization, or public alerts. You should always identify the workflow step, the user, the people affected, the data involved, and the decision that remains human.",
+            "Human review is not a vague concept. A responsible workflow names who reviews the AI output, what evidence they check, what criteria they apply, how corrections are documented, and when concerns are escalated. Review should be built into the workflow before the tool is used.",
+            "Deep research tools deserve special attention because they can look like expert evidence synthesis. They may be useful for finding, organizing, and summarizing sources, but the learner or reviewer must still check source quality, missing perspectives, publication dates, jurisdictional relevance, and whether the conclusions are supported."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "title": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "AI systems can generate inaccurate, incomplete, biased, outdated, or misleading outputs. Generative tools can hallucinate. Predictive tools can perform poorly for underrepresented groups. Agentic systems can take inappropriate actions if boundaries, permissions, or escalation paths are unclear.",
+            "Public health data can be sensitive even when it is not formally protected health information. Records may include small populations, geographic identifiers, outbreak details, program participation, immigration-related concerns, tribal data, environmental exposure information, or other context that requires careful handling.",
+            "Strong guardrails include approved-use policies, data tiering, human review, source verification, equity review, access controls, documentation, incident reporting, and monitoring. These safeguards should be proportional to risk, but they should not be skipped because a tool appears easy to use."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "title": "How to Apply This Module",
+          "paragraphs": [
+            "When you encounter a proposed AI use, start by describing the public health task in plain language. Identify the problem, the current workflow, the proposed AI-supported step, the users, the data, the affected populations, and the decision points that must remain under human control.",
+            "Next, decide what type of AI is being proposed. Predictive, generative, retrieval, deep research, and agentic uses should not be reviewed as if they were the same. The review pathway should match the risk, data sensitivity, workflow impact, and degree of automation.",
+            "Finally, connect the proposed use to the playbook. Early ideas may belong in vision, readiness, governance, stakeholder engagement, or use case intake before any pilot or procurement begins. The tools are available to fill gaps where your department does not already have a comparable process."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "reflection_questions",
+          "title": "Reflection Questions",
+          "paragraphs": [
+            "What AI tools or AI-enabled features are already being used informally in your work environment?",
+            "Which public health workflows in your area involve drafting, summarizing, searching, triage, prediction, routing, or monitoring tasks that could attract AI proposals?",
+            "What information should never be entered into an unapproved AI tool in your role?",
+            "Who would need to review an AI output before it influenced communication, services, enforcement, surveillance, or leadership decisions?",
+            "What existing governance, privacy, security, procurement, or equity review process could be used before creating a new AI-specific process?"
+          ],
+          "bullets": []
+        },
+        {
+          "key": "practical_exercise",
+          "title": "Practical Exercise",
+          "paragraphs": [
+            "Choose one public health workflow where AI might be proposed. Write a short description of the current workflow, the AI-supported step, the type of AI that might be involved, the data that would be used, the staff who would use the output, and the people or communities who could be affected.",
+            "Then identify at least three safeguards that would be needed before the AI-supported workflow could move forward. Your safeguards should address human review, data protection, equity, accuracy, documentation, governance review, or monitoring."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "title": "Expected Assignment",
+          "paragraphs": [
+            "Upload or paste a one- to two-page AI workflow concept note.",
+            "The concept note should identify the proposed AI type, workflow step, data involved, users, affected populations, human review point, and key risks.",
+            "It should also list the governance, privacy, equity, security, procurement, or leadership questions that need to be answered before the idea moves forward.",
+            "Use AI-assisted feedback to help you identify strengths, missing elements, unclear assumptions, and areas that may need revision."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "knowledge_check",
+          "title": "Knowledge Check",
+          "paragraphs": [
+            "Question 1: Which statement best describes AI in a public health context?",
+            "Correct answer: AI is a family of methods that may support prediction, content generation, retrieval, automation, or decision support.",
+            "Rationale: AI is not one tool. Public health staff need to understand the type of AI, workflow purpose, data involved, risk level, and review requirements before use.",
+            "Question 2: Why should generative AI outputs usually be treated as drafts?",
+            "Correct answer: They may be fluent but incorrect, incomplete, outdated, biased, or inconsistent with local policy.",
+            "Rationale: Generative outputs can help with drafting and summarizing, but public health use requires review for accuracy, context, equity, privacy, and policy fit.",
+            "Question 3: What is the safest first step when a staff member proposes a new AI use case?",
+            "Correct answer: Document the purpose, workflow, users, data, affected populations, risks, and review pathway before moving forward.",
+            "Rationale: Structured intake and governance review help departments avoid unreviewed pilots, privacy exposure, inequitable impacts, and unclear accountability."
+          ],
+          "bullets": []
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "title": "References and Resources for Additional Information",
+          "paragraphs": [
+            "National Institute of Standards and Technology. Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "World Health Organization. Regulatory considerations on artificial intelligence for health. https://iris.who.int/handle/10665/373421",
+            "White House Office of Science and Technology Policy. Blueprint for an AI Bill of Rights. https://www.whitehouse.gov/ostp/ai-bill-of-rights/",
+            "Association of Schools and Programs of Public Health. AI for Public Health Framework Report. https://aspph.org/initiatives/ai-for-public-health/ai-framework-report/"
+          ],
+          "bullets": []
+        }
+      ],
+      "raw_text": "Introduction to AI for Public Health introduces artificial intelligence as a family of methods that can recognize patterns, generate content, support prediction, retrieve information, or assist action toward defined goals. The module distinguishes predictive AI, generative AI, retrieval-augmented generation, deep research, and agentic AI and explains why public health use requires governance, privacy protections, equity review, human oversight, documentation, and monitoring.",
+      "lms_usability_metadata": {
+        "audience": "Individual learners in state, territorial, local, tribal, and public health partner organizations",
+        "recommended_use": "Use this module as the first orientation before completing other AI learning modules, readiness assessment activities, governance discussions, or use case intake.",
+        "estimated_completion_time": "45-60 minutes"
+      }
+    },
+    {
       "id": "int-190-ai-for-social-good",
       "title": "AI for Social Good",
       "source_heading": "AI for Social Good",
@@ -38735,7 +39913,7 @@ window.CURRICULUM_DATA = {
         "shared-foundational",
         "governance-and-security",
         "program-management",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -39962,403 +41140,297 @@ window.CURRICULUM_DATA = {
       }
     },
     {
-      "id": "ops-220-human-factors-workflow-integration-and-usability-testing",
-      "title": "Human Factors, Workflow Integration, and Usability Testing",
-      "source_heading": "Module 25. Human Factors, Workflow Integration, and Usability Testing",
-      "source_collection": "Operations, Privacy, Procurement, and Value Measurement: Modules 21-30",
-      "module_number_in_source": 25,
-      "tracks": [
-        "operations-data-quality"
+      "course_id": "OPS 220",
+      "module_id": "ops-220-ai-for-environmental-health-and-field-operations",
+      "module_title": "AI for Environmental Health and Field Operations",
+      "title": "AI for Environmental Health and Field Operations",
+      "primary_track_title": "Operations and Data Quality",
+      "level_label": "Intermediate",
+      "audience": "Environmental health staff, inspectors, emergency response staff, program managers, field supervisors, epidemiologists, IT staff, and AI governance reviewers.",
+      "estimated_time": "60 minutes",
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "OPS 200"
       ],
-      "template_version": "public-health-ai-training-module-v1",
+      "learning_objectives": [
+        "Identify appropriate AI support opportunities in environmental health and field operations.",
+        "Assess data sensitivity, geospatial risk, and operational context for field AI use cases.",
+        "Distinguish advisory decision support from prohibited automation in field workflows.",
+        "Design safeguards for AI-supported inspection, complaint, outreach, or emergency response workflows.",
+        "Create a monitoring plan for field AI impacts, including equity and operational usefulness."
+      ],
       "sections": [
         {
           "key": "training_overview",
           "heading": "Training Overview",
           "paragraphs": [
-            "AI tools succeed or fail inside real public health workflows. Human factors and usability testing help agencies understand how staff actually use systems, where errors may occur, how cognitive load changes, and whether AI outputs support or distort decision-making. This module teaches learners to evaluate workflow fit, interface design, alert burden, documentation burden, and human review practices before deployment."
+            "This module introduces responsible AI use in environmental health and field operations. Public health field work may include inspections, complaint investigation, outbreak response, environmental monitoring, emergency preparedness, outreach, and service coordination. AI can support triage, routing, summarization, mapping, scheduling, report drafting, and pattern detection, but it can also create risks if outputs are inaccurate, biased, poorly reviewed, or disconnected from local context.",
+            "The module is designed for national use and does not name specific approved tools. Agencies vary in inspection systems, environmental health authorities, field data platforms, mobile applications, GIS tools, and AI approval processes. Learners should focus on use case fit, data sensitivity, field workflow realities, human review, and safeguards before AI is introduced."
           ]
         },
         {
           "key": "learning_objectives",
           "heading": "Learning Objectives",
           "paragraphs": [
-            "Explain the purpose of human factors, workflow integration, and usability testing in public health AI work.",
-            "Identify the technical, operational, privacy, security, equity, and governance issues associated with the topic.",
-            "Apply the topic to a real or realistic public health workflow, system, or implementation scenario.",
-            "Recognize common failure modes that can affect safety, accuracy, trust, workflow fit, or sustainability.",
-            "Identify practical guardrails that should be documented before implementation.",
-            "Produce a workflow usability test plan that can support readiness assessment, governance review, procurement, implementation, or monitoring."
+            "Identify appropriate AI support opportunities in environmental health and field operations.",
+            "Assess data sensitivity, geospatial risk, and operational context for field AI use cases.",
+            "Distinguish advisory decision support from prohibited automation in field workflows.",
+            "Design safeguards for AI-supported inspection, complaint, outreach, or emergency response workflows.",
+            "Create a monitoring plan for field AI impacts, including equity and operational usefulness."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows."
           ]
         },
         {
           "key": "why_this_topic_matters_for_public_health_ai",
           "heading": "Why This Topic Matters for Public Health AI",
           "paragraphs": [
-            "Human Factors, Workflow Integration, and Usability Testing matters because AI systems are embedded in public health programs, data systems, and decision processes rather than operating in isolation. The topic affects whether AI outputs are accurate, explainable, safe, equitable, secure, and sustainable. Agencies that ignore this area may create tools that work in a demonstration but fail in actual practice.",
-            "The topic also affects accountability. Public health agencies must be able to explain how data are used, why a tool was approved, what evidence supports the workflow, who reviews outputs, and what happens when the system fails. These responsibilities become more important as AI tools move from experimentation into operational use."
+            "Field operations are where AI recommendations can quickly become real-world actions. An AI-supported prioritization tool might influence which facility is inspected first, which complaint receives urgent follow-up, where outreach occurs, or how limited staff are deployed. These decisions can affect businesses, residents, workers, communities, and public trust.",
+            "Environmental health and field data can include sensitive information such as addresses, facility histories, complaints, enforcement actions, photos, geolocation, environmental hazards, and community vulnerabilities. AI systems using these data must be designed and reviewed carefully. They should support field judgment rather than replace professional assessment, regulatory authority, or community engagement."
           ]
         },
         {
-          "key": "core_concepts",
-          "heading": "Core Concepts",
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
           "paragraphs": [
-            "Human factors is the discipline of designing systems around human abilities, limits, environments, and tasks. In AI-supported public health work, human factors help agencies ensure that AI outputs are understandable, actionable, and reviewed appropriately.",
-            "Usability testing is structured observation of how users interact with a tool or workflow. It can reveal confusion, workarounds, over-trust, alert fatigue, documentation burden, or steps that are inconsistent with actual practice. Usability testing is a safety activity, not simply a design preference.",
-            "Cognitive load refers to the mental effort required to complete a task. AI can reduce burden by summarizing information, but it can also increase burden if staff must verify unclear outputs, interpret unexplained scores, or resolve conflicting recommendations."
+            "Field decision support refers to AI or analytics that help staff plan, prioritize, document, or interpret field activities. It may suggest inspection priorities, summarize complaint narratives, identify patterns, or draft follow-up notes. Decision support should not be treated as final action without human review.",
+            "Operational context includes the practical conditions under which field staff work, such as travel time, staffing, safety, weather, access to mobile devices, connectivity, language needs, legal authority, and community relationships. AI tools that ignore operational context may generate recommendations that are technically plausible but infeasible or inequitable. Field staff should be involved in design and testing.",
+            "Geospatial sensitivity refers to the risk that location data can reveal information about people, facilities, communities, hazards, or protected groups. Even when individual names are removed, addresses, parcels, maps, small areas, and facility identifiers can create privacy or stigma risks. AI use with geographic data should follow data classification and suppression rules."
           ]
         },
         {
           "key": "public_health_example",
           "heading": "Public Health Example",
           "paragraphs": [
-            "A disease investigator may receive an AI-generated case summary in the surveillance system. If the summary hides uncertainty or makes unsupported claims look official, the investigator may over-trust it. If the summary is too long, poorly organized, or disconnected from source fields, it may not reduce burden. Usability testing would observe investigators using the summary and identify changes needed before launch."
+            "An environmental health program wants to explore AI-assisted triage of food safety complaints. The proposed system would summarize complaint narratives, identify possible high-risk complaints, and suggest inspection priority. The program hopes this will help staff respond more quickly when complaint volume is high.",
+            "Before moving forward, the team reviews the data involved, including complaint addresses, facility names, complainant details, symptoms, and inspection history. The governance review requires removal or protection of identifiable complainant information, human review of all priority recommendations, documentation of false positives and false negatives, and monitoring to ensure that certain neighborhoods or facility types are not unfairly over- or under-prioritized."
           ]
         },
         {
-          "key": "technical_deep_dive",
-          "heading": "Technical Deep Dive",
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
           "paragraphs": [
-            "Workflow integration begins with current-state mapping. Agencies should document how work happens today, including informal workarounds, duplicate entry, handoffs, delays, and decision points. AI should be introduced only after the team understands which step is being improved and how the change affects users.",
-            "Future-state design should define how staff will see, review, correct, accept, reject, or escalate AI outputs. The user interface should make source information available, show uncertainty when appropriate, and avoid presenting AI outputs as final decisions. Good design supports human judgment rather than bypassing it.",
-            "Usability testing should include realistic users, realistic tasks, and realistic data. Testing should evaluate not only whether users can complete a task, but also whether they understand the AI output, recognize limitations, know when to escalate, and can document their final decision."
+            "AI use in field operations should be evaluated through workflow mapping. The team should identify where information enters the system, who reviews it, what action may follow, and what legal or operational authority is involved. AI may be useful for organizing information, but field staff must retain authority for professional judgment, inspection decisions, and enforcement actions.",
+            "Data quality is a major issue in field operations. Complaint narratives may be incomplete, photos may be unclear, inspection codes may be inconsistent, and historic data may reflect past inequities in reporting or enforcement. AI systems trained or configured on these data may reproduce existing patterns unless reviewed carefully.",
+            "AI-supported field workflows should be piloted in limited settings before scale. Pilots should include field staff feedback, comparison with current workflow, error analysis, equity review, documentation burden, and monitoring of unintended consequences. A tool that saves time for one role may create additional work or risk for another."
           ]
         },
         {
           "key": "risks_failure_modes_and_guardrails",
           "heading": "Risks, Failure Modes, and Guardrails",
           "paragraphs": [
-            "A common failure mode is treating the topic as a technical detail rather than a public health control. When staff do not connect technical decisions to authority, workflow, equity, privacy, security, and accountability, the agency may adopt a tool that appears useful but cannot be sustained or defended.",
-            "Another risk is relying on vendor claims without agency-defined evidence. Vendors may provide demonstrations, dashboards, or summary metrics that do not match the agency workflow or data environment. A guardrail is to require documentation, test results, acceptance criteria, and agency-controlled review.",
-            "A third risk is failing to plan for change. Public health data, policies, systems, and emergencies change. Any technical approach must include monitoring, review, versioning, escalation, and retirement pathways so the agency can respond when assumptions no longer hold."
+            "A key risk is inappropriate prioritization. AI may under-prioritize complaints from communities with lower reporting access or over-prioritize facilities that have more documented history because they have been inspected more often. Guardrails include subgroup review, field staff validation, review of false negatives, and monitoring for geographic or facility-type disparities.",
+            "Another risk is unsafe automation of regulatory or enforcement action. AI should not independently issue citations, enforcement actions, closure recommendations, or public notices without authorized human review. Guardrails include prohibited actions, human approval points, audit logs, and clear documentation of decision authority.",
+            "A third risk is exposing sensitive field data through unapproved AI tools. Addresses, photos, complaint details, facility records, and environmental hazard information may be sensitive or restricted. Guardrails include approved platforms, data minimization, access controls, geospatial suppression, and privacy/security review."
           ]
         },
         {
           "key": "application_to_ai_supported_workflows",
           "heading": "Application to AI-Supported Workflows",
           "paragraphs": [
-            "Generative AI, predictive analytics, RAG, automation, and agentic workflows all depend on the controls described in this module. The controls should be scaled to the risk of the use case. A tool that drafts internal training text may require lighter review than a tool that updates case records, prioritizes outreach, or supports public communication during an emergency.",
-            "The module should be applied during readiness assessment, procurement, implementation planning, pilot testing, and post-deployment monitoring. Learners should document how the topic affects data, systems, users, safeguards, and decision-making for the selected workflow."
+            "A responsible field AI workflow should include intake, data classification, AI-supported organization or triage, human review, documented decision, field action, outcome recording, and monitoring. Staff should know which outputs are advisory and which decisions require professional judgment or supervisory approval. The workflow should also describe how staff correct AI errors and report concerns.",
+            "Field operations also require communication planning. If AI affects inspection prioritization, complaint response, or outreach, the agency should be prepared to explain how the tool is used, what safeguards are in place, and how human staff remain accountable. This helps maintain trust with businesses, residents, workers, and community partners."
           ]
         },
         {
           "key": "reflection_questions",
           "heading": "Reflection Questions",
           "paragraphs": [
-            "Where does this topic appear in one current or proposed AI workflow in your agency?",
-            "What decisions, data sources, users, or partners would be affected if this area is poorly designed?",
-            "What evidence would governance reviewers need before approving the workflow?",
-            "Which safeguards should be required before pilot testing?",
-            "Who owns ongoing monitoring and review?"
+            "What field decisions should never be automated without human review?",
+            "What location or complaint data would require special protection before AI use?",
+            "How would you monitor whether AI-supported triage is fair and useful?"
           ]
         },
         {
           "key": "practical_exercise",
           "heading": "Practical Exercise",
           "paragraphs": [
-            "Create a workflow usability test plan for one real or realistic public health AI workflow. The artifact should describe the use case, affected users, data sources, system dependencies, risks, guardrails, review points, and unresolved questions.",
-            "The exercise should produce a work product that could be used in a governance meeting, procurement review, implementation planning session, pilot evaluation, or monitoring review. Learners should document assumptions and identify which staff or partners need to be consulted."
+            "Create an AI field workflow review for a fictional environmental health or field operations use case. Choose a use case such as complaint triage, inspection scheduling, emergency outreach routing, environmental hazard report summarization, or field note drafting. Use fictional or generalized information only.",
+            "Your review should include workflow steps, data involved, sensitive fields, potential benefits, prohibited AI actions, human review points, equity concerns, field staff feedback needs, monitoring indicators, and escalation triggers.",
+            "Example: For food safety complaint triage, the learner identifies complaint text, facility name, symptoms, address, and inspection history as sensitive data elements. The workflow allows AI to suggest priority but requires an inspector or supervisor to approve action, tracks false negatives, and monitors whether complaints from under-resourced neighborhoods are missed."
           ]
         },
         {
           "key": "expected_artifact_or_evidence",
           "heading": "Expected Artifact or Evidence",
           "paragraphs": [
-            "The expected artifact is a completed workflow usability test plan. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks."
+            "AI Field Workflow Review",
+            "Field AI Safeguards and Monitoring Plan"
           ]
         },
         {
           "key": "knowledge_check",
           "heading": "Knowledge Check",
           "paragraphs": [
-            "Answer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record.",
-            "1. What is the best reason to address human factors, workflow integration, and usability testing before deployment?",
-            "A. It makes governance unnecessary.",
-            "B. It helps ensure the AI workflow is safe, useful, reviewable, and fit for public health operations.",
-            "C. It allows the agency to skip testing.",
-            "D. It guarantees that the vendor product will work.",
-            "Correct answer: B",
-            "2. Which practice best supports responsible implementation?",
-            "A. Defining intended use, evidence requirements, safeguards, monitoring, and escalation before launch.",
-            "B. Waiting until after launch to decide whether the tool is risky.",
-            "C. Allowing users to decide individually how to use the tool.",
-            "D. Treating vendor documentation as the only required evidence.",
-            "Correct answer: A",
-            "3. Which statement best describes a common failure mode?",
-            "A. Human review is always unnecessary when AI is accurate.",
-            "B. Documentation makes AI less useful.",
-            "C. The agency assumes the tool is ready because the technology works in a demonstration, even though workflow, data, and governance have not been tested.",
-            "D. Monitoring should stop after the pilot.",
-            "Correct answer: C",
-            "4. What should be included in the practical artifact for this module?",
-            "A. Only a general definition.",
-            "B. A marketing description of the AI tool.",
-            "C. A list of unrelated data systems.",
-            "D. Workflow-specific risks, safeguards, roles, evidence requirements, and unresolved questions.",
-            "Correct answer: D",
-            "5. When should the issue be escalated for governance or leadership review?",
-            "A. Only if the tool is public-facing.",
-            "B. When risks affect privacy, safety, equity, legal authority, public trust, system integrity, or operational decisions.",
-            "C. Never, because technical staff can resolve all issues alone.",
-            "D. Only after an incident has already occurred.",
-            "Correct answer: B"
+            "Why is field AI especially consequential?",
+            "Which action should be prohibited without authorized human review?",
+            "What is geospatial sensitivity?",
+            "Why involve field staff in design?",
+            "What should monitoring include?"
           ]
         },
         {
           "key": "references_and_resources_for_additional_information",
           "heading": "References and Resources for Additional Information",
           "paragraphs": [
-            "NIST AI Risk Management Framework",
-            "AHRQ human factors and usability resources",
-            "NIST Generative AI Profile",
-            "CDC Public Health Data Strategy and Data Modernization resources",
-            "OWASP Top 10 for LLM Applications, when security or AI integrations are relevant",
-            "Agency privacy, cybersecurity, data governance, procurement, and records management policies"
+            "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "Ethics and governance of artificial intelligence for health. https://www.who.int/publications/i/item/9789240029200",
+            "10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "About the Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "Core Competencies for Public Health Professionals. https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx"
           ]
         }
       ],
-      "learning_objectives": [
-        "Explain the purpose of human factors, workflow integration, and usability testing in public health AI work.",
-        "Identify the technical, operational, privacy, security, equity, and governance issues associated with the topic.",
-        "Apply the topic to a real or realistic public health workflow, system, or implementation scenario.",
-        "Recognize common failure modes that can affect safety, accuracy, trust, workflow fit, or sustainability.",
-        "Identify practical guardrails that should be documented before implementation.",
-        "Produce a workflow usability test plan that can support readiness assessment, governance review, procurement, implementation, or monitoring."
-      ],
-      "definitions": [],
-      "knowledge_check": {
-        "intro": [
-          "Answer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record."
+      "practical_exercise": {
+        "instructions": [
+          "Create an AI field workflow review for a fictional environmental health or field operations use case. Choose a use case such as complaint triage, inspection scheduling, emergency outreach routing, environmental hazard report summarization, or field note drafting. Use fictional or generalized information only.",
+          "Your review should include workflow steps, data involved, sensitive fields, potential benefits, prohibited AI actions, human review points, equity concerns, field staff feedback needs, monitoring indicators, and escalation triggers."
         ],
-        "questions": [
-          {
-            "number": 1,
-            "question": "What is the best reason to address human factors, workflow integration, and usability testing before deployment?",
-            "options": [
-              {
-                "label": "A",
-                "text": "It makes governance unnecessary."
-              },
-              {
-                "label": "B",
-                "text": "It helps ensure the AI workflow is safe, useful, reviewable, and fit for public health operations."
-              },
-              {
-                "label": "C",
-                "text": "It allows the agency to skip testing."
-              },
-              {
-                "label": "D",
-                "text": "It guarantees that the vendor product will work."
-              }
-            ],
-            "correct_answer": "B"
-          },
-          {
-            "number": 2,
-            "question": "Which practice best supports responsible implementation?",
-            "options": [
-              {
-                "label": "A",
-                "text": "Defining intended use, evidence requirements, safeguards, monitoring, and escalation before launch."
-              },
-              {
-                "label": "B",
-                "text": "Waiting until after launch to decide whether the tool is risky."
-              },
-              {
-                "label": "C",
-                "text": "Allowing users to decide individually how to use the tool."
-              },
-              {
-                "label": "D",
-                "text": "Treating vendor documentation as the only required evidence."
-              }
-            ],
-            "correct_answer": "A"
-          },
-          {
-            "number": 3,
-            "question": "Which statement best describes a common failure mode?",
-            "options": [
-              {
-                "label": "A",
-                "text": "Human review is always unnecessary when AI is accurate."
-              },
-              {
-                "label": "B",
-                "text": "Documentation makes AI less useful."
-              },
-              {
-                "label": "C",
-                "text": "The agency assumes the tool is ready because the technology works in a demonstration, even though workflow, data, and governance have not been tested."
-              },
-              {
-                "label": "D",
-                "text": "Monitoring should stop after the pilot."
-              }
-            ],
-            "correct_answer": "C"
-          },
-          {
-            "number": 4,
-            "question": "What should be included in the practical artifact for this module?",
-            "options": [
-              {
-                "label": "A",
-                "text": "Only a general definition."
-              },
-              {
-                "label": "B",
-                "text": "A marketing description of the AI tool."
-              },
-              {
-                "label": "C",
-                "text": "A list of unrelated data systems."
-              },
-              {
-                "label": "D",
-                "text": "Workflow-specific risks, safeguards, roles, evidence requirements, and unresolved questions."
-              }
-            ],
-            "correct_answer": "D"
-          },
-          {
-            "number": 5,
-            "question": "When should the issue be escalated for governance or leadership review?",
-            "options": [
-              {
-                "label": "A",
-                "text": "Only if the tool is public-facing."
-              },
-              {
-                "label": "B",
-                "text": "When risks affect privacy, safety, equity, legal authority, public trust, system integrity, or operational decisions."
-              },
-              {
-                "label": "C",
-                "text": "Never, because technical staff can resolve all issues alone."
-              },
-              {
-                "label": "D",
-                "text": "Only after an incident has already occurred."
-              }
-            ],
-            "correct_answer": "B"
-          }
-        ]
+        "example": "Example: For food safety complaint triage, the learner identifies complaint text, facility name, symptoms, address, and inspection history as sensitive data elements. The workflow allows AI to suggest priority but requires an inspector or supervisor to approve action, tracks false negatives, and monitors whether complaints from under-resourced neighborhoods are missed."
       },
+      "expected_artifact_or_evidence": [
+        "AI Field Workflow Review",
+        "Field AI Safeguards and Monitoring Plan"
+      ],
+      "knowledge_check": [
+        {
+          "question": "Why is field AI especially consequential?",
+          "options": [
+            "It can quickly influence real-world inspections, outreach, or response actions",
+            "It is always low risk",
+            "It never uses sensitive data",
+            "It does not require staff review"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "Which action should be prohibited without authorized human review?",
+          "options": [
+            "Summarizing a fictional complaint",
+            "Suggesting draft categories",
+            "Issuing enforcement action automatically",
+            "Organizing public source material"
+          ],
+          "answer": "C"
+        },
+        {
+          "question": "What is geospatial sensitivity?",
+          "options": [
+            "The risk that location data can reveal sensitive information",
+            "A map color preference",
+            "A way to avoid data review",
+            "A type of office software"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "Why involve field staff in design?",
+          "options": [
+            "They understand operational context and feasibility",
+            "They can skip governance",
+            "They replace privacy review",
+            "They can make all AI decisions alone"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "What should monitoring include?",
+          "options": [
+            "Only average time saved",
+            "Errors, equity impacts, usefulness, staff burden, and unintended consequences",
+            "Only vendor uptime",
+            "Only the number of prompts"
+          ],
+          "answer": "B"
+        }
+      ],
       "references_and_resources": [
-        "NIST AI Risk Management Framework",
-        "AHRQ human factors and usability resources",
-        "NIST Generative AI Profile",
-        "CDC Public Health Data Strategy and Data Modernization resources",
-        "OWASP Top 10 for LLM Applications, when security or AI integrations are relevant",
-        "Agency privacy, cybersecurity, data governance, procurement, and records management policies"
+        {
+          "title": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "publisher": "National Institute of Standards and Technology",
+          "year": "2023",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Risk management, governance, mapping, measurement, management, and oversight framework for trustworthy AI."
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "publisher": "World Health Organization",
+          "year": "2021",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Global guidance on human rights, ethics, accountability, safety, transparency, and governance for health AI."
+        },
+        {
+          "title": "10 Essential Public Health Services",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2024",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Public health practice framework emphasizing assessment, policy development, assurance, communication, workforce, evaluation, infrastructure, and equity."
+        },
+        {
+          "title": "About the Public Health Data Strategy",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2026",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "CDC strategy for modern data exchange, analytics, dashboards, standards, and timely public health action."
+        },
+        {
+          "title": "Core Competencies for Public Health Professionals",
+          "publisher": "Public Health Foundation / Council on Linkages",
+          "year": "2021",
+          "url": "https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+          "note": "Nationally recognized public health workforce competency framework."
+        }
       ],
-      "expected_artifacts_or_evidence": [
-        "The expected artifact is a completed workflow usability test plan. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks."
+      "approved_tools_note": "This national training does not name a specific approved AI tool because approved tools vary by agency. Learners should use only tools that their organization has authorized for the data type, workflow, and use case involved.",
+      "plays": [
+        2,
+        7,
+        10,
+        11,
+        13
       ],
-      "raw_text": "Human Factors, Workflow Integration, and Usability Testing\n\nTraining Overview\nAI tools succeed or fail inside real public health workflows. Human factors and usability testing help agencies understand how staff actually use systems, where errors may occur, how cognitive load changes, and whether AI outputs support or distort decision-making. This module teaches learners to evaluate workflow fit, interface design, alert burden, documentation burden, and human review practices before deployment.\n\nLearning Objectives\nExplain the purpose of human factors, workflow integration, and usability testing in public health AI work.\nIdentify the technical, operational, privacy, security, equity, and governance issues associated with the topic.\nApply the topic to a real or realistic public health workflow, system, or implementation scenario.\nRecognize common failure modes that can affect safety, accuracy, trust, workflow fit, or sustainability.\nIdentify practical guardrails that should be documented before implementation.\nProduce a workflow usability test plan that can support readiness assessment, governance review, procurement, implementation, or monitoring.\n\nWhy This Topic Matters for Public Health AI\nHuman Factors, Workflow Integration, and Usability Testing matters because AI systems are embedded in public health programs, data systems, and decision processes rather than operating in isolation. The topic affects whether AI outputs are accurate, explainable, safe, equitable, secure, and sustainable. Agencies that ignore this area may create tools that work in a demonstration but fail in actual practice.\nThe topic also affects accountability. Public health agencies must be able to explain how data are used, why a tool was approved, what evidence supports the workflow, who reviews outputs, and what happens when the system fails. These responsibilities become more important as AI tools move from experimentation into operational use.\n\nCore Concepts\nHuman factors is the discipline of designing systems around human abilities, limits, environments, and tasks. In AI-supported public health work, human factors help agencies ensure that AI outputs are understandable, actionable, and reviewed appropriately.\nUsability testing is structured observation of how users interact with a tool or workflow. It can reveal confusion, workarounds, over-trust, alert fatigue, documentation burden, or steps that are inconsistent with actual practice. Usability testing is a safety activity, not simply a design preference.\nCognitive load refers to the mental effort required to complete a task. AI can reduce burden by summarizing information, but it can also increase burden if staff must verify unclear outputs, interpret unexplained scores, or resolve conflicting recommendations.\n\nPublic Health Example\nA disease investigator may receive an AI-generated case summary in the surveillance system. If the summary hides uncertainty or makes unsupported claims look official, the investigator may over-trust it. If the summary is too long, poorly organized, or disconnected from source fields, it may not reduce burden. Usability testing would observe investigators using the summary and identify changes needed before launch.\n\nTechnical Deep Dive\nWorkflow integration begins with current-state mapping. Agencies should document how work happens today, including informal workarounds, duplicate entry, handoffs, delays, and decision points. AI should be introduced only after the team understands which step is being improved and how the change affects users.\nFuture-state design should define how staff will see, review, correct, accept, reject, or escalate AI outputs. The user interface should make source information available, show uncertainty when appropriate, and avoid presenting AI outputs as final decisions. Good design supports human judgment rather than bypassing it.\nUsability testing should include realistic users, realistic tasks, and realistic data. Testing should evaluate not only whether users can complete a task, but also whether they understand the AI output, recognize limitations, know when to escalate, and can document their final decision.\n\nRisks, Failure Modes, and Guardrails\nA common failure mode is treating the topic as a technical detail rather than a public health control. When staff do not connect technical decisions to authority, workflow, equity, privacy, security, and accountability, the agency may adopt a tool that appears useful but cannot be sustained or defended.\nAnother risk is relying on vendor claims without agency-defined evidence. Vendors may provide demonstrations, dashboards, or summary metrics that do not match the agency workflow or data environment. A guardrail is to require documentation, test results, acceptance criteria, and agency-controlled review.\nA third risk is failing to plan for change. Public health data, policies, systems, and emergencies change. Any technical approach must include monitoring, review, versioning, escalation, and retirement pathways so the agency can respond when assumptions no longer hold.\n\nApplication to AI-Supported Workflows\nGenerative AI, predictive analytics, RAG, automation, and agentic workflows all depend on the controls described in this module. The controls should be scaled to the risk of the use case. A tool that drafts internal training text may require lighter review than a tool that updates case records, prioritizes outreach, or supports public communication during an emergency.\nThe module should be applied during readiness assessment, procurement, implementation planning, pilot testing, and post-deployment monitoring. Learners should document how the topic affects data, systems, users, safeguards, and decision-making for the selected workflow.\n\nReflection Questions\nWhere does this topic appear in one current or proposed AI workflow in your agency?\nWhat decisions, data sources, users, or partners would be affected if this area is poorly designed?\nWhat evidence would governance reviewers need before approving the workflow?\nWhich safeguards should be required before pilot testing?\nWho owns ongoing monitoring and review?\n\nPractical Exercise\nCreate a workflow usability test plan for one real or realistic public health AI workflow. The artifact should describe the use case, affected users, data sources, system dependencies, risks, guardrails, review points, and unresolved questions.\nThe exercise should produce a work product that could be used in a governance meeting, procurement review, implementation planning session, pilot evaluation, or monitoring review. Learners should document assumptions and identify which staff or partners need to be consulted.\n\nExpected Artifact or Evidence\nThe expected artifact is a completed workflow usability test plan. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks.\n\nKnowledge Check\nAnswer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record.\n1. What is the best reason to address human factors, workflow integration, and usability testing before deployment?\nA. It makes governance unnecessary.\nB. It helps ensure the AI workflow is safe, useful, reviewable, and fit for public health operations.\nC. It allows the agency to skip testing.\nD. It guarantees that the vendor product will work.\nCorrect answer: B\n2. Which practice best supports responsible implementation?\nA. Defining intended use, evidence requirements, safeguards, monitoring, and escalation before launch.\nB. Waiting until after launch to decide whether the tool is risky.\nC. Allowing users to decide individually how to use the tool.\nD. Treating vendor documentation as the only required evidence.\nCorrect answer: A\n3. Which statement best describes a common failure mode?\nA. Human review is always unnecessary when AI is accurate.\nB. Documentation makes AI less useful.\nC. The agency assumes the tool is ready because the technology works in a demonstration, even though workflow, data, and governance have not been tested.\nD. Monitoring should stop after the pilot.\nCorrect answer: C\n4. What should be included in the practical artifact for this module?\nA. Only a general definition.\nB. A marketing description of the AI tool.\nC. A list of unrelated data systems.\nD. Workflow-specific risks, safeguards, roles, evidence requirements, and unresolved questions.\nCorrect answer: D\n5. When should the issue be escalated for governance or leadership review?\nA. Only if the tool is public-facing.\nB. When risks affect privacy, safety, equity, legal authority, public trust, system integrity, or operational decisions.\nC. Never, because technical staff can resolve all issues alone.\nD. Only after an incident has already occurred.\nCorrect answer: B\n\nReferences and Resources for Additional Information\nNIST AI Risk Management Framework\nAHRQ human factors and usability resources\nNIST Generative AI Profile\nCDC Public Health Data Strategy and Data Modernization resources\nOWASP Top 10 for LLM Applications, when security or AI integrations are relevant\nAgency privacy, cybersecurity, data governance, procurement, and records management policies",
-      "sequence_in_compilation": 25,
-      "file": "modules/OPS-220-human-factors-workflow-integration-and-usability-testing.json",
-      "legacy_id": "human-factors-workflow-integration-and-usability-testing",
-      "course_id": "OPS 220",
+      "jurisdiction_and_agency_policy_note": "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.",
+      "id": "ops-220-ai-for-environmental-health-and-field-operations",
       "course_code": "OPS 220",
-      "course_prefix": "OPS",
-      "course_number": 220,
-      "course_level": 200,
-      "level_label": "applied/foundational",
-      "primary_track_code": "OPS",
-      "primary_track_title": "Operations and Data Quality Track",
-      "display_title": "OPS 220: Human Factors, Workflow Integration, and Usability Testing",
-      "source_file_previous": "modules/025-human-factors-workflow-integration-and-usability-testing.json",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
       "prerequisites": {
         "required": [],
         "recommended": [
-          {
-            "course_id": "INT 150",
-            "title": "AI-Supported Public Health Workflows",
-            "source": "website_foundational_crosswalk",
-            "file": null
-          },
-          {
-            "course_id": "INT 160",
-            "title": "Risks, Limitations, and Guardrails",
-            "source": "website_foundational_crosswalk",
-            "file": null
-          }
-        ],
-        "rationale": "Human factors and usability can be taken early, but workflow and guardrail concepts improve application.",
-        "note": ""
+          "INT 105",
+          "OPS 200"
+        ]
       },
-      "prerequisite_summary": {
-        "has_required_prerequisites": false,
-        "has_recommended_prerequisites": true,
-        "required_count": 0,
-        "recommended_count": 2
-      },
+      "display_title": "OPS 220: AI for Environmental Health and Field Operations",
       "lms_usability_metadata": {
         "catalog_card": {
           "course_id": "OPS 220",
-          "title": "Human Factors, Workflow Integration, and Usability Testing",
-          "primary_track": "Operations and Data Quality Track",
-          "level_label": "applied/foundational",
+          "title": "AI for Environmental Health and Field Operations",
+          "level_label": "Intermediate",
           "estimated_time_minutes": 45,
-          "format": "Self-paced module with applied exercise and knowledge check",
+          "format": "Self-paced online module",
           "audience": [
-            "Operations leads",
-            "Data quality staff",
-            "Program managers",
-            "Implementation teams",
-            "Supervisors"
+            "Public health learners"
           ],
-          "when_to_use": "Use before workflow redesign, data quality improvement, user testing, deployment, monitoring, or continuous improvement.",
-          "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: The expected artifact is a completed workflow usability test plan. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks..",
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
           "required_prerequisites": [],
           "recommended_prerequisites": [
-            "INT 150",
-            "INT 160"
-          ],
-          "catalog_tags": [
-            "Operations and Data Quality Track",
-            "applied/foundational",
-            "OPS",
-            "workflow"
+            "INT 105",
+            "OPS 200"
           ]
-        },
-        "learner_flow": [
-          "learn",
-          "apply",
-          "complete"
-        ],
-        "recommended_page_sections": {
-          "open_by_default": [
-            "Course summary",
-            "Training Overview",
-            "Learning Objectives",
-            "Why This Topic Matters",
-            "Public Health Example",
-            "Practical Exercise",
-            "Knowledge Check"
-          ],
-          "collapsible": [
-            "Technical/Operational Deep Dive",
-            "Risks, Failure Modes, and Guardrails",
-            "Application to AI-Supported Workflows",
-            "References and Resources for Additional Information",
-            "Jurisdiction and Agency Policy Note"
-          ]
-        },
-        "completion_states": [
-          "not_started",
-          "in_progress",
-          "knowledge_check_complete",
-          "artifact_complete",
-          "module_complete"
-        ],
-        "lms_notes": "Metadata added to support a TRAIN-style catalog, module page, progress tracking, and Codex implementation. It does not replace the instructional content."
-      }
+        }
+      },
+      "tracks": [
+        "operations-data-quality"
+      ]
     },
     {
       "id": "ops-230-ai-workflow-standard-operating-procedures",
@@ -41155,10 +42227,10 @@ window.CURRICULUM_DATA = {
         ],
         "recommended": [
           {
-            "course_id": "PMG 200",
+            "course_id": "PGM 200",
             "title": "Business Analysis for AI-Enabled Public Health Systems",
             "source": "module_json",
-            "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+            "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
           },
           {
             "course_id": "ANL 300",
@@ -41197,7 +42269,7 @@ window.CURRICULUM_DATA = {
             "OPS 220"
           ],
           "recommended_prerequisites": [
-            "PMG 200",
+            "PGM 200",
             "ANL 300"
           ],
           "catalog_tags": [
@@ -41992,10 +43064,10 @@ window.CURRICULUM_DATA = {
         "required": [],
         "recommended": [
           {
-            "course_id": "PMG 200",
+            "course_id": "PGM 200",
             "title": "Business Analysis for AI-Enabled Public Health Systems",
             "source": "module_json",
-            "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+            "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
           },
           {
             "course_id": "ANL 300",
@@ -42032,7 +43104,7 @@ window.CURRICULUM_DATA = {
           "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: The expected artifact is a completed AI value and impact measurement plan. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks..",
           "required_prerequisites": [],
           "recommended_prerequisites": [
-            "PMG 200",
+            "PGM 200",
             "ANL 300"
           ],
           "catalog_tags": [
@@ -42837,17 +43909,17 @@ window.CURRICULUM_DATA = {
       ],
       "raw_text": "Business Analysis for AI-Enabled Public Health Systems\n\nTraining Overview\nBusiness analysis translates public health needs into clear requirements, workflows, user stories, acceptance criteria, data needs, and implementation decisions. AI projects often fail when technical teams, vendors, and program staff do not share a precise understanding of the problem to be solved. This module gives informaticians and program leads a disciplined approach to defining AI-supported workflows before technology choices are finalized.\n\nLearning Objectives\nExplain the purpose of business analysis for ai-enabled public health systems in public health AI work.\nIdentify the technical, operational, privacy, security, equity, and governance issues associated with the topic.\nApply the topic to a real or realistic public health workflow, system, or implementation scenario.\nRecognize common failure modes that can affect safety, accuracy, trust, workflow fit, or sustainability.\nIdentify practical guardrails that should be documented before implementation.\nProduce a AI business analysis package that can support readiness assessment, governance review, procurement, implementation, or monitoring.\n\nJurisdiction and Agency Policy Note\nThis national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.\n\nWhy This Topic Matters for Public Health AI\nBusiness Analysis for AI-Enabled Public Health Systems matters because AI systems are embedded in public health programs, data systems, and decision processes rather than operating in isolation. The topic affects whether AI outputs are accurate, explainable, safe, equitable, secure, and sustainable. Agencies that ignore this area may create tools that work in a demonstration but fail in actual practice.\nThe topic also affects accountability. Public health agencies must be able to explain how data are used, why a tool was approved, what evidence supports the workflow, who reviews outputs, and what happens when the system fails. These responsibilities become more important as AI tools move from experimentation into operational use.\n\nCore Concepts\nBusiness analysis clarifies the problem, workflow, users, requirements, constraints, and success criteria before technology decisions are made. AI projects often fail when teams start with a tool rather than a well-defined public health need.\nA user story describes what a user needs to do and why. In AI work, user stories should include human review, data requirements, documentation, and limitations. A user story should not simply say that the user wants AI; it should describe the task the AI is supporting.\nAcceptance criteria are testable conditions that determine whether a requirement has been met. For AI systems, acceptance criteria should include accuracy, workflow fit, usability, security, privacy, accessibility, and human oversight.\n\nPublic Health Example\nA local health department may want AI to help classify community complaints. A business analyst would clarify whether the real problem is high complaint volume, inconsistent routing, delayed response, lack of category definitions, or insufficient staffing. The resulting requirements may call for classification support with human review rather than fully automated complaint resolution.\n\nTechnical Deep Dive\nBusiness analysis begins with problem definition. Teams should document the public health objective, the operational pain point, the affected users, the current workflow, the decision being supported, and the consequences of error. A vague goal such as “use AI to improve efficiency” is not sufficient for implementation.\nRequirements should be grounded in workflow. Analysts should define current-state and future-state processes, data inputs, outputs, decision points, exception handling, reporting needs, and approval steps. This helps prevent tools from being procured without a clear implementation pathway.\nAI business analysis also requires boundary setting. Teams should define intended uses, prohibited uses, users, data permissions, human review points, and escalation triggers. These boundaries should become requirements, training expectations, and governance criteria.\n\nRisks, Failure Modes, and Guardrails\nA common failure mode is treating the topic as a technical detail rather than a public health control. When staff do not connect technical decisions to authority, workflow, equity, privacy, security, and accountability, the agency may adopt a tool that appears useful but cannot be sustained or defended.\nAnother risk is relying on vendor claims without agency-defined evidence. Vendors may provide demonstrations, dashboards, or summary metrics that do not match the agency workflow or data environment. A guardrail is to require documentation, test results, acceptance criteria, and agency-controlled review.\nA third risk is failing to plan for change. Public health data, policies, systems, and emergencies change. Any technical approach must include monitoring, review, versioning, escalation, and retirement pathways so the agency can respond when assumptions no longer hold.\n\nApplication to AI-Supported Workflows\nGenerative AI, predictive analytics, RAG, automation, and agentic workflows all depend on the controls described in this module. The controls should be scaled to the risk of the use case. A tool that drafts internal training text may require lighter review than a tool that updates case records, prioritizes outreach, or supports public communication during an emergency.\nThe module should be applied during readiness assessment, procurement, implementation planning, pilot testing, and post-deployment monitoring. Learners should document how the topic affects data, systems, users, safeguards, and decision-making for the selected workflow.\n\nReflection Questions\nWhere does this topic appear in one current or proposed AI workflow in your agency?\nWhat decisions, data sources, users, or partners would be affected if this area is poorly designed?\nWhat evidence would governance reviewers need before approving the workflow?\nWhich safeguards should be required before pilot testing?\nWho owns ongoing monitoring and review?\n\nPractical Exercise\nCreate a AI business analysis package for one real or realistic public health AI workflow. The artifact should describe the use case, affected users, data sources, system dependencies, risks, guardrails, review points, and unresolved questions.\nThe exercise should produce a work product that could be used in a governance meeting, procurement review, implementation planning session, pilot evaluation, or monitoring review. Learners should document assumptions and identify which staff or partners need to be consulted.\n\nExpected Artifact or Evidence\nThe expected artifact is a completed AI business analysis package. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks.\n\nKnowledge Check\nAnswer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record.\n1. What is the best reason to address business analysis for ai-enabled public health systems before deployment?\nA. It makes governance unnecessary.\nB. It helps ensure the AI workflow is safe, useful, reviewable, and fit for public health operations.\nC. It allows the agency to skip testing.\nD. It guarantees that the vendor product will work.\nCorrect answer: B\n2. Which practice best supports responsible implementation?\nA. Defining intended use, evidence requirements, safeguards, monitoring, and escalation before launch.\nB. Waiting until after launch to decide whether the tool is risky.\nC. Allowing users to decide individually how to use the tool.\nD. Treating vendor documentation as the only required evidence.\nCorrect answer: A\n3. Which statement best describes a common failure mode?\nA. Human review is always unnecessary when AI is accurate.\nB. Documentation makes AI less useful.\nC. The agency assumes the tool is ready because the technology works in a demonstration, even though workflow, data, and governance have not been tested.\nD. Monitoring should stop after the pilot.\nCorrect answer: C\n4. What should be included in the practical artifact for this module?\nA. Only a general definition.\nB. A marketing description of the AI tool.\nC. A list of unrelated data systems.\nD. Workflow-specific risks, safeguards, roles, evidence requirements, and unresolved questions.\nCorrect answer: D\n5. When should the issue be escalated for governance or leadership review?\nA. Only if the tool is public-facing.\nB. When risks affect privacy, safety, equity, legal authority, public trust, system integrity, or operational decisions.\nC. Never, because technical staff can resolve all issues alone.\nD. Only after an incident has already occurred.\nCorrect answer: B\n\nReferences and Resources for Additional Information\nNIST AI Risk Management Framework\nNIST Generative AI Profile\nCDC Public Health Data Strategy and Data Modernization resources\nOWASP Top 10 for LLM Applications, when security or AI integrations are relevant\nAgency privacy, cybersecurity, data governance, procurement, and records management policies",
       "sequence_in_compilation": 26,
-      "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json",
+      "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json",
       "legacy_id": "business-analysis-for-ai-enabled-public-health-systems",
-      "course_id": "PMG 200",
-      "course_code": "PMG 200",
-      "course_prefix": "PMG",
+      "course_id": "PGM 200",
+      "course_code": "PGM 200",
+      "course_prefix": "PGM",
       "course_number": 200,
       "course_level": 200,
       "level_label": "applied/foundational",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "display_title": "PMG 200: Business Analysis for AI-Enabled Public Health Systems",
+      "display_title": "PGM 200: Business Analysis for AI-Enabled Public Health Systems",
       "source_file_previous": "modules/026-business-analysis-for-ai-enabled-public-health-systems.json",
       "jurisdiction_and_agency_policy_note": {
         "applies": true,
@@ -42882,7 +43954,7 @@ window.CURRICULUM_DATA = {
       },
       "lms_usability_metadata": {
         "catalog_card": {
-          "course_id": "PMG 200",
+          "course_id": "PGM 200",
           "title": "Business Analysis for AI-Enabled Public Health Systems",
           "primary_track": "Program Management Role-Based Track",
           "level_label": "applied/foundational",
@@ -42905,7 +43977,7 @@ window.CURRICULUM_DATA = {
           "catalog_tags": [
             "Program Management Role-Based Track",
             "applied/foundational",
-            "PMG"
+            "PGM"
           ]
         },
         "learner_flow": [
@@ -43248,17 +44320,17 @@ window.CURRICULUM_DATA = {
       ],
       "raw_text": "Requirements Writing for AI Procurement and Implementation\n\nTraining Overview\nAI procurement requires stronger requirements than ordinary software purchasing because agencies must define not only features, but also data rights, validation, interoperability, security, privacy, monitoring, documentation, accessibility, and exit strategy. This module teaches learners how to write requirements that can be evaluated, tested, enforced, and monitored throughout implementation.\n\nLearning Objectives\nExplain the purpose of requirements writing for ai procurement and implementation in public health AI work.\nIdentify the technical, operational, privacy, security, equity, and governance issues associated with the topic.\nApply the topic to a real or realistic public health workflow, system, or implementation scenario.\nRecognize common failure modes that can affect safety, accuracy, trust, workflow fit, or sustainability.\nIdentify practical guardrails that should be documented before implementation.\nProduce a AI requirements matrix that can support readiness assessment, governance review, procurement, implementation, or monitoring.\n\nJurisdiction and Agency Policy Note\nThis module provides national-level training guidance for public health agencies and partners. It is not legal advice and does not replace review by agency legal counsel, privacy officers, procurement officials, civil rights staff, records officers, or other authorized decision-makers. Requirements may vary by state, locality, territory, Tribe, agency, funding source, data-sharing agreement, emergency authority, and organizational policy. Learners should use this module to identify the issues that require review and should confirm applicable requirements before approving, procuring, deploying, or publicly communicating about AI-supported work.\n\nWhy This Topic Matters for Public Health AI\nRequirements Writing for AI Procurement and Implementation matters because AI systems are embedded in public health programs, data systems, and decision processes rather than operating in isolation. The topic affects whether AI outputs are accurate, explainable, safe, equitable, secure, and sustainable. Agencies that ignore this area may create tools that work in a demonstration but fail in actual practice.\nThe topic also affects accountability. Public health agencies must be able to explain how data are used, why a tool was approved, what evidence supports the workflow, who reviews outputs, and what happens when the system fails. These responsibilities become more important as AI tools move from experimentation into operational use.\n\nCore Concepts\nA requirement is a clear statement of what a system must do or how it must perform. AI requirements must cover functional capabilities, nonfunctional expectations, data handling, validation, transparency, monitoring, security, accessibility, interoperability, and support.\nFunctional requirements describe what the tool must do, such as summarize a case report, classify a complaint, or generate a draft message. Nonfunctional requirements describe how the tool must perform, such as uptime, response time, security, auditability, explainability, and accessibility.\nProcurement requirements must be testable. If a requirement cannot be evaluated during proposal review, implementation, or acceptance testing, it is unlikely to protect the agency. Requirements should avoid vague claims such as “uses responsible AI” unless they are translated into evidence, controls, and deliverables.\n\nPublic Health Example\nA state health agency procuring an AI-supported case triage tool should require interoperability with the surveillance system, role-based access, source traceability, validation results, subgroup performance reporting, audit logs, human review controls, incident reporting, documentation, and data deletion at contract end. These requirements make vendor claims testable and enforceable.\n\nTechnical Deep Dive\nStrong AI requirements begin with intended use. The agency should state the specific workflow, users, data sources, outputs, and decisions the system may support. It should also state prohibited uses. This prevents scope creep and reduces the chance that a tool will be used for decisions it was not designed or approved to support.\nData requirements should specify allowed data sources, minimum necessary fields, terminology standards, data quality expectations, retention, ownership, reuse limits, and deletion requirements. If vendors will use agency data to improve models, that use should be explicitly approved or prohibited.\nAcceptance and monitoring requirements should specify what evidence the vendor must provide before launch and throughout operations. This may include validation reports, test cases, model cards, change logs, uptime reports, incident reports, bias assessments, security documentation, and user training materials.\n\nRisks, Failure Modes, and Guardrails\nA common failure mode is treating the topic as a technical detail rather than a public health control. When staff do not connect technical decisions to authority, workflow, equity, privacy, security, and accountability, the agency may adopt a tool that appears useful but cannot be sustained or defended.\nAnother risk is relying on vendor claims without agency-defined evidence. Vendors may provide demonstrations, dashboards, or summary metrics that do not match the agency workflow or data environment. A guardrail is to require documentation, test results, acceptance criteria, and agency-controlled review.\nA third risk is failing to plan for change. Public health data, policies, systems, and emergencies change. Any technical approach must include monitoring, review, versioning, escalation, and retirement pathways so the agency can respond when assumptions no longer hold.\n\nApplication to AI-Supported Workflows\nGenerative AI, predictive analytics, RAG, automation, and agentic workflows all depend on the controls described in this module. The controls should be scaled to the risk of the use case. A tool that drafts internal training text may require lighter review than a tool that updates case records, prioritizes outreach, or supports public communication during an emergency.\nThe module should be applied during readiness assessment, procurement, implementation planning, pilot testing, and post-deployment monitoring. Learners should document how the topic affects data, systems, users, safeguards, and decision-making for the selected workflow.\n\nReflection Questions\nWhere does this topic appear in one current or proposed AI workflow in your agency?\nWhat decisions, data sources, users, or partners would be affected if this area is poorly designed?\nWhat evidence would governance reviewers need before approving the workflow?\nWhich safeguards should be required before pilot testing?\nWho owns ongoing monitoring and review?\n\nPractical Exercise\nCreate a AI requirements matrix for one real or realistic public health AI workflow. The artifact should describe the use case, affected users, data sources, system dependencies, risks, guardrails, review points, and unresolved questions.\nThe exercise should produce a work product that could be used in a governance meeting, procurement review, implementation planning session, pilot evaluation, or monitoring review. Learners should document assumptions and identify which staff or partners need to be consulted.\n\nExpected Artifact or Evidence\nThe expected artifact is a completed AI requirements matrix. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks.\n\nKnowledge Check\nAnswer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record.\n1. What is the best reason to address requirements writing for ai procurement and implementation before deployment?\nA. It guarantees that the vendor product will work.\nB. It allows the agency to skip testing.\nC. It makes governance unnecessary.\nD. It helps ensure the AI workflow is safe, useful, reviewable, and fit for public health operations.\nCorrect answer: D\n2. Which practice best supports responsible implementation?\nA. Defining intended use, evidence requirements, safeguards, monitoring, and escalation before launch.\nB. Waiting until after launch to decide whether the tool is risky.\nC. Allowing users to decide individually how to use the tool.\nD. Treating vendor documentation as the only required evidence.\nCorrect answer: A\n3. Which statement best describes a common failure mode?\nA. Human review is always unnecessary when AI is accurate.\nB. Documentation makes AI less useful.\nC. The agency assumes the tool is ready because the technology works in a demonstration, even though workflow, data, and governance have not been tested.\nD. Monitoring should stop after the pilot.\nCorrect answer: C\n4. What should be included in the practical artifact for this module?\nA. Only a general definition.\nB. A marketing description of the AI tool.\nC. A list of unrelated data systems.\nD. Workflow-specific risks, safeguards, roles, evidence requirements, and unresolved questions.\nCorrect answer: D\n5. When should the issue be escalated for governance or leadership review?\nA. Only if the tool is public-facing.\nB. When risks affect privacy, safety, equity, legal authority, public trust, system integrity, or operational decisions.\nC. Never, because technical staff can resolve all issues alone.\nD. Only after an incident has already occurred.\nCorrect answer: B\n\nReferences and Resources for Additional Information\nNIST AI Risk Management Framework\nONC interoperability resources and agency procurement templates\nNIST Generative AI Profile\nCDC Public Health Data Strategy and Data Modernization resources\nOWASP Top 10 for LLM Applications, when security or AI integrations are relevant\nAgency privacy, cybersecurity, data governance, procurement, and records management policies",
       "sequence_in_compilation": 27,
-      "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json",
+      "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json",
       "legacy_id": "requirements-writing-for-ai-procurement-and-implementation",
-      "course_id": "PMG 210",
-      "course_code": "PMG 210",
-      "course_prefix": "PMG",
+      "course_id": "PGM 210",
+      "course_code": "PGM 210",
+      "course_prefix": "PGM",
       "course_number": 210,
       "course_level": 200,
       "level_label": "applied/foundational",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "display_title": "PMG 210: Requirements Writing for AI Procurement and Implementation",
+      "display_title": "PGM 210: Requirements Writing for AI Procurement and Implementation",
       "source_file_previous": "modules/027-requirements-writing-for-ai-procurement-and-implementation.json",
       "jurisdiction_and_agency_policy_note": {
         "applies": true,
@@ -43269,10 +44341,10 @@ window.CURRICULUM_DATA = {
       "prerequisites": {
         "required": [
           {
-            "course_id": "PMG 200",
+            "course_id": "PGM 200",
             "title": "Business Analysis for AI-Enabled Public Health Systems",
             "source": "module_json",
-            "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+            "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
           }
         ],
         "recommended": [
@@ -43300,7 +44372,7 @@ window.CURRICULUM_DATA = {
       },
       "lms_usability_metadata": {
         "catalog_card": {
-          "course_id": "PMG 210",
+          "course_id": "PGM 210",
           "title": "Requirements Writing for AI Procurement and Implementation",
           "primary_track": "Program Management Role-Based Track",
           "level_label": "applied/foundational",
@@ -43316,7 +44388,7 @@ window.CURRICULUM_DATA = {
           "when_to_use": "Use before project planning, requirements writing, vendor implementation, funding management, or operational rollout.",
           "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: The expected artifact is a completed AI requirements matrix. It should be specific to a public health workflow and should include technical dependencies, governance questions, human review expectations, monitoring indicators, and unresolved risks..",
           "required_prerequisites": [
-            "PMG 200"
+            "PGM 200"
           ],
           "recommended_prerequisites": [
             "INT 280",
@@ -43325,7 +44397,7 @@ window.CURRICULUM_DATA = {
           "catalog_tags": [
             "Program Management Role-Based Track",
             "applied/foundational",
-            "PMG",
+            "PGM",
             "procurement"
           ]
         },
@@ -43372,7 +44444,7 @@ window.CURRICULUM_DATA = {
         "program-management",
         "operations-and-data-quality",
         "technical-architecture",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -43676,17 +44748,17 @@ window.CURRICULUM_DATA = {
       ],
       "raw_text": "AI Project Management and Implementation Planning\n\nPreamble\nTrack Alignment: Program Management Track; Operations and Data Quality Track; Technical Architecture Track; Executive Leadership Track\n\nTraining Overview\nAI projects require disciplined implementation planning because they combine technology, data, governance, workflow change, training, validation, procurement, security, and evaluation. A project that appears small, such as adding an AI summarization tool, may still require data access decisions, system integration, human review design, communications planning, and post-launch monitoring. Public health agencies need project management methods that account for these dependencies before implementation begins.\nThis module teaches program managers, product owners, implementation leads, and technical staff how to structure AI initiatives from concept through deployment and operations. The focus is on practical project controls: charters, milestones, governance gates, risk logs, stakeholder engagement, testing, training, launch readiness, and transition to operations.\nStrong AI project management helps agencies avoid pilots that never scale, tools that are deployed without ownership, and vendor-led projects that outpace governance or public health readiness. It also helps leadership understand what resources are needed for safe and sustainable implementation.\n\nLearning Objectives\nBy the end of this module, learners will be able to:\nDefine the major phases of an AI implementation project.\nDevelop an AI project charter that includes scope, objectives, roles, risks, dependencies, and governance gates.\nIdentify implementation dependencies across data, systems, privacy, security, procurement, workflow, training, and evaluation.\nCreate a launch readiness checklist for an AI-supported workflow.\nPlan transition from pilot to operations, including ownership, monitoring, maintenance, and sustainability.\n\nDefinitions Used in This Module\nProject charter. A document that defines the purpose, scope, objectives, roles, governance, risks, and deliverables for a project.\nGovernance gate. A decision point where a project must receive approval before moving to the next phase.\nLaunch readiness. The determination that a workflow, users, systems, documentation, training, and monitoring are ready for deployment.\nTransition to operations. The handoff from implementation to routine management, monitoring, support, and continuous improvement.\nDependency. A task, decision, resource, or condition that must be completed or available for another activity to proceed.\n\nPublic Health Example\nA public health agency plans to pilot an AI tool that drafts summaries of incoming case reports. The project plan identifies governance approval, data access, system integration, validation, user training, SOP development, incident response, and monitoring as required workstreams. The project cannot launch simply because the tool works in a demonstration. It must pass readiness checks showing that staff know how to review the output, errors can be reported, and the tool is monitored after launch.\n\nTechnical and Operational Deep Dive\nAI project planning should begin with a charter that defines the use case and sets boundaries. The charter should explain the public health problem, intended users, expected benefits, data involved, systems affected, approved use, prohibited use, and success measures. It should also identify the sponsor, product owner, implementation lead, technical lead, privacy or legal contacts, security contact, evaluation lead, and operational owner.\nImplementation should be organized into phases. Early phases usually include discovery, intake, feasibility review, governance approval, and business analysis. Middle phases include design, procurement or configuration, data access setup, integration, validation, workflow design, SOP development, and training. Later phases include user acceptance testing, launch readiness review, deployment, monitoring, and transition to operations. Governance gates should be placed between phases to prevent premature launch.\nAI project risk management should be more detailed than a general project risk log. Risks may include poor data quality, unavailable interfaces, unclear authority, model performance problems, vendor delays, privacy concerns, security vulnerabilities, staff resistance, workflow burden, community trust concerns, and sustainability gaps. Each risk should have an owner, mitigation plan, status, and escalation threshold.\nTransition to operations is often neglected. A pilot may show promise, but routine use requires support, monitoring, maintenance, budget, staff training, user feedback, incident response, and periodic review. The project plan should define when the implementation team ends and who becomes responsible for ongoing operations.\n\nRisks, Failure Modes, and Guardrails\nRisks and failure modes include the following:\nPilots launching without governance approval or operational ownership.\nProject plans overlooking data, privacy, security, workflow, or training dependencies.\nVendors controlling implementation timelines without agency readiness gates.\nNo transition plan from pilot to routine operations.\nSuccess measured only by deployment rather than public health value and safe use.\nRecommended guardrails include the following:\nUse an AI-specific project charter and risk log.\nDefine governance gates before implementation begins.\nCreate separate workstreams for data, technology, governance, workflow, training, validation, and evaluation.\nRequire launch readiness review before deployment.\nDocument transition to operations and sustainability responsibilities.\n\nReflection Questions\nWhere does this topic appear in your agency, program, or workflow?\nWhich staff roles would need to understand or apply this concept before AI use is approved?\nWhat could go wrong if this topic is not addressed before implementation?\nWhat evidence would governance, leadership, or operations staff need before moving forward?\nWhich policy, data, equity, privacy, security, or workflow questions remain unresolved?\n\nPractical Exercise\nCreate an AI project charter and implementation plan for one proposed AI-supported public health workflow. Include project purpose, scope, objectives, roles, governance gates, milestones, workstreams, dependencies, risks, launch readiness criteria, and transition-to-operations plan.\n\nExpected Artifact or Evidence\nAI project charter\nImplementation workplan\nAI-specific risk log\nLaunch readiness checklist\nTransition-to-operations plan\n\nKnowledge Check\nAnswer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record.\n1. What distinguishes AI project management from ordinary software implementation?\nA. AI projects never require privacy review\nB. AI projects are always shorter\nC. AI projects should be run only by vendors\nD. AI projects require attention to data, model behavior, governance, workflow, validation, monitoring, and human review\nCorrect answer: D\n2. What is a governance gate?\nA. A decision point where approval is required before moving to the next phase\nB. A user password\nC. A model parameter\nD. A public dashboard\nCorrect answer: A\n3. Which item belongs in an AI project charter?\nA. Only the tool name\nB. Only the vendor price\nC. Scope, intended use, roles, risks, dependencies, and success measures\nD. Only a launch date\nCorrect answer: C\n4. Why is transition to operations important?\nA. It eliminates monitoring\nB. It defines who owns support, monitoring, maintenance, training, and improvement after implementation\nC. It ends governance review permanently\nD. It prevents staff feedback\nCorrect answer: B\n5. What is strong completion evidence?\nA. A vendor brochure\nB. A list of AI terms\nC. A meeting agenda\nD. A charter, workplan, risk log, launch readiness checklist, and transition plan\nCorrect answer: D\n\nReferences and Resources for Additional Information\nNIST Artificial Intelligence Risk Management Framework\nNIST Generative AI Profile\nCDC Public Health Data Strategy and Data Modernization resources\nOWASP guidance for LLM application security\nAgency policies for privacy, cybersecurity, records, procurement, accessibility, and public communications\nRelevant public health program SOPs, data governance documentation, and implementation plans",
       "sequence_in_compilation": 44,
-      "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json",
+      "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json",
       "legacy_id": "ai-project-management-and-implementation-planning",
-      "course_id": "PMG 220",
-      "course_code": "PMG 220",
-      "course_prefix": "PMG",
+      "course_id": "PGM 220",
+      "course_code": "PGM 220",
+      "course_prefix": "PGM",
       "course_number": 220,
       "course_level": 200,
       "level_label": "applied/foundational",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "display_title": "PMG 220: AI Project Management and Implementation Planning",
+      "display_title": "PGM 220: AI Project Management and Implementation Planning",
       "source_file_previous": "modules/044-ai-project-management-and-implementation-planning.json",
       "prerequisites": {
         "required": [
@@ -43699,10 +44771,10 @@ window.CURRICULUM_DATA = {
         ],
         "recommended": [
           {
-            "course_id": "PMG 200",
+            "course_id": "PGM 200",
             "title": "Business Analysis for AI-Enabled Public Health Systems",
             "source": "module_json",
-            "file": "modules/PMG-200-business-analysis-for-ai-enabled-public-health-systems.json"
+            "file": "modules/PGM-200-business-analysis-for-ai-enabled-public-health-systems.json"
           },
           {
             "course_id": "EXE 410",
@@ -43722,7 +44794,7 @@ window.CURRICULUM_DATA = {
       },
       "lms_usability_metadata": {
         "catalog_card": {
-          "course_id": "PMG 220",
+          "course_id": "PGM 220",
           "title": "AI Project Management and Implementation Planning",
           "primary_track": "Program Management Role-Based Track",
           "level_label": "applied/foundational",
@@ -43741,13 +44813,13 @@ window.CURRICULUM_DATA = {
             "INT 200"
           ],
           "recommended_prerequisites": [
-            "PMG 200",
+            "PGM 200",
             "EXE 410"
           ],
           "catalog_tags": [
             "Program Management Role-Based Track",
             "applied/foundational",
-            "PMG"
+            "PGM"
           ]
         },
         "learner_flow": [
@@ -44128,17 +45200,17 @@ window.CURRICULUM_DATA = {
       ],
       "raw_text": "AI Vendor Implementation Management\n\nPreamble\nTrack alignment: Program management; governance/security; technical architecture\n\nTraining Overview\nThis module focuses on managing vendor delivery, configuration, testing, issue resolution, acceptance, and transition to operations. It is designed for public health staff who must translate responsible AI principles into repeatable decisions, documents, workflows, and oversight practices.\nThe module helps learners move beyond general awareness by producing a practical artifact that can be used in governance review, implementation planning, operations, communication, or accountability. It emphasizes paragraph-based reasoning, defined responsibilities, and documentation that can withstand public health, legal, privacy, equity, and leadership review.\n\nLearning Objectives\nExplain the purpose of ai vendor implementation management in public health AI.\nIdentify the roles, decisions, risks, and documentation needed for the topic.\nApply the topic to a real or realistic public health workflow or decision.\nRecognize equity, privacy, security, legal, operational, and public trust implications.\nProduce a practical artifact that supports readiness, governance, implementation, monitoring, or accountability.\n\nJurisdiction and Agency Policy Note\nThis module provides national-level training guidance for public health agencies and partners. It is not legal advice and does not replace review by agency legal counsel, privacy officers, procurement officials, civil rights staff, records officers, or other authorized decision-makers. Requirements may vary by state, locality, territory, Tribe, agency, funding source, data-sharing agreement, emergency authority, and organizational policy. Learners should use this module to identify the issues that require review and should confirm applicable requirements before approving, procuring, deploying, or publicly communicating about AI-supported work.\n\nWhy This Topic Matters for Public Health AI\nAI Vendor Implementation Management matters because AI adoption changes how public health agencies make, document, communicate, and review decisions. Without a structured approach, staff may rely on informal practices, vendor assurances, or one-time approvals that do not match the operational consequences of AI-supported work.\nPublic health agencies operate under legal authorities, public accountability, resource constraints, and community trust obligations. A module on this topic helps agencies define repeatable expectations before urgent situations arise. It also helps staff distinguish low-risk administrative support from uses that affect surveillance, public communications, field response, resource allocation, civil rights, privacy, or official records.\n\nDefinitions\nDecision right: The authority to approve, deny, modify, pause, or escalate an AI use case or operational decision.\nEvidence artifact: A document, log, checklist, test result, approval record, or review note that demonstrates responsible AI practice.\nEscalation pathway: A defined route for raising concerns to the appropriate reviewer or decision-maker.\nAccountability owner: The person or role responsible for ensuring that an AI use case is governed, monitored, and corrected when needed.\nOperational safeguard: A procedure, control, or review step that reduces risk during day-to-day use.\n\nPublic Health Example\nA public health agency is preparing to use AI in a workflow related to managing vendor delivery, configuration, testing, issue resolution, acceptance, and transition to operations. The project team initially treats the tool as a helpful efficiency aid, but governance reviewers recognize that the workflow may affect public trust, equity, official records, or public health action.\nThe agency responds by creating a clear artifact that defines intended use, prohibited use, responsible roles, review points, documentation expectations, escalation triggers, and monitoring measures. This converts a broad AI idea into a manageable public health practice.\n\nTechnical and Operational Deep Dive\nThe first step in this topic is to define the decision or workflow clearly. Staff should identify who is affected, what data are used, what AI output is produced, who reviews the output, and what action may follow. This prevents the module from becoming abstract and anchors the work in public health practice.\nThe second step is to assign responsibilities. AI-supported workflows often cross program, IT, legal, privacy, communications, procurement, and leadership boundaries. Responsibilities should be named by role rather than assumed. The artifact should specify who prepares materials, who reviews risks, who approves use, who monitors performance, and who can pause or revise the workflow.\nThe third step is to define evidence. Responsible AI depends on more than policy statements. Agencies need records that show what was reviewed, what decisions were made, what safeguards were applied, what incidents occurred, and how the workflow changed over time. Evidence also supports audits, public records review, quality improvement, and leadership accountability.\n\nRisks, Failure Modes, and Guardrails\nA common failure mode is treating the topic as a one-time checklist. AI risks can change when data sources, models, vendors, policies, users, or public expectations change. A guardrail is to define review intervals and change triggers.\nAnother failure mode is unclear ownership. When everyone is responsible in general, no one may be responsible in practice. A guardrail is to assign an accountability owner and name escalation pathways.\nA third failure mode is relying on vendor claims or informal staff confidence without documentation. A guardrail is to require evidence artifacts that can be reviewed by governance, leadership, privacy, legal, equity, security, or program teams.\n\nApplication to AI-Supported Workflows\nThis topic applies across generative AI, predictive analytics, NLP, RAG, automation, and agentic workflows. The more sensitive the data, the more consequential the output, or the more automated the action, the stronger the documentation, review, and monitoring expectations should be.\n\nReflection Questions\nWhat public health decision or workflow does this topic affect?\nWho has authority to approve or pause the work?\nWhat evidence would show that the workflow is responsible and effective?\nWhat equity, privacy, legal, security, or public trust risks require review?\nHow will the agency know when the workflow needs to be revised?\n\nPractical Exercise\nCreate a practical ai vendor implementation management artifact for one AI-supported public health use case. The artifact should define the use case, affected roles, review criteria, safeguards, documentation expectations, escalation triggers, monitoring indicators, and next review date.\n\nExpected Artifact or Evidence\nAI Vendor Implementation Management artifact\nRole and responsibility table\nRisk and safeguard summary\nEscalation and monitoring plan\nApproval or review note\n\nKnowledge Check\nAnswer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record. Correct answers are included for facilitator use and can be hidden in the learner-facing version.\n1. What is the strongest evidence that ai vendor implementation management has been applied responsibly?\nA. A general statement that AI is useful\nB. A vendor demonstration with no agency review\nC. A documented artifact that defines use, roles, safeguards, escalation, monitoring, and evidence\nD. A decision to skip review because the use case seems efficient\nCorrect answer: C\n2. What is the best reason to assign an accountability owner?\nA. To reduce the need for documentation\nB. To ensure someone is responsible for monitoring, escalation, and correction\nC. To make the vendor solely responsible\nD. To prevent staff from raising concerns\nCorrect answer: B\n3. When should an AI-supported workflow be escalated for review?\nA. Only after media coverage\nB. Never if the tool is efficient\nC. When outputs may affect safety, equity, privacy, legal authority, public trust, or official action\nD. Only at the end of the fiscal year\nCorrect answer: C\n4. Which practice best supports public accountability?\nA. Keeping AI use informal\nB. Avoiding written records\nC. Letting each user decide independently\nD. Maintaining evidence artifacts, decision records, review notes, and monitoring results\nCorrect answer: D\n5. What should happen when data sources, policy, vendor configuration, or workflow use changes?\nA. The use case should be reviewed to determine whether safeguards, validation, documentation, or approvals need updating\nB. The agency should ignore the change if staff like the tool\nC. The model should be trusted automatically\nD. The glossary should be deleted\nCorrect answer: A\n\nReferences and Resources for Additional Information\nCDC Public Health Data Strategy and Data Modernization resources\nNIST Artificial Intelligence Risk Management Framework and NIST Generative AI Profile\nWHO Ethics and Governance of Artificial Intelligence for Health guidance\nOWASP Top 10 for Large Language Model Applications\nONC health IT, interoperability, and information blocking resources\nAgency policies for privacy, public records, cybersecurity, procurement, civil rights, accessibility, language access, and emergency communications",
       "sequence_in_compilation": 67,
-      "file": "modules/PMG-300-ai-vendor-implementation-management.json",
+      "file": "modules/PGM-300-ai-vendor-implementation-management.json",
       "legacy_id": "ai-vendor-implementation-management",
-      "course_id": "PMG 300",
-      "course_code": "PMG 300",
-      "course_prefix": "PMG",
+      "course_id": "PGM 300",
+      "course_code": "PGM 300",
+      "course_prefix": "PGM",
       "course_number": 300,
       "course_level": 300,
       "level_label": "intermediate/practitioner",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "display_title": "PMG 300: AI Vendor Implementation Management",
+      "display_title": "PGM 300: AI Vendor Implementation Management",
       "source_file_previous": "modules/067-ai-vendor-implementation-management.json",
       "jurisdiction_and_agency_policy_note": {
         "applies": true,
@@ -44149,10 +45221,10 @@ window.CURRICULUM_DATA = {
       "prerequisites": {
         "required": [
           {
-            "course_id": "PMG 210",
+            "course_id": "PGM 210",
             "title": "Requirements Writing for AI Procurement and Implementation",
             "source": "module_json",
-            "file": "modules/PMG-210-requirements-writing-for-ai-procurement-and-implementation.json"
+            "file": "modules/PGM-210-requirements-writing-for-ai-procurement-and-implementation.json"
           }
         ],
         "recommended": [
@@ -44180,7 +45252,7 @@ window.CURRICULUM_DATA = {
       },
       "lms_usability_metadata": {
         "catalog_card": {
-          "course_id": "PMG 300",
+          "course_id": "PGM 300",
           "title": "AI Vendor Implementation Management",
           "primary_track": "Program Management Role-Based Track",
           "level_label": "intermediate/practitioner",
@@ -44196,7 +45268,7 @@ window.CURRICULUM_DATA = {
           "when_to_use": "Use before project planning, requirements writing, vendor implementation, funding management, or operational rollout.",
           "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: AI Vendor Implementation Management artifact.",
           "required_prerequisites": [
-            "PMG 210"
+            "PGM 210"
           ],
           "recommended_prerequisites": [
             "GOV 360",
@@ -44205,7 +45277,7 @@ window.CURRICULUM_DATA = {
           "catalog_tags": [
             "Program Management Role-Based Track",
             "intermediate/practitioner",
-            "PMG",
+            "PGM",
             "vendor"
           ]
         },
@@ -44250,7 +45322,7 @@ window.CURRICULUM_DATA = {
       "module_number_in_source": 17,
       "tracks": [
         "program-management",
-        "executive-leadership",
+        "public-health-executive-leadership",
         "policy",
         "governance-security"
       ],
@@ -44606,17 +45678,17 @@ window.CURRICULUM_DATA = {
       ],
       "raw_text": "Grant and Funding Management for AI Projects\n\nPreamble\nTrack alignment: Program management; executive leadership; policy\n\nTraining Overview\nThis module focuses on connecting AI projects to allowable costs, deliverables, reporting, performance measures, and sustainability. It is designed for public health staff who must translate responsible AI principles into repeatable decisions, documents, workflows, and oversight practices.\nThe module helps learners move beyond general awareness by producing a practical artifact that can be used in governance review, implementation planning, operations, communication, or accountability. It emphasizes paragraph-based reasoning, defined responsibilities, and documentation that can withstand public health, legal, privacy, equity, and leadership review.\n\nLearning Objectives\nExplain the purpose of grant and funding management for ai projects in public health AI.\nIdentify the roles, decisions, risks, and documentation needed for the topic.\nApply the topic to a real or realistic public health workflow or decision.\nRecognize equity, privacy, security, legal, operational, and public trust implications.\nProduce a practical artifact that supports readiness, governance, implementation, monitoring, or accountability.\n\nJurisdiction and Agency Policy Note\nThis module provides national-level training guidance for public health agencies and partners. It is not legal advice and does not replace review by agency legal counsel, privacy officers, procurement officials, civil rights staff, records officers, or other authorized decision-makers. Requirements may vary by state, locality, territory, Tribe, agency, funding source, data-sharing agreement, emergency authority, and organizational policy. Learners should use this module to identify the issues that require review and should confirm applicable requirements before approving, procuring, deploying, or publicly communicating about AI-supported work.\n\nWhy This Topic Matters for Public Health AI\nGrant and Funding Management for AI Projects matters because AI adoption changes how public health agencies make, document, communicate, and review decisions. Without a structured approach, staff may rely on informal practices, vendor assurances, or one-time approvals that do not match the operational consequences of AI-supported work.\nPublic health agencies operate under legal authorities, public accountability, resource constraints, and community trust obligations. A module on this topic helps agencies define repeatable expectations before urgent situations arise. It also helps staff distinguish low-risk administrative support from uses that affect surveillance, public communications, field response, resource allocation, civil rights, privacy, or official records.\n\nDefinitions\nDecision right: The authority to approve, deny, modify, pause, or escalate an AI use case or operational decision.\nEvidence artifact: A document, log, checklist, test result, approval record, or review note that demonstrates responsible AI practice.\nEscalation pathway: A defined route for raising concerns to the appropriate reviewer or decision-maker.\nAccountability owner: The person or role responsible for ensuring that an AI use case is governed, monitored, and corrected when needed.\nOperational safeguard: A procedure, control, or review step that reduces risk during day-to-day use.\n\nPublic Health Example\nA public health agency is preparing to use AI in a workflow related to connecting AI projects to allowable costs, deliverables, reporting, performance measures, and sustainability. The project team initially treats the tool as a helpful efficiency aid, but governance reviewers recognize that the workflow may affect public trust, equity, official records, or public health action.\nThe agency responds by creating a clear artifact that defines intended use, prohibited use, responsible roles, review points, documentation expectations, escalation triggers, and monitoring measures. This converts a broad AI idea into a manageable public health practice.\n\nTechnical and Operational Deep Dive\nThe first step in this topic is to define the decision or workflow clearly. Staff should identify who is affected, what data are used, what AI output is produced, who reviews the output, and what action may follow. This prevents the module from becoming abstract and anchors the work in public health practice.\nThe second step is to assign responsibilities. AI-supported workflows often cross program, IT, legal, privacy, communications, procurement, and leadership boundaries. Responsibilities should be named by role rather than assumed. The artifact should specify who prepares materials, who reviews risks, who approves use, who monitors performance, and who can pause or revise the workflow.\nThe third step is to define evidence. Responsible AI depends on more than policy statements. Agencies need records that show what was reviewed, what decisions were made, what safeguards were applied, what incidents occurred, and how the workflow changed over time. Evidence also supports audits, public records review, quality improvement, and leadership accountability.\n\nRisks, Failure Modes, and Guardrails\nA common failure mode is treating the topic as a one-time checklist. AI risks can change when data sources, models, vendors, policies, users, or public expectations change. A guardrail is to define review intervals and change triggers.\nAnother failure mode is unclear ownership. When everyone is responsible in general, no one may be responsible in practice. A guardrail is to assign an accountability owner and name escalation pathways.\nA third failure mode is relying on vendor claims or informal staff confidence without documentation. A guardrail is to require evidence artifacts that can be reviewed by governance, leadership, privacy, legal, equity, security, or program teams.\n\nApplication to AI-Supported Workflows\nThis topic applies across generative AI, predictive analytics, NLP, RAG, automation, and agentic workflows. The more sensitive the data, the more consequential the output, or the more automated the action, the stronger the documentation, review, and monitoring expectations should be.\n\nReflection Questions\nWhat public health decision or workflow does this topic affect?\nWho has authority to approve or pause the work?\nWhat evidence would show that the workflow is responsible and effective?\nWhat equity, privacy, legal, security, or public trust risks require review?\nHow will the agency know when the workflow needs to be revised?\n\nPractical Exercise\nCreate a practical grant and funding management for ai projects artifact for one AI-supported public health use case. The artifact should define the use case, affected roles, review criteria, safeguards, documentation expectations, escalation triggers, monitoring indicators, and next review date.\n\nExpected Artifact or Evidence\nGrant and Funding Management for AI Projects artifact\nRole and responsibility table\nRisk and safeguard summary\nEscalation and monitoring plan\nApproval or review note\n\nKnowledge Check\nAnswer the five questions below. A score of 4 out of 5 or higher marks this module complete in your local progress record. Correct answers are included for facilitator use and can be hidden in the learner-facing version.\n1. What is the strongest evidence that grant and funding management for ai projects has been applied responsibly?\nA. A general statement that AI is useful\nB. A vendor demonstration with no agency review\nC. A documented artifact that defines use, roles, safeguards, escalation, monitoring, and evidence\nD. A decision to skip review because the use case seems efficient\nCorrect answer: C\n2. What is the best reason to assign an accountability owner?\nA. To reduce the need for documentation\nB. To ensure someone is responsible for monitoring, escalation, and correction\nC. To make the vendor solely responsible\nD. To prevent staff from raising concerns\nCorrect answer: B\n3. When should an AI-supported workflow be escalated for review?\nA. Only after media coverage\nB. Never if the tool is efficient\nC. When outputs may affect safety, equity, privacy, legal authority, public trust, or official action\nD. Only at the end of the fiscal year\nCorrect answer: C\n4. Which practice best supports public accountability?\nA. Keeping AI use informal\nB. Avoiding written records\nC. Letting each user decide independently\nD. Maintaining evidence artifacts, decision records, review notes, and monitoring results\nCorrect answer: D\n5. What should happen when data sources, policy, vendor configuration, or workflow use changes?\nA. The use case should be reviewed to determine whether safeguards, validation, documentation, or approvals need updating\nB. The agency should ignore the change if staff like the tool\nC. The model should be trusted automatically\nD. The glossary should be deleted\nCorrect answer: A\n\nReferences and Resources for Additional Information\nCDC Public Health Data Strategy and Data Modernization resources\nNIST Artificial Intelligence Risk Management Framework and NIST Generative AI Profile\nWHO Ethics and Governance of Artificial Intelligence for Health guidance\nOWASP Top 10 for Large Language Model Applications\nONC health IT, interoperability, and information blocking resources\nAgency policies for privacy, public records, cybersecurity, procurement, civil rights, accessibility, language access, and emergency communications\nAppendix. Common Source Base Used Across Modules\nCDC Public Health Data Strategy and CDC Data Modernization resources.\nCDC electronic case reporting, electronic laboratory reporting, surveillance, and public health data quality resources.\nHL7 FHIR, HL7 US Core, public health implementation guides, CDA, and HL7 v2 implementation materials.\nONC USCDI, health IT, interoperability, and information blocking resources.\nNIST Artificial Intelligence Risk Management Framework, NIST Generative AI Profile, NIST Privacy Framework, and related NIST cybersecurity guidance.\nOWASP Top 10 for Large Language Model Applications and related secure AI application guidance.\nWHO ethics and governance guidance for artificial intelligence in health.\nAgency policies and procedures for privacy, public records, cybersecurity, procurement, civil rights, accessibility, language access, records retention, incident response, and emergency communications.",
       "sequence_in_compilation": 68,
-      "file": "modules/PMG-310-grant-and-funding-management-for-ai-projects.json",
+      "file": "modules/PGM-310-grant-and-funding-management-for-ai-projects.json",
       "legacy_id": "grant-and-funding-management-for-ai-projects",
-      "course_id": "PMG 310",
-      "course_code": "PMG 310",
-      "course_prefix": "PMG",
+      "course_id": "PGM 310",
+      "course_code": "PGM 310",
+      "course_prefix": "PGM",
       "course_number": 310,
       "course_level": 300,
       "level_label": "intermediate/practitioner",
-      "primary_track_code": "PMG",
+      "primary_track_code": "PGM",
       "primary_track_title": "Program Management Role-Based Track",
-      "display_title": "PMG 310: Grant and Funding Management for AI Projects",
+      "display_title": "PGM 310: Grant and Funding Management for AI Projects",
       "source_file_previous": "modules/068-grant-and-funding-management-for-ai-projects.json",
       "jurisdiction_and_agency_policy_note": {
         "applies": true,
@@ -44634,10 +45706,10 @@ window.CURRICULUM_DATA = {
             "file": "modules/EXE-420-ai-investment-strategy-and-business-case-review.json"
           },
           {
-            "course_id": "PMG 220",
+            "course_id": "PGM 220",
             "title": "AI Project Management and Implementation Planning",
             "source": "module_json",
-            "file": "modules/PMG-220-ai-project-management-and-implementation-planning.json"
+            "file": "modules/PGM-220-ai-project-management-and-implementation-planning.json"
           },
           {
             "course_id": "INT 270",
@@ -44657,7 +45729,7 @@ window.CURRICULUM_DATA = {
       },
       "lms_usability_metadata": {
         "catalog_card": {
-          "course_id": "PMG 310",
+          "course_id": "PGM 310",
           "title": "Grant and Funding Management for AI Projects",
           "primary_track": "Program Management Role-Based Track",
           "level_label": "intermediate/practitioner",
@@ -44675,13 +45747,13 @@ window.CURRICULUM_DATA = {
           "required_prerequisites": [],
           "recommended_prerequisites": [
             "EXE 420",
-            "PMG 220",
+            "PGM 220",
             "INT 270"
           ],
           "catalog_tags": [
             "Program Management Role-Based Track",
             "intermediate/practitioner",
-            "PMG"
+            "PGM"
           ]
         },
         "learner_flow": [
@@ -44726,7 +45798,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "policy",
         "governance-and-security",
-        "executive-leadership",
+        "public-health-executive-leadership",
         "program-management"
       ],
       "template_version": "public-health-ai-training-module-v1",
@@ -45152,7 +46224,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "governance-security",
         "policy",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -45605,7 +46677,7 @@ window.CURRICULUM_DATA = {
       "tracks": [
         "policy",
         "governance-security",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -46064,7 +47136,7 @@ window.CURRICULUM_DATA = {
         "policy",
         "governance-security",
         "communications",
-        "executive-leadership"
+        "public-health-executive-leadership"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -46529,8 +47601,8 @@ window.CURRICULUM_DATA = {
       "source_collection": "Governance and Security Track: Introductory Modules",
       "module_number_in_source": 100,
       "tracks": [
-        "shared-foundational",
-        "governance-security"
+        "governance-security",
+        "shared-foundational"
       ],
       "template_version": "public-health-ai-training-module-v1",
       "sections": [
@@ -46666,7 +47738,12 @@ window.CURRICULUM_DATA = {
           "key": "knowledge_check",
           "heading": "Knowledge Check",
           "paragraphs": [
-            "The knowledge check should confirm that learners can define AI governance, recognize when review is needed, identify appropriate roles, distinguish low-risk from higher-risk uses, and apply basic governance thinking to a workflow."
+            "The knowledge check should confirm that learners can define AI governance, recognize when review is needed, identify appropriate roles, distinguish low-risk from higher-risk uses, and apply basic governance thinking to a workflow.",
+            "1. Which statement best describes AI governance in a public health agency?",
+            "2. Which AI use should most clearly be escalated for formal review before implementation?",
+            "3. What is the most important reason to define human review in an AI-supported workflow?",
+            "4. A staff member wants to paste identifiable case notes into a public AI chatbot to create a quick summary. What should happen first?",
+            "5. Which item belongs in a basic AI governance intake note?"
           ]
         },
         {
@@ -46857,7 +47934,6 @@ window.CURRICULUM_DATA = {
         "catalog_card": {
           "course_id": "GOV 100",
           "title": "Introduction to AI Governance for Public Health",
-          "primary_track": "Governance and Security Track",
           "level_label": "introductory",
           "estimated_time_minutes": 40,
           "format": "Self-paced module with applied exercise and knowledge check",
@@ -46873,20 +47949,12 @@ window.CURRICULUM_DATA = {
             "Governance participants"
           ],
           "when_to_use": "Use before staff begin using, requesting, approving, procuring, piloting, or reviewing AI-supported workflows or tools.",
+          "outputs": [
+            "Learners should produce an introductory AI governance intake and escalation note for one public health workflow. The artifact should include a purpose statement, data description, AI function, likely users, expected benefit, risk tier, human review plan, required reviewers, escalation triggers, and at least one unresolved governance question. The artifact can be used as a training record, a draft intake form, or a starting point for a real governance discussion."
+          ],
           "completion_requirement": "Complete the module, pass the knowledge check at the required threshold, and save or upload the expected artifact: introductory AI governance intake and escalation note.",
           "required_prerequisites": [],
-          "recommended_prerequisites": [],
-          "catalog_tags": [
-            "Governance and Security Track",
-            "Shared Foundational Course",
-            "introductory",
-            "GOV",
-            "governance",
-            "risk review",
-            "decision rights",
-            "human review",
-            "public health AI"
-          ]
+          "recommended_prerequisites": []
         },
         "learner_flow": [
           "learn",
@@ -46919,7 +47987,8 @@ window.CURRICULUM_DATA = {
           "module_complete"
         ],
         "lms_notes": "Metadata supports TRAIN-style catalog display, module page rendering, progress tracking, and Codex implementation. It does not replace the instructional content."
-      }
+      },
+      "curriculumSource": true
     },
     {
       "id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
@@ -46928,8 +47997,8 @@ window.CURRICULUM_DATA = {
       "source_collection": "Governance and Security Track",
       "module_number_in_source": 110,
       "tracks": [
-        "shared-foundational",
         "governance-security",
+        "shared-foundational",
         "policy",
         "program-management"
       ],
@@ -46955,7 +48024,23 @@ window.CURRICULUM_DATA = {
             "Connect sovereignty protections to practical project artifacts, including Tribal data sharing agreements, Data Management and Sharing plans, review memos, community benefit statements, AI system documentation, dissemination plans, and monitoring or sunset criteria.",
             "Draft an initial Tribal sovereignty and Indigenous data governance screening memo for a proposed AI-supported public health workflow that identifies whether the use case should proceed, pause for consultation, be revised, or move to formal Tribal, legal, privacy, security, equity, and governance review."
           ],
-          "display_format": "bulleted_list"
+          "display_format": "bulleted_list",
+          "paragraphs": [
+            "Explain why Tribal sovereignty must be considered before starting AI projects that involve Tribal Nations, American Indian and Alaska Native participant data, or health data that may be connected to Tribal citizens, communities, lands, services, or priorities.",
+            "Describe Indigenous Data Sovereignty, Indigenous Data Governance, Digital Sovereignty, and the CARE Principles in plain language, and explain how these concepts apply to AI use case intake, data management, model development, evaluation, dissemination, and lifecycle monitoring.",
+            "Identify governance questions that should be addressed before using Tribal data or AI tools in public health projects, including questions about Tribal consultation, Tribal laws and policies, Tribal IRBs or research review processes, data sharing agreements, publication review, access controls, and permitted or prohibited uses.",
+            "Distinguish cultural competence from cultural humility and explain why Tribal-specific consultation, relationship building, and respect for government-to-government authority are required rather than relying on generic cultural awareness or one-size-fits-all engagement practices.",
+            "Identify AI project risks involving inferred Tribal affiliation, inappropriate geographic inference, external platform exposure, model outputs that stigmatize communities, dissemination that bypasses Tribal review, and secondary uses that were not approved by Tribal partners.",
+            "Connect sovereignty protections to practical project artifacts, including Tribal data sharing agreements, Data Management and Sharing plans, review memos, community benefit statements, AI system documentation, dissemination plans, and monitoring or sunset criteria.",
+            "Draft an initial Tribal sovereignty and Indigenous data governance screening memo for a proposed AI-supported public health workflow that identifies whether the use case should proceed, pause for consultation, be revised, or move to formal Tribal, legal, privacy, security, equity, and governance review."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace Tribal law, Tribal policy, Tribal consultation, Tribal IRB review, legal counsel, privacy review, security review, civil rights review, procurement review, or agency policy review. Requirements may vary by Tribal Nation, jurisdiction, funding source, data sharing agreement, research status, operational context, and data type. Learners should confirm applicable requirements before approving, procuring, deploying, sharing, or publicly communicating about AI-supported workflows involving Tribal Nations or AI/AN participant data."
+          ]
         },
         {
           "key": "why_this_topic_matters_for_public_health_ai",
@@ -46967,8 +48052,8 @@ window.CURRICULUM_DATA = {
           ]
         },
         {
-          "key": "definitions_core_concepts",
-          "heading": "Definitions / Core Concepts",
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
           "paragraphs": [
             "Tribal sovereignty means the inherent authority of Tribal Nations to govern themselves and protect the health, safety, welfare, and future of their citizens. In public health AI work, this means a Tribal Nation may have its own laws, research codes, review bodies, data governance requirements, consent expectations, publication review processes, and conditions for data access or reuse. Public health staff should not treat Tribal input as optional stakeholder feedback when Tribal authority is implicated. The appropriate posture is government-to-government respect, early engagement, and formal agreement.",
             "Indigenous Data Sovereignty refers to the right of Indigenous Peoples and Nations to govern the collection, ownership, interpretation, management, access, sharing, and application of data about them, their citizens, lands, resources, knowledge, and communities. Health data can be Indigenous data even when it is held by a public health agency, university, vendor, researcher, hospital, or federal program. AI projects raise special concerns because data may be reused for model training, linked to other data sources, summarized by third-party tools, or used to generate outputs that shape decisions. Sovereignty requires that these uses be governed by the Indigenous Peoples and Nations whose data are involved.",
@@ -46988,8 +48073,8 @@ window.CURRICULUM_DATA = {
           ]
         },
         {
-          "key": "deep_dive",
-          "heading": "Technical, Leadership, and Operational Deep Dive",
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
           "paragraphs": [
             "AI project teams should begin by asking whether the proposed use involves Tribal Nations, Tribal citizens, AI/AN participants, Tribal lands, Tribal service settings, Tribal public health authorities, or data elements that could be used to infer Tribal affiliation. This question should be asked during use case intake, not after a data set has been assembled. The answer may not be obvious because Tribal relevance can appear through geography, facility relationships, program participation, small-area reporting, environmental exposure data, biospecimens, genetic information, language data, or community narratives. If the answer is uncertain, the team should treat the project as requiring additional review rather than assuming no Tribal implications exist.",
             "Early consultation should occur before AI development, procurement, vendor demonstrations, pilot testing, or publication planning. Consultation is not the same as sending a completed plan for comment. It should allow Tribal Nations to influence the project purpose, data scope, roles, benefits, risks, consent expectations, storage location, review process, and dissemination strategy. Timelines and budgets should recognize that government-to-government consultation, community review, and relationship building require time and resources.",
@@ -47002,7 +48087,7 @@ window.CURRICULUM_DATA = {
           ]
         },
         {
-          "key": "risks_failure_modes_guardrails",
+          "key": "risks_failure_modes_and_guardrails",
           "heading": "Risks, Failure Modes, and Guardrails",
           "paragraphs": [
             "A major risk is treating Tribal health data as if it were ordinary administrative or research data controlled solely by the institution that currently holds it. This can lead to AI development without Tribal consultation, data sharing without appropriate authority, or model outputs that affect Tribal communities without Tribal review. The failure mode is often procedural rather than malicious: staff follow routine analytics practices without recognizing that sovereignty changes the decision pathway. The guardrail is to require Tribal sovereignty screening during AI use case intake and to route potentially relevant projects for legal, privacy, governance, and Tribal consultation review before data are used.",
@@ -47054,18 +48139,16 @@ window.CURRICULUM_DATA = {
             "Question 2: Which statement best reflects Indigenous Data Sovereignty? A. Data should be shared as widely as possible whenever it supports science. B. Indigenous Peoples and Nations have the right to govern how data about them are collected, interpreted, stored, shared, and used. C. De-identification removes all Tribal data governance concerns. D. Data sovereignty applies only to paper records. Correct answer: B.",
             "Question 3: Which AI practice should be avoided unless explicitly approved through the appropriate governance pathway? A. Using a standard intake form to identify data sensitivity. B. Consulting Tribal partners before model design. C. Uploading sensitive Tribal health information or community narratives into an external AI platform. D. Documenting data sharing limitations in an agreement. Correct answer: C.",
             "Question 4: What is the strongest reason to involve Tribal partners early in the AI lifecycle? A. Early engagement allows Tribal Nations to shape the project purpose, data scope, safeguards, benefits, and dissemination before key decisions are locked in. B. Early engagement shortens all review timelines. C. Early engagement eliminates the need for written agreements. D. Early engagement is needed only for public-facing tools. Correct answer: A.",
-            "Question 5: What should a sovereignty-aware AI project do when Tribal relevance is uncertain? A. Proceed unless the data set explicitly labels Tribal affiliation. B. Remove all race and ethnicity variables and continue. C. Treat the uncertainty as a reason for additional review and determine whether consultation, legal review, or Tribal governance processes apply. D. Wait until the model is finished and ask for feedback. Correct answer: C."
+            "Question 5: What should a sovereignty-aware AI project do when Tribal relevance is uncertain? A. Proceed unless the data set explicitly labels Tribal affiliation. B. Remove all race and ethnicity variables and continue. C. Treat the uncertainty as a reason for additional review and determine whether consultation, legal review, or Tribal governance processes apply. D. Wait until the model is finished and ask for feedback. Correct answer: C.",
+            "1. Why should Tribal sovereignty be considered before an AI project with health data begins?",
+            "2. Which statement best reflects Indigenous Data Sovereignty?",
+            "3. Which AI practice should be avoided unless explicitly approved through the appropriate governance pathway?",
+            "4. What is the strongest reason to involve Tribal partners early in the AI lifecycle?",
+            "5. What should a sovereignty-aware AI project do when Tribal relevance is uncertain?"
           ]
         },
         {
-          "key": "jurisdiction_and_agency_policy_note",
-          "heading": "Jurisdiction and Agency Policy Note",
-          "paragraphs": [
-            "This national-level module is intended for training and planning purposes. It does not replace Tribal law, Tribal policy, Tribal consultation, Tribal IRB review, legal counsel, privacy review, security review, civil rights review, procurement review, or agency policy review. Requirements may vary by Tribal Nation, jurisdiction, funding source, data sharing agreement, research status, operational context, and data type. Learners should confirm applicable requirements before approving, procuring, deploying, sharing, or publicly communicating about AI-supported workflows involving Tribal Nations or AI/AN participant data."
-          ]
-        },
-        {
-          "key": "references_and_resources",
+          "key": "references_and_resources_for_additional_information",
           "heading": "References and Resources for Additional Information",
           "paragraphs": [
             "Global Indigenous Data Alliance. CARE Principles for Indigenous Data Governance. https://www.gida-global.org/care",
@@ -47241,7 +48324,7 @@ window.CURRICULUM_DATA = {
       ],
       "legacy_id": "gov-110-respecting-tribal-sovereignty-and-indigenous-data-governance-in-public-health-ai-projects",
       "course_id": "GOV 110",
-      "course_code": "GOV",
+      "course_code": "GOV 110",
       "course_prefix": "GOV",
       "course_number": 110,
       "course_level": 100,
@@ -47298,9 +48381,4833 @@ window.CURRICULUM_DATA = {
           "Knowledge check complete",
           "Artifact complete",
           "Module complete"
-        ]
+        ],
+        "catalog_card": {
+          "course_id": "GOV 110",
+          "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
+          "level_label": "Introductory",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [
+            "Tribal Sovereignty and Indigenous Data Governance Screening Memo"
+          ],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": []
+        }
       },
       "curriculumSource": true
+    },
+    {
+      "course_id": "GOV 120",
+      "module_id": "gov-120-ai-incident-response-for-public-health",
+      "module_title": "AI Incident Response for Public Health",
+      "title": "AI Incident Response for Public Health",
+      "primary_track_title": "Governance and Security",
+      "level_label": "Intermediate",
+      "audience": "AI committee members, program managers, IT/security staff, communications staff, policy staff, privacy officers, legal/procurement partners, supervisors, and leadership.",
+      "estimated_time": "60 minutes",
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "GOV 100",
+        "INT 105"
+      ],
+      "learning_objectives": [
+        "Define an AI incident and distinguish it from a routine output error.",
+        "Describe the steps in AI incident triage, containment, documentation, corrective action, and lessons learned.",
+        "Identify which reviewers may be needed for different AI incident types.",
+        "Create an AI incident response record for a realistic public health scenario.",
+        "Explain why near misses should be documented and reviewed."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module prepares public health agencies to recognize, document, escalate, and respond to AI-related incidents. An AI incident may involve inaccurate outputs, inappropriate disclosure, harmful recommendations, biased results, unsafe automation, public communication errors, vendor failures, security events, or loss of public trust. Incident response is part of AI governance because AI systems require ongoing oversight after initial approval.",
+            "The module is designed for national use and does not assume a specific agency incident response system. Learners should adapt the concepts to their own privacy, cybersecurity, legal, communications, emergency response, records, and governance procedures. The module emphasizes that AI incident response should be planned before deployment rather than invented during a crisis."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Define an AI incident and distinguish it from a routine output error.",
+            "Describe the steps in AI incident triage, containment, documentation, corrective action, and lessons learned.",
+            "Identify which reviewers may be needed for different AI incident types.",
+            "Create an AI incident response record for a realistic public health scenario.",
+            "Explain why near misses should be documented and reviewed."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Public health agencies make decisions that affect communities, services, resources, public communication, and emergency response. When an AI-supported workflow fails, the consequences may include misinformation, missed signals, inappropriate prioritization, disclosure of sensitive information, reduced trust, or harm to populations already experiencing inequities. These risks are more difficult to manage if the agency has no defined path for reporting and responding to AI concerns.",
+            "AI incidents can also be ambiguous. A harmful output may result from poor data quality, an inappropriate prompt, a model limitation, a vendor change, weak human review, or a workflow design problem. A structured response process helps the agency determine what happened, what immediate safeguards are needed, who must be notified, and what corrective action should follow."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "paragraphs": [
+            "An AI incident is an event or condition in which an AI system or AI-supported workflow produces, contributes to, or fails to prevent an outcome that may cause harm, violate policy, expose sensitive information, mislead users, affect decisions, or undermine public trust. Incidents can occur during experimentation, pilot testing, production use, monitoring, or public communication. Near misses should also be documented because they reveal weaknesses before harm occurs.",
+            "Triage is the process of classifying an incident by urgency, severity, affected populations, data involved, operational impact, and required reviewers. Triage helps the agency decide whether to pause a tool, notify leadership, involve cybersecurity, contact a vendor, correct public information, or begin a formal investigation. Triage should not wait until all facts are known; it should support immediate risk reduction.",
+            "Corrective action means the steps taken to reduce harm, prevent recurrence, and improve the workflow. Corrective action may include updating prompts, revising SOPs, retraining staff, changing access controls, revising model monitoring thresholds, correcting public messages, updating vendor requirements, or retiring the tool. Corrective action should be assigned to owners and tracked to completion."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A local health department uses an approved AI-supported tool to draft internal summaries of disease surveillance signals. During a busy week, staff notice that one summary incorrectly describes a cluster as occurring in a school setting when the underlying data do not support that conclusion. The draft was not released publicly, but it was shared internally and could have affected follow-up priorities.",
+            "The agency treats this as a near miss. Staff document the error, identify who received the summary, review whether any decisions were affected, pause use of the summary template, and notify the program owner and AI governance contact. The corrective action includes updating the prompt, requiring a data-source verification step, and adding the error type to ongoing monitoring."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "AI incident response should connect to existing agency processes rather than operate in isolation. Privacy incidents, cybersecurity events, communication errors, records issues, procurement disputes, program risks, and emergency operations may already have reporting pathways. AI governance should define when those pathways are triggered and how the AI committee or governance body is informed.",
+            "Incident response should include immediate containment, fact-finding, impact assessment, notification decisions, corrective action, and lessons learned. Containment may mean pausing a tool, disabling a feature, restricting access, removing public content, or switching to a manual workflow. Fact-finding should preserve relevant prompts, outputs, logs, data sources, versions, reviewer notes, and decisions.",
+            "Leadership should decide in advance what types of incidents require escalation. High-priority examples include possible exposure of protected or confidential data, public-facing misinformation, biased or discriminatory impact, security compromise, automated action without authorization, vendor model changes affecting performance, or repeated errors that suggest the tool is not fit for use. Escalation thresholds should be clear enough for frontline staff to act quickly."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is blaming the user without examining the system. AI incidents often reflect gaps in workflow design, tool configuration, training, data quality, monitoring, vendor controls, or governance conditions. Guardrails include root cause analysis, nonpunitive reporting, documentation, and attention to both technical and human factors.",
+            "Another failure mode is continuing to use an AI tool after serious concerns are identified because the workflow has become dependent on it. Agencies should define pause criteria before deployment so staff know when a tool must be stopped, limited, or reverted to manual review. A pause should be treated as a responsible safety action, not as a failure of innovation.",
+            "A third risk is failing to communicate clearly after an AI-related error. Some incidents may require internal communication, partner notification, public correction, legal review, or leadership messaging. Guardrails include pre-defined communication roles, plain-language explanations, documentation of what is known and unknown, and transparency about corrective action when disclosure is appropriate."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "Every AI-supported workflow should include an incident reporting step. Staff should know what to report, where to report it, who responds, and what information should be preserved. Reporting should include errors, near misses, unexpected outputs, user concerns, public complaints, equity concerns, security concerns, and vendor behavior changes.",
+            "AI incident response should also feed continuous improvement. Incident trends may reveal that a use case needs additional training, stronger human review, a revised risk classification, better monitoring, or retirement. Governance bodies should review incident patterns as part of lifecycle oversight."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "paragraphs": [
+            "What AI-related events would require immediate escalation in your agency?",
+            "Who would need to be involved if an AI-supported public message contained an error?",
+            "What evidence should be preserved when an AI incident is reported?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create an AI incident response record for a realistic scenario. Choose an incident type such as inaccurate public-facing content, possible sensitive data disclosure, biased prioritization output, unsafe automation, vendor system change, or repeated surveillance summary errors. Use fictional or generalized information only.",
+            "Your record should include incident description, date discovered, system or workflow involved, affected users or populations, data involved, immediate containment action, reviewers needed, severity, corrective action, communication needs, and monitoring follow-up.",
+            "Example: An AI-assisted communications draft incorrectly states that a boil water advisory applies to all county residents when it applies only to a specific water district. The incident record identifies the draft source, who reviewed it, whether it was published, who needs notification, how the message will be corrected, and what review step will be added before future advisories are released."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "paragraphs": [
+            "Completed AI Incident Response Record",
+            "Corrective Action and Follow-Up Plan"
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "What is an AI near miss?",
+            "Which action may be needed for immediate containment?",
+            "Why preserve prompts and outputs during incident review?",
+            "Which incident likely requires communications review?",
+            "What should governance do with incident trends?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "Ethics and governance of artificial intelligence for health. https://www.who.int/publications/i/item/9789240029200",
+            "10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "About the Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "Core Competencies for Public Health Professionals. https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx"
+          ]
+        }
+      ],
+      "practical_exercise": {
+        "instructions": [
+          "Create an AI incident response record for a realistic scenario. Choose an incident type such as inaccurate public-facing content, possible sensitive data disclosure, biased prioritization output, unsafe automation, vendor system change, or repeated surveillance summary errors. Use fictional or generalized information only.",
+          "Your record should include incident description, date discovered, system or workflow involved, affected users or populations, data involved, immediate containment action, reviewers needed, severity, corrective action, communication needs, and monitoring follow-up."
+        ],
+        "example": "Example: An AI-assisted communications draft incorrectly states that a boil water advisory applies to all county residents when it applies only to a specific water district. The incident record identifies the draft source, who reviewed it, whether it was published, who needs notification, how the message will be corrected, and what review step will be added before future advisories are released."
+      },
+      "expected_artifact_or_evidence": [
+        "Completed AI Incident Response Record",
+        "Corrective Action and Follow-Up Plan"
+      ],
+      "knowledge_check": [
+        {
+          "question": "What is an AI near miss?",
+          "options": [
+            "A harmless event that should never be documented",
+            "A problem caught before harm or public release but still useful for learning",
+            "A successful AI output",
+            "A vendor marketing claim"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Which action may be needed for immediate containment?",
+          "options": [
+            "Ignore the issue until the next meeting",
+            "Pause the tool or revert to manual workflow",
+            "Delete all records of the incident",
+            "Ask AI if it made a mistake"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Why preserve prompts and outputs during incident review?",
+          "options": [
+            "To recreate, understand, and document what happened",
+            "To share them publicly without review",
+            "To train staff to use the same error",
+            "To avoid notifying anyone"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "Which incident likely requires communications review?",
+          "options": [
+            "A typo in an internal prompt",
+            "A public-facing AI-generated message with incorrect guidance",
+            "A fictional training scenario",
+            "An unused draft label"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What should governance do with incident trends?",
+          "options": [
+            "Ignore them after individual cases close",
+            "Use them for monitoring, corrective action, and lifecycle decisions",
+            "Hide them from leadership",
+            "Treat them only as IT problems"
+          ],
+          "answer": "B"
+        }
+      ],
+      "references_and_resources": [
+        {
+          "title": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "publisher": "National Institute of Standards and Technology",
+          "year": "2023",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Risk management, governance, mapping, measurement, management, and oversight framework for trustworthy AI."
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "publisher": "World Health Organization",
+          "year": "2021",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Global guidance on human rights, ethics, accountability, safety, transparency, and governance for health AI."
+        },
+        {
+          "title": "10 Essential Public Health Services",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2024",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Public health practice framework emphasizing assessment, policy development, assurance, communication, workforce, evaluation, infrastructure, and equity."
+        },
+        {
+          "title": "About the Public Health Data Strategy",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2026",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "CDC strategy for modern data exchange, analytics, dashboards, standards, and timely public health action."
+        },
+        {
+          "title": "Core Competencies for Public Health Professionals",
+          "publisher": "Public Health Foundation / Council on Linkages",
+          "year": "2021",
+          "url": "https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+          "note": "Nationally recognized public health workforce competency framework."
+        }
+      ],
+      "approved_tools_note": "This national training does not name a specific approved AI tool because approved tools vary by agency. Learners should use only tools that their organization has authorized for the data type, workflow, and use case involved.",
+      "plays": [
+        12,
+        13,
+        10,
+        3
+      ],
+      "jurisdiction_and_agency_policy_note": "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.",
+      "id": "gov-120-ai-incident-response-for-public-health",
+      "course_code": "GOV 120",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "GOV 100",
+          "INT 105"
+        ]
+      },
+      "display_title": "GOV 120: AI Incident Response for Public Health",
+      "lms_usability_metadata": {
+        "catalog_card": {
+          "course_id": "GOV 120",
+          "title": "AI Incident Response for Public Health",
+          "level_label": "Intermediate",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "GOV 100",
+            "INT 105"
+          ]
+        }
+      },
+      "tracks": [
+        "governance-security"
+      ]
+    },
+    {
+      "course_id": "GOV 130",
+      "module_id": "gov-130-tribal-consultation-and-data-sharing-agreements-for-ai-projects",
+      "module_title": "Tribal Consultation and Data Sharing Agreements for AI Projects",
+      "title": "Tribal Consultation and Data Sharing Agreements for AI Projects",
+      "primary_track_title": "Governance and Security",
+      "level_label": "Intermediate",
+      "audience": "Program managers, policy staff, AI committee members, epidemiologists, data scientists, IT staff, leadership, and partners working on AI projects involving Tribal Nations or AI/AN data.",
+      "estimated_time": "60-75 minutes",
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "GOV 100",
+        "GOV 110"
+      ],
+      "learning_objectives": [
+        "Explain why Tribal consultation and data sharing agreements are essential for AI projects involving Tribal Nations or AI/AN data.",
+        "Identify data, geography, linkage, and platform risks that may affect Tribal sovereignty.",
+        "Describe key topics that should be addressed in a Tribal data sharing agreement for an AI project.",
+        "Apply the CARE Principles to an AI project planning scenario.",
+        "Create a consultation and agreement planning checklist for a proposed AI use case."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module builds on introductory Tribal sovereignty and Indigenous Data Governance training by focusing on practical consultation and agreement-building for AI projects. It is intended for public health staff who may plan, support, evaluate, or govern AI projects involving Tribal Nations, Tribal citizens, American Indian and Alaska Native data, or data that may affect Tribal communities. The module emphasizes that AI projects should not begin with data extraction, vendor selection, platform testing, or model development before appropriate Tribal engagement and approvals occur.",
+            "Because every Tribal Nation is a sovereign government, there is no single national template that can substitute for Tribal law, Tribal policy, Tribal research review, Tribal IRB requirements, or formal consultation. This module provides a structured way to identify what must be discussed, documented, and agreed upon. It is not legal advice and should be adapted through Tribal partnership, agency counsel, privacy review, data governance, and leadership approval."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Explain why Tribal consultation and data sharing agreements are essential for AI projects involving Tribal Nations or AI/AN data.",
+            "Identify data, geography, linkage, and platform risks that may affect Tribal sovereignty.",
+            "Describe key topics that should be addressed in a Tribal data sharing agreement for an AI project.",
+            "Apply the CARE Principles to an AI project planning scenario.",
+            "Create a consultation and agreement planning checklist for a proposed AI use case."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "AI projects can create new risks for Tribal data because models may combine, infer, summarize, or reuse data in ways that were not anticipated when data were collected. Health data that appear administrative or de-identified may still reveal sensitive information about a Tribal community, small population, place, service, condition, or historical experience. AI can also produce outputs that misinterpret Tribal context, reinforce stereotypes, or support decisions without Tribal authority or community benefit.",
+            "Tribal consultation and data sharing agreements help ensure that AI projects respect sovereignty, self-determination, and community priorities. They also help public health agencies understand whether a proposed use is acceptable, what approvals are required, what data may be used, where data may be stored, who may access outputs, and how benefits and risks should be shared. These agreements are part of responsible AI governance, not a separate administrative task."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "paragraphs": [
+            "Tribal consultation is a government-to-government process through which an agency engages a Tribal Nation on matters that may affect the Tribe, its citizens, its data, its interests, or its sovereignty. Consultation should occur early enough to shape whether and how the project proceeds. It should not be treated as notification after the project design is complete.",
+            "A Tribal data sharing agreement is a formal agreement that defines what data may be shared, for what purpose, under what authority, with what restrictions, and with what protections. For AI projects, the agreement should address model development, data preprocessing, linkage, storage, vendor access, reuse, publication, model outputs, derived data, deletion, return of results, and review rights. The agreement should also specify who can approve changes to the project.",
+            "Collective benefit and authority to control are central to the CARE Principles for Indigenous Data Governance. These principles ask whether data use benefits Indigenous Peoples and whether Indigenous Peoples have authority over how data are collected, used, interpreted, shared, and reused. AI projects should be reviewed against these principles throughout the lifecycle."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A state health department wants to use AI to identify patterns in emergency department visit notes related to respiratory illness. Some hospitals serve Tribal communities, and the data include geography, facility names, and contextual notes that could allow inference about Tribal communities even if Tribal affiliation is not directly recorded. The project team initially views the data as a statewide surveillance dataset.",
+            "Before model development begins, the agency pauses to determine whether Tribal consultation is needed and whether existing data agreements permit AI-supported analysis. The agency engages Tribal public health representatives, legal counsel, privacy officers, data stewards, and governance reviewers. The project is revised to define permissible uses, prohibit inference of Tribal affiliation, restrict vendor access, require Tribal review of community-level outputs, and establish a process for reporting findings back to participating Tribal partners."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "AI project teams should begin with a sovereignty impact review. This review asks whether the project uses data from Tribal citizens, Tribal programs, Tribal lands, Tribal-serving facilities, Tribal partners, or communities where outputs could affect Tribal interests. It should also ask whether geography, small numbers, service patterns, names, or contextual information could be used to infer Tribal affiliation or community characteristics.",
+            "Consultation and agreement development should address the full AI lifecycle. This includes data collection, cleaning, labeling, linkage, preprocessing, feature selection, model development, validation, deployment, monitoring, publication, reuse, and retirement. Agreements should also address whether AI tools may use external platforms, whether vendors can access data, and whether prompts or outputs become records that require review.",
+            "Cultural humility is essential. Staff should approach Tribal partnership with respect for sovereignty, history, community priorities, and the limits of their own knowledge. Cultural competence training may help, but it does not replace relationship-building, listening, formal consultation, or adherence to Tribal laws and review processes."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A significant failure mode is treating Tribal data as ordinary state or local administrative data. This can result in AI projects that ignore Tribal authority, bypass Tribal review, or use data for purposes that were never agreed upon. Guardrails include early sovereignty screening, formal consultation, review of data agreements, and Tribal approval before AI development begins.",
+            "Another risk is indirect identification or inference. AI systems may infer Tribal affiliation, community characteristics, or sensitive patterns from geography, facility use, small cell sizes, language, service context, or linked data. Guardrails include prohibiting inference of Tribal affiliation, limiting geographic granularity, reviewing small-number outputs, restricting linkage, and requiring Tribal review of community-level findings.",
+            "A third risk is using external AI platforms without explicit approval. Uploading Tribal health data, transcripts, notes, or community feedback into an external AI tool can create storage, reuse, access, and jurisdictional concerns. Guardrails include approved environments, vendor restrictions, data minimization, prompt/output controls, and explicit agreement language before any AI platform is used."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "An AI-supported workflow involving Tribal data should include a consultation checkpoint before data preparation begins. The workflow should define who determines whether Tribal consultation is needed, who contacts Tribal partners, what documentation is required, and what approvals must be obtained. It should also define how changes to the AI use case will be reviewed after approval.",
+            "Workflows should also include ongoing accountability. Tribal partners may need opportunities to review outputs, interpret findings, request corrections, receive results, and decide whether continued use is appropriate. Governance should not end when a data sharing agreement is signed; it should continue through monitoring, reporting, and lifecycle decisions."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "paragraphs": [
+            "Could the proposed AI project affect Tribal Nations or AI/AN communities even if Tribal affiliation is not directly recorded?",
+            "What approvals, agreements, or review bodies must be consulted before data are used?",
+            "How will Tribal partners retain authority over interpretation, sharing, and reuse of project outputs?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Develop a Tribal consultation and data sharing agreement planning checklist for a fictional AI project. Choose a use case such as surveillance text analysis, community health needs assessment summarization, resource allocation modeling, or program evaluation involving data that may affect Tribal communities. Do not use real Tribal data or name a specific Tribal Nation unless the example is fully fictional and clearly labeled.",
+            "Your checklist should identify the data involved, possible Tribal interests, consultation triggers, review bodies, agreement topics, platform restrictions, output review needs, benefit-sharing considerations, and unresolved questions for legal, privacy, Tribal, and governance review.",
+            "Example: A fictional project proposes AI-assisted analysis of emergency preparedness survey comments from a region that includes Tribal communities. The checklist notes that consultation is needed before analysis, external AI platforms are not allowed unless approved, outputs should not identify small communities, and Tribal partners should review interpretation and dissemination plans before findings are shared."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "paragraphs": [
+            "Tribal Consultation and AI Data Sharing Planning Checklist",
+            "List of unresolved review questions and approval needs"
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "Why should consultation occur early in an AI project?",
+            "Which risk is especially important for AI projects involving geography and small populations?",
+            "What should a Tribal data sharing agreement address for AI?",
+            "What do the CARE Principles emphasize?",
+            "What is a recommended guardrail for external AI platforms?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "Ethics and governance of artificial intelligence for health. https://www.who.int/publications/i/item/9789240029200",
+            "10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "About the Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "Core Competencies for Public Health Professionals. https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+            "CARE Principles for Indigenous Data Governance. https://www.gida-global.org/care",
+            "NOT-OD-22-214: Responsible Management and Sharing of American Indian/Alaska Native Participant Data. https://grants.nih.gov/grants/guide/notice-files/NOT-OD-22-214.html",
+            "All of Us Research Program Tribal Data Support Guidance. https://www.researchallofus.org/tribal-data-support/"
+          ]
+        }
+      ],
+      "practical_exercise": {
+        "instructions": [
+          "Develop a Tribal consultation and data sharing agreement planning checklist for a fictional AI project. Choose a use case such as surveillance text analysis, community health needs assessment summarization, resource allocation modeling, or program evaluation involving data that may affect Tribal communities. Do not use real Tribal data or name a specific Tribal Nation unless the example is fully fictional and clearly labeled.",
+          "Your checklist should identify the data involved, possible Tribal interests, consultation triggers, review bodies, agreement topics, platform restrictions, output review needs, benefit-sharing considerations, and unresolved questions for legal, privacy, Tribal, and governance review."
+        ],
+        "example": "Example: A fictional project proposes AI-assisted analysis of emergency preparedness survey comments from a region that includes Tribal communities. The checklist notes that consultation is needed before analysis, external AI platforms are not allowed unless approved, outputs should not identify small communities, and Tribal partners should review interpretation and dissemination plans before findings are shared."
+      },
+      "expected_artifact_or_evidence": [
+        "Tribal Consultation and AI Data Sharing Planning Checklist",
+        "List of unresolved review questions and approval needs"
+      ],
+      "knowledge_check": [
+        {
+          "question": "Why should consultation occur early in an AI project?",
+          "options": [
+            "So Tribal partners can shape whether and how the project proceeds",
+            "So the agency can announce decisions already made",
+            "So data can be extracted first",
+            "So vendors can decide Tribal priorities"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "Which risk is especially important for AI projects involving geography and small populations?",
+          "options": [
+            "Indirect inference of Tribal affiliation or community characteristics",
+            "Too many approved tools",
+            "Lack of punctuation",
+            "Excessive slide length"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "What should a Tribal data sharing agreement address for AI?",
+          "options": [
+            "Only the final publication date",
+            "Data use, storage, access, model development, outputs, reuse, and review rights",
+            "Only the vendor logo",
+            "Only staff training hours"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What do the CARE Principles emphasize?",
+          "options": [
+            "Only machine readability",
+            "Collective benefit, authority to control, responsibility, and ethics",
+            "Only faster data exchange",
+            "Only open access"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What is a recommended guardrail for external AI platforms?",
+          "options": [
+            "Use any platform if data are interesting",
+            "Use identifiable Tribal health data only with explicit approval and appropriate safeguards",
+            "Upload data first and ask later",
+            "Assume de-identification eliminates all concerns"
+          ],
+          "answer": "B"
+        }
+      ],
+      "references_and_resources": [
+        {
+          "title": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "publisher": "National Institute of Standards and Technology",
+          "year": "2023",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Risk management, governance, mapping, measurement, management, and oversight framework for trustworthy AI."
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "publisher": "World Health Organization",
+          "year": "2021",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Global guidance on human rights, ethics, accountability, safety, transparency, and governance for health AI."
+        },
+        {
+          "title": "10 Essential Public Health Services",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2024",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Public health practice framework emphasizing assessment, policy development, assurance, communication, workforce, evaluation, infrastructure, and equity."
+        },
+        {
+          "title": "About the Public Health Data Strategy",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2026",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "CDC strategy for modern data exchange, analytics, dashboards, standards, and timely public health action."
+        },
+        {
+          "title": "Core Competencies for Public Health Professionals",
+          "publisher": "Public Health Foundation / Council on Linkages",
+          "year": "2021",
+          "url": "https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+          "note": "Nationally recognized public health workforce competency framework."
+        },
+        {
+          "title": "CARE Principles for Indigenous Data Governance",
+          "publisher": "Global Indigenous Data Alliance",
+          "year": "2019",
+          "url": "https://www.gida-global.org/care",
+          "note": "Principles emphasizing Collective Benefit, Authority to Control, Responsibility, and Ethics for Indigenous data."
+        },
+        {
+          "title": "NOT-OD-22-214: Responsible Management and Sharing of American Indian/Alaska Native Participant Data",
+          "publisher": "National Institutes of Health",
+          "year": "2022",
+          "url": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-22-214.html",
+          "note": "NIH guidance emphasizing Tribal sovereignty, Tribal laws, data governance, and respectful AI/AN data management and sharing."
+        },
+        {
+          "title": "All of Us Research Program Tribal Data Support Guidance",
+          "publisher": "All of Us Research Program",
+          "year": "2024",
+          "url": "https://www.researchallofus.org/tribal-data-support/",
+          "note": "Guidance and resources for research involving Tribal data and Tribal engagement in the All of Us context."
+        }
+      ],
+      "approved_tools_note": "This national training does not name a specific approved AI tool because approved tools vary by agency. Learners should use only tools that their organization has authorized for the data type, workflow, and use case involved.",
+      "plays": [
+        4,
+        7,
+        3,
+        11
+      ],
+      "jurisdiction_and_agency_policy_note": "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.",
+      "id": "gov-130-tribal-consultation-and-data-sharing-agreements-for-ai-projects",
+      "course_code": "GOV 130",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "GOV 100",
+          "GOV 110"
+        ]
+      },
+      "display_title": "GOV 130: Tribal Consultation and Data Sharing Agreements for AI Projects",
+      "lms_usability_metadata": {
+        "catalog_card": {
+          "course_id": "GOV 130",
+          "title": "Tribal Consultation and Data Sharing Agreements for AI Projects",
+          "level_label": "Intermediate",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "GOV 100",
+            "GOV 110"
+          ]
+        }
+      },
+      "tracks": [
+        "governance-security"
+      ]
+    },
+    {
+      "course_id": "HED 100",
+      "module_id": "hed-100-ai-for-health-education-and-learning-design",
+      "module_title": "AI for Health Education and Learning Design",
+      "title": "AI for Health Education and Learning Design",
+      "primary_track_title": "Communications and Health Education",
+      "level_label": "Introductory to Intermediate",
+      "audience": "Health education staff, training leads, communications staff, program staff, community outreach staff, and supervisors who develop educational materials or learning activities.",
+      "estimated_time": "45-60 minutes",
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 100",
+        "INT 105"
+      ],
+      "learning_objectives": [
+        "Describe appropriate and inappropriate uses of AI in health education and learning design.",
+        "Use approved source materials to guide AI-supported drafting of educational content.",
+        "Review AI-generated materials for accuracy, health literacy, accessibility, cultural appropriateness, and stigma.",
+        "Create a practical review workflow for AI-supported health education materials.",
+        "Explain why approved tools and human review remain necessary before educational materials are shared."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module helps public health staff use AI responsibly to support health education, workforce training, community education, and learning design. AI can help draft lesson outlines, create scenarios, adapt materials for different audiences, generate knowledge check questions, and review content for readability. However, AI-generated health education materials must be reviewed carefully because errors, inaccessible language, cultural mismatch, stigma, or outdated guidance can harm learners and communities.",
+            "The module is not tied to any specific approved AI tool. Instead, it teaches learners to use only agency-approved tools, approved sources, and appropriate review processes when AI supports health education. It also emphasizes that educational content should remain grounded in public health evidence, community context, health literacy, language access, and accessibility."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Describe appropriate and inappropriate uses of AI in health education and learning design.",
+            "Use approved source materials to guide AI-supported drafting of educational content.",
+            "Review AI-generated materials for accuracy, health literacy, accessibility, cultural appropriateness, and stigma.",
+            "Create a practical review workflow for AI-supported health education materials.",
+            "Explain why approved tools and human review remain necessary before educational materials are shared."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Health education is a core public health function because it helps people understand risks, prevention strategies, available services, and decisions that affect their health. When AI is used to draft or adapt educational materials, it can increase speed and provide useful starting points. The same speed can also spread inaccurate information or produce content that does not fit the audience’s literacy level, cultural context, language needs, disability access needs, or lived experience.",
+            "Public health education often serves communities that have experienced unequal access, mistrust, discrimination, or poor communication from institutions. AI-supported materials must therefore be reviewed for more than grammar and style. They should be reviewed for accuracy, plain language, accessibility, cultural humility, stigma, and whether the message supports informed action rather than confusion or blame."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "paragraphs": [
+            "Health literacy means the ability of people to find, understand, and use information and services to inform health-related decisions and actions. AI can help simplify text, but simplification should not remove important meaning, warnings, eligibility information, or local instructions. Staff should verify that revised text is still accurate and actionable.",
+            "Learning design refers to the process of defining learning goals, choosing instructional strategies, creating activities, and assessing whether learners can apply what they learned. AI can support brainstorming and drafting, but a human educator must decide what learners need, how the content should be sequenced, and how learning should be evaluated. Good learning design connects content to real tasks, not just awareness.",
+            "Cultural and linguistic appropriateness means that materials respect the audience’s language, values, context, and communication needs. AI translations, examples, and scenarios may sound fluent but still miss local meaning, dialect, cultural practices, or historical context. Community review, bilingual review, and subject matter review remain essential."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A health educator is creating a workshop for community health workers on heat illness prevention. The educator wants to use AI to generate a draft agenda, plain-language handout, role-play scenario, and five knowledge check questions. The content must be consistent with approved public health guidance, local emergency instructions, language access requirements, and the realities of workers who spend time outdoors.",
+            "A safe workflow begins with approved sources and a clear audience description. The educator uses AI only to draft from approved public materials, reviews the output for accuracy and readability, checks whether the examples avoid blame or stigma, and asks a community partner or bilingual reviewer to review adapted materials. The final materials are not considered approved until they complete the agency’s normal review process."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "AI can support health education by generating first drafts, restructuring content, suggesting examples, converting technical language into plain language, and creating practice questions. It can also help tailor materials for different audiences, such as parents, older adults, community health workers, school staff, clinicians, or emergency volunteers. These uses are helpful only when the AI is guided by accurate source material and reviewed by people with public health, instructional, and audience knowledge.",
+            "Effective AI-supported learning design should begin with learning objectives. Staff should identify what learners need to know, what they need to do, and what evidence will show that learning occurred. AI can help draft objectives, but educators should revise them so they are specific, measurable, and connected to public health practice.",
+            "Health education materials should also be reviewed for accessibility. This includes reading level, plain language, document structure, alt text for images, captioning for videos, color contrast, accessible tables, and compatibility with assistive technologies. AI can suggest accessibility improvements, but staff should still use established accessibility standards and local review processes."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A major risk is inaccurate or outdated health guidance. AI systems may produce plausible recommendations that conflict with current public health guidance, local policy, or program eligibility rules. Guardrails include using approved source documents, requiring subject matter expert review, documenting source materials, and prohibiting AI from inventing citations or recommendations.",
+            "Another risk is producing content that is technically correct but inappropriate for the audience. AI may generate examples that do not reflect local conditions, use stigmatizing language, assume access to resources that people do not have, or fail to address language and disability access needs. Guardrails include audience review, community partner input, readability testing, and accessibility review.",
+            "A third failure mode is using real learner, client, or participant information in prompts. Staff may be tempted to paste evaluation comments, participant questions, or case examples into AI tools to generate training content. Guardrails include using fictional or generalized examples, removing identifiers, following data classification rules, and using only approved tools for any sensitive information."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "An AI-supported health education workflow should specify which materials can be used as source content, which AI tasks are allowed, who reviews the output, and how final approval occurs. For example, AI may be allowed to create a draft handout from approved guidance, but not to create final medical advice or change program eligibility language. The workflow should also clarify when communications, legal, clinical, program, or community review is required.",
+            "Educational workflows should preserve the educator’s professional judgment. AI can accelerate drafting, but it cannot know the community context, local trust issues, learner needs, or implementation constraints unless those are provided and reviewed. The educator remains responsible for ensuring that materials are accurate, appropriate, actionable, and respectful."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "paragraphs": [
+            "Which parts of your health education or training work could AI support without using sensitive information?",
+            "What review steps would be needed before AI-supported educational materials could be used with the public?",
+            "How would you check whether AI-generated examples are culturally appropriate and accessible?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Select a public health education topic, such as heat safety, vaccination, lead prevention, emergency preparedness, or diabetes prevention. Draft an AI-supported learning design plan without using real participant data or sensitive information. The plan should include learning objectives, intended audience, approved source materials, proposed AI tasks, review steps, accessibility considerations, and final approval steps.",
+            "Then create one short example of AI-supported content, such as a draft agenda, role-play scenario, knowledge check, or plain-language handout outline. Clearly label the content as a draft and identify what review is needed before it could be used.",
+            "Example: For a heat safety workshop for outdoor workers, the learner identifies approved state and CDC guidance as source material, asks AI to draft a 30-minute agenda and role-play scenario, then reviews the output for local cooling center information, plain language, Spanish-language review needs, disability access, and stigma-free framing. The learner notes that final content requires program and communications review before use."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "paragraphs": [
+            "AI-Supported Health Education Review Plan",
+            "Draft educational content example with review notes"
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "What should guide AI-generated health education content?",
+            "Why is AI translation or simplification not enough by itself?",
+            "Which information should not be entered into an unapproved AI tool?",
+            "What is a good use of AI in learning design?",
+            "Who remains accountable for final educational materials?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "Ethics and governance of artificial intelligence for health. https://www.who.int/publications/i/item/9789240029200",
+            "10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "About the Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "Core Competencies for Public Health Professionals. https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx"
+          ]
+        }
+      ],
+      "practical_exercise": {
+        "instructions": [
+          "Select a public health education topic, such as heat safety, vaccination, lead prevention, emergency preparedness, or diabetes prevention. Draft an AI-supported learning design plan without using real participant data or sensitive information. The plan should include learning objectives, intended audience, approved source materials, proposed AI tasks, review steps, accessibility considerations, and final approval steps.",
+          "Then create one short example of AI-supported content, such as a draft agenda, role-play scenario, knowledge check, or plain-language handout outline. Clearly label the content as a draft and identify what review is needed before it could be used."
+        ],
+        "example": "Example: For a heat safety workshop for outdoor workers, the learner identifies approved state and CDC guidance as source material, asks AI to draft a 30-minute agenda and role-play scenario, then reviews the output for local cooling center information, plain language, Spanish-language review needs, disability access, and stigma-free framing. The learner notes that final content requires program and communications review before use."
+      },
+      "expected_artifact_or_evidence": [
+        "AI-Supported Health Education Review Plan",
+        "Draft educational content example with review notes"
+      ],
+      "knowledge_check": [
+        {
+          "question": "What should guide AI-generated health education content?",
+          "options": [
+            "The AI model’s default knowledge",
+            "Approved source materials and human review",
+            "The longest available web page",
+            "The fastest generated response"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Why is AI translation or simplification not enough by itself?",
+          "options": [
+            "It always removes all meaning",
+            "It may miss accuracy, cultural context, accessibility, or local requirements",
+            "It cannot produce readable text",
+            "It eliminates the need for review"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Which information should not be entered into an unapproved AI tool?",
+          "options": [
+            "Fictional examples",
+            "Approved public guidance",
+            "Participant comments with identifiers",
+            "General workshop topics"
+          ],
+          "answer": "C"
+        },
+        {
+          "question": "What is a good use of AI in learning design?",
+          "options": [
+            "Final approval of public health advice",
+            "Drafting practice questions from approved materials",
+            "Replacing community review",
+            "Changing eligibility language without review"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Who remains accountable for final educational materials?",
+          "options": [
+            "The AI tool",
+            "The vendor only",
+            "The public health staff and review process responsible for the material",
+            "No one if AI is used"
+          ],
+          "answer": "C"
+        }
+      ],
+      "references_and_resources": [
+        {
+          "title": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "publisher": "National Institute of Standards and Technology",
+          "year": "2023",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Risk management, governance, mapping, measurement, management, and oversight framework for trustworthy AI."
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "publisher": "World Health Organization",
+          "year": "2021",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Global guidance on human rights, ethics, accountability, safety, transparency, and governance for health AI."
+        },
+        {
+          "title": "10 Essential Public Health Services",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2024",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Public health practice framework emphasizing assessment, policy development, assurance, communication, workforce, evaluation, infrastructure, and equity."
+        },
+        {
+          "title": "About the Public Health Data Strategy",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2026",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "CDC strategy for modern data exchange, analytics, dashboards, standards, and timely public health action."
+        },
+        {
+          "title": "Core Competencies for Public Health Professionals",
+          "publisher": "Public Health Foundation / Council on Linkages",
+          "year": "2021",
+          "url": "https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+          "note": "Nationally recognized public health workforce competency framework."
+        }
+      ],
+      "approved_tools_note": "This national training does not name a specific approved AI tool because approved tools vary by agency. Learners should use only tools that their organization has authorized for the data type, workflow, and use case involved.",
+      "plays": [
+        5,
+        6,
+        10
+      ],
+      "jurisdiction_and_agency_policy_note": "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.",
+      "id": "hed-100-ai-for-health-education-and-learning-design",
+      "course_code": "HED 100",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 100",
+          "INT 105"
+        ]
+      },
+      "display_title": "HED 100: AI for Health Education and Learning Design",
+      "lms_usability_metadata": {
+        "catalog_card": {
+          "course_id": "HED 100",
+          "title": "AI for Health Education and Learning Design",
+          "level_label": "Introductory to Intermediate",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 100",
+            "INT 105"
+          ]
+        }
+      },
+      "tracks": [
+        "health-education"
+      ]
+    },
+    {
+      "course_id": "HED 110",
+      "module_id": "hed-110-ai-health-literacy-plain-language-and-accessibility",
+      "title": "AI, Health Literacy, Plain Language, and Accessibility",
+      "primary_track_title": "Health Education Track",
+      "level_label": "introductory/applied",
+      "audience": "Health education staff, communications staff, program staff, trainers, community outreach staff, and supervisors who develop learner-facing or public-facing educational materials.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module prepares public health staff to use AI responsibly when developing health education materials, training content, handouts, scripts, scenarios, and learner supports. It focuses on health literacy, plain language, accessibility, cultural relevance, and human review. Because individual agencies approve different tools, the module does not recommend a specific AI platform. Instead, it emphasizes awareness of approved tools, prohibited data, review steps, and safe drafting practices."
+      ],
+      "learning_objectives": [
+        "Explain how AI can support health literacy, plain-language review, accessibility, and audience adaptation.",
+        "Identify risks when AI-generated education materials are inaccurate, stigmatizing, culturally inappropriate, inaccessible, or inconsistent with approved guidance.",
+        "Apply a structured review process before using AI-assisted educational content with staff, partners, clients, patients, or community members.",
+        "Create a plain-language and accessibility review checklist for an AI-assisted public health education product."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module prepares public health staff to use AI responsibly when developing health education materials, training content, handouts, scripts, scenarios, and learner supports. It focuses on health literacy, plain language, accessibility, cultural relevance, and human review. Because individual agencies approve different tools, the module does not recommend a specific AI platform. Instead, it emphasizes awareness of approved tools, prohibited data, review steps, and safe drafting practices."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Explain how AI can support health literacy, plain-language review, accessibility, and audience adaptation.",
+            "Identify risks when AI-generated education materials are inaccurate, stigmatizing, culturally inappropriate, inaccessible, or inconsistent with approved guidance.",
+            "Apply a structured review process before using AI-assisted educational content with staff, partners, clients, patients, or community members.",
+            "Create a plain-language and accessibility review checklist for an AI-assisted public health education product."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Health education materials often influence what people understand, remember, trust, and do. AI can help staff draft materials quickly, simplify complex language, generate examples, and adapt content for different audiences, but speed can create risk when content is not carefully reviewed. A draft that sounds clear may still be medically inaccurate, culturally inappropriate, inaccessible to people with disabilities, or inconsistent with agency guidance. Public health agencies need staff who can use AI as a drafting aid while preserving accuracy, equity, accessibility, and trust.",
+            "Health literacy is not only about reading level. It includes whether the material explains the action people should take, why the action matters, where to get help, and how to apply the guidance in real life. AI tools may simplify language but remove nuance, omit eligibility limits, overgeneralize recommendations, or fail to explain local context. Human review is therefore essential before AI-assisted materials are used in programs, trainings, outreach, or public communication."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "Health literacy",
+              "The degree to which people can find, understand, and use information and services to inform health-related decisions and actions."
+            ],
+            [
+              "Plain language",
+              "Communication that allows the intended audience to find what they need, understand what they find, and use that information."
+            ],
+            [
+              "Accessibility",
+              "Designing content so people with disabilities can perceive, navigate, understand, and use it."
+            ],
+            [
+              "Approved AI tool",
+              "An AI system that an agency or organization has reviewed and authorized for specified uses, data types, and workflows."
+            ]
+          ],
+          "paragraphs": [
+            "Health literacy. The degree to which people can find, understand, and use information and services to inform health-related decisions and actions.",
+            "Plain language. Communication that allows the intended audience to find what they need, understand what they find, and use that information.",
+            "Accessibility. Designing content so people with disabilities can perceive, navigate, understand, and use it.",
+            "Approved AI tool. An AI system that an agency or organization has reviewed and authorized for specified uses, data types, and workflows."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A local health department is preparing a handout for families about preventing heat-related illness during a summer heat event. A health educator uses an approved AI drafting tool to create a first draft at a sixth-grade reading level and asks for versions for older adults, outdoor workers, and caregivers of young children. The health educator then checks the content against approved health guidance, removes advice that does not match local resources, adds phone numbers for cooling centers, and reviews the handout for language access and accessibility. The final product is not considered AI-approved simply because it was generated quickly; it becomes usable only after subject matter, plain-language, accessibility, and program review."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "A responsible workflow begins before the prompt is written. Staff should identify the purpose of the educational material, the audience, the approved source material, the intended reading level, and the review process. They should also determine whether the AI tool is approved for the task and whether any sensitive data, partner information, participant stories, or non-public guidance must be excluded. This preparation keeps the AI task focused and reduces the chance that staff will paste inappropriate information into an unapproved environment.",
+            "The prompt should direct the AI tool to use only approved source text or general language support, not to invent public health facts. When AI is used for readability, translation support, or audience adaptation, staff should compare the output to the original source to ensure meaning has not changed. Accessibility review should include headings, reading order, alt text needs, color contrast, screen-reader compatibility, and whether instructions rely only on visual cues. Cultural review should consider whether examples, tone, imagery, assumptions, and calls to action fit the intended audience.",
+            "Agencies should treat AI-assisted health education content as draft material. Drafts should go through the same or stronger review process as materials developed without AI, especially when the content involves clinical guidance, emergency instructions, eligibility, legal requirements, or community-specific concerns. Staff should document the source material used, the reviewers involved, and any major edits made after AI drafting. This documentation supports transparency and helps teams learn which AI uses are helpful and which create too much review burden."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is assuming that easier language is automatically more accurate or more equitable. AI may reduce reading level while removing details that certain groups need to act safely. It may also create examples that unintentionally stigmatize people, oversimplify risk, or imply that individuals are responsible for barriers created by systems. Guardrails include using approved sources, requiring human review, involving audience representatives when feasible, and checking whether materials explain practical actions without blame or assumptions.",
+            "Another risk is using AI to translate or localize content without qualified review. Automated translation can produce fluent but incorrect language, omit culturally important context, or use terms that do not fit the community. Staff should use AI translation only within agency-approved workflows and should involve qualified bilingual reviewers for public-facing materials. When qualified review is not available, the material should not be treated as ready for public use.",
+            "A third risk is entering sensitive stories, participant feedback, or program records into an AI tool to make examples more realistic. Even de-identified examples can sometimes reveal identities in small communities or specialized programs. Staff should use fictional, composite, or generalized examples unless the agency has approved the tool and data use. Practical safeguards include no-sensitive-data warnings, source tracking, reviewer checklists, and documentation of final approval."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "In AI-supported workflows, this module helps staff build a review pathway for educational materials before they are used in training, outreach, or public-facing programs. The workflow should identify who drafts, who reviews accuracy, who reviews accessibility, who reviews cultural relevance, and who gives final clearance. The AI tool should never be the final reviewer or the source of authority for health guidance. Staff should also identify when a material must be routed to communications, legal, clinical, program, equity, accessibility, or language-access reviewers."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "What types of health education content in your organization might benefit from AI-assisted drafting or plain-language review?",
+            "What information should never be entered into an AI tool when creating health education materials?",
+            "Who should review AI-assisted materials before they are used with the public, learners, or program participants?"
+          ],
+          "paragraphs": [
+            "What types of health education content in your organization might benefit from AI-assisted drafting or plain-language review?",
+            "What information should never be entered into an AI tool when creating health education materials?",
+            "Who should review AI-assisted materials before they are used with the public, learners, or program participants?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Select a public health education topic such as heat safety, immunization reminders, lead exposure prevention, food safety, or asthma trigger reduction. Draft a one-page plain-language review checklist for an AI-assisted handout. Include the audience, approved source material, reading-level goal, accessibility checks, cultural relevance checks, subject matter reviewers, and final approval steps.",
+            "Example: For a heat safety handout for older adults, the checklist might require that the draft uses approved heat guidance, explains symptoms that require urgent help, names local cooling resources, avoids blaming people who cannot afford air conditioning, uses large readable text, includes alt text for icons, and receives review from emergency preparedness, health education, and communications staff before release."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "Plain-language and accessibility review checklist for one AI-assisted public health education product.",
+            "Brief note identifying the approved source material and required reviewers.",
+            "One example of a revision made to improve accuracy, accessibility, or audience fit."
+          ],
+          "paragraphs": [
+            "Plain-language and accessibility review checklist for one AI-assisted public health education product.",
+            "Brief note identifying the approved source material and required reviewers.",
+            "One example of a revision made to improve accuracy, accessibility, or audience fit."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. Which statement best describes responsible use of AI for public health education materials?",
+            "2. What is one reason AI-generated plain language can still be risky?",
+            "3. Which information should staff avoid entering into an unapproved AI tool?",
+            "4. Who should provide final approval for AI-assisted educational materials?",
+            "5. What should be included in a review checklist?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC Clear Communication Index. https://www.cdc.gov/ccindex/",
+            "CDC Health Literacy. https://www.cdc.gov/health-literacy/",
+            "Section508.gov. https://www.section508.gov/",
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "Which statement best describes responsible use of AI for public health education materials?",
+            "options": [
+              "AI output can be published if it is written at a low reading level.",
+              "AI output should be treated as draft material that requires human review.",
+              "AI output does not need source material if it sounds accurate.",
+              "AI output is safer when it uses real participant stories."
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "What is one reason AI-generated plain language can still be risky?",
+            "options": [
+              "It may remove important details or change meaning.",
+              "It always increases reading level.",
+              "It prevents accessibility review.",
+              "It cannot produce public-facing text."
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Which information should staff avoid entering into an unapproved AI tool?",
+            "options": [
+              "Public CDC guidance",
+              "Fictional training examples",
+              "Identifiable participant feedback",
+              "Generic prevention tips"
+            ],
+            "correct_answer": "C"
+          },
+          {
+            "question": "Who should provide final approval for AI-assisted educational materials?",
+            "options": [
+              "The AI tool",
+              "The staff member with the fastest workflow",
+              "Appropriate human reviewers according to agency policy",
+              "Any learner who understands the content"
+            ],
+            "correct_answer": "C"
+          },
+          {
+            "question": "What should be included in a review checklist?",
+            "options": [
+              "Audience, source material, accessibility checks, and reviewers",
+              "Only the AI prompt",
+              "Only the reading level",
+              "Only the publication date"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC Clear Communication Index",
+          "url": "https://www.cdc.gov/ccindex/",
+          "note": "Tool for developing and assessing clear public communication materials."
+        },
+        {
+          "title": "CDC Health Literacy",
+          "url": "https://www.cdc.gov/health-literacy/",
+          "note": "Resources on clear communication and health literacy."
+        },
+        {
+          "title": "Section508.gov",
+          "url": "https://www.section508.gov/",
+          "note": "Federal accessibility guidance and resources."
+        },
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Health education staff, communications staff, program staff, trainers, community outreach staff, and supervisors who develop learner-facing or public-facing educational materials.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "HED 110",
+          "title": "AI, Health Literacy, Plain Language, and Accessibility",
+          "level_label": "introductory/applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "hed-110-ai-health-literacy-plain-language-and-accessibility",
+      "course_code": "HED 110",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "HED 110: AI, Health Literacy, Plain Language, and Accessibility",
+      "tracks": [
+        "health-education"
+      ]
+    },
+    {
+      "course_id": "HED 120",
+      "module_id": "hed-120-ai-supported-community-education-and-outreach",
+      "title": "AI-Supported Community Education and Outreach",
+      "primary_track_title": "Health Education Track",
+      "level_label": "applied",
+      "audience": "Health educators, outreach workers, community engagement staff, program staff, communications staff, and supervisors supporting community-facing education.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module helps public health staff use AI responsibly when planning community education and outreach. It emphasizes community context, audience needs, cultural humility, partnership, and review of AI-generated outreach materials. The module is designed for agencies that may use different approved AI tools, so it focuses on process, safeguards, and approved-tool awareness rather than any single platform."
+      ],
+      "learning_objectives": [
+        "Describe how AI can support community education planning without replacing community partnership or local knowledge.",
+        "Identify risks when AI-generated outreach plans overlook community context, trust, access barriers, language needs, or historical harms.",
+        "Apply a structured process for using AI to draft outreach messages, event plans, talking points, or audience-specific materials.",
+        "Develop a community education outreach plan that includes AI-use safeguards and human review."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module helps public health staff use AI responsibly when planning community education and outreach. It emphasizes community context, audience needs, cultural humility, partnership, and review of AI-generated outreach materials. The module is designed for agencies that may use different approved AI tools, so it focuses on process, safeguards, and approved-tool awareness rather than any single platform."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Describe how AI can support community education planning without replacing community partnership or local knowledge.",
+            "Identify risks when AI-generated outreach plans overlook community context, trust, access barriers, language needs, or historical harms.",
+            "Apply a structured process for using AI to draft outreach messages, event plans, talking points, or audience-specific materials.",
+            "Develop a community education outreach plan that includes AI-use safeguards and human review."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Community education and outreach depend on trust, relationships, and local context. AI can help organize ideas, adapt messages, generate talking points, and create draft outreach plans, but it does not know the lived experience of a community unless appropriate community input is included. If AI-generated outreach materials are used without review, they may miss barriers such as transportation, disability access, digital access, language access, fear of government, immigration concerns, or prior experiences with public systems. Responsible use requires treating AI as a support tool, not as a substitute for community engagement.",
+            "Public health agencies often work with community partners who understand how messages are received, which channels are trusted, and what practical supports are needed. AI can help staff prepare for partner conversations by organizing options and drafting materials, but partners should still have the opportunity to shape the outreach approach. This is especially important for programs serving communities that have experienced stigma, underinvestment, surveillance, discrimination, or other harms. Outreach plans should document how community input will be requested, used, and reflected back."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "Community outreach",
+              "Activities that connect public health programs with communities through trusted channels, partners, events, materials, and services."
+            ],
+            [
+              "Cultural humility",
+              "An ongoing practice of self-reflection, respectful learning, and recognition that communities are experts in their own experiences."
+            ],
+            [
+              "Audience adaptation",
+              "Adjusting content, format, channel, language, and examples to fit the intended audience without changing approved facts."
+            ],
+            [
+              "Community review",
+              "A process for asking community representatives, partners, or affected groups to review materials, assumptions, or outreach plans before use."
+            ]
+          ],
+          "paragraphs": [
+            "Community outreach. Activities that connect public health programs with communities through trusted channels, partners, events, materials, and services.",
+            "Cultural humility. An ongoing practice of self-reflection, respectful learning, and recognition that communities are experts in their own experiences.",
+            "Audience adaptation. Adjusting content, format, channel, language, and examples to fit the intended audience without changing approved facts.",
+            "Community review. A process for asking community representatives, partners, or affected groups to review materials, assumptions, or outreach plans before use."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A health department is planning outreach about childhood immunization clinics in neighborhoods with lower coverage. Staff use an approved AI tool to draft outreach talking points for schools, faith-based partners, and family service organizations. Before using the drafts, the team asks community partners to review tone, access barriers, likely concerns, and preferred communication channels. The final outreach plan adds evening hours, transportation information, translated materials, and a partner FAQ because community review showed that the original AI-assisted plan focused too much on individual behavior and not enough on practical access."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "AI can support outreach planning by generating first drafts, segmenting possible audiences, suggesting message variations, and helping staff turn program goals into practical outreach steps. However, AI should be prompted to work from approved public health facts, program parameters, and community-informed assumptions. Staff should avoid asking AI to infer community needs from stereotypes or incomplete data. If staff do not have current community input, the outreach plan should include a step to obtain it rather than asking AI to fill the gap.",
+            "An AI-supported outreach workflow should include a clear review sequence. Program staff should confirm service details, communications staff should review public language, equity or community engagement staff should review assumptions and access barriers, and community partners should review whether the approach is respectful and feasible. Language-access and accessibility needs should be planned early, not added at the end. The workflow should also identify what feedback will be collected after outreach begins.",
+            "Responsible AI use in outreach also requires transparency within the project team. Staff should know whether AI helped draft materials, what source information was used, and what human edits were made. If an AI-generated idea is rejected because it does not fit the community, that learning should be documented. This helps teams improve prompts, refine review checklists, and avoid repeating problematic assumptions."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A major failure mode is allowing AI to generate outreach strategies based on broad demographic labels rather than specific community knowledge. This can produce messages that feel generic, stigmatizing, or disconnected from real barriers. Guardrails include partner review, community-informed assumptions, and documentation of what local knowledge shaped the final plan. Staff should be careful not to treat race, ethnicity, income, geography, or language as shortcuts for community preferences.",
+            "Another risk is using AI to analyze community comments, meeting notes, or survey responses in an unapproved tool. Community feedback may contain sensitive information, names, locations, concerns about services, or information that could affect trust if mishandled. Staff should only use approved tools and approved data handling processes for community feedback. Summaries should preserve dissent, uncertainty, and context rather than smoothing feedback into a single artificial consensus.",
+            "A third risk is overproducing messages without evaluating whether outreach actually improved access or understanding. AI can make it easy to create many flyers, posts, scripts, or FAQs, but quantity is not the same as impact. Programs should track whether outreach reached the intended audience, whether people understood the information, whether barriers were reduced, and whether partners found the materials useful. This turns AI-supported outreach into an improvement process rather than a content-production exercise."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "This module applies to AI-supported workflows that generate outreach plans, partner talking points, community education materials, event scripts, FAQs, or audience-specific messages. The workflow should require approved source material, no-sensitive-data safeguards, human review, partner review when appropriate, and a feedback loop. AI can help staff prepare options, but humans must decide which options are respectful, feasible, and aligned with public health goals. The final plan should document community input and how it changed the approach."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "Where could AI help your team prepare community education materials without replacing community partnership?",
+            "Which communities, partners, or reviewers should be involved before outreach materials are used?",
+            "What community feedback should be collected after AI-assisted outreach materials are deployed?"
+          ],
+          "paragraphs": [
+            "Where could AI help your team prepare community education materials without replacing community partnership?",
+            "Which communities, partners, or reviewers should be involved before outreach materials are used?",
+            "What community feedback should be collected after AI-assisted outreach materials are deployed?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create a one-page AI-supported outreach planning template for a public health education topic. Include the target audience, public health purpose, approved facts, trusted partners, access barriers, language and accessibility needs, community review process, AI-use safeguards, and feedback measures.",
+            "Example: For a diabetes prevention outreach campaign, the template might identify community health workers and food access partners as reviewers, require plain-language materials in the languages used locally, prohibit the use of real participant stories in AI prompts, and track attendance, questions, referral uptake, and partner feedback after outreach events."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "AI-supported community outreach planning template.",
+            "Brief explanation of how community input will be obtained and used.",
+            "List of safeguards for approved tools, sensitive data, and human review."
+          ],
+          "paragraphs": [
+            "AI-supported community outreach planning template.",
+            "Brief explanation of how community input will be obtained and used.",
+            "List of safeguards for approved tools, sensitive data, and human review."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. What should AI not replace in community outreach planning?",
+            "2. Which is an appropriate AI use in outreach planning?",
+            "3. Why should community partners review AI-assisted outreach materials?",
+            "4. What is a risk of broad demographic prompting?",
+            "5. What should be documented after community review?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC CERC Manual. https://emergency.cdc.gov/cerc/manual/index.asp",
+            "CDC Health Equity Guiding Principles for Inclusive Communication. https://www.cdc.gov/health-communication/php/toolkit/health-equity-guiding-principles-for-inclusive-communication.html",
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "What should AI not replace in community outreach planning?",
+            "options": [
+              "Community partnership and local knowledge",
+              "Draft organization",
+              "Plain-language review support",
+              "Message variation brainstorming"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Which is an appropriate AI use in outreach planning?",
+            "options": [
+              "Inferring community preferences from stereotypes",
+              "Drafting talking points from approved source material",
+              "Uploading identifiable community feedback to an unapproved tool",
+              "Publishing messages without review"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "Why should community partners review AI-assisted outreach materials?",
+            "options": [
+              "They can approve AI tools for all agencies",
+              "They understand context, trust, and access barriers",
+              "They eliminate the need for program review",
+              "They can replace accessibility review"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "What is a risk of broad demographic prompting?",
+            "options": [
+              "It may create stereotyped or generic assumptions",
+              "It always improves cultural fit",
+              "It removes the need for data safeguards",
+              "It guarantees equity"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What should be documented after community review?",
+            "options": [
+              "Only the original AI prompt",
+              "How feedback changed the outreach plan",
+              "Only the tool name",
+              "Nothing, if the event is successful"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC CERC Manual",
+          "url": "https://emergency.cdc.gov/cerc/manual/index.asp",
+          "note": "Crisis and emergency risk communication guidance relevant to trust-building and community communication."
+        },
+        {
+          "title": "CDC Health Equity Guiding Principles for Inclusive Communication",
+          "url": "https://www.cdc.gov/health-communication/php/toolkit/health-equity-guiding-principles-for-inclusive-communication.html",
+          "note": "Guidance for inclusive communication practices."
+        },
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Health educators, outreach workers, community engagement staff, program staff, communications staff, and supervisors supporting community-facing education.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "HED 120",
+          "title": "AI-Supported Community Education and Outreach",
+          "level_label": "applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "hed-120-ai-supported-community-education-and-outreach",
+      "course_code": "HED 120",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "HED 120: AI-Supported Community Education and Outreach",
+      "tracks": [
+        "health-education"
+      ]
+    },
+    {
+      "course_id": "HED 130",
+      "module_id": "hed-130-evaluating-ai-generated-health-education-materials",
+      "title": "Evaluating AI-Generated Health Education Materials",
+      "primary_track_title": "Health Education Track",
+      "level_label": "applied",
+      "audience": "Health education staff, trainers, communications staff, program reviewers, supervisors, and quality improvement staff who review educational content.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module teaches staff how to evaluate AI-generated or AI-assisted health education materials before they are used. It focuses on accuracy, source alignment, readability, accessibility, cultural relevance, equity, and fit for the intended audience. The module treats AI output as a draft that must be reviewed against explicit criteria before it becomes part of a training, handout, script, web page, or outreach product."
+      ],
+      "learning_objectives": [
+        "Describe the review criteria needed for AI-generated health education materials.",
+        "Identify common defects in AI-generated educational content, including factual errors, missing context, accessibility barriers, and stigma.",
+        "Apply an evaluation rubric to an AI-assisted health education product.",
+        "Create a revision plan that identifies what must be corrected before the material is used."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module teaches staff how to evaluate AI-generated or AI-assisted health education materials before they are used. It focuses on accuracy, source alignment, readability, accessibility, cultural relevance, equity, and fit for the intended audience. The module treats AI output as a draft that must be reviewed against explicit criteria before it becomes part of a training, handout, script, web page, or outreach product."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Describe the review criteria needed for AI-generated health education materials.",
+            "Identify common defects in AI-generated educational content, including factual errors, missing context, accessibility barriers, and stigma.",
+            "Apply an evaluation rubric to an AI-assisted health education product.",
+            "Create a revision plan that identifies what must be corrected before the material is used."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "AI-generated health education materials can look polished while still being unsafe or ineffective. Fluent writing may hide inaccurate recommendations, missing contraindications, incorrect eligibility information, inaccessible formatting, or examples that do not fit the intended audience. Public health education must be actionable, accurate, equitable, accessible, and aligned with approved guidance. A structured evaluation rubric helps staff review materials consistently rather than relying on whether a draft sounds professional.",
+            "Evaluation is especially important when materials address clinical guidance, emergencies, vulnerable populations, community trust, or high-consequence decisions. AI may blend sources, overstate certainty, or create advice that sounds plausible but is not approved. It may also make materials too generic, leaving out local services, eligibility rules, or practical barriers. Reviewers need criteria that examine content, context, accessibility, and implementation feasibility."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "Evaluation rubric",
+              "A structured set of criteria used to review whether a material is accurate, usable, accessible, and appropriate."
+            ],
+            [
+              "Source alignment",
+              "The degree to which a draft reflects approved guidance, evidence, policy, or program instructions."
+            ],
+            [
+              "Actionability",
+              "Whether the audience can understand what action to take, when to take it, and where to get help."
+            ],
+            [
+              "Stigma review",
+              "A review for language, examples, or framing that could blame, shame, stereotype, or alienate people or communities."
+            ]
+          ],
+          "paragraphs": [
+            "Evaluation rubric. A structured set of criteria used to review whether a material is accurate, usable, accessible, and appropriate.",
+            "Source alignment. The degree to which a draft reflects approved guidance, evidence, policy, or program instructions.",
+            "Actionability. Whether the audience can understand what action to take, when to take it, and where to get help.",
+            "Stigma review. A review for language, examples, or framing that could blame, shame, stereotype, or alienate people or communities."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A program creates an AI-assisted handout about lead exposure prevention for families with young children. The draft includes accurate general concepts but omits local testing resources, uses technical terms such as exposure pathway, and includes an image prompt that shows only single-family homes even though many affected families live in rental housing. A reviewer uses a rubric to flag missing local resources, readability concerns, accessibility needs, and equity issues. The revised handout adds local contact information, plain-language explanations, tenant-focused examples, and an accessible layout."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "A strong evaluation rubric should begin with factual accuracy and source alignment. Reviewers should compare the AI-generated material to approved source documents, current program guidance, and local service details. They should check whether the draft introduces unsupported claims, omits limits, changes eligibility, or confuses recommendations. When the source material is uncertain or evolving, the final material should explain uncertainty rather than presenting AI-generated certainty.",
+            "The rubric should also address readability, accessibility, and format. Readability includes sentence length, familiar words, clear headings, and direct action steps. Accessibility includes alternative text for images, logical reading order, adequate color contrast, meaningful link text, captioning or transcript needs for audio or video, and compatibility with assistive technology. Reviewers should also check whether the format works for the channel, such as print, mobile, social media, classroom training, or community events.",
+            "Equity and cultural relevance should be reviewed explicitly. Reviewers should ask who is represented, who is missing, whether examples reflect real living and working conditions, and whether the material acknowledges structural barriers. They should also examine whether the content places responsibility only on individuals when systems, resources, or policies affect health behavior. The goal is not to make every material address every social determinant, but to avoid inaccurate, stigmatizing, or impractical guidance."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is reviewing only grammar and reading level while missing factual or equity issues. AI-generated content may be grammatically strong and still be wrong, incomplete, or inappropriate. Guardrails include requiring source comparison, subject matter review, and equity/accessibility checks before use. Reviewers should document defects and revisions so the team learns what kinds of AI outputs require the most correction.",
+            "Another risk is allowing AI-generated materials to drift away from approved agency guidance. AI tools may generalize from broad knowledge and create statements that conflict with local programs, funding rules, emergency instructions, or legal requirements. Reviewers should require the material to identify its source base and should remove unsupported claims. When no approved source exists, the material should be routed for subject matter review before use.",
+            "A third risk is treating evaluation as a final publication step rather than an iterative process. If reviewers consistently find the same problems, the team may need better prompts, clearer source packets, different workflows, or a decision not to use AI for that content type. Evaluation findings should inform training, governance, and tool-use guidance. This turns review into quality improvement rather than a one-time correction."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "This module applies to workflows where AI drafts educational materials, training scenarios, scripts, FAQs, handouts, slide text, or web content. The workflow should require review criteria before the first draft is generated so staff know what quality means. Reviewers should record whether the material is ready to use, needs revision, or should not be used. For high-risk topics, the evaluation should include subject matter, communications, accessibility, equity, legal, or program review as required by agency policy."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "What review criteria are currently used for educational materials in your organization?",
+            "What AI-generated content defects would create the most risk for your audience?",
+            "How should repeated AI output problems be documented and used to improve the workflow?"
+          ],
+          "paragraphs": [
+            "What review criteria are currently used for educational materials in your organization?",
+            "What AI-generated content defects would create the most risk for your audience?",
+            "How should repeated AI output problems be documented and used to improve the workflow?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create a rubric for evaluating one AI-generated health education material. Include criteria for source alignment, factual accuracy, actionability, readability, accessibility, cultural relevance, stigma, local context, and required reviewers.",
+            "Example: For an AI-assisted food safety handout, the rubric might require that cooking temperature guidance matches approved sources, instructions are understandable without technical training, images include alt text, examples include renters and shared kitchens, and final review is completed by environmental health and communications staff."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "Evaluation rubric for AI-generated health education material.",
+            "Short revision plan identifying at least three likely corrections.",
+            "Human review pathway for final clearance."
+          ],
+          "paragraphs": [
+            "Evaluation rubric for AI-generated health education material.",
+            "Short revision plan identifying at least three likely corrections.",
+            "Human review pathway for final clearance."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. Why is grammar review insufficient for AI-generated educational materials?",
+            "2. What does source alignment mean?",
+            "3. Which review area addresses screen-reader compatibility and alt text?",
+            "4. What should happen when an AI draft repeatedly creates the same problem?",
+            "5. Which rating is most appropriate for formative review?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC Clear Communication Index. https://www.cdc.gov/ccindex/",
+            "W3C Web Content Accessibility Guidelines. https://www.w3.org/WAI/standards-guidelines/wcag/",
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "Why is grammar review insufficient for AI-generated educational materials?",
+            "options": [
+              "AI never makes grammar errors",
+              "Content may be fluent but inaccurate or inappropriate",
+              "Grammar review is illegal",
+              "Readability is not relevant"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "What does source alignment mean?",
+            "options": [
+              "The draft agrees with approved guidance and program facts",
+              "The draft contains many links",
+              "The draft has a friendly tone",
+              "The draft was generated quickly"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Which review area addresses screen-reader compatibility and alt text?",
+            "options": [
+              "Accessibility",
+              "Procurement",
+              "Epidemiology",
+              "Funding"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What should happen when an AI draft repeatedly creates the same problem?",
+            "options": [
+              "Ignore it if the tool is fast",
+              "Use findings to improve prompts, training, or workflow",
+              "Stop all health education work",
+              "Publish the best version without review"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "Which rating is most appropriate for formative review?",
+            "options": [
+              "Ready to publish without review",
+              "Needs revision, ready for discussion, or ready for review",
+              "Legally approved",
+              "Guaranteed accurate"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC Clear Communication Index",
+          "url": "https://www.cdc.gov/ccindex/",
+          "note": "Useful rubric structure for clear communication review."
+        },
+        {
+          "title": "W3C Web Content Accessibility Guidelines",
+          "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+          "note": "Accessibility standard for digital content."
+        },
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Health education staff, trainers, communications staff, program reviewers, supervisors, and quality improvement staff who review educational content.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "HED 130",
+          "title": "Evaluating AI-Generated Health Education Materials",
+          "level_label": "applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "hed-130-evaluating-ai-generated-health-education-materials",
+      "course_code": "HED 130",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "HED 130: Evaluating AI-Generated Health Education Materials",
+      "tracks": [
+        "health-education"
+      ]
+    },
+    {
+      "course_id": "HED 140",
+      "module_id": "hed-140-ai-for-training-facilitation-and-learner-feedback",
+      "title": "AI for Training Facilitation and Learner Feedback",
+      "primary_track_title": "Health Education Track",
+      "level_label": "applied",
+      "audience": "Public health trainers, health educators, workforce development staff, supervisors, instructional designers, and program leads.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module prepares trainers and health educators to use AI to support training facilitation, learner practice, formative feedback, and curriculum improvement. It emphasizes that AI feedback should support learning and revision, not replace instructors, supervisors, or official competency decisions. The module also addresses privacy, bias, accessibility, and approved-tool awareness when learner submissions or training records are involved."
+      ],
+      "learning_objectives": [
+        "Explain appropriate and inappropriate uses of AI in training facilitation and learner feedback.",
+        "Design a formative feedback workflow that protects learner privacy and avoids sensitive data exposure.",
+        "Use rubrics to guide AI-assisted feedback on practice activities.",
+        "Develop a plan for instructor or supervisor review of AI-supported learner feedback."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module prepares trainers and health educators to use AI to support training facilitation, learner practice, formative feedback, and curriculum improvement. It emphasizes that AI feedback should support learning and revision, not replace instructors, supervisors, or official competency decisions. The module also addresses privacy, bias, accessibility, and approved-tool awareness when learner submissions or training records are involved."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Explain appropriate and inappropriate uses of AI in training facilitation and learner feedback.",
+            "Design a formative feedback workflow that protects learner privacy and avoids sensitive data exposure.",
+            "Use rubrics to guide AI-assisted feedback on practice activities.",
+            "Develop a plan for instructor or supervisor review of AI-supported learner feedback."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Training programs increasingly use AI to create scenarios, generate practice questions, summarize discussion themes, and provide formative feedback. These uses can improve access to practice and help learners revise their work, but they can also create privacy, fairness, and trust concerns. Learners may paste real work products, sensitive program details, or personal reflections into an AI tool without realizing how the information is handled. Trainers need workflows that make AI support useful while protecting learners and ensuring that humans remain accountable for learning decisions.",
+            "Formative feedback is different from official grading or certification. AI can identify strengths, missing elements, unclear assumptions, and possible revisions, but it should not be framed as final approval of competency. This distinction matters in public health because exercises may involve governance, privacy, legal, equity, communications, or technical issues that require human review. Training programs should make clear what the AI can do, what it cannot do, and when learners should seek instructor or supervisor input."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "Formative feedback",
+              "Feedback intended to help learners revise and improve before final review or use."
+            ],
+            [
+              "Training facilitation",
+              "Activities that support learning during a course, workshop, exercise, or practice session."
+            ],
+            [
+              "Rubric-guided feedback",
+              "Feedback based on explicit criteria rather than general impressions."
+            ],
+            [
+              "Learner privacy",
+              "Protection of learner submissions, reflections, performance data, and training records from inappropriate collection, sharing, or reuse."
+            ]
+          ],
+          "paragraphs": [
+            "Formative feedback. Feedback intended to help learners revise and improve before final review or use.",
+            "Training facilitation. Activities that support learning during a course, workshop, exercise, or practice session.",
+            "Rubric-guided feedback. Feedback based on explicit criteria rather than general impressions.",
+            "Learner privacy. Protection of learner submissions, reflections, performance data, and training records from inappropriate collection, sharing, or reuse."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A public health training team develops an AI-supported practice exercise for use case intake. Learners complete a fictional intake worksheet, then use an approved AI feedback prompt to check whether they described the public health problem, data, affected populations, risks, reviewers, and next steps. The prompt warns learners not to include real PHI, confidential agency information, or non-public operational details. The trainer reviews the AI feedback pattern after the session and updates the exercise instructions because many learners missed the same human review requirement."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "AI can support training design by generating scenario variations, draft knowledge-check questions, discussion prompts, and role-play materials. Trainers should review all AI-generated training content for accuracy, fairness, accessibility, and alignment with learning objectives. AI can also help adapt practice cases for different roles, such as program staff, communications staff, epidemiologists, IT staff, or governance committee members. However, scenarios should be fictional, generalized, or properly de-identified unless the tool and data use are approved.",
+            "AI-assisted learner feedback should be guided by module-specific rubrics. A rubric tells the AI and the learner what quality means for a specific exercise. For example, a use case intake exercise might evaluate problem definition, workflow clarity, data sensitivity, affected populations, governance pathway, and safeguards. The feedback should return strengths, gaps, suggested revisions, and questions for human review rather than a pass/fail decision.",
+            "Training teams should decide whether learner submissions will be stored, who can see feedback, and whether AI feedback counts toward completion. In many settings, the safest first step is a copy-prompt workflow where learners use fictional content and paste the prompt into an agency-approved AI tool. If the website later accepts uploads or stores feedback, privacy, security, and records rules become more important. Trainers should document these choices before launching AI-supported feedback."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A key risk is that learners may disclose sensitive information in examples or submissions. They may include real cases, partner names, staff concerns, security details, or program data because they want realistic feedback. Guardrails include explicit no-sensitive-data warnings, fictional case examples, confirmation checkboxes, and approved-tool requirements. Trainers should model safe examples and explain why realistic does not mean identifiable.",
+            "Another failure mode is treating AI feedback as objective or final. AI feedback may miss important context, overemphasize superficial writing quality, or fail to recognize local policy requirements. The training design should label AI feedback as formative and advisory. For exercises that affect real work, the final review should remain with instructors, supervisors, governance bodies, or designated reviewers.",
+            "A third risk is uneven learner experience. Some learners may receive more useful feedback because they write clearer submissions or know how to prompt AI, while others may receive vague or misleading feedback. Rubrics, sample submissions, prompt templates, and instructor debriefs can reduce this inequity. The training team should monitor feedback quality and revise prompts when needed."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "This module applies when AI supports workshops, self-paced courses, field exercises, tabletop exercises, onboarding, or role-based learning plans. The workflow should define the exercise, rubric, learner warning, feedback format, human review step, and storage policy. AI-generated feedback should help learners improve artifacts such as worksheets, scripts, review memos, and implementation plans. It should not approve real projects or replace human accountability."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "What kinds of learner submissions could contain sensitive information?",
+            "Which exercises in your training program could benefit from rubric-guided formative feedback?",
+            "How should instructors explain the difference between AI feedback and final review?"
+          ],
+          "paragraphs": [
+            "What kinds of learner submissions could contain sensitive information?",
+            "Which exercises in your training program could benefit from rubric-guided formative feedback?",
+            "How should instructors explain the difference between AI feedback and final review?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Design an AI formative feedback workflow for one practical exercise in this curriculum. Include the learner warning, approved-tool requirement, rubric criteria, feedback sections, human review step, and whether feedback will be saved.",
+            "Example: For a communications exercise, the workflow might require learners to use a fictional public health advisory, confirm they are not submitting sensitive data, request feedback on accuracy, plain language, accessibility, equity, and tone, then discuss the feedback with a trainer before revising the message."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "AI formative feedback workflow for one training exercise.",
+            "Rubric with 5 to 8 criteria.",
+            "Learner-facing safety warning and human review note."
+          ],
+          "paragraphs": [
+            "AI formative feedback workflow for one training exercise.",
+            "Rubric with 5 to 8 criteria.",
+            "Learner-facing safety warning and human review note."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. What is the purpose of formative feedback?",
+            "2. What should learners avoid submitting to AI feedback tools?",
+            "3. Why are rubrics important for AI-assisted feedback?",
+            "4. What should AI feedback include?",
+            "5. When should human review remain part of the workflow?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC TRAIN Learning Network. https://www.train.org/",
+            "NIST AI RMF Playbook. https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook",
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "What is the purpose of formative feedback?",
+            "options": [
+              "To certify final competency",
+              "To support revision and learning",
+              "To replace instructors",
+              "To approve real projects"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "What should learners avoid submitting to AI feedback tools?",
+            "options": [
+              "Fictional examples",
+              "Rubric criteria",
+              "Protected or confidential information",
+              "Publicly approved source text"
+            ],
+            "correct_answer": "C"
+          },
+          {
+            "question": "Why are rubrics important for AI-assisted feedback?",
+            "options": [
+              "They make feedback criteria explicit",
+              "They remove the need for human review",
+              "They guarantee accuracy",
+              "They store learner records automatically"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What should AI feedback include?",
+            "options": [
+              "Only a pass/fail decision",
+              "Strengths, gaps, suggested revisions, and questions for human review",
+              "Legal approval",
+              "Certification of competency"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "When should human review remain part of the workflow?",
+            "options": [
+              "When exercises relate to real work, policy, privacy, equity, communications, or technical decisions",
+              "Never",
+              "Only when AI is unavailable",
+              "Only for spelling errors"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC TRAIN Learning Network",
+          "url": "https://www.train.org/",
+          "note": "Public health learning network useful as a reference point for training catalog and completion concepts."
+        },
+        {
+          "title": "NIST AI RMF Playbook",
+          "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook",
+          "note": "Useful source for framing AI risk-management activities and review prompts."
+        },
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Public health trainers, health educators, workforce development staff, supervisors, instructional designers, and program leads.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "HED 140",
+          "title": "AI for Training Facilitation and Learner Feedback",
+          "level_label": "applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "hed-140-ai-for-training-facilitation-and-learner-feedback",
+      "course_code": "HED 140",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "HED 140: AI for Training Facilitation and Learner Feedback",
+      "tracks": [
+        "health-education"
+      ]
+    },
+    {
+      "course_id": "INT 105",
+      "module_id": "int-105-all-staff-safe-ai-use-and-approved-tools-awareness",
+      "module_title": "All-Staff Safe AI Use and Approved Tools Awareness",
+      "title": "All-Staff Safe AI Use and Approved Tools Awareness",
+      "primary_track_title": "Shared Foundational Course",
+      "level_label": "Introductory",
+      "audience": "All public health staff, contractors, interns, supervisors, and partners who may use AI tools or encounter AI-supported workflows.",
+      "estimated_time": "35-45 minutes",
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 100"
+      ],
+      "learning_objectives": [
+        "Explain the difference between approved AI use and informal or shadow AI use.",
+        "Identify types of public health information that should not be entered into unapproved AI tools.",
+        "Apply a basic safe-use checklist before using AI for a work task.",
+        "Describe when AI outputs require human review, supervisor review, or escalation.",
+        "Use agency-approved tool awareness as a safeguard without assuming a specific tool is approved nationally."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module prepares all public health staff to use AI safely, responsibly, and within the boundaries established by their agency. It is written for staff who may not design or govern AI systems but may use approved tools for drafting, summarizing, organizing information, or supporting routine work. The module focuses on practical decision-making: what staff should do before using AI, what information should never be entered, how outputs should be reviewed, and when concerns should be escalated.",
+            "Because this curriculum is not tailored to a specific health department, it cannot identify which tools are approved in a given agency. Instead, the module teaches learners to look for agency-approved tools, acceptable use policies, data classification rules, privacy requirements, and review pathways before using AI. The goal is to prevent informal or shadow AI use that could expose sensitive data, create inaccurate outputs, or undermine public trust."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Explain the difference between approved AI use and informal or shadow AI use.",
+            "Identify types of public health information that should not be entered into unapproved AI tools.",
+            "Apply a basic safe-use checklist before using AI for a work task.",
+            "Describe when AI outputs require human review, supervisor review, or escalation.",
+            "Use agency-approved tool awareness as a safeguard without assuming a specific tool is approved nationally."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "AI is increasingly available through search tools, office software, analytics platforms, transcription tools, chatbots, and vendor products. Staff may use these tools before the organization has completed review or before staff understand the risks. Public health agencies hold sensitive information about individuals, communities, outbreaks, services, partners, and operations, so even routine experimentation can create privacy, security, legal, equity, and trust concerns.",
+            "Safe use is a workforce competency, not only a technical issue. Every staff member needs enough AI literacy to recognize when a tool is appropriate, when a tool is not approved, when data are too sensitive, and when an output needs review. A shared baseline also helps supervisors, programs, IT, privacy, legal, communications, and governance bodies manage AI adoption consistently."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "paragraphs": [
+            "Approved AI tool means a tool that the organization has reviewed and authorized for a specific purpose, data type, and user group. A tool may be approved for general drafting but not approved for protected health information, confidential program records, procurement information, or security-sensitive material. Staff should not assume that a publicly available AI tool is safe because it is popular, free, or embedded in familiar software.",
+            "Sensitive information includes protected health information, personally identifiable information, confidential agency information, non-public operational details, partner information, security-sensitive information, procurement-sensitive information, and other data restricted by law, policy, agreement, or ethical obligation. De-identification reduces risk but does not always eliminate it, especially when small numbers, geographic details, rare conditions, dates, or contextual clues can re-identify individuals or communities. Staff should follow agency data classification and privacy rules before using any AI tool.",
+            "Human review means that a person remains accountable for checking AI outputs before they are used. Review includes accuracy, completeness, tone, policy alignment, privacy, equity, accessibility, and public health appropriateness. Human review is especially important when AI output could affect public communication, services, surveillance interpretation, resource allocation, enforcement, or partner decisions."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A staff member wants to use an AI chatbot to summarize notes from a meeting about a community vaccination event. The notes include names of community partners, concerns raised by residents, operational challenges, and possible locations for future clinics. Even if no medical record is included, the notes may contain sensitive partner information, community trust concerns, and non-public planning details.",
+            "Before using AI, the staff member should check whether the tool is approved for meeting note summarization and whether the notes must be edited or generalized first. If no approved tool is available, the staff member should not paste the notes into a public AI platform. A safer approach may be to create a generalized summary manually or use an approved internal tool that meets agency data protection requirements."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "Safe AI use begins with the use case, the tool, the data, and the intended output. Staff should ask whether the task is appropriate for AI, whether the tool is approved for that task, whether the information can be entered, and whether the output will be reviewed before use. These questions should be asked before experimentation begins, not after a draft, summary, or recommendation has already been generated.",
+            "Public health staff should understand the difference between low-risk productivity support and higher-risk operational or decision-support uses. Drafting a meeting agenda from non-sensitive notes may be low risk if the tool is approved, but summarizing identifiable case records, drafting public health guidance, prioritizing outreach lists, or recommending program decisions requires additional review. The same AI tool can be low risk in one context and high risk in another.",
+            "Supervisors and program managers should create clear expectations for staff. Staff should know where to find approved tool lists, who to ask when unsure, how to report an AI-related concern, and what types of AI use are prohibited. Without this clarity, staff may rely on personal judgment, which can create inconsistent and unsafe practices across the agency."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is shadow AI use, where staff use public or unapproved tools because they are convenient or because no approved alternative has been communicated. Shadow use can expose sensitive information, create records that the agency cannot audit, or produce outputs that are used without proper review. Agencies should make approved tool guidance easy to find and should provide safe alternatives when AI use is allowed.",
+            "Another risk is overtrusting AI output because it sounds confident, polished, or authoritative. AI can produce inaccurate facts, incomplete summaries, fabricated citations, outdated guidance, or tone that is inappropriate for public health communication. Staff should treat AI output as draft material and verify it against approved sources, subject matter experts, and agency policy.",
+            "Recommended guardrails include no-sensitive-data rules, approved tool lists, human review expectations, escalation pathways, and documentation requirements for higher-risk uses. Staff should be trained to pause when a task involves identifiable information, public-facing content, vulnerable populations, consequential decisions, or non-public operational details. When in doubt, the safest action is to ask before using AI."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "In an AI-supported workflow, safe use rules should be built into the process rather than left to individual memory. Workflow instructions should state which tool is approved, what data may be used, what data are prohibited, who reviews the output, and what to do when the AI output is wrong or concerning. This makes responsible AI use repeatable and easier to supervise.",
+            "Staff should also understand that AI use may create records or drafts that need to be handled according to agency policy. A generated summary, prompt, output, or transcript may contain sensitive information or become part of a decision record. Agencies should clarify whether and how AI prompts, outputs, and review notes should be saved."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "paragraphs": [
+            "What types of information do you handle that should never be entered into an unapproved AI tool?",
+            "Where would you find your agency’s approved tool list or acceptable use policy?",
+            "What AI-supported tasks in your role would require supervisor or governance review before use?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Choose one routine task from your own work or a realistic public health role, such as drafting a meeting summary, creating a training outline, summarizing public comments, or organizing a list of outreach ideas. Complete a safe AI use checklist for the task before deciding whether AI should be used. Do not use real sensitive data; use fictional, de-identified, or generalized information.",
+            "Your checklist should identify the task, the proposed AI use, the data involved, whether the tool would need to be agency-approved, what information must be excluded, who should review the output, and what concerns would require escalation. The goal is not to prove that AI should be used, but to show that you can make a safe and policy-aware decision.",
+            "Example: A health educator wants to use AI to draft an outline for a diabetes prevention workshop. The safe-use checklist notes that no participant names, referral data, or clinic records will be entered; the staff member will use only approved public guidance and agency-approved messages; the output will be reviewed for health literacy and cultural appropriateness; and the educator will confirm whether the AI tool is approved for drafting educational materials before use."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "paragraphs": [
+            "Completed Safe AI Use Checklist",
+            "Brief note identifying whether the use is appropriate, requires revision, or requires supervisor/governance review"
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "Which action is safest before using AI for a public health work task?",
+            "Why should staff avoid entering sensitive information into unapproved AI tools?",
+            "What is human review?",
+            "Which situation should be escalated before AI use?",
+            "What is the best description of an approved AI tool?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "Ethics and governance of artificial intelligence for health. https://www.who.int/publications/i/item/9789240029200",
+            "10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "About the Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "Core Competencies for Public Health Professionals. https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx"
+          ]
+        }
+      ],
+      "practical_exercise": {
+        "instructions": [
+          "Choose one routine task from your own work or a realistic public health role, such as drafting a meeting summary, creating a training outline, summarizing public comments, or organizing a list of outreach ideas. Complete a safe AI use checklist for the task before deciding whether AI should be used. Do not use real sensitive data; use fictional, de-identified, or generalized information.",
+          "Your checklist should identify the task, the proposed AI use, the data involved, whether the tool would need to be agency-approved, what information must be excluded, who should review the output, and what concerns would require escalation. The goal is not to prove that AI should be used, but to show that you can make a safe and policy-aware decision."
+        ],
+        "example": "Example: A health educator wants to use AI to draft an outline for a diabetes prevention workshop. The safe-use checklist notes that no participant names, referral data, or clinic records will be entered; the staff member will use only approved public guidance and agency-approved messages; the output will be reviewed for health literacy and cultural appropriateness; and the educator will confirm whether the AI tool is approved for drafting educational materials before use."
+      },
+      "expected_artifact_or_evidence": [
+        "Completed Safe AI Use Checklist",
+        "Brief note identifying whether the use is appropriate, requires revision, or requires supervisor/governance review"
+      ],
+      "knowledge_check": [
+        {
+          "question": "Which action is safest before using AI for a public health work task?",
+          "options": [
+            "Use the most convenient free AI tool",
+            "Check whether the tool is approved for the task and data type",
+            "Enter real data and delete it later",
+            "Assume AI is safe if no names are included"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Why should staff avoid entering sensitive information into unapproved AI tools?",
+          "options": [
+            "AI tools cannot summarize sensitive information",
+            "Unapproved tools may store, expose, reuse, or mishandle the information",
+            "Sensitive information is never useful for public health",
+            "Only IT staff can use any AI tool"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What is human review?",
+          "options": [
+            "Letting AI decide whether its output is correct",
+            "Checking AI output for accuracy, policy alignment, privacy, equity, and appropriateness before use",
+            "Using AI only after business hours",
+            "Replacing supervisor review with an AI score"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Which situation should be escalated before AI use?",
+          "options": [
+            "Drafting a generic agenda from non-sensitive notes",
+            "Brainstorming public meeting topics",
+            "Summarizing identifiable case notes in a public AI tool",
+            "Creating a fictional training example"
+          ],
+          "answer": "C"
+        },
+        {
+          "question": "What is the best description of an approved AI tool?",
+          "options": [
+            "Any tool used by another agency",
+            "Any tool that produces accurate-looking text",
+            "A tool reviewed and authorized for a specific purpose, data type, and user group",
+            "A tool that is free to use"
+          ],
+          "answer": "C"
+        }
+      ],
+      "references_and_resources": [
+        {
+          "title": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "publisher": "National Institute of Standards and Technology",
+          "year": "2023",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Risk management, governance, mapping, measurement, management, and oversight framework for trustworthy AI."
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "publisher": "World Health Organization",
+          "year": "2021",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Global guidance on human rights, ethics, accountability, safety, transparency, and governance for health AI."
+        },
+        {
+          "title": "10 Essential Public Health Services",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2024",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Public health practice framework emphasizing assessment, policy development, assurance, communication, workforce, evaluation, infrastructure, and equity."
+        },
+        {
+          "title": "About the Public Health Data Strategy",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2026",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "CDC strategy for modern data exchange, analytics, dashboards, standards, and timely public health action."
+        },
+        {
+          "title": "Core Competencies for Public Health Professionals",
+          "publisher": "Public Health Foundation / Council on Linkages",
+          "year": "2021",
+          "url": "https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+          "note": "Nationally recognized public health workforce competency framework."
+        }
+      ],
+      "approved_tools_note": "This national training does not name a specific approved AI tool because approved tools vary by agency. Learners should use only tools that their organization has authorized for the data type, workflow, and use case involved.",
+      "plays": [
+        5,
+        6,
+        10,
+        12
+      ],
+      "jurisdiction_and_agency_policy_note": "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.",
+      "id": "int-105-all-staff-safe-ai-use-and-approved-tools-awareness",
+      "course_code": "INT 105",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 100"
+        ]
+      },
+      "display_title": "INT 105: All-Staff Safe AI Use and Approved Tools Awareness",
+      "lms_usability_metadata": {
+        "catalog_card": {
+          "course_id": "INT 105",
+          "title": "All-Staff Safe AI Use and Approved Tools Awareness",
+          "level_label": "Introductory",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 100"
+          ]
+        }
+      },
+      "tracks": [
+        "shared-foundational"
+      ]
+    },
+    {
+      "course_id": "PGM 100",
+      "module_id": "pgm-100-managing-ai-projects-in-public-health-programs",
+      "title": "Managing AI Projects in Public Health Programs",
+      "primary_track_title": "Program Management Track",
+      "level_label": "introductory/applied",
+      "audience": "Program managers, project managers, supervisors, implementation leads, product owners, and public health staff responsible for moving AI ideas into practice.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module introduces program managers to the practical responsibilities involved in managing AI projects in public health settings. It focuses on problem definition, governance intake, stakeholder coordination, approved-tool awareness, workflow fit, risk review, implementation planning, and monitoring. It is written for national use, so it does not assume a specific agency tool, procurement process, or governance structure."
+      ],
+      "learning_objectives": [
+        "Describe the program manager role in responsible AI project planning and implementation.",
+        "Distinguish between tool-first ideas and workflow-based public health use cases.",
+        "Identify the governance, data, workforce, vendor, equity, privacy, and monitoring questions that must be addressed before implementation.",
+        "Create a project framing brief for a proposed AI-supported public health workflow."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module introduces program managers to the practical responsibilities involved in managing AI projects in public health settings. It focuses on problem definition, governance intake, stakeholder coordination, approved-tool awareness, workflow fit, risk review, implementation planning, and monitoring. It is written for national use, so it does not assume a specific agency tool, procurement process, or governance structure."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Describe the program manager role in responsible AI project planning and implementation.",
+            "Distinguish between tool-first ideas and workflow-based public health use cases.",
+            "Identify the governance, data, workforce, vendor, equity, privacy, and monitoring questions that must be addressed before implementation.",
+            "Create a project framing brief for a proposed AI-supported public health workflow."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Many AI projects fail or create risk because they begin as technology demonstrations rather than managed public health projects. Program managers are often the people who must turn an idea into a defined problem, a feasible workflow, an accountable team, and an implementation plan. They do not need to be data scientists, but they need enough AI literacy to ask the right questions and route the project to the right reviewers. Responsible AI project management begins with governance intake and continues through monitoring and lifecycle decisions.",
+            "Public health AI projects often involve multiple teams, including programs, epidemiology, IT, legal, privacy, security, procurement, communications, equity, community engagement, and leadership. Without coordination, projects may move forward with unclear ownership, unapproved tools, poor data readiness, unrealistic timelines, or no plan for human review. Program managers help prevent these failures by making assumptions, decisions, dependencies, and review needs visible. They also ensure that AI work remains connected to public health value rather than novelty."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "AI project framing",
+              "The process of defining the public health problem, proposed AI support, scope, stakeholders, data, risks, and decision points before project work begins."
+            ],
+            [
+              "Tool-first project",
+              "A project that starts with a technology or vendor rather than a clearly defined public health problem."
+            ],
+            [
+              "Governance intake",
+              "A structured process for documenting and triaging proposed AI uses before pilots, procurement, or implementation."
+            ],
+            [
+              "Lifecycle management",
+              "Ongoing management of an AI use from idea through approval, implementation, monitoring, revision, pause, or retirement."
+            ]
+          ],
+          "paragraphs": [
+            "AI project framing. The process of defining the public health problem, proposed AI support, scope, stakeholders, data, risks, and decision points before project work begins.",
+            "Tool-first project. A project that starts with a technology or vendor rather than a clearly defined public health problem.",
+            "Governance intake. A structured process for documenting and triaging proposed AI uses before pilots, procurement, or implementation.",
+            "Lifecycle management. Ongoing management of an AI use from idea through approval, implementation, monitoring, revision, pause, or retirement."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A chronic disease program wants to use AI to identify communities that may benefit from outreach about hypertension screening. The program manager first documents the public health purpose, data sources, affected populations, intended users, proposed workflow, human review points, and governance questions. Instead of asking a vendor to build a model immediately, the manager routes the idea through intake and triage to determine data readiness, privacy review, equity concerns, and whether a simpler analytic approach might be sufficient. This helps the team decide whether the project should proceed, change scope, or wait for additional preparation."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "A program manager should begin by clarifying the problem and the decision that AI would support. The project framing brief should explain who experiences the problem, why current workflows are insufficient, and what improvement would matter. It should also identify whether AI is necessary or whether a policy, staffing, workflow, data quality, or communication change would solve the problem more directly. This protects the agency from investing in AI when the underlying issue is not technical.",
+            "The next step is to map stakeholders and review needs. Program managers should identify business owners, technical owners, data stewards, intended users, affected groups, and reviewers for privacy, security, legal, equity, procurement, communications, and governance. They should also determine whether the project involves public-facing outputs, decision support, sensitive data, automation, external vendors, or community impact. These factors determine the level of review required before implementation.",
+            "AI project management also requires planning beyond the pilot. The project plan should address training, change management, user acceptance testing, validation, monitoring, incident reporting, funding, sustainment, and retirement criteria. Program managers should document what evidence will be used to decide whether the project should scale, revise, pause, or stop. This makes AI implementation accountable rather than experimental by default."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A major failure mode is allowing a project to become vendor-led before the public health problem is defined. Vendors may demonstrate impressive capabilities, but the agency remains responsible for purpose, data use, equity, privacy, and public impact. Guardrails include use case intake, governance triage, internal requirements, and clear decision rights before vendor engagement. Program managers should ensure that vendor conversations do not replace public health problem definition.",
+            "Another risk is underestimating workflow and workforce impacts. AI tools may add review steps, change roles, alter documentation, or create new monitoring responsibilities. If staff are not prepared, the tool may be ignored, misused, or overtrusted. Guardrails include workflow mapping, training plans, supervisor readiness, and feedback loops before and during implementation.",
+            "A third risk is treating project launch as success. An AI-supported workflow can be launched and still fail to improve outcomes, reduce burden, or maintain equity. Program managers should require monitoring metrics, user feedback, and governance review after go-live. The project should have explicit criteria for continuation, revision, pause, or retirement."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "This module applies to any AI-supported workflow being proposed, piloted, procured, implemented, or evaluated by a public health program. The program manager should use intake and project framing to define scope, owners, review needs, and evidence requirements. The project should not proceed to procurement or technical build until the team understands data, risk, workflow, human review, and monitoring expectations. Approved-tool awareness should be part of the project plan because teams must know which tools are authorized for which data and tasks."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "What AI ideas in your program are actually workflow problems that need better definition?",
+            "Who needs to review an AI project before a pilot or vendor discussion begins?",
+            "What evidence would show that an AI project is worth scaling or continuing?"
+          ],
+          "paragraphs": [
+            "What AI ideas in your program are actually workflow problems that need better definition?",
+            "Who needs to review an AI project before a pilot or vendor discussion begins?",
+            "What evidence would show that an AI project is worth scaling or continuing?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create a project framing brief for a proposed AI-supported public health program workflow. Include the public health problem, proposed AI support, users, data, affected populations, owners, review needs, approved-tool considerations, risks, expected benefits, monitoring metrics, and next decision point.",
+            "Example: For an AI-supported referral follow-up workflow, the brief might explain that staff need help prioritizing follow-up calls, identify referral data as sensitive, require human review before outreach decisions, include equity review for missed populations, and define success as improved timely contact without reducing service access for lower-data groups."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "AI project framing brief.",
+            "Stakeholder and reviewer list.",
+            "Initial monitoring and decision criteria."
+          ],
+          "paragraphs": [
+            "AI project framing brief.",
+            "Stakeholder and reviewer list.",
+            "Initial monitoring and decision criteria."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. What should come before vendor selection in an AI project?",
+            "2. Why do program managers need AI literacy?",
+            "3. What is a tool-first project?",
+            "4. What should be planned beyond the pilot?",
+            "5. What is one appropriate program manager guardrail?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "What should come before vendor selection in an AI project?",
+            "options": [
+              "A defined public health problem and governance intake",
+              "A press release",
+              "A model accuracy claim",
+              "A final procurement decision"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Why do program managers need AI literacy?",
+            "options": [
+              "To replace data scientists",
+              "To ask the right implementation and governance questions",
+              "To approve all models alone",
+              "To avoid involving IT"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "What is a tool-first project?",
+            "options": [
+              "A project that starts with a technology rather than a defined problem",
+              "A project with no software",
+              "A project about hand tools",
+              "A project with too much governance"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What should be planned beyond the pilot?",
+            "options": [
+              "Training, monitoring, sustainment, and retirement criteria",
+              "Only the launch date",
+              "Only the vendor demo",
+              "Only the logo"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What is one appropriate program manager guardrail?",
+            "options": [
+              "Skip governance for internal tools",
+              "Document owners and review needs before implementation",
+              "Let AI make final public health decisions",
+              "Avoid stakeholder input"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Program managers, project managers, supervisors, implementation leads, product owners, and public health staff responsible for moving AI ideas into practice.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "PGM 100",
+          "title": "Managing AI Projects in Public Health Programs",
+          "level_label": "introductory/applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "pgm-100-managing-ai-projects-in-public-health-programs",
+      "course_code": "PGM 100",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "PGM 100: Managing AI Projects in Public Health Programs",
+      "tracks": [
+        "program-management"
+      ]
+    },
+    {
+      "course_id": "PGM 110",
+      "module_id": "pgm-110-ai-workflow-readiness-and-operational-planning",
+      "title": "AI Workflow Readiness and Operational Planning",
+      "primary_track_title": "Program Management Track",
+      "level_label": "applied",
+      "audience": "Program managers, operations leads, supervisors, business analysts, product owners, and implementation teams planning AI-supported workflows.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module helps program and operations staff determine whether a workflow is ready for AI-supported change. It focuses on workflow mapping, readiness assessment, role clarity, data dependencies, approved-tool awareness, human review, and operational planning. The module supports teams that need to move from an AI idea to a practical implementation plan without assuming that AI is always the right solution."
+      ],
+      "learning_objectives": [
+        "Assess whether a public health workflow is ready for AI-supported change.",
+        "Map tasks, handoffs, decisions, data inputs, human review points, and failure points in an existing workflow.",
+        "Identify readiness gaps that should be addressed before AI implementation.",
+        "Develop an operational readiness plan for an AI-supported workflow."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module helps program and operations staff determine whether a workflow is ready for AI-supported change. It focuses on workflow mapping, readiness assessment, role clarity, data dependencies, approved-tool awareness, human review, and operational planning. The module supports teams that need to move from an AI idea to a practical implementation plan without assuming that AI is always the right solution."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Assess whether a public health workflow is ready for AI-supported change.",
+            "Map tasks, handoffs, decisions, data inputs, human review points, and failure points in an existing workflow.",
+            "Identify readiness gaps that should be addressed before AI implementation.",
+            "Develop an operational readiness plan for an AI-supported workflow."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "AI systems are implemented into workflows, not into abstract strategies. A workflow may seem ready because staff are excited or a tool is available, but operational readiness depends on clear tasks, reliable data, defined roles, documented handoffs, user training, and review pathways. If the workflow is already unclear, inconsistent, or poorly documented, AI may amplify confusion rather than improve performance. Readiness assessment helps teams decide whether to proceed, redesign, or pause.",
+            "Operational planning is especially important in public health because workflows often involve multiple programs, partners, data systems, legal authorities, and public-facing consequences. AI may change who reviews information, how quickly decisions are made, what gets documented, and how errors are detected. Staff need to understand what will change before a tool is deployed. A readiness plan makes those changes visible and gives governance and leadership a basis for decision-making."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "Workflow readiness",
+              "The degree to which a workflow is documented, stable, staffed, governed, and supported enough to introduce AI responsibly."
+            ],
+            [
+              "Operational dependency",
+              "A task, data source, role, system, approval, or policy that must work for the AI-supported workflow to function."
+            ],
+            [
+              "Human review point",
+              "A defined step where a person reviews, verifies, approves, or overrides an AI output."
+            ],
+            [
+              "Readiness gap",
+              "A missing capability, process, resource, data condition, or decision that must be addressed before implementation."
+            ]
+          ],
+          "paragraphs": [
+            "Workflow readiness. The degree to which a workflow is documented, stable, staffed, governed, and supported enough to introduce AI responsibly.",
+            "Operational dependency. A task, data source, role, system, approval, or policy that must work for the AI-supported workflow to function.",
+            "Human review point. A defined step where a person reviews, verifies, approves, or overrides an AI output.",
+            "Readiness gap. A missing capability, process, resource, data condition, or decision that must be addressed before implementation."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "An immunization program wants to use AI to summarize provider questions from a shared inbox and route them to the right team. The operations lead maps the current workflow and discovers that categories are inconsistent, escalation criteria are informal, and some messages include sensitive provider or patient information. Before selecting a tool, the team defines categories, creates a no-sensitive-data handling rule, identifies reviewers, and tests the workflow with fictional examples. The readiness process shows that process redesign must occur before AI can be safely piloted."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "Workflow readiness begins with mapping the current state. Teams should document the trigger, inputs, tasks, handoffs, decision points, data systems, approvals, outputs, and pain points. They should identify where delays, duplication, errors, or inequities occur and whether AI would address those issues. The map should include informal workarounds because those often reveal risks that formal procedures miss.",
+            "The future-state workflow should identify exactly where AI would enter the process. The plan should explain what the AI would receive, what it would produce, who would review the output, what the human reviewer would check, and what actions are prohibited without approval. It should also specify which tool or environment is approved for the task and which data are not allowed. If approved tools vary by agency, the plan should include a local confirmation step rather than naming a specific tool.",
+            "Operational readiness also includes people and support. Staff need training, supervisors need expectations, and users need a way to report errors or concerns. The team should define success metrics, monitoring cadence, issue escalation, and fallback procedures if the AI tool is unavailable or produces questionable outputs. These details should be documented before the workflow moves to pilot or implementation."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is implementing AI into a poorly understood workflow. If tasks, roles, and handoffs are unclear, AI may create faster confusion rather than better performance. Guardrails include current-state mapping, future-state design, user review, and readiness gap tracking. The team should resolve critical gaps before implementation begins.",
+            "Another risk is failing to define human review. Staff may assume that someone else is checking outputs, or they may overtrust AI because it appears confident. Guardrails include explicit review points, review checklists, override rules, and documentation requirements. Supervisors should confirm that reviewers have enough time and skill to perform the review.",
+            "A third risk is ignoring fallback and incident procedures. If the AI tool fails, produces harmful output, or becomes unavailable, the program still needs to operate. The readiness plan should include fallback workflows, issue reporting, escalation, and pause criteria. This ensures that AI does not become a single point of failure for public health operations."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "This module applies when a team is considering AI for case routing, document review, inbox triage, dashboard summarization, referral follow-up, inspection prioritization, data quality review, or other operational workflows. The team should map the workflow before selecting or configuring a tool. The readiness plan should be reviewed by governance, IT, privacy, security, equity, and program leadership as appropriate. The result should be a practical decision about whether to proceed, redesign, defer, or stop."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "Which workflow in your program would need better documentation before AI could be considered?",
+            "Where would human review be required in an AI-supported workflow?",
+            "What fallback process would be needed if the AI tool failed or produced questionable output?"
+          ],
+          "paragraphs": [
+            "Which workflow in your program would need better documentation before AI could be considered?",
+            "Where would human review be required in an AI-supported workflow?",
+            "What fallback process would be needed if the AI tool failed or produced questionable output?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create an AI workflow readiness plan for one public health workflow. Include a current-state workflow summary, proposed AI support, data inputs, approved-tool confirmation step, human review points, readiness gaps, training needs, monitoring measures, fallback process, and next decision point.",
+            "Example: For AI-supported inbox triage, the plan might identify incoming messages, classification categories, prohibited sensitive data, reviewer responsibilities, routing rules, error reporting, and fallback to manual triage if the tool misclassifies urgent messages."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "Workflow readiness plan.",
+            "Current-state and future-state workflow summary.",
+            "List of readiness gaps and owners."
+          ],
+          "paragraphs": [
+            "Workflow readiness plan.",
+            "Current-state and future-state workflow summary.",
+            "List of readiness gaps and owners."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. Why should workflows be mapped before AI implementation?",
+            "2. What is a readiness gap?",
+            "3. What should a human review point specify?",
+            "4. Why is a fallback process important?",
+            "5. When should approved-tool awareness be addressed?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "Why should workflows be mapped before AI implementation?",
+            "options": [
+              "To identify tasks, handoffs, decisions, data, and risks",
+              "To avoid involving users",
+              "To replace governance",
+              "To guarantee procurement approval"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What is a readiness gap?",
+            "options": [
+              "A missing capability or decision that must be addressed",
+              "A successful go-live",
+              "A vendor feature",
+              "A completed knowledge check"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What should a human review point specify?",
+            "options": [
+              "Who reviews the AI output and what they check",
+              "Only the tool name",
+              "Only the budget",
+              "Only the meeting time"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Why is a fallback process important?",
+            "options": [
+              "The program must continue if the AI tool fails or is paused",
+              "It eliminates the need for monitoring",
+              "It allows unapproved tools",
+              "It prevents all errors"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "When should approved-tool awareness be addressed?",
+            "options": [
+              "Before data or tasks are placed into an AI-supported workflow",
+              "Only after go-live",
+              "Only during annual review",
+              "Never"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Program managers, operations leads, supervisors, business analysts, product owners, and implementation teams planning AI-supported workflows.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "PGM 110",
+          "title": "AI Workflow Readiness and Operational Planning",
+          "level_label": "applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "pgm-110-ai-workflow-readiness-and-operational-planning",
+      "course_code": "PGM 110",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "PGM 110: AI Workflow Readiness and Operational Planning",
+      "tracks": [
+        "program-management"
+      ]
+    },
+    {
+      "course_id": "PGM 120",
+      "module_id": "pgm-120-ai-pilot-planning-and-governance-coordination",
+      "title": "AI Pilot Planning and Governance Coordination",
+      "primary_track_title": "Program Management Track",
+      "level_label": "applied",
+      "audience": "Program managers, project managers, governance coordinators, product owners, implementation leads, and supervisors managing AI pilots.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module prepares public health program managers to plan AI pilots that are limited, governed, measurable, and safe. It focuses on pilot scope, governance conditions, data boundaries, user training, evaluation criteria, risk controls, and go/no-go decisions. The module emphasizes that pilots are structured learning activities, not automatic paths to scale."
+      ],
+      "learning_objectives": [
+        "Define the purpose, scope, and boundaries of an AI pilot.",
+        "Coordinate governance, privacy, security, equity, technical, and program review before pilot launch.",
+        "Develop pilot success criteria, monitoring measures, and pause criteria.",
+        "Create a pilot plan that supports responsible go/no-go decisions."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module prepares public health program managers to plan AI pilots that are limited, governed, measurable, and safe. It focuses on pilot scope, governance conditions, data boundaries, user training, evaluation criteria, risk controls, and go/no-go decisions. The module emphasizes that pilots are structured learning activities, not automatic paths to scale."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Define the purpose, scope, and boundaries of an AI pilot.",
+            "Coordinate governance, privacy, security, equity, technical, and program review before pilot launch.",
+            "Develop pilot success criteria, monitoring measures, and pause criteria.",
+            "Create a pilot plan that supports responsible go/no-go decisions."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "AI pilots can be valuable because they allow agencies to test feasibility, user experience, workflow fit, and risk controls before broader implementation. However, pilots can also create risk if they use real data without approval, expand beyond scope, or become permanent without evaluation. A pilot should be time-limited, documented, reviewed, and connected to a clear decision. Program managers play a key role in making sure the pilot remains a learning activity rather than an uncontrolled deployment.",
+            "Governance coordination is essential before a pilot begins. The team should know what has been approved, what conditions apply, which data can be used, who may participate, what outputs may be used for, and what activities are prohibited. The pilot plan should also identify what evidence will be collected and who will decide whether to revise, scale, pause, or stop. Without those elements, a pilot can bypass the very safeguards it was supposed to test."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "Pilot",
+              "A time-limited test of an AI-supported workflow under defined conditions, controls, and evaluation criteria."
+            ],
+            [
+              "Governance condition",
+              "A requirement that must be met before or during a pilot, such as data limits, human review, monitoring, or reporting."
+            ],
+            [
+              "Pause criteria",
+              "Conditions that require the pilot to stop temporarily or permanently until risks are addressed."
+            ],
+            [
+              "Go/no-go decision",
+              "A formal decision about whether to continue, revise, scale, defer, or stop after pilot evidence is reviewed."
+            ]
+          ],
+          "paragraphs": [
+            "Pilot. A time-limited test of an AI-supported workflow under defined conditions, controls, and evaluation criteria.",
+            "Governance condition. A requirement that must be met before or during a pilot, such as data limits, human review, monitoring, or reporting.",
+            "Pause criteria. Conditions that require the pilot to stop temporarily or permanently until risks are addressed.",
+            "Go/no-go decision. A formal decision about whether to continue, revise, scale, defer, or stop after pilot evidence is reviewed."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A disease surveillance team wants to pilot an AI tool that summarizes notifiable condition case notes for internal epidemiologist review. The pilot uses fictional and de-identified test data at first, limits users to a small trained group, requires human verification of every summary, and prohibits using AI output for official case classification. The program manager documents success measures, including time saved, summary accuracy, reviewer burden, missed information, and user concerns. At the end of the pilot, governance reviews the evidence before deciding whether any broader use should be considered."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "A pilot plan should begin with a specific question. The team may be testing whether the AI tool improves workflow efficiency, whether staff can review outputs safely, whether data can be processed in an approved environment, or whether the use case creates unacceptable risk. A vague pilot question leads to vague evaluation and makes it easier for the pilot to continue without a decision. The plan should also state what the pilot is not testing and what actions are out of scope.",
+            "Governance coordination should be visible in the pilot plan. The plan should list required reviewers, approval conditions, data restrictions, security requirements, equity considerations, human review rules, documentation requirements, and user training. It should also identify who can authorize changes to scope, such as adding data, users, vendors, or operational uses. Scope changes should not occur informally during the pilot.",
+            "Evaluation should be designed before launch. Metrics may include accuracy, completeness, time, user burden, error types, equity concerns, accessibility, adoption, incidents, and public health value. The plan should also define pause criteria, such as data exposure, repeated unsafe outputs, unmanageable reviewer burden, user overreliance, or evidence that the tool worsens inequity. Pilot findings should be documented in a way that supports governance and leadership decisions."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is pilot creep. A small test may gradually add users, data, workflows, or real decisions without formal approval. Guardrails include written scope, change-control rules, named owners, and governance review of any expansion. Program managers should treat changes in data, users, automation, or decision consequence as governance events.",
+            "Another risk is evaluating only whether staff like the tool. User satisfaction matters, but it is not enough to determine safety, equity, or effectiveness. The pilot should evaluate output quality, workflow impact, human review burden, errors, and unintended consequences. Feedback from users should be paired with evidence from monitoring and review.",
+            "A third risk is failing to define what happens after the pilot. Without a go/no-go process, a pilot may become an unreviewed operational system. The pilot plan should identify the decision-makers, evidence package, timeline, and possible decisions. Possible outcomes should include revise, scale, defer, pause, or retire."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "This module applies when an AI use case has passed initial intake and is being considered for controlled testing. The pilot should not begin until governance has reviewed scope, data, risks, and safeguards. Program managers should coordinate across teams so that the pilot produces useful evidence and does not create unapproved operational dependence. The pilot plan should become part of the project record."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "What would your team need to learn from a pilot before deciding whether to scale?",
+            "What conditions should require an AI pilot to pause?",
+            "Who should approve changes to pilot scope?"
+          ],
+          "paragraphs": [
+            "What would your team need to learn from a pilot before deciding whether to scale?",
+            "What conditions should require an AI pilot to pause?",
+            "Who should approve changes to pilot scope?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create an AI pilot planning brief. Include the pilot question, scope, data boundaries, users, approved-tool requirements, governance conditions, training plan, metrics, pause criteria, go/no-go decision process, and documentation requirements.",
+            "Example: For an AI-assisted document summarization pilot, the brief might limit the pilot to de-identified test documents, require reviewer scoring of accuracy and completeness, prohibit external sharing of summaries, define pause criteria for missing critical information, and require governance review before any real operational use."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "AI pilot planning brief.",
+            "Governance coordination checklist.",
+            "Pilot evaluation and pause criteria."
+          ],
+          "paragraphs": [
+            "AI pilot planning brief.",
+            "Governance coordination checklist.",
+            "Pilot evaluation and pause criteria."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. What is the best description of an AI pilot?",
+            "2. What is pilot creep?",
+            "3. Why should metrics be defined before launch?",
+            "4. What should happen if a pilot repeatedly produces unsafe outputs?",
+            "5. Who should approve scope changes?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "What is the best description of an AI pilot?",
+            "options": [
+              "A time-limited governed test with evaluation criteria",
+              "An automatic path to permanent use",
+              "A vendor demonstration only",
+              "A way to avoid review"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What is pilot creep?",
+            "options": [
+              "Informal expansion of scope, users, data, or uses",
+              "A planned evaluation meeting",
+              "A defined pause criterion",
+              "A training checklist"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Why should metrics be defined before launch?",
+            "options": [
+              "To support evidence-based go/no-go decisions",
+              "To make the pilot longer",
+              "To avoid user feedback",
+              "To replace governance"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What should happen if a pilot repeatedly produces unsafe outputs?",
+            "options": [
+              "Pause or revise according to defined criteria",
+              "Scale immediately",
+              "Hide the issue",
+              "Remove human review"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Who should approve scope changes?",
+            "options": [
+              "The designated decision pathway or governance process",
+              "Any pilot user",
+              "The AI tool",
+              "No one if the change is small"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Program managers, project managers, governance coordinators, product owners, implementation leads, and supervisors managing AI pilots.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "PGM 120",
+          "title": "AI Pilot Planning and Governance Coordination",
+          "level_label": "applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "pgm-120-ai-pilot-planning-and-governance-coordination",
+      "course_code": "PGM 120",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "PGM 120: AI Pilot Planning and Governance Coordination",
+      "tracks": [
+        "program-management"
+      ]
+    },
+    {
+      "course_id": "PGM 130",
+      "module_id": "pgm-130-ai-implementation-metrics-and-value-tracking-for-program-managers",
+      "title": "AI Implementation Metrics and Value Tracking for Program Managers",
+      "primary_track_title": "Program Management Track",
+      "level_label": "applied",
+      "audience": "Program managers, project managers, supervisors, quality improvement staff, governance coordinators, and implementation leads.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module helps program managers define and track whether AI-supported workflows create public health value. It focuses on practical metrics, burden, equity, quality, safety, adoption, cost, sustainability, and lifecycle decisions. The module emphasizes that value should be measured against public health purpose, not only speed, automation, or user enthusiasm."
+      ],
+      "learning_objectives": [
+        "Define meaningful value measures for AI-supported public health workflows.",
+        "Distinguish productivity metrics from public health value, equity, quality, and safety measures.",
+        "Develop a monitoring plan that includes adoption, burden, errors, equity, and sustainment.",
+        "Use implementation evidence to inform decisions to scale, revise, pause, or retire AI uses."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module helps program managers define and track whether AI-supported workflows create public health value. It focuses on practical metrics, burden, equity, quality, safety, adoption, cost, sustainability, and lifecycle decisions. The module emphasizes that value should be measured against public health purpose, not only speed, automation, or user enthusiasm."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Define meaningful value measures for AI-supported public health workflows.",
+            "Distinguish productivity metrics from public health value, equity, quality, and safety measures.",
+            "Develop a monitoring plan that includes adoption, burden, errors, equity, and sustainment.",
+            "Use implementation evidence to inform decisions to scale, revise, pause, or retire AI uses."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "AI projects are often justified by expected efficiency, but public health value is broader than time saved. A tool may reduce one task while increasing review burden, widening inequities, weakening trust, or creating new monitoring responsibilities. Program managers need to define what success means before implementation and track whether the workflow actually delivers value. This protects agencies from scaling tools that are impressive but not useful, safe, equitable, or sustainable.",
+            "Value tracking also supports governance. Governance bodies need evidence to decide whether an AI use should continue, change, expand, pause, or retire. Metrics should include process measures, quality measures, equity measures, user experience, risk indicators, and public health outcomes where feasible. A balanced approach helps teams avoid narrow success claims based only on speed or volume."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "Value tracking",
+              "Ongoing measurement of whether an AI-supported workflow produces useful, safe, equitable, and sustainable public health benefits."
+            ],
+            [
+              "Adoption measure",
+              "A measure of whether intended users are actually using the workflow as designed."
+            ],
+            [
+              "Burden measure",
+              "A measure of whether the workflow increases or decreases staff, user, partner, or community burden."
+            ],
+            [
+              "Lifecycle decision",
+              "A decision to continue, revise, scale, pause, or retire an AI use based on evidence."
+            ]
+          ],
+          "paragraphs": [
+            "Value tracking. Ongoing measurement of whether an AI-supported workflow produces useful, safe, equitable, and sustainable public health benefits.",
+            "Adoption measure. A measure of whether intended users are actually using the workflow as designed.",
+            "Burden measure. A measure of whether the workflow increases or decreases staff, user, partner, or community burden.",
+            "Lifecycle decision. A decision to continue, revise, scale, pause, or retire an AI use based on evidence."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A maternal and child health program pilots an AI-assisted referral follow-up prioritization process. The team tracks not only the number of referrals reviewed per day, but also whether high-priority families are contacted faster, whether staff spend more time correcting outputs, whether certain communities are under-prioritized, and whether families report clearer service navigation. The evidence shows that speed improved, but the prioritization logic missed families with incomplete data. The program revises the workflow before considering scale."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "A strong measurement plan begins with the public health purpose. The team should define the problem, the intended improvement, and the evidence that would show progress. Measures may include timeliness, completeness, accuracy, consistency, workload, user experience, service access, equity, safety, and cost. The plan should also identify measures that would show harm or unacceptable burden.",
+            "Productivity metrics should be interpreted carefully. Time saved may be meaningful, but only if quality and equity are maintained. A summarization tool that saves staff time but omits critical context is not valuable. A routing tool that processes more cases but misses low-data populations may worsen inequity. Program managers should pair efficiency measures with quality, safety, and equity indicators.",
+            "Value tracking should continue after go-live. AI-supported workflows can change over time because data, users, policies, populations, and vendor systems change. Monitoring should have owners, cadence, thresholds, and escalation pathways. The project record should show how evidence is used to improve the workflow and whether continuation remains justified."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is measuring only activity. Counts of messages processed, drafts generated, or cases flagged do not show whether the workflow improved public health practice. Guardrails include linking measures to the original use case purpose and including quality and equity measures. Teams should ask what better decision, service, communication, or outcome the AI use is supposed to support.",
+            "Another risk is ignoring hidden burden. AI may shift work to reviewers, supervisors, IT, data stewards, or community partners. A workflow that appears efficient for one team may create more work elsewhere. Burden measures should include time, cognitive load, rework, training, monitoring, and incident response. Staff feedback should be part of value tracking.",
+            "A third risk is failing to act on evidence. Monitoring has little value if findings are not reviewed or used. Governance and program leadership should define thresholds for revision, pause, or retirement. Evidence should support decisions rather than becoming a dashboard that no one uses."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "This module applies to AI-supported workflows that are being piloted, implemented, monitored, or considered for scale. The measurement plan should be created before implementation and updated as the workflow matures. Program managers should coordinate with data, IT, equity, privacy, security, communications, and governance reviewers to ensure the measures reflect real risks and goals. Approved tools should be used for measurement and reporting when local policy requires them."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "What would count as public health value for an AI-supported workflow in your program?",
+            "Which metrics could reveal hidden burden or inequitable impact?",
+            "Who should review the evidence and decide whether the AI use should continue?"
+          ],
+          "paragraphs": [
+            "What would count as public health value for an AI-supported workflow in your program?",
+            "Which metrics could reveal hidden burden or inequitable impact?",
+            "Who should review the evidence and decide whether the AI use should continue?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Develop an AI implementation value tracking plan for one workflow. Include the public health purpose, efficiency measures, quality measures, equity measures, burden measures, safety indicators, data sources, owners, review cadence, thresholds, and lifecycle decision options.",
+            "Example: For AI-assisted call center FAQ support, the plan might track response time, accuracy of answers, staff corrections, accessibility of language, caller satisfaction, escalation rates, and whether certain language groups receive less accurate support."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "AI implementation value tracking plan.",
+            "Balanced measure set with at least one efficiency, quality, equity, burden, and safety measure.",
+            "Lifecycle decision criteria."
+          ],
+          "paragraphs": [
+            "AI implementation value tracking plan.",
+            "Balanced measure set with at least one efficiency, quality, equity, burden, and safety measure.",
+            "Lifecycle decision criteria."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. Why should AI value tracking include more than time saved?",
+            "2. What is a burden measure?",
+            "3. What should happen when monitoring identifies unacceptable harm?",
+            "4. Which measure set is most balanced?",
+            "5. When should value measures be defined?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "Why should AI value tracking include more than time saved?",
+            "options": [
+              "Because public health value also includes quality, equity, safety, burden, and sustainability",
+              "Because time is never relevant",
+              "Because metrics are optional",
+              "Because AI guarantees quality"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What is a burden measure?",
+            "options": [
+              "A measure of work or strain created or reduced by the workflow",
+              "A measure of tool branding",
+              "A procurement clause",
+              "A model parameter"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What should happen when monitoring identifies unacceptable harm?",
+            "options": [
+              "Revise, pause, or escalate according to decision criteria",
+              "Ignore it if efficiency improves",
+              "Publish the result immediately",
+              "Remove human review"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Which measure set is most balanced?",
+            "options": [
+              "Volume only",
+              "Efficiency, quality, equity, burden, safety, and adoption",
+              "Cost only",
+              "User enthusiasm only"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "question": "When should value measures be defined?",
+            "options": [
+              "Before implementation when possible",
+              "Only after scale",
+              "Never",
+              "Only during procurement"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Program managers, project managers, supervisors, quality improvement staff, governance coordinators, and implementation leads.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "PGM 130",
+          "title": "AI Implementation Metrics and Value Tracking for Program Managers",
+          "level_label": "applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "pgm-130-ai-implementation-metrics-and-value-tracking-for-program-managers",
+      "course_code": "PGM 130",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "PGM 130: AI Implementation Metrics and Value Tracking for Program Managers",
+      "tracks": [
+        "program-management"
+      ]
+    },
+    {
+      "course_id": "PGM 140",
+      "module_id": "pgm-140-vendor-coordination-and-operational-handoff-for-ai-pilots",
+      "title": "Vendor Coordination and Operational Handoff for AI Pilots",
+      "primary_track_title": "Program Management Track",
+      "level_label": "applied",
+      "audience": "Program managers, project managers, product owners, procurement liaisons, vendor managers, IT partners, and implementation leads.",
+      "estimated_time_minutes": 45,
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "GOV 100"
+      ],
+      "training_overview": [
+        "This module helps program managers coordinate vendors and internal teams during AI pilots and operational handoff. It focuses on requirements, data boundaries, roles, communication, documentation, acceptance criteria, training, support, and transition from vendor demonstration to agency-owned operations. It does not provide legal or procurement advice and does not assume a specific vendor or approved tool."
+      ],
+      "learning_objectives": [
+        "Describe the program manager role in coordinating AI vendors and internal reviewers.",
+        "Identify information that must be clarified before vendor demonstrations, pilots, or operational handoff.",
+        "Develop acceptance criteria and support expectations for an AI-supported workflow.",
+        "Create a vendor coordination and handoff checklist for an AI pilot."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module helps program managers coordinate vendors and internal teams during AI pilots and operational handoff. It focuses on requirements, data boundaries, roles, communication, documentation, acceptance criteria, training, support, and transition from vendor demonstration to agency-owned operations. It does not provide legal or procurement advice and does not assume a specific vendor or approved tool."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Describe the program manager role in coordinating AI vendors and internal reviewers.",
+            "Identify information that must be clarified before vendor demonstrations, pilots, or operational handoff.",
+            "Develop acceptance criteria and support expectations for an AI-supported workflow.",
+            "Create a vendor coordination and handoff checklist for an AI pilot."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "Jurisdiction and Agency Policy Note",
+            "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "AI vendor coordination is not only a procurement activity. Once a vendor is involved, program managers often need to coordinate requirements, data rules, workflow design, testing, training, user feedback, issue tracking, and handoff to operations. If these details are not managed, a promising pilot can become dependent on undocumented vendor assumptions or informal staff workarounds. The agency must remain accountable for public health purpose, data protection, human review, and operational decisions.",
+            "Operational handoff is the point where responsibility moves from design or pilot activity into routine use or ongoing support. Handoff can fail when staff do not know who owns the workflow, how to report issues, what the vendor supports, who monitors performance, or what happens when the tool changes. Program managers help prevent this by defining acceptance criteria, documentation, training, support channels, and governance reporting before the pilot ends. This makes scale or continuation a deliberate decision."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "definitions": [
+            [
+              "Vendor coordination",
+              "The work of aligning vendor activities with agency requirements, review conditions, timelines, documentation, testing, and communication."
+            ],
+            [
+              "Operational handoff",
+              "The transition from pilot, build, or vendor-led activity to routine agency-managed operation and support."
+            ],
+            [
+              "Acceptance criteria",
+              "Specific conditions that must be met before a deliverable, pilot, or workflow is accepted."
+            ],
+            [
+              "Support model",
+              "The defined process for help, maintenance, issue reporting, escalation, and vendor or internal support responsibilities."
+            ]
+          ],
+          "paragraphs": [
+            "Vendor coordination. The work of aligning vendor activities with agency requirements, review conditions, timelines, documentation, testing, and communication.",
+            "Operational handoff. The transition from pilot, build, or vendor-led activity to routine agency-managed operation and support.",
+            "Acceptance criteria. Specific conditions that must be met before a deliverable, pilot, or workflow is accepted.",
+            "Support model. The defined process for help, maintenance, issue reporting, escalation, and vendor or internal support responsibilities."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A health department contracts with a vendor to pilot an AI-assisted document classification tool for internal records. The program manager creates a handoff checklist requiring approved data boundaries, test results, user training, role-based access, issue reporting, vendor support hours, documentation of model limitations, and governance review of pilot outcomes. During testing, staff discover that the tool performs poorly on scanned documents. The acceptance criteria prevent the workflow from moving to routine use until the limitation is documented and a mitigation plan is approved."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "Before vendor engagement, the program manager should clarify the use case, workflow, data boundaries, and review requirements. Vendor demonstrations should not use real sensitive data unless explicitly approved. The team should ask how the vendor handles data, prompts, files, logs, model updates, security controls, access, retention, performance monitoring, and incident response. Program managers should coordinate with procurement, legal, IT, privacy, security, and governance reviewers rather than trying to answer these questions alone.",
+            "During a pilot, coordination should be structured. The program manager should maintain a decision log, issue log, change log, training log, and list of open risks. They should define who can communicate requirements to the vendor, who can approve changes, and how user feedback is triaged. This prevents conflicting instructions and helps the vendor understand what matters for public health operations.",
+            "Operational handoff requires more than a final meeting. Staff need documentation, training, standard operating procedures, escalation paths, monitoring responsibilities, and clarity about vendor support. The handoff should identify what is agency-owned, what is vendor-supported, and what must return to governance if it changes. This is especially important for AI systems because vendor model updates, data changes, or workflow changes can affect performance and risk."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is allowing vendor capabilities to define agency requirements. If the team adapts the public health workflow to what the vendor wants to demonstrate, the project may lose connection to the original problem. Guardrails include internal requirements, governance conditions, and acceptance criteria before vendor work proceeds. Program managers should keep the public health purpose visible in every vendor discussion.",
+            "Another risk is unclear data handling. Staff may provide sample files, screenshots, or exports without understanding whether the vendor environment is approved. Guardrails include approved data boundaries, synthetic or de-identified test data where appropriate, and review by privacy, security, and legal staff. Any change in data use should trigger review.",
+            "A third risk is weak handoff. If support, monitoring, training, and ownership are unclear, the workflow may fail after the pilot team moves on. Guardrails include handoff checklists, support models, escalation pathways, and governance reporting. The agency should not accept a workflow that cannot be safely operated and monitored."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "This module applies when an AI use case involves external vendors, contractors, consultants, or technology partners. The program manager should coordinate internal review and vendor communication while respecting procurement and legal boundaries. The handoff checklist should be completed before routine use begins. The module also supports teams using internal tools because operational handoff is still necessary when moving from pilot to routine work."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "questions": [
+            "What vendor assumptions could affect an AI-supported public health workflow?",
+            "What acceptance criteria should be met before a pilot is considered complete?",
+            "What information should be included in an operational handoff checklist?"
+          ],
+          "paragraphs": [
+            "What vendor assumptions could affect an AI-supported public health workflow?",
+            "What acceptance criteria should be met before a pilot is considered complete?",
+            "What information should be included in an operational handoff checklist?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create a vendor coordination and operational handoff checklist for an AI pilot. Include data boundaries, approved-tool requirements, roles, communication rules, acceptance criteria, training, issue reporting, vendor support, monitoring, documentation, and governance decision points.",
+            "Example: For an AI-assisted records classification pilot, the checklist might require synthetic test files for early testing, privacy/security review before any real data use, acceptance criteria for classification accuracy and reviewer burden, user training, an issue log, and a handoff meeting with IT support and program owners."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "items": [
+            "Vendor coordination and handoff checklist.",
+            "Acceptance criteria for one AI-supported workflow.",
+            "Issue and decision log template outline."
+          ],
+          "paragraphs": [
+            "Vendor coordination and handoff checklist.",
+            "Acceptance criteria for one AI-supported workflow.",
+            "Issue and decision log template outline."
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "1. What should guide vendor discussions?",
+            "2. Why are acceptance criteria important?",
+            "3. What should happen before using real sensitive data in a vendor environment?",
+            "4. What belongs in operational handoff?",
+            "5. What is one risk of weak handoff?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "CDC 10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "CDC Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "NIST AI Risk Management Framework. https://www.nist.gov/itl/ai-risk-management-framework",
+            "WHO Ethics and Governance of Artificial Intelligence for Health. https://www.who.int/publications/i/item/9789240029200"
+          ]
+        }
+      ],
+      "knowledge_check": {
+        "questions": [
+          {
+            "question": "What should guide vendor discussions?",
+            "options": [
+              "The public health use case and agency requirements",
+              "The most impressive demo feature",
+              "The vendor timeline only",
+              "The absence of governance"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "Why are acceptance criteria important?",
+            "options": [
+              "They define conditions that must be met before accepting a deliverable or workflow",
+              "They replace data review",
+              "They make legal review unnecessary",
+              "They guarantee vendor success"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What should happen before using real sensitive data in a vendor environment?",
+            "options": [
+              "Appropriate agency review and approval",
+              "A quick informal test",
+              "No review if the vendor is reputable",
+              "Only a program manager decision"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What belongs in operational handoff?",
+            "options": [
+              "Ownership, documentation, support, monitoring, training, and escalation paths",
+              "Only the final invoice",
+              "Only the vendor logo",
+              "Only the meeting agenda"
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "question": "What is one risk of weak handoff?",
+            "options": [
+              "The workflow may fail or become unsafe after the pilot team leaves",
+              "The workflow becomes too well documented",
+              "Users receive too much support",
+              "Governance improves automatically"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      "references_and_resources": [
+        {
+          "title": "CDC 10 Essential Public Health Services",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Framework for core public health functions, communication, partnerships, workforce, evaluation, and infrastructure."
+        },
+        {
+          "title": "CDC Public Health Data Strategy",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "Public health data modernization priorities relevant to AI readiness, data exchange, analytics, and decision support."
+        },
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Framework for identifying and managing AI risks across the lifecycle."
+        },
+        {
+          "title": "WHO Ethics and Governance of Artificial Intelligence for Health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Guidance on responsible, ethical, and accountable AI use in health contexts."
+        }
+      ],
+      "jurisdiction_and_agency_policy_note": {
+        "heading": "Jurisdiction and Agency Policy Note",
+        "text": "This national-level training module is intended for public health education, planning, and workforce development. It does not replace agency policy, legal review, privacy review, security review, procurement review, communications clearance, civil rights review, Tribal consultation, or governance approval. Learners should confirm applicable requirements, approved tools, data rules, and review pathways within their own jurisdiction and organization before implementing AI-supported workflows."
+      },
+      "lms_usability_metadata": {
+        "estimated_time": "45 minutes",
+        "audience": "Program managers, project managers, product owners, procurement liaisons, vendor managers, IT partners, and implementation leads.",
+        "completion_requirement": "Review the module, complete the practical exercise, produce the expected artifact, and complete the knowledge check.",
+        "approved_tools_awareness": "Because this curriculum is not tailored to a specific health department, learners should identify and use only tools approved by their own agency or organization.",
+        "catalog_card": {
+          "course_id": "PGM 140",
+          "title": "Vendor Coordination and Operational Handoff for AI Pilots",
+          "level_label": "applied",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "GOV 100"
+          ]
+        }
+      },
+      "id": "pgm-140-vendor-coordination-and-operational-handoff-for-ai-pilots",
+      "course_code": "PGM 140",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "GOV 100"
+        ]
+      },
+      "display_title": "PGM 140: Vendor Coordination and Operational Handoff for AI Pilots",
+      "tracks": [
+        "program-management"
+      ]
+    },
+    {
+      "course_id": "PGM 150",
+      "module_id": "pgm-150-supervisor-and-workforce-impacts-of-ai-adoption",
+      "module_title": "Supervisor and Workforce Impacts of AI Adoption",
+      "title": "Supervisor and Workforce Impacts of AI Adoption",
+      "primary_track_title": "Program Management",
+      "level_label": "Intermediate",
+      "audience": "Supervisors, program managers, workforce leads, training coordinators, AI champions, change leads, and leaders responsible for staff readiness and workflow adoption.",
+      "estimated_time": "45-60 minutes",
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "INT 105",
+        "PGM 200"
+      ],
+      "learning_objectives": [
+        "Describe how AI adoption can affect roles, workload, accountability, and staff experience.",
+        "Create supervisor-ready communication and workflow guidance for AI-supported work.",
+        "Identify training, support, and escalation needs before deployment.",
+        "Monitor staff readiness, concerns, and workflow barriers after implementation.",
+        "Explain how supervisors contribute to responsible AI governance and change management."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module prepares supervisors and program managers to manage the workforce impacts of AI adoption. AI can change tasks, decision points, documentation, review responsibilities, staff confidence, workload, performance expectations, and trust in leadership. Supervisors are often the first people staff ask when AI changes daily work, so they need more than general awareness.",
+            "The module is designed for agencies that may use different approved tools, policies, labor arrangements, and governance structures. It therefore focuses on the supervisor’s role in readiness, communication, training, role clarity, escalation, and feedback. Supervisors should not be expected to solve legal, privacy, security, or technical questions alone, but they should know how to route those questions appropriately."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Describe how AI adoption can affect roles, workload, accountability, and staff experience.",
+            "Create supervisor-ready communication and workflow guidance for AI-supported work.",
+            "Identify training, support, and escalation needs before deployment.",
+            "Monitor staff readiness, concerns, and workflow barriers after implementation.",
+            "Explain how supervisors contribute to responsible AI governance and change management."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "AI adoption can create excitement, anxiety, confusion, resistance, or unrealistic expectations among staff. Some staff may worry about job displacement, surveillance, loss of professional judgment, increased workload, or blame if AI outputs are wrong. Others may use AI too freely if they believe it will save time without understanding privacy or quality risks.",
+            "Public health agencies need supervisors who can translate AI policy into practical work expectations. Staff need to know what tasks are changing, what humans still decide, what documentation is required, where to get help, and how concerns will be handled. Without supervisor readiness, even well-governed AI projects can fail during implementation."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "paragraphs": [
+            "Workforce impact refers to how AI changes roles, tasks, skills, workload, autonomy, accountability, supervision, training needs, and staff experience. Workforce impact should be assessed before deployment and monitored after implementation. It includes both intended benefits and unintended burdens.",
+            "Role clarity means that staff understand what they are responsible for, what the AI system does, what the AI system does not do, who reviews outputs, and who owns final decisions. Role clarity prevents overreliance on AI and reduces confusion when something goes wrong. It is especially important when AI outputs are used in workflows involving services, communication, surveillance, or prioritization.",
+            "Psychological safety means staff can ask questions, report concerns, and identify errors without fear of punishment or embarrassment. AI adoption can reveal mistakes in data, workflows, training, and governance. A nonpunitive reporting culture helps the agency learn and improve."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A program begins using an approved AI tool to draft routine internal summaries of partner meeting notes. Staff appreciate the time savings but are unsure whether they are expected to edit the summaries, save prompts, delete drafts, or correct AI errors. One staff member worries that leadership will expect more meetings to be summarized without reducing other workload.",
+            "The supervisor creates a workflow guide that defines when the tool can be used, what information must be removed, who reviews summaries, how much editing is expected, where final summaries are stored, and how staff can report problems. The supervisor also checks workload after one month to see whether the tool reduced burden or simply added another task."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "Supervisors should participate in AI readiness planning before staff are asked to use a tool. They can identify workflow realities that may not be visible to leadership or vendors, such as informal handoffs, peak workload periods, documentation burdens, and staff concerns. Their input can prevent implementation plans from assuming capacity or skills that do not exist.",
+            "Training should be role-specific and close to the workflow. Staff need to know which tool is approved, what data may be used, how to review outputs, how to document use, and what to do when AI output is wrong. Supervisors need additional preparation on coaching, escalation, quality review, and responding to concerns.",
+            "Workforce impact monitoring should include both performance and experience. Measures may include training completion, error reports, staff confidence, unresolved questions, adoption barriers, review time, workload, output quality, and equity concerns. Monitoring should feed governance and change-management decisions."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is announcing an AI tool before supervisors are ready to explain it. Staff may hear that AI will improve efficiency but not know what is expected of them. Guardrails include supervisor briefings, FAQs, workflow-specific training, office hours, and clear escalation pathways before launch.",
+            "Another risk is hidden workload transfer. AI may reduce one task while adding review, correction, documentation, or monitoring responsibilities. Guardrails include workload assessment, staff feedback, pilot periods, and adjustment of expectations before scaling.",
+            "A third risk is staff silence. If staff believe concerns will be dismissed or punished, they may not report errors, unsafe workarounds, or inappropriate AI use. Guardrails include nonpunitive reporting, supervisor coaching, visible response to concerns, and governance review of unresolved barriers."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "Supervisors should ensure that AI-supported workflows include role descriptions, review expectations, documentation steps, and help pathways. They should also confirm that staff know which tasks remain human responsibilities. Workflow instructions should be practical enough for staff to use during real work, not only during training.",
+            "Supervisors should provide feedback to governance. They can report whether staff are prepared, whether training is sufficient, whether safeguards are feasible, and whether the tool is creating unintended burdens. This feedback helps governance decide whether to continue, revise, scale, pause, or retire an AI-supported workflow."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "paragraphs": [
+            "How might AI change staff responsibilities in a workflow you supervise?",
+            "What concerns might staff have, and how would they raise them safely?",
+            "What evidence would show that staff are ready to use the AI-supported workflow?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create a supervisor AI adoption readiness brief for a fictional AI-supported workflow. Choose a workflow such as meeting summarization, case note summarization, public message drafting, inspection prioritization, or dashboard narrative generation. Use fictional or generalized information only.",
+            "Your brief should identify affected roles, changed tasks, human review responsibilities, documentation expectations, training needs, staff concerns, workload risks, support resources, escalation pathways, and readiness evidence.",
+            "Example: For an AI tool that drafts partner meeting summaries, the supervisor brief states that staff may use only approved tools, must remove sensitive information, must review all summaries before saving, must note when AI was used if required by policy, and can raise concerns during weekly office hours. The brief also tracks whether summary review time is reducing or increasing workload."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "paragraphs": [
+            "Supervisor AI Adoption Readiness Brief",
+            "Staff Support and Escalation Plan"
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "Why are supervisors important in AI adoption?",
+            "What is role clarity?",
+            "What is hidden workload transfer?",
+            "Which guardrail supports psychological safety?",
+            "What should supervisors report to governance?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "Ethics and governance of artificial intelligence for health. https://www.who.int/publications/i/item/9789240029200",
+            "10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "About the Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "Core Competencies for Public Health Professionals. https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx"
+          ]
+        }
+      ],
+      "practical_exercise": {
+        "instructions": [
+          "Create a supervisor AI adoption readiness brief for a fictional AI-supported workflow. Choose a workflow such as meeting summarization, case note summarization, public message drafting, inspection prioritization, or dashboard narrative generation. Use fictional or generalized information only.",
+          "Your brief should identify affected roles, changed tasks, human review responsibilities, documentation expectations, training needs, staff concerns, workload risks, support resources, escalation pathways, and readiness evidence."
+        ],
+        "example": "Example: For an AI tool that drafts partner meeting summaries, the supervisor brief states that staff may use only approved tools, must remove sensitive information, must review all summaries before saving, must note when AI was used if required by policy, and can raise concerns during weekly office hours. The brief also tracks whether summary review time is reducing or increasing workload."
+      },
+      "expected_artifact_or_evidence": [
+        "Supervisor AI Adoption Readiness Brief",
+        "Staff Support and Escalation Plan"
+      ],
+      "knowledge_check": [
+        {
+          "question": "Why are supervisors important in AI adoption?",
+          "options": [
+            "They replace governance",
+            "They translate policy into practical workflow expectations",
+            "They approve all vendors alone",
+            "They eliminate staff training"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What is role clarity?",
+          "options": [
+            "Knowing only the AI tool name",
+            "Understanding what staff do, what AI does, and who owns final decisions",
+            "Letting AI assign roles",
+            "Avoiding documentation"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What is hidden workload transfer?",
+          "options": [
+            "When AI reduces all work equally",
+            "When AI removes one task but adds review, correction, or documentation burden",
+            "When staff work from home",
+            "When no one uses AI"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Which guardrail supports psychological safety?",
+          "options": [
+            "Punishing all AI errors",
+            "Nonpunitive reporting and visible response to concerns",
+            "Ignoring staff feedback",
+            "Removing supervisors from implementation"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What should supervisors report to governance?",
+          "options": [
+            "Only success stories",
+            "Readiness, barriers, staff concerns, training gaps, and workflow problems",
+            "No information after launch",
+            "Only vendor emails"
+          ],
+          "answer": "B"
+        }
+      ],
+      "references_and_resources": [
+        {
+          "title": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "publisher": "National Institute of Standards and Technology",
+          "year": "2023",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Risk management, governance, mapping, measurement, management, and oversight framework for trustworthy AI."
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "publisher": "World Health Organization",
+          "year": "2021",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Global guidance on human rights, ethics, accountability, safety, transparency, and governance for health AI."
+        },
+        {
+          "title": "10 Essential Public Health Services",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2024",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Public health practice framework emphasizing assessment, policy development, assurance, communication, workforce, evaluation, infrastructure, and equity."
+        },
+        {
+          "title": "About the Public Health Data Strategy",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2026",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "CDC strategy for modern data exchange, analytics, dashboards, standards, and timely public health action."
+        },
+        {
+          "title": "Core Competencies for Public Health Professionals",
+          "publisher": "Public Health Foundation / Council on Linkages",
+          "year": "2021",
+          "url": "https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+          "note": "Nationally recognized public health workforce competency framework."
+        }
+      ],
+      "approved_tools_note": "This national training does not name a specific approved AI tool because approved tools vary by agency. Learners should use only tools that their organization has authorized for the data type, workflow, and use case involved.",
+      "plays": [
+        5,
+        6,
+        10,
+        12
+      ],
+      "jurisdiction_and_agency_policy_note": "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.",
+      "id": "pgm-150-supervisor-and-workforce-impacts-of-ai-adoption",
+      "course_code": "PGM 150",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "INT 105",
+          "PGM 200"
+        ]
+      },
+      "display_title": "PGM 150: Supervisor and Workforce Impacts of AI Adoption",
+      "lms_usability_metadata": {
+        "catalog_card": {
+          "course_id": "PGM 150",
+          "title": "Supervisor and Workforce Impacts of AI Adoption",
+          "level_label": "Intermediate",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "INT 105",
+            "PGM 200"
+          ]
+        }
+      },
+      "tracks": [
+        "program-management"
+      ]
+    },
+    {
+      "course_id": "POL 210",
+      "module_id": "pol-210-ai-procurement-contract-clauses-and-vendor-accountability",
+      "module_title": "AI Procurement Contract Clauses and Vendor Accountability",
+      "title": "AI Procurement Contract Clauses and Vendor Accountability",
+      "primary_track_title": "Policy",
+      "level_label": "Intermediate",
+      "audience": "Policy staff, procurement staff, program managers, IT/security staff, AI committee members, legal partners, privacy officers, and leadership involved in AI vendor selection or contract oversight.",
+      "estimated_time": "60 minutes",
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "GOV 100",
+        "POL 200"
+      ],
+      "learning_objectives": [
+        "Identify AI-specific procurement and contract risks for public health agencies.",
+        "Describe key contract topics for AI vendor accountability, data rights, model changes, monitoring, and incident response.",
+        "Develop AI procurement requirements tied to a public health use case and risk classification.",
+        "Explain why procurement is part of AI governance and lifecycle oversight.",
+        "Identify when legal, privacy, security, procurement, accessibility, and governance review are needed."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module teaches public health staff how to translate responsible AI expectations into procurement and contract requirements. AI vendor products may affect data privacy, security, model performance, public communication, decision support, system integration, documentation, monitoring, and lifecycle management. Procurement is therefore a governance control point, not only a purchasing process.",
+            "The module does not provide legal advice or a universal contract template. Contract language must be reviewed by agency procurement officials, counsel, privacy officers, IT security, records staff, and program leadership. The module provides the concepts and categories that public health teams should raise before entering vendor discussions, pilots, or agreements."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Identify AI-specific procurement and contract risks for public health agencies.",
+            "Describe key contract topics for AI vendor accountability, data rights, model changes, monitoring, and incident response.",
+            "Develop AI procurement requirements tied to a public health use case and risk classification.",
+            "Explain why procurement is part of AI governance and lifecycle oversight.",
+            "Identify when legal, privacy, security, procurement, accessibility, and governance review are needed."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Many AI risks are shaped by vendor terms, data rights, system architecture, support practices, model updates, subcontractors, and monitoring commitments. If procurement documents do not address these issues, the agency may discover too late that data can be reused, model changes are not disclosed, audit logs are limited, outputs cannot be explained, or the vendor cannot support required monitoring. Strong procurement language helps align AI products with public health accountability.",
+            "Public health agencies also need to avoid being locked into tools that cannot meet privacy, security, equity, accessibility, interoperability, records, or transparency requirements. Procurement should require evidence, documentation, and safeguards before a product becomes operational. This is especially important when AI tools are embedded inside larger platforms and may not be obvious to end users."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "paragraphs": [
+            "Vendor accountability means that the vendor is contractually responsible for meeting agreed requirements related to data handling, security, performance, documentation, support, incident response, model changes, and permitted uses. Accountability should not rely only on sales materials or verbal assurances. It should be reflected in written terms, deliverables, service levels, audit rights, and remedies.",
+            "Permitted use defines what the vendor and agency may do with the data, prompts, outputs, derived data, logs, and models. AI contracts should be explicit about whether data can be used for training, model improvement, analytics, product development, subcontractor access, or secondary purposes. Public health agencies should avoid vague terms that allow broad reuse inconsistent with their obligations.",
+            "Model change management refers to how updates, retraining, new features, deprecations, and performance changes are communicated and governed. AI tools may change over time, even when the interface looks the same. Contracts should require notice, documentation, testing, and approval for changes that could affect risk, performance, outputs, security, or workflow."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A health department is considering a vendor tool that summarizes call center notes and suggests referral categories. The vendor states that the tool is AI-enabled and can improve efficiency, but the initial proposal does not explain whether notes are stored, whether data are used to improve the model, whether subcontractors have access, or how output accuracy is monitored. The program is interested because staff are overwhelmed.",
+            "Before procurement moves forward, the agency develops AI-specific requirements. The requirements prohibit vendor reuse of sensitive data without explicit approval, require security documentation, define human review expectations, require audit logs, require notice of model changes, require accessibility and language support, and require incident reporting. The agency also asks for evidence of performance and limitations in similar public health or health service contexts."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "AI procurement should begin with the use case and risk classification. The agency should define the problem, workflow, data involved, users, affected populations, decision consequences, and required safeguards before selecting a vendor. Tool-first procurement can lead to contracts that do not match actual operational needs or risk controls.",
+            "Contract clauses should address data rights, privacy, cybersecurity, access controls, logging, retention, deletion, subcontractors, model training, model updates, performance evidence, documentation, human oversight, accessibility, interoperability, and termination. Requirements should be specific enough to evaluate proposals and hold vendors accountable. Agencies should also define what evidence must be provided before pilot, go-live, scale, renewal, or retirement decisions.",
+            "Vendor accountability continues after contract signing. The agency should monitor whether the vendor meets service commitments, reports incidents, discloses material changes, provides documentation, supports audits, and responds to corrective action. Governance bodies should receive vendor monitoring information when the tool affects consequential workflows."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A major failure mode is accepting vendor claims without independent review. Vendors may describe AI capabilities in broad terms while providing limited evidence about performance, limitations, bias, data handling, or model updates. Guardrails include requiring documentation, demonstrations using appropriate test scenarios, security review, privacy review, accessibility review, and evidence-based acceptance criteria.",
+            "Another risk is weak data rights language. If contracts allow vendor reuse of prompts, uploaded files, outputs, logs, or derived data, public health agencies may lose control over sensitive information. Guardrails include explicit limits on data use, retention, training, subcontractor access, deletion, and breach notification.",
+            "A third risk is inadequate exit planning. Agencies may become dependent on a vendor tool without a way to retrieve data, preserve records, transfer workflows, or continue operations if the contract ends. Guardrails include data return provisions, transition support, documentation, open standards where possible, and a plan for pausing or retiring the tool."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "Procurement requirements should be connected to the workflow the AI tool will support. If the tool drafts public communication, the contract should support review, audit, source traceability, and correction. If the tool supports analytic prioritization, the contract should support validation, subgroup evaluation, monitoring, and access to performance documentation.",
+            "Program, IT, privacy, security, legal, procurement, and governance reviewers should collaborate before vendor engagement becomes too advanced. Once a preferred vendor has been selected informally, it becomes harder to change requirements or reject a tool. Early collaboration helps ensure that safeguards shape the procurement instead of being added after the decision is effectively made."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "paragraphs": [
+            "What AI-related vendor claims would require evidence before procurement?",
+            "What data rights should be explicitly limited in an AI contract?",
+            "How should model updates or feature changes be communicated and approved?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Draft a procurement requirements checklist for a fictional AI vendor product. Choose a use case such as call center summarization, public message drafting, surveillance signal review, inspection prioritization, or program reporting. Do not name a real vendor unless using publicly available information for illustration only.",
+            "Your checklist should include use case description, data involved, prohibited vendor data uses, security requirements, documentation requirements, model change notice, human review, performance evidence, incident reporting, accessibility, interoperability, termination, and monitoring requirements.",
+            "Example: For an AI tool that summarizes call center notes, the checklist prohibits vendor training on agency data, requires encryption and role-based access, requires audit logs, requires human review before referral categorization is used, requires notice of model changes, and requires a process to export records if the contract ends."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "paragraphs": [
+            "AI Procurement Requirements Checklist",
+            "Vendor Accountability Review Questions"
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "Why should AI procurement begin with a use case?",
+            "Which contract issue is especially important for AI tools?",
+            "What is model change management?",
+            "What should procurement require before high-risk AI deployment?",
+            "Why is exit planning needed?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "Ethics and governance of artificial intelligence for health. https://www.who.int/publications/i/item/9789240029200",
+            "10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "About the Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "Core Competencies for Public Health Professionals. https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx"
+          ]
+        }
+      ],
+      "practical_exercise": {
+        "instructions": [
+          "Draft a procurement requirements checklist for a fictional AI vendor product. Choose a use case such as call center summarization, public message drafting, surveillance signal review, inspection prioritization, or program reporting. Do not name a real vendor unless using publicly available information for illustration only.",
+          "Your checklist should include use case description, data involved, prohibited vendor data uses, security requirements, documentation requirements, model change notice, human review, performance evidence, incident reporting, accessibility, interoperability, termination, and monitoring requirements."
+        ],
+        "example": "Example: For an AI tool that summarizes call center notes, the checklist prohibits vendor training on agency data, requires encryption and role-based access, requires audit logs, requires human review before referral categorization is used, requires notice of model changes, and requires a process to export records if the contract ends."
+      },
+      "expected_artifact_or_evidence": [
+        "AI Procurement Requirements Checklist",
+        "Vendor Accountability Review Questions"
+      ],
+      "knowledge_check": [
+        {
+          "question": "Why should AI procurement begin with a use case?",
+          "options": [
+            "To let vendors define the agency problem",
+            "To connect requirements to workflow, data, users, risk, and safeguards",
+            "To avoid reviewing data rights",
+            "To skip governance"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Which contract issue is especially important for AI tools?",
+          "options": [
+            "Whether vendor may reuse agency data for model training or improvement",
+            "The vendor’s office furniture",
+            "The number of marketing slides",
+            "The color of the logo"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "What is model change management?",
+          "options": [
+            "Ignoring updates after go-live",
+            "Defining how AI changes are disclosed, tested, reviewed, and approved",
+            "Changing the agency mission",
+            "Changing all output manually"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What should procurement require before high-risk AI deployment?",
+          "options": [
+            "Evidence of performance, limitations, safeguards, and review processes",
+            "Only a vendor testimonial",
+            "No monitoring plan",
+            "A free trial with real sensitive data"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "Why is exit planning needed?",
+          "options": [
+            "To ensure continuity, records, data return, and retirement if the contract ends",
+            "To avoid documentation",
+            "To make the vendor permanent",
+            "To eliminate governance"
+          ],
+          "answer": "A"
+        }
+      ],
+      "references_and_resources": [
+        {
+          "title": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "publisher": "National Institute of Standards and Technology",
+          "year": "2023",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Risk management, governance, mapping, measurement, management, and oversight framework for trustworthy AI."
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "publisher": "World Health Organization",
+          "year": "2021",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Global guidance on human rights, ethics, accountability, safety, transparency, and governance for health AI."
+        },
+        {
+          "title": "10 Essential Public Health Services",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2024",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Public health practice framework emphasizing assessment, policy development, assurance, communication, workforce, evaluation, infrastructure, and equity."
+        },
+        {
+          "title": "About the Public Health Data Strategy",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2026",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "CDC strategy for modern data exchange, analytics, dashboards, standards, and timely public health action."
+        },
+        {
+          "title": "Core Competencies for Public Health Professionals",
+          "publisher": "Public Health Foundation / Council on Linkages",
+          "year": "2021",
+          "url": "https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+          "note": "Nationally recognized public health workforce competency framework."
+        }
+      ],
+      "approved_tools_note": "This national training does not name a specific approved AI tool because approved tools vary by agency. Learners should use only tools that their organization has authorized for the data type, workflow, and use case involved.",
+      "plays": [
+        7,
+        11,
+        12,
+        3
+      ],
+      "jurisdiction_and_agency_policy_note": "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.",
+      "id": "pol-210-ai-procurement-contract-clauses-and-vendor-accountability",
+      "course_code": "POL 210",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "GOV 100",
+          "POL 200"
+        ]
+      },
+      "display_title": "POL 210: AI Procurement Contract Clauses and Vendor Accountability",
+      "lms_usability_metadata": {
+        "catalog_card": {
+          "course_id": "POL 210",
+          "title": "AI Procurement Contract Clauses and Vendor Accountability",
+          "level_label": "Intermediate",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "GOV 100",
+            "POL 200"
+          ]
+        }
+      },
+      "tracks": [
+        "policy"
+      ]
+    },
+    {
+      "course_id": "POL 220",
+      "module_id": "pol-220-research-evaluation-quality-improvement-and-public-health-practice-boundaries-in-ai-projects",
+      "module_title": "Research, Evaluation, Quality Improvement, and Public Health Practice Boundaries in AI Projects",
+      "title": "Research, Evaluation, Quality Improvement, and Public Health Practice Boundaries in AI Projects",
+      "primary_track_title": "Policy",
+      "level_label": "Intermediate",
+      "audience": "Policy staff, program managers, epidemiologists, data scientists, AI committee members, research coordinators, IRB liaisons, privacy officers, and leadership.",
+      "estimated_time": "60-75 minutes",
+      "required_prerequisites": [],
+      "recommended_prerequisites": [
+        "GOV 100",
+        "INT 105"
+      ],
+      "learning_objectives": [
+        "Distinguish among public health practice, program evaluation, quality improvement, research, and human subjects research in AI project planning.",
+        "Identify project features that may trigger IRB, legal, privacy, Tribal, or data governance review.",
+        "Assess secondary use, derived artifact, and publication risks in AI projects.",
+        "Create a review pathway screening memo for a proposed AI project.",
+        "Explain why classification should occur before data extraction, modeling, or platform testing begins."
+      ],
+      "sections": [
+        {
+          "key": "training_overview",
+          "heading": "Training Overview",
+          "paragraphs": [
+            "This module helps public health staff distinguish between AI-supported public health practice, program evaluation, quality improvement, research, and human subjects research. AI projects often blur these boundaries because they may use operational data, test new analytic methods, produce generalizable insights, or affect services and decisions. Correct classification matters because it determines what review, consent, documentation, data sharing, publication, and oversight requirements may apply.",
+            "This module does not provide legal or IRB advice. Agencies should consult their legal counsel, privacy officers, IRB or research review officials, Tribal review bodies when applicable, data governance staff, and leadership. The purpose of the module is to help teams ask the right questions before AI projects begin."
+          ]
+        },
+        {
+          "key": "learning_objectives",
+          "heading": "Learning Objectives",
+          "paragraphs": [
+            "Distinguish among public health practice, program evaluation, quality improvement, research, and human subjects research in AI project planning.",
+            "Identify project features that may trigger IRB, legal, privacy, Tribal, or data governance review.",
+            "Assess secondary use, derived artifact, and publication risks in AI projects.",
+            "Create a review pathway screening memo for a proposed AI project.",
+            "Explain why classification should occur before data extraction, modeling, or platform testing begins."
+          ]
+        },
+        {
+          "key": "jurisdiction_and_agency_policy_note",
+          "heading": "Jurisdiction and Agency Policy Note",
+          "paragraphs": [
+            "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows."
+          ]
+        },
+        {
+          "key": "why_this_topic_matters_for_public_health_ai",
+          "heading": "Why This Topic Matters for Public Health AI",
+          "paragraphs": [
+            "Public health agencies routinely collect and use data for surveillance, operations, evaluation, emergency response, and service improvement. AI projects may start as internal improvement efforts but later generate methods, models, publications, or tools that look like research. If teams do not identify the boundary early, they may miss required review or fail to communicate clearly with partners and communities.",
+            "AI also raises new questions about secondary data use, model development, automated analysis, external platforms, reproducibility, and reuse. A project may not involve direct interaction with people but may still use identifiable health data or community-level data in ways that require oversight. Teams should classify the activity before data are shared, linked, uploaded, modeled, or reused."
+          ]
+        },
+        {
+          "key": "definitions",
+          "heading": "Definitions and Core Concepts",
+          "paragraphs": [
+            "Public health practice generally refers to activities authorized to protect and improve population health, such as surveillance, investigation, service delivery, emergency response, and program operations. These activities may not be research, but they still require privacy, legal, ethical, and governance safeguards. AI does not remove those responsibilities.",
+            "Program evaluation and quality improvement are activities designed to assess or improve a program, workflow, service, or process. They may use data to understand whether an intervention is working or how operations can improve. Depending on intent, methods, risk, dissemination, and local policy, some evaluation or quality improvement activities may require additional review.",
+            "Research is commonly understood as a systematic investigation designed to develop or contribute to generalizable knowledge. Human subjects research involves additional considerations when living individuals are involved through intervention, interaction, identifiable private information, or identifiable biospecimens. AI projects may require IRB or other review if they meet applicable definitions or local requirements."
+          ]
+        },
+        {
+          "key": "public_health_example",
+          "heading": "Public Health Example",
+          "paragraphs": [
+            "A health department wants to use AI to summarize years of case investigation notes to identify workflow bottlenecks. The initial purpose is internal quality improvement, but the team also wants to publish a paper describing the AI method and compare results across jurisdictions. The project uses identifiable historical records during model testing.",
+            "Before work begins, the team consults privacy, legal, data governance, and IRB officials. They clarify whether the activity is quality improvement, research, or both; whether identifiable data can be used; whether data must remain in an approved environment; whether publication changes the review pathway; and whether partners must approve reuse. The project plan is revised to separate internal improvement from any research component."
+          ]
+        },
+        {
+          "key": "technical_operational_deep_dive",
+          "heading": "Technical, Programmatic, and Operational Deep Dive",
+          "paragraphs": [
+            "Classification should begin with intent, data, methods, risk, and dissemination. Teams should ask why the project is being done, who benefits, whether the activity is required for public health operations, whether the methods are experimental, whether individuals or communities could be affected, whether identifiable or sensitive data are used, and whether results will be generalized or published. These questions help reviewers determine the appropriate pathway.",
+            "AI model development can add complexity because data may be transformed into features, embeddings, prompts, outputs, derived datasets, or trained models. These artifacts may retain information from the original data or create new risks. Reviewers should consider not only raw data but also intermediate and final AI artifacts.",
+            "Teams should also consider partner and community expectations. Data collected for public health practice may not be appropriate for AI research or product development without additional review or agreement. This is especially important when data involve Tribal Nations, small communities, vulnerable populations, community partners, or data sharing agreements with specific use limits."
+          ]
+        },
+        {
+          "key": "risks_failure_modes_and_guardrails",
+          "heading": "Risks, Failure Modes, and Guardrails",
+          "paragraphs": [
+            "A common failure mode is assuming that all internal AI work is quality improvement and therefore needs no additional review. Some internal projects may involve identifiable data, experimental methods, high-risk outputs, or plans for publication. Guardrails include early classification review, documentation of purpose, and consultation with IRB or research officials when uncertain.",
+            "Another risk is secondary use beyond the original data purpose. AI teams may want to reuse operational data to train, test, or validate models in ways that were not anticipated. Guardrails include reviewing data use agreements, consent or notice terms, legal authority, partner expectations, and community implications before reuse.",
+            "A third risk is failing to manage derived AI artifacts. Prompts, outputs, embeddings, labels, trained models, and evaluation datasets may contain or reveal sensitive information. Guardrails include approved environments, retention rules, access controls, deletion procedures, documentation, and review before sharing or publication."
+          ]
+        },
+        {
+          "key": "application_to_ai_supported_workflows",
+          "heading": "Application to AI-Supported Workflows",
+          "paragraphs": [
+            "AI project intake should include a research-versus-practice screening question. If the project involves identifiable data, novel methods, publication intent, multi-jurisdiction comparison, human subjects, Tribal data, or partner data reuse, the project should be routed for additional review before work begins. Screening should occur before data extraction or platform testing.",
+            "Project documentation should state the classification decision and the basis for that decision. It should also state what approvals were obtained, what data may be used, what outputs may be shared, and what changes would trigger re-review. This documentation supports accountability and helps prevent scope creep."
+          ]
+        },
+        {
+          "key": "reflection_questions",
+          "heading": "Reflection Questions",
+          "paragraphs": [
+            "What is the primary intent of the AI project: operations, evaluation, quality improvement, research, or more than one?",
+            "Will the project use identifiable data, partner data, Tribal data, or data with use restrictions?",
+            "Could publication, model sharing, or reuse change the review pathway?"
+          ]
+        },
+        {
+          "key": "practical_exercise",
+          "heading": "Practical Exercise",
+          "paragraphs": [
+            "Create a review pathway screening memo for a fictional AI project. Choose a use case such as summarizing case investigation notes, evaluating a chatbot pilot, building a risk model, analyzing public comments, or testing AI transcription for interviews. Use fictional or generalized information only.",
+            "Your memo should describe the project purpose, data involved, whether identifiable information is used, whether human subjects may be involved, whether results may be published, whether partner or Tribal data are involved, what review bodies should be consulted, and what changes would trigger re-review.",
+            "Example: A program wants to use AI to analyze de-identified training evaluations and publish lessons learned. The memo notes that the activity may be program evaluation, but publication intent and free-text comments require review. It recommends privacy review, IRB determination, removal of identifiers, and documentation that AI outputs will not be treated as participant-level findings."
+          ]
+        },
+        {
+          "key": "expected_artifact_or_evidence",
+          "heading": "Expected Artifact or Evidence",
+          "paragraphs": [
+            "AI Project Review Pathway Screening Memo",
+            "List of review bodies and re-review triggers"
+          ]
+        },
+        {
+          "key": "knowledge_check",
+          "heading": "Knowledge Check",
+          "paragraphs": [
+            "Why should AI project classification happen early?",
+            "What may change a quality improvement project’s review needs?",
+            "What are derived AI artifacts?",
+            "Which project should be routed for additional review?",
+            "What should documentation include?"
+          ]
+        },
+        {
+          "key": "references_and_resources_for_additional_information",
+          "heading": "References and Resources for Additional Information",
+          "paragraphs": [
+            "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0). https://www.nist.gov/itl/ai-risk-management-framework",
+            "Ethics and governance of artificial intelligence for health. https://www.who.int/publications/i/item/9789240029200",
+            "10 Essential Public Health Services. https://www.cdc.gov/public-health-gateway/php/about/index.html",
+            "About the Public Health Data Strategy. https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+            "Core Competencies for Public Health Professionals. https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+            "Human Subjects Research Regulations: 45 CFR 46. https://www.hhs.gov/ohrp/regulations-and-policy/regulations/45-cfr-46/index.html",
+            "Quality Improvement Activities FAQs. https://www.hhs.gov/ohrp/regulations-and-policy/guidance/faq/quality-improvement-activities/index.html"
+          ]
+        }
+      ],
+      "practical_exercise": {
+        "instructions": [
+          "Create a review pathway screening memo for a fictional AI project. Choose a use case such as summarizing case investigation notes, evaluating a chatbot pilot, building a risk model, analyzing public comments, or testing AI transcription for interviews. Use fictional or generalized information only.",
+          "Your memo should describe the project purpose, data involved, whether identifiable information is used, whether human subjects may be involved, whether results may be published, whether partner or Tribal data are involved, what review bodies should be consulted, and what changes would trigger re-review."
+        ],
+        "example": "Example: A program wants to use AI to analyze de-identified training evaluations and publish lessons learned. The memo notes that the activity may be program evaluation, but publication intent and free-text comments require review. It recommends privacy review, IRB determination, removal of identifiers, and documentation that AI outputs will not be treated as participant-level findings."
+      },
+      "expected_artifact_or_evidence": [
+        "AI Project Review Pathway Screening Memo",
+        "List of review bodies and re-review triggers"
+      ],
+      "knowledge_check": [
+        {
+          "question": "Why should AI project classification happen early?",
+          "options": [
+            "To determine review, data use, approval, and documentation needs before work begins",
+            "To avoid involving anyone else",
+            "To speed up data extraction without review",
+            "To let the vendor classify the project"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "What may change a quality improvement project’s review needs?",
+          "options": [
+            "Publication intent, identifiable data, experimental methods, or human subjects involvement",
+            "Using a shorter title",
+            "Having fewer slides",
+            "Using no headings"
+          ],
+          "answer": "A"
+        },
+        {
+          "question": "What are derived AI artifacts?",
+          "options": [
+            "Only final reports",
+            "Prompts, outputs, labels, embeddings, trained models, or evaluation datasets created from data",
+            "A meeting agenda",
+            "A paper notebook only"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "Which project should be routed for additional review?",
+          "options": [
+            "A fictional classroom exercise",
+            "AI model testing with identifiable case records",
+            "A generic brainstorming prompt",
+            "A public article summary with no agency data"
+          ],
+          "answer": "B"
+        },
+        {
+          "question": "What should documentation include?",
+          "options": [
+            "Classification decision, approvals, permitted data use, sharing limits, and re-review triggers",
+            "Only the project nickname",
+            "No record of decisions",
+            "Only the software version"
+          ],
+          "answer": "A"
+        }
+      ],
+      "references_and_resources": [
+        {
+          "title": "NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "publisher": "National Institute of Standards and Technology",
+          "year": "2023",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "note": "Risk management, governance, mapping, measurement, management, and oversight framework for trustworthy AI."
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "publisher": "World Health Organization",
+          "year": "2021",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "note": "Global guidance on human rights, ethics, accountability, safety, transparency, and governance for health AI."
+        },
+        {
+          "title": "10 Essential Public Health Services",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2024",
+          "url": "https://www.cdc.gov/public-health-gateway/php/about/index.html",
+          "note": "Public health practice framework emphasizing assessment, policy development, assurance, communication, workforce, evaluation, infrastructure, and equity."
+        },
+        {
+          "title": "About the Public Health Data Strategy",
+          "publisher": "Centers for Disease Control and Prevention",
+          "year": "2026",
+          "url": "https://www.cdc.gov/public-health-data-strategy/php/about/index.html",
+          "note": "CDC strategy for modern data exchange, analytics, dashboards, standards, and timely public health action."
+        },
+        {
+          "title": "Core Competencies for Public Health Professionals",
+          "publisher": "Public Health Foundation / Council on Linkages",
+          "year": "2021",
+          "url": "https://www.phf.org/resourcestools/Pages/Core_Public_Health_Competencies.aspx",
+          "note": "Nationally recognized public health workforce competency framework."
+        },
+        {
+          "title": "Human Subjects Research Regulations: 45 CFR 46",
+          "publisher": "Office for Human Research Protections, HHS",
+          "year": "2018",
+          "url": "https://www.hhs.gov/ohrp/regulations-and-policy/regulations/45-cfr-46/index.html",
+          "note": "Federal human subjects research regulations used to determine IRB and human subjects research obligations."
+        },
+        {
+          "title": "Quality Improvement Activities FAQs",
+          "publisher": "Office for Human Research Protections, HHS",
+          "year": "2011",
+          "url": "https://www.hhs.gov/ohrp/regulations-and-policy/guidance/faq/quality-improvement-activities/index.html",
+          "note": "Guidance discussing quality improvement and human subjects research considerations."
+        }
+      ],
+      "approved_tools_note": "This national training does not name a specific approved AI tool because approved tools vary by agency. Learners should use only tools that their organization has authorized for the data type, workflow, and use case involved.",
+      "plays": [
+        2,
+        3,
+        7,
+        11
+      ],
+      "jurisdiction_and_agency_policy_note": "This national-level module is intended for training and planning purposes. It does not replace legal, privacy, procurement, civil rights, records, cybersecurity, Tribal consultation, labor relations, human resources, or agency policy review. Learners should confirm applicable requirements in their own jurisdiction and organization before implementing AI-supported workflows.",
+      "id": "pol-220-research-evaluation-quality-improvement-and-public-health-practice-boundaries-in-ai-projects",
+      "course_code": "POL 220",
+      "source_collection": "Consolidated new AI Playbook modules",
+      "curriculumSource": true,
+      "prerequisites": {
+        "required": [],
+        "recommended": [
+          "GOV 100",
+          "INT 105"
+        ]
+      },
+      "display_title": "POL 220: Research, Evaluation, Quality Improvement, and Public Health Practice Boundaries in AI Projects",
+      "lms_usability_metadata": {
+        "catalog_card": {
+          "course_id": "POL 220",
+          "title": "Research, Evaluation, Quality Improvement, and Public Health Practice Boundaries in AI Projects",
+          "level_label": "Intermediate",
+          "estimated_time_minutes": 45,
+          "format": "Self-paced online module",
+          "audience": [
+            "Public health learners"
+          ],
+          "when_to_use": "Use this module when the topic supports your role, governance responsibilities, or implementation work.",
+          "outputs": [],
+          "completion_requirement": "Review the module, complete the knowledge check, and save or upload the practical assignment when required.",
+          "required_prerequisites": [],
+          "recommended_prerequisites": [
+            "GOV 100",
+            "INT 105"
+          ]
+        }
+      },
+      "tracks": [
+        "policy"
+      ]
     }
-  ]
+  ],
+  "total_modules": 87,
+  "new_modules_consolidated": {
+    "source": "Public_Health_AI_All_New_Modules_Consolidated.zip",
+    "added_module_count": 19,
+    "added_course_ids": [
+      "GOV 100",
+      "GOV 110",
+      "GOV 120",
+      "GOV 130",
+      "HED 100",
+      "HED 110",
+      "HED 120",
+      "HED 130",
+      "HED 140",
+      "INT 105",
+      "OPS 220",
+      "PGM 100",
+      "PGM 110",
+      "PGM 120",
+      "PGM 130",
+      "PGM 140",
+      "PGM 150",
+      "POL 210",
+      "POL 220"
+    ],
+    "program_management_prefix": "PGM"
+  }
 };

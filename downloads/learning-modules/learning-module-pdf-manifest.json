@@ -1,11 +1,5 @@
 [
   {
-    "id": "understanding-ai",
-    "course_id": "INT 100",
-    "title": "Introduction to AI for Public Health",
-    "file": "downloads/learning-modules/int-100.pdf"
-  },
-  {
     "id": "anl-200-natural-language-processing-for-public-health",
     "course_id": "ANL 200",
     "title": "Natural Language Processing for Public Health",
@@ -300,6 +294,12 @@
     "file": "downloads/learning-modules/gov-430.pdf"
   },
   {
+    "id": "int-100",
+    "course_id": "INT 100",
+    "title": "Introduction to AI for Public Health",
+    "file": "downloads/learning-modules/int-100.pdf"
+  },
+  {
     "id": "int-190-ai-for-social-good",
     "course_id": "INT 190",
     "title": "AI for Social Good",
@@ -324,9 +324,9 @@
     "file": "downloads/learning-modules/ops-210.pdf"
   },
   {
-    "id": "ops-220-human-factors-workflow-integration-and-usability-testing",
+    "id": "ops-220-ai-for-environmental-health-and-field-operations",
     "course_id": "OPS 220",
-    "title": "Human Factors, Workflow Integration, and Usability Testing",
+    "title": "AI for Environmental Health and Field Operations",
     "file": "downloads/learning-modules/ops-220.pdf"
   },
   {
@@ -361,33 +361,33 @@
   },
   {
     "id": "pmg-200-business-analysis-for-ai-enabled-public-health-systems",
-    "course_id": "PMG 200",
+    "course_id": "PGM 200",
     "title": "Business Analysis for AI-Enabled Public Health Systems",
-    "file": "downloads/learning-modules/pmg-200.pdf"
+    "file": "downloads/learning-modules/pgm-200.pdf"
   },
   {
     "id": "pmg-210-requirements-writing-for-ai-procurement-and-implementation",
-    "course_id": "PMG 210",
+    "course_id": "PGM 210",
     "title": "Requirements Writing for AI Procurement and Implementation",
-    "file": "downloads/learning-modules/pmg-210.pdf"
+    "file": "downloads/learning-modules/pgm-210.pdf"
   },
   {
     "id": "pmg-220-ai-project-management-and-implementation-planning",
-    "course_id": "PMG 220",
+    "course_id": "PGM 220",
     "title": "AI Project Management and Implementation Planning",
-    "file": "downloads/learning-modules/pmg-220.pdf"
+    "file": "downloads/learning-modules/pgm-220.pdf"
   },
   {
     "id": "pmg-300-ai-vendor-implementation-management",
-    "course_id": "PMG 300",
+    "course_id": "PGM 300",
     "title": "AI Vendor Implementation Management",
-    "file": "downloads/learning-modules/pmg-300.pdf"
+    "file": "downloads/learning-modules/pgm-300.pdf"
   },
   {
     "id": "pmg-310-grant-and-funding-management-for-ai-projects",
-    "course_id": "PMG 310",
+    "course_id": "PGM 310",
     "title": "Grant and Funding Management for AI Projects",
-    "file": "downloads/learning-modules/pmg-310.pdf"
+    "file": "downloads/learning-modules/pgm-310.pdf"
   },
   {
     "id": "pol-300-public-health-ai-policy-landscape-and-regulatory-readiness",
@@ -424,5 +424,101 @@
     "course_id": "GOV 110",
     "title": "Respecting Tribal Sovereignty and Indigenous Data Governance in Public Health AI Projects",
     "file": "downloads/learning-modules/gov-110.pdf"
+  },
+  {
+    "id": "gov-120-ai-incident-response-for-public-health",
+    "course_id": "GOV 120",
+    "title": "AI Incident Response for Public Health",
+    "file": "downloads/learning-modules/gov-120.pdf"
+  },
+  {
+    "id": "gov-130-tribal-consultation-and-data-sharing-agreements-for-ai-projects",
+    "course_id": "GOV 130",
+    "title": "Tribal Consultation and Data Sharing Agreements for AI Projects",
+    "file": "downloads/learning-modules/gov-130.pdf"
+  },
+  {
+    "id": "hed-100-ai-for-health-education-and-learning-design",
+    "course_id": "HED 100",
+    "title": "AI for Health Education and Learning Design",
+    "file": "downloads/learning-modules/hed-100.pdf"
+  },
+  {
+    "id": "hed-110-ai-health-literacy-plain-language-and-accessibility",
+    "course_id": "HED 110",
+    "title": "AI, Health Literacy, Plain Language, and Accessibility",
+    "file": "downloads/learning-modules/hed-110.pdf"
+  },
+  {
+    "id": "hed-120-ai-supported-community-education-and-outreach",
+    "course_id": "HED 120",
+    "title": "AI-Supported Community Education and Outreach",
+    "file": "downloads/learning-modules/hed-120.pdf"
+  },
+  {
+    "id": "hed-130-evaluating-ai-generated-health-education-materials",
+    "course_id": "HED 130",
+    "title": "Evaluating AI-Generated Health Education Materials",
+    "file": "downloads/learning-modules/hed-130.pdf"
+  },
+  {
+    "id": "hed-140-ai-for-training-facilitation-and-learner-feedback",
+    "course_id": "HED 140",
+    "title": "AI for Training Facilitation and Learner Feedback",
+    "file": "downloads/learning-modules/hed-140.pdf"
+  },
+  {
+    "id": "int-105-all-staff-safe-ai-use-and-approved-tools-awareness",
+    "course_id": "INT 105",
+    "title": "All-Staff Safe AI Use and Approved Tools Awareness",
+    "file": "downloads/learning-modules/int-105.pdf"
+  },
+  {
+    "id": "pgm-100-managing-ai-projects-in-public-health-programs",
+    "course_id": "PGM 100",
+    "title": "Managing AI Projects in Public Health Programs",
+    "file": "downloads/learning-modules/pgm-100.pdf"
+  },
+  {
+    "id": "pgm-110-ai-workflow-readiness-and-operational-planning",
+    "course_id": "PGM 110",
+    "title": "AI Workflow Readiness and Operational Planning",
+    "file": "downloads/learning-modules/pgm-110.pdf"
+  },
+  {
+    "id": "pgm-120-ai-pilot-planning-and-governance-coordination",
+    "course_id": "PGM 120",
+    "title": "AI Pilot Planning and Governance Coordination",
+    "file": "downloads/learning-modules/pgm-120.pdf"
+  },
+  {
+    "id": "pgm-130-ai-implementation-metrics-and-value-tracking-for-program-managers",
+    "course_id": "PGM 130",
+    "title": "AI Implementation Metrics and Value Tracking for Program Managers",
+    "file": "downloads/learning-modules/pgm-130.pdf"
+  },
+  {
+    "id": "pgm-140-vendor-coordination-and-operational-handoff-for-ai-pilots",
+    "course_id": "PGM 140",
+    "title": "Vendor Coordination and Operational Handoff for AI Pilots",
+    "file": "downloads/learning-modules/pgm-140.pdf"
+  },
+  {
+    "id": "pgm-150-supervisor-and-workforce-impacts-of-ai-adoption",
+    "course_id": "PGM 150",
+    "title": "Supervisor and Workforce Impacts of AI Adoption",
+    "file": "downloads/learning-modules/pgm-150.pdf"
+  },
+  {
+    "id": "pol-210-ai-procurement-contract-clauses-and-vendor-accountability",
+    "course_id": "POL 210",
+    "title": "AI Procurement Contract Clauses and Vendor Accountability",
+    "file": "downloads/learning-modules/pol-210.pdf"
+  },
+  {
+    "id": "pol-220-research-evaluation-quality-improvement-and-public-health-practice-boundaries-in-ai-projects",
+    "course_id": "POL 220",
+    "title": "Research, Evaluation, Quality Improvement, and Public Health Practice Boundaries in AI Projects",
+    "file": "downloads/learning-modules/pol-220.pdf"
   }
 ]
