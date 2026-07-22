@@ -177,6 +177,11 @@ main { min-height: calc(100vh - 144px); }
   gap: 3rem;
   align-items: start;
 }
+.hero-grid > div:first-child > h1 {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(2.35rem, 3.55vw, 3rem);
+}
 .hero-overview {
   max-width: 900px;
   margin-top: 2rem;
@@ -2931,6 +2936,7 @@ th { color: var(--ink); background: var(--sky); }
   .brand strong { font-size: .82rem; }
   .brand small { font-size: .7rem; }
   .hero-band { padding-top: 2rem; }
+  .hero-grid > div:first-child > h1 { white-space: normal; }
   .page { width: min(100% - 1rem, 1280px); }
   .plays-page > h1 { white-space: normal; }
   .card, .panel, .filter-panel { padding: 1.15rem; }
