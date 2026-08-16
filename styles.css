@@ -191,6 +191,12 @@ main { min-height: calc(100vh - 144px); }
 .hero-overview h2 {
   font-size: clamp(1.35rem, 2vw, 1.75rem);
 }
+.hero-overview.panel {
+  max-width: none;
+  margin: 0 0 3rem;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+}
 .journey-sidebar {
   border-left: 4px solid var(--green);
   background: rgba(255, 255, 255, .72);
