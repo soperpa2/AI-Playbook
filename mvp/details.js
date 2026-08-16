@@ -16,8 +16,8 @@ main.innerHTML = `<section class="page-hero">
   <h2>Who should participate</h2><ul>${play.people.map(item => `<li>${item}</li>`).join("")}</ul>
   <h2>Questions to work through</h2><ul>${play.questions.map(item => `<li>${item}</li>`).join("")}</ul>
   <section class="development-tools"><p class="eyebrow">Expanded edition</p><h2>Additional implementation resources</h2>
-    <p>The paid organizational edition is planned to include deeper templates, facilitation materials, role-based pathways, reporting, and implementation support. The protected resource inventory and methods are intentionally not included in this public build.</p>
-    <a href="reviewer.html?play=${play.number}">Apply to review future resources for this play →</a>
+    <p>The paid organizational edition includes deeper templates, facilitation materials, role-based pathways, reporting, and implementation support that are not yet publicly released. The protected resource inventory and methods are intentionally not included in this public build.</p>
+    <a href="reviewer.html?play=${play.number}">Apply to review unreleased resources for this play →</a>
   </section>
 </article><aside>
   <section class="page-panel tool-panel" id="starter-tool" data-content-id="${play.tool.id}"><p class="eyebrow">Included Starter Tool</p><h2>${play.tool.title}</h2><p>${play.tool.purpose}</p><p class="availability">The Starter Edition is part of the public MVP. It provides a useful next step without reproducing the complete organizational toolkit or protected facilitation method.</p><a class="button primary" href="index.html#updates">Get release updates</a></section>
