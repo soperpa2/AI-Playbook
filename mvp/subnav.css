@@ -1,0 +1,2 @@
+@import url("compact.css");
+@media(max-width:900px){body header{flex-wrap:wrap}body header nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;width:100%;padding:.5rem 0;border:0}}

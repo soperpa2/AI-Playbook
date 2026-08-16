@@ -1,0 +1,17 @@
+/* Canonical components copied from the full-site visual system. */
+.journey-sidebar {
+  border-left: 4px solid var(--green);
+  background: rgba(255,255,255,.78);
+  border-radius: 12px;
+  padding: 1.35rem;
+  box-shadow: var(--shadow);
+}
+.journey-sidebar h3 { margin: .25rem 0 0; text-align: center; color: var(--navy); }
+.hero-logo { display: block; width: min(170px,72%); height: auto; margin: -.25rem auto 1rem; }
+.journey-list { display: grid; gap: .9rem; margin: 1.25rem 0 0; }
+.journey-item { display: grid; grid-template-columns: 30px 1fr; gap: .8rem; align-items: center; color: var(--ink); padding: .35rem; border-radius: 10px; }
+.journey-item:hover,.journey-item:focus-visible { background: var(--sky); text-decoration: none; }
+.number-badge { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg,var(--blue),var(--navy)); color: white; font-weight: 800; font-size: .85rem; }
+.release-status { display: inline-block; margin-top: .55rem; padding: .35rem .65rem; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.82); color: var(--navy); font-size: .78rem; font-weight: 800; }
+.content-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem!important; font-size: .78rem!important; }
+.content-meta span { display: inline-block; padding: .35rem .65rem; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--navy); font-weight: 800; }
