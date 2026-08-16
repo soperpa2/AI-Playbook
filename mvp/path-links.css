@@ -1,0 +1,1 @@
+.pathway-link{display:flex;align-items:center;gap:1rem;width:100%;color:inherit}.pathway-link:hover{text-decoration:none}.pathway-link:hover b{color:var(--blue)}.pathway-link:focus-visible{outline:3px solid rgba(0,104,183,.3);outline-offset:4px;border-radius:8px}

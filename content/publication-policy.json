@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "canonical_repository": "soperpa2/AI-Playbook",
+  "frontends": {
+    "full": { "path": "/", "purpose": "Complete platform experience" },
+    "mvp": { "path": "/mvp/", "purpose": "Bounded public credibility and demand-validation experience" }
+  },
+  "collections": {
+    "plays": { "mvp": "all_public_summaries" },
+    "tools": { "mvp": "one_approved_starter_tool_per_play" },
+    "learning_modules": { "mvp": "core_all_staff_only" },
+    "training_paths": { "mvp": "preview_metadata_only" },
+    "project_summaries": { "mvp": "none_until_verified_and_approved" },
+    "promising_practices": { "mvp": "none" },
+    "resources": { "mvp": "approved_foundational_sources" },
+    "references": { "mvp": "approved_foundational_sources" },
+    "news": { "mvp": "none" },
+    "organizations": { "mvp": "none_except_attributed_public_sources" },
+    "contributors": { "mvp": "approved_reviewer_acknowledgments_only" }
+  },
+  "excluded_from_all_public_builds": [
+    "diagnostic_weights",
+    "scoring_thresholds",
+    "benchmarks",
+    "prioritization_logic",
+    "facilitation_protocols",
+    "recommendation_rules",
+    "confidential_interview_methods",
+    "private_organization_data",
+    "credentials_and_secrets"
+  ]
+}
