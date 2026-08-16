@@ -1,0 +1,36 @@
+# AI Playbook Knowledge Platform Architecture
+
+Status: Version 1 recommendation  
+Baseline reviewed: live site and `main` repository content, 2026-08-16  
+Authoritative content source: [AI Playbook and Toolkit website](https://soperpa2.github.io/AI-Playbook/)
+
+This documentation defines how the current AI Playbook website can evolve into a maintainable public health AI knowledge platform. It describes a target model, not a claim that every capability is already implemented. The live website remains the editorial source of truth until structured content migration is accepted and completed.
+
+## Documents
+
+1. [Platform Architecture v1](platform-architecture-v1.md) — system boundaries, principles, components, delivery model, and non-functional requirements.
+2. [Content Model Specification](content-model-specification.md) — canonical content types, fields, validation, and compatibility rules.
+3. [Information Architecture](information-architecture.md) — audiences, task-based navigation, sitemap, findability, and URL guidance.
+4. [Taxonomy & Metadata Standard](taxonomy-metadata-standard.md) — controlled vocabularies, required metadata, tagging rules, and governance.
+5. [Relationship Model](relationship-model.md) — entity relationships, directionality, cardinality, and integrity rules.
+6. [Content Lifecycle & Governance](content-lifecycle-governance.md) — ownership, workflow, evidence review, versioning, and retirement.
+7. [Implementation Roadmap](implementation-roadmap.md) — sequenced delivery, decision gates, migration, acceptance criteria, and measures.
+8. [User Personas](user-personas.md) — priority users, needs, barriers, journeys, and platform implications.
+
+## Decisions at a glance
+
+- Preserve the current 13-play PLAN–BUILD–DEPLOY–GOVERN framework and tool numbering.
+- Preserve the current Project Summary/case-study presentation: Challenge, AI Solution, Data Sources, Workflow Impact, Outcomes, Ethical / Privacy considerations, and Sources. Add metadata around it; do not force a visible redesign.
+- Store each content item once with a stable ID, revision metadata, source provenance, and explicit relationships.
+- Generate navigation, related-content panels, search facets, crosswalks, and downloadable publications from canonical structured content.
+- Separate verified case studies from synthesized “Promising Practices,” and label evidence status visibly.
+- Treat personalization, organization workspaces, contribution, and authentication as application services—not as duplicated editorial content.
+- Introduce the model incrementally behind the current static site; avoid a big-bang rewrite.
+
+## Baseline observations
+
+The repository is a static, hash-routed site. `app.js` currently combines structured arrays, long-form editorial copy, UI rendering, workspace prototypes, and client-side state. Separate data assets support curriculum and lesson crosswalks. The public experience includes Start Here, Learn, Assess, Maturity Model, Plays, Toolkit, Case Studies, My Account, Organization Hub, Community, Contribute, Contact Us, Resources, and In the News. This rich scope supports a knowledge-platform model but also makes content validation, reuse, provenance, and independent publishing harder when maintained in a single application file.
+
+## How to use this set
+
+Architecture and product decisions should cite the relevant document and record any exception. Proposed schema changes require an impact review covering the website, existing URLs, crosswalks, downloads, search, and the Project Summary presentation. Implementation details may evolve, but stable IDs, provenance, relationship integrity, accessibility, and editorial accountability are v1 requirements.

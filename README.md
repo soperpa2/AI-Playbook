@@ -68,6 +68,10 @@ Most reusable content lives in `app.js`:
 
 Edit these arrays to update play numbering, tool mappings, page copy, filters, and generated detail pages.
 
+## Platform Architecture Documentation
+
+The version 1 knowledge-platform architecture, content standards, governance model, roadmap, and user personas are indexed in [`docs/architecture/README.md`](docs/architecture/README.md). These documents treat the live website as the current editorial source of truth and preserve the existing Project Summary presentation while defining a structured-content migration path.
+
 ## Download Files
 
 Downloadable files are stored in:
