@@ -4120,18 +4120,9 @@ function renderHome() {
             <p>If your department already has data governance, technology governance, privacy review, cybersecurity review, IT governance, records management, or project management infrastructure in place, build on those structures wherever possible. AI governance should connect to existing approval pathways and strengthen them rather than creating a parallel process.</p>
           </div>
         </div>
-        <aside class="journey-sidebar" aria-label="Recommended journey">
-          <img class="hero-logo" src="assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt="AI Playbook for Public Health" />
-          <h3>Recommended Journey</h3>
-          <div class="journey-list">
-            ${[
-              ["Plan", "Vision, readiness, governance, stakeholders, workforce, change planning, and use cases", "#/plays/1"],
-              ["Build", "Funding strategy and implementation plan", "#/plays/8"],
-              ["Deploy", "Change execution, build, validation, deployment, and scale decisions", "#/plays/10"],
-              ["Govern", "Oversight, monitoring, evaluation, incidents, and continuous improvement", "#/plays/12"]
-            ].map((item,i)=>`<a class="journey-item" href="${item[2]}"><span class="number-badge">${i+1}</span><span><strong>${item[0]}:</strong> ${item[1]}</span></a>`).join("")}
-          </div>
-        </aside>
+        <figure class="journey-graphic-card">
+          <img src="assets/recommended-journey-final.png" alt="Recommended Journey: Plan—vision to use cases; Build—fund and implement; Deploy—validate and scale; Govern—monitor and improve; destination—Responsible AI Adoption." />
+        </figure>
       </div>
     </section>
     <section class="page">

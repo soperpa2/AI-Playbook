@@ -207,6 +207,19 @@ main { min-height: calc(100vh - 144px); }
   height: auto;
   margin: -.25rem auto 1rem;
 }
+.journey-graphic-card {
+  margin: 0;
+  align-self: start;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+  background: white;
+}
+.journey-graphic-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .learn-layout { grid-template-columns: 300px 1fr; gap: 2.5rem; }
 .learn-layout > aside.filter-panel {
   position: sticky;
