@@ -165,11 +165,11 @@ main { min-height: calc(100vh - 144px); }
 }
 .hero-band {
   background:
-    linear-gradient(135deg, rgba(0, 104, 183, .12), rgba(54, 143, 44, .12)),
-    linear-gradient(180deg, #f4fbff, #e8f4fb);
-  margin: 0 calc(50% - 50vw) 3rem;
-  padding: 1.5rem max(1rem, calc((100vw - 1280px) / 2)) 2.4rem;
-  border-bottom: 1px solid rgba(0, 104, 183, .12);
+    radial-gradient(circle at 8% 20%, rgba(54, 143, 44, .16), transparent 25rem),
+    linear-gradient(135deg, #f8fcff 20%, #e9f4fa 100%);
+  margin: 0 calc(50% - 50vw);
+  padding: clamp(1.5rem, 3vw, 2.5rem) max(1rem, calc((100vw - 1280px) / 2)) clamp(3rem, 6vw, 5rem);
+  border-bottom: 0;
 }
 .hero-grid, .two-col, .toolkit-layout, .learn-layout {
   display: grid;
@@ -177,10 +177,36 @@ main { min-height: calc(100vh - 144px); }
   gap: 3rem;
   align-items: start;
 }
+.hero-band .hero-grid {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: minmax(0, 1.28fr) minmax(310px, .72fr);
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
+}
 .hero-grid > div:first-child > h1 {
-  max-width: none;
-  white-space: nowrap;
-  font-size: clamp(2.35rem, 3.55vw, 3rem);
+  max-width: 760px;
+  margin: 0;
+  white-space: normal;
+  color: var(--blue-deep);
+  font-size: clamp(2.8rem, 6vw, 5.7rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+.hero-grid > div:first-child > h2 {
+  max-width: 760px;
+  margin: 1rem 0 0;
+  color: var(--navy);
+  font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+.hero-band .lead {
+  max-width: 720px;
+  margin: 1.6rem 0 0;
+  color: #3b5365;
+  font-size: clamp(1.05rem, 1.55vw, 1.3rem);
 }
 .hero-overview {
   max-width: 900px;
@@ -216,6 +242,8 @@ main { min-height: calc(100vh - 144px); }
 .journey-graphic-card {
   margin: 0;
   align-self: start;
+  justify-self: center;
+  width: min(100%, 325px);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--soft-shadow);
@@ -2954,7 +2982,7 @@ th { color: var(--ink); background: var(--sky); }
   .brand-logo { width: 58px; height: 48px; }
   .brand strong { font-size: .82rem; }
   .brand small { font-size: .7rem; }
-  .hero-band { padding-top: 1.25rem; }
+  .hero-band { padding-top: 1.5rem; }
   .hero-grid > div:first-child > h1 { white-space: normal; }
   .page { width: min(100% - 1rem, 1280px); }
   .plays-page > h1 { white-space: normal; }
