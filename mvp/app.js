@@ -28,13 +28,6 @@ document.querySelectorAll(".tabs button").forEach(button => button.addEventListe
 const releaseNode = document.querySelector("#release-status");
 if (releaseNode) releaseNode.textContent = `${release.label} · Version ${release.version} · Updated ${release.updatedAt}`;
 
-const menu = document.querySelector(".menu");
-if (menu) menu.addEventListener("click", () => {
-  const open = menu.getAttribute("aria-expanded") === "true";
-  menu.setAttribute("aria-expanded", String(!open));
-  document.querySelector("#primary-nav").classList.toggle("open", !open);
-});
-
 document.querySelector("#signup-form")?.addEventListener("submit", event => {
   event.preventDefault();
   const note = document.querySelector("#form-note");
