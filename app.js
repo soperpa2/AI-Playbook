@@ -4109,32 +4109,23 @@ function renderHome() {
             <a class="btn" href="#/assess">Take Readiness Assessment</a>
             <a class="btn" href="#/plays/3">Establish Governance</a>
           </div>
-          <div class="hero-overview">
-            <p class="eyebrow">Playbook + Toolkit Overview</p>
-            <h2>A practical implementation system for public health AI</h2>
-            <p>The AI Playbook and Toolkit is designed for state, territorial, local, and tribal public health departments that need a clear way to move from early learning to responsible, sustainable AI use. It covers the range of AI approaches that may appear in public health work, including predictive analytics, machine learning, natural language processing, retrieval-augmented generation, generative AI, agentic workflows, automation, and AI-enabled vendor systems.</p>
-            <p>It is a sequenced guide for leaders and cross-functional teams to make decisions, build guardrails, assess readiness, establish governance, prioritize use cases, and govern AI over time.</p>
-            <p>Every health department will have a customized path through the plays and tools. The readiness assessment helps identify which gaps need attention first, while work already completed by the department can be documented, validated, and used to move more quickly into the next responsible steps.</p>
-            <p>The integrated toolkit provides ${tools.length} fillable tools, templates, checklists, scoring frameworks, dashboards, and logs. Read the play first to understand the decision and intended output, then use the supporting tools to complete and document the work.</p>
-            <p>The tools are meant to fill gaps where a health department does not already have a method, template, policy, checklist, or process. If your department already has a similar tool that works well, use it, adapt it, or document it as evidence for the relevant play. There is no need to recreate the wheel.</p>
-            <p>If your department already has data governance, technology governance, privacy review, cybersecurity review, IT governance, records management, or project management infrastructure in place, build on those structures wherever possible. AI governance should connect to existing approval pathways and strengthen them rather than creating a parallel process.</p>
-          </div>
         </div>
-        <aside class="journey-sidebar" aria-label="Recommended journey">
-          <img class="hero-logo" src="assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt="AI Playbook for Public Health" />
-          <h3>Recommended Journey</h3>
-          <div class="journey-list">
-            ${[
-              ["Plan", "Vision, readiness, governance, stakeholders, workforce, change planning, and use cases", "#/plays/1"],
-              ["Build", "Funding strategy and implementation plan", "#/plays/8"],
-              ["Deploy", "Change execution, build, validation, deployment, and scale decisions", "#/plays/10"],
-              ["Govern", "Oversight, monitoring, evaluation, incidents, and continuous improvement", "#/plays/12"]
-            ].map((item,i)=>`<a class="journey-item" href="${item[2]}"><span class="number-badge">${i+1}</span><span><strong>${item[0]}:</strong> ${item[1]}</span></a>`).join("")}
-          </div>
-        </aside>
+        <figure class="journey-graphic-card">
+          <img src="assets/recommended-journey-final.png" alt="Recommended Journey: Plan—vision to use cases; Build—fund and implement; Deploy—validate and scale; Govern—monitor and improve; destination—Responsible AI Adoption." />
+        </figure>
       </div>
     </section>
     <section class="page">
+      <section class="panel playbook-overview hero-overview">
+        <p class="eyebrow">Playbook + Toolkit Overview</p>
+        <h2>A practical implementation system for public health AI</h2>
+        <p>The AI Playbook and Toolkit is designed for state, territorial, local, and tribal public health departments that need a clear way to move from early learning to responsible, sustainable AI use. It covers the range of AI approaches that may appear in public health work, including predictive analytics, machine learning, natural language processing, retrieval-augmented generation, generative AI, agentic workflows, automation, and AI-enabled vendor systems.</p>
+        <p>It is a sequenced guide for leaders and cross-functional teams to make decisions, build guardrails, assess readiness, establish governance, prioritize use cases, and govern AI over time.</p>
+        <p>Every health department will have a customized path through the plays and tools. The readiness assessment helps identify which gaps need attention first, while work already completed by the department can be documented, validated, and used to move more quickly into the next responsible steps.</p>
+        <p>The integrated toolkit provides ${tools.length} fillable tools, templates, checklists, scoring frameworks, dashboards, and logs. Read the play first to understand the decision and intended output, then use the supporting tools to complete and document the work.</p>
+        <p>The tools are meant to fill gaps where a health department does not already have a method, template, policy, checklist, or process. If your department already has a similar tool that works well, use it, adapt it, or document it as evidence for the relevant play. There is no need to recreate the wheel.</p>
+        <p>If your department already has data governance, technology governance, privacy review, cybersecurity review, IT governance, records management, or project management infrastructure in place, build on those structures wherever possible. AI governance should connect to existing approval pathways and strengthen them rather than creating a parallel process.</p>
+      </section>
       <section class="panel playbook-overview">
         <p class="eyebrow">What This Site Helps Agencies Do</p>
         <h2>Move from learning to governed implementation</h2>
