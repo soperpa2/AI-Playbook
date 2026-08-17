@@ -18,7 +18,12 @@ function render(filter = "all") {
     </article>`).join("");
 }
 
-render();
+const requestedPhase = new URLSearchParams(location.search).get("phase");
+const initialPhase = ["plan", "build", "deploy", "govern"].includes(requestedPhase) ? requestedPhase : "all";
+render(initialPhase);
+document.querySelectorAll(".tabs button").forEach(button => {
+  button.classList.toggle("active", button.dataset.phase === initialPhase);
+});
 document.querySelectorAll(".tabs button").forEach(button => button.addEventListener("click", () => {
   document.querySelectorAll(".tabs button").forEach(item => item.classList.remove("active"));
   button.classList.add("active");
