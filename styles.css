@@ -262,6 +262,7 @@ main { min-height: calc(100vh - 144px); }
   width: 31%;
   height: 12%;
   border-radius: 12px;
+  cursor: pointer;
 }
 .journey-hotspot.plan { left: 12%; top: 34%; }
 .journey-hotspot.build { left: 62%; top: 43%; }
