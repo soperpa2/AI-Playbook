@@ -15,7 +15,7 @@
       <a href="resources.html" data-nav="resources">Evidence &amp; Resources</a>
       <a href="reviewer.html" data-nav="reviewer">Become a Reviewer</a>
       <a href="feedback.html" data-nav="feedback">Feedback</a>
-      <a href="about.html" data-nav="about">About this MVP</a>
+      <a href="about.html" data-nav="about">About the Foundation Edition</a>
       <a class="outline" href="https://phisolutions.us" target="_blank" rel="noopener">Consulting</a>
     </nav>`;
 

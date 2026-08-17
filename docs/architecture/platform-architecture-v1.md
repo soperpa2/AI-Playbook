@@ -14,12 +14,12 @@ The AI Playbook should evolve from a static website prototype into a public heal
 6. **Progressive enhancement.** Core public content remains accessible without account services or client-side persistence.
 7. **Public-health safeguards.** Accessibility, privacy, security, equity, scientific integrity, records obligations, and human oversight are architecture concerns.
 8. **Portability.** Content uses documented, repository-readable formats and can be exported without vendor lock-in.
-9. **One repository, multiple editions.** The full platform and bounded public MVP are separate presentations of the same canonical records and assets, not independently maintained sites.
-10. **Full-site visual authority.** The full site is the canonical source for logos, diagrams, journey graphics, icons, and other shared visual assets. The MVP references those assets directly and may simplify surrounding presentation, but must not fork the graphic itself.
+9. **One repository, multiple editions.** The full platform and customer-facing Foundation Edition are separate presentations of the same canonical records and assets, not independently maintained sites.
+10. **Full-site visual authority.** The full site is the canonical source for logos, diagrams, journey graphics, icons, and other shared visual assets. The Foundation Edition references those assets directly and may simplify surrounding presentation, but must not fork the graphic itself.
 
-## Full platform and public MVP
+## Full platform and Foundation Edition
 
-The repository supports two front ends: the full platform at the repository root and the public MVP under `mvp/`. Both consume the same stable content identities, shared metadata, relationships, and visual assets. Publication policy determines which fields and records the MVP may expose; it must not create a second editable copy of a play, tool, case study, learning item, or graphic.
+The repository supports two front ends: the full platform at the repository root and the Foundation Edition under the internal `mvp/` directory. Both consume the same stable content identities, shared metadata, relationships, and visual assets. Publication policy determines which fields and records the Foundation Edition may expose; it must not create a second editable copy of a play, tool, case study, learning item, or graphic.
 
 For the transitional v1 implementation, `content/public-catalog.js` is the shared public projection for the 13 plays and one approved Starter Tool per play. `content/publication-policy.json` documents edition boundaries. Remaining collections should migrate from application code to typed canonical records in bounded increments. Until migration is complete, the full site remains authoritative and parity checks are required whenever duplicated legacy material changes.
 
