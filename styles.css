@@ -217,7 +217,7 @@ main { min-height: calc(100vh - 144px); }
   margin: 0;
   align-self: start;
   justify-self: center;
-  width: min(100%, 260px);
+  width: min(100%, 325px);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--soft-shadow);
