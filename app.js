@@ -3010,6 +3010,7 @@ function route() {
   else if (key === "references") renderReferences();
   else if (key === "glossary") renderGlossary();
   else if (key === "contribute") renderContribute();
+  else if (key === "consulting") renderConsulting();
   else if (key === "contact") renderContact();
   else if (key === "news") renderNews();
   else renderHome();
@@ -4114,6 +4115,7 @@ function renderHome() {
             <a class="btn primary" href="#/plays/1">Start with Vision</a>
             <a class="btn" href="#/assess">Take Readiness Assessment</a>
             <a class="btn" href="#/plays/3">Establish Governance</a>
+            <a class="btn" href="#/consulting">Need More Help?</a>
           </div>
         </div>
         <figure class="journey-graphic-card">
@@ -8879,6 +8881,35 @@ function renderContact() {
           </article>
         </div>
       </aside>
+    </div>
+  </section>`;
+}
+
+function renderConsulting() {
+  main.innerHTML = pageIntro("Need More Help?", "PHI Solutions offers clearly scoped consulting for public health organizations that need facilitated support moving from AI interest to governed implementation.") + `
+    <section class="panel playbook-overview">
+      <p class="eyebrow">Consulting Offerings</p>
+      <h2>Practical support matched to your next decision</h2>
+      <div class="overview-grid">
+        <article class="mini-card"><h3>Executive Strategy Workshop</h3><p>Align leaders around public health value, responsible-use principles, priorities, boundaries, sponsorship, and the decisions required to proceed.</p></article>
+        <article class="mini-card"><h3>Readiness and Governance Engagement</h3><p>Facilitate a structured readiness review, establish governance roles and pathways, identify priority gaps, and translate findings into organizational action.</p></article>
+        <article class="mini-card"><h3>Implementation Cohort</h3><p>Guide a cross-functional team through a focused 8–12 week sequence covering readiness, governance, use-case prioritization, workforce preparation, and implementation planning.</p></article>
+        <article class="mini-card"><h3>Implementation Advisory</h3><p>Provide sustained, high-touch support for selected organizations implementing governed AI priorities, including executive guidance, decision support, and implementation coaching.</p></article>
+        <article class="mini-card"><h3>Workforce and Training Support</h3><p>Develop role-aligned learning, leadership briefings, staff preparation, champion support, and practical adoption guidance tied to approved workflows.</p></article>
+        <article class="mini-card"><h3>Sponsored or Multi-Jurisdiction Programs</h3><p>Design cohorts or field-capacity initiatives for associations, foundations, intermediaries, or technical-assistance programs serving multiple jurisdictions.</p></article>
+      </div>
+    </section>
+    <div class="two-col">
+      <section class="panel">
+        <h2>A strong fit when</h2>
+        <ul><li>Your organization has an active trigger such as enterprise AI access, a policy request, a data-modernization effort, a near-term pilot, a workforce need, or an executive mandate.</li><li>An executive sponsor can support the work.</li><li>Program, informatics, IT, privacy, security, legal, equity, communications, workforce, procurement, and community perspectives can participate as appropriate.</li><li>You want a defined scope, deliverables, decisions, and closeout—not open-ended consulting.</li></ul>
+      </section>
+      <section class="panel">
+        <h2>How engagements are structured</h2>
+        <p>Offerings are scoped as fixed-fee engagements with clear inclusions, exclusions, participants, deliverables, timing, and local responsibilities. Licensing, facilitation, assessment, customization, travel, and advisory support are separated so buyers can understand what they are purchasing.</p>
+        <p>PHI Solutions will not support unsafe deployment, unsupported claims, inappropriate data use, or work that bypasses required public health governance.</p>
+        <div class="button-row"><a class="btn primary" href="#/contact">Discuss your needs</a><a class="btn" href="#/plays">Explore the Playbook first</a></div>
+      </section>
     </div>
   </section>`;
 }
