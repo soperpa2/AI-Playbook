@@ -4111,7 +4111,7 @@ function renderHome() {
           </div>
         </div>
         <figure class="journey-graphic-card">
-          <img src="assets/recommended-journey-final.png" alt="Recommended Journey: Plan—vision to use cases; Build—fund and implement; Deploy—validate and scale; Govern—monitor and improve; destination—Responsible AI Adoption." />
+          <img src="assets/recommended-journey-final.png" alt="Recommended Journey: 13 plays across four phases. Plan includes Plays 1–7; Build includes Plays 8–9; Deploy includes Plays 10–11; Govern includes Plays 12–13; destination—Responsible AI Adoption." />
         </figure>
       </div>
     </section>
