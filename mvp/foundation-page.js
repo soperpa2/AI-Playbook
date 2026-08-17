@@ -33,6 +33,10 @@ const pages = {
 if (view === "maturity") {
   document.title = "AI Maturity Model | Public Health AI Playbook Foundation Edition";
   document.querySelector("#main").innerHTML = window.MaturityModelTemplate.render({ edition: "foundation", assetPrefix: "../" });
+} else if (view === "news") {
+  document.title = "In the News | Public Health AI Playbook Foundation Edition";
+  document.querySelector("#main").innerHTML = window.NewsFeedTemplate.render({ edition: "foundation" });
+  window.NewsFeedTemplate.bind();
 } else {
   const page = pages[view] || pages.cases;
   document.title = `${page.eyebrow} | Public Health AI Playbook Foundation Edition`;

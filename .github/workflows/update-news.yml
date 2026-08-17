@@ -1,0 +1,47 @@
+name: Update governed public health AI news
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: governed-news-and-pages
+  cancel-in-progress: true
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Update approved news feeds
+        run: node scripts/update-news-feed.mjs
+      - name: Commit updated feed snapshot
+        run: |
+          if git diff --quiet -- assets/news-feed.json assets/news-feed-data.js; then
+            echo "No feed changes to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/news-feed.json assets/news-feed-data.js
+            git commit -m "Update public health AI news feed"
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Deploy updated site
+        id: deployment
+        uses: actions/deploy-pages@v4

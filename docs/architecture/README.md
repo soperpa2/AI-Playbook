@@ -19,6 +19,8 @@ This documentation defines how the current AI Playbook website can evolve into a
 
 9. [Foundation Edition Alignment Standard](foundation-edition-alignment.md) — shared content, edition boundaries, link rules, and current alignment status.
 
+10. [Governmental Public Health AI News Standard](governmental-public-health-ai-news-standard.md) — inclusion criteria, source hierarchy, labeling, automation, shared-edition rules, and governance.
+
 ## Decisions at a glance
 
 - Preserve the current 13-play PLAN–BUILD–DEPLOY–GOVERN framework and tool numbering.

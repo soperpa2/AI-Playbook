@@ -8757,28 +8757,8 @@ function renderGlossary() {
 }
 
 function renderNews() {
-  main.innerHTML = pageIntro("In the News", "Curated developments in AI policy, governance, procurement, predictive analytics, machine learning, generative AI, agentic AI, automation, and health technology that may affect state, territorial, local, and tribal public health departments.") + `
-    <section class="panel news-intro">
-      <h2>Curated AI News Watch</h2>
-      <p>Use this page to follow selected developments that affect responsible AI planning, procurement, governance, workforce preparation, privacy, communications, and public health operations.</p>
-    </section>
-    <section class="news-grid" aria-label="Curated AI news">
-      ${newsItems.map(item=>`
-        <article class="news-card">
-          <div class="news-card-header">
-            <span class="news-tag">${item.category}</span>
-            <span class="news-date">${item.date}</span>
-          </div>
-          <h2><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.title}</a></h2>
-          <p class="news-meta">${item.source}</p>
-          <p>${item.summary}</p>
-          <div class="news-relevance">
-            <h3>Why it matters for public health</h3>
-            <p>${item.relevance}</p>
-          </div>
-        </article>`).join("")}
-    </section>
-  </section>`;
+  main.innerHTML = window.NewsFeedTemplate.render({ edition: "canonical" });
+  window.NewsFeedTemplate.bind();
 }
 
 function saveForumPost() {
