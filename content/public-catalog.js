@@ -2,7 +2,7 @@ window.launchContent = {
   schemaVersion: "1.0",
   release: {
     id: "release:mvp-2026-08",
-    label: "Public MVP",
+    label: "Foundation Edition",
     version: "0.9",
     status: "beta_review",
     updatedAt: "2026-08-16",
