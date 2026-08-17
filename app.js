@@ -3167,7 +3167,7 @@ function breadcrumbTrail() {
   }
   return `<nav class="breadcrumbs" aria-label="Breadcrumb">${items.map((item, index) => index === items.length - 1 || !item.href ? `<span aria-current="page">${item.label}</span>` : `<a href="${item.href}">${item.label}</a>`).join("<span class=\"crumb-separator\">/</span>")}</nav>`;
 }
-function pageIntro(title, text, pageClass = "") { return `<section class="page ${pageClass}">${breadcrumbTrail()}<h1>${title}</h1><p class="lead">${text}</p>`; }
+function pageIntro(title, text, pageClass = "") { return window.PlaybookTemplates.pageOpen({ title, lead: text, className: pageClass, breadcrumbs: breadcrumbTrail() }); }
 function proseBlock(items = []) {
   return items.map(item => `<p>${item}</p>`).join("");
 }

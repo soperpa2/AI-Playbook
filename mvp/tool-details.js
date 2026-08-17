@@ -5,10 +5,7 @@ const storageKey = `foundation-tool-${play.number}`;
 const main = document.querySelector("#tool-main");
 
 document.title = `${play.tool.title} | Foundation Edition`;
-main.innerHTML = `<section class="page foundation-tool-page" data-content-id="${play.tool.id}">
-  <p class="eyebrow">Foundation Edition · Play ${play.number} Tool</p>
-  <h1>${play.tool.title}</h1>
-  <p class="lead">${play.tool.purpose}</p>
+main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lead: play.tool.purpose, eyebrow: `Foundation Edition · Play ${play.number} Tool`, className: "foundation-tool-page" }) + `
   <div class="content-meta"><span>Available now</span><span>Version ${release.version}</span><span>Supports Play ${play.number}</span></div>
 
   <div class="tool-workspace-grid">
