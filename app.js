@@ -4112,6 +4112,12 @@ function renderHome() {
         </div>
         <figure class="journey-graphic-card">
           <img src="assets/recommended-journey-final.png" alt="Recommended Journey: 13 plays across four phases. Plan includes Plays 1–7; Build includes Plays 8–9; Deploy includes Plays 10–11; Govern includes Plays 12–13; destination—Responsible AI Adoption." />
+          <div class="journey-hotspots" aria-label="Journey phase links">
+            <a class="journey-hotspot plan" href="#/plays/1" aria-label="Open Plan phase, beginning with Play 1"><span>Plan: Plays 1–7</span></a>
+            <a class="journey-hotspot build" href="#/plays/8" aria-label="Open Build phase, beginning with Play 8"><span>Build: Plays 8–9</span></a>
+            <a class="journey-hotspot deploy" href="#/plays/10" aria-label="Open Deploy phase, beginning with Play 10"><span>Deploy: Plays 10–11</span></a>
+            <a class="journey-hotspot govern" href="#/plays/12" aria-label="Open Govern phase, beginning with Play 12"><span>Govern: Plays 12–13</span></a>
+          </div>
         </figure>
       </div>
     </section>
