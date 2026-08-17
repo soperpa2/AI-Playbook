@@ -5279,22 +5279,7 @@ async function downloadAssessment(format) {
 }
 
 function renderMaturity() {
-  main.innerHTML = pageIntro("AI Maturity Model", "The maturity model is not a grading system. It helps agencies identify honest current-state capabilities and the next responsible set of plays.") + `
-    <figure class="maturity-graphic-panel">
-      <img src="assets/ai-maturity-model-public-health.png?v=cropped-header" alt="AI maturity model for public health showing five stages from awareness to optimization and five capability dimensions." />
-      <a class="maturity-hotspot stage stage-1" href="#/learn/understanding-ai" aria-label="Open Awareness learning foundations" title="Awareness: learning foundations" data-tip="Awareness: learning foundations"></a>
-      <a class="maturity-hotspot stage stage-2" href="#/assess" aria-label="Open Readiness assessment" title="Readiness: assessment" data-tip="Readiness: assessment"></a>
-      <a class="maturity-hotspot stage stage-3" href="#/plays/7" aria-label="Open Pilots use case prioritization" title="Pilots: prioritize use cases" data-tip="Pilots: prioritize use cases"></a>
-      <a class="maturity-hotspot stage stage-4" href="#/plays/11" aria-label="Open Deployment build and deploy play" title="Deployment: build and deploy" data-tip="Deployment: build and deploy"></a>
-      <a class="maturity-hotspot stage stage-5" href="#/plays/13" aria-label="Open Optimization monitoring and evaluation play" title="Optimization: monitor and improve" data-tip="Optimization: monitor and improve"></a>
-      <a class="maturity-hotspot dimension dimension-leadership" href="#/plays/1" aria-label="Open Leadership and Culture guidance" title="Leadership and Culture" data-tip="Leadership and Culture"></a>
-      <a class="maturity-hotspot dimension dimension-data" href="#/toolkit/6" aria-label="Open Data Infrastructure tool" title="Data Infrastructure" data-tip="Data Infrastructure"></a>
-      <a class="maturity-hotspot dimension dimension-workforce" href="#/plays/5" aria-label="Open Workforce Capacity play" title="Workforce Capacity" data-tip="Workforce Capacity"></a>
-      <a class="maturity-hotspot dimension dimension-technology" href="#/toolkit/27" aria-label="Open Technology Systems readiness tool" title="Technology Systems" data-tip="Technology Systems"></a>
-      <a class="maturity-hotspot dimension dimension-governance" href="#/plays/3" aria-label="Open Governance play" title="Governance" data-tip="Governance"></a>
-    </figure>
-    <div class="card-grid" style="margin-top:2rem">${maturityLevels.map(m=>`<article class="card"><h3>Level ${m.level}: ${m.title}</h3><p><strong>Activities:</strong> ${m.activities}</p><p><strong>Common risks:</strong> ${m.risks}</p><p><strong>Recommended plays:</strong> ${m.plays.map(playLink).join(", ")}</p><p><strong>Related tools:</strong> ${m.tools.map(toolLink).join(", ")}</p></article>`).join("")}</div>
-  </section>`;
+  main.innerHTML = window.MaturityModelTemplate.render({ edition: "canonical", playLink, toolLink });
 }
 
 function renderPlays() {

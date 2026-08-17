@@ -17,6 +17,8 @@ This documentation defines how the current AI Playbook website can evolve into a
 7. [Implementation Roadmap](implementation-roadmap.md) — sequenced delivery, decision gates, migration, acceptance criteria, and measures.
 8. [User Personas](user-personas.md) — priority users, needs, barriers, journeys, and platform implications.
 
+9. [Foundation Edition Alignment Standard](foundation-edition-alignment.md) — shared content, edition boundaries, link rules, and current alignment status.
+
 ## Decisions at a glance
 
 - Preserve the current 13-play PLAN–BUILD–DEPLOY–GOVERN framework and tool numbering.
