@@ -10,7 +10,7 @@
 .hero-logo { display: block; width: min(170px,72%); height: auto; margin: -.25rem auto 1rem; }
 .journey-graphic-card { position: relative; margin: 0; align-self: start; justify-self: center; width: min(100%,600px); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); background: white; }
 .journey-graphic-card img { display: block; width: 100%; height: auto; }
-.journey-hotspot { position: absolute; z-index: 1; display: block; width: 31%; height: 12%; border-radius: 12px; }
+.journey-hotspot { position: absolute; z-index: 1; display: block; width: 31%; height: 12%; border-radius: 12px; cursor: pointer; }
 .journey-hotspot.plan { left: 12%; top: 34%; }
 .journey-hotspot.build { left: 62%; top: 43%; }
 .journey-hotspot.deploy { left: 11%; top: 56%; }
