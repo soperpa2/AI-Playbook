@@ -2989,7 +2989,13 @@ function route() {
   else if (key === "use-areas") renderLearn("ai-support-areas");
   else if (key === "assess") renderAssess();
   else if (key === "maturity") renderMaturity();
-  else if (key === "plays") param ? renderPlayDetail(Number(param)) : renderPlays();
+  else if (key === "plays") {
+    if ((param || "").startsWith("phase-")) {
+      renderPlays();
+      requestAnimationFrame(() => document.getElementById(param)?.scrollIntoView({ block: "start", behavior: "auto" }));
+    } else if (param) renderPlayDetail(Number(param));
+    else renderPlays();
+  }
   else if (key === "play-guides" && param === "vision-workshop") renderVisionWorkshopGuide();
   else if (key === "play-guides" && param === "readiness-assessment") renderReadinessAssessmentGuide();
   else if (key === "play-guides" && param === "ai-governance") renderAIGovernanceGuide();
@@ -4113,10 +4119,10 @@ function renderHome() {
         <figure class="journey-graphic-card">
           <img src="assets/recommended-journey-final.png?v=20260817-13-plays" alt="Recommended Journey: 13 plays across four phases. Plan includes Plays 1–7; Build includes Plays 8–9; Deploy includes Plays 10–11; Govern includes Plays 12–13; destination—Responsible AI Adoption." />
           <div class="journey-hotspots" aria-label="Journey phase links">
-            <a class="journey-hotspot plan" href="#/plays/1" aria-label="Open Plan phase, beginning with Play 1"><span>Plan: Plays 1–7</span></a>
-            <a class="journey-hotspot build" href="#/plays/8" aria-label="Open Build phase, beginning with Play 8"><span>Build: Plays 8–9</span></a>
-            <a class="journey-hotspot deploy" href="#/plays/10" aria-label="Open Deploy phase, beginning with Play 10"><span>Deploy: Plays 10–11</span></a>
-            <a class="journey-hotspot govern" href="#/plays/12" aria-label="Open Govern phase, beginning with Play 12"><span>Govern: Plays 12–13</span></a>
+            <a class="journey-hotspot plan" href="#/plays/phase-plan" aria-label="Open the Plan section of the 13-Play Playbook"><span>Plan: Plays 1–7</span></a>
+            <a class="journey-hotspot build" href="#/plays/phase-build" aria-label="Open the Build section of the 13-Play Playbook"><span>Build: Plays 8–9</span></a>
+            <a class="journey-hotspot deploy" href="#/plays/phase-deploy" aria-label="Open the Deploy section of the 13-Play Playbook"><span>Deploy: Plays 10–11</span></a>
+            <a class="journey-hotspot govern" href="#/plays/phase-govern" aria-label="Open the Govern section of the 13-Play Playbook"><span>Govern: Plays 12–13</span></a>
           </div>
         </figure>
       </div>
@@ -5331,7 +5337,7 @@ function renderPlays() {
       </aside>
     </section>
     ${phases.map(p=>`
-      <section class="phase-row phase-${p.id}">
+      <section class="phase-row phase-${p.id}" id="phase-${p.id}">
         <div class="phase-label">
           <span>${p.name}</span>
           <small>${p.range}</small>
