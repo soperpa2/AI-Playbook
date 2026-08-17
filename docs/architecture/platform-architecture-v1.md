@@ -21,6 +21,8 @@ The AI Playbook should evolve from a static website prototype into a public heal
 
 The repository supports two front ends: the full platform at the repository root and the Foundation Edition under the internal `mvp/` directory. Both consume the same stable content identities, shared metadata, relationships, and visual assets. Publication policy determines which fields and records the Foundation Edition may expose; it must not create a second editable copy of a play, tool, case study, learning item, or graphic.
 
+Both front ends also use the same shared site-shell and page-template modules. Edition configuration controls destinations and suppresses `My Account` and `Organization Hub` in the Foundation Edition; it does not fork navigation markup, header/footer behavior, or core page-layout primitives.
+
 For the transitional v1 implementation, `content/public-catalog.js` is the shared public projection for the 13 plays and one approved Starter Tool per play. `content/publication-policy.json` documents edition boundaries. Remaining collections should migrate from application code to typed canonical records in bounded increments. Until migration is complete, the full site remains authoritative and parity checks are required whenever duplicated legacy material changes.
 
 Shared graphics live in the root `assets/` collection. Both editions reference the same asset path. A change to a shared graphic therefore appears in both builds without copying files. Edition-specific artwork is permitted only when it is deliberately classified, named, and documented as edition-specific.

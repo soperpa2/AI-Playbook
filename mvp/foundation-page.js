@@ -43,4 +43,4 @@ const pages = {
 };
 const page = pages[view] || pages.maturity;
 document.title = `${page.eyebrow} | Public Health AI Playbook Foundation Edition`;
-document.querySelector("#main").innerHTML = `<section class="page"><p class="eyebrow">${page.eyebrow}</p><h1>${page.title}</h1><p class="lead">${page.lead}</p><div class="workflow-grid" style="margin-top:2rem">${page.cards.map(card => `<article class="card"><h2>${card[0]}</h2><p>${card[1]}</p></article>`).join("")}</div><div class="button-row"><a class="btn primary" href="${page.action[1]}">${page.action[0]}</a><a class="btn" href="index.html#top">Return to Start Here</a></div></section>`;
+document.querySelector("#main").innerHTML = window.PlaybookTemplates.pageOpen({ title: page.title, lead: page.lead, eyebrow: page.eyebrow }) + `<div class="workflow-grid" style="margin-top:2rem">${page.cards.map(card => `<article class="card"><h2>${card[0]}</h2><p>${card[1]}</p></article>`).join("")}</div><div class="button-row"><a class="btn primary" href="${page.action[1]}">${page.action[0]}</a><a class="btn" href="index.html#top">Return to Start Here</a></div></section>`;
