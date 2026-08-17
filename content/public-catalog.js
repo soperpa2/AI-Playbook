@@ -1,7 +1,7 @@
 window.launchContent = {
   schemaVersion: "1.0",
   release: {
-    id: "release:mvp-2026-08",
+    id: "release:foundation-2026-08",
     label: "Foundation Edition",
     version: "0.9",
     status: "beta_review",
@@ -25,3 +25,20 @@ window.launchContent = {
     {id:"play:13",number:13,slug:"monitor-and-evaluate",phase:"govern",title:"Monitor and Evaluate",summary:"Track performance, equity, outcomes, emerging risks, and lessons learned.",purpose:"Determine whether AI-supported work remains reliable, equitable, useful, safe, and aligned with public health goals.",output:"Performance and equity monitoring, outcome findings, lessons learned, and improvement actions.",tool:{id:"starter-tool:13",title:"Continuous Improvement Log",purpose:"A simple record of findings, improvement actions, owners, deadlines, supporting evidence, escalation, and closure."},people:["Operational owners","Evaluation and quality staff","Equity staff","Data and technical reviewers","Governance and leadership"],questions:["Is performance stable across meaningful groups?","Is the workflow producing public health value?","What evidence requires improvement, escalation, or retirement?"],evidence:"Supported",audiences:["researcher","epidemiologist","governance_risk_lead"]}
   ]
 };
+
+// Canonical play names are shared across editions; Foundation changes access depth, not the framework.
+[
+  "Vision & Guardrails",
+  "Readiness Assessment",
+  "Establish AI Governance",
+  "Engage Stakeholders",
+  "Workforce Development",
+  "Plan Change Management",
+  "Prioritize Use Cases",
+  "Develop a Funding Strategy",
+  "Develop the AI Implementation Plan",
+  "Execute Change Management",
+  "Build and Deploy AI Solutions",
+  "Execute Governance and Oversight",
+  "Monitor, Evaluate, and Improve"
+].forEach((title, index) => { window.launchContent.plays[index].title = title; });
