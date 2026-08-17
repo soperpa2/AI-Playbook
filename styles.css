@@ -216,6 +216,8 @@ main { min-height: calc(100vh - 144px); }
 .journey-graphic-card {
   margin: 0;
   align-self: start;
+  justify-self: center;
+  width: min(100%, 260px);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--soft-shadow);
