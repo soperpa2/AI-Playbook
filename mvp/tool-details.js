@@ -1,1 +1,89 @@
-const params=new URLSearchParams(location.search);const play=Math.min(13,Math.max(1,Number(params.get("play"))||1));const name=params.get("name")||"Unreleased tool";const descriptions={"Policy":"support the department in documenting policy expectations, approvals, responsibilities, and required safeguards","Assessment":"guide a structured review, document evidence, identify gaps, and assign follow-up actions","Checklist":"provide a repeatable set of review questions, decision checks, and documentation prompts","Charter":"define purpose, scope, authority, membership, responsibilities, cadence, and decision processes","Inventory":"maintain a consistent record of systems, uses, owners, risk levels, approvals, and review status","Worksheet":"help a cross-functional team work through required information and preserve a decision-ready record","Plan":"translate decisions into milestones, responsibilities, resources, communication, support, and follow-up","Framework":"provide a consistent structure for comparing options and making documented decisions","Dashboard":"organize measures, thresholds, findings, escalation, and improvement actions","Protocol":"define a repeatable testing, validation, review, and evidence-documentation process","Template":"provide a structured starting point that departments can adapt to local authority, policy, and workflow","Log":"track changes, findings, actions, owners, dates, evidence, and closure","Guide":"explain roles, practical steps, boundaries, and application considerations"};const key=Object.keys(descriptions).find(k=>name.includes(k));const purpose=key?descriptions[key]:"help public health teams document and carry out a defined part of responsible AI strategy, planning, implementation, or oversight";document.title=`${name} | Public Health AI Playbook`;const safeName=name.replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]));document.querySelector("#tool-main").innerHTML=`<section class="page-hero"><p class="eyebrow">Play ${play} · Tool preview</p><h1>${safeName}</h1><p>This completed resource is not yet publicly released as part of the expanded Public Health AI Strategy and Implementation Toolkit.</p></section><div class="detail-layout"><article class="page-panel"><h2>Purpose</h2><p>This tool is intended to ${purpose}.</p><h2>What the complete tool includes</h2><ul><li>Plain-language instructions and recommended participants</li><li>Structured fields or decision prompts</li><li>Governance, equity, privacy, security, and evidence considerations where applicable</li><li>Action owners, dates, decisions, and follow-up documentation</li><li>Guidance for adapting the resource to local authority and existing processes</li></ul><h2>Release and review</h2><p>The completed tool is undergoing pre-release review for practical usability, evidence alignment, role clarity, accessibility, and fit with public health operations. Its public format and access level will be announced at release.</p></article><aside><section class="page-panel"><p class="eyebrow">Release status</p><h2>Not yet released</h2><p>This page previews a completed tool that is not yet publicly available. Apply for early access and provide structured feedback.</p><a class="button primary" href="reviewer.html?play=${play}">Apply for early access</a></section><section class="page-panel"><h2>Related play</h2><a href="detail.html?play=${play}">Return to Play ${play} →</a></section></aside></div>`;const subnav=document.createElement("link");subnav.rel="stylesheet";subnav.href="subnav.css";document.head.appendChild(subnav);
+const { plays, release } = window.launchContent;
+const requestedPlay = Number(new URLSearchParams(location.search).get("play"));
+const play = plays.find(item => item.number === requestedPlay) || plays[0];
+const storageKey = `foundation-tool-${play.number}`;
+const main = document.querySelector("#tool-main");
+
+document.title = `${play.tool.title} | Foundation Edition`;
+main.innerHTML = `<section class="page foundation-tool-page" data-content-id="${play.tool.id}">
+  <p class="eyebrow">Foundation Edition · Play ${play.number} Tool</p>
+  <h1>${play.tool.title}</h1>
+  <p class="lead">${play.tool.purpose}</p>
+  <div class="content-meta"><span>Available now</span><span>Version ${release.version}</span><span>Supports Play ${play.number}</span></div>
+
+  <div class="tool-workspace-grid">
+    <form class="panel foundation-tool-form" id="foundation-tool-form">
+      <h2>Complete the tool</h2>
+      <p>Use this workspace with the people responsible for Play ${play.number}. Your entries are stored only in this browser unless you download or print them.</p>
+      <label>Organization or department<input name="organization" autocomplete="organization"></label>
+      <label>Facilitator or owner<input name="owner" autocomplete="name"></label>
+      <label>Date<input name="date" type="date"></label>
+      <label>Purpose and local context<textarea name="context" rows="4" placeholder="Describe the public health need, decision, workflow, or local context for this tool."></textarea></label>
+      ${play.questions.map((question, index) => `<label>${question}<textarea name="question_${index + 1}" rows="4"></textarea></label>`).join("")}
+      <label>Decision or recommended direction<textarea name="decision" rows="4" placeholder="Record the decision, conditions, limitations, or recommendation."></textarea></label>
+      <label>Actions, owners, and target dates<textarea name="actions" rows="5" placeholder="List each next action, responsible owner, and target date."></textarea></label>
+      <label>Evidence, approvals, or follow-up needed<textarea name="follow_up" rows="4"></textarea></label>
+      <div class="button-row no-print">
+        <button class="btn primary" type="submit">Save in this browser</button>
+        <button class="btn" type="button" id="download-tool">Download responses</button>
+        <button class="btn" type="button" id="print-tool">Print or save as PDF</button>
+        <button class="btn" type="button" id="clear-tool">Clear</button>
+      </div>
+      <p class="tool-save-status" id="tool-save-status" role="status"></p>
+    </form>
+    <aside class="tool-sidebar">
+      <section class="panel"><p class="eyebrow">Related play</p><h2>Play ${play.number}: ${play.title}</h2><p>${play.output}</p><a class="btn small" href="detail.html?play=${play.number}">Open the play</a></section>
+      <section class="panel"><h2>Recommended participants</h2><ul>${play.people.map(person => `<li>${person}</li>`).join("")}</ul></section>
+      <section class="panel"><h2>Use and limitations</h2><p>This Foundation Tool provides a practical starting point. Apply local legal, privacy, security, accessibility, equity, procurement, workforce, Tribal governance, community, and scientific review as appropriate.</p></section>
+      <section class="panel"><a href="toolkit.html">View all 13 Foundation Tools →</a></section>
+    </aside>
+  </div>
+</section>`;
+
+const form = document.querySelector("#foundation-tool-form");
+const status = document.querySelector("#tool-save-status");
+
+function formValues() {
+  return Object.fromEntries(new FormData(form).entries());
+}
+
+function restoreValues() {
+  const saved = JSON.parse(localStorage.getItem(storageKey) || "null");
+  if (!saved) return;
+  Object.entries(saved).forEach(([name, value]) => {
+    const field = form.elements.namedItem(name);
+    if (field) field.value = value;
+  });
+  status.textContent = "Saved responses restored from this browser.";
+}
+
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  localStorage.setItem(storageKey, JSON.stringify(formValues()));
+  status.textContent = "Responses saved in this browser.";
+});
+
+document.querySelector("#download-tool").addEventListener("click", () => {
+  const values = formValues();
+  const lines = [play.tool.title, `Foundation Edition · Play ${play.number}: ${play.title}`, ""];
+  [...form.elements].filter(field => field.name).forEach(field => {
+    const label = field.closest("label")?.childNodes[0]?.textContent?.trim() || field.name;
+    lines.push(label, values[field.name] || "", "");
+  });
+  const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `foundation-tool-${String(play.number).padStart(2, "0")}.txt`;
+  link.click();
+  URL.revokeObjectURL(link.href);
+});
+
+document.querySelector("#print-tool").addEventListener("click", () => window.print());
+document.querySelector("#clear-tool").addEventListener("click", () => {
+  if (!confirm("Clear all responses saved for this tool in this browser?")) return;
+  form.reset();
+  localStorage.removeItem(storageKey);
+  status.textContent = "Responses cleared.";
+});
+
+restoreValues();
