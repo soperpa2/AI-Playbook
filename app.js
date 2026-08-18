@@ -6424,6 +6424,47 @@ function saveToolRating(toolId) {
   if (status) status.textContent = `Saved ${stars}-star rating.`;
 }
 
+function toolUseGuide(tool) {
+  const relatedPlays = tool.playIds.map(id => plays.find(play => play.id === id)).filter(Boolean);
+  const involved = [...new Set(relatedPlays.flatMap(play => play.who || []))];
+  const searchable = `${tool.title} ${tool.purpose}`.toLowerCase();
+  const approvers = ["Tool owner or responsible program lead"];
+  if (relatedPlays.some(play => [1, 3, 7, 9, 11, 12, 13].includes(play.id))) approvers.push("AI governance committee or designated governance body");
+  if (relatedPlays.some(play => [1, 8, 9, 12].includes(play.id))) approvers.push("Health officer, executive sponsor, or delegated executive");
+  if (/privacy|data use|confidential|security|cyber/.test(searchable)) approvers.push("Privacy, legal, data-governance, or security authority, as applicable");
+  if (/vendor|procure|contract|fund|budget/.test(searchable)) approvers.push("Procurement, contracting, finance, or grants authority, as applicable");
+  if (/equity|community|stakeholder|accessib|language|civil rights/.test(searchable)) approvers.push("Equity, civil-rights, accessibility, language-access, or community-review lead, as applicable");
+  if (/deploy|go-live|validation|pilot|scale|monitor|audit|incident/.test(searchable)) approvers.push("Operational system owner and required technical or evaluation reviewers");
+
+  const resourceMap = new Map();
+  relatedPlays.flatMap(play => playResources[play.id] || []).forEach(([title, note, url]) => {
+    if (!resourceMap.has(url)) resourceMap.set(url, { title, note, url });
+  });
+  const resources = [...resourceMap.values()].slice(0, 5);
+  const modules = learningModules.filter(module => (module.tools || []).includes(tool.id)).slice(0, 4);
+  const playNames = relatedPlays.map(play => `Play ${play.id}: ${play.title}`).join(", ");
+
+  return `<section class="tool-use-guide" aria-labelledby="tool-use-guide-heading">
+    <p class="eyebrow">Before You Begin</p>
+    <h2 id="tool-use-guide-heading">When, Why, How, and Who</h2>
+    <div class="tool-use-guide-grid">
+      <section><h3>When to use it</h3><p>Use this tool while completing ${playNames}. Revisit it when evidence, ownership, risks, approvals, system scope, or agency policy materially changes.</p></section>
+      <section><h3>Why to use it</h3><p>${tool.purpose}</p><p>The completed tool creates a reviewable record that can support implementation, governance decisions, follow-up, and future audits.</p></section>
+      <section><h3>How to use it</h3><ol class="compact-list"><li>Choose an owner or facilitator and gather the available evidence.</li><li>Complete it with the people who understand the program, affected communities, data, workflow, and risks.</li><li>Use <strong>Unknown</strong> for evidence gaps and <strong>Other</strong> or custom categories for local needs.</li><li>Assign owners and due dates for unresolved items.</li><li>Route the completed artifact to the required reviewers and approvers, then retain the decision record.</li></ol></section>
+      <section><h3>Who should be involved or consulted</h3><ul class="compact-list">${involved.map(role => `<li>${role}</li>`).join("")}</ul></section>
+      <section><h3>Who should review or approve</h3><p class="plain-meta">Apply agency policy and the risk tier to determine required sign-off.</p><ul class="compact-list">${[...new Set(approvers)].map(role => `<li>${role}</li>`).join("")}</ul></section>
+    </div>
+    <section class="tool-guide-links"><h3>Related plays</h3><p>${relatedPlays.map(play => playLink(play.id)).join("<br>")}</p></section>
+    <section class="tool-guide-links"><h3>References and preparation materials</h3>
+      <div class="tool-reference-list">
+        ${resources.map(resource => `<article><a href="${resource.url}" target="_blank" rel="noopener noreferrer"><strong>${resource.title}</strong></a><span>${resource.note}</span></article>`).join("")}
+        ${modules.map(module => `<article><a href="#/learn/${module.id}"><strong>${module.display_title || module.title}</strong></a><span>Playbook learning module with background, examples, and application guidance.</span></article>`).join("")}
+        <article><a href="#/references"><strong>Complete References and Source Material</strong></a><span>Browse the Full Version reference library for additional frameworks, standards, and public health resources.</span></article>
+      </div>
+    </section>
+  </section>`;
+}
+
 function renderToolDetail(id) {
   const t = tools.find(x => x.id === id) || tools[0];
   const sourceBlueprint = toolFormBlueprints[t.id] || [["Tool Notes", ["Decision or output", "Risks, gaps, or follow-ups"]]];
@@ -6432,18 +6473,18 @@ function renderToolDetail(id) {
   const outputs = outputsForTool(t, blueprint);
   const isMember = hasMemberProfile();
   main.innerHTML = pageIntro(`Tool ${t.id}: ${t.title}`, t.purpose) + `
-    <div class="meta-row">${t.playIds.map(id=>`<span class="tag">${playLink(id)}</span>`).join("")}</div>
     <div class="detail-grid tool-detail-grid">
       <article class="panel">
+        ${toolUseGuide(t)}
         <h2>Toolkit-Based Fillable Version</h2>
         <p>This online version is structured from the toolkit instrument for this tool. Complete it during the workshop, review, or governance meeting where the output is being developed.</p>
         <form id="tool-form" class="tool-form">
           <section class="tool-section">
             <h3>Administrative Details</h3>
             <div class="form-grid">
-              <label>Owner or facilitator<input name="${toolFieldName("Administrative Details", "Owner or facilitator")}" placeholder="Name and role"></label>
-              <label>Date<input name="${toolFieldName("Administrative Details", "Date")}" type="date"></label>
-              <label>Agency / program<input name="${toolFieldName("Administrative Details", "Agency / program")}" placeholder="Health department, division, or program"></label>
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Owner or facilitator", type: "text", guidance: "Name the person responsible for convening completion and coordinating follow-up.", example: "Jordan Lee, Program Manager" })}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Date", type: "text", inputType: "date", guidance: "Record the meeting, review, or approval date.", example: "August 18, 2026" })}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Agency / program", type: "text", guidance: "Identify the health department, division, bureau, or program that owns this artifact.", example: "County Health Department, Communicable Disease Program" })}
               ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Review status", type: "select", options: ["Draft", "Ready for review", "Submitted to governance", "Approved", "Needs revision"] })}
             </div>
           </section>
@@ -6462,7 +6503,6 @@ function renderToolDetail(id) {
       </article>
       <aside class="detail-card-list">
         <section class="panel"><h2>Outputs</h2><ul class="compact-list">${outputs.map(item=>`<li>${item}</li>`).join("")}</ul></section>
-        <section class="panel"><h2>Supported Plays</h2><p>${t.playIds.map(playLink).join("<br>")}</p></section>
         ${relatedLearningModulesPanelForTool(t.id)}
         <section class="panel"><h2>Related Tools</h2><p>${tools.filter(x=>x.id!==t.id && x.playIds.some(id=>t.playIds.includes(id))).slice(0,6).map(x=>toolLink(x.id)).join("<br>")}</p></section>
         <section class="panel"><h2>Toolkit Source</h2><p>This form is based on the corresponding tool in the AI Playbook toolkit. Download the full toolkit for the formatted source document.</p><div class="button-row"><a class="btn small" href="downloads/AI_Playbook_for_Public_Health_Toolkit.pdf">Toolkit PDF</a><a class="btn small" href="downloads/AI_Playbook_for_Public_Health_Toolkit.docx">Toolkit Word</a></div></section>
