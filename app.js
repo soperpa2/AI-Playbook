@@ -5258,6 +5258,7 @@ function updateAssessment() {
   });
   basePlays.forEach(id => addPlay(id, `Next-stage work for the ${level}`));
   baseTools.forEach(addTool);
+  recTools.sort((a, b) => a - b);
   const recPlays = pathway.map(step => step.id);
   document.getElementById("assessment-recs").innerHTML = `
     <h3>Your Custom Pathway</h3>
