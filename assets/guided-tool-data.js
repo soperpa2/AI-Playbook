@@ -53,4 +53,51 @@
       ]
     }
   };
+
+  const optionSets = {
+    yesNo: ["Select one", "Yes", "No", "Unknown", "Not applicable"],
+    status: ["Select one", "Not started", "In progress", "Complete", "Blocked", "Needs follow-up", "Not applicable"],
+    decision: ["Select one", "Proceed", "Proceed with conditions", "Revise", "Hold", "Escalate for review", "Do not proceed", "Not applicable"],
+    risk: ["Select one", "Low", "Moderate", "High", "Critical", "Unknown", "Not applicable"],
+    priority: ["Select one", "Low", "Medium", "High", "Urgent", "Not prioritized", "Not applicable"],
+    maturity: ["Select one", "None", "Early or informal", "Defined", "Implemented", "Mature and routinely monitored", "Unknown", "Not applicable"],
+    cadence: ["Select one", "One time", "Weekly", "Monthly", "Quarterly", "Semiannually", "Annually", "After a material change", "Event triggered", "Not applicable"],
+    roles: ["Executive leadership", "Program leadership", "Program staff", "Governance", "Privacy", "Security or IT", "Legal or policy", "Equity or civil rights", "Accessibility or language access", "Communications", "Procurement or finance", "Data, analytics, or evaluation", "Community or partner representatives"],
+    risks: ["Privacy or confidentiality", "Security", "Equity or civil rights", "Accessibility or language access", "Data quality", "Model performance", "Human oversight", "Workflow or usability", "Workforce or change", "Legal or policy", "Procurement or vendor", "Public trust"],
+    data: ["Public information", "Internal operational data", "Personally identifiable information", "Protected health information", "Confidential program data", "Highly restricted data", "Tribal or sovereign data", "Vendor data", "No data identified", "Unknown"],
+    safeguards: ["Governance approval", "Privacy review", "Security review", "Legal or policy review", "Equity review", "Accessibility or language-access review", "Human review", "Community engagement", "Data validation", "Vendor or procurement review", "Monitoring", "Incident response"],
+    metrics: ["Performance", "Reliability", "Data quality", "Equity or subgroup performance", "Accessibility", "Adoption or usage", "Timeliness", "Cost or efficiency", "Public health outcome", "User or community feedback", "Incidents"],
+    communications: ["Email", "Staff meeting", "Leadership briefing", "Training", "Office hours", "Website", "Public notice", "Community meeting", "Partner briefing", "Help desk or support channel"],
+    resources: ["Staff time", "Training", "Vendor or licensing", "Infrastructure or hosting", "Data preparation", "Privacy, security, or legal review", "Community engagement", "Monitoring and evaluation", "Sustainment", "Contingency"]
+  };
+
+  function guidedField(label) {
+    const lower = label.toLowerCase();
+    if (/\?$/.test(label) || /^(is|are|has|have|does|do|will|could|should)\b/.test(lower)) return select(label, optionSets.yesNo);
+    if (/(status|stage|phase|progress)/.test(lower)) return select(label, optionSets.status);
+    if (/(decision|recommendation|go\/no-go|continue\/modify|approval outcome|overall rating)/.test(lower)) return select(label, optionSets.decision);
+    if (/(risk level|risk rating|consequence level|severity)/.test(lower)) return select(label, optionSets.risk);
+    if (/(priority|urgency)/.test(lower)) return select(label, optionSets.priority);
+    if (/(maturity|readiness level|literacy level|competency level)/.test(lower)) return select(label, optionSets.maturity);
+    if (/(cadence|frequency|review cycle)/.test(lower)) return select(label, optionSets.cadence);
+    if (/(roles|members|participants|stakeholders|audiences|reviewers|partners|owners involved)/.test(lower)) return checks(label, optionSets.roles);
+    if (/(risks|concerns|barriers|limitations|failure modes|issues)/.test(lower)) return checks(label, optionSets.risks);
+    if (/(data sources|data involved|data categories|information types)/.test(lower)) return checks(label, optionSets.data);
+    if (/(requirements|controls|safeguards|approvals|required review|review needed)/.test(lower)) return checks(label, optionSets.safeguards);
+    if (/(metrics|indicators|measures|evidence collected)/.test(lower)) return checks(label, optionSets.metrics);
+    if (/(channels|engagement methods|communication methods|support channels)/.test(lower)) return checks(label, optionSets.communications);
+    if (/(costs|resources|funding needs|resource needs)/.test(lower)) return checks(label, optionSets.resources);
+    if (/(name|title|date|version|number|owner|lead|period|timeline|deadline|contact|program|agency|system|vendor|product|location|scope)$/.test(lower)) return text(label);
+    return notes(label);
+  }
+
+  window.GuidedToolFactory = {
+    create(tool, blueprint) {
+      return {
+        label: "Guided review version",
+        intro: `Complete Tool ${tool.id} using structured prompts, selectable categories, and evidence notes. Choose Other or add as many custom categories as the local context requires.`,
+        sections: blueprint.map(([section, fields]) => [section, fields.map(guidedField)])
+      };
+    }
+  };
 })();

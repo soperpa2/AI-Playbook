@@ -2029,6 +2029,13 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
 .guided-check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem 1rem; margin-top: .65rem; }
 .guided-check-grid label { display: flex; align-items: flex-start; gap: .55rem; padding: .55rem .65rem; border: 1px solid #dbe6ed; border-radius: 8px; background: #fff; font-weight: 400; }
 .guided-check-grid input { width: 1rem; height: 1rem; min-height: 1rem; margin-top: .2rem; padding: 0; flex: 0 0 auto; }
+.guided-control-with-other { display: grid; gap: .55rem; }
+.guided-control-with-other > label { display: grid; gap: .45rem; font-weight: 700; color: var(--navy); }
+.guided-other-controls { display: grid; gap: .65rem; justify-items: start; }
+.guided-other-list { display: grid; gap: .65rem; width: 100%; }
+.guided-other-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .65rem; align-items: end; width: 100%; padding: .7rem; border: 1px dashed #aac5d6; border-radius: 8px; background: #f8fcff; }
+.guided-other-row label { display: grid; gap: .35rem; width: 100%; font-weight: 700; color: var(--navy); }
+.guided-other-row .btn { margin-bottom: .05rem; }
 .tool-form label input,
 .tool-form label select,
 .tool-form label textarea {

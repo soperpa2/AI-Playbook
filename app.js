@@ -4083,12 +4083,19 @@ function restoreToolProgress(toolId, blueprint) {
   saved.entries.forEach(([section, fields]) => {
     fields.forEach(([field, value]) => {
       const inputs = [...form.elements].filter(el => el.name === toolFieldName(section, field) || el.name === field);
+      const parts = String(value || "").split("; ").filter(Boolean);
+      const customValues = parts.filter(part => part.startsWith("Other: ")).map(part => part.slice(7));
+      const standardValues = parts.filter(part => !part.startsWith("Other: "));
       if (inputs.some(input => input.type === "checkbox")) {
-        const selected = new Set(String(value || "").split("; ").filter(Boolean));
+        const selected = new Set(standardValues);
         inputs.forEach(input => { input.checked = selected.has(input.value); });
       } else if (inputs.some(input => input.type === "radio")) {
-        inputs.forEach(input => { input.checked = input.value === value; });
-      } else if (inputs[0]) inputs[0].value = value || "";
+        inputs.forEach(input => { input.checked = standardValues.includes(input.value); });
+      } else if (inputs[0]?.tagName === "SELECT") {
+        const available = [...inputs[0].options].map(option => option.value);
+        inputs[0].value = available.includes(standardValues[0]) ? standardValues[0] : (customValues.length ? "Other" : available[0]);
+      } else if (inputs[0]) inputs[0].value = standardValues.join("; ") || "";
+      customValues.forEach(custom => window.GuidedToolTemplate?.addOtherValue(form, toolFieldName(section, field), custom));
     });
   });
   const status = document.getElementById("tool-save-status");
@@ -6419,8 +6426,9 @@ function saveToolRating(toolId) {
 
 function renderToolDetail(id) {
   const t = tools.find(x => x.id === id) || tools[0];
-  const guidedDefinition = window.GuidedToolDefinitions?.[t.id];
-  const blueprint = guidedDefinition ? window.GuidedToolTemplate.asLegacyBlueprint(guidedDefinition) : (toolFormBlueprints[t.id] || [["Tool Notes", ["Decision or output", "Risks, gaps, or follow-ups"]]]);
+  const sourceBlueprint = toolFormBlueprints[t.id] || [["Tool Notes", ["Decision or output", "Risks, gaps, or follow-ups"]]];
+  const guidedDefinition = window.GuidedToolDefinitions?.[t.id] || window.GuidedToolFactory.create(t, sourceBlueprint);
+  const blueprint = window.GuidedToolTemplate.asLegacyBlueprint(guidedDefinition);
   const outputs = outputsForTool(t, blueprint);
   const isMember = hasMemberProfile();
   main.innerHTML = pageIntro(`Tool ${t.id}: ${t.title}`, t.purpose) + `
@@ -6436,19 +6444,10 @@ function renderToolDetail(id) {
               <label>Owner or facilitator<input name="${toolFieldName("Administrative Details", "Owner or facilitator")}" placeholder="Name and role"></label>
               <label>Date<input name="${toolFieldName("Administrative Details", "Date")}" type="date"></label>
               <label>Agency / program<input name="${toolFieldName("Administrative Details", "Agency / program")}" placeholder="Health department, division, or program"></label>
-              <label>Review status<select name="${toolFieldName("Administrative Details", "Review status")}"><option>Draft</option><option>Ready for review</option><option>Submitted to governance</option><option>Approved</option><option>Needs revision</option></select></label>
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Review status", type: "select", options: ["Draft", "Ready for review", "Submitted to governance", "Approved", "Needs revision"] })}
             </div>
           </section>
-          ${guidedDefinition ? window.GuidedToolTemplate.render(guidedDefinition) : blueprint.map(([section, fields], sectionIndex)=>`
-            <section class="tool-section">
-              <h3>${section}</h3>
-              <div class="${sectionIndex === 0 ? "form-grid" : "tool-form-stack"}">
-                ${fields.map(field=>`
-                  <label>${field}
-                    <textarea name="${toolFieldName(section, field)}" rows="4" placeholder="Enter ${field.toLowerCase()}"></textarea>
-                  </label>`).join("")}
-              </div>
-            </section>`).join("")}
+          ${window.GuidedToolTemplate.render(guidedDefinition)}
         </form>
         ${memberOnlyNotice(isMember)}
         <div class="button-row no-print">
@@ -6470,6 +6469,7 @@ function renderToolDetail(id) {
       </aside>
     </div>
   </section>`;
+  window.GuidedToolTemplate.hydrate(document.getElementById("tool-form"));
   restoreToolProgress(t.id, blueprint);
   hydrateToolRatingPanel();
   document.getElementById("download-blank-tool").addEventListener("click", () => runDocumentDownload(() => downloadToolWord(t, blueprint, true), "Blank Word template"));
@@ -6496,9 +6496,12 @@ function collectToolEntries(blueprint, blank = false) {
   const valueFor = (section, field) => {
     if (blank) return "";
     const inputs = [...form.elements].filter(el => el.name === toolFieldName(section, field));
-    if (inputs.some(input => input.type === "checkbox")) return inputs.filter(input => input.checked).map(input => input.value).join("; ");
-    if (inputs.some(input => input.type === "radio")) return inputs.find(input => input.checked)?.value || "";
-    return inputs[0]?.value || "";
+    const custom = [...form.elements].filter(el => el.name === `${toolFieldName(section, field)}::Other`).map(input => input.value.trim()).filter(Boolean).map(value => `Other: ${value}`);
+    let selected = [];
+    if (inputs.some(input => input.type === "checkbox")) selected = inputs.filter(input => input.checked).map(input => input.value);
+    else if (inputs.some(input => input.type === "radio")) selected = [inputs.find(input => input.checked)?.value || ""].filter(Boolean);
+    else selected = [inputs[0]?.value || ""].filter(Boolean);
+    return [...selected, ...custom].join("; ");
   };
   return [
     ["Administrative Details", ["Owner or facilitator", "Date", "Agency / program", "Review status"].map(field => [field, valueFor("Administrative Details", field)])],
