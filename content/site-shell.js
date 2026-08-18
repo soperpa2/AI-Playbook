@@ -2,7 +2,7 @@
   const foundation = location.pathname.includes("/mvp/");
   const links = foundation ? [
     ["Start Here", "index.html#top", "start"], ["Learn", "learning.html", "learn"], ["Assess", "tool.html?play=2", "assess"],
-    ["Maturity Model", "foundation-page.html?view=maturity", "maturity"], ["Plays", "index.html#plays", "plays"], ["Toolkit", "toolkit.html", "toolkit"],
+    ["Maturity Model", "foundation-page.html?view=maturity", "maturity"], ["Plays", "plays.html", "plays"], ["Toolkit", "toolkit.html", "toolkit"],
     ["Case Studies", "foundation-page.html?view=cases", "cases"], ["Community", "foundation-page.html?view=community", "community"],
     ["Contribute", "feedback.html", "contribute"], ["Contact Us", "foundation-page.html?view=contact", "contact"],
     ["Resources", "resources.html", "resources"], ["In the News", "foundation-page.html?view=news", "news"]
@@ -35,7 +35,7 @@
     if (["learning.html", "module.html", "training-paths.html", "training-path.html"].includes(page)) return "learn";
     if (page === "tool.html" && params.get("play") === "2") return "assess";
     if (["toolkit.html", "tool.html"].includes(page)) return "toolkit";
-    if (page === "detail.html") return "plays";
+    if (["plays.html", "detail.html"].includes(page)) return "plays";
     if (page === "resources.html") return "resources";
     if (["feedback.html", "reviewer.html"].includes(page)) return "contribute";
     if (page === "foundation-page.html") return view || "start";

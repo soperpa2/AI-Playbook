@@ -1,6 +1,8 @@
 const { plays, release } = window.launchContent;
+document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="foundation-content.css?v=20260818-foundation-content">');
 const requestedPlay = Number(new URLSearchParams(location.search).get("play"));
 const play = plays.find(item => item.number === requestedPlay) || plays[0];
+const readinessDomains = ["Leadership and governance", "Strategy and use-case alignment", "Data quality and stewardship", "Technology and interoperability", "Privacy, security, and legal review", "Workforce capability and change readiness", "Equity, accessibility, and community engagement", "Procurement and vendor oversight", "Evaluation, monitoring, and sustainment"];
 const storageKey = `foundation-tool-${play.number}`;
 const main = document.querySelector("#tool-main");
 
@@ -12,6 +14,7 @@ main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lea
     <form class="panel foundation-tool-form" id="foundation-tool-form">
       <h2>Complete the tool</h2>
       <p>Use this workspace with the people responsible for Play ${play.number}. Your entries are stored only in this browser unless you download or print them.</p>
+      ${play.number === 2 ? `<section class="readiness-profile"><h3>Foundation readiness profile</h3><p>Rate each domain through cross-functional discussion and available evidence. This transparent, unweighted profile is a starting point—not the protected organizational diagnostic, a certification, or a benchmark against other agencies.</p><p><strong>Rating scale:</strong> 0 = not in place; 1 = informal or early; 2 = defined and partly implemented; 3 = mature, documented, and routinely used.</p><div class="readiness-domain-grid">${readinessDomains.map((domain, index) => `<label>${domain}<select name="readiness_${index + 1}"><option value="">Not rated</option><option value="0">0 — Not in place</option><option value="1">1 — Informal or early</option><option value="2">2 — Defined and partly implemented</option><option value="3">3 — Mature and routinely used</option></select></label>`).join("")}</div><div class="panel readiness-result" id="readiness-result" aria-live="polite"><strong>Readiness profile:</strong> Rate the nine domains to generate a discussion summary.</div></section>` : ""}
       <label>Organization or department<input name="organization" autocomplete="organization"></label>
       <label>Facilitator or owner<input name="owner" autocomplete="name"></label>
       <label>Date<input name="date" type="date"></label>
@@ -84,3 +87,20 @@ document.querySelector("#clear-tool").addEventListener("click", () => {
 });
 
 restoreValues();
+
+if (play.number === 2) {
+  const readinessFields = readinessDomains.map((_, index) => form.elements.namedItem(`readiness_${index + 1}`));
+  const result = document.querySelector("#readiness-result");
+  const updateReadiness = () => {
+    const rated = readinessFields.filter(field => field.value !== "");
+    if (!rated.length) { result.innerHTML = "<strong>Readiness profile:</strong> Rate the nine domains to generate a discussion summary."; return; }
+    const total = rated.reduce((sum, field) => sum + Number(field.value), 0);
+    const maximum = rated.length * 3;
+    const percent = Math.round((total / maximum) * 100);
+    const gaps = readinessFields.map((field, index) => ({ field, domain: readinessDomains[index] })).filter(item => item.field.value !== "" && Number(item.field.value) <= 1).map(item => item.domain);
+    const next = percent < 25 ? "Begin with vision, interim safe-use boundaries, leadership sponsorship, and basic governance." : percent < 50 ? "Prioritize the lowest-rated domains before selecting or expanding pilots." : percent < 75 ? "Address material gaps and validate safeguards before deployment." : "Confirm evidence, test locally, and maintain governance and monitoring rather than assuming readiness is permanent.";
+    result.innerHTML = `<strong>Foundation discussion profile:</strong> ${total} of ${maximum} points across ${rated.length} rated domain${rated.length === 1 ? "" : "s"} (${percent}%). <strong>Priority gaps:</strong> ${gaps.length ? gaps.join(", ") : "No rated domain is currently at 0 or 1"}. <strong>Suggested next step:</strong> ${next}`;
+  };
+  readinessFields.forEach(field => field.addEventListener("change", updateReadiness));
+  updateReadiness();
+}
