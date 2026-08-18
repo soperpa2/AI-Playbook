@@ -9214,7 +9214,7 @@ function saveForumPost() {
 
 function renderContribute() {
   const state = getMemberState();
-  main.innerHTML = pageIntro("Contribute / Feedback", "Help improve the AI Playbook for Public Health by sharing feedback, implementation examples, tools, use cases, or community of practice updates.") + `
+  main.innerHTML = pageIntro("Contribute / Feedback", "Help improve the AI Playbook for Public Health by applying to review materials, sharing feedback or corrections, identifying implementation needs, recommending evidence, or sharing public examples.") + `
     <section class="panel reviewer-benefits-panel">
       <div class="section-heading"><p class="eyebrow">Reviewer program</p><h2>Reviewer benefits</h2><p>Free members may apply for structured reviews matched to their experience. Selection depends on topic fit, perspective balance, and available review capacity.</p></div>
       <div class="four-grid"><article><h3>Early access</h3><p>See selected new plays, tools, or learning resources before public release.</p></article><article><h3>Professional learning</h3><p>Learn from practical public health scenarios, structured review questions, and emerging implementation issues.</p></article><article><h3>Visible contribution</h3><p>Receive optional acknowledgment, with permission, for completed review contributions.</p></article><article><h3>Field influence</h3><p>Help improve clarity, usability, evidence, accessibility, role fit, and public health relevance.</p></article></div>
@@ -9223,7 +9223,7 @@ function renderContribute() {
     <div class="two-col">
       <form class="panel contribute-form">
         <h2>Submit a Contribution</h2>
-        <label>Contribution type<select><option>Submit feedback</option><option>Suggest a tool</option><option>Share an implementation example</option><option>Share a public health AI use case</option><option>Join updates or community of practice</option></select></label>
+        <label>Contribution type<select><option>Apply to become a reviewer</option><option>Submit feedback or a correction</option><option>Suggest a tool need or implementation challenge</option><option>Recommend evidence or a resource</option><option>Share an implementation example</option><option>Share a public health AI use case</option><option>Partnership or licensing inquiry</option><option>Join updates or community of practice</option></select></label>
         <label>Name<input autocomplete="name"></label>
         <label>Email<input type="email" autocomplete="email"></label>
         <label>Message<textarea rows="7" placeholder="Share enough context for follow-up."></textarea></label>
@@ -9233,9 +9233,11 @@ function renderContribute() {
         <h2>Contribution Paths</h2>
         <ul>
           <li>Submit feedback on play sequencing or tool usability.</li>
-          <li>Suggest a missing checklist, template, or governance artifact.</li>
+          <li>Identify an unmet tool need or implementation challenge without submitting proprietary materials.</li>
           <li>Share a public health implementation example.</li>
           <li>Share a public health AI use case, including predictive, analytic, generative, agentic, automation, or vendor-enabled examples.</li>
+          <li>Recommend an evidence source or public resource.</li>
+          <li>Use the partnership or licensing route before sharing an existing tool, framework, or other proprietary material.</li>
           <li>Join updates or a peer learning community.</li>
         </ul>
       </aside>
