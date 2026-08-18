@@ -2018,6 +2018,17 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
   grid-template-columns: 1fr;
   gap: 1.15rem;
 }
+.guided-tool-intro { margin: 0 0 1.5rem; padding: 1.1rem 1.2rem; border-left: 4px solid var(--green); background: #f4fbf5; }
+.guided-tool-intro p:last-child { margin-bottom: 0; }
+.guided-tool-key { color: var(--muted); }
+.guided-tool-fields { display: grid; gap: 1.25rem; }
+.guided-tool-fields > label { display: grid; gap: .45rem; font-weight: 700; }
+.guided-field-help { display: block; color: var(--muted); font-weight: 400; line-height: 1.45; }
+.guided-checkbox-group { margin: 0; padding: 1rem; border: 1px solid var(--line); border-radius: 10px; }
+.guided-checkbox-group legend { padding: 0 .35rem; color: var(--navy); font-weight: 700; }
+.guided-check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem 1rem; margin-top: .65rem; }
+.guided-check-grid label { display: flex; align-items: flex-start; gap: .55rem; padding: .55rem .65rem; border: 1px solid #dbe6ed; border-radius: 8px; background: #fff; font-weight: 400; }
+.guided-check-grid input { width: 1rem; height: 1rem; min-height: 1rem; margin-top: .2rem; padding: 0; flex: 0 0 auto; }
 .tool-form label input,
 .tool-form label select,
 .tool-form label textarea {
@@ -3058,7 +3069,7 @@ th { color: var(--ink); background: var(--sky); }
   .framework-intro aside { margin-top: 0; }
   .use-playbook-panel ul { columns: 1; }
   .filter-panel { position: static; }
-  .card-grid, .four-grid, .workflow-grid, .tools-grid, .form-grid, .member-stats, .overview-grid, .output-list, .rating-legend, .reference-list, .news-grid, .rss-model-grid, .glossary-list, .exercise-support-grid, .systems-map-nodes { grid-template-columns: 1fr; gap: 1rem; }
+  .card-grid, .four-grid, .workflow-grid, .tools-grid, .form-grid, .member-stats, .overview-grid, .output-list, .rating-legend, .reference-list, .news-grid, .rss-model-grid, .glossary-list, .exercise-support-grid, .systems-map-nodes, .guided-check-grid { grid-template-columns: 1fr; gap: 1rem; }
   .phase-label { grid-template-columns: 1fr; align-items: start; }
   .change-form-empty, .change-form-header { flex-direction: column; align-items: flex-start; }
   .play-tile { width: 100%; }

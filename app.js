@@ -4082,8 +4082,13 @@ function restoreToolProgress(toolId, blueprint) {
   const form = document.getElementById("tool-form");
   saved.entries.forEach(([section, fields]) => {
     fields.forEach(([field, value]) => {
-      const input = [...form.elements].find(el => el.name === toolFieldName(section, field) || el.name === field);
-      if (input) input.value = value || "";
+      const inputs = [...form.elements].filter(el => el.name === toolFieldName(section, field) || el.name === field);
+      if (inputs.some(input => input.type === "checkbox")) {
+        const selected = new Set(String(value || "").split("; ").filter(Boolean));
+        inputs.forEach(input => { input.checked = selected.has(input.value); });
+      } else if (inputs.some(input => input.type === "radio")) {
+        inputs.forEach(input => { input.checked = input.value === value; });
+      } else if (inputs[0]) inputs[0].value = value || "";
     });
   });
   const status = document.getElementById("tool-save-status");
@@ -6414,7 +6419,8 @@ function saveToolRating(toolId) {
 
 function renderToolDetail(id) {
   const t = tools.find(x => x.id === id) || tools[0];
-  const blueprint = toolFormBlueprints[t.id] || [["Tool Notes", ["Decision or output", "Risks, gaps, or follow-ups"]]];
+  const guidedDefinition = window.GuidedToolDefinitions?.[t.id];
+  const blueprint = guidedDefinition ? window.GuidedToolTemplate.asLegacyBlueprint(guidedDefinition) : (toolFormBlueprints[t.id] || [["Tool Notes", ["Decision or output", "Risks, gaps, or follow-ups"]]]);
   const outputs = outputsForTool(t, blueprint);
   const isMember = hasMemberProfile();
   main.innerHTML = pageIntro(`Tool ${t.id}: ${t.title}`, t.purpose) + `
@@ -6433,7 +6439,7 @@ function renderToolDetail(id) {
               <label>Review status<select name="${toolFieldName("Administrative Details", "Review status")}"><option>Draft</option><option>Ready for review</option><option>Submitted to governance</option><option>Approved</option><option>Needs revision</option></select></label>
             </div>
           </section>
-          ${blueprint.map(([section, fields], sectionIndex)=>`
+          ${guidedDefinition ? window.GuidedToolTemplate.render(guidedDefinition) : blueprint.map(([section, fields], sectionIndex)=>`
             <section class="tool-section">
               <h3>${section}</h3>
               <div class="${sectionIndex === 0 ? "form-grid" : "tool-form-stack"}">
@@ -6487,7 +6493,13 @@ function toolFieldName(section, field) {
 
 function collectToolEntries(blueprint, blank = false) {
   const form = document.getElementById("tool-form");
-  const valueFor = (section, field) => blank ? "" : ([...form.elements].find(el => el.name === toolFieldName(section, field))?.value || "");
+  const valueFor = (section, field) => {
+    if (blank) return "";
+    const inputs = [...form.elements].filter(el => el.name === toolFieldName(section, field));
+    if (inputs.some(input => input.type === "checkbox")) return inputs.filter(input => input.checked).map(input => input.value).join("; ");
+    if (inputs.some(input => input.type === "radio")) return inputs.find(input => input.checked)?.value || "";
+    return inputs[0]?.value || "";
+  };
   return [
     ["Administrative Details", ["Owner or facilitator", "Date", "Agency / program", "Review status"].map(field => [field, valueFor("Administrative Details", field)])],
     ...blueprint.map(([section, fields]) => [section, fields.map(field => [field, valueFor(section, field)])])
@@ -7748,7 +7760,7 @@ function organizationChangeManagementDashboard(state) {
               <h3>${renderSavedToolValue(toolValue("Deployment change profile", "AI system or workflow"), "Saved Tool 38 dashboard")}</h3>
               <p class="plain-meta">Last saved: ${escapeDoc(savedExecutionDashboard.savedAt || "date not available")}</p>
             </div>
-            <a class="btn small" href="#/toolkit/37">Update Tool 38</a>
+            <a class="btn small" href="#/toolkit/38">Update Tool 38</a>
           </div>
           <div class="change-profile-grid">
             <article><span>Deployment phase</span><strong>${renderSavedToolValue(toolValue("Deployment change profile", "Deployment phase"))}</strong></article>
@@ -7784,7 +7796,7 @@ function organizationChangeManagementDashboard(state) {
             <h3>No saved Tool 38 dashboard yet</h3>
             <p>Complete and save Tool 38 to populate this dashboard with the AI system or workflow, reporting period, training completion, communications, adoption indicators, barriers, escalations, readiness status, and lessons learned.</p>
           </div>
-          <a class="btn primary" href="#/toolkit/37">Open Tool 38</a>
+          <a class="btn primary" href="#/toolkit/38">Open Tool 38</a>
         </div>
       `}
       <div class="change-dashboard-grid">
