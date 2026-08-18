@@ -4108,14 +4108,16 @@ function saveToolProgress(tool, blueprint) {
   const state = getMemberState();
   const savedAt = new Date().toLocaleString();
   const actions = collectToolActions(tool);
+  const selectionDocumentation = collectSelectionDocumentation(tool);
+  const selectionTasks = selectionDocumentationTasks(tool, selectionDocumentation);
   state.savedTools = [
     ...(state.savedTools || []).filter(item => item.toolId !== tool.id),
-    { toolId: tool.id, title: tool.title, savedAt, entries: collectToolEntries(blueprint, false), actions }
+    { toolId: tool.id, title: tool.title, savedAt, entries: collectToolEntries(blueprint, false), actions, selectionDocumentation }
   ];
-  state.toolTasks = [...(state.toolTasks || []).filter(action => action.toolId !== tool.id), ...actions];
+  state.toolTasks = [...(state.toolTasks || []).filter(action => action.toolId !== tool.id), ...actions, ...selectionTasks];
   setMemberState(state);
   const status = document.getElementById("tool-save-status");
-  if (status) status.textContent = `Progress saved for Tool ${tool.id} at ${savedAt}. ${actions.length} task${actions.length === 1 ? "" : "s"} synchronized to the integrated task tracker.`;
+  if (status) status.textContent = `Progress saved for Tool ${tool.id} at ${savedAt}. ${actions.length + selectionTasks.length} task${actions.length + selectionTasks.length === 1 ? "" : "s"} synchronized to the integrated task tracker.`;
 }
 
 function renderHome() {
@@ -6438,7 +6440,31 @@ function saveToolRating(toolId) {
   if (status) status.textContent = `Saved ${stars}-star rating.`;
 }
 
+const toolExampleScenarios = {
+  caseTriage: { name: "AI-assisted communicable-disease case triage", program: "Communicable Disease Program", owner: "surveillance epidemiologist", data: "identifiable case reports and electronic laboratory records", community: "rural clinics, Tribal partners, and populations affected by uneven reporting completeness", evidence: "12 months of epidemiologist-reviewed case and escalation records", risk: "incorrect prioritization could delay investigation or worsen subgroup disparities", followUp: "complete privacy review and compare rural, Tribal, and urban performance before pilot approval" },
+  syndromic: { name: "syndromic-surveillance outbreak detection pilot", program: "Epidemiology and Surveillance Division", owner: "syndromic surveillance lead", data: "emergency-department chief complaints, facility feeds, and county population estimates", community: "facilities and communities with different reporting timeliness and completeness", evidence: "retrospective comparison with confirmed outbreak investigations and epidemiologist-reviewed alerts", risk: "false alerts may consume response capacity while missed signals may delay public health action", followUp: "set alert thresholds, validate subgroup and facility performance, and schedule a 90-day governance review" },
+  immunization: { name: "AI-assisted immunization outreach workflow", program: "Immunization Program", owner: "immunization program manager", data: "immunization registry records, contact information, preferred language, and appointment history", community: "families with limited English proficiency, rural residents, people with disabilities, and communities with access barriers", evidence: "outreach completion, appointment, opt-out, language-access, and complaint records", risk: "inaccurate contact recommendations or inaccessible messages could worsen trust and access", followUp: "conduct privacy, language-access, accessibility, and community review before outreach begins" },
+  environmental: { name: "AI-assisted environmental-health inspection summarization service", program: "Environmental Health Division", owner: "environmental health program supervisor", data: "inspection narratives, facility records, photographs, and enforcement history", community: "facility operators, inspectors, workers, and neighborhoods affected by environmental-health decisions", evidence: "a sample of inspector-approved reports and corrected AI summaries", risk: "missing or overstated findings could affect enforcement, safety, and public trust", followUp: "validate summaries with inspectors and require human approval before records or notices are finalized" },
+  chatbot: { name: "public-facing respiratory-health information chatbot", program: "Public Information and Community Health", owner: "public information officer", data: "approved health guidance, service directories, public questions, and de-identified usage logs", community: "residents with different literacy, language, disability-access, and digital-access needs", evidence: "content review results, accessibility tests, translation review, unanswered questions, and complaint logs", risk: "incorrect, inaccessible, or outdated advice could mislead residents and damage trust", followUp: "require clinical, communications, accessibility, language-access, privacy, and governance approval before launch" },
+  emergency: { name: "AI-assisted emergency risk communication workflow", program: "Emergency Preparedness and Response", owner: "emergency risk communication lead", data: "incident action plans, approved situation reports, partner updates, and public information templates", community: "residents, healthcare partners, local officials, media, and groups needing accessible or translated warnings", evidence: "communications approval records, message-testing results, correction logs, and after-action findings", risk: "fast but inaccurate or inaccessible messages could undermine emergency response and public confidence", followUp: "require subject-matter and communications approval, document sources, and maintain a rapid correction pathway" }
+};
+
+function toolExampleScenario(tool) {
+  const syndromic = new Set([9,14,31,36,39,40,41,42,43,44,47,48]);
+  const immunization = new Set([7,8,24,25,26,27,28]);
+  const environmental = new Set([4,5,32,33,34,35]);
+  const chatbot = new Set([11,12,19,20,22]);
+  const emergency = new Set([1,21,23,29,30,38]);
+  if (syndromic.has(tool.id)) return toolExampleScenarios.syndromic;
+  if (immunization.has(tool.id)) return toolExampleScenarios.immunization;
+  if (environmental.has(tool.id)) return toolExampleScenarios.environmental;
+  if (chatbot.has(tool.id)) return toolExampleScenarios.chatbot;
+  if (emergency.has(tool.id)) return toolExampleScenarios.emergency;
+  return toolExampleScenarios.caseTriage;
+}
+
 function toolUseGuide(tool) {
+  const scenario = toolExampleScenario(tool);
   const relatedPlays = tool.playIds.map(id => plays.find(play => play.id === id)).filter(Boolean);
   const involved = [...new Set(relatedPlays.flatMap(play => play.who || []))];
   const searchable = `${tool.title} ${tool.purpose}`.toLowerCase();
@@ -6457,22 +6483,11 @@ function toolUseGuide(tool) {
   const resources = [...resourceMap.values()].slice(0, 5);
   const modules = learningModules.filter(module => (module.tools || []).includes(tool.id)).slice(0, 4);
   const playNames = relatedPlays.map(play => `Play ${play.id}: ${play.title}`).join(", ");
-  const publicHealthExamples = {
-    1: "Set guardrails for using generative AI to draft health advisories while requiring communications and subject-matter review before release.",
-    2: "Assess whether epidemiology, immunization, environmental health, and emergency preparedness programs have the data, workforce, and governance capacity for a pilot.",
-    3: "Route an AI-assisted reportable-disease workflow through privacy, security, equity, legal, program, and governance review.",
-    4: "Consult residents, frontline staff, Tribal partners, disability advocates, and language-access staff before introducing a public-facing AI service.",
-    5: "Assign role-based learning to epidemiologists, public information officers, program managers, IT staff, and executive leaders.",
-    6: "Plan workflow changes, staff communications, office hours, and escalation support before an AI-assisted case-routing pilot begins.",
-    7: "Compare a syndromic-surveillance signal detector, an immunization outreach assistant, and an environmental-health inspection summarizer using the same criteria.",
-    8: "Document PHIG, DMI, grant, general-fund, staffing, procurement, evaluation, and sustainment resources for an approved pilot.",
-    9: "Sequence governance approval, data preparation, vendor review, workforce training, pilot testing, evaluation, and scale decisions.",
-    10: "Track training, adoption barriers, workflow feedback, and corrective actions during deployment in a communicable-disease program.",
-    11: "Validate an AI-supported outbreak triage workflow with de-identified data, subgroup testing, human review, rollback criteria, and go-live approval.",
-    12: "Record quarterly governance decisions, incidents, corrective actions, policy updates, and system retirement or continuation decisions.",
-    13: "Monitor accuracy, timeliness, subgroup performance, accessibility, staff workload, community feedback, and public health outcomes after launch."
-  };
-  const examples = [...new Set(relatedPlays.map(play => publicHealthExamples[play.id]).filter(Boolean))].slice(0, 3);
+  const examples = [
+    `<strong>Worked example used throughout this tool:</strong> ${scenario.name} in the ${scenario.program}.`,
+    `<strong>Evidence context:</strong> ${scenario.evidence}.`,
+    `<strong>Primary concern and follow-up:</strong> ${scenario.risk}; ${scenario.followUp}.`
+  ];
   const unique = values => [...new Set(values.filter(Boolean))];
   const responsible = unique((tool.roles || []).length ? tool.roles : involved.slice(0, 2));
   const support = unique(involved.filter(role => /IT|data|analytics|evaluation|informatics|PMO|finance|grants|training|HR|change|communications|procurement|vendor|technical/i.test(role)));
@@ -6502,7 +6517,7 @@ function toolUseGuide(tool) {
         const additional = roles.length > 2 ? ` +${roles.length - 2} more` : "";
         return `<details class="tool-rasci-item"><summary><strong>${category}</strong><span>${preview}${additional}</span></summary><p>${meaning}</p><ul class="compact-list">${roles.map(role => `<li>${role}</li>`).join("")}</ul></details>`;
       }).join("")}</div></section>
-      <section class="tool-public-health-examples"><h3>Public health examples</h3><ul class="compact-list compact-example-list">${examples.map(example => `<li>${example}</li>`).join("")}</ul></section>
+      <section class="tool-public-health-examples"><h3>Public health example used throughout this tool</h3><ul class="compact-list compact-example-list">${examples.map(example => `<li>${example}</li>`).join("")}</ul><p class="plain-meta">This example is illustrative. Replace it with the agency’s actual program, evidence, communities, risks, decisions, and owners.</p></section>
     </div>
     <section class="tool-guide-links"><h3>Related plays</h3><p>${relatedPlays.map(play => playLink(play.id)).join("<br>")}</p></section>
     <section class="tool-guide-links"><h3>References and preparation materials</h3>
@@ -6526,6 +6541,68 @@ function toolActionRow(toolId, action = {}, index = 0) {
     <td><textarea rows="2" data-action-field="notes" placeholder="Example: Privacy review required before testing with identifiable case data.">${escapeDoc(action.notes || "")}</textarea></td>
     <td><button class="btn small remove-tool-action" type="button" aria-label="Remove action ${index + 1}">Remove</button></td>
   </tr>`;
+}
+
+function renderSelectionDocumentation(tool) {
+  return `<section class="tool-section selection-documentation" data-selection-documentation="${tool.id}">
+    <div class="selection-documentation-header"><p class="eyebrow">Generated from Checklist Selections</p><h3>Selection documentation</h3><p>Select a checkbox above to create a documentation record here. Records remain grouped below the checklist so the choices stay compact.</p></div>
+    <p class="selection-documentation-empty">No checkbox items selected yet.</p>
+    <div class="selection-documentation-list"></div>
+  </section>`;
+}
+
+function selectionDocumentationCard(record = {}, scenario = {}) {
+  const title = `${record.field || "Selection"}: ${record.option || "Selected item"}`;
+  return `<article class="selection-documentation-card" data-selection-key="${escapeDoc(record.key || "")}" data-selection-field="${escapeDoc(record.field || "")}" data-selection-option="${escapeDoc(record.option || "")}">
+    <div class="selection-documentation-title"><h4>${escapeDoc(title)}</h4><span>Selected</span></div>
+    <div class="selection-documentation-grid">
+      <label>Why this applies<textarea rows="2" data-selection-doc-field="rationale" placeholder="Explain why this selection applies to the ${escapeDoc(scenario.name || "public health use case")}.">${escapeDoc(record.rationale || "")}</textarea></label>
+      <label>Evidence or source<textarea rows="2" data-selection-doc-field="evidence" placeholder="Example: ${escapeDoc(scenario.evidence || "policy, testing, meeting notes, or data review")}">${escapeDoc(record.evidence || "")}</textarea></label>
+      <label>Local details<textarea rows="2" data-selection-doc-field="details" placeholder="Programs, populations, systems, limitations, or jurisdiction-specific context.">${escapeDoc(record.details || "")}</textarea></label>
+      <label>Required follow-up<textarea rows="2" data-selection-doc-field="followUp" placeholder="Example: ${escapeDoc(scenario.followUp || "complete required review before proceeding")}">${escapeDoc(record.followUp || "")}</textarea></label>
+      <label>Owner<input data-selection-doc-field="owner" value="${escapeDoc(record.owner || "")}" placeholder="Example: ${escapeDoc(scenario.owner || "program manager")}"></label>
+      <label>Target date<input type="date" data-selection-doc-field="dueDate" value="${escapeDoc(record.dueDate || "")}"></label>
+      <label>Status<select data-selection-doc-field="status">${["Not started", "In progress", "Blocked", "Ready for review", "Completed"].map(status => `<option${status === (record.status || "Not started") ? " selected" : ""}>${status}</option>`).join("")}</select></label>
+    </div>
+  </article>`;
+}
+
+function collectSelectionDocumentation(tool) {
+  return [...document.querySelectorAll(`[data-selection-documentation="${tool.id}"] [data-selection-key]`)].map(card => {
+    const value = name => card.querySelector(`[data-selection-doc-field="${name}"]`)?.value.trim() || "";
+    return { key: card.dataset.selectionKey, field: card.dataset.selectionField, option: card.dataset.selectionOption, rationale: value("rationale"), evidence: value("evidence"), details: value("details"), followUp: value("followUp"), owner: value("owner"), dueDate: value("dueDate"), status: value("status") || "Not started" };
+  });
+}
+
+function hydrateSelectionDocumentation(tool) {
+  const container = document.querySelector(`[data-selection-documentation="${tool.id}"]`);
+  if (!container) return;
+  const list = container.querySelector(".selection-documentation-list");
+  const saved = new Map((savedToolRecord(tool.id)?.selectionDocumentation || []).map(record => [record.key, record]));
+  const sync = () => {
+    const selected = [...document.querySelectorAll('#tool-form .guided-checkbox-group input[type="checkbox"]:checked')];
+    const keys = new Set(selected.map(input => `${input.name}|||${input.value}`));
+    [...list.querySelectorAll("[data-selection-key]")].forEach(card => { if (!keys.has(card.dataset.selectionKey)) card.remove(); });
+    selected.forEach(input => {
+      const key = `${input.name}|||${input.value}`;
+      if (list.querySelector(`[data-selection-key="${CSS.escape(key)}"]`)) return;
+      const holder = document.createElement("div");
+      const field = input.name.split("::").slice(-1)[0];
+      holder.innerHTML = selectionDocumentationCard({ key, field, option: input.value, ...(saved.get(key) || {}) }, toolExampleScenario(tool));
+      list.appendChild(holder.firstElementChild);
+    });
+    container.querySelector(".selection-documentation-empty").hidden = Boolean(list.children.length);
+  };
+  document.querySelectorAll('#tool-form .guided-checkbox-group input[type="checkbox"]').forEach(input => input.addEventListener("change", sync));
+  container._syncSelectionDocumentation = sync;
+  sync();
+}
+
+function selectionDocumentationTasks(tool, records) {
+  return records.filter(record => record.followUp || record.owner || record.dueDate).map((record, index) => ({
+    id: `tool-${tool.id}-selection-${index + 1}`, source: "selection-documentation", selectionKey: record.key, toolId: tool.id, toolTitle: tool.title, playIds: [...tool.playIds],
+    activity: record.followUp || `Resolve documented selection: ${record.field} — ${record.option}`, owner: record.owner, dueDate: record.dueDate, status: record.status || "Not started", reviewDate: "", notes: [record.rationale, record.evidence, record.details].filter(Boolean).join(" | ")
+  }));
 }
 
 function renderToolActionTracker(tool) {
@@ -6561,7 +6638,7 @@ function hydrateToolActionTracker(toolId) {
 function collectToolActions(tool) {
   return [...document.querySelectorAll(`[data-tool-action-tracker="${tool.id}"] [data-tool-action-row]`)].map((row, index) => {
     const value = field => row.querySelector(`[data-action-field="${field}"]`)?.value.trim() || "";
-    return { id: `tool-${tool.id}-task-${index + 1}`, toolId: tool.id, toolTitle: tool.title, playIds: [...tool.playIds], activity: value("activity"), owner: value("owner"), dueDate: value("dueDate"), status: value("status") || "Not started", reviewDate: value("reviewDate"), notes: value("notes") };
+    return { id: `tool-${tool.id}-task-${index + 1}`, source: "tool-action", toolId: tool.id, toolTitle: tool.title, playIds: [...tool.playIds], activity: value("activity"), owner: value("owner"), dueDate: value("dueDate"), status: value("status") || "Not started", reviewDate: value("reviewDate"), notes: value("notes") };
   }).filter(action => action.activity || action.owner || action.dueDate || action.reviewDate || action.notes);
 }
 
@@ -6569,6 +6646,7 @@ function renderToolDetail(id) {
   const t = tools.find(x => x.id === id) || tools[0];
   const sourceBlueprint = toolFormBlueprints[t.id] || [["Tool Notes", ["Decision or output", "Risks, gaps, or follow-ups"]]];
   const guidedDefinition = window.GuidedToolDefinitions?.[t.id] || window.GuidedToolFactory.create(t, sourceBlueprint);
+  guidedDefinition.scenario = toolExampleScenario(t);
   const blueprint = window.GuidedToolTemplate.asLegacyBlueprint(guidedDefinition);
   const outputs = outputsForTool(t, blueprint);
   const isMember = hasMemberProfile();
@@ -6582,13 +6660,14 @@ function renderToolDetail(id) {
           <section class="tool-section">
             <h3>Administrative Details</h3>
             <div class="form-grid">
-              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Owner or facilitator", type: "text", guidance: "Name the person responsible for convening completion and coordinating follow-up.", example: "Jordan Lee, Program Manager" })}
-              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Date", type: "text", inputType: "date", guidance: "Record the meeting, review, or approval date.", example: "August 18, 2026" })}
-              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Agency / program", type: "text", guidance: "Identify the health department, division, bureau, or program that owns this artifact.", example: "County Health Department, Communicable Disease Program" })}
-              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Review status", type: "select", options: ["Draft", "Ready for review", "Submitted to governance", "Approved", "Needs revision"] })}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Owner or facilitator", type: "text", guidance: "Name the person responsible for convening completion and coordinating follow-up." }, guidedDefinition.scenario)}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Date", type: "text", inputType: "date", guidance: "Record the meeting, review, or approval date." }, guidedDefinition.scenario)}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Agency / program", type: "text", guidance: "Identify the health department, division, bureau, or program that owns this artifact." }, guidedDefinition.scenario)}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Review status", type: "select", options: ["Draft", "Ready for review", "Submitted to governance", "Approved", "Needs revision"] }, guidedDefinition.scenario)}
             </div>
           </section>
           ${window.GuidedToolTemplate.render(guidedDefinition)}
+          ${renderSelectionDocumentation(t)}
           ${renderToolActionTracker(t)}
         </form>
         ${memberOnlyNotice(isMember)}
@@ -6613,6 +6692,7 @@ function renderToolDetail(id) {
   window.GuidedToolTemplate.hydrate(document.getElementById("tool-form"));
   hydrateToolActionTracker(t.id);
   restoreToolProgress(t.id, blueprint);
+  hydrateSelectionDocumentation(t);
   hydrateToolRatingPanel();
   document.getElementById("download-blank-tool").addEventListener("click", () => runDocumentDownload(() => downloadToolWord(t, blueprint, true), "Blank Word template"));
   document.getElementById("download-blank-pdf").addEventListener("click", () => runDocumentDownload(() => downloadToolPdf(t, blueprint, true), "Blank PDF template"));
@@ -6814,6 +6894,14 @@ function buildProfessionalWordHtml(title, status, subtitle, metaRows, sections, 
 
 function toolDocumentSections(tool, blueprint, blank = false) {
   const sections = collectToolEntries(blueprint, blank).map(([heading, rows]) => ({ heading, rows }));
+  const selectionDocumentation = blank ? [] : collectSelectionDocumentation(tool);
+  sections.push({
+    heading: "Selection Documentation",
+    rows: selectionDocumentation.length ? selectionDocumentation.map((record, index) => [
+      `${index + 1}. ${record.field}: ${record.option}`,
+      [`Why this applies: ${record.rationale || ""}`, `Evidence or source: ${record.evidence || ""}`, `Local details: ${record.details || ""}`, `Required follow-up: ${record.followUp || ""}`, `Owner: ${record.owner || ""}`, `Target date: ${record.dueDate || ""}`, `Status: ${record.status || "Not started"}`].join("\n")
+    ]) : [["Selected checklist item", ""]]
+  });
   const actions = blank ? [{}] : collectToolActions(tool);
   sections.push({
     heading: "Action and Follow-up Tracking",
@@ -7520,7 +7608,11 @@ function collectOrganizationDashboardFromDom(state) {
   state.toolTasks = toolTasks;
   state.savedTools = (state.savedTools || []).map(saved => ({
     ...saved,
-    actions: toolTasks.filter(task => task.toolId === saved.toolId)
+    actions: toolTasks.filter(task => task.toolId === saved.toolId && task.source !== "selection-documentation"),
+    selectionDocumentation: (saved.selectionDocumentation || []).map(record => {
+      const task = toolTasks.find(item => item.toolId === saved.toolId && item.source === "selection-documentation" && item.selectionKey === record.key);
+      return task ? { ...record, followUp: task.activity, owner: task.owner, dueDate: task.dueDate, status: task.status } : record;
+    })
   }));
   return state;
 }

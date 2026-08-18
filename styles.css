@@ -2058,11 +2058,24 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
 .tool-action-table textarea { min-width: 14rem; }
 .tool-action-table input, .tool-action-table select, .tool-action-table textarea { margin: 0; }
 .tool-task-rollup { min-width: 1200px; }
+.selection-documentation { margin-top: 1rem; border: 2px solid #b8d3e6; background: #f6fafc; }
+.selection-documentation-header h3 { margin: .1rem 0 .25rem; }
+.selection-documentation-header p:last-child, .selection-documentation-empty { margin-bottom: .7rem; color: var(--muted); }
+.selection-documentation-list { display: grid; gap: .65rem; }
+.selection-documentation-card { padding: .75rem; border: 1px solid #c9dce9; border-radius: .5rem; background: #fff; }
+.selection-documentation-title { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: .55rem; }
+.selection-documentation-title h4 { margin: 0; color: var(--blue); }
+.selection-documentation-title span { padding: .15rem .45rem; border-radius: 999px; color: #1f6236; background: #e8f6ec; font-size: .75rem; font-weight: 700; }
+.selection-documentation-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .55rem; }
+.selection-documentation-grid label:nth-child(-n+4) { grid-column: span 2; }
+.selection-documentation-grid textarea, .selection-documentation-grid input, .selection-documentation-grid select { margin-top: .25rem; }
 .assessment-pathway { display: grid; gap: .65rem; padding: 0; list-style: none; }
 .assessment-pathway li { display: flex; align-items: flex-start; gap: .65rem; padding: .7rem; border-left: 3px solid var(--green); background: #f5fbf6; }
 .assessment-pathway li div { display: grid; gap: .2rem; }
 .assessment-pathway small { color: var(--muted); line-height: 1.35; }
 @media (max-width: 720px) { .tool-action-header { flex-direction: column; } }
+@media (max-width: 900px) { .selection-documentation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .selection-documentation-grid label:nth-child(-n+4) { grid-column: auto; } }
+@media (max-width: 720px) { .selection-documentation-grid { grid-template-columns: 1fr; } }
 .guided-checkbox-group { margin: 0; padding: 1rem; border: 1px solid var(--line); border-radius: 10px; }
 .guided-checkbox-group legend { padding: 0 .35rem; color: var(--navy); font-weight: 700; }
 .guided-check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem 1rem; margin-top: .65rem; }
