@@ -16,7 +16,7 @@ const phaseSections = Object.entries(phaseGuidance).map(([phase, [label, range, 
         <h3>${play.title}</h3>
         <p>${play.summary}</p>
         <p><strong>Expected output:</strong> ${play.output}</p>
-        <div class="button-row"><a class="btn primary" href="detail.html?play=${play.number}">Open Play ${play.number}</a><a class="btn" href="tool.html?play=${play.number}">Open Foundation Tool</a></div>
+        <div class="button-row"><a class="btn primary" href="detail.html?play=${play.number}">Open Play ${play.number}</a><a class="btn" href="${play.number === 2 ? "assess.html" : "tool.html?play=" + play.number}">Open Foundation Tool</a></div>
       </article>`).join("")}
     </div>
   </section>`).join("");

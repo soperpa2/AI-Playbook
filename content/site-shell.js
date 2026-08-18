@@ -1,7 +1,7 @@
 (function renderSharedPlaybookShell() {
   const foundation = location.pathname.includes("/mvp/");
   const links = foundation ? [
-    ["Start Here", "index.html#top", "start"], ["Learn", "learning.html", "learn"], ["Assess", "tool.html?play=2", "assess"],
+    ["Start Here", "index.html#top", "start"], ["Learn", "learning.html", "learn"], ["Assess", "assess.html", "assess"],
     ["Maturity Model", "foundation-page.html?view=maturity", "maturity"], ["Plays", "plays.html", "plays"], ["Toolkit", "toolkit.html", "toolkit"],
     ["Case Studies", "foundation-page.html?view=cases", "cases"], ["Community", "foundation-page.html?view=community", "community"],
     ["Contribute", "feedback.html", "contribute"], ["Contact Us", "foundation-page.html?view=contact", "contact"],
@@ -33,7 +33,7 @@
     const params = new URLSearchParams(location.search);
     const view = params.get("view");
     if (["learning.html", "module.html", "training-paths.html", "training-path.html"].includes(page)) return "learn";
-    if (page === "tool.html" && params.get("play") === "2") return "assess";
+    if (page === "assess.html") return "assess";
     if (["toolkit.html", "tool.html"].includes(page)) return "toolkit";
     if (["plays.html", "detail.html"].includes(page)) return "plays";
     if (page === "resources.html") return "resources";

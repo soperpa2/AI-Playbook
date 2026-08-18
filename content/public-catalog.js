@@ -26,7 +26,7 @@ window.launchContent = {
   ]
 };
 
-// Canonical play names are shared across editions; Foundation changes access depth, not the framework.
+// Full Version play names are shared across editions; Foundation changes access depth, not the framework.
 [
   "Vision & Guardrails",
   "Readiness Assessment",

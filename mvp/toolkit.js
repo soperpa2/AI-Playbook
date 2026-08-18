@@ -9,7 +9,7 @@ main.innerHTML = window.PlaybookTemplates.pageOpen({ title: "One practical tool 
       <p class="eyebrow">${play.phase} · Play ${play.number}</p>
       <h2>${play.tool.title}</h2>
       <p>${play.tool.purpose}</p>
-      <div class="button-row"><a class="btn primary" href="tool.html?play=${play.number}">Open tool</a><a class="btn" href="detail.html?play=${play.number}">View related play</a></div>
+      <div class="button-row"><a class="btn primary" href="${play.number === 2 ? "assess.html" : "tool.html?play=" + play.number}">Open tool</a><a class="btn" href="detail.html?play=${play.number}">View related play</a></div>
     </article>`).join("")}
   </div>
 </section>`;

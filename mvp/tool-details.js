@@ -1,6 +1,8 @@
 const { plays, release } = window.launchContent;
 document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="foundation-content.css?v=20260818-foundation-content">');
-const requestedPlay = Number(new URLSearchParams(location.search).get("play"));
+const toolParams = new URLSearchParams(location.search);
+const requestedPlay = Number(toolParams.get("play"));
+if (requestedPlay === 2 && !toolParams.get("name")) window.location.replace("assess.html");
 const play = plays.find(item => item.number === requestedPlay) || plays[0];
 const readinessDomains = ["Leadership and governance", "Strategy and use-case alignment", "Data quality and stewardship", "Technology and interoperability", "Privacy, security, and legal review", "Workforce capability and change readiness", "Equity, accessibility, and community engagement", "Procurement and vendor oversight", "Evaluation, monitoring, and sustainment"];
 const storageKey = `foundation-tool-${play.number}`;

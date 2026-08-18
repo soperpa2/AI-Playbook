@@ -1060,7 +1060,7 @@ const learningModules = [
 const lessonDeckDownloads = {};
 const lessonPdfDownloads = {};
 
-const readinessDomains = [
+const readinessDomains = window.ReadinessAssessment?.domains || [
   ["Leadership and Governance", ["Leadership has articulated an AI vision aligned with strategic priorities.", "A clear governance structure exists or is planned.", "AI ethics and equity principles have been established.", "Budget authority exists to support AI infrastructure and workforce."]],
   ["Data Infrastructure", ["Data systems are integrated or interoperable.", "Data quality is regularly monitored.", "Cloud or modern analytics infrastructure is available.", "Data governance policies exist for access, privacy, security, and use."]],
   ["Workforce Capacity", ["Staff with data science, analytics, or AI skills are available.", "Training programs build AI literacy across the workforce.", "Job descriptions and career paths support data and AI roles.", "Academic or technical partnerships provide additional capacity."]],
@@ -1070,7 +1070,7 @@ const readinessDomains = [
   ["Policy, Procurement, and Public Accountability", ["AI policy landscape, procurement requirements, public records obligations, and agency restrictions have been reviewed before tools are selected.", "Vendor and procurement reviews include transparency, data rights, model documentation, auditability, accessibility, security, and exit requirements.", "Environmental and resource impacts, including compute, energy, water, sustainability, and environmental justice considerations, are assessed for AI projects.", "Plain-language public notice, human-centered decision rules, and limits on automated decision-making are documented for public-impacting AI uses."]]
 ].map(([name, indicators], i) => ({ id: `d${i}`, name, indicators }));
 
-const readinessGapRecommendations = {
+const readinessGapRecommendations = window.ReadinessAssessment?.gapRecommendations || {
   "Leadership and Governance": { plays: [1, 3, 12], tools: [1,2,12,46,17] },
   "Data Infrastructure": { plays: [2, 9, 11, 13], tools: [7,9,15,39,44] },
   "Workforce Capacity": { plays: [5, 6, 10], tools: [23,24,26,28,29,30] },
