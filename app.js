@@ -7,7 +7,7 @@ const phases = [
 
 const fullPlayContent = [
   { id: 1, phase: "plan", title: "Vision & Guardrails", output: "AI vision, principles, guardrails, priority areas, unresolved issues, next steps, and governance committee decision", tools: [1,2,3,4,5,6], goal: "Establish a clear strategic vision for how AI will support the agency's public health mission while defining principles that ensure responsible, ethical, and legally compliant use.", matters: "Every AI initiative begins with leadership alignment. Setting guardrails early around equity, human oversight, privacy, and prohibited uses prevents downstream harms and builds institutional trust.", who: ["Executive leadership", "Program leads", "Legal and privacy", "Equity leaders", "IT and data leaders"], questions: ["Which strategic public health problems should AI help address?", "Which uses are prohibited?", "What level of human review is required?"], actions: ["Convene a 60-90 minute leadership session.", "Agree on non-negotiable guardrails for human oversight, equity, privacy, and prohibited uses.", "Draft a 1-2 page AI Vision and Principles document.", "Align principles with NIST AI RMF 1.0.", "Identify executive sponsorship and update annually."] },
-  { id: 2, phase: "plan", title: "Readiness Assessment", output: "Readiness profile, 100-point score interpretation, gap register, and prioritized play-and-tool action plan", tools: [3,4,7,8,9,10], goal: "Assess current state across leadership, data infrastructure, workforce, equity, partnerships, privacy, and security so planning reflects organizational reality.", matters: "A frank readiness assessment finds gaps while they are still manageable, before a project discovers midstream that data, skills, infrastructure, or governance are insufficient.", who: ["Leadership", "IT", "Data and analytics", "Programs", "Legal/privacy", "Equity", "Community engagement"], questions: ["Which gaps block pilots?", "Which gaps can be addressed in parallel?", "What constraints shape feasible use cases?"], actions: ["Run a half-day assessment workshop.", "Rate each indicator honestly.", "Identify 5-8 high-priority gaps.", "Assign owners and timelines.", "Brief leadership and the governance sponsors on constraints and next steps."] },
+  { id: 2, phase: "plan", title: "Validate Readiness and Plan Improvements", output: "Validated readiness findings, evidence register, confirmed gaps, and an assigned readiness improvement plan", tools: [3,4,7,8,9,10], goal: "Turn preliminary Pathway Assessment findings into an evidence-supported organizational understanding of readiness and an actionable plan for addressing gaps.", matters: "The Pathway Assessment identifies where to begin; this play brings the appropriate people together to verify the findings, resolve unknowns or disagreements, document evidence, distinguish blocking from nonblocking gaps, and assign improvement work.", who: ["Health officer or executive sponsor", "IT director or technical lead", "Informatics, epidemiology, data, or evaluation lead", "Directors or managers of affected programs", "Agency counsel and privacy officer", "Health equity director or designated equity reviewer", "Community engagement director or designated engagement manager"], questions: ["Which preliminary findings are supported by organizational evidence?", "Which unknown, partial, or weak conditions require action?", "Which gaps block later plays and which can be addressed in parallel?"], actions: ["Import the latest AI Readiness and Pathway Assessment results, or begin with an equivalent existing assessment.", "Convene a cross-functional validation session and review each domain score, recommendation, and unknown response.", "Confirm or revise findings using policies, inventories, interviews, system documentation, meeting records, and other evidence.", "Classify gaps as blocking, parallel, monitor, or already addressed.", "Assign owners, target dates, dependencies, evidence requirements, and review status for each improvement action.", "Approve the readiness improvement plan and update the customized pathway when validated findings change the recommended sequence."] },
   { id: 3, phase: "plan", title: "Establish AI Governance", output: "AI governance committee or board, responsible AI policy, governance charter, risk-tiered review pathway, intake and approval process, documentation standards, AI system inventory, monitoring and incident response process, and policy update process", tools: [2,3,4,10,11,12,13,49,14,15,16,17,18,19], goal: "Create the governance structures, policies, decision-making processes, and oversight mechanisms needed to guide responsible AI use before projects begin.", matters: "Governance should not be added after AI tools are already in use. It should be established before use case selection, vendor engagement, pilot approval, or deployment. Public health departments need clear authority, consistent review processes, and documented accountability for AI use. Strong governance helps ensure that AI supports the public health mission while protecting privacy, security, equity, scientific integrity, workforce trust, and community confidence.", who: ["Health officer or executive sponsor", "Executive leadership or designated governance sponsor", "Legal and privacy staff", "IT and cybersecurity staff", "Equity and community engagement staff", "Program owners", "Informatics, epidemiology, data, or analytics staff", "Communications staff", "Procurement or contracting staff, as needed", "External advisors or community representatives, when appropriate", "Governance committee or board members, once appointed"], questions: ["Who has authority to approve, pause, suspend, or retire AI use?", "What types of AI use are allowed, restricted, or prohibited?", "What documentation is required before AI use cases move forward?", "What review is required for privacy, security, equity, data quality, and legal compliance?", "How will AI use cases be classified by risk?", "Who is accountable for each AI-supported workflow or system?", "How will incidents, errors, bias concerns, or harmful outputs be reported and addressed?", "How will policies, standards, and approved-use records be updated over time?"], actions: ["Confirm the governance mandate. Define why AI governance is needed, what decisions it will cover, and how it will support the department's AI vision, principles, and guardrails.", "Establish the governance body. Create or designate a cross-functional AI governance committee or board with clear membership, leadership, authority, and decision rights.", "Adopt responsible AI policy expectations. Define department-wide expectations for transparency, privacy and security, equity, human oversight, safety, legal compliance, scientific integrity, and accountability.", "Create the governance charter. Document the governance body's purpose, scope, membership, meeting cadence, decision process, documentation requirements, and escalation procedures.", "Define the AI review pathway. Establish how proposed AI uses will be submitted, screened, classified by risk, reviewed, approved, paused, or rejected.", "Align governance with existing agency processes. Connect AI oversight with data governance, IT governance, cybersecurity, privacy, legal review, procurement, communications, equity review, program leadership, and quality improvement.", "Set minimum documentation requirements. Define what must be documented for each AI use case, including purpose, owner, users, data involved, risk level, human review process, limitations, approval status, and review schedule.", "Require appropriate review before approval. Ensure that privacy, security, equity, data quality, legal, vendor, and model validation reviews occur when required based on the risk and nature of the AI use case.", "Create an AI system inventory. Maintain a central record of approved AI systems and AI-supported workflows, including owners, purpose, risk level, approval date, monitoring schedule, and review status.", "Establish ongoing oversight. Define how approved AI uses will be monitored, how incidents will be handled, how systems can be paused or retired, and how policies will be updated over time."] },
   { id: 4, phase: "plan", title: "Engage Stakeholders", output: "Stakeholder map, RACI, engagement plan, missing voices analysis, and feedback documentation", tools: [11,19,20,21,22], goal: "Build a structured stakeholder engagement framework for internal and external input throughout planning, implementation, and evaluation.", matters: "Stakeholder and community engagement is an early planning activity, not a late deployment activity. It should begin after the department has a basic readiness picture and governance pathway, but before formal use case selection, playbook design, funding commitments, pilots, procurement, or deployment. AI systems built without genuine community and workforce input often fail in deployment even when they perform well technically.", who: ["Program leads", "Community advisors", "Equity staff", "Tribal partners where applicable", "Communications", "Governance committee"], questions: ["Who is affected by the AI use case?", "What concerns must shape design?", "How will feedback change the project?", "What stakeholder input is required before use cases can be prioritized?"], actions: ["Map stakeholder groups and assign engagement leads.", "Form advisory groups for community-impacting use cases.", "Share plain-language explanations of what AI will and will not do.", "Hold feedback sessions before use case selection and before design is finalized.", "Document what changed based on feedback.", "Route unresolved stakeholder concerns to the AI governance committee before pilots or procurement move forward."] },
   { id: 5, phase: "plan", title: "Workforce Development", output: "Competency framework, training needs assessment, champion network, bridge role plan, role-based training plan, and training pathway", tools: [23,24,25,26,27,28], goal: "Develop the workforce capabilities needed to responsibly adopt AI across public health programs, including predictive, generative, agentic, analytic, and automation-enabled uses.", matters: "Training alone is not enough. Peer learning networks, champions, office hours, and communities of practice help staff build confidence and solve practical problems.", who: ["HR", "Training leads", "AI champions", "Supervisors", "Program staff", "IT and data staff"], questions: ["What AI literacy is needed by role?", "Where are skill gaps?", "Who will support adoption day to day?"], actions: ["Define role-based AI literacy levels.", "Conduct a training needs assessment.", "Designate AI champions across divisions.", "Create training pathways.", "Assign learning modules by role and set completion standards.", "Establish office hours and communities of practice."] },
@@ -3084,7 +3084,7 @@ function masterOutputPurposeCatalog() {
 }
 function beforeBeginForPlay(play, guide) {
   if (play.id === 1) return "Begin with leadership permission to convene the workshop, a facilitator, a preliminary list of known or suspected AI uses, and enough internal participation to discuss strategy, data, privacy, equity, workforce, and operations.";
-  if (play.id === 2) return "Begin after the department has a basic AI vision or interim guardrails. Gather evidence about governance, data infrastructure, workforce capacity, equity and engagement, partnerships, privacy, security, and current AI activity.";
+  if (play.id === 2) return "Begin with the latest AI Readiness and Pathway Assessment results or an equivalent existing assessment. Bring the people and evidence needed to validate scores, resolve unknowns, classify gaps, and assign improvement work.";
   if (play.id === 3) return "Begin after leadership agrees that AI use requires formal oversight. Bring forward Play 1 guardrails, Play 2 readiness findings, any known AI uses, and unresolved legal, privacy, IT, equity, procurement, or leadership questions.";
   if (play.id === 4) return "Begin with the readiness findings, governance pathway, and an initial sense of which workflows or communities may be affected. Engagement should occur early enough that stakeholder input can change decisions.";
   return `${guide.timing} Bring forward prior play outputs, unresolved decisions, relevant tool results, and any governance conditions that must shape this play.`;
@@ -3936,6 +3936,7 @@ function defaultMemberState() {
     notifications: [],
     savedAssessments: [],
     savedTools: [],
+    toolTasks: [],
     learningProgress: {},
     forumPosts: [
       { id: "seed-1", author: "Playbook Team", topic: "Governance", title: "How are agencies sequencing governance before pilots?", body: "Share approaches for forming an AI governance body, approving use cases, and keeping community input visible.", date: "2026-06-30" },
@@ -4077,13 +4078,25 @@ function memberOnlyNotice(isMember) {
 
 function restoreToolProgress(toolId, blueprint) {
   const state = getMemberState();
-  const saved = [...(state.savedTools || [])].reverse().find(item => item.toolId === toolId);
+  const saved = savedToolRecord(toolId, state);
   if (!saved) return;
   const form = document.getElementById("tool-form");
   saved.entries.forEach(([section, fields]) => {
     fields.forEach(([field, value]) => {
-      const input = [...form.elements].find(el => el.name === toolFieldName(section, field) || el.name === field);
-      if (input) input.value = value || "";
+      const inputs = [...form.elements].filter(el => el.name === toolFieldName(section, field) || el.name === field);
+      const parts = String(value || "").split("; ").filter(Boolean);
+      const customValues = parts.filter(part => part.startsWith("Other: ")).map(part => part.slice(7));
+      const standardValues = parts.filter(part => !part.startsWith("Other: "));
+      if (inputs.some(input => input.type === "checkbox")) {
+        const selected = new Set(standardValues);
+        inputs.forEach(input => { input.checked = selected.has(input.value); });
+      } else if (inputs.some(input => input.type === "radio")) {
+        inputs.forEach(input => { input.checked = standardValues.includes(input.value); });
+      } else if (inputs[0]?.tagName === "SELECT") {
+        const available = [...inputs[0].options].map(option => option.value);
+        inputs[0].value = available.includes(standardValues[0]) ? standardValues[0] : (customValues.length ? "Other" : available[0]);
+      } else if (inputs[0]) inputs[0].value = standardValues.join("; ") || "";
+      customValues.forEach(custom => window.GuidedToolTemplate?.addOtherValue(form, toolFieldName(section, field), custom));
     });
   });
   const status = document.getElementById("tool-save-status");
@@ -4094,13 +4107,17 @@ function saveToolProgress(tool, blueprint) {
   if (!hasMemberProfile()) return;
   const state = getMemberState();
   const savedAt = new Date().toLocaleString();
+  const actions = collectToolActions(tool);
+  const selectionDocumentation = collectSelectionDocumentation(tool);
+  const selectionTasks = selectionDocumentationTasks(tool, selectionDocumentation);
   state.savedTools = [
     ...(state.savedTools || []).filter(item => item.toolId !== tool.id),
-    { toolId: tool.id, title: tool.title, savedAt, entries: collectToolEntries(blueprint, false) }
+    { toolId: tool.id, title: tool.title, savedAt, entries: collectToolEntries(blueprint, false), actions, selectionDocumentation }
   ];
+  state.toolTasks = [...(state.toolTasks || []).filter(action => action.toolId !== tool.id), ...actions, ...selectionTasks];
   setMemberState(state);
   const status = document.getElementById("tool-save-status");
-  if (status) status.textContent = `Progress saved for Tool ${tool.id} at ${savedAt}.`;
+  if (status) status.textContent = `Progress saved for Tool ${tool.id} at ${savedAt}. ${actions.length + selectionTasks.length} task${actions.length + selectionTasks.length === 1 ? "" : "s"} synchronized to the integrated task tracker.`;
 }
 
 function renderHome() {
@@ -4119,8 +4136,9 @@ function renderHome() {
           </div>
         </div>
         <figure class="journey-graphic-card">
-          <img src="assets/recommended-journey-final.png?v=20260817-13-plays" alt="Recommended Journey: 13 plays across four phases. Plan includes Plays 1–7; Build includes Plays 8–9; Deploy includes Plays 10–11; Govern includes Plays 12–13; destination—Responsible AI Adoption." />
+          <img src="assets/recommended-journey-pathway-assessment.png?v=20260818-pathway-entry" alt="Recommended Journey: Start with the AI Readiness and Pathway Assessment to build a customized path, then move through 13 plays across four phases—Plan, Build, Deploy, and Govern—to Responsible AI Adoption." />
           <div class="journey-hotspots" aria-label="Journey phase links">
+            <a class="journey-hotspot assessment" href="#/assess" aria-label="Start the AI Readiness and Pathway Assessment"><span>Start Here: Pathway Assessment</span></a>
             <a class="journey-hotspot plan" href="#/plays/phase-plan" aria-label="Open the Plan section of the 13-Play Playbook"><span>Plan: Plays 1–7</span></a>
             <a class="journey-hotspot build" href="#/plays/phase-build" aria-label="Open the Build section of the 13-Play Playbook"><span>Build: Plays 8–9</span></a>
             <a class="journey-hotspot deploy" href="#/plays/phase-deploy" aria-label="Open the Deploy section of the 13-Play Playbook"><span>Deploy: Plays 10–11</span></a>
@@ -5123,7 +5141,7 @@ function renderUseAreas() {
 
 function renderAssess() {
   const isMember = hasMemberProfile();
-  main.innerHTML = pageIntro("Assess: AI Readiness Self-Assessment", "Interactive Tool 7 collects domain scores and supports Play 2 while also informing early vision and governance decisions.") + `
+  main.innerHTML = pageIntro("Start Here: AI Readiness and Pathway Assessment", "Use this interactive entry assessment to identify readiness strengths and gaps, generate a customized pathway through the 13 plays, and provide preliminary findings for Play 2 validation and improvement planning.") + `
     <div class="assessment-grid">
       <form id="assessment" class="panel">
         <h2>Readiness Domains</h2>
@@ -5186,9 +5204,9 @@ function saveAssessmentProgress() {
   const state = getMemberState();
   const savedAt = new Date().toLocaleString();
   state.savedAssessments = [
-    ...(state.savedAssessments || []).filter(item => item.title !== "AI Readiness Self-Assessment"),
+    ...(state.savedAssessments || []).filter(item => !["AI Readiness Self-Assessment", "AI Readiness and Pathway Assessment"].includes(item.title)),
     {
-      title: "AI Readiness Self-Assessment",
+      title: "AI Readiness and Pathway Assessment",
       savedAt,
       score: document.getElementById("total-score").textContent,
       rawScore: document.getElementById("raw-score").textContent,
@@ -5196,7 +5214,9 @@ function saveAssessmentProgress() {
       action: document.getElementById("readiness-action").textContent,
       recommendations: document.getElementById("assessment-recs").innerText,
       recommendedPlays: (document.getElementById("assessment-recs").dataset.plays || "").split(",").filter(Boolean).map(Number),
-      recommendedTools: (document.getElementById("assessment-recs").dataset.tools || "").split(",").filter(Boolean).map(Number)
+      recommendedTools: (document.getElementById("assessment-recs").dataset.tools || "").split(",").filter(Boolean).map(Number),
+      pathway: (document.getElementById("assessment-recs").dataset.plays || "").split(",").filter(Boolean).map(Number),
+      domainScores: JSON.parse(document.getElementById("assessment-recs").dataset.domainScores || "[]")
     }
   ];
   setMemberState(state);
@@ -5226,21 +5246,30 @@ function updateAssessment() {
   const basePlays = readinessPercent >= 76 ? [10,11,12,13] : readinessPercent >= 51 ? [6,7,8,9] : readinessPercent >= 26 ? [2,3,4,5] : [1,2,4];
   const baseTools = readinessPercent >= 76 ? [40,41,42,44,47] : readinessPercent >= 51 ? [2,7,12,25,26] : readinessPercent >= 26 ? [1,13,21,24,30] : [1,7,16,17,30];
   const priorityGaps = domainScores.filter(d => d.subtotal <= 6).sort((a, b) => a.subtotal - b.subtotal);
-  const recPlays = new Set(basePlays);
-  const recTools = new Set(baseTools);
+  const pathway = [];
+  const recTools = [];
+  const addPlay = (id, reason) => {
+    if (!pathway.some(step => step.id === id)) pathway.push({ id, reason });
+  };
+  const addTool = id => { if (!recTools.includes(id)) recTools.push(id); };
   priorityGaps.forEach(gap => {
-    readinessGapRecommendations[gap.name].plays.forEach(id => recPlays.add(id));
-    readinessGapRecommendations[gap.name].tools.forEach(id => recTools.add(id));
+    readinessGapRecommendations[gap.name].plays.forEach(id => addPlay(id, `Priority response to ${gap.name} (${gap.percent} / 100)`));
+    readinessGapRecommendations[gap.name].tools.forEach(addTool);
   });
+  basePlays.forEach(id => addPlay(id, `Next-stage work for the ${level}`));
+  baseTools.forEach(addTool);
+  const recPlays = pathway.map(step => step.id);
   document.getElementById("assessment-recs").innerHTML = `
-    <h3>Suggested Next Plays</h3>
-    <p>${[...recPlays].sort((a,b)=>a-b).map(playLink).join("<br>")}</p>
+    <h3>Your Custom Pathway</h3>
+    <p>Complete these plays in the order shown. The lowest-scoring readiness domains are addressed first; stage-based next steps follow after the priority gaps.</p>
+    <ol class="assessment-pathway">${pathway.map((step, index) => `<li><span class="number-badge">${index + 1}</span><div><strong>${playLink(step.id)}</strong><small>${step.reason}</small></div></li>`).join("")}</ol>
     <h3>Suggested Tools</h3>
-    <p>${[...recTools].sort((a,b)=>a-b).map(toolLink).join("<br>")}</p>
+    <p>${recTools.map(toolLink).join("<br>")}</p>
     ${priorityGaps.length ? `<h3>Priority Gap Areas</h3><p>${priorityGaps.map(g=>`${g.name}: ${g.percent} / 100 (raw ${g.subtotal} / 12)`).join("<br>")}</p>` : `<h3>Priority Gap Areas</h3><p>No domain scored 50 / 100 or below. Use the recommendations to prepare for the next stage.</p>`}
   `;
-  document.getElementById("assessment-recs").dataset.plays = [...recPlays].sort((a,b)=>a-b).join(",");
-  document.getElementById("assessment-recs").dataset.tools = [...recTools].sort((a,b)=>a-b).join(",");
+  document.getElementById("assessment-recs").dataset.plays = recPlays.join(",");
+  document.getElementById("assessment-recs").dataset.tools = recTools.join(",");
+  document.getElementById("assessment-recs").dataset.domainScores = JSON.stringify(domainScores);
 }
 
 function assessmentSections() {
@@ -5266,8 +5295,8 @@ function assessmentSections() {
 
 async function downloadAssessment(format) {
   const sections = assessmentSections();
-  const title = "AI Readiness Self-Assessment Summary";
-  const filename = "ai-readiness-self-assessment-summary";
+  const title = "AI Readiness and Pathway Assessment Summary";
+  const filename = "ai-readiness-pathway-assessment-summary";
   if (format === "pdf") {
     const pdf = await buildProfessionalPdf(title, "Assessment Summary", "Readiness assessment results and recommended next plays.", [], sections);
     downloadBlob(`${filename}.pdf`, pdf, "application/pdf");
@@ -6239,6 +6268,39 @@ function renderImplementationPlayGuide(playId) {
   </section>`;
 }
 
+function play2AssessmentBridge() {
+  const state = getMemberState();
+  const latest = [...(state.savedAssessments || [])].reverse().find(item => ["AI Readiness and Pathway Assessment", "AI Readiness Self-Assessment"].includes(item.title));
+  const imported = state.play2ReadinessPlan;
+  const source = imported?.assessment || latest;
+  const domainRows = source?.domainScores || [];
+  return `<section class="content-section play2-assessment-bridge">
+    <p class="eyebrow">Assessment to Action</p>
+    <h2>Use pathway findings to begin Play 2</h2>
+    <p>The Pathway Assessment provides preliminary scores and recommendations. Play 2 validates those findings with cross-functional participation and organizational evidence, then converts confirmed gaps into assigned improvement work.</p>
+    ${source ? `<div class="play2-assessment-summary"><article><strong>${escapeDoc(source.score || "Not scored")} / 100</strong><span>${escapeDoc(source.level || "Readiness result")}</span></article><article><strong>${(source.recommendedPlays || []).length}</strong><span>recommended plays</span></article><article><strong>${domainRows.filter(item => Number(item.percent) <= 50).length}</strong><span>priority gap domains</span></article></div>${domainRows.length ? `<div class="table-wrap"><table><thead><tr><th>Assessment domain</th><th>Preliminary score</th><th>Play 2 validation status</th></tr></thead><tbody>${domainRows.map(item => `<tr><td>${escapeDoc(item.name)}</td><td>${escapeDoc(item.percent)} / 100</td><td>${imported ? "Imported for validation" : "Available to import"}</td></tr>`).join("")}</tbody></table></div>` : ""}` : `<p class="member-access-note">No saved assessment was found. Take the Pathway Assessment first, import an equivalent agency assessment, or begin Play 2 without one.</p>`}
+    <div class="button-row no-print"><a class="btn primary" href="#/assess">${latest ? "Review Latest Assessment" : "Take Pathway Assessment"}</a><button class="btn" type="button" id="import-assessment-play2" ${latest ? "" : "disabled"}>Import Latest Results</button><button class="btn" type="button" id="start-play2-without-assessment">Start Without an Assessment</button></div>
+    <p id="play2-import-status" class="save-status" aria-live="polite">${imported ? `Play 2 workspace started ${escapeDoc(imported.startedAt)} using ${imported.mode === "assessment" ? "imported assessment findings" : "an agency-provided or new evidence review"}.` : ""}</p>
+  </section>`;
+}
+
+function hydratePlay2AssessmentBridge() {
+  document.getElementById("import-assessment-play2")?.addEventListener("click", () => {
+    const state = getMemberState();
+    const latest = [...(state.savedAssessments || [])].reverse().find(item => ["AI Readiness and Pathway Assessment", "AI Readiness Self-Assessment"].includes(item.title));
+    if (!latest) return;
+    state.play2ReadinessPlan = { mode: "assessment", startedAt: new Date().toLocaleString(), assessment: latest };
+    setMemberState(state);
+    renderPlayDetail(2);
+  });
+  document.getElementById("start-play2-without-assessment")?.addEventListener("click", () => {
+    const state = getMemberState();
+    state.play2ReadinessPlan = { mode: "without-assessment", startedAt: new Date().toLocaleString(), assessment: null };
+    setMemberState(state);
+    renderPlayDetail(2);
+  });
+}
+
 function renderPlayDetail(id) {
   const p = plays.find(x => x.id === id) || plays[0];
   const prev = plays.find(x => x.id === p.id - 1);
@@ -6247,6 +6309,7 @@ function renderPlayDetail(id) {
     <div class="meta-row">${p.tools.map(id=>`<span class="tag">${toolLink(id)}</span>`).join("")}</div>
     <div class="detail-grid">
       <article class="panel">
+        ${p.id === 2 ? play2AssessmentBridge() : ""}
         <h2>Purpose</h2><p>${p.goal}</p>
         <h2>Why This Play Matters</h2><p>${p.matters}</p>
         <h2>Who Should Participate</h2><ul>${p.who.map(x=>`<li>${x}</li>`).join("")}</ul>
@@ -6412,37 +6475,279 @@ function saveToolRating(toolId) {
   if (status) status.textContent = `Saved ${stars}-star rating.`;
 }
 
+const toolExampleScenarios = {
+  caseTriage: { name: "AI-assisted communicable-disease case triage", program: "Communicable Disease Program", owner: "surveillance epidemiologist", data: "identifiable case reports and electronic laboratory records", community: "rural clinics, Tribal partners, and populations affected by uneven reporting completeness", evidence: "12 months of epidemiologist-reviewed case and escalation records", risk: "incorrect prioritization could delay investigation or worsen subgroup disparities", followUp: "complete privacy review and compare rural, Tribal, and urban performance before pilot approval" },
+  syndromic: { name: "syndromic-surveillance outbreak detection pilot", program: "Epidemiology and Surveillance Division", owner: "syndromic surveillance lead", data: "emergency-department chief complaints, facility feeds, and county population estimates", community: "facilities and communities with different reporting timeliness and completeness", evidence: "retrospective comparison with confirmed outbreak investigations and epidemiologist-reviewed alerts", risk: "false alerts may consume response capacity while missed signals may delay public health action", followUp: "set alert thresholds, validate subgroup and facility performance, and schedule a 90-day governance review" },
+  immunization: { name: "AI-assisted immunization outreach workflow", program: "Immunization Program", owner: "immunization program manager", data: "immunization registry records, contact information, preferred language, and appointment history", community: "families with limited English proficiency, rural residents, people with disabilities, and communities with access barriers", evidence: "outreach completion, appointment, opt-out, language-access, and complaint records", risk: "inaccurate contact recommendations or inaccessible messages could worsen trust and access", followUp: "conduct privacy, language-access, accessibility, and community review before outreach begins" },
+  environmental: { name: "AI-assisted environmental-health inspection summarization service", program: "Environmental Health Division", owner: "environmental health program supervisor", data: "inspection narratives, facility records, photographs, and enforcement history", community: "facility operators, inspectors, workers, and neighborhoods affected by environmental-health decisions", evidence: "a sample of inspector-approved reports and corrected AI summaries", risk: "missing or overstated findings could affect enforcement, safety, and public trust", followUp: "validate summaries with inspectors and require human approval before records or notices are finalized" },
+  chatbot: { name: "public-facing respiratory-health information chatbot", program: "Public Information and Community Health", owner: "public information officer", data: "approved health guidance, service directories, public questions, and de-identified usage logs", community: "residents with different literacy, language, disability-access, and digital-access needs", evidence: "content review results, accessibility tests, translation review, unanswered questions, and complaint logs", risk: "incorrect, inaccessible, or outdated advice could mislead residents and damage trust", followUp: "require clinical, communications, accessibility, language-access, privacy, and governance approval before launch" },
+  emergency: { name: "AI-assisted emergency risk communication workflow", program: "Emergency Preparedness and Response", owner: "emergency risk communication lead", data: "incident action plans, approved situation reports, partner updates, and public information templates", community: "residents, healthcare partners, local officials, media, and groups needing accessible or translated warnings", evidence: "communications approval records, message-testing results, correction logs, and after-action findings", risk: "fast but inaccurate or inaccessible messages could undermine emergency response and public confidence", followUp: "require subject-matter and communications approval, document sources, and maintain a rapid correction pathway" }
+};
+
+function toolExampleScenario(tool) {
+  const syndromic = new Set([9,14,31,36,39,40,41,42,43,44,47,48]);
+  const immunization = new Set([7,8,24,25,26,27,28]);
+  const environmental = new Set([4,5,32,33,34,35]);
+  const chatbot = new Set([11,12,19,20,22]);
+  const emergency = new Set([1,21,23,29,30,38]);
+  if (syndromic.has(tool.id)) return toolExampleScenarios.syndromic;
+  if (immunization.has(tool.id)) return toolExampleScenarios.immunization;
+  if (environmental.has(tool.id)) return toolExampleScenarios.environmental;
+  if (chatbot.has(tool.id)) return toolExampleScenarios.chatbot;
+  if (emergency.has(tool.id)) return toolExampleScenarios.emergency;
+  return toolExampleScenarios.caseTriage;
+}
+
+function specificPublicHealthRole(role, rasciCategory = "") {
+  const value = String(role || "").trim();
+  const key = value.toLowerCase();
+  const category = rasciCategory.toLowerCase();
+  const exact = {
+    "equity": category === "responsible" ? "Designated equity impact assessment lead" : "Health equity director or designated equity reviewer",
+    "equity leaders": "Health equity director or designated equity program lead",
+    "equity staff": "Health equity specialist or designated equity reviewer",
+    "governance": "AI governance program manager or designated review coordinator",
+    "governance committee": "AI governance committee members, if established; otherwise representatives of the designated interim review body",
+    "leadership": "Health officer, deputy health officer, or designated executive sponsor",
+    "executive leadership": "Health officer, agency director, deputy director, or designated executive sponsor",
+    "program leads": "Program director or designated program manager",
+    "program areas": "Director or manager of each affected public health program",
+    "program sponsors": "Program director or designated executive sponsor",
+    "programs": "Directors or managers of affected public health programs",
+    "legal and privacy": "Agency counsel and privacy officer",
+    "legal/privacy": "Agency counsel and privacy officer",
+    "it": "IT director, systems manager, or designated technical lead",
+    "it and data leaders": "IT director and informatics or data director",
+    "it/security": "IT director and information security officer",
+    "data and analytics": "Informatics director, epidemiologist, data scientist, or evaluation lead",
+    "data owners": "Named steward or owner for each data source",
+    "community engagement": "Community engagement director or designated engagement manager",
+    "community advisors": "Named community advisory group members or community-based organization representatives",
+    "communications": "Public information officer or communications director",
+    "finance": "Finance director or assigned budget analyst",
+    "grants": "Grants manager or assigned grant administrator",
+    "procurement": "Procurement or contracting officer",
+    "change leads": "Named change-management lead or implementation manager",
+    "supervisors": "Supervisors of affected staff and workflows",
+    "ai champions": "Named AI champions from affected programs",
+    "program staff": "Named staff from each affected program and workflow"
+  };
+  return exact[key] || value;
+}
+
+function specificPublicHealthRoles(roles, category) {
+  return [...new Set((roles || []).map(role => specificPublicHealthRole(role, category)).filter(Boolean))];
+}
+
+function toolUseGuide(tool) {
+  const scenario = toolExampleScenario(tool);
+  const relatedPlays = tool.playIds.map(id => plays.find(play => play.id === id)).filter(Boolean);
+  const involved = [...new Set(relatedPlays.flatMap(play => play.who || []))];
+  const searchable = `${tool.title} ${tool.purpose}`.toLowerCase();
+  const governanceDecisionRequired = relatedPlays.some(play => [1, 3, 7, 9, 11, 12, 13].includes(play.id));
+  const approvers = ["Program director or operational owner with authority over the affected workflow"];
+  if (governanceDecisionRequired) approvers.push("If established: AI governance committee as the collective approval body, or the specific official to whom it delegated approval authority");
+  if (governanceDecisionRequired) approvers.push("If AI governance is not established: Health Officer, agency director, executive sponsor, or an existing authorized review body serving on an interim basis");
+  if (relatedPlays.some(play => [1, 8, 9, 12].includes(play.id))) approvers.push("Health officer, executive sponsor, or delegated executive");
+  if (/privacy|data use|confidential|security|cyber/.test(searchable)) approvers.push("Privacy, legal, data-governance, or security authority, as applicable");
+  if (/vendor|procure|contract|fund|budget/.test(searchable)) approvers.push("Procurement, contracting, finance, or grants authority, as applicable");
+  if (/equity|community|stakeholder|accessib|language|civil rights/.test(searchable)) approvers.push("Official who holds approval authority for civil rights, accessibility, language-access, or community-engagement requirements, when agency policy assigns that authority");
+  if (/deploy|go-live|validation|pilot|scale|monitor|audit|incident/.test(searchable)) approvers.push("Operational system owner and required technical or evaluation reviewers");
+
+  const resourceMap = new Map();
+  relatedPlays.flatMap(play => playResources[play.id] || []).forEach(([title, note, url]) => {
+    if (!resourceMap.has(url)) resourceMap.set(url, { title, note, url });
+  });
+  const resources = [...resourceMap.values()].slice(0, 5);
+  const modules = learningModules.filter(module => (module.tools || []).includes(tool.id)).slice(0, 4);
+  const playNames = relatedPlays.map(play => `Play ${play.id}: ${play.title}`).join(", ");
+  const examples = [
+    `<strong>Worked example used throughout this tool:</strong> ${scenario.name} in the ${scenario.program}.`,
+    `<strong>Evidence context:</strong> ${scenario.evidence}.`,
+    `<strong>Primary concern and follow-up:</strong> ${scenario.risk}; ${scenario.followUp}.`
+  ];
+  const unique = values => [...new Set(values.filter(Boolean))];
+  const responsible = specificPublicHealthRoles((tool.roles || []).length ? ["Named tool owner or facilitator", ...tool.roles] : ["Named tool owner or facilitator", ...involved.slice(0, 2)], "Responsible");
+  const support = specificPublicHealthRoles(involved.filter(role => /IT|data|analytics|evaluation|informatics|PMO|finance|grants|training|HR|change|communications|procurement|vendor|technical/i.test(role)), "Support");
+  const consulted = specificPublicHealthRoles(involved.filter(role => /legal|privacy|security|equity|community|Tribal|accessibility|language|civil rights|program|data owner|procurement/i.test(role)), "Consulted");
+  const informed = specificPublicHealthRoles([
+    ...involved.filter(role => /executive|leadership|supervisor|program staff|pilot user|operational owner|partner/i.test(role)),
+    "Staff whose work, documentation, or decision responsibilities may change",
+    ...(relatedPlays.some(play => [4, 7, 10, 11, 13].includes(play.id)) ? ["Affected community representatives and external partners, using appropriate public or partner communications"] : [])
+  ], "Informed");
+  const rasci = [
+    ["Responsible", "Completes the tool, gathers evidence, coordinates follow-up, and keeps the record current.", responsible.length ? responsible : ["Named tool owner or program lead"]],
+    ["Accountable", `Owns the decision and provides or secures required approval. Select one clearly designated accountable authority for the final artifact. ${governanceDecisionRequired ? 'If AI governance has not been established, use an interim authorized executive or existing review body and complete <a href="#/plays/3">Play 3: Establish AI Governance</a>.' : ''}`, unique(approvers)],
+    ["Support", "Provides implementation, technical, analytic, operational, training, financial, or administrative assistance.", support.length ? support : ["Implementation, technical, or administrative support identified by the tool owner"]],
+    ["Consulted", "Provides subject-matter review before the decision, especially for privacy, security, legal, equity, accessibility, community, data, or procurement concerns.", consulted.length ? consulted : ["Required subject-matter and affected-community reviewers based on risk"]],
+    ["Informed", "Receives the decision, conditions, deadlines, changes, or results but is not asked to approve unless separately assigned.", informed]
+  ];
+
+  return `<section class="tool-use-guide" aria-labelledby="tool-use-guide-heading">
+    <p class="eyebrow">Before You Begin</p>
+    <h2 id="tool-use-guide-heading">When, Why, How, and Who</h2>
+    <div class="tool-use-guide-grid">
+      <section><h3>When to use it</h3><p>Use this tool while completing ${playNames}. Revisit it when evidence, ownership, risks, approvals, system scope, or agency policy materially changes.</p></section>
+      <section><h3>Why to use it</h3><p>${tool.purpose}</p><p>The completed tool creates a reviewable record that can support implementation, governance decisions, follow-up, and future audits.</p></section>
+      <section class="tool-how-section"><h3>How to use it</h3><ol class="tool-process-flow"><li><strong>Prepare</strong><span>Name the owner and gather available evidence.</span></li><li><strong>Complete together</strong><span>Include people who understand the program, communities, data, workflow, and risks.</span></li><li><strong>Identify gaps</strong><span>Use <b>Unknown</b> for missing evidence and <b>Other</b> for local categories.</span></li><li><strong>Assign follow-up</strong><span>Give unresolved items an owner and due date.</span></li><li><strong>Review and retain</strong><span>Obtain required review or approval and save the decision record.</span></li></ol></section>
+      <section class="tool-rasci-section"><h3>Who should be involved: RASCI</h3><p class="plain-meta">These are suggested <strong>roles</strong>, not entire divisions. Replace them with the agency’s actual job titles and name the individual assigned whenever possible. <strong>Accountable</strong> identifies decision and approval authority; <strong>Consulted</strong> identifies reviewers whose input is required before that decision.</p>${governanceDecisionRequired ? '<p class="rasci-governance-note"><strong>No AI governance committee yet?</strong> Assign an interim accountable executive or existing authorized review body, then use <a href="#/plays/3">Play 3</a> to create or designate the permanent governance structure.</p>' : ''}<div class="tool-rasci-accordion">${rasci.map(([category, meaning, roles]) => {
+        const preview = roles.slice(0, 2).join(", ");
+        const additional = roles.length > 2 ? ` +${roles.length - 2} more` : "";
+        return `<details class="tool-rasci-item"><summary><strong>${category}</strong><span>${preview}${additional}</span></summary><p>${meaning}</p><ul class="compact-list">${roles.map(role => `<li>${role}</li>`).join("")}</ul></details>`;
+      }).join("")}</div></section>
+      <section class="tool-public-health-examples"><h3>Public health example used throughout this tool</h3><ul class="compact-list compact-example-list">${examples.map(example => `<li>${example}</li>`).join("")}</ul><p class="plain-meta">This example is illustrative. Replace it with the agency’s actual program, evidence, communities, risks, decisions, and owners.</p></section>
+    </div>
+    <section class="tool-guide-links"><h3>Related plays</h3><p>${relatedPlays.map(play => playLink(play.id)).join("<br>")}</p></section>
+    <section class="tool-guide-links"><h3>References and preparation materials</h3>
+      <div class="tool-reference-list">
+        ${resources.map(resource => `<article><a href="${resource.url}" target="_blank" rel="noopener noreferrer"><strong>${resource.title}</strong></a><span>${resource.note}</span></article>`).join("")}
+        ${modules.map(module => `<article><a href="#/learn/${module.id}"><strong>${module.display_title || module.title}</strong></a><span>Playbook learning module with background, examples, and application guidance.</span></article>`).join("")}
+        <article><a href="#/references"><strong>Complete References and Source Material</strong></a><span>Browse the Full Version reference library for additional frameworks, standards, and public health resources.</span></article>
+      </div>
+    </section>
+  </section>`;
+  if (p.id === 2) hydratePlay2AssessmentBridge();
+}
+
+function toolActionRow(toolId, action = {}, index = 0) {
+  const status = action.status || "Not started";
+  return `<tr class="tool-action-row" data-tool-action-row data-tool-id="${toolId}">
+    <td><textarea rows="2" data-action-field="activity" placeholder="Example: Validate the outbreak-alert model against the prior 12 months of epidemiologist-reviewed alerts.">${escapeDoc(action.activity || "")}</textarea></td>
+    <td><input data-action-field="owner" value="${escapeDoc(action.owner || "")}" placeholder="Example: Surveillance epidemiologist"></td>
+    <td><input type="date" data-action-field="dueDate" value="${escapeDoc(action.dueDate || "")}" aria-label="Target completion date"></td>
+    <td><select data-action-field="status" aria-label="Action status">${["Not started", "In progress", "Blocked", "Ready for review", "Completed"].map(value => `<option${value === status ? " selected" : ""}>${value}</option>`).join("")}</select></td>
+    <td><input type="date" data-action-field="reviewDate" value="${escapeDoc(action.reviewDate || "")}" aria-label="Review or follow-up date"></td>
+    <td><textarea rows="2" data-action-field="notes" placeholder="Example: Privacy review required before testing with identifiable case data.">${escapeDoc(action.notes || "")}</textarea></td>
+    <td><button class="btn small remove-tool-action" type="button" aria-label="Remove action ${index + 1}">Remove</button></td>
+  </tr>`;
+}
+
+function renderSelectionDocumentation(tool) {
+  return `<section class="tool-section selection-documentation" data-selection-documentation="${tool.id}">
+    <div class="selection-documentation-header"><p class="eyebrow">Generated from Checklist Selections</p><h3>Selection documentation</h3><p>Select a checkbox above to create a documentation record here. Records remain grouped below the checklist so the choices stay compact.</p></div>
+    <p class="selection-documentation-empty">No checkbox items selected yet.</p>
+    <div class="selection-documentation-list"></div>
+  </section>`;
+}
+
+function selectionDocumentationCard(record = {}, scenario = {}) {
+  const title = `${record.field || "Selection"}: ${record.option || "Selected item"}`;
+  return `<article class="selection-documentation-card" data-selection-key="${escapeDoc(record.key || "")}" data-selection-field="${escapeDoc(record.field || "")}" data-selection-option="${escapeDoc(record.option || "")}">
+    <div class="selection-documentation-title"><h4>${escapeDoc(title)}</h4><span>Selected</span></div>
+    <div class="selection-documentation-grid">
+      <label>Why this applies<textarea rows="2" data-selection-doc-field="rationale" placeholder="Explain why this selection applies to the ${escapeDoc(scenario.name || "public health use case")}.">${escapeDoc(record.rationale || "")}</textarea></label>
+      <label>Evidence or source<textarea rows="2" data-selection-doc-field="evidence" placeholder="Example: ${escapeDoc(scenario.evidence || "policy, testing, meeting notes, or data review")}">${escapeDoc(record.evidence || "")}</textarea></label>
+      <label>Local details<textarea rows="2" data-selection-doc-field="details" placeholder="Programs, populations, systems, limitations, or jurisdiction-specific context.">${escapeDoc(record.details || "")}</textarea></label>
+      <label>Required follow-up<textarea rows="2" data-selection-doc-field="followUp" placeholder="Example: ${escapeDoc(scenario.followUp || "complete required review before proceeding")}">${escapeDoc(record.followUp || "")}</textarea></label>
+      <label>Owner<input data-selection-doc-field="owner" value="${escapeDoc(record.owner || "")}" placeholder="Example: ${escapeDoc(scenario.owner || "program manager")}"></label>
+      <label>Target date<input type="date" data-selection-doc-field="dueDate" value="${escapeDoc(record.dueDate || "")}"></label>
+      <label>Status<select data-selection-doc-field="status">${["Not started", "In progress", "Blocked", "Ready for review", "Completed"].map(status => `<option${status === (record.status || "Not started") ? " selected" : ""}>${status}</option>`).join("")}</select></label>
+    </div>
+  </article>`;
+}
+
+function collectSelectionDocumentation(tool) {
+  return [...document.querySelectorAll(`[data-selection-documentation="${tool.id}"] [data-selection-key]`)].map(card => {
+    const value = name => card.querySelector(`[data-selection-doc-field="${name}"]`)?.value.trim() || "";
+    return { key: card.dataset.selectionKey, field: card.dataset.selectionField, option: card.dataset.selectionOption, rationale: value("rationale"), evidence: value("evidence"), details: value("details"), followUp: value("followUp"), owner: value("owner"), dueDate: value("dueDate"), status: value("status") || "Not started" };
+  });
+}
+
+function hydrateSelectionDocumentation(tool) {
+  const container = document.querySelector(`[data-selection-documentation="${tool.id}"]`);
+  if (!container) return;
+  const list = container.querySelector(".selection-documentation-list");
+  const saved = new Map((savedToolRecord(tool.id)?.selectionDocumentation || []).map(record => [record.key, record]));
+  const sync = () => {
+    const selected = [...document.querySelectorAll('#tool-form .guided-checkbox-group input[type="checkbox"]:checked')];
+    const keys = new Set(selected.map(input => `${input.name}|||${input.value}`));
+    [...list.querySelectorAll("[data-selection-key]")].forEach(card => { if (!keys.has(card.dataset.selectionKey)) card.remove(); });
+    selected.forEach(input => {
+      const key = `${input.name}|||${input.value}`;
+      if (list.querySelector(`[data-selection-key="${CSS.escape(key)}"]`)) return;
+      const holder = document.createElement("div");
+      const field = input.name.split("::").slice(-1)[0];
+      holder.innerHTML = selectionDocumentationCard({ key, field, option: input.value, ...(saved.get(key) || {}) }, toolExampleScenario(tool));
+      list.appendChild(holder.firstElementChild);
+    });
+    container.querySelector(".selection-documentation-empty").hidden = Boolean(list.children.length);
+  };
+  document.querySelectorAll('#tool-form .guided-checkbox-group input[type="checkbox"]').forEach(input => input.addEventListener("change", sync));
+  container._syncSelectionDocumentation = sync;
+  sync();
+}
+
+function selectionDocumentationTasks(tool, records) {
+  return records.filter(record => record.followUp || record.owner || record.dueDate).map((record, index) => ({
+    id: `tool-${tool.id}-selection-${index + 1}`, source: "selection-documentation", selectionKey: record.key, toolId: tool.id, toolTitle: tool.title, playIds: [...tool.playIds],
+    activity: record.followUp || `Resolve documented selection: ${record.field} — ${record.option}`, owner: record.owner, dueDate: record.dueDate, status: record.status || "Not started", reviewDate: "", notes: [record.rationale, record.evidence, record.details].filter(Boolean).join(" | ")
+  }));
+}
+
+function renderToolActionTracker(tool) {
+  return `<section class="tool-section tool-action-tracker" data-tool-action-tracker="${tool.id}">
+    <div class="tool-action-header"><div><p class="eyebrow">Action and Follow-up Tracking</p><h3>Activities, owners, and dates</h3><p>Record work created by this tool. Add a row for each activity, decision follow-up, evidence gap, approval, consultation, or corrective action. Saved rows automatically appear in the Full Version’s integrated task tracker.</p></div><button class="btn small add-tool-action" type="button">Add another task</button></div>
+    <div class="table-wrap"><table class="tool-action-table"><thead><tr><th>Activity or task</th><th>Assigned individual or team</th><th>Target date</th><th>Status</th><th>Review / follow-up date</th><th>Notes or dependency</th><th></th></tr></thead><tbody></tbody></table></div>
+  </section>`;
+}
+
+function savedToolRecord(toolId, state = getMemberState()) {
+  return [...(state.savedTools || [])].reverse().find(item => item.toolId === toolId) || null;
+}
+
+function hydrateToolActionTracker(toolId) {
+  const tracker = document.querySelector(`[data-tool-action-tracker="${toolId}"]`);
+  if (!tracker) return;
+  const body = tracker.querySelector("tbody");
+  const savedActions = savedToolRecord(toolId)?.actions || [];
+  const add = action => {
+    const holder = document.createElement("tbody");
+    holder.innerHTML = toolActionRow(toolId, action, body.children.length);
+    const row = holder.firstElementChild;
+    row.querySelector(".remove-tool-action").addEventListener("click", () => {
+      row.remove();
+      if (!body.children.length) add({});
+    });
+    body.appendChild(row);
+  };
+  (savedActions.length ? savedActions : [{}]).forEach(add);
+  tracker.querySelector(".add-tool-action").addEventListener("click", () => add({}));
+}
+
+function collectToolActions(tool) {
+  return [...document.querySelectorAll(`[data-tool-action-tracker="${tool.id}"] [data-tool-action-row]`)].map((row, index) => {
+    const value = field => row.querySelector(`[data-action-field="${field}"]`)?.value.trim() || "";
+    return { id: `tool-${tool.id}-task-${index + 1}`, source: "tool-action", toolId: tool.id, toolTitle: tool.title, playIds: [...tool.playIds], activity: value("activity"), owner: value("owner"), dueDate: value("dueDate"), status: value("status") || "Not started", reviewDate: value("reviewDate"), notes: value("notes") };
+  }).filter(action => action.activity || action.owner || action.dueDate || action.reviewDate || action.notes);
+}
+
 function renderToolDetail(id) {
   const t = tools.find(x => x.id === id) || tools[0];
-  const blueprint = toolFormBlueprints[t.id] || [["Tool Notes", ["Decision or output", "Risks, gaps, or follow-ups"]]];
+  const sourceBlueprint = toolFormBlueprints[t.id] || [["Tool Notes", ["Decision or output", "Risks, gaps, or follow-ups"]]];
+  const guidedDefinition = window.GuidedToolDefinitions?.[t.id] || window.GuidedToolFactory.create(t, sourceBlueprint);
+  guidedDefinition.scenario = toolExampleScenario(t);
+  const blueprint = window.GuidedToolTemplate.asLegacyBlueprint(guidedDefinition);
   const outputs = outputsForTool(t, blueprint);
   const isMember = hasMemberProfile();
   main.innerHTML = pageIntro(`Tool ${t.id}: ${t.title}`, t.purpose) + `
-    <div class="meta-row">${t.playIds.map(id=>`<span class="tag">${playLink(id)}</span>`).join("")}</div>
     <div class="detail-grid tool-detail-grid">
       <article class="panel">
+        ${toolUseGuide(t)}
         <h2>Toolkit-Based Fillable Version</h2>
         <p>This online version is structured from the toolkit instrument for this tool. Complete it during the workshop, review, or governance meeting where the output is being developed.</p>
         <form id="tool-form" class="tool-form">
           <section class="tool-section">
             <h3>Administrative Details</h3>
             <div class="form-grid">
-              <label>Owner or facilitator<input name="${toolFieldName("Administrative Details", "Owner or facilitator")}" placeholder="Name and role"></label>
-              <label>Date<input name="${toolFieldName("Administrative Details", "Date")}" type="date"></label>
-              <label>Agency / program<input name="${toolFieldName("Administrative Details", "Agency / program")}" placeholder="Health department, division, or program"></label>
-              <label>Review status<select name="${toolFieldName("Administrative Details", "Review status")}"><option>Draft</option><option>Ready for review</option><option>Submitted to governance</option><option>Approved</option><option>Needs revision</option></select></label>
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Owner or facilitator", type: "text", guidance: "Name the person responsible for convening completion and coordinating follow-up." }, guidedDefinition.scenario)}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Date", type: "text", inputType: "date", guidance: "Record the meeting, review, or approval date." }, guidedDefinition.scenario)}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Agency / program", type: "text", guidance: "Identify the health department, division, bureau, or program that owns this artifact." }, guidedDefinition.scenario)}
+              ${window.GuidedToolTemplate.renderField("Administrative Details", { label: "Review status", type: "select", options: ["Draft", "Ready for review", "Submitted to governance", "Approved", "Needs revision"] }, guidedDefinition.scenario)}
             </div>
           </section>
-          ${blueprint.map(([section, fields], sectionIndex)=>`
-            <section class="tool-section">
-              <h3>${section}</h3>
-              <div class="${sectionIndex === 0 ? "form-grid" : "tool-form-stack"}">
-                ${fields.map(field=>`
-                  <label>${field}
-                    <textarea name="${toolFieldName(section, field)}" rows="4" placeholder="Enter ${field.toLowerCase()}"></textarea>
-                  </label>`).join("")}
-              </div>
-            </section>`).join("")}
+          ${window.GuidedToolTemplate.render(guidedDefinition)}
+          ${renderSelectionDocumentation(t)}
+          ${renderToolActionTracker(t)}
         </form>
         ${memberOnlyNotice(isMember)}
         <div class="button-row no-print">
@@ -6457,14 +6762,16 @@ function renderToolDetail(id) {
       </article>
       <aside class="detail-card-list">
         <section class="panel"><h2>Outputs</h2><ul class="compact-list">${outputs.map(item=>`<li>${item}</li>`).join("")}</ul></section>
-        <section class="panel"><h2>Supported Plays</h2><p>${t.playIds.map(playLink).join("<br>")}</p></section>
         ${relatedLearningModulesPanelForTool(t.id)}
         <section class="panel"><h2>Related Tools</h2><p>${tools.filter(x=>x.id!==t.id && x.playIds.some(id=>t.playIds.includes(id))).slice(0,6).map(x=>toolLink(x.id)).join("<br>")}</p></section>
         <section class="panel"><h2>Toolkit Source</h2><p>This form is based on the corresponding tool in the AI Playbook toolkit. Download the full toolkit for the formatted source document.</p><div class="button-row"><a class="btn small" href="downloads/AI_Playbook_for_Public_Health_Toolkit.pdf">Toolkit PDF</a><a class="btn small" href="downloads/AI_Playbook_for_Public_Health_Toolkit.docx">Toolkit Word</a></div></section>
       </aside>
     </div>
   </section>`;
+  window.GuidedToolTemplate.hydrate(document.getElementById("tool-form"));
+  hydrateToolActionTracker(t.id);
   restoreToolProgress(t.id, blueprint);
+  hydrateSelectionDocumentation(t);
   hydrateToolRatingPanel();
   document.getElementById("download-blank-tool").addEventListener("click", () => runDocumentDownload(() => downloadToolWord(t, blueprint, true), "Blank Word template"));
   document.getElementById("download-blank-pdf").addEventListener("click", () => runDocumentDownload(() => downloadToolPdf(t, blueprint, true), "Blank PDF template"));
@@ -6487,7 +6794,16 @@ function toolFieldName(section, field) {
 
 function collectToolEntries(blueprint, blank = false) {
   const form = document.getElementById("tool-form");
-  const valueFor = (section, field) => blank ? "" : ([...form.elements].find(el => el.name === toolFieldName(section, field))?.value || "");
+  const valueFor = (section, field) => {
+    if (blank) return "";
+    const inputs = [...form.elements].filter(el => el.name === toolFieldName(section, field));
+    const custom = [...form.elements].filter(el => el.name === `${toolFieldName(section, field)}::Other`).map(input => input.value.trim()).filter(Boolean).map(value => `Other: ${value}`);
+    let selected = [];
+    if (inputs.some(input => input.type === "checkbox")) selected = inputs.filter(input => input.checked).map(input => input.value);
+    else if (inputs.some(input => input.type === "radio")) selected = [inputs.find(input => input.checked)?.value || ""].filter(Boolean);
+    else selected = [inputs[0]?.value || ""].filter(Boolean);
+    return [...selected, ...custom].join("; ");
+  };
   return [
     ["Administrative Details", ["Owner or facilitator", "Date", "Agency / program", "Review status"].map(field => [field, valueFor("Administrative Details", field)])],
     ...blueprint.map(([section, fields]) => [section, fields.map(field => [field, valueFor(section, field)])])
@@ -6656,7 +6972,31 @@ function buildProfessionalWordHtml(title, status, subtitle, metaRows, sections, 
 }
 
 function toolDocumentSections(tool, blueprint, blank = false) {
-  return collectToolEntries(blueprint, blank).map(([heading, rows]) => ({ heading, rows }));
+  const sections = collectToolEntries(blueprint, blank).map(([heading, rows]) => ({ heading, rows }));
+  const selectionDocumentation = blank ? [] : collectSelectionDocumentation(tool);
+  sections.push({
+    heading: "Selection Documentation",
+    rows: selectionDocumentation.length ? selectionDocumentation.map((record, index) => [
+      `${index + 1}. ${record.field}: ${record.option}`,
+      [`Why this applies: ${record.rationale || ""}`, `Evidence or source: ${record.evidence || ""}`, `Local details: ${record.details || ""}`, `Required follow-up: ${record.followUp || ""}`, `Owner: ${record.owner || ""}`, `Target date: ${record.dueDate || ""}`, `Status: ${record.status || "Not started"}`].join("\n")
+    ]) : [["Selected checklist item", ""]]
+  });
+  const actions = blank ? [{}] : collectToolActions(tool);
+  sections.push({
+    heading: "Action and Follow-up Tracking",
+    rows: (actions.length ? actions : [{}]).map((action, index) => [
+      `Action ${index + 1}`,
+      blank ? "" : [
+        `Activity: ${action.activity || ""}`,
+        `Assigned individual or team: ${action.owner || ""}`,
+        `Target date: ${action.dueDate || ""}`,
+        `Status: ${action.status || "Not started"}`,
+        `Review / follow-up date: ${action.reviewDate || ""}`,
+        `Notes or dependency: ${action.notes || ""}`
+      ].join("\n")
+    ])
+  });
+  return sections;
 }
 
 async function downloadToolWord(tool, blueprint, blank = false) {
@@ -7152,7 +7492,7 @@ function parseRecommendationIds(text, kind) {
 function organizationRecommendedIds(state, kind) {
   const latest = latestSavedAssessment(state);
   const structured = kind === "tool" ? latest?.recommendedTools : latest?.recommendedPlays;
-  if (Array.isArray(structured) && structured.length) return [...new Set(structured)].sort((a, b) => a - b);
+  if (Array.isArray(structured) && structured.length) return [...new Set(structured.map(Number))];
   const parsed = parseRecommendationIds(latest?.recommendations || "", kind);
   if (parsed.length) return parsed;
   return kind === "tool" ? [1,2,3,4,7,11,12,13] : [1,2,3,4];
@@ -7307,7 +7647,7 @@ function organizationHubContext() {
     organizationDashboardItem(state, "play", play.id),
     ...play.milestones.map(milestone => organizationDashboardItem(state, "milestone", `${play.id}-${milestone.id}`)),
     ...play.tools.map(tool => organizationDashboardItem(state, "tool", tool.id))
-  ]);
+  ]).concat(state.toolTasks || []);
   const completed = trackedItems.filter(item => item.status === "Completed").length;
   const blocked = trackedItems.filter(item => item.status === "Blocked").length;
   const dueSoon = trackedItems.filter(item => item.dueDate && (new Date(item.dueDate) - new Date()) <= 1000 * 60 * 60 * 24 * 30 && new Date(item.dueDate) >= new Date(new Date().toDateString())).length;
@@ -7337,6 +7677,22 @@ function collectOrganizationDashboardFromDom(state) {
     milestoneLabels[field.dataset.milestoneTitle] = field.value.trim();
   });
   state.organizationMilestoneLabels = milestoneLabels;
+  const toolTasks = [...(state.toolTasks || [])];
+  document.querySelectorAll("[data-tool-task-index][data-tool-task-field]").forEach(field => {
+    const index = Number(field.dataset.toolTaskIndex);
+    const name = field.dataset.toolTaskField;
+    toolTasks[index] = toolTasks[index] || {};
+    toolTasks[index][name] = field.value;
+  });
+  state.toolTasks = toolTasks;
+  state.savedTools = (state.savedTools || []).map(saved => ({
+    ...saved,
+    actions: toolTasks.filter(task => task.toolId === saved.toolId && task.source !== "selection-documentation"),
+    selectionDocumentation: (saved.selectionDocumentation || []).map(record => {
+      const task = toolTasks.find(item => item.toolId === saved.toolId && item.source === "selection-documentation" && item.selectionKey === record.key);
+      return task ? { ...record, followUp: task.activity, owner: task.owner, dueDate: task.dueDate, status: task.status } : record;
+    })
+  }));
   return state;
 }
 
@@ -7748,7 +8104,7 @@ function organizationChangeManagementDashboard(state) {
               <h3>${renderSavedToolValue(toolValue("Deployment change profile", "AI system or workflow"), "Saved Tool 38 dashboard")}</h3>
               <p class="plain-meta">Last saved: ${escapeDoc(savedExecutionDashboard.savedAt || "date not available")}</p>
             </div>
-            <a class="btn small" href="#/toolkit/37">Update Tool 38</a>
+            <a class="btn small" href="#/toolkit/38">Update Tool 38</a>
           </div>
           <div class="change-profile-grid">
             <article><span>Deployment phase</span><strong>${renderSavedToolValue(toolValue("Deployment change profile", "Deployment phase"))}</strong></article>
@@ -7784,7 +8140,7 @@ function organizationChangeManagementDashboard(state) {
             <h3>No saved Tool 38 dashboard yet</h3>
             <p>Complete and save Tool 38 to populate this dashboard with the AI system or workflow, reporting period, training completion, communications, adoption indicators, barriers, escalations, readiness status, and lessons learned.</p>
           </div>
-          <a class="btn primary" href="#/toolkit/37">Open Tool 38</a>
+          <a class="btn primary" href="#/toolkit/38">Open Tool 38</a>
         </div>
       `}
       <div class="change-dashboard-grid">
@@ -8008,6 +8364,20 @@ function renderOrganizationWorkplan() {
     <section class="panel">
       <div class="org-workspace-header">
         <div>
+          <p class="eyebrow">Automatically Synchronized</p>
+          <h2>Tool action tracker</h2>
+          <p>Tasks saved from any Full Version tool appear here with their source tool and related plays. Update owners, dates, status, and notes here or return to the source tool for the full context.</p>
+        </div>
+        <a class="btn small" href="#/toolkit">Open Toolkit</a>
+      </div>
+      <div class="table-wrap org-tracker-table"><table class="organization-workplan-table tool-task-rollup">
+        <thead><tr><th>Source</th><th>Activity or task</th><th>Related plays</th><th>Assigned individual or team</th><th>Target date</th><th>Status</th><th>Review / follow-up</th><th>Notes</th></tr></thead>
+        <tbody>${organizationToolTaskRows(state)}</tbody>
+      </table></div>
+    </section>
+    <section class="panel">
+      <div class="org-workspace-header">
+        <div>
           <p class="eyebrow">Assessment-Based Assignments</p>
           <h2>Integrated play and tool tracker</h2>
           <p>Track the active organization plan. Organization Administrators can remove plays and tools that are not part of this organization's path and restore them later if priorities change.</p>
@@ -8032,8 +8402,23 @@ function renderOrganizationWorkplan() {
   </section>`;
 }
 
+function organizationToolTaskRows(state) {
+  const tasks = state.toolTasks || [];
+  if (!tasks.length) return `<tr><td colspan="8">No tool-generated tasks have been saved yet. Open a tool, add activities in its Action and Follow-up Tracking section, and save progress.</td></tr>`;
+  return tasks.map((task, index) => `<tr>
+    <td><a href="#/toolkit/${task.toolId}">Tool ${task.toolId}: ${escapeDoc(task.toolTitle || tools.find(tool => tool.id === task.toolId)?.title || "Tool")}</a></td>
+    <td><textarea rows="2" data-tool-task-index="${index}" data-tool-task-field="activity">${escapeDoc(task.activity || "")}</textarea></td>
+    <td>${(task.playIds || []).map(playLink).join("<br>")}</td>
+    <td><input data-tool-task-index="${index}" data-tool-task-field="owner" value="${escapeDoc(task.owner || "")}"></td>
+    <td><input type="date" data-tool-task-index="${index}" data-tool-task-field="dueDate" value="${escapeDoc(task.dueDate || "")}"></td>
+    <td><select data-tool-task-index="${index}" data-tool-task-field="status">${["Not started", "In progress", "Blocked", "Ready for review", "Completed"].map(status => `<option${status === task.status ? " selected" : ""}>${status}</option>`).join("")}</select></td>
+    <td><input type="date" data-tool-task-index="${index}" data-tool-task-field="reviewDate" value="${escapeDoc(task.reviewDate || "")}"></td>
+    <td><textarea rows="2" data-tool-task-index="${index}" data-tool-task-field="notes">${escapeDoc(task.notes || "")}</textarea></td>
+  </tr>`).join("");
+}
+
 function organizationWorkplanExportRows(state) {
-  return organizationWorkplanItems(state).flatMap(play => {
+  const frameworkRows = organizationWorkplanItems(state).flatMap(play => {
     const playSaved = organizationDashboardItem(state, "play", play.id);
     const playRow = {
       Level: "Play",
@@ -8076,6 +8461,18 @@ function organizationWorkplanExportRows(state) {
     });
     return [playRow, ...milestoneRows, ...toolRows];
   });
+  const taskRows = (state.toolTasks || []).map(task => ({
+    Level: "Tool task",
+    Number: task.id || "",
+    Item: task.activity || "",
+    "Parent Play": (task.playIds || []).map(id => `Play ${id}`).join(", "),
+    Priority: `Generated by Tool ${task.toolId}: ${task.toolTitle || ""}`,
+    Lead: task.owner || "",
+    Status: task.status || "Not started",
+    Deadline: task.dueDate || "",
+    Notes: [task.notes, task.reviewDate ? `Review/follow-up: ${task.reviewDate}` : ""].filter(Boolean).join(" | ")
+  }));
+  return [...frameworkRows, ...taskRows];
 }
 
 function csvCell(value) {

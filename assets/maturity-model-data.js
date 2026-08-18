@@ -18,9 +18,9 @@
       { className: "stage stage-4", label: "Deployment: build and deploy", canonical: "#/plays/11", foundation: "detail.html?play=11" },
       { className: "stage stage-5", label: "Optimization: monitor and improve", canonical: "#/plays/13", foundation: "detail.html?play=13" },
       { className: "dimension dimension-leadership", label: "Leadership and Culture", canonical: "#/plays/1", foundation: "detail.html?play=1" },
-      { className: "dimension dimension-data", label: "Data Infrastructure", canonical: "#/toolkit/6", foundation: "tool.html?play=2" },
+      { className: "dimension dimension-data", label: "Data Infrastructure", canonical: "#/toolkit/9", foundation: "tool.html?play=2" },
       { className: "dimension dimension-workforce", label: "Workforce Capacity", canonical: "#/plays/5", foundation: "detail.html?play=5" },
-      { className: "dimension dimension-technology", label: "Technology Systems", canonical: "#/toolkit/27", foundation: "tool.html?play=11" },
+      { className: "dimension dimension-technology", label: "Technology Systems", canonical: "#/toolkit/39", foundation: "tool.html?play=11" },
       { className: "dimension dimension-governance", label: "Governance", canonical: "#/plays/3", foundation: "detail.html?play=3" }
     ]
   };

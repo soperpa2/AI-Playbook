@@ -14,7 +14,7 @@ function render(filter = "all") {
       <p>${play.summary}</p>
       <a class="detail-link" href="${playUrl(play)}">Explore Play ${play.number} →</a>
       <div class="evidence-label"><small>Evidence basis</small><strong>${play.evidence}</strong></div>
-      <div class="starter" data-content-id="${play.tool.id}"><small>Foundation Tool</small><strong><a href="${play.number === 2 ? "assess.html" : "tool.html?play=" + play.number}">${play.tool.title}</a></strong><a class="tool-link" href="${play.number === 2 ? "assess.html" : "tool.html?play=" + play.number}">Open this tool →</a></div>
+      <div class="starter" data-content-id="${play.tool.id}"><small>Foundation Tool</small><strong><a href="tool.html?play=${play.number}">${play.tool.title}</a></strong><a class="tool-link" href="tool.html?play=${play.number}">Open this tool →</a></div>
     </article>`).join("");
 }
 
