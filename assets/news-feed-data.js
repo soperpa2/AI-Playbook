@@ -1,6 +1,6 @@
 window.newsFeedData = {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-08-18T01:52:10.641Z",
+  "updatedAt": "2026-08-18T07:05:54.625Z",
   "updateMode": "scheduled-rss-and-curated",
   "items": [
     {
