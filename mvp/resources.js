@@ -33,3 +33,5 @@ const groups=[
 ];
 const root=document.querySelector('#resource-groups');
 root.innerHTML=groups.map(g=>`<section class="resource-group"><h2>${g.title}</h2><p>${g.intro}</p><div class="resource-grid">${g.items.map(([title,summary,use,plays,url])=>`<article class="resource-card"><h3><a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h3><p>${summary}</p><p class="use"><b>Toolkit use:</b> ${use}</p><span class="plays">${plays}</span></article>`).join('')}</div></section>`).join('')+`<p class="scope-note"><b>Scope note.</b> This is a structured audit of major publicly available, non-commercial resources relevant to organizational AI readiness and implementation in public health as of August 13, 2026. It does not claim to capture every publication, jurisdictional policy, academic program, conference session, or local practice example worldwide. Submit additions through the <a href="feedback.html"><u>feedback page</u></a>.</p>`;
+const resourceReviewMeta=document.querySelector('.resource-meta');
+if(resourceReviewMeta) root.insertAdjacentElement('afterend',resourceReviewMeta);
