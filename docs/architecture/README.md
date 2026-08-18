@@ -21,6 +21,8 @@ This documentation defines how the current AI Playbook website can evolve into a
 
 10. [Governmental Public Health AI News Standard](governmental-public-health-ai-news-standard.md) — inclusion criteria, source hierarchy, labeling, automation, shared-edition rules, and governance.
 
+11. [Equity Governance Implementation Standard](equity-governance-implementation-standard.md) — WHO source foundation, lifecycle controls, tool implementation, evidence rules, and remaining recommendations.
+
 ## Decisions at a glance
 
 - Preserve the current 13-play PLAN–BUILD–DEPLOY–GOVERN framework and tool numbering.

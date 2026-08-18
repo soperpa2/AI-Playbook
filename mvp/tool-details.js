@@ -21,6 +21,16 @@ function pathwayBridge() {
   return `<section class="pathway-import"><p class="eyebrow">Assessment to action</p><h3>Bring preliminary findings into Play 2</h3><p>The Pathway Assessment identifies a preliminary route. This tool validates those findings with local evidence, resolves unknowns, and assigns readiness improvements.</p>${summary}<div class="button-row no-print"><a class="btn" href="assess.html">${result ? "Review Pathway Assessment" : "Take Pathway Assessment"}</a>${result ? '<button class="btn primary" type="button" id="import-pathway">Import latest findings</button>' : ""}<button class="btn" type="button" id="start-without-pathway">Start without assessment</button></div><p class="tool-save-status" id="pathway-import-status" role="status"></p></section>`;
 }
 
+function equityGovernanceFields() {
+  const fields = {
+    4: ["Which communities, including intersecting groups, must participate?", "What decision, review, approval, or pause authority will community representatives have?", "How will missing voices, accessibility, language access, and Tribal or other community data-governance requirements be addressed?"],
+    7: ["Could any input or proxy (such as cost, utilization, attendance, or digital engagement) reflect unequal access or structural barriers?", "What subgroup and intersectional evidence is required, including vendor bias-audit evidence?", "What equity thresholds, approval conditions, or no-go/pause criteria apply?"],
+    13: ["Which subgroup and intersectional measures, sample-size limitations, and proxy outcomes will be monitored?", "What disparity thresholds trigger review, correction, pause, or retirement?", "Who will audit the results, participate in remedies, notify affected communities, and enforce vendor or agency corrective actions?"]
+  }[play.number];
+  if (!fields) return "";
+  return `<fieldset class="foundation-equity-controls"><legend>Equity governance implementation</legend><p>Document the local controls needed to turn equity principles into accountable decisions.</p>${fields.map((field, index) => `<label>${field}<textarea name="equity_${index + 1}" rows="4"></textarea></label>`).join("")}</fieldset>`;
+}
+
 document.title = `${play.tool.title} | Foundation Edition`;
 main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lead: play.tool.purpose, eyebrow: `Foundation Edition · Play ${play.number} Tool`, className: "foundation-tool-page" }) + `
   <div class="content-meta"><span>Available now</span><span>Version ${release.version}</span><span>Supports Play ${play.number}</span></div>
@@ -35,6 +45,7 @@ main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lea
       <label>Date<input name="date" type="date"></label>
       <label>Purpose and local context<textarea name="context" rows="4" placeholder="Describe the public health need, decision, workflow, or local context for this tool."></textarea></label>
       ${play.questions.map((question, index) => `<label>${question}<textarea name="question_${index + 1}" rows="4"></textarea></label>`).join("")}
+      ${equityGovernanceFields()}
       <label>Decision or recommended direction<textarea name="decision" rows="4" placeholder="Record the decision, conditions, limitations, or recommendation."></textarea></label>
       <label>Actions, owners, and target dates<textarea name="actions" rows="5" placeholder="List each next action, responsible owner, and target date."></textarea></label>
       <label>Evidence, approvals, or follow-up needed<textarea name="follow_up" rows="4"></textarea></label>

@@ -162,6 +162,7 @@ const toolFormBlueprints = {
 
 const legacyToolFormBlueprints = { ...toolFormBlueprints };
 Object.assign(toolFormBlueprints, {
+  3: [["Project, community, and decision context", ["AI project/use case", "Decision the AI will inform or support", "Population groups affected", "Communities and representatives consulted", "Known disparities, access barriers, or structural inequities", "Who has authority to approve, condition, pause, or reject the use"]], ["Equity and data review", ["Potential benefits and who receives them", "Potential harms and who bears them", "Subgroups and intersectional groups to evaluate", "Proxy variables and whether they may reflect unequal access or structural barriers", "Performance evidence by subgroup and intersection", "Language, disability, geography, and accessibility considerations", "Tribal data sovereignty or other community data-governance requirements"]], ["Controls and decision", ["Required design or workflow changes", "Equity performance thresholds and no-go or pause criteria", "Monitoring metrics and audit cadence", "Community feedback and notification plan", "Vendor bias-audit evidence or limitations", "Required remedies, approval conditions, and consequences for noncompliance", "Governance decision and re-review date"]]],
   11: legacyToolFormBlueprints[11],
   12: legacyToolFormBlueprints[12],
   13: [["Use case intake", ["Use case name", "Submitting program/division", "Business owner", "Intended users", "Public health purpose", "AI functionality requested"]], ["Risk review", ["Data involved", "PHI or sensitive data present?", "Population groups affected", "Privacy/security review required", "Equity review required", "Validation required", "Risk tier"]], ["System inventory record", ["Approval status", "Governance decision date", "Operational owner", "Monitoring cadence", "Review/renewal date", "Retirement or pause conditions"]]],
@@ -180,14 +181,14 @@ Object.assign(toolFormBlueprints, {
   30: legacyToolFormBlueprints[24],
   31: legacyToolFormBlueprints[25],
   36: legacyToolFormBlueprints[26],
-  32: legacyToolFormBlueprints[29],
+  32: [["Vendor and solution profile", ["Vendor name", "Product/service", "Public health use case supported", "Data involved", "Procurement stage", "Intended users and affected communities"]], ["Evidence and equity review", ["Security, privacy, and data-governance controls", "System documentation and intended-use limitations", "Validation evidence for the local population and setting", "Disaggregated performance by subgroup", "Intersectional performance and sample-size limitations", "Proxy variables and analysis of structural inequity", "Independent bias-audit evidence and audit date", "Affected-community participation in design or evaluation", "Accessibility, language access, and human oversight"]], ["Contract controls and recommendation", ["Required performance and equity thresholds", "Agency audit and data-access rights", "Ongoing monitoring and incident reporting", "Remediation deadlines", "Suspension, termination, or other consequences for unmet requirements", "Exit, portability, and model-change terms", "Residual risks", "Recommended procurement decision and approval conditions"]]],
   33: legacyToolFormBlueprints[30],
   39: legacyToolFormBlueprints[36],
   40: legacyToolFormBlueprints[32],
   41: legacyToolFormBlueprints[33],
   42: legacyToolFormBlueprints[39],
   44: legacyToolFormBlueprints[40],
-  47: legacyToolFormBlueprints[41],
+  47: [["Monitoring profile", ["AI system name", "Public health program and use case", "Reporting period", "Operational owner", "Independent reviewer or review body", "Communities represented in review"]], ["Equity dashboard", ["Subgroups and intersectional groups monitored", "Sample sizes and evidence limitations", "Baseline and current performance by subgroup", "Benefit, burden, error, access, and outcome measures", "Disparity thresholds and no-go or pause triggers", "Proxy outcomes that may reflect structural barriers", "Language, disability, geography, and digital-access indicators", "Community feedback or complaints", "Audit cadence and next review date"]], ["Response and accountability", ["Thresholds or concerns triggered", "Root-cause and structural-barrier analysis", "Corrective actions, owners, and deadlines", "Community notification and participation in remedies", "Governance escalation and decision", "Vendor remediation or contractual consequences", "Continue, condition, suspend, replace, or retire decision", "Public reporting and follow-up date"]]],
   48: legacyToolFormBlueprints[42],
   45: legacyToolFormBlueprints[44],
   46: legacyToolFormBlueprints[47]
@@ -1321,6 +1322,9 @@ const references = [
       ["White House Office of Science and Technology Policy. (2022). Blueprint for an AI bill of rights: Making automated systems work for the American people.", "Blueprint for an AI Bill of Rights.", "https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/"],
       ["World Health Organization. (2021). Ethics and governance of artificial intelligence for health.", "WHO AI ethics and governance guidance.", "https://www.who.int/publications/i/item/9789240029200"],
       ["World Health Organization. (2023). Regulatory considerations on artificial intelligence for health. Geneva: World Health Organization.", "WHO regulatory considerations for AI in health.", "https://iris.who.int/handle/10665/373421"],
+      ["World Health Organization. (2024). Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models.", "Extends WHO's 2021 principles to generative and multi-modal AI, including stakeholder engagement, impact assessment, disaggregated evaluation, independent audit, and post-release monitoring.", "https://www.who.int/publications/i/item/9789240084759"],
+      ["WHO Regional Office for Europe. (2025). Health data governance in the age of artificial intelligence: Policy imperatives for the WHO European Region.", "Addresses representative and bias-aware health data, human rights, equity, and accountable data governance for AI.", "https://www.who.int/europe/publications/i/item/WHO-EURO-2025-11462-51234-78079"],
+      ["WHO Regional Office for Europe. (2026). Equity across the regulation, implementation and evaluation of digital health: Scoping review.", "Supports equity-by-design, inclusive governance, participatory design, equity metrics, and bias auditing across the technology lifecycle.", "https://www.who.int/europe/publications/i/item/WHO-EURO-2026-13153-52927-82472"],
       ["Panch, T., Pearson-Stuttard, J., Greaves, F., & Atun, R. (2019). Artificial intelligence: Opportunities and risks for public health. The Lancet Digital Health, 1(1), e13-e14.", "AI opportunities and risks for public health.", "https://doi.org/10.1016/S2589-7500(19)30002-0"]
     ]
   },
