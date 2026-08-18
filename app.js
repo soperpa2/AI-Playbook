@@ -9213,7 +9213,13 @@ function saveForumPost() {
 }
 
 function renderContribute() {
+  const state = getMemberState();
   main.innerHTML = pageIntro("Contribute / Feedback", "Help improve the AI Playbook for Public Health by sharing feedback, implementation examples, tools, use cases, or community of practice updates.") + `
+    <section class="panel reviewer-benefits-panel">
+      <div class="section-heading"><p class="eyebrow">Reviewer program</p><h2>Reviewer benefits</h2><p>Free members may apply for structured reviews matched to their experience. Selection depends on topic fit, perspective balance, and available review capacity.</p></div>
+      <div class="four-grid"><article><h3>Early access</h3><p>See selected new plays, tools, or learning resources before public release.</p></article><article><h3>Professional learning</h3><p>Learn from practical public health scenarios, structured review questions, and emerging implementation issues.</p></article><article><h3>Visible contribution</h3><p>Receive optional acknowledgment, with permission, for completed review contributions.</p></article><article><h3>Field influence</h3><p>Help improve clarity, usability, evidence, accessibility, role fit, and public health relevance.</p></article></div>
+      <div class="button-row"><a class="btn primary" href="${state.profile ? "#/member" : "#/member-info"}">${state.profile ? "Reviewer eligibility is active" : "Join free to become eligible"}</a></div>
+    </section>
     <div class="two-col">
       <form class="panel contribute-form">
         <h2>Submit a Contribution</h2>
