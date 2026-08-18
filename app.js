@@ -6473,6 +6473,22 @@ function toolUseGuide(tool) {
     13: "Monitor accuracy, timeliness, subgroup performance, accessibility, staff workload, community feedback, and public health outcomes after launch."
   };
   const examples = [...new Set(relatedPlays.map(play => publicHealthExamples[play.id]).filter(Boolean))].slice(0, 3);
+  const unique = values => [...new Set(values.filter(Boolean))];
+  const responsible = unique((tool.roles || []).length ? tool.roles : involved.slice(0, 2));
+  const support = unique(involved.filter(role => /IT|data|analytics|evaluation|informatics|PMO|finance|grants|training|HR|change|communications|procurement|vendor|technical/i.test(role)));
+  const consulted = unique(involved.filter(role => /legal|privacy|security|equity|community|Tribal|accessibility|language|civil rights|program|data owner|procurement/i.test(role)));
+  const informed = unique([
+    ...involved.filter(role => /executive|leadership|supervisor|program staff|pilot user|operational owner|partner/i.test(role)),
+    "Staff whose work, documentation, or decision responsibilities may change",
+    ...(relatedPlays.some(play => [4, 7, 10, 11, 13].includes(play.id)) ? ["Affected community representatives and external partners, using appropriate public or partner communications"] : [])
+  ]);
+  const rasci = [
+    ["Responsible", "Completes the tool, gathers evidence, coordinates follow-up, and keeps the record current.", responsible.length ? responsible : ["Named tool owner or program lead"]],
+    ["Accountable", "Owns the decision and provides or secures required approval. There should be one clearly designated accountable authority for the final artifact.", unique(approvers)],
+    ["Support", "Provides implementation, technical, analytic, operational, training, financial, or administrative assistance.", support.length ? support : ["Implementation, technical, or administrative support identified by the tool owner"]],
+    ["Consulted", "Provides subject-matter review before the decision, especially for privacy, security, legal, equity, accessibility, community, data, or procurement concerns.", consulted.length ? consulted : ["Required subject-matter and affected-community reviewers based on risk"]],
+    ["Informed", "Receives the decision, conditions, deadlines, changes, or results but is not asked to approve unless separately assigned.", informed]
+  ];
 
   return `<section class="tool-use-guide" aria-labelledby="tool-use-guide-heading">
     <p class="eyebrow">Before You Begin</p>
@@ -6481,8 +6497,7 @@ function toolUseGuide(tool) {
       <section><h3>When to use it</h3><p>Use this tool while completing ${playNames}. Revisit it when evidence, ownership, risks, approvals, system scope, or agency policy materially changes.</p></section>
       <section><h3>Why to use it</h3><p>${tool.purpose}</p><p>The completed tool creates a reviewable record that can support implementation, governance decisions, follow-up, and future audits.</p></section>
       <section><h3>How to use it</h3><ol class="compact-list"><li>Choose an owner or facilitator and gather the available evidence.</li><li>Complete it with the people who understand the program, affected communities, data, workflow, and risks.</li><li>Use <strong>Unknown</strong> for evidence gaps and <strong>Other</strong> or custom categories for local needs.</li><li>Assign owners and due dates for unresolved items.</li><li>Route the completed artifact to the required reviewers and approvers, then retain the decision record.</li></ol></section>
-      <section><h3>Who should be involved or consulted</h3><ul class="compact-list">${involved.map(role => `<li>${role}</li>`).join("")}</ul></section>
-      <section><h3>Who should review or approve</h3><p class="plain-meta">Apply agency policy and the risk tier to determine required sign-off.</p><ul class="compact-list">${[...new Set(approvers)].map(role => `<li>${role}</li>`).join("")}</ul></section>
+      <section class="tool-rasci-section"><h3>Who should be involved: RASCI</h3><p class="plain-meta">Adapt these assignments to agency policy and the use case’s risk tier. <strong>Accountable</strong> identifies decision and approval authority; <strong>Consulted</strong> identifies reviewers whose input is required before that decision.</p><div class="tool-rasci-grid">${rasci.map(([category, meaning, roles]) => `<article><h4>${category}</h4><p>${meaning}</p><ul class="compact-list">${roles.map(role => `<li>${role}</li>`).join("")}</ul></article>`).join("")}</div></section>
       <section><h3>Public health examples</h3><ul class="compact-list">${examples.map(example => `<li>${example}</li>`).join("")}</ul></section>
     </div>
     <section class="tool-guide-links"><h3>Related plays</h3><p>${relatedPlays.map(play => playLink(play.id)).join("<br>")}</p></section>
