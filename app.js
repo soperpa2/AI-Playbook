@@ -3936,6 +3936,7 @@ function defaultMemberState() {
     notifications: [],
     savedAssessments: [],
     savedTools: [],
+    toolTasks: [],
     learningProgress: {},
     forumPosts: [
       { id: "seed-1", author: "Playbook Team", topic: "Governance", title: "How are agencies sequencing governance before pilots?", body: "Share approaches for forming an AI governance body, approving use cases, and keeping community input visible.", date: "2026-06-30" },
@@ -4077,7 +4078,7 @@ function memberOnlyNotice(isMember) {
 
 function restoreToolProgress(toolId, blueprint) {
   const state = getMemberState();
-  const saved = [...(state.savedTools || [])].reverse().find(item => item.toolId === toolId);
+  const saved = savedToolRecord(toolId, state);
   if (!saved) return;
   const form = document.getElementById("tool-form");
   saved.entries.forEach(([section, fields]) => {
@@ -4106,13 +4107,15 @@ function saveToolProgress(tool, blueprint) {
   if (!hasMemberProfile()) return;
   const state = getMemberState();
   const savedAt = new Date().toLocaleString();
+  const actions = collectToolActions(tool);
   state.savedTools = [
     ...(state.savedTools || []).filter(item => item.toolId !== tool.id),
-    { toolId: tool.id, title: tool.title, savedAt, entries: collectToolEntries(blueprint, false) }
+    { toolId: tool.id, title: tool.title, savedAt, entries: collectToolEntries(blueprint, false), actions }
   ];
+  state.toolTasks = [...(state.toolTasks || []).filter(action => action.toolId !== tool.id), ...actions];
   setMemberState(state);
   const status = document.getElementById("tool-save-status");
-  if (status) status.textContent = `Progress saved for Tool ${tool.id} at ${savedAt}.`;
+  if (status) status.textContent = `Progress saved for Tool ${tool.id} at ${savedAt}. ${actions.length} task${actions.length === 1 ? "" : "s"} synchronized to the integrated task tracker.`;
 }
 
 function renderHome() {
@@ -5208,7 +5211,9 @@ function saveAssessmentProgress() {
       action: document.getElementById("readiness-action").textContent,
       recommendations: document.getElementById("assessment-recs").innerText,
       recommendedPlays: (document.getElementById("assessment-recs").dataset.plays || "").split(",").filter(Boolean).map(Number),
-      recommendedTools: (document.getElementById("assessment-recs").dataset.tools || "").split(",").filter(Boolean).map(Number)
+      recommendedTools: (document.getElementById("assessment-recs").dataset.tools || "").split(",").filter(Boolean).map(Number),
+      pathway: (document.getElementById("assessment-recs").dataset.plays || "").split(",").filter(Boolean).map(Number),
+      domainScores: JSON.parse(document.getElementById("assessment-recs").dataset.domainScores || "[]")
     }
   ];
   setMemberState(state);
@@ -5238,21 +5243,30 @@ function updateAssessment() {
   const basePlays = readinessPercent >= 76 ? [10,11,12,13] : readinessPercent >= 51 ? [6,7,8,9] : readinessPercent >= 26 ? [2,3,4,5] : [1,2,4];
   const baseTools = readinessPercent >= 76 ? [40,41,42,44,47] : readinessPercent >= 51 ? [2,7,12,25,26] : readinessPercent >= 26 ? [1,13,21,24,30] : [1,7,16,17,30];
   const priorityGaps = domainScores.filter(d => d.subtotal <= 6).sort((a, b) => a.subtotal - b.subtotal);
-  const recPlays = new Set(basePlays);
-  const recTools = new Set(baseTools);
+  const pathway = [];
+  const recTools = [];
+  const addPlay = (id, reason) => {
+    if (!pathway.some(step => step.id === id)) pathway.push({ id, reason });
+  };
+  const addTool = id => { if (!recTools.includes(id)) recTools.push(id); };
   priorityGaps.forEach(gap => {
-    readinessGapRecommendations[gap.name].plays.forEach(id => recPlays.add(id));
-    readinessGapRecommendations[gap.name].tools.forEach(id => recTools.add(id));
+    readinessGapRecommendations[gap.name].plays.forEach(id => addPlay(id, `Priority response to ${gap.name} (${gap.percent} / 100)`));
+    readinessGapRecommendations[gap.name].tools.forEach(addTool);
   });
+  basePlays.forEach(id => addPlay(id, `Next-stage work for the ${level}`));
+  baseTools.forEach(addTool);
+  const recPlays = pathway.map(step => step.id);
   document.getElementById("assessment-recs").innerHTML = `
-    <h3>Suggested Next Plays</h3>
-    <p>${[...recPlays].sort((a,b)=>a-b).map(playLink).join("<br>")}</p>
+    <h3>Your Custom Pathway</h3>
+    <p>Complete these plays in the order shown. The lowest-scoring readiness domains are addressed first; stage-based next steps follow after the priority gaps.</p>
+    <ol class="assessment-pathway">${pathway.map((step, index) => `<li><span class="number-badge">${index + 1}</span><div><strong>${playLink(step.id)}</strong><small>${step.reason}</small></div></li>`).join("")}</ol>
     <h3>Suggested Tools</h3>
-    <p>${[...recTools].sort((a,b)=>a-b).map(toolLink).join("<br>")}</p>
+    <p>${recTools.map(toolLink).join("<br>")}</p>
     ${priorityGaps.length ? `<h3>Priority Gap Areas</h3><p>${priorityGaps.map(g=>`${g.name}: ${g.percent} / 100 (raw ${g.subtotal} / 12)`).join("<br>")}</p>` : `<h3>Priority Gap Areas</h3><p>No domain scored 50 / 100 or below. Use the recommendations to prepare for the next stage.</p>`}
   `;
-  document.getElementById("assessment-recs").dataset.plays = [...recPlays].sort((a,b)=>a-b).join(",");
-  document.getElementById("assessment-recs").dataset.tools = [...recTools].sort((a,b)=>a-b).join(",");
+  document.getElementById("assessment-recs").dataset.plays = recPlays.join(",");
+  document.getElementById("assessment-recs").dataset.tools = recTools.join(",");
+  document.getElementById("assessment-recs").dataset.domainScores = JSON.stringify(domainScores);
 }
 
 function assessmentSections() {
@@ -6443,6 +6457,22 @@ function toolUseGuide(tool) {
   const resources = [...resourceMap.values()].slice(0, 5);
   const modules = learningModules.filter(module => (module.tools || []).includes(tool.id)).slice(0, 4);
   const playNames = relatedPlays.map(play => `Play ${play.id}: ${play.title}`).join(", ");
+  const publicHealthExamples = {
+    1: "Set guardrails for using generative AI to draft health advisories while requiring communications and subject-matter review before release.",
+    2: "Assess whether epidemiology, immunization, environmental health, and emergency preparedness programs have the data, workforce, and governance capacity for a pilot.",
+    3: "Route an AI-assisted reportable-disease workflow through privacy, security, equity, legal, program, and governance review.",
+    4: "Consult residents, frontline staff, Tribal partners, disability advocates, and language-access staff before introducing a public-facing AI service.",
+    5: "Assign role-based learning to epidemiologists, public information officers, program managers, IT staff, and executive leaders.",
+    6: "Plan workflow changes, staff communications, office hours, and escalation support before an AI-assisted case-routing pilot begins.",
+    7: "Compare a syndromic-surveillance signal detector, an immunization outreach assistant, and an environmental-health inspection summarizer using the same criteria.",
+    8: "Document PHIG, DMI, grant, general-fund, staffing, procurement, evaluation, and sustainment resources for an approved pilot.",
+    9: "Sequence governance approval, data preparation, vendor review, workforce training, pilot testing, evaluation, and scale decisions.",
+    10: "Track training, adoption barriers, workflow feedback, and corrective actions during deployment in a communicable-disease program.",
+    11: "Validate an AI-supported outbreak triage workflow with de-identified data, subgroup testing, human review, rollback criteria, and go-live approval.",
+    12: "Record quarterly governance decisions, incidents, corrective actions, policy updates, and system retirement or continuation decisions.",
+    13: "Monitor accuracy, timeliness, subgroup performance, accessibility, staff workload, community feedback, and public health outcomes after launch."
+  };
+  const examples = [...new Set(relatedPlays.map(play => publicHealthExamples[play.id]).filter(Boolean))].slice(0, 3);
 
   return `<section class="tool-use-guide" aria-labelledby="tool-use-guide-heading">
     <p class="eyebrow">Before You Begin</p>
@@ -6453,6 +6483,7 @@ function toolUseGuide(tool) {
       <section><h3>How to use it</h3><ol class="compact-list"><li>Choose an owner or facilitator and gather the available evidence.</li><li>Complete it with the people who understand the program, affected communities, data, workflow, and risks.</li><li>Use <strong>Unknown</strong> for evidence gaps and <strong>Other</strong> or custom categories for local needs.</li><li>Assign owners and due dates for unresolved items.</li><li>Route the completed artifact to the required reviewers and approvers, then retain the decision record.</li></ol></section>
       <section><h3>Who should be involved or consulted</h3><ul class="compact-list">${involved.map(role => `<li>${role}</li>`).join("")}</ul></section>
       <section><h3>Who should review or approve</h3><p class="plain-meta">Apply agency policy and the risk tier to determine required sign-off.</p><ul class="compact-list">${[...new Set(approvers)].map(role => `<li>${role}</li>`).join("")}</ul></section>
+      <section><h3>Public health examples</h3><ul class="compact-list">${examples.map(example => `<li>${example}</li>`).join("")}</ul></section>
     </div>
     <section class="tool-guide-links"><h3>Related plays</h3><p>${relatedPlays.map(play => playLink(play.id)).join("<br>")}</p></section>
     <section class="tool-guide-links"><h3>References and preparation materials</h3>
@@ -6463,6 +6494,56 @@ function toolUseGuide(tool) {
       </div>
     </section>
   </section>`;
+}
+
+function toolActionRow(toolId, action = {}, index = 0) {
+  const status = action.status || "Not started";
+  return `<tr class="tool-action-row" data-tool-action-row data-tool-id="${toolId}">
+    <td><textarea rows="2" data-action-field="activity" placeholder="Example: Validate the outbreak-alert model against the prior 12 months of epidemiologist-reviewed alerts.">${escapeDoc(action.activity || "")}</textarea></td>
+    <td><input data-action-field="owner" value="${escapeDoc(action.owner || "")}" placeholder="Example: Surveillance epidemiologist"></td>
+    <td><input type="date" data-action-field="dueDate" value="${escapeDoc(action.dueDate || "")}" aria-label="Target completion date"></td>
+    <td><select data-action-field="status" aria-label="Action status">${["Not started", "In progress", "Blocked", "Ready for review", "Completed"].map(value => `<option${value === status ? " selected" : ""}>${value}</option>`).join("")}</select></td>
+    <td><input type="date" data-action-field="reviewDate" value="${escapeDoc(action.reviewDate || "")}" aria-label="Review or follow-up date"></td>
+    <td><textarea rows="2" data-action-field="notes" placeholder="Example: Privacy review required before testing with identifiable case data.">${escapeDoc(action.notes || "")}</textarea></td>
+    <td><button class="btn small remove-tool-action" type="button" aria-label="Remove action ${index + 1}">Remove</button></td>
+  </tr>`;
+}
+
+function renderToolActionTracker(tool) {
+  return `<section class="tool-section tool-action-tracker" data-tool-action-tracker="${tool.id}">
+    <div class="tool-action-header"><div><p class="eyebrow">Action and Follow-up Tracking</p><h3>Activities, owners, and dates</h3><p>Record work created by this tool. Add a row for each activity, decision follow-up, evidence gap, approval, consultation, or corrective action. Saved rows automatically appear in the Full Version’s integrated task tracker.</p></div><button class="btn small add-tool-action" type="button">Add another task</button></div>
+    <div class="table-wrap"><table class="tool-action-table"><thead><tr><th>Activity or task</th><th>Assigned individual or team</th><th>Target date</th><th>Status</th><th>Review / follow-up date</th><th>Notes or dependency</th><th></th></tr></thead><tbody></tbody></table></div>
+  </section>`;
+}
+
+function savedToolRecord(toolId, state = getMemberState()) {
+  return [...(state.savedTools || [])].reverse().find(item => item.toolId === toolId) || null;
+}
+
+function hydrateToolActionTracker(toolId) {
+  const tracker = document.querySelector(`[data-tool-action-tracker="${toolId}"]`);
+  if (!tracker) return;
+  const body = tracker.querySelector("tbody");
+  const savedActions = savedToolRecord(toolId)?.actions || [];
+  const add = action => {
+    const holder = document.createElement("tbody");
+    holder.innerHTML = toolActionRow(toolId, action, body.children.length);
+    const row = holder.firstElementChild;
+    row.querySelector(".remove-tool-action").addEventListener("click", () => {
+      row.remove();
+      if (!body.children.length) add({});
+    });
+    body.appendChild(row);
+  };
+  (savedActions.length ? savedActions : [{}]).forEach(add);
+  tracker.querySelector(".add-tool-action").addEventListener("click", () => add({}));
+}
+
+function collectToolActions(tool) {
+  return [...document.querySelectorAll(`[data-tool-action-tracker="${tool.id}"] [data-tool-action-row]`)].map((row, index) => {
+    const value = field => row.querySelector(`[data-action-field="${field}"]`)?.value.trim() || "";
+    return { id: `tool-${tool.id}-task-${index + 1}`, toolId: tool.id, toolTitle: tool.title, playIds: [...tool.playIds], activity: value("activity"), owner: value("owner"), dueDate: value("dueDate"), status: value("status") || "Not started", reviewDate: value("reviewDate"), notes: value("notes") };
+  }).filter(action => action.activity || action.owner || action.dueDate || action.reviewDate || action.notes);
 }
 
 function renderToolDetail(id) {
@@ -6489,6 +6570,7 @@ function renderToolDetail(id) {
             </div>
           </section>
           ${window.GuidedToolTemplate.render(guidedDefinition)}
+          ${renderToolActionTracker(t)}
         </form>
         ${memberOnlyNotice(isMember)}
         <div class="button-row no-print">
@@ -6510,6 +6592,7 @@ function renderToolDetail(id) {
     </div>
   </section>`;
   window.GuidedToolTemplate.hydrate(document.getElementById("tool-form"));
+  hydrateToolActionTracker(t.id);
   restoreToolProgress(t.id, blueprint);
   hydrateToolRatingPanel();
   document.getElementById("download-blank-tool").addEventListener("click", () => runDocumentDownload(() => downloadToolWord(t, blueprint, true), "Blank Word template"));
@@ -6711,7 +6794,23 @@ function buildProfessionalWordHtml(title, status, subtitle, metaRows, sections, 
 }
 
 function toolDocumentSections(tool, blueprint, blank = false) {
-  return collectToolEntries(blueprint, blank).map(([heading, rows]) => ({ heading, rows }));
+  const sections = collectToolEntries(blueprint, blank).map(([heading, rows]) => ({ heading, rows }));
+  const actions = blank ? [{}] : collectToolActions(tool);
+  sections.push({
+    heading: "Action and Follow-up Tracking",
+    rows: (actions.length ? actions : [{}]).map((action, index) => [
+      `Action ${index + 1}`,
+      blank ? "" : [
+        `Activity: ${action.activity || ""}`,
+        `Assigned individual or team: ${action.owner || ""}`,
+        `Target date: ${action.dueDate || ""}`,
+        `Status: ${action.status || "Not started"}`,
+        `Review / follow-up date: ${action.reviewDate || ""}`,
+        `Notes or dependency: ${action.notes || ""}`
+      ].join("\n")
+    ])
+  });
+  return sections;
 }
 
 async function downloadToolWord(tool, blueprint, blank = false) {
@@ -7207,7 +7306,7 @@ function parseRecommendationIds(text, kind) {
 function organizationRecommendedIds(state, kind) {
   const latest = latestSavedAssessment(state);
   const structured = kind === "tool" ? latest?.recommendedTools : latest?.recommendedPlays;
-  if (Array.isArray(structured) && structured.length) return [...new Set(structured)].sort((a, b) => a - b);
+  if (Array.isArray(structured) && structured.length) return [...new Set(structured.map(Number))];
   const parsed = parseRecommendationIds(latest?.recommendations || "", kind);
   if (parsed.length) return parsed;
   return kind === "tool" ? [1,2,3,4,7,11,12,13] : [1,2,3,4];
@@ -7362,7 +7461,7 @@ function organizationHubContext() {
     organizationDashboardItem(state, "play", play.id),
     ...play.milestones.map(milestone => organizationDashboardItem(state, "milestone", `${play.id}-${milestone.id}`)),
     ...play.tools.map(tool => organizationDashboardItem(state, "tool", tool.id))
-  ]);
+  ]).concat(state.toolTasks || []);
   const completed = trackedItems.filter(item => item.status === "Completed").length;
   const blocked = trackedItems.filter(item => item.status === "Blocked").length;
   const dueSoon = trackedItems.filter(item => item.dueDate && (new Date(item.dueDate) - new Date()) <= 1000 * 60 * 60 * 24 * 30 && new Date(item.dueDate) >= new Date(new Date().toDateString())).length;
@@ -7392,6 +7491,18 @@ function collectOrganizationDashboardFromDom(state) {
     milestoneLabels[field.dataset.milestoneTitle] = field.value.trim();
   });
   state.organizationMilestoneLabels = milestoneLabels;
+  const toolTasks = [...(state.toolTasks || [])];
+  document.querySelectorAll("[data-tool-task-index][data-tool-task-field]").forEach(field => {
+    const index = Number(field.dataset.toolTaskIndex);
+    const name = field.dataset.toolTaskField;
+    toolTasks[index] = toolTasks[index] || {};
+    toolTasks[index][name] = field.value;
+  });
+  state.toolTasks = toolTasks;
+  state.savedTools = (state.savedTools || []).map(saved => ({
+    ...saved,
+    actions: toolTasks.filter(task => task.toolId === saved.toolId)
+  }));
   return state;
 }
 
@@ -8063,6 +8174,20 @@ function renderOrganizationWorkplan() {
     <section class="panel">
       <div class="org-workspace-header">
         <div>
+          <p class="eyebrow">Automatically Synchronized</p>
+          <h2>Tool action tracker</h2>
+          <p>Tasks saved from any Full Version tool appear here with their source tool and related plays. Update owners, dates, status, and notes here or return to the source tool for the full context.</p>
+        </div>
+        <a class="btn small" href="#/toolkit">Open Toolkit</a>
+      </div>
+      <div class="table-wrap org-tracker-table"><table class="organization-workplan-table tool-task-rollup">
+        <thead><tr><th>Source</th><th>Activity or task</th><th>Related plays</th><th>Assigned individual or team</th><th>Target date</th><th>Status</th><th>Review / follow-up</th><th>Notes</th></tr></thead>
+        <tbody>${organizationToolTaskRows(state)}</tbody>
+      </table></div>
+    </section>
+    <section class="panel">
+      <div class="org-workspace-header">
+        <div>
           <p class="eyebrow">Assessment-Based Assignments</p>
           <h2>Integrated play and tool tracker</h2>
           <p>Track the active organization plan. Organization Administrators can remove plays and tools that are not part of this organization's path and restore them later if priorities change.</p>
@@ -8087,8 +8212,23 @@ function renderOrganizationWorkplan() {
   </section>`;
 }
 
+function organizationToolTaskRows(state) {
+  const tasks = state.toolTasks || [];
+  if (!tasks.length) return `<tr><td colspan="8">No tool-generated tasks have been saved yet. Open a tool, add activities in its Action and Follow-up Tracking section, and save progress.</td></tr>`;
+  return tasks.map((task, index) => `<tr>
+    <td><a href="#/toolkit/${task.toolId}">Tool ${task.toolId}: ${escapeDoc(task.toolTitle || tools.find(tool => tool.id === task.toolId)?.title || "Tool")}</a></td>
+    <td><textarea rows="2" data-tool-task-index="${index}" data-tool-task-field="activity">${escapeDoc(task.activity || "")}</textarea></td>
+    <td>${(task.playIds || []).map(playLink).join("<br>")}</td>
+    <td><input data-tool-task-index="${index}" data-tool-task-field="owner" value="${escapeDoc(task.owner || "")}"></td>
+    <td><input type="date" data-tool-task-index="${index}" data-tool-task-field="dueDate" value="${escapeDoc(task.dueDate || "")}"></td>
+    <td><select data-tool-task-index="${index}" data-tool-task-field="status">${["Not started", "In progress", "Blocked", "Ready for review", "Completed"].map(status => `<option${status === task.status ? " selected" : ""}>${status}</option>`).join("")}</select></td>
+    <td><input type="date" data-tool-task-index="${index}" data-tool-task-field="reviewDate" value="${escapeDoc(task.reviewDate || "")}"></td>
+    <td><textarea rows="2" data-tool-task-index="${index}" data-tool-task-field="notes">${escapeDoc(task.notes || "")}</textarea></td>
+  </tr>`).join("");
+}
+
 function organizationWorkplanExportRows(state) {
-  return organizationWorkplanItems(state).flatMap(play => {
+  const frameworkRows = organizationWorkplanItems(state).flatMap(play => {
     const playSaved = organizationDashboardItem(state, "play", play.id);
     const playRow = {
       Level: "Play",
@@ -8131,6 +8271,18 @@ function organizationWorkplanExportRows(state) {
     });
     return [playRow, ...milestoneRows, ...toolRows];
   });
+  const taskRows = (state.toolTasks || []).map(task => ({
+    Level: "Tool task",
+    Number: task.id || "",
+    Item: task.activity || "",
+    "Parent Play": (task.playIds || []).map(id => `Play ${id}`).join(", "),
+    Priority: `Generated by Tool ${task.toolId}: ${task.toolTitle || ""}`,
+    Lead: task.owner || "",
+    Status: task.status || "Not started",
+    Deadline: task.dueDate || "",
+    Notes: [task.notes, task.reviewDate ? `Review/follow-up: ${task.reviewDate}` : ""].filter(Boolean).join(" | ")
+  }));
+  return [...frameworkRows, ...taskRows];
 }
 
 function csvCell(value) {

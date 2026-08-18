@@ -2037,6 +2037,20 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
 .tool-reference-list article { display: grid; gap: .15rem; padding: .7rem .8rem; border-left: 3px solid var(--blue); background: #fff; }
 .tool-reference-list span { color: var(--muted); font-size: .9rem; }
 @media (max-width: 720px) { .tool-use-guide-grid { grid-template-columns: 1fr; } }
+.tool-action-tracker { margin-top: 1.5rem; border: 2px solid #b9d8c1; background: #f5fbf6; }
+.tool-action-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.tool-action-header h3 { margin: .1rem 0 .35rem; }
+.tool-action-header p:last-child { margin-bottom: 0; }
+.tool-action-table { min-width: 1050px; }
+.tool-action-table th { white-space: nowrap; }
+.tool-action-table textarea { min-width: 14rem; }
+.tool-action-table input, .tool-action-table select, .tool-action-table textarea { margin: 0; }
+.tool-task-rollup { min-width: 1200px; }
+.assessment-pathway { display: grid; gap: .65rem; padding: 0; list-style: none; }
+.assessment-pathway li { display: flex; align-items: flex-start; gap: .65rem; padding: .7rem; border-left: 3px solid var(--green); background: #f5fbf6; }
+.assessment-pathway li div { display: grid; gap: .2rem; }
+.assessment-pathway small { color: var(--muted); line-height: 1.35; }
+@media (max-width: 720px) { .tool-action-header { flex-direction: column; } }
 .guided-checkbox-group { margin: 0; padding: 1rem; border: 1px solid var(--line); border-radius: 10px; }
 .guided-checkbox-group legend { padding: 0 .35rem; color: var(--navy); font-weight: 700; }
 .guided-check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem 1rem; margin-top: .65rem; }

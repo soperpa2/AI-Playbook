@@ -28,11 +28,20 @@
     let example = field.example || "";
     if (!example && field.type === "select") example = `Example: ${field.options?.find(option => !/select one|unknown|not applicable/i.test(option)) || "In progress"}.`;
     if (!example && field.type === "checkboxes") example = `Example: select ${field.options?.filter(option => option !== "Other").slice(0, 2).join(" and ") || "all applicable categories"}.`;
-    if (!example && /(owner|lead|facilitator)/.test(label)) example = "Example: Jordan Lee, Program Manager.";
+    if (!example && /(owner|lead|facilitator|assigned)/.test(label)) example = "Example: Jordan Lee, Surveillance Program Manager, with support from the epidemiology analytics team.";
     if (!example && /agency|program/.test(label)) example = "Example: County Health Department, Communicable Disease Program.";
     if (!example && /date/.test(label)) example = "Example: the meeting, review, or approval date.";
+    if (!example && /(evidence|rationale|finding)/.test(label)) example = "Example: retrospective testing against 12 months of epidemiologist-reviewed alerts found lower sensitivity for facilities with incomplete electronic reporting.";
+    if (!example && /(risk|concern|barrier|limitation)/.test(label)) example = "Example: rural clinics may be underrepresented because electronic laboratory reporting is less complete; validate subgroup performance before pilot approval.";
+    if (!example && /(purpose|benefit|outcome|impact)/.test(label)) example = "Example: reduce manual review time for reportable-disease laboratory results while preserving epidemiologist approval of every escalation.";
+    if (!example && /(communication|message|notice|engagement)/.test(label)) example = "Example: hold a bilingual community briefing and accessibility review before launching an AI-assisted heat-risk communication service.";
+    if (!example && /(data|source|information)/.test(label)) example = "Example: syndromic surveillance visits, electronic laboratory reports, program case records, and county population estimates, with applicable privacy restrictions documented.";
+    if (!example && /(metric|measure|indicator|threshold)/.test(label)) example = "Example: alert sensitivity, false-positive rate, median epidemiologist review time, rural/urban subgroup performance, and number of escalated incidents.";
+    if (!example && /(activity|task|action|follow-up|next step)/.test(label)) example = "Example: Privacy officer reviews the proposed use of identifiable immunization records by September 30 and documents conditions for pilot approval.";
+    if (!example && /(workflow|process)/.test(label)) example = "Example: incoming laboratory reports are classified, queued for epidemiologist review, corrected when necessary, and escalated under the existing disease-investigation protocol.";
+    if (!example && /(stakeholder|community|population|audience)/.test(label)) example = "Example: frontline disease investigators, Tribal epidemiology partners, rural clinics, disability advocates, language-access staff, and residents affected by the service.";
     if (!example && field.type === "text") example = `Example: a short, locally meaningful ${field.label.toLowerCase()}.`;
-    if (!example) example = "Example: summarize the evidence reviewed, the decision made, who owns the next action, and the due date.";
+    if (!example) example = "Example: for an immunization outreach pilot, summarize the evidence reviewed, the governance decision, the program owner, the corrective action, and its target date.";
     return { instruction, example, tooltip: `${instruction} ${example}` };
   }
 
