@@ -23,6 +23,10 @@ This documentation defines how the current AI Playbook website can evolve into a
 
 11. [Equity Governance Implementation Standard](equity-governance-implementation-standard.md) — WHO source foundation, lifecycle controls, tool implementation, evidence rules, and remaining recommendations.
 
+12. [Health Data Privacy, HIPAA, and AI Implementation Standard](health-data-privacy-hipaa-ai-standard.md) — applicability, public health permissions, Tool 10 decisions, lifecycle integration, stable numbering, and source governance.
+
+13. [Curriculum Source Alignment: 2026 Update](curriculum-source-alignment-2026.md) — updated modules, CDC/WHO/HHS source alignment, template review decisions, and publication sequencing.
+
 ## Decisions at a glance
 
 - Preserve the current 13-play PLAN–BUILD–DEPLOY–GOVERN framework and tool numbering.

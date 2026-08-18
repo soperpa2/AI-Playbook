@@ -67,7 +67,7 @@ const tools = [
   [7,"Readiness Findings Validation & Improvement Plan",[2],"Import Pathway Assessment findings, validate them with organizational evidence, classify gaps, assign improvement work, document decisions, and schedule reassessment.","Planning","Readiness",["Executive sponsor","Informatics or evaluation lead","IT director","Privacy officer","Health equity director","Program managers"],"Readiness",true],
   [8,"AI Project Charter",[2,7,11],"Define project scope, success criteria, data needs, safeguards, timeline, budget, and risks.","Planning","Project management",["Program leads","PMO"],"Readiness",true],
   [9,"Data Quality Assessment Checklist",[2,11],"Assess completeness, timeliness, accuracy, interoperability, and data governance.","Checklist","Data",["Data owners","IT"],"Readiness",true],
-  [10,"Tiered Data Classification for AI Use",[2,3,11],"Classify data as public, internal, confidential, or highly restricted and define which AI environments may use each tier.","Worksheet","Data governance",["Data owners","Privacy","Security"],"Readiness",true],
+  [10,"Health Data Privacy, HIPAA Applicability & Tiered Data Use Screening",[2,3,7,11],"Determine agency and component status, information type, public health authority, permitted purpose, vendor or business-associate requirements, data minimization, and allowable AI environments.","Screening","Privacy and data governance",["Privacy officer","Legal counsel","Data owners","Security","Public health program owner"],"Readiness",true],
   [11,"AI Advisory Committee Charter",[3,4],"Define advisory committee membership, cadence, responsibilities, and decision flow.","Template","Governance",["Governance","Community engagement"],"Awareness",true],
   [12,"AI Governance Board Charter",[3],"Establish authority, membership, voting, meeting cadence, and oversight responsibilities.","Template","Governance",["Leadership","Governance"],"Awareness",true],
   [13,"AI Use Case Intake, Risk Review, and System Inventory Template",[3,7,12],"Capture proposed AI uses, classify risk, document review status, and maintain the approved AI system inventory.","Template","Governance",["Governance","Program leads"],"Readiness",true],
@@ -146,11 +146,11 @@ const toolFormBlueprints = {
   45: [["Policy register", ["Policy/document name", "Document number", "Current version", "Effective date", "Next review due", "Owner"]], ["Version history", ["Document name", "Version", "Date changed", "Change summary", "Reason for change", "Approved by"]], ["Annual review", ["Policies reviewed", "Updates required", "Retired documents", "Next review cycle", "Governance approval record"]]],
   4: [["Policy landscape", ["Jurisdiction or agency", "State/local/tribal/territorial laws", "Agency IT policies", "Public records requirements", "Procurement restrictions"]], ["Risk implications", ["Commercial AI restrictions", "Confidentiality constraints", "HIPAA/privacy implications", "Political or legislative sensitivities", "Approvals required before use"]], ["Action plan", ["Policies to update", "Responsible owner", "Timeline", "Governance decision needed"]]],
   27: [["Role purpose", ["Bridge professional title", "Program or enterprise scope", "Primary problems this role solves", "Reporting relationship"]], ["Core responsibilities", ["Technical translation", "Program and workflow translation", "Community and equity coordination", "Vendor/procurement support", "Governance documentation support"]], ["Capacity plan", ["Required skills", "Training needed", "Time allocation", "Success measures"]]],
-  10: [["Data tier profile", ["Dataset or data category", "Data owner", "Classification tier", "Sensitivity rationale"]], ["Allowable AI environments", ["Public AI tool allowed?", "Enterprise AI tool allowed?", "In-house/RAG tool allowed?", "Vendor-hosted tool allowed?", "Highly restricted data prohibitions"]], ["Controls and approvals", ["Access controls", "Retention/destruction rules", "Legal/privacy approval", "Security approval", "Review cadence"]]],
+  10: [["Agency, component, and activity", ["Agency and program/component", "AI use case or organizational screening scope", "Agency status: covered entity, non-covered entity, hybrid entity, or undetermined", "Covered healthcare component, if applicable", "Public health authority and legal mandate", "Named privacy reviewer", "Named legal reviewer or approving authority"]], ["Information, authority, and purpose", ["Data sources and data owner", "Information status: PHI, PII, confidential public health data, de-identified data, limited data set, aggregate data, or other", "Authority to collect or receive the information", "Public health, treatment, operations, research, or other permitted purpose", "Does the proposed AI processing remain within that purpose?", "Minimum-necessary or data-minimization determination", "State, Tribal, substance-use, research, records, or program-specific requirements"]], ["AI service and vendor relationship", ["AI environment and service provider", "Will the provider create, receive, maintain, or transmit ePHI?", "Business associate determination and BAA status", "Subcontractors and data locations", "Prompt, output, log, and embedding retention", "Vendor model-training or product-improvement use", "Redisclosure, secondary-use, and cross-component restrictions", "Retrieval, correction, audit, deletion, and termination capabilities"]], ["Tiered use decision and controls", ["Classification tier and sensitivity rationale", "Public AI tool allowed?", "Enterprise AI tool allowed?", "In-house or RAG tool allowed?", "Vendor-hosted tool allowed?", "Access, encryption, logging, and security controls", "Retention and destruction rules", "Approved, conditionally approved, prohibited, or requires further review", "Conditions and prohibited uses", "Re-review triggers and date"]]],
   22: [["Population and context scan", ["Use case or system", "Groups affected", "Groups represented in available data", "Groups missing or underrepresented"]], ["Missing voices review", ["Language access gaps", "Disability access gaps", "Rural or small-population concerns", "Tribal sovereignty considerations", "Community knowledge not captured in data"]], ["Mitigation and validation", ["Engagement needed", "Data supplementation or limitations", "Subgroup validation plan", "Decision conditions", "Monitoring indicators"]]],
   5: [["AI resource profile", ["Use case or vendor", "Model or service type", "Expected scale of use", "Hosting environment"]], ["Environmental considerations", ["Energy intensity", "Water use or cooling concerns", "E-waste or hardware needs", "Data center location or environmental justice concerns", "Vendor sustainability claims"]], ["Decision record", ["Lower-impact alternatives", "Procurement requirements", "Equity or community concerns", "Approval conditions"]]],
   19: [["Notice basics", ["AI system or workflow", "Public health purpose", "Audience", "Where notice will appear"]], ["Plain-language explanation", ["What the AI does", "What data are involved", "What humans still decide", "Known limitations", "How to request help or raise concerns"]], ["Review and publication", ["Legal/privacy review", "Equity and language access review", "Governance approval", "Publication date", "Next review date"]]],
-  34: [["Procurement profile", ["Vendor/product", "Use case supported", "Data involved", "Contract vehicle", "Procurement stage"]], ["STLT requirements", ["Data residency and retention", "No model training on agency data", "Audit rights", "Subcontractor disclosure", "Public records considerations", "Accessibility requirements", "Cybersecurity requirements"]], ["Contract decision", ["Required contract language", "Unresolved risks", "Exit or transition terms", "Recommended decision"]]],
+  34: [["Procurement profile", ["Vendor/product", "Use case supported", "Data involved", "Tool 10 privacy and HIPAA screening decision", "Business associate determination and BAA status", "Contract vehicle", "Procurement stage"]], ["STLT requirements", ["Permitted and required data uses", "Data residency, retention, return, and destruction", "No model training or product improvement on agency data", "Prompt, output, log, and embedding restrictions", "Audit and agency access rights", "Subcontractor disclosure and equivalent obligations", "Incident and breach reporting", "Public records considerations", "Accessibility requirements", "Cybersecurity requirements"]], ["Contract decision", ["Required BAA, data-use, or contract language", "Remediation and termination rights", "Unresolved risks", "Exit or transition terms", "Recommended decision"]]],
   6: [["Decision context", ["AI system or use case", "Decision or action supported", "Potentially affected populations", "Consequence level"]], ["Human-centered rule", ["AI may summarize/draft/prioritize", "AI may not independently decide", "Named human decision owner", "Required review before action", "Appeal or correction pathway"]], ["Oversight", ["Automation bias safeguards", "Audit trail requirements", "Monitoring metrics", "Governance review cadence"]]],
   35: [["Cost profile", ["AI initiative or portfolio", "Pilot cost estimate", "Scale cost estimate", "Sustainment period", "Cost owner"]], ["Cost categories", ["Staffing and contractor costs", "Vendor and licensing costs", "Infrastructure and hosting costs", "Procurement and legal costs", "Training and change management costs", "Monitoring and evaluation costs"]], ["Sustainability decision", ["Confirmed funding sources", "Funding gaps", "Contingency plan", "Total cost of ownership risk", "Decision or next action"]]],
   37: [["Implementation plan item", ["Project or dependency", "Related play or use case", "Owner", "Target date", "Current status"]], ["Dependency and risk review", ["Upstream dependency", "Downstream impact", "Governance gate", "Funding dependency", "Infrastructure or staffing dependency", "Risk level"]], ["Mitigation and escalation", ["Mitigation action", "Escalation trigger", "Escalation owner", "Decision needed", "Resolution date"]]],
@@ -270,11 +270,12 @@ const toolOutputOverrides = {
     "Required remediation steps and go/no-go recommendation."
   ],
   10: [
-    "Tiered data classification record for AI use.",
-    "Data sensitivity rationale and data owner documentation.",
-    "Allowed and prohibited AI environments by data tier.",
-    "Access controls, retention/destruction rules, and security requirements.",
-    "Legal, privacy, and security approvals and review cadence."
+    "Agency-level or use-case-level health data privacy screening record.",
+    "Covered entity, non-covered entity, hybrid entity, public health authority, and covered-component determination.",
+    "Information status, collection or disclosure authority, permitted purpose, and minimum-necessary or data-minimization determination.",
+    "Business associate, BAA, subcontractor, secondary-use, vendor training, retention, deletion, and termination requirements.",
+    "Tiered data classification and allowed or prohibited AI environments.",
+    "Named legal, privacy, security, and program reviewers, approval conditions, and re-review triggers."
   ],
   11: [
     "AI advisory committee charter.",
@@ -1101,7 +1102,7 @@ const addedToolGuidanceByPlay = {
     [4, "Use the AI Policy Landscape Scan as readiness evidence when policy constraints, approval requirements, or public records obligations may affect what the department can do next."],
     [5, "Use the Environmental and Resource Impact Review to identify resource, infrastructure, and sustainability gaps that should be included in the readiness gap register."],
     [6, "Use the Human-Centered AI Decision Rule Checklist to identify workflows that are not ready for automation because decision authority, human review, or escalation rules are unclear."],
-    [10, "Use the Tiered Data Classification tool to convert data readiness concerns into concrete rules for what data can be used, where it can be processed, and what review is required."],
+    [10, "Use the Health Data Privacy, HIPAA Applicability & Tiered Data Use Screening as the agency-level baseline. Determine covered, non-covered, or hybrid status; identify covered components and public health authority; document permitted purposes; and define what data can be used, where it can be processed, and what review is required."],
     [20, "Use Community Engagement Planning when readiness findings show that affected communities, accessibility needs, language access, or public trust require structured engagement."],
     [21, "Use Stakeholder Mapping & RACI to name the specific people responsible, accountable, consulted, and informed for readiness improvements."],
     [26, "Use the Training Needs Assessment Checklist to validate workforce capability gaps rather than treating general AI literacy as sufficient evidence of role readiness."],
@@ -1110,7 +1111,7 @@ const addedToolGuidanceByPlay = {
   ],
   3: [
     [4, "Use the AI Policy Landscape Scan to align governance decisions with applicable state, local, tribal, territorial, federal, procurement, privacy, and public records requirements."],
-    [10, "Use Tiered Data Classification to make governance decisions specific to the sensitivity of the data involved, rather than treating all AI uses the same."],
+    [10, "Use the Health Data Privacy, HIPAA Applicability & Tiered Data Use Screening to make governance decisions specific to the agency component, legal authority, permitted purpose, vendor relationship, and sensitivity of the data rather than treating HIPAA or all AI uses the same."],
     [11, "Use the Advisory Committee Charter when the department needs an advisory structure that brings program, technical, legal, equity, and community perspectives into governance."],
     [12, "Use the Governance Board Charter when the department needs a decision-making body with authority to approve, pause, modify, or retire AI uses."],
     [13, "Use the intake, risk review, and inventory template to create the official record for proposed, approved, deployed, paused, and retired AI systems."],
@@ -1136,6 +1137,7 @@ const addedToolGuidanceByPlay = {
     [3, "Use the Equity Impact Assessment Checklist before prioritizing a use case so potential disparate impacts are considered alongside feasibility and expected benefit."],
     [5, "Use the Environmental and Resource Impact Review to compare projects that may have different compute, vendor, infrastructure, or sustainability burdens."],
     [6, "Use the Human-Centered AI Decision Rule Checklist to screen out use cases where AI would make or appear to make decisions that require human judgment."],
+    [10, "Confirm or update the Health Data Privacy, HIPAA Applicability & Tiered Data Use Screening for each proposed use case involving person-level, health, clinical, surveillance, research, or otherwise sensitive information. A permitted public health disclosure does not automatically authorize vendor reuse, model training, or a different downstream AI purpose."],
     [49, "The AI Use Case Intake and Triage Worksheet is completed before a proposed AI use case moves into scoring, vendor discussion, pilot planning, or implementation. It gives the governance body enough information to determine whether the use case is low-risk, needs revision, requires formal review, or should not proceed."],
     [22, "Use the Missing Voices Analysis to check whether proposed use cases reflect the needs and risks of the communities most likely to be affected."]
   ],
@@ -1159,7 +1161,7 @@ const addedToolGuidanceByPlay = {
   ],
   11: [
     [6, "Use the Human-Centered AI Decision Rule Checklist to confirm human review, escalation, override, and accountability rules before pilots or production deployments begin."],
-    [10, "Use Tiered Data Classification to confirm that data movement, access controls, hosting, vendor use, and security safeguards match the sensitivity of the data."],
+    [10, "Use the Health Data Privacy, HIPAA Applicability & Tiered Data Use Screening to confirm legal authority, permitted purpose, minimum-necessary or minimization decisions, BAA status, data movement, hosting, vendor use, access controls, retention, and security safeguards before testing or deployment."],
     [34, "Use the Procurement and Vendor Addendum for vendor-supported builds so documentation, model validation, privacy, security, accessibility, support, audit, and exit requirements are enforceable."],
     [36, "Use the Model Testing and Validation Protocol to document whether the system performs reliably enough for the intended public health workflow before scaling."]
   ],
@@ -1316,6 +1318,10 @@ const references = [
       ["CDC STLT resources", "Evolving guidance for state, territorial, local, and tribal public health agencies.", "https://www.cdc.gov/public-health-gateway/php/index.html"],
       ["FedRAMP-authorized tools and environments", "Procurement, security review, and production deployment guidance for AI systems handling sensitive public health data.", "https://www.fedramp.gov/"],
       ["HIPAA and Business Associate Agreements", "Privacy compliance guidance when protected health information may be processed by vendors, cloud systems, or AI tools.", "https://www.hhs.gov/hipaa/index.html"],
+      ["HHS Office for Civil Rights. Are state, county or local health departments required to comply with the HIPAA Privacy Rule?", "Explains covered, non-covered, and hybrid health department status and the treatment of designated healthcare components.", "https://www.hhs.gov/hipaa/for-professionals/faq/358/are-state-county-or-local-health-departments-required-to-comply-with-hipaa/index.html"],
+      ["HHS Office for Civil Rights. Public Health", "Explains permitted public health uses and disclosures, public health authorities, business-associate support, and minimum-necessary considerations.", "https://www.hhs.gov/hipaa/for-professionals/special-topics/public-health/index.html"],
+      ["HHS Office for Civil Rights. Guidance on HIPAA and Cloud Computing", "Explains BAA and risk-analysis responsibilities when cloud providers create, receive, maintain, or transmit ePHI.", "https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html"],
+      ["HHS Office for Civil Rights. Business Associate Contracts", "Provides required BAA elements addressing permitted uses, safeguards, incidents, subcontractors, return or destruction, and termination.", "https://www.hhs.gov/hipaa/for-professionals/covered-entities/sample-business-associate-agreement-provisions/index.html"],
       ["Office of the National Coordinator for Health Information Technology. (2023). Trusted exchange framework and common agreement (TEFCA).", "ONC Trusted Exchange Framework and Common Agreement.", "https://www.healthit.gov/topic/interoperability/policy/trusted-exchange-framework-and-common-agreement-tefca"],
       ["Organisation for Economic Co-operation and Development. (2019). OECD principles on artificial intelligence.", "OECD AI principles.", "https://oecd.ai/en/ai-principles"],
       ["Tribal data sovereignty principles", "Required consideration when AI projects involve Tribal communities, Tribal data, or Tribal governance contexts.", "https://dpcpsi.nih.gov/thro"],
@@ -4901,49 +4907,59 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
             <h3>${curriculumSectionHeading(module, section)}</h3>
             ${renderLearningSection(section)}
           </section>`).join("");
-  const sectionDetails = contentSections.map((section, index) => `<details class="course-section" ${index < 2 ? "open" : ""}>
+  const sectionDetails = contentSections.map((section, index) => `<details class="course-section" ${index === 0 ? "open" : ""}>
     <summary>${curriculumSectionHeading(module, section)}</summary>
     <div class="lesson-prose">${renderLearningSection(section)}</div>
   </details>`).join("");
-  main.innerHTML = pageIntro("Learn: AI Foundations for Public Health", "Use these lessons to build the knowledge you need before tool selection, pilot planning, readiness assessment, or governance review.") + `
+  main.innerHTML = `<section class="page course-page">
+    ${breadcrumbTrail()}
     <div class="learn-layout">
       ${moduleNav}
       <div>
-        <article class="panel">
-          <p class="eyebrow">${module.course_id || "Learning Module"}</p>
-          <h2>${module.display_title || module.title}</h2>
-          ${paragraphBlock(module.text)}
-          ${lessonDownloadButtons}
-          ${glossaryCta}
+        <article class="panel course-module-panel">
+          <header class="course-module-header">
+            <p class="eyebrow">${module.course_id || "Learning Module"}</p>
+            <h1>${module.display_title || module.title}</h1>
+            ${paragraphBlock(module.text)}
+            ${lessonDownloadButtons}
+          </header>
+          <nav class="course-quick-nav no-print" aria-label="Course sections">
+            <button type="button" onclick="document.getElementById('course-objectives')?.scrollIntoView({behavior:'smooth',block:'start'})">Objectives</button>
+            <button type="button" onclick="document.getElementById('course-content')?.scrollIntoView({behavior:'smooth',block:'start'})">Learn</button>
+            <button type="button" onclick="document.getElementById('course-apply')?.scrollIntoView({behavior:'smooth',block:'start'})">Apply</button>
+            <button type="button" onclick="document.getElementById('course-check')?.scrollIntoView({behavior:'smooth',block:'start'})">Check</button>
+            <button type="button" onclick="document.getElementById('course-resources')?.scrollIntoView({behavior:'smooth',block:'start'})">Resources</button>
+          </nav>
           <section class="content-section course-profile">
-            <h3>Course Profile</h3>
+            <h2>Course at a glance</h2>
             <div class="course-meta-grid">
               <article><strong>Estimated time</strong><span>${moduleEstimatedTime(module)}</span></article>
               <article><strong>Level</strong><span>${module.level_label || "Module"}</span></article>
               <article><strong>Audience</strong><span>${moduleAudience(module)}</span></article>
-              <article><strong>Primary track</strong><span>${module.primary_track_title || "Curriculum module"}</span></article>
-              <article><strong>Recommended use</strong><span>${learnerRecommendedUse(moduleLmsCard(module).when_to_use, "module")}</span></article>
             </div>
-            <div class="course-meta-note"><strong>Completion requirement:</strong> ${moduleCompletionRequirement(module)}</div>
+            <div class="course-purpose-grid">
+              <p><strong>Use this course when:</strong> ${learnerRecommendedUse(moduleLmsCard(module).when_to_use, "module")}</p>
+              <p><strong>You will complete:</strong> ${moduleCompletionRequirement(module)}</p>
+            </div>
           </section>
-          <section class="content-section course-prerequisites">
-            <h3>Prerequisites and Recommended Preparation</h3>
+          ${(requiredPrereqs.length || recommendedPrereqs.length) ? `<details class="course-section course-prerequisites">
+            <summary>Prerequisites and recommended preparation</summary><div class="lesson-prose">
             <p><strong>Required prerequisites:</strong> ${requiredPrereqs.length ? prerequisiteLinks(module, "required") : "None"}</p>
             <p><strong>Recommended preparation:</strong> ${recommendedPrereqs.length ? prerequisiteLinks(module, "recommended") : "None"}</p>
             ${module.prerequisite_summary ? paragraphBlock(module.prerequisite_summary) : ""}
-          </section>
-          <section class="content-section">
-            <h3>Learning Objectives</h3>
+            </div></details>` : ""}
+          <section class="content-section" id="course-objectives">
+            <h2>What you will be able to do</h2>
             <ul class="check-list">${(module.learning_objectives || []).map(item => `<li>${item}</li>`).join("")}</ul>
           </section>
           ${definitions.length ? `<section class="content-section lesson-prose definitions-section"><h3>Definitions</h3><dl class="definition-list">${definitions.map(item => `<dt>${item.term}</dt><dd>${item.definition}</dd>`).join("")}</dl></section>` : ""}
           ${exampleBlocks}
-          ${sectionDetails ? `<section class="content-section module-details-stack"><h3>Course Content</h3>${sectionDetails}</section>` : ""}
+          ${sectionDetails ? `<section class="content-section module-details-stack" id="course-content"><h2>Learn</h2><p>Open one section at a time. The first section is ready for you.</p>${sectionDetails}</section>` : ""}
           ${relatedToolPanelForModule(module.id)}
           ${relatedPlayPanelForModule(module.id)}
-          ${renderPracticalExercise(module, exerciseApplication)}
-          ${renderCurriculumKnowledgeCheck(module)}
-          ${renderCurriculumReferences(module)}
+          <div id="course-apply">${renderPracticalExercise(module, exerciseApplication)}</div>
+          <div id="course-check">${renderCurriculumKnowledgeCheck(module)}</div>
+          <div id="course-resources">${renderCurriculumReferences(module)}${glossaryCta}</div>
           ${policyNote ? `<details class="course-section"><summary>Jurisdiction and Agency Policy Note</summary><div class="lesson-prose">${paragraphBlock(policyNote)}</div></details>` : ""}
           ${curriculumModuleTrackLinks(module)}
         </article>

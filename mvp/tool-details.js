@@ -31,6 +31,18 @@ function equityGovernanceFields() {
   return `<fieldset class="foundation-equity-controls"><legend>Equity governance implementation</legend><p>Document the local controls needed to turn equity principles into accountable decisions.</p>${fields.map((field, index) => `<label>${field}<textarea name="equity_${index + 1}" rows="4"></textarea></label>`).join("")}</fieldset>`;
 }
 
+function healthDataPrivacyFields() {
+  if (play.number !== 2) return "";
+  const fields = [
+    "Is the agency or relevant component a HIPAA covered entity, non-covered entity, hybrid entity, public health authority, or not yet determined? Name the person who confirmed the status.",
+    "What health or person-level information may be used, what authority permits collection or receipt, and what public health or other purpose permits the proposed processing?",
+    "What minimum-necessary or broader data-minimization limits should apply even when HIPAA does not?",
+    "Could an AI or cloud provider create, receive, maintain, or transmit ePHI or other confidential data? Record the BAA or other agreement determination, secondary-use and model-training restrictions, and required follow-up.",
+    "Which AI environments are allowed or prohibited for each data tier, and what event requires this determination to be reviewed again?"
+  ];
+  return `<fieldset class="foundation-privacy-controls"><legend>Health data privacy and HIPAA applicability baseline</legend><p>HIPAA may apply to some, all, or none of an agency's components. Document the determination, but continue the broader privacy review even when HIPAA does not apply.</p>${fields.map((field, index) => `<label>${field}<textarea name="privacy_${index + 1}" rows="4"></textarea></label>`).join("")}</fieldset>`;
+}
+
 document.title = `${play.tool.title} | Foundation Edition`;
 main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lead: play.tool.purpose, eyebrow: `Foundation Edition · Play ${play.number} Tool`, className: "foundation-tool-page" }) + `
   <div class="content-meta"><span>Available now</span><span>Version ${release.version}</span><span>Supports Play ${play.number}</span></div>
@@ -40,6 +52,7 @@ main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lea
       <h2>Complete the tool</h2>
       <p>Use this workspace with the people responsible for Play ${play.number}. Your entries are stored only in this browser unless you download or print them.</p>
       ${pathwayBridge()}
+      ${healthDataPrivacyFields()}
       <label>Organization or department<input name="organization" autocomplete="organization"></label>
       <label>Facilitator or owner<input name="owner" autocomplete="name"></label>
       <label>Date<input name="date" type="date"></label>
