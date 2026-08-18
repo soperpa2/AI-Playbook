@@ -5259,11 +5259,12 @@ function updateAssessment() {
   });
   basePlays.forEach(id => addPlay(id, `Next-stage work for the ${level}`));
   baseTools.forEach(addTool);
+  pathway.sort((a, b) => a.id - b.id);
   recTools.sort((a, b) => a - b);
   const recPlays = pathway.map(step => step.id);
   document.getElementById("assessment-recs").innerHTML = `
     <h3>Your Custom Pathway</h3>
-    <p>Complete these plays in the order shown. The lowest-scoring readiness domains are addressed first; stage-based next steps follow after the priority gaps.</p>
+    <p>Complete the recommended plays in play-number order. Each recommendation identifies whether it addresses a priority readiness gap or supports your next stage of work.</p>
     <ol class="assessment-pathway">${pathway.map((step, index) => `<li><span class="number-badge">${index + 1}</span><div><strong>${playLink(step.id)}</strong><small>${step.reason}</small></div></li>`).join("")}</ol>
     <h3>Suggested Tools</h3>
     <p>${recTools.map(toolLink).join("<br>")}</p>
