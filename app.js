@@ -5252,6 +5252,7 @@ function updateAssessment() {
     if (!pathway.some(step => step.id === id)) pathway.push({ id, reason });
   };
   const addTool = id => { if (!recTools.includes(id)) recTools.push(id); };
+  addPlay(2, "Validate the assessment findings with local evidence, resolve unknowns, prioritize readiness gaps, and assign improvement actions");
   priorityGaps.forEach(gap => {
     readinessGapRecommendations[gap.name].plays.forEach(id => addPlay(id, `Priority response to ${gap.name} (${gap.percent} / 100)`));
     readinessGapRecommendations[gap.name].tools.forEach(addTool);
