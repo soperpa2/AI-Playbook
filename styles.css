@@ -2027,12 +2027,14 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
 .guided-help-cue { position: relative; display: inline-grid; place-items: center; width: 1.15rem; height: 1.15rem; margin-left: .25rem; border: 1px solid var(--blue); border-radius: 50%; color: var(--blue); background: #fff; font-size: .76rem; font-weight: 800; line-height: 1; cursor: help; vertical-align: text-top; }
 .guided-help-cue::after { content: attr(data-tooltip); position: absolute; z-index: 20; left: 50%; bottom: calc(100% + .55rem); width: min(22rem, 75vw); padding: .7rem .8rem; border-radius: .45rem; background: #102f4f; color: #fff; box-shadow: 0 7px 22px rgba(0,0,0,.2); font-size: .82rem; font-weight: 400; line-height: 1.4; opacity: 0; visibility: hidden; transform: translate(-50%, .25rem); transition: opacity .15s ease, transform .15s ease; pointer-events: none; }
 .guided-help-cue:hover::after, .guided-help-cue:focus::after { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-.tool-use-guide { margin: 0 0 1.75rem; padding: 1.25rem; border: 1px solid #c9dbea; border-top: 5px solid var(--green); border-radius: .7rem; background: #f7fbfd; }
+.tool-use-guide { margin: 0 0 1.25rem; padding: 1rem; border: 1px solid #c9dbea; border-top: 5px solid var(--green); border-radius: .7rem; background: #f7fbfd; }
 .tool-use-guide > h2 { margin-top: .15rem; }
-.tool-use-guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.tool-use-guide-grid > section { padding: .9rem; border-radius: .55rem; background: #fff; }
+.tool-use-guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+.tool-use-guide-grid > section { padding: .75rem; border-radius: .55rem; background: #fff; }
 .tool-use-guide-grid h3, .tool-guide-links h3 { margin-top: 0; }
-.tool-use-guide-grid > .tool-rasci-section { grid-column: 1 / -1; }
+.tool-use-guide-grid > .tool-how-section, .tool-use-guide-grid > .tool-rasci-section, .tool-use-guide-grid > .tool-public-health-examples { grid-column: 1 / -1; }
+.compact-guidance-list, .compact-example-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem 1.4rem; margin-bottom: 0; }
+.compact-guidance-list li, .compact-example-list li { break-inside: avoid; padding-right: .4rem; }
 .tool-rasci-accordion { display: grid; gap: .35rem; margin-top: .65rem; }
 .tool-rasci-item { border: 1px solid #cbdce8; border-radius: .4rem; background: #f8fbfd; }
 .tool-rasci-item summary { display: grid; grid-template-columns: 7.5rem 1fr; gap: .75rem; align-items: center; padding: .55rem .7rem; cursor: pointer; }
@@ -2041,11 +2043,12 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
 .tool-rasci-item[open] summary { border-bottom: 1px solid #d7e3ec; background: #eef6fb; }
 .tool-rasci-item > p, .tool-rasci-item > ul { margin-right: .8rem; margin-left: .8rem; }
 .tool-rasci-item > p { color: var(--muted); font-size: .86rem; line-height: 1.4; }
-.tool-guide-links { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #d7e2ea; }
-.tool-reference-list { display: grid; gap: .65rem; }
+.tool-guide-links { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid #d7e2ea; }
+.tool-reference-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; }
 .tool-reference-list article { display: grid; gap: .15rem; padding: .7rem .8rem; border-left: 3px solid var(--blue); background: #fff; }
 .tool-reference-list span { color: var(--muted); font-size: .9rem; }
-@media (max-width: 720px) { .tool-use-guide-grid { grid-template-columns: 1fr; } .tool-rasci-item summary { grid-template-columns: 6.5rem 1fr; } }
+@media (max-width: 900px) { .compact-guidance-list, .compact-example-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .tool-use-guide-grid, .compact-guidance-list, .compact-example-list, .tool-reference-list { grid-template-columns: 1fr; } .tool-rasci-item summary { grid-template-columns: 6.5rem 1fr; } }
 .tool-action-tracker { margin-top: 1.5rem; border: 2px solid #b9d8c1; background: #f5fbf6; }
 .tool-action-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .tool-action-header h3 { margin: .1rem 0 .35rem; }
