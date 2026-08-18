@@ -4080,7 +4080,7 @@ function saveProfileFromForm() {
 function memberOnlyNotice(isMember) {
   return isMember
     ? `<p class="member-access-note">Signed in locally as ${currentMemberName()}. Tool progress and downloads are enabled in this preview.</p>`
-    : `<p class="member-access-note locked">Save progress and completed tool downloads are member-only. <a href="#/member-info">Create a free member profile</a> to access these features.</p>`;
+    : `<p class="member-access-note locked">Tool downloads, saved progress, ratings, and reviewer opportunities require free membership. <a href="#/member-info">Create a free member profile</a> to enable them.</p>`;
 }
 
 function restoreToolProgress(toolId, blueprint) {
@@ -6771,9 +6771,9 @@ function renderToolDetail(id) {
         <div class="button-row no-print">
           <button class="btn primary" type="button" id="save-tool-progress" ${isMember ? "" : "disabled"}>Save Progress</button>
           <button class="btn" type="button" id="download-filled-tool" ${isMember ? "" : "disabled"}>Download Completed Word Document</button>
-          <button class="btn" type="button" id="download-blank-tool">Download Blank Word Template</button>
+          <button class="btn" type="button" id="download-blank-tool" ${isMember ? "" : "disabled"}>Download Blank Word Template</button>
           <button class="btn" type="button" id="download-tool-pdf" ${isMember ? "" : "disabled"}>Download Completed PDF</button>
-          <button class="btn" type="button" id="download-blank-pdf">Download Blank PDF Template</button>
+          <button class="btn" type="button" id="download-blank-pdf" ${isMember ? "" : "disabled"}>Download Blank PDF Template</button>
         </div>
         <p id="tool-save-status" class="save-status" aria-live="polite"></p>
         ${renderToolRatingPanel(t, isMember)}
@@ -7314,33 +7314,33 @@ function renderMember() {
   const notifications = state.notifications?.length ? state.notifications : [
     "Reassess readiness after major policy, staffing, funding, or technology changes.",
     "Review governance decisions before moving from planning into pilots.",
-    "Download blank templates anytime; save and completed downloads require membership."
+    "Free membership enables blank and completed tool downloads, saved progress, ratings, and reviewer eligibility."
   ];
-  main.innerHTML = pageIntro("My Account", "Use this private preview workspace to manage your profile, save assessments, continue planning tools, and participate in the Community Exchange. Organization-level progress tracking is available in the Organization Hub.") + `
-    <section class="member-dashboard panel">
+  main.innerHTML = pageIntro("My Account — Administrator View", "Manage your personal membership, saved work, downloads, and reviewer activity. Organization-wide administration, team access, agency settings, implementation planning, and reporting belong in the Organization Hub.") + `
+    <section class="member-dashboard panel account-overview">
       <div>
-        <p class="eyebrow">My Dashboard</p>
+        <div class="account-title-row"><p class="eyebrow">Personal dashboard</p><span class="status-label">Administrator view</span></div>
         <h2>${state.profile ? `Welcome, ${memberDisplayName(profile)}` : "Create your member workspace"}</h2>
-        <p>${latestAssessment ? `Latest readiness result: ${latestAssessment.score} / 100, ${latestAssessment.level}.` : "Save a readiness assessment to populate your score, maturity stage, priority gaps, and recommended next plays."}</p>
+        <p>${state.profile ? "Your free member profile enables tool downloads, saved work, ratings, and eligibility to review new tools." : "Create a free member profile to download tools, save work, rate resources, and become eligible to review new tools."}</p>
       </div>
       <div class="member-stats">
         <article><strong>${state.savedAssessments.length}</strong><span>Saved assessments</span></article>
         <article><strong>${state.savedTools.length}</strong><span>Saved tools</span></article>
-        <article><strong>${memberPosts.length}</strong><span>Forum posts</span></article>
-        <article><strong>${isOrgAccount ? "Org" : "Individual"}</strong><span>Account type</span></article>
+        <article><strong>${ratingsCount}</strong><span>Tool reviews</span></article>
+        <article><strong>${state.profile ? "Eligible" : "Join"}</strong><span>Reviewer status</span></article>
       </div>
     </section>
 
     <div class="two-col member-top">
       <section class="panel member-profile-summary">
-        <h2>Member Information</h2>
+        <h2>${state.profile ? "Free Member Account" : "Join Free"}</h2>
         ${state.profile ? `
           <p class="eyebrow">${memberDisplayName(profile)}</p>
           <p>${profile.agency || "Agency not provided"}</p>
           <p class="plain-meta">${profile.role || "Role not provided"}${profile.email ? ` · ${profile.email}` : ""}</p>
           <div class="button-row"><a class="btn primary" href="#/member-info">My Member Information</a><a class="btn" href="#/organization">Organization Hub</a><a class="btn" href="#/community">Open Community Exchange</a></div>
         ` : `
-          <p>Create a member profile to save assessment snapshots, planning notes, completed tools, forum posts, and tool ratings.</p>
+          <p>Free membership is required to download tools, save work, and apply to review new tools before release.</p>
           <div class="button-row"><a class="btn primary" href="#/member-info">Create Member Profile</a><a class="btn" href="#/organization">Organization Hub</a><a class="btn" href="#/community">Open Community Exchange</a></div>
         `}
       </section>
@@ -7352,7 +7352,12 @@ function renderMember() {
       </aside>
     </div>
 
-    <div class="member-workspace-grid">
+    <section class="panel account-admin-handoff">
+      <div><p class="eyebrow">Organization administration</p><h2>${organization.name || "Organization Hub"}</h2><p>Agency profile, implementation plans, assignments, team access, invitations, training administration, and organization exports are managed in one place.</p></div>
+      <a class="btn primary" href="#/organization">Open Organization Hub</a>
+    </section>
+
+    <div class="member-workspace-grid account-personal-grid">
       <section class="panel">
         <h2>Saved Assessments</h2>
         ${state.savedAssessments.length ? `<div class="member-list">${[...state.savedAssessments].reverse().map(item=>`<article><strong>${item.title}</strong><span>${item.savedAt}</span><p>${item.score} / 100 · ${item.level}</p><a href="#/assess">Open assessment</a></article>`).join("")}</div>` : `<p class="plain-meta">No saved assessments yet. Complete the readiness assessment, then save progress from the assessment page.</p><a class="btn small" href="#/assess">Take Assessment</a>`}
@@ -7363,7 +7368,7 @@ function renderMember() {
         ${recentTools.length ? `<div class="member-list">${recentTools.map(item=>`<article><strong>${item.title}</strong><span>${item.savedAt}</span><a href="#/toolkit/${item.toolId}">Continue editing</a></article>`).join("")}</div>` : `<p class="plain-meta">No saved planning tools yet. Open any tool, complete fields, and save progress as a member.</p><a class="btn small" href="#/toolkit">Open Toolkit</a>`}
       </section>
 
-      <section class="panel">
+      <section class="panel account-org-only">
         <h2>My Implementation Plan</h2>
         <form class="member-form form-grid">
           <label>Priority plays<textarea id="plan-priority-plays" rows="4" placeholder="Example: Plays 2, 3, 4, and 7">${plan.priorityPlays || ""}</textarea></label>
@@ -7374,7 +7379,7 @@ function renderMember() {
         <div class="button-row"><button class="btn primary small" type="button" onclick="saveImplementationPlanFromForm()">Save Plan</button><a class="btn small" href="#/plays">Open Framework</a></div>
       </section>
 
-      <section class="panel">
+      <section class="panel account-org-only">
         <h2>Agency Profile</h2>
         <form class="member-form form-grid">
           <label>Department type<input id="agency-type" value="${agency.type || ""}" placeholder="State, local, tribal, territorial, regional"></label>
@@ -7401,7 +7406,7 @@ function renderMember() {
         </div>
       </section>
 
-      <section class="panel">
+      <section class="panel account-org-only">
         <h2>Team Access</h2>
         <p class="plain-meta">Preview your future agency workspace roles. Production membership should support invitations, role-based access, and shared agency workspaces.</p>
         <div class="member-list">
@@ -7414,7 +7419,7 @@ function renderMember() {
         <ul class="check-list">${notifications.map(item=>`<li>${item}</li>`).join("")}</ul>
       </section>
 
-      <section class="panel export-panel">
+      <section class="panel export-panel account-org-only">
         <h2>Export Center</h2>
         <p>Download a ZIP packet containing a professional Word-compatible document and matching PDF summary of your member profile, organization workspace, agency profile, saved assessments, saved tools, implementation plan, forum activity, ratings, bookmarks, and notification settings.</p>
         <div class="button-row"><button class="btn primary" type="button" onclick="runDocumentDownload(() => downloadMemberWorkspaceExport(), 'Member workspace ZIP', 'member-export-status')">Download Word + PDF ZIP</button></div>
@@ -7797,6 +7802,13 @@ function addOrganizationMilestone(playId) {
 }
 
 function renderOrganizationHub(view = "") {
+  const access = organizationHubContext();
+  const hasOrganizationAccess = access.state.accountType === "Organization" && Boolean(access.organization.name) && access.orgRole !== "Individual-only Member";
+  if (!hasOrganizationAccess) {
+    main.innerHTML = pageIntro("Organization Hub", "Learn how organization workspaces operate, create or request access to one, and keep organization information separate from your individual account.") + `
+      <section class="panel organization-access-overview"><p class="eyebrow">Individual member view</p><h2>No organization workspace is open</h2><p>Your personal account remains private. Organization progress, shared tools, assignments, reports, and information about other users become available only after organization access is approved.</p><div class="org-grid"><article><h3>Individual member</h3><p>Can see this overview, manage personal work, and request organization access.</p></article><article><h3>Organization member</h3><p>Can see shared organization work permitted by their assigned role.</p></article><article><h3>Organization administrator</h3><p>Can manage members, invitations, access requests, roles, and organization settings.</p></article></div><div class="button-row"><a class="btn primary" href="#/organization/admin">Create or request access</a><a class="btn" href="#/member">Back to My Account</a></div></section>`;
+    if (view !== "admin") return;
+  }
   if (view === "admin") {
     renderOrganizationAdminHub();
     return;
@@ -7809,7 +7821,7 @@ function renderOrganizationHub(view = "") {
     renderOrganizationTrainingHub();
     return;
   }
-  const { state, organization, orgRole, isOrgAdmin, latestAssessment, playIds, toolIds, completed, blocked, dueSoon, percent } = organizationHubContext();
+  const { state, organization, orgRole, isOrgAdmin, latestAssessment, playIds, toolIds, completed, blocked, dueSoon, percent } = access;
   main.innerHTML = pageIntro("Organization Hub", "Track shared jurisdiction progress against readiness-assessment recommendations, assign leads for plays and tools, set deadlines, and monitor completion across the organization workspace.") + `
     <section class="member-dashboard panel org-dashboard-hero">
       <div class="org-workspace-header">
@@ -7855,6 +7867,11 @@ function renderOrganizationHub(view = "") {
 
 function renderOrganizationAdminHub() {
   const { state, organization, orgRole, isOrgAdmin, requiresOrgApproval } = organizationHubContext();
+  const hasOrganizationAccess = state.accountType === "Organization" && Boolean(organization.name) && orgRole !== "Individual-only Member";
+  if (hasOrganizationAccess && !isOrgAdmin) {
+    main.innerHTML = pageIntro("Organization Access", "View your workspace affiliation and role without exposing administrator controls or information about other users.") + `<section class="panel"><p class="eyebrow">Organization member view</p><h2>${organization.name}</h2><p>${organization.type || "Public health organization"} · ${orgRole}</p><p>Member directories, invitations, access requests, role assignments, and other user-management information are visible only to Organization Administrators.</p><div class="button-row"><a class="btn primary" href="#/organization">Return to Organization Hub</a><a class="btn" href="#/member">My Account</a></div></section>`;
+    return;
+  }
   main.innerHTML = pageIntro("Organization Administration", "Manage organization setup, access requests, invitations, roles, and administrator-only controls for the organization workspace.") + `
     <section class="panel organization-workspace">
       <div class="org-workspace-header">

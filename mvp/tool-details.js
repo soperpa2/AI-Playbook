@@ -5,6 +5,7 @@ const requestedPlay = Number(toolParams.get("play"));
 const play = plays.find(item => item.number === requestedPlay) || plays[0];
 const storageKey = `foundation-tool-${play.number}`;
 const main = document.querySelector("#tool-main");
+const foundationMember = (() => { try { return JSON.parse(localStorage.getItem("foundation-member-profile") || "null"); } catch { return null; } })();
 
 function pathwayResult() {
   try { return JSON.parse(localStorage.getItem("foundation-pathway-assessment-result") || "null"); }
@@ -39,10 +40,11 @@ main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lea
       <label>Evidence, approvals, or follow-up needed<textarea name="follow_up" rows="4"></textarea></label>
       <div class="button-row no-print">
         <button class="btn primary" type="submit">Save in this browser</button>
-        <button class="btn" type="button" id="download-tool">Download responses</button>
-        <button class="btn" type="button" id="print-tool">Print or save as PDF</button>
+        <button class="btn" type="button" id="download-tool" ${foundationMember ? "" : "disabled"}>Download responses</button>
+        <button class="btn" type="button" id="print-tool" ${foundationMember ? "" : "disabled"}>Print or save as PDF</button>
         <button class="btn" type="button" id="clear-tool">Clear</button>
       </div>
+      ${foundationMember ? "" : '<p class="member-status locked no-print"><strong>Free membership required for downloads.</strong> <a href="account.html">Create or open My Account</a> to enable downloads and printable copies.</p>'}
       <p class="tool-save-status" id="tool-save-status" role="status"></p>
     </form>
     <aside class="tool-sidebar">
@@ -78,6 +80,7 @@ form.addEventListener("submit", event => {
 });
 
 document.querySelector("#download-tool").addEventListener("click", () => {
+  if (!foundationMember) return;
   const values = formValues();
   const lines = [play.tool.title, `Foundation Edition · Play ${play.number}: ${play.title}`, ""];
   [...form.elements].filter(field => field.name).forEach(field => {
@@ -92,7 +95,7 @@ document.querySelector("#download-tool").addEventListener("click", () => {
   URL.revokeObjectURL(link.href);
 });
 
-document.querySelector("#print-tool").addEventListener("click", () => window.print());
+document.querySelector("#print-tool").addEventListener("click", () => { if (foundationMember) window.print(); });
 document.querySelector("#clear-tool").addEventListener("click", () => {
   if (!confirm("Clear all responses saved for this tool in this browser?")) return;
   form.reset();
