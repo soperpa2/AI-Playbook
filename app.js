@@ -7,7 +7,7 @@ const phases = [
 
 const fullPlayContent = [
   { id: 1, phase: "plan", title: "Vision & Guardrails", output: "AI vision, principles, guardrails, priority areas, unresolved issues, next steps, and governance committee decision", tools: [1,2,3,4,5,6], goal: "Establish a clear strategic vision for how AI will support the agency's public health mission while defining principles that ensure responsible, ethical, and legally compliant use.", matters: "Every AI initiative begins with leadership alignment. Setting guardrails early around equity, human oversight, privacy, and prohibited uses prevents downstream harms and builds institutional trust.", who: ["Executive leadership", "Program leads", "Legal and privacy", "Equity leaders", "IT and data leaders"], questions: ["Which strategic public health problems should AI help address?", "Which uses are prohibited?", "What level of human review is required?"], actions: ["Convene a 60-90 minute leadership session.", "Agree on non-negotiable guardrails for human oversight, equity, privacy, and prohibited uses.", "Draft a 1-2 page AI Vision and Principles document.", "Align principles with NIST AI RMF 1.0.", "Identify executive sponsorship and update annually."] },
-  { id: 2, phase: "plan", title: "Readiness Assessment", output: "Readiness profile, 100-point score interpretation, gap register, and prioritized play-and-tool action plan", tools: [3,4,7,8,9,10], goal: "Assess current state across leadership, data infrastructure, workforce, equity, partnerships, privacy, and security so planning reflects organizational reality.", matters: "A frank readiness assessment finds gaps while they are still manageable, before a project discovers midstream that data, skills, infrastructure, or governance are insufficient.", who: ["Leadership", "IT", "Data and analytics", "Programs", "Legal/privacy", "Equity", "Community engagement"], questions: ["Which gaps block pilots?", "Which gaps can be addressed in parallel?", "What constraints shape feasible use cases?"], actions: ["Run a half-day assessment workshop.", "Rate each indicator honestly.", "Identify 5-8 high-priority gaps.", "Assign owners and timelines.", "Brief leadership and the governance sponsors on constraints and next steps."] },
+  { id: 2, phase: "plan", title: "Validate Readiness and Plan Improvements", output: "Validated readiness findings, evidence register, confirmed gaps, and an assigned readiness improvement plan", tools: [3,4,7,8,9,10], goal: "Turn preliminary Pathway Assessment findings into an evidence-supported organizational understanding of readiness and an actionable plan for addressing gaps.", matters: "The Pathway Assessment identifies where to begin; this play brings the appropriate people together to verify the findings, resolve unknowns or disagreements, document evidence, distinguish blocking from nonblocking gaps, and assign improvement work.", who: ["Health officer or executive sponsor", "IT director or technical lead", "Informatics, epidemiology, data, or evaluation lead", "Directors or managers of affected programs", "Agency counsel and privacy officer", "Health equity director or designated equity reviewer", "Community engagement director or designated engagement manager"], questions: ["Which preliminary findings are supported by organizational evidence?", "Which unknown, partial, or weak conditions require action?", "Which gaps block later plays and which can be addressed in parallel?"], actions: ["Import the latest AI Readiness and Pathway Assessment results, or begin with an equivalent existing assessment.", "Convene a cross-functional validation session and review each domain score, recommendation, and unknown response.", "Confirm or revise findings using policies, inventories, interviews, system documentation, meeting records, and other evidence.", "Classify gaps as blocking, parallel, monitor, or already addressed.", "Assign owners, target dates, dependencies, evidence requirements, and review status for each improvement action.", "Approve the readiness improvement plan and update the customized pathway when validated findings change the recommended sequence."] },
   { id: 3, phase: "plan", title: "Establish AI Governance", output: "AI governance committee or board, responsible AI policy, governance charter, risk-tiered review pathway, intake and approval process, documentation standards, AI system inventory, monitoring and incident response process, and policy update process", tools: [2,3,4,10,11,12,13,49,14,15,16,17,18,19], goal: "Create the governance structures, policies, decision-making processes, and oversight mechanisms needed to guide responsible AI use before projects begin.", matters: "Governance should not be added after AI tools are already in use. It should be established before use case selection, vendor engagement, pilot approval, or deployment. Public health departments need clear authority, consistent review processes, and documented accountability for AI use. Strong governance helps ensure that AI supports the public health mission while protecting privacy, security, equity, scientific integrity, workforce trust, and community confidence.", who: ["Health officer or executive sponsor", "Executive leadership or designated governance sponsor", "Legal and privacy staff", "IT and cybersecurity staff", "Equity and community engagement staff", "Program owners", "Informatics, epidemiology, data, or analytics staff", "Communications staff", "Procurement or contracting staff, as needed", "External advisors or community representatives, when appropriate", "Governance committee or board members, once appointed"], questions: ["Who has authority to approve, pause, suspend, or retire AI use?", "What types of AI use are allowed, restricted, or prohibited?", "What documentation is required before AI use cases move forward?", "What review is required for privacy, security, equity, data quality, and legal compliance?", "How will AI use cases be classified by risk?", "Who is accountable for each AI-supported workflow or system?", "How will incidents, errors, bias concerns, or harmful outputs be reported and addressed?", "How will policies, standards, and approved-use records be updated over time?"], actions: ["Confirm the governance mandate. Define why AI governance is needed, what decisions it will cover, and how it will support the department's AI vision, principles, and guardrails.", "Establish the governance body. Create or designate a cross-functional AI governance committee or board with clear membership, leadership, authority, and decision rights.", "Adopt responsible AI policy expectations. Define department-wide expectations for transparency, privacy and security, equity, human oversight, safety, legal compliance, scientific integrity, and accountability.", "Create the governance charter. Document the governance body's purpose, scope, membership, meeting cadence, decision process, documentation requirements, and escalation procedures.", "Define the AI review pathway. Establish how proposed AI uses will be submitted, screened, classified by risk, reviewed, approved, paused, or rejected.", "Align governance with existing agency processes. Connect AI oversight with data governance, IT governance, cybersecurity, privacy, legal review, procurement, communications, equity review, program leadership, and quality improvement.", "Set minimum documentation requirements. Define what must be documented for each AI use case, including purpose, owner, users, data involved, risk level, human review process, limitations, approval status, and review schedule.", "Require appropriate review before approval. Ensure that privacy, security, equity, data quality, legal, vendor, and model validation reviews occur when required based on the risk and nature of the AI use case.", "Create an AI system inventory. Maintain a central record of approved AI systems and AI-supported workflows, including owners, purpose, risk level, approval date, monitoring schedule, and review status.", "Establish ongoing oversight. Define how approved AI uses will be monitored, how incidents will be handled, how systems can be paused or retired, and how policies will be updated over time."] },
   { id: 4, phase: "plan", title: "Engage Stakeholders", output: "Stakeholder map, RACI, engagement plan, missing voices analysis, and feedback documentation", tools: [11,19,20,21,22], goal: "Build a structured stakeholder engagement framework for internal and external input throughout planning, implementation, and evaluation.", matters: "Stakeholder and community engagement is an early planning activity, not a late deployment activity. It should begin after the department has a basic readiness picture and governance pathway, but before formal use case selection, playbook design, funding commitments, pilots, procurement, or deployment. AI systems built without genuine community and workforce input often fail in deployment even when they perform well technically.", who: ["Program leads", "Community advisors", "Equity staff", "Tribal partners where applicable", "Communications", "Governance committee"], questions: ["Who is affected by the AI use case?", "What concerns must shape design?", "How will feedback change the project?", "What stakeholder input is required before use cases can be prioritized?"], actions: ["Map stakeholder groups and assign engagement leads.", "Form advisory groups for community-impacting use cases.", "Share plain-language explanations of what AI will and will not do.", "Hold feedback sessions before use case selection and before design is finalized.", "Document what changed based on feedback.", "Route unresolved stakeholder concerns to the AI governance committee before pilots or procurement move forward."] },
   { id: 5, phase: "plan", title: "Workforce Development", output: "Competency framework, training needs assessment, champion network, bridge role plan, role-based training plan, and training pathway", tools: [23,24,25,26,27,28], goal: "Develop the workforce capabilities needed to responsibly adopt AI across public health programs, including predictive, generative, agentic, analytic, and automation-enabled uses.", matters: "Training alone is not enough. Peer learning networks, champions, office hours, and communities of practice help staff build confidence and solve practical problems.", who: ["HR", "Training leads", "AI champions", "Supervisors", "Program staff", "IT and data staff"], questions: ["What AI literacy is needed by role?", "Where are skill gaps?", "Who will support adoption day to day?"], actions: ["Define role-based AI literacy levels.", "Conduct a training needs assessment.", "Designate AI champions across divisions.", "Create training pathways.", "Assign learning modules by role and set completion standards.", "Establish office hours and communities of practice."] },
@@ -3084,7 +3084,7 @@ function masterOutputPurposeCatalog() {
 }
 function beforeBeginForPlay(play, guide) {
   if (play.id === 1) return "Begin with leadership permission to convene the workshop, a facilitator, a preliminary list of known or suspected AI uses, and enough internal participation to discuss strategy, data, privacy, equity, workforce, and operations.";
-  if (play.id === 2) return "Begin after the department has a basic AI vision or interim guardrails. Gather evidence about governance, data infrastructure, workforce capacity, equity and engagement, partnerships, privacy, security, and current AI activity.";
+  if (play.id === 2) return "Begin with the latest AI Readiness and Pathway Assessment results or an equivalent existing assessment. Bring the people and evidence needed to validate scores, resolve unknowns, classify gaps, and assign improvement work.";
   if (play.id === 3) return "Begin after leadership agrees that AI use requires formal oversight. Bring forward Play 1 guardrails, Play 2 readiness findings, any known AI uses, and unresolved legal, privacy, IT, equity, procurement, or leadership questions.";
   if (play.id === 4) return "Begin with the readiness findings, governance pathway, and an initial sense of which workflows or communities may be affected. Engagement should occur early enough that stakeholder input can change decisions.";
   return `${guide.timing} Bring forward prior play outputs, unresolved decisions, relevant tool results, and any governance conditions that must shape this play.`;
@@ -4136,8 +4136,9 @@ function renderHome() {
           </div>
         </div>
         <figure class="journey-graphic-card">
-          <img src="assets/recommended-journey-final.png?v=20260817-13-plays" alt="Recommended Journey: 13 plays across four phases. Plan includes Plays 1–7; Build includes Plays 8–9; Deploy includes Plays 10–11; Govern includes Plays 12–13; destination—Responsible AI Adoption." />
+          <img src="assets/recommended-journey-pathway-assessment.png?v=20260818-pathway-entry" alt="Recommended Journey: Start with the AI Readiness and Pathway Assessment to build a customized path, then move through 13 plays across four phases—Plan, Build, Deploy, and Govern—to Responsible AI Adoption." />
           <div class="journey-hotspots" aria-label="Journey phase links">
+            <a class="journey-hotspot assessment" href="#/assess" aria-label="Start the AI Readiness and Pathway Assessment"><span>Start Here: Pathway Assessment</span></a>
             <a class="journey-hotspot plan" href="#/plays/phase-plan" aria-label="Open the Plan section of the 13-Play Playbook"><span>Plan: Plays 1–7</span></a>
             <a class="journey-hotspot build" href="#/plays/phase-build" aria-label="Open the Build section of the 13-Play Playbook"><span>Build: Plays 8–9</span></a>
             <a class="journey-hotspot deploy" href="#/plays/phase-deploy" aria-label="Open the Deploy section of the 13-Play Playbook"><span>Deploy: Plays 10–11</span></a>
@@ -5140,7 +5141,7 @@ function renderUseAreas() {
 
 function renderAssess() {
   const isMember = hasMemberProfile();
-  main.innerHTML = pageIntro("Assess: AI Readiness Self-Assessment", "Interactive Tool 7 collects domain scores and supports Play 2 while also informing early vision and governance decisions.") + `
+  main.innerHTML = pageIntro("Start Here: AI Readiness and Pathway Assessment", "Use this interactive entry assessment to identify readiness strengths and gaps, generate a customized pathway through the 13 plays, and provide preliminary findings for Play 2 validation and improvement planning.") + `
     <div class="assessment-grid">
       <form id="assessment" class="panel">
         <h2>Readiness Domains</h2>
@@ -5203,9 +5204,9 @@ function saveAssessmentProgress() {
   const state = getMemberState();
   const savedAt = new Date().toLocaleString();
   state.savedAssessments = [
-    ...(state.savedAssessments || []).filter(item => item.title !== "AI Readiness Self-Assessment"),
+    ...(state.savedAssessments || []).filter(item => !["AI Readiness Self-Assessment", "AI Readiness and Pathway Assessment"].includes(item.title)),
     {
-      title: "AI Readiness Self-Assessment",
+      title: "AI Readiness and Pathway Assessment",
       savedAt,
       score: document.getElementById("total-score").textContent,
       rawScore: document.getElementById("raw-score").textContent,
@@ -5294,8 +5295,8 @@ function assessmentSections() {
 
 async function downloadAssessment(format) {
   const sections = assessmentSections();
-  const title = "AI Readiness Self-Assessment Summary";
-  const filename = "ai-readiness-self-assessment-summary";
+  const title = "AI Readiness and Pathway Assessment Summary";
+  const filename = "ai-readiness-pathway-assessment-summary";
   if (format === "pdf") {
     const pdf = await buildProfessionalPdf(title, "Assessment Summary", "Readiness assessment results and recommended next plays.", [], sections);
     downloadBlob(`${filename}.pdf`, pdf, "application/pdf");
@@ -6267,6 +6268,39 @@ function renderImplementationPlayGuide(playId) {
   </section>`;
 }
 
+function play2AssessmentBridge() {
+  const state = getMemberState();
+  const latest = [...(state.savedAssessments || [])].reverse().find(item => ["AI Readiness and Pathway Assessment", "AI Readiness Self-Assessment"].includes(item.title));
+  const imported = state.play2ReadinessPlan;
+  const source = imported?.assessment || latest;
+  const domainRows = source?.domainScores || [];
+  return `<section class="content-section play2-assessment-bridge">
+    <p class="eyebrow">Assessment to Action</p>
+    <h2>Use pathway findings to begin Play 2</h2>
+    <p>The Pathway Assessment provides preliminary scores and recommendations. Play 2 validates those findings with cross-functional participation and organizational evidence, then converts confirmed gaps into assigned improvement work.</p>
+    ${source ? `<div class="play2-assessment-summary"><article><strong>${escapeDoc(source.score || "Not scored")} / 100</strong><span>${escapeDoc(source.level || "Readiness result")}</span></article><article><strong>${(source.recommendedPlays || []).length}</strong><span>recommended plays</span></article><article><strong>${domainRows.filter(item => Number(item.percent) <= 50).length}</strong><span>priority gap domains</span></article></div>${domainRows.length ? `<div class="table-wrap"><table><thead><tr><th>Assessment domain</th><th>Preliminary score</th><th>Play 2 validation status</th></tr></thead><tbody>${domainRows.map(item => `<tr><td>${escapeDoc(item.name)}</td><td>${escapeDoc(item.percent)} / 100</td><td>${imported ? "Imported for validation" : "Available to import"}</td></tr>`).join("")}</tbody></table></div>` : ""}` : `<p class="member-access-note">No saved assessment was found. Take the Pathway Assessment first, import an equivalent agency assessment, or begin Play 2 without one.</p>`}
+    <div class="button-row no-print"><a class="btn primary" href="#/assess">${latest ? "Review Latest Assessment" : "Take Pathway Assessment"}</a><button class="btn" type="button" id="import-assessment-play2" ${latest ? "" : "disabled"}>Import Latest Results</button><button class="btn" type="button" id="start-play2-without-assessment">Start Without an Assessment</button></div>
+    <p id="play2-import-status" class="save-status" aria-live="polite">${imported ? `Play 2 workspace started ${escapeDoc(imported.startedAt)} using ${imported.mode === "assessment" ? "imported assessment findings" : "an agency-provided or new evidence review"}.` : ""}</p>
+  </section>`;
+}
+
+function hydratePlay2AssessmentBridge() {
+  document.getElementById("import-assessment-play2")?.addEventListener("click", () => {
+    const state = getMemberState();
+    const latest = [...(state.savedAssessments || [])].reverse().find(item => ["AI Readiness and Pathway Assessment", "AI Readiness Self-Assessment"].includes(item.title));
+    if (!latest) return;
+    state.play2ReadinessPlan = { mode: "assessment", startedAt: new Date().toLocaleString(), assessment: latest };
+    setMemberState(state);
+    renderPlayDetail(2);
+  });
+  document.getElementById("start-play2-without-assessment")?.addEventListener("click", () => {
+    const state = getMemberState();
+    state.play2ReadinessPlan = { mode: "without-assessment", startedAt: new Date().toLocaleString(), assessment: null };
+    setMemberState(state);
+    renderPlayDetail(2);
+  });
+}
+
 function renderPlayDetail(id) {
   const p = plays.find(x => x.id === id) || plays[0];
   const prev = plays.find(x => x.id === p.id - 1);
@@ -6275,6 +6309,7 @@ function renderPlayDetail(id) {
     <div class="meta-row">${p.tools.map(id=>`<span class="tag">${toolLink(id)}</span>`).join("")}</div>
     <div class="detail-grid">
       <article class="panel">
+        ${p.id === 2 ? play2AssessmentBridge() : ""}
         <h2>Purpose</h2><p>${p.goal}</p>
         <h2>Why This Play Matters</h2><p>${p.matters}</p>
         <h2>Who Should Participate</h2><ul>${p.who.map(x=>`<li>${x}</li>`).join("")}</ul>
@@ -6463,17 +6498,60 @@ function toolExampleScenario(tool) {
   return toolExampleScenarios.caseTriage;
 }
 
+function specificPublicHealthRole(role, rasciCategory = "") {
+  const value = String(role || "").trim();
+  const key = value.toLowerCase();
+  const category = rasciCategory.toLowerCase();
+  const exact = {
+    "equity": category === "responsible" ? "Designated equity impact assessment lead" : "Health equity director or designated equity reviewer",
+    "equity leaders": "Health equity director or designated equity program lead",
+    "equity staff": "Health equity specialist or designated equity reviewer",
+    "governance": "AI governance program manager or designated review coordinator",
+    "governance committee": "AI governance committee members, if established; otherwise representatives of the designated interim review body",
+    "leadership": "Health officer, deputy health officer, or designated executive sponsor",
+    "executive leadership": "Health officer, agency director, deputy director, or designated executive sponsor",
+    "program leads": "Program director or designated program manager",
+    "program areas": "Director or manager of each affected public health program",
+    "program sponsors": "Program director or designated executive sponsor",
+    "programs": "Directors or managers of affected public health programs",
+    "legal and privacy": "Agency counsel and privacy officer",
+    "legal/privacy": "Agency counsel and privacy officer",
+    "it": "IT director, systems manager, or designated technical lead",
+    "it and data leaders": "IT director and informatics or data director",
+    "it/security": "IT director and information security officer",
+    "data and analytics": "Informatics director, epidemiologist, data scientist, or evaluation lead",
+    "data owners": "Named steward or owner for each data source",
+    "community engagement": "Community engagement director or designated engagement manager",
+    "community advisors": "Named community advisory group members or community-based organization representatives",
+    "communications": "Public information officer or communications director",
+    "finance": "Finance director or assigned budget analyst",
+    "grants": "Grants manager or assigned grant administrator",
+    "procurement": "Procurement or contracting officer",
+    "change leads": "Named change-management lead or implementation manager",
+    "supervisors": "Supervisors of affected staff and workflows",
+    "ai champions": "Named AI champions from affected programs",
+    "program staff": "Named staff from each affected program and workflow"
+  };
+  return exact[key] || value;
+}
+
+function specificPublicHealthRoles(roles, category) {
+  return [...new Set((roles || []).map(role => specificPublicHealthRole(role, category)).filter(Boolean))];
+}
+
 function toolUseGuide(tool) {
   const scenario = toolExampleScenario(tool);
   const relatedPlays = tool.playIds.map(id => plays.find(play => play.id === id)).filter(Boolean);
   const involved = [...new Set(relatedPlays.flatMap(play => play.who || []))];
   const searchable = `${tool.title} ${tool.purpose}`.toLowerCase();
-  const approvers = ["Tool owner or responsible program lead"];
-  if (relatedPlays.some(play => [1, 3, 7, 9, 11, 12, 13].includes(play.id))) approvers.push("AI governance committee or designated governance body");
+  const governanceDecisionRequired = relatedPlays.some(play => [1, 3, 7, 9, 11, 12, 13].includes(play.id));
+  const approvers = ["Program director or operational owner with authority over the affected workflow"];
+  if (governanceDecisionRequired) approvers.push("If established: AI governance committee as the collective approval body, or the specific official to whom it delegated approval authority");
+  if (governanceDecisionRequired) approvers.push("If AI governance is not established: Health Officer, agency director, executive sponsor, or an existing authorized review body serving on an interim basis");
   if (relatedPlays.some(play => [1, 8, 9, 12].includes(play.id))) approvers.push("Health officer, executive sponsor, or delegated executive");
   if (/privacy|data use|confidential|security|cyber/.test(searchable)) approvers.push("Privacy, legal, data-governance, or security authority, as applicable");
   if (/vendor|procure|contract|fund|budget/.test(searchable)) approvers.push("Procurement, contracting, finance, or grants authority, as applicable");
-  if (/equity|community|stakeholder|accessib|language|civil rights/.test(searchable)) approvers.push("Equity, civil-rights, accessibility, language-access, or community-review lead, as applicable");
+  if (/equity|community|stakeholder|accessib|language|civil rights/.test(searchable)) approvers.push("Official who holds approval authority for civil rights, accessibility, language-access, or community-engagement requirements, when agency policy assigns that authority");
   if (/deploy|go-live|validation|pilot|scale|monitor|audit|incident/.test(searchable)) approvers.push("Operational system owner and required technical or evaluation reviewers");
 
   const resourceMap = new Map();
@@ -6489,17 +6567,17 @@ function toolUseGuide(tool) {
     `<strong>Primary concern and follow-up:</strong> ${scenario.risk}; ${scenario.followUp}.`
   ];
   const unique = values => [...new Set(values.filter(Boolean))];
-  const responsible = unique((tool.roles || []).length ? tool.roles : involved.slice(0, 2));
-  const support = unique(involved.filter(role => /IT|data|analytics|evaluation|informatics|PMO|finance|grants|training|HR|change|communications|procurement|vendor|technical/i.test(role)));
-  const consulted = unique(involved.filter(role => /legal|privacy|security|equity|community|Tribal|accessibility|language|civil rights|program|data owner|procurement/i.test(role)));
-  const informed = unique([
+  const responsible = specificPublicHealthRoles((tool.roles || []).length ? ["Named tool owner or facilitator", ...tool.roles] : ["Named tool owner or facilitator", ...involved.slice(0, 2)], "Responsible");
+  const support = specificPublicHealthRoles(involved.filter(role => /IT|data|analytics|evaluation|informatics|PMO|finance|grants|training|HR|change|communications|procurement|vendor|technical/i.test(role)), "Support");
+  const consulted = specificPublicHealthRoles(involved.filter(role => /legal|privacy|security|equity|community|Tribal|accessibility|language|civil rights|program|data owner|procurement/i.test(role)), "Consulted");
+  const informed = specificPublicHealthRoles([
     ...involved.filter(role => /executive|leadership|supervisor|program staff|pilot user|operational owner|partner/i.test(role)),
     "Staff whose work, documentation, or decision responsibilities may change",
     ...(relatedPlays.some(play => [4, 7, 10, 11, 13].includes(play.id)) ? ["Affected community representatives and external partners, using appropriate public or partner communications"] : [])
-  ]);
+  ], "Informed");
   const rasci = [
     ["Responsible", "Completes the tool, gathers evidence, coordinates follow-up, and keeps the record current.", responsible.length ? responsible : ["Named tool owner or program lead"]],
-    ["Accountable", "Owns the decision and provides or secures required approval. There should be one clearly designated accountable authority for the final artifact.", unique(approvers)],
+    ["Accountable", `Owns the decision and provides or secures required approval. Select one clearly designated accountable authority for the final artifact. ${governanceDecisionRequired ? 'If AI governance has not been established, use an interim authorized executive or existing review body and complete <a href="#/plays/3">Play 3: Establish AI Governance</a>.' : ''}`, unique(approvers)],
     ["Support", "Provides implementation, technical, analytic, operational, training, financial, or administrative assistance.", support.length ? support : ["Implementation, technical, or administrative support identified by the tool owner"]],
     ["Consulted", "Provides subject-matter review before the decision, especially for privacy, security, legal, equity, accessibility, community, data, or procurement concerns.", consulted.length ? consulted : ["Required subject-matter and affected-community reviewers based on risk"]],
     ["Informed", "Receives the decision, conditions, deadlines, changes, or results but is not asked to approve unless separately assigned.", informed]
@@ -6512,7 +6590,7 @@ function toolUseGuide(tool) {
       <section><h3>When to use it</h3><p>Use this tool while completing ${playNames}. Revisit it when evidence, ownership, risks, approvals, system scope, or agency policy materially changes.</p></section>
       <section><h3>Why to use it</h3><p>${tool.purpose}</p><p>The completed tool creates a reviewable record that can support implementation, governance decisions, follow-up, and future audits.</p></section>
       <section class="tool-how-section"><h3>How to use it</h3><ol class="tool-process-flow"><li><strong>Prepare</strong><span>Name the owner and gather available evidence.</span></li><li><strong>Complete together</strong><span>Include people who understand the program, communities, data, workflow, and risks.</span></li><li><strong>Identify gaps</strong><span>Use <b>Unknown</b> for missing evidence and <b>Other</b> for local categories.</span></li><li><strong>Assign follow-up</strong><span>Give unresolved items an owner and due date.</span></li><li><strong>Review and retain</strong><span>Obtain required review or approval and save the decision record.</span></li></ol></section>
-      <section class="tool-rasci-section"><h3>Who should be involved: RASCI</h3><p class="plain-meta">Adapt these assignments to agency policy and the use case’s risk tier. <strong>Accountable</strong> identifies decision and approval authority; <strong>Consulted</strong> identifies reviewers whose input is required before that decision. Expand a category for its definition and complete role list.</p><div class="tool-rasci-accordion">${rasci.map(([category, meaning, roles]) => {
+      <section class="tool-rasci-section"><h3>Who should be involved: RASCI</h3><p class="plain-meta">These are suggested <strong>roles</strong>, not entire divisions. Replace them with the agency’s actual job titles and name the individual assigned whenever possible. <strong>Accountable</strong> identifies decision and approval authority; <strong>Consulted</strong> identifies reviewers whose input is required before that decision.</p>${governanceDecisionRequired ? '<p class="rasci-governance-note"><strong>No AI governance committee yet?</strong> Assign an interim accountable executive or existing authorized review body, then use <a href="#/plays/3">Play 3</a> to create or designate the permanent governance structure.</p>' : ''}<div class="tool-rasci-accordion">${rasci.map(([category, meaning, roles]) => {
         const preview = roles.slice(0, 2).join(", ");
         const additional = roles.length > 2 ? ` +${roles.length - 2} more` : "";
         return `<details class="tool-rasci-item"><summary><strong>${category}</strong><span>${preview}${additional}</span></summary><p>${meaning}</p><ul class="compact-list">${roles.map(role => `<li>${role}</li>`).join("")}</ul></details>`;
@@ -6528,6 +6606,7 @@ function toolUseGuide(tool) {
       </div>
     </section>
   </section>`;
+  if (p.id === 2) hydratePlay2AssessmentBridge();
 }
 
 function toolActionRow(toolId, action = {}, index = 0) {

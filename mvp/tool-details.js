@@ -2,11 +2,23 @@ const { plays, release } = window.launchContent;
 document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="foundation-content.css?v=20260818-foundation-content">');
 const toolParams = new URLSearchParams(location.search);
 const requestedPlay = Number(toolParams.get("play"));
-if (requestedPlay === 2 && !toolParams.get("name")) window.location.replace("assess.html");
 const play = plays.find(item => item.number === requestedPlay) || plays[0];
-const readinessDomains = ["Leadership and governance", "Strategy and use-case alignment", "Data quality and stewardship", "Technology and interoperability", "Privacy, security, and legal review", "Workforce capability and change readiness", "Equity, accessibility, and community engagement", "Procurement and vendor oversight", "Evaluation, monitoring, and sustainment"];
 const storageKey = `foundation-tool-${play.number}`;
 const main = document.querySelector("#tool-main");
+
+function pathwayResult() {
+  try { return JSON.parse(localStorage.getItem("foundation-pathway-assessment-result") || "null"); }
+  catch { return null; }
+}
+
+function pathwayBridge() {
+  if (play.number !== 2) return "";
+  const result = pathwayResult();
+  const summary = result
+    ? `<p><strong>Latest result:</strong> ${result.score ?? "—"}% · ${result.level || "Assessment complete"}</p><p><strong>Recommended plays:</strong> ${(result.recommendedPlays || []).map(item => `Play ${item.number}: ${item.title}`).join("; ") || "Review the assessment pathway"}</p>`
+    : `<p>No saved Pathway Assessment was found in this browser. You can take it first or begin Play 2 with equivalent local evidence.</p>`;
+  return `<section class="pathway-import"><p class="eyebrow">Assessment to action</p><h3>Bring preliminary findings into Play 2</h3><p>The Pathway Assessment identifies a preliminary route. This tool validates those findings with local evidence, resolves unknowns, and assigns readiness improvements.</p>${summary}<div class="button-row no-print"><a class="btn" href="assess.html">${result ? "Review Pathway Assessment" : "Take Pathway Assessment"}</a>${result ? '<button class="btn primary" type="button" id="import-pathway">Import latest findings</button>' : ""}<button class="btn" type="button" id="start-without-pathway">Start without assessment</button></div><p class="tool-save-status" id="pathway-import-status" role="status"></p></section>`;
+}
 
 document.title = `${play.tool.title} | Foundation Edition`;
 main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lead: play.tool.purpose, eyebrow: `Foundation Edition · Play ${play.number} Tool`, className: "foundation-tool-page" }) + `
@@ -16,7 +28,7 @@ main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lea
     <form class="panel foundation-tool-form" id="foundation-tool-form">
       <h2>Complete the tool</h2>
       <p>Use this workspace with the people responsible for Play ${play.number}. Your entries are stored only in this browser unless you download or print them.</p>
-      ${play.number === 2 ? `<section class="readiness-profile"><h3>Foundation readiness profile</h3><p>Rate each domain through cross-functional discussion and available evidence. This transparent, unweighted profile is a starting point—not the protected organizational diagnostic, a certification, or a benchmark against other agencies.</p><p><strong>Rating scale:</strong> 0 = not in place; 1 = informal or early; 2 = defined and partly implemented; 3 = mature, documented, and routinely used.</p><div class="readiness-domain-grid">${readinessDomains.map((domain, index) => `<label>${domain}<select name="readiness_${index + 1}"><option value="">Not rated</option><option value="0">0 — Not in place</option><option value="1">1 — Informal or early</option><option value="2">2 — Defined and partly implemented</option><option value="3">3 — Mature and routinely used</option></select></label>`).join("")}</div><div class="panel readiness-result" id="readiness-result" aria-live="polite"><strong>Readiness profile:</strong> Rate the nine domains to generate a discussion summary.</div></section>` : ""}
+      ${pathwayBridge()}
       <label>Organization or department<input name="organization" autocomplete="organization"></label>
       <label>Facilitator or owner<input name="owner" autocomplete="name"></label>
       <label>Date<input name="date" type="date"></label>
@@ -91,18 +103,19 @@ document.querySelector("#clear-tool").addEventListener("click", () => {
 restoreValues();
 
 if (play.number === 2) {
-  const readinessFields = readinessDomains.map((_, index) => form.elements.namedItem(`readiness_${index + 1}`));
-  const result = document.querySelector("#readiness-result");
-  const updateReadiness = () => {
-    const rated = readinessFields.filter(field => field.value !== "");
-    if (!rated.length) { result.innerHTML = "<strong>Readiness profile:</strong> Rate the nine domains to generate a discussion summary."; return; }
-    const total = rated.reduce((sum, field) => sum + Number(field.value), 0);
-    const maximum = rated.length * 3;
-    const percent = Math.round((total / maximum) * 100);
-    const gaps = readinessFields.map((field, index) => ({ field, domain: readinessDomains[index] })).filter(item => item.field.value !== "" && Number(item.field.value) <= 1).map(item => item.domain);
-    const next = percent < 25 ? "Begin with vision, interim safe-use boundaries, leadership sponsorship, and basic governance." : percent < 50 ? "Prioritize the lowest-rated domains before selecting or expanding pilots." : percent < 75 ? "Address material gaps and validate safeguards before deployment." : "Confirm evidence, test locally, and maintain governance and monitoring rather than assuming readiness is permanent.";
-    result.innerHTML = `<strong>Foundation discussion profile:</strong> ${total} of ${maximum} points across ${rated.length} rated domain${rated.length === 1 ? "" : "s"} (${percent}%). <strong>Priority gaps:</strong> ${gaps.length ? gaps.join(", ") : "No rated domain is currently at 0 or 1"}. <strong>Suggested next step:</strong> ${next}`;
-  };
-  readinessFields.forEach(field => field.addEventListener("change", updateReadiness));
-  updateReadiness();
+  document.querySelector("#start-without-pathway")?.addEventListener("click", () => {
+    document.querySelector("#pathway-import-status").textContent = "Started without a saved assessment. Record the evidence your team is using below.";
+    form.elements.namedItem("context")?.focus();
+  });
+  document.querySelector("#import-pathway")?.addEventListener("click", () => {
+    const result = pathwayResult();
+    if (!result) return;
+    const domains = Object.entries(result.domainScores || {}).map(([name, value]) => `${name}: ${value}%`).join("\n");
+    const recommendations = (result.recommendedPlays || []).map(item => `Play ${item.number}: ${item.title}`).join("\n");
+    form.elements.namedItem("context").value = `Pathway Assessment completed ${result.date || "in this browser"}. Overall result: ${result.score ?? "—"}% (${result.level || "level not recorded"}).`;
+    if (form.elements.namedItem("question_1")) form.elements.namedItem("question_1").value = domains || "Review the saved assessment evidence and identify what can be verified locally.";
+    if (form.elements.namedItem("question_2")) form.elements.namedItem("question_2").value = recommendations || "Review the preliminary pathway and identify priority readiness gaps.";
+    form.elements.namedItem("actions").value = recommendations ? `Validate these preliminary recommendations and assign owners and dates:\n${recommendations}` : "Assign owners and dates for each validated readiness gap.";
+    document.querySelector("#pathway-import-status").textContent = "Latest pathway findings imported. Validate and revise them with local evidence before saving Play 2.";
+  });
 }

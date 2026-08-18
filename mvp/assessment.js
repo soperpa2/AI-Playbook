@@ -10,7 +10,8 @@
     "Capability is mature, documented, routinely used, governed, and ready to support responsible AI implementation."
   ];
 
-  main.innerHTML = `<section class="page-hero panel"><p class="eyebrow">Assess · Tool for Play 2</p><h1>AI Readiness Self-Assessment</h1><p>Use the same seven-domain assessment and 100-point scoring standard as the Full Version to identify strengths, gaps, a maturity estimate, and appropriate next plays.</p></section>
+  let latestResult = null;
+  main.innerHTML = `<section class="page-hero panel"><p class="eyebrow">Start Here · Build Your Path</p><h1>AI Readiness and Pathway Assessment</h1><p>Use the same seven-domain assessment and recommendation logic as the Full Version to identify strengths and gaps, estimate readiness, and generate a customized path through the 13 plays. Play 2 then validates these preliminary findings and turns confirmed gaps into an improvement plan.</p></section>
   <div class="assessment-grid">
     <form id="assessment" class="panel"><h2>Readiness Domains</h2>
       <div class="rating-legend" aria-label="Rating scale">${assessment.scale.map((label, value) => `<div><strong>${value}</strong><span>${label}</span><p>${descriptions[value]}</p></div>`).join("")}</div>
@@ -45,7 +46,8 @@
     document.querySelector("#readiness-level").textContent = interpretation.level;
     document.querySelector("#readiness-action").textContent = `Recommended: ${interpretation.action}`;
     const recommended = [...recommendations].sort((a, b) => a - b);
-    document.querySelector("#assessment-recs").innerHTML = `<h3>Suggested Next Plays</h3><p>${recommended.map(playLink).join("<br>")}</p><h3>Foundation Tools for Those Plays</h3><p>${recommended.map(number => `<a href="${number === 2 ? "assess.html" : "tool.html?play=" + number}">${plays[number - 1].tool.title}</a>`).join("<br>")}</p><h3>Priority Gap Areas</h3><p>${gaps.length ? gaps.map(gap => `${gap.name}: ${gap.percent} / 100 (raw ${gap.subtotal} / 12)`).join("<br>") : "No domain scored 50 / 100 or below. Use the recommendations to prepare for the next stage."}</p>`;
+    latestResult = { score: percent, rawScore: `${total} / ${maximum}`, level: interpretation.level, action: interpretation.action, recommendedPlays: recommended, domainScores: scores, priorityGaps: gaps };
+    document.querySelector("#assessment-recs").innerHTML = `<h3>Your Customized Pathway</h3><p>${recommended.map(playLink).join("<br>")}</p><h3>Foundation Tools for Those Plays</h3><p>${recommended.map(number => `<a href="tool.html?play=${number}">${plays[number - 1].tool.title}</a>`).join("<br>")}</p><h3>Priority Gap Areas</h3><p>${gaps.length ? gaps.map(gap => `${gap.name}: ${gap.percent} / 100 (raw ${gap.subtotal} / 12)`).join("<br>") : "No domain scored 50 / 100 or below. Use the recommendations to prepare for the next stage."}</p>${recommended.includes(2) ? '<p><a class="btn small" href="tool.html?play=2">Continue to Play 2 validation and improvement planning</a></p>' : ''}`;
   }
 
   document.querySelector("#assessment").addEventListener("change", update);
@@ -53,6 +55,7 @@
     const values = {};
     document.querySelectorAll('#assessment input[type="radio"]:checked').forEach(input => { values[input.name] = Number(input.value); });
     localStorage.setItem("foundation-readiness-assessment", JSON.stringify(values));
+    localStorage.setItem("foundation-pathway-assessment-result", JSON.stringify({ ...latestResult, savedAt: new Date().toLocaleString() }));
     document.querySelector("#assessment-save-status").textContent = `Saved in this browser ${new Date().toLocaleString()}.`;
   });
   document.querySelector("#print-assessment").addEventListener("click", () => window.print());

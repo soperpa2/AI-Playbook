@@ -264,10 +264,11 @@ main { min-height: calc(100vh - 144px); }
   border-radius: 12px;
   cursor: pointer;
 }
-.journey-hotspot.plan { left: 12%; top: 34%; }
-.journey-hotspot.build { left: 62%; top: 43%; }
-.journey-hotspot.deploy { left: 11%; top: 56%; }
-.journey-hotspot.govern { left: 63%; top: 64%; }
+.journey-hotspot.assessment { left: 29%; top: 36%; width: 42%; height: 10%; }
+.journey-hotspot.plan { left: 12%; top: 46%; }
+.journey-hotspot.build { left: 60%; top: 54%; }
+.journey-hotspot.deploy { left: 11%; top: 66%; }
+.journey-hotspot.govern { left: 61%; top: 72%; }
 .journey-hotspot span {
   position: absolute;
   width: 1px;
@@ -2042,6 +2043,13 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
 .tool-process-flow strong { grid-column: 2; color: var(--navy); line-height: 1.25; }
 .tool-process-flow span { grid-column: 2; margin-top: .18rem; color: #203d55; font-size: .9rem; line-height: 1.35; }
 .tool-rasci-accordion { display: grid; gap: .35rem; margin-top: .65rem; }
+.rasci-governance-note { margin: .6rem 0 0; padding: .55rem .7rem; border-left: 3px solid var(--green); background: #f3faf5; color: #244b32; font-size: .88rem; }
+.play2-assessment-bridge { margin-bottom: 1.25rem; padding: 1rem; border: 2px solid #b8d3e6; border-radius: .6rem; background: #f5fafc; }
+.play2-assessment-bridge > h2 { margin-top: .1rem; }
+.play2-assessment-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; margin: .75rem 0; }
+.play2-assessment-summary article { display: grid; gap: .15rem; padding: .65rem; border-radius: .45rem; background: #fff; }
+.play2-assessment-summary strong { color: var(--blue); font-size: 1.2rem; }
+.play2-assessment-summary span { color: var(--muted); font-size: .82rem; }
 .tool-rasci-item { border: 1px solid #cbdce8; border-radius: .4rem; background: #f8fbfd; }
 .tool-rasci-item summary { display: grid; grid-template-columns: 7.5rem 1fr; gap: .75rem; align-items: center; padding: .55rem .7rem; cursor: pointer; }
 .tool-rasci-item summary strong { color: var(--blue); }
@@ -2056,6 +2064,7 @@ input[type="radio"] { width: 22px; height: 22px; accent-color: var(--blue); }
 @media (max-width: 900px) { .compact-guidance-list, .compact-example-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 1000px) { .tool-process-flow { grid-template-columns: 1fr; gap: .65rem; } .tool-process-flow li { grid-template-columns: 2rem 1fr; padding-bottom: .15rem; } .tool-process-flow li:not(:last-child)::after { top: 2.15rem; left: .92rem; right: auto; width: 0; height: calc(100% - 1.5rem); border: 0; border-left: 2px solid #b8d3e6; transform: none; } }
 @media (max-width: 720px) { .tool-use-guide-grid, .compact-guidance-list, .compact-example-list, .tool-reference-list { grid-template-columns: 1fr; } .tool-rasci-item summary { grid-template-columns: 6.5rem 1fr; } }
+@media (max-width: 720px) { .play2-assessment-summary { grid-template-columns: 1fr; } }
 .tool-action-tracker { margin-top: 1.5rem; border: 2px solid #b9d8c1; background: #f5fbf6; }
 .tool-action-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .tool-action-header h3 { margin: .1rem 0 .35rem; }
