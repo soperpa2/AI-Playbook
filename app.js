@@ -3003,6 +3003,8 @@ function route() {
   else if (key === "learn") renderLearn(param);
   else if (key === "learn-track") renderLearningTrackPage(param);
   else if (key === "learn-plan") renderLearningPlanPage(param);
+  else if (key === "learning-pathways") renderLearningPathwaysPage();
+  else if (key === "learning-assessment") renderPersonalizedLearningAssessment();
   else if (key === "use-areas") renderLearn("ai-support-areas");
   else if (key === "assess") renderAssess();
   else if (key === "maturity") renderMaturity();
@@ -3955,6 +3957,8 @@ function defaultMemberState() {
     savedTools: [],
     toolTasks: [],
     learningProgress: {},
+    learningPathwayAssessments: [],
+    recommendedLearningModules: [],
     forumPosts: [
       { id: "seed-1", author: "Playbook Team", topic: "Governance", title: "How are agencies sequencing governance before pilots?", body: "Share approaches for forming an AI governance body, approving use cases, and keeping community input visible.", date: "2026-06-30" },
       { id: "seed-2", author: "Playbook Team", topic: "Readiness", title: "What readiness gaps are hardest to close?", body: "Use this thread to compare data, workforce, privacy, and procurement challenges.", date: "2026-06-30" }
@@ -4545,6 +4549,8 @@ function renderLearnLanding() {
         <p>Use this section to choose a learning plan, explore tracks, and understand how the modules fit together before opening individual courses.</p>
         <div class="button-row">
           <a class="btn primary" href="#/learn-track/shared-foundation">View Foundational Modules</a>
+          <a class="btn" href="#/learning-pathways">Learning Pathways</a>
+          <a class="btn" href="#/learning-assessment">Personalized Learning Pathway Assessment</a>
         </div>
       </div>
       <div class="learn-hero-visual" aria-hidden="true">
@@ -4763,6 +4769,159 @@ function renderLearnLanding() {
   catalogForm?.addEventListener("input", updateCatalog);
   catalogForm?.addEventListener("change", updateCatalog);
   catalogForm?.addEventListener("reset", () => window.setTimeout(updateCatalog, 0));
+}
+
+function courseCatalogReturnButton() {
+  return `<a class="btn small" href="#/learn">Back to Course Catalog</a>`;
+}
+
+function renderLearningPathwaysPage() {
+  const plans = learningPlans();
+  main.innerHTML = pageIntro("Learning Pathways", "Choose a ready-made pathway based on your responsibilities, or use the personalized assessment when your role crosses several functions.") + `
+    <section class="panel learning-pathways-intro">
+      <div class="button-row">${courseCatalogReturnButton()}<a class="btn primary small" href="#/learning-assessment">Take Personalized Assessment</a></div>
+      <p>Every pathway begins with the required foundation. Role-based pathways then sequence courses from the relevant governance, policy, program, epidemiology, communications, operations, data, technical, analytics, leadership, or health-education tracks.</p>
+    </section>
+    <div class="learning-pathway-grid">
+      ${plans.map(plan => {
+        const modules = planModules(plan);
+        return `<article class="panel learning-pathway-card">
+          <p class="eyebrow">Ready-Made Pathway</p>
+          <h2>${escapeDoc(plan.title)}</h2>
+          <p>${escapeDoc(plan.description || "Role-based course sequence.")}</p>
+          ${plan.primary_audience?.length ? `<p><strong>Designed for:</strong> ${plan.primary_audience.map(escapeDoc).join(", ")}</p>` : ""}
+          <ol class="pathway-course-preview">${modules.slice(0, 8).map(module => `<li><a href="#/learn/${module.id}">${escapeDoc(module.course_id)}: ${escapeDoc(module.title)}</a></li>`).join("")}</ol>
+          ${modules.length > 8 ? `<p class="plain-meta">+ ${modules.length - 8} additional courses in the complete pathway</p>` : ""}
+          <a class="btn small" href="#/learn-plan/${plan.plan_id}">Open Complete Pathway</a>
+        </article>`;
+      }).join("")}
+    </div>
+  </section>`;
+}
+
+const learningAssessmentDomains = [
+  { id: "foundations", title: "AI foundations", prompt: "I can distinguish major AI approaches, explain their limits, and decide when AI may or may not fit a public health purpose.", modules: ["int-100", "int-190-ai-for-social-good"] },
+  { id: "safe-use", title: "Safe and approved use", prompt: "I can protect sensitive information, use approved environments, review outputs, and recognize when privacy or security escalation is required.", modules: ["gov-300-ai-security-prompt-injection-and-data-leakage", "gov-310-privacy-preserving-ai-and-de-identification"] },
+  { id: "governance", title: "Governance and accountability", prompt: "I can identify decision authority, risk-based review, documentation, human oversight, monitoring, and escalation requirements.", modules: ["gov-100-introduction-to-ai-governance-for-public-health", "gov-410-ai-risk-appetite-and-risk-tolerance-for-public-health"] },
+  { id: "equity", title: "Equity and community impact", prompt: "I can identify missing voices, structural and proxy risks, subgroup impacts, accessibility needs, and appropriate community involvement.", modules: ["anl-330-equity-evaluation-for-ai-models", "pol-330-ai-equity-policy-and-civil-rights-considerations"] },
+  { id: "environment", title: "Environmental and resource responsibility", prompt: "I can evaluate proportionality, energy, water, hardware, e-waste, environmental justice, alternatives, and uncertain vendor claims.", modules: ["int-250-environmental-and-resource-impacts-of-ai"] },
+  { id: "data", title: "Data quality and stewardship", prompt: "I can recognize data-quality, provenance, representativeness, access, purpose, and lifecycle requirements for public health AI.", modules: ["ops-200-data-quality-engineering-for-ai", "gov-330-data-governance-for-ai-ready-public-health-data"] },
+  { id: "communication", title: "Communication and transparency", prompt: "I can verify AI-assisted content, communicate limitations, support language access, and explain AI use to affected audiences.", modules: ["com-200-ai-for-public-health-communications-and-message-development", "com-210-ai-assisted-translation-language-access-and-readability-review"] },
+  { id: "implementation", title: "Implementation and evaluation", prompt: "I can frame a use case, map its workflow, define measures, plan human review, and decide whether to continue, modify, scale, pause, or retire it.", modules: ["int-200-ai-use-case-intake-and-triage-basics", "pgm-100-managing-ai-projects-in-public-health-programs"] }
+];
+
+const learningAssessmentRoleTracks = {
+  "Health Officer / Executive": "public-health-executive-leadership",
+  "Epidemiologist": "epidemiology",
+  "Informatics / Data Director": "analytics-modeling",
+  "Program Manager": "program-management",
+  "IT / Technical Lead": "technical-architecture",
+  "Communications": "communications",
+  "Policy / Legal / Privacy": "policy",
+  "Governance Committee Member": "governance-security",
+  "Operations / Data Quality": "operations-data-quality",
+  "Health Educator": "health-education",
+  "Researcher / Analyst": "analytics-modeling",
+  "Student / Learner": "shared-foundational"
+};
+
+function renderPersonalizedLearningAssessment() {
+  const state = getMemberState();
+  const latest = [...(state.learningPathwayAssessments || [])].reverse()[0];
+  main.innerHTML = pageIntro("Personalized Learning Pathway Assessment", "Identify foundational and role-specific learning priorities and generate an ordered course pathway.") + `
+    <section class="panel learning-assessment-intro">
+      <div class="button-row">${courseCatalogReturnButton()}<a class="btn small" href="#/learning-pathways">View Ready-Made Pathways</a></div>
+      <p>This is an individual learning diagnostic, not the organizational readiness assessment. Rate what you can do now. The results identify strengths and priority gaps, then combine required foundation courses with the track that best matches your responsibilities.</p>
+      <p class="callout"><strong>Scale:</strong> 0 = New to this; 1 = Need substantial development; 2 = Can apply with support; 3 = Can apply independently and explain to others.</p>
+    </section>
+    <section class="panel">
+      <form id="personalized-learning-assessment" class="learning-assessment-form">
+        <label for="learning-assessment-role"><strong>Primary role or responsibility</strong></label>
+        <select id="learning-assessment-role" required>
+          <option value="">Select your closest role</option>
+          ${Object.keys(learningAssessmentRoleTracks).map(role => `<option>${escapeDoc(role)}</option>`).join("")}
+        </select>
+        <div class="learning-domain-list">
+          ${learningAssessmentDomains.map((domain, index) => `<fieldset class="learning-domain-question">
+            <legend><span>${index + 1}</span><strong>${escapeDoc(domain.title)}</strong></legend>
+            <p>${escapeDoc(domain.prompt)}</p>
+            <label for="learning-domain-${domain.id}">Current confidence</label>
+            <select id="learning-domain-${domain.id}" required>
+              <option value="">Select a rating</option>
+              <option value="0">0 — New to this</option>
+              <option value="1">1 — Need substantial development</option>
+              <option value="2">2 — Can apply with support</option>
+              <option value="3">3 — Can apply independently</option>
+            </select>
+          </fieldset>`).join("")}
+        </div>
+        <div class="button-row"><button class="btn primary" type="button" onclick="scorePersonalizedLearningAssessment()">Create My Learning Pathway</button><button class="btn" type="reset">Clear Responses</button></div>
+        <p id="learning-assessment-status" class="save-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section id="learning-assessment-results">${latest ? renderLearningAssessmentResult(latest) : ""}</section>
+  </section>`;
+}
+
+function personalizedLearningRecommendations(role, scores) {
+  const moduleById = Object.fromEntries(learningModules.map(module => [module.id, module]));
+  const required = curriculumTrackModules("shared-foundational");
+  const gaps = learningAssessmentDomains.filter(domain => Number(scores[domain.id]) <= 1);
+  const developing = learningAssessmentDomains.filter(domain => Number(scores[domain.id]) === 2);
+  const trackId = learningAssessmentRoleTracks[role] || "shared-foundational";
+  const roleModules = trackId === "shared-foundational" ? [] : curriculumTrackModules(trackId);
+  const ordered = [];
+  const add = (module, reason, priority) => {
+    if (!module || ordered.some(item => item.moduleId === module.id)) return;
+    ordered.push({ moduleId: module.id, courseId: module.course_id, title: module.title, reason, priority });
+  };
+  required.forEach(module => add(module, "Required shared foundation", 1));
+  gaps.forEach(domain => domain.modules.forEach(id => add(moduleById[id], `Priority gap: ${domain.title}`, 2)));
+  developing.forEach(domain => domain.modules.slice(0, 1).forEach(id => add(moduleById[id], `Developing competency: ${domain.title}`, 3)));
+  roleModules.forEach(module => add(module, `${role} pathway`, 4));
+  return { trackId, gaps: gaps.map(domain => domain.id), strengths: learningAssessmentDomains.filter(domain => Number(scores[domain.id]) === 3).map(domain => domain.id), modules: ordered };
+}
+
+function scorePersonalizedLearningAssessment() {
+  const role = document.getElementById("learning-assessment-role")?.value || "";
+  const scores = {};
+  learningAssessmentDomains.forEach(domain => { scores[domain.id] = document.getElementById(`learning-domain-${domain.id}`)?.value ?? ""; });
+  const status = document.getElementById("learning-assessment-status");
+  if (!role || Object.values(scores).some(value => value === "")) {
+    if (status) status.textContent = "Select a role and answer all eight questions before creating your pathway.";
+    return;
+  }
+  const recommendation = personalizedLearningRecommendations(role, scores);
+  const total = Object.values(scores).reduce((sum, value) => sum + Number(value), 0);
+  const record = {
+    id: `learning-${Date.now()}`, role, scores,
+    score: Math.round((total / (learningAssessmentDomains.length * 3)) * 100),
+    completedAt: new Date().toLocaleString(),
+    ...recommendation
+  };
+  const state = getMemberState();
+  state.learningPathwayAssessments = [...(state.learningPathwayAssessments || []), record];
+  state.recommendedLearningModules = record.modules;
+  setMemberState(state);
+  const results = document.getElementById("learning-assessment-results");
+  if (results) results.innerHTML = renderLearningAssessmentResult(record);
+  if (status) status.textContent = "Your personalized pathway was saved to My Account.";
+  results?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function renderLearningAssessmentResult(record) {
+  const domainById = Object.fromEntries(learningAssessmentDomains.map(domain => [domain.id, domain]));
+  const progress = getMemberState().learningProgress || {};
+  const completed = (record.modules || []).filter(item => progress[item.moduleId]?.completed).length;
+  return `<section class="panel personalized-pathway-results">
+    <p class="eyebrow">Saved Personalized Pathway</p>
+    <h2>Your Recommended Learning Sequence</h2>
+    <div class="member-stats"><article><strong>${record.score}%</strong><span>Current self-assessment</span></article><article><strong>${record.gaps?.length || 0}</strong><span>Priority learning gaps</span></article><article><strong>${record.strengths?.length || 0}</strong><span>Current strengths</span></article><article><strong>${completed}/${record.modules?.length || 0}</strong><span>Recommended courses complete</span></article></div>
+    <p><strong>Role:</strong> ${escapeDoc(record.role)} · <strong>Completed:</strong> ${escapeDoc(record.completedAt)}</p>
+    ${record.gaps?.length ? `<p><strong>Priority gaps:</strong> ${record.gaps.map(id => escapeDoc(domainById[id]?.title || id)).join(", ")}</p>` : `<p><strong>Priority gaps:</strong> No domains were rated 0 or 1. Your pathway reinforces the foundation and role-specific practice.</p>`}
+    <ol class="personalized-course-list">${(record.modules || []).map(item => `<li class="${progress[item.moduleId]?.completed ? "complete" : ""}"><span><strong>${escapeDoc(item.courseId || "Course")}: ${escapeDoc(item.title)}</strong><small>${escapeDoc(item.reason)}</small></span><a href="#/learn/${item.moduleId}">${progress[item.moduleId]?.completed ? "Review" : "Start course"}</a></li>`).join("")}</ol>
+    <div class="button-row"><a class="btn primary small" href="#/member">View in My Account</a>${courseCatalogReturnButton()}<a class="btn small" href="#/learning-pathways">Compare Ready-Made Pathways</a></div>
+  </section>`;
 }
 
 function renderLearningTrackPage(trackId = "all-modules") {
@@ -7438,6 +7597,10 @@ function renderMember() {
     "Review governance decisions before moving from planning into pilots.",
     "Free membership enables blank and completed tool downloads, saved progress, ratings, and reviewer eligibility."
   ];
+  const learningAssessments = state.learningPathwayAssessments || [];
+  const latestLearningAssessment = [...learningAssessments].reverse()[0];
+  const recommendedLearning = state.recommendedLearningModules || [];
+  const completedLearning = Object.values(state.learningProgress || {}).filter(record => record.completed).length;
   main.innerHTML = pageIntro("My Account — Administrator View", "Manage your personal membership, saved work, downloads, and reviewer activity. Organization-wide administration, team access, agency settings, implementation planning, and reporting belong in the Organization Hub.") + `
     <section class="member-dashboard panel account-overview">
       <div>
@@ -7448,6 +7611,8 @@ function renderMember() {
       <div class="member-stats">
         <article><strong>${state.savedAssessments.length}</strong><span>Saved assessments</span></article>
         <article><strong>${state.savedTools.length}</strong><span>Saved tools</span></article>
+        <article><strong>${completedLearning}</strong><span>Courses completed</span></article>
+        <article><strong>${recommendedLearning.length}</strong><span>Recommended courses</span></article>
         <article><strong>${ratingsCount}</strong><span>Tool reviews</span></article>
         <article><strong>${state.profile ? "Eligible" : "Join"}</strong><span>Reviewer status</span></article>
       </div>
@@ -7483,6 +7648,25 @@ function renderMember() {
       <section class="panel">
         <h2>Saved Assessments</h2>
         ${state.savedAssessments.length ? `<div class="member-list">${[...state.savedAssessments].reverse().map(item=>`<article><strong>${item.title}</strong><span>${item.savedAt}</span><p>${item.score} / 100 · ${item.level}</p><a href="#/assess">Open assessment</a></article>`).join("")}</div>` : `<p class="plain-meta">No saved assessments yet. Complete the readiness assessment, then save progress from the assessment page.</p><a class="btn small" href="#/assess">Take Assessment</a>`}
+      </section>
+
+      <section class="panel account-learning-pathway">
+        <h2>My Learning Pathway</h2>
+        ${latestLearningAssessment ? `
+          <p><strong>Latest assessment:</strong> ${escapeDoc(latestLearningAssessment.completedAt)} · ${escapeDoc(latestLearningAssessment.role)} · ${latestLearningAssessment.score}%</p>
+          <p><strong>Recommended progress:</strong> ${recommendedLearning.filter(item => state.learningProgress?.[item.moduleId]?.completed).length} of ${recommendedLearning.length} courses complete</p>
+          <ol class="account-recommended-courses">${recommendedLearning.map(item => `<li class="${state.learningProgress?.[item.moduleId]?.completed ? "complete" : ""}"><a href="#/learn/${item.moduleId}">${escapeDoc(item.courseId || "Course")}: ${escapeDoc(item.title)}</a><small>${escapeDoc(item.reason || "Recommended")}</small></li>`).join("")}</ol>
+          <div class="button-row"><a class="btn primary small" href="#/learning-assessment">Review or Retake Assessment</a><a class="btn small" href="#/learn">Open Course Catalog</a></div>
+        ` : `
+          <p class="plain-meta">No personalized learning assessment has been saved yet. Take the assessment to identify strengths, priority gaps, and an ordered course pathway.</p>
+          <div class="button-row"><a class="btn primary small" href="#/learning-assessment">Take Learning Assessment</a><a class="btn small" href="#/learning-pathways">View Learning Pathways</a></div>
+        `}
+      </section>
+
+      <section class="panel account-course-progress">
+        <h2>Course Progress</h2>
+        <p>Knowledge-check scores, saved exercises, and completion status are recorded for this member profile.</p>
+        ${learningProgressCards(state)}
       </section>
 
       <section class="panel">
@@ -9249,6 +9433,9 @@ function renderLearningModuleNav(activeId = "") {
   const activeTrackIds = new Set(activeModule?.tracks || []);
   return `<aside class="filter-panel learning-topic-panel">
         <h2>Learning Tracks</h2>
+        <a class="side-link prominent" href="#/learn">← Back to Course Catalog</a>
+        <a class="side-link" href="#/learning-pathways">Learning Pathways</a>
+        <a class="side-link" href="#/learning-assessment">Personalized Assessment</a>
         <a class="side-link prominent" href="#/glossary">Glossary of Terms</a>
         <div class="learning-track-list">
           ${learningTracks.map(track => {
