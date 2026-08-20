@@ -1,7 +1,7 @@
 # Curriculum Source Alignment: 2026 Update
 
 Status: Review draft  
-Last updated: 2026-08-18
+Last updated: 2026-08-20
 
 ## Purpose
 
@@ -14,6 +14,7 @@ This update aligns the AI Playbook curriculum with the CDC AI Strategy for FY 20
 - INT 100: CDC four-pillar strategy and public health context.
 - INT 105: safe AI use beyond HIPAA, approved environments, and vendor retention or model-training risks.
 - INT 200: authority, permitted purpose, vendor processing, agentic autonomy, sustainability, measurable value, and Tool 10 routing.
+- INT 250: required all-staff learning on AI lifecycle impacts, energy, water, emissions, hardware, e-waste, environmental justice, proportionality, lower-impact alternatives, vendor evidence, uncertainty, and monitoring. Full title: *Environmental and Resource Impacts of AI - Considerations for Ethical Public Health Use*.
 - GOV 100: risk-proportionate governance, public trust, third-party review, and named decision authority.
 
 ### Governance, privacy, equity, and procurement
@@ -54,3 +55,4 @@ PowerPoint and PDF course publications will be regenerated after the template is
 - WHO publications are identified as guidance rather than binding law.
 - HHS/OCR materials are used to explain HIPAA applicability and permissions; learners must confirm agency- and jurisdiction-specific requirements with authorized officials.
 - External workshop frameworks are not attributed to WHO unless their provenance is documented.
+- Environmental claims distinguish measured evidence from estimates and disclose relevant boundaries and uncertainty. INT 250 uses APHA public-health materials, WHO health-AI ethics and sustainability guidance, UNEP lifecycle analysis, UNESCO's AI and environment framework, GAO's technology assessment, and IEA energy-system evidence.
