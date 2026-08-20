@@ -4266,11 +4266,17 @@ function curriculumTrackModules(trackId) {
   const data = window.CURRICULUM_DATA;
   if (!data?.track_to_module_crosswalk) return [];
   const moduleById = Object.fromEntries(learningModules.map(module => [module.id, module]));
-  return data.track_to_module_crosswalk
+  const sequenced = data.track_to_module_crosswalk
     .filter(item => item.track_id === resolvedTrackId)
     .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))
     .map(item => moduleById[item.module_id])
     .filter(Boolean);
+  if (sequenced.length) return sequenced;
+  // A newly added track may not yet have explicit crosswalk rows. Keep it
+  // visible and use course-number order until a curated sequence is supplied.
+  return learningModules
+    .filter(module => (module.tracks || []).includes(resolvedTrackId))
+    .sort((a, b) => String(a.course_id || a.title).localeCompare(String(b.course_id || b.title), undefined, { numeric: true }));
 }
 
 function curriculumModuleTrackLinks(module) {
@@ -4405,7 +4411,7 @@ function renderPrerequisiteBadge(module) {
   return required ? `<span class="status-pill warn">${required} required prerequisite${required === 1 ? "" : "s"}</span>` : `<span class="status-pill complete">No required prerequisites</span>`;
 }
 
-function renderModuleCatalogCard(module, plans = learningPlans()) {
+function renderModuleCatalogCard(module, plans = learningPlans(), sequence = 0) {
   const planIds = plans.filter(plan => planModules(plan).some(item => item.id === module.id)).map(plan => plan.plan_id).join(" ");
   const tracks = moduleTrackTitles(module);
   const tags = catalogTags(module);
@@ -4423,6 +4429,7 @@ function renderModuleCatalogCard(module, plans = learningPlans()) {
   const requiredCount = prerequisiteItems(module, "required").length;
   const minutes = Number(moduleLmsCard(module).estimated_time_minutes) || 0;
   return `<article class="module-catalog-card"
+      data-module-id="${module.id}"
       data-search="${searchText.replace(/"/g, "&quot;")}"
       data-track="${(module.tracks || []).join(" ")}"
       data-plan="${planIds}"
@@ -4433,7 +4440,7 @@ function renderModuleCatalogCard(module, plans = learningPlans()) {
       data-minutes="${minutes}"
       data-tags="${tags.join(" ").replace(/"/g, "&quot;")}">
     <div class="module-card-header">
-      <span class="course-code">${module.course_id || "Module"}</span>
+      <span class="course-code">${sequence ? `${sequence}. ` : ""}${module.course_id || "Module"}</span>
       ${renderPrerequisiteBadge(module)}
     </div>
     <h3><a href="#/learn/${module.id}">${module.display_title || module.title}</a></h3>
@@ -4467,12 +4474,13 @@ function filterLearningCatalog() {
   const prereq = document.getElementById("catalog-prereq")?.value || "";
   const time = Number(document.getElementById("catalog-time")?.value || 0);
   const tag = document.getElementById("catalog-tag")?.value || "";
-  let visible = 0;
+  const visibleModules = new Set();
   list.querySelectorAll(".module-catalog-card").forEach(card => {
     const minutes = Number(card.dataset.minutes || 0);
+    const displayedTrack = card.closest(".catalog-track-group")?.dataset.catalogTrack || "";
     const matches =
       (!search || card.dataset.search.includes(search)) &&
-      (!track || card.dataset.track.split(" ").includes(track)) &&
+      (!track || displayedTrack === track) &&
       (!plan || card.dataset.plan.split(" ").includes(plan)) &&
       (!level || card.dataset.level === level) &&
       (!audience || card.dataset.audience.includes(audience)) &&
@@ -4481,10 +4489,13 @@ function filterLearningCatalog() {
       (!time || (minutes && minutes <= time)) &&
       (!tag || card.dataset.tags.includes(tag));
     card.hidden = !matches;
-    if (matches) visible += 1;
+    if (matches) visibleModules.add(card.dataset.moduleId || card.dataset.search);
+  });
+  list.querySelectorAll(".catalog-track-group").forEach(group => {
+    group.hidden = ![...group.querySelectorAll(".module-catalog-card")].some(card => !card.hidden);
   });
   const meta = document.getElementById("catalog-results-meta");
-  if (meta) meta.textContent = `${visible} module${visible === 1 ? "" : "s"} shown`;
+  if (meta) meta.textContent = `${visibleModules.size} course${visibleModules.size === 1 ? "" : "s"} shown`;
 }
 
 function renderLearnLanding() {
@@ -4494,6 +4505,10 @@ function renderLearnLanding() {
   const roleBasedTrackIds = new Set(["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management", "health-education"]);
   const technicalTracks = tracks.filter(track => track.track_id !== "shared-foundational" && !roleBasedTrackIds.has(track.track_id));
   const roleTracks = tracks.filter(track => roleBasedTrackIds.has(track.track_id));
+  const orderedCatalogTracks = [
+    ...tracks.filter(track => track.track_id === "shared-foundational"),
+    ...tracks.filter(track => track.track_id !== "shared-foundational")
+  ];
   const catalogLevels = [...new Set(learningModules.map(module => module.level_label).filter(Boolean))].sort();
   const catalogPrefixes = [...new Set(learningModules.map(coursePrefix).filter(Boolean))].sort();
   const trackGraphicLabel = track => {
@@ -4658,12 +4673,23 @@ function renderLearnLanding() {
         </aside>
         <div class="course-finder-results">
           <div class="catalog-results-toolbar">
-            <p id="catalog-results-meta" role="status" aria-live="polite">${learningModules.length} modules shown</p>
+            <p id="catalog-results-meta" role="status" aria-live="polite">${learningModules.length} courses shown</p>
           </div>
-          <div class="module-catalog-list" id="module-catalog-list">
-            ${[...learningModules]
-              .sort((a, b) => String(a.course_id || a.title).localeCompare(String(b.course_id || b.title), undefined, { numeric: true }))
-              .map(module => renderModuleCatalogCard(module, plans)).join("")}
+          <div class="sequenced-course-catalog" id="module-catalog-list">
+            ${orderedCatalogTracks.map(track => {
+              const trackModules = curriculumTrackModules(track.track_id);
+              if (!trackModules.length) return "";
+              const isFoundation = track.track_id === "shared-foundational";
+              return `<section class="catalog-track-group${isFoundation ? " foundation" : ""}" data-catalog-track="${track.track_id}">
+                <div class="catalog-track-heading">
+                  <div><p class="track-code">${escapeDoc(track.track_code || "Track")}</p><h3>${escapeDoc(isFoundation ? "Foundation" : track.title)}</h3></div>
+                  <p>${isFoundation ? "Complete these courses first, in the order shown." : "Complete this track in the sequence shown after the required foundation."}</p>
+                </div>
+                <div class="module-catalog-list">
+                  ${trackModules.map((module, index) => renderModuleCatalogCard(module, plans, index + 1)).join("")}
+                </div>
+              </section>`;
+            }).join("")}
           </div>
           <p class="catalog-no-results" id="catalog-no-results" hidden>No courses match those filters. Try removing a filter or using a broader search term.</p>
         </div>
@@ -4722,6 +4748,10 @@ function renderLearnLanding() {
     </section>
 
   </section>`;
+
+  const learnHero = main.querySelector(".learn-hero");
+  const courseCatalog = main.querySelector(".learning-catalog-section");
+  if (learnHero && courseCatalog) learnHero.after(courseCatalog);
 
   const catalogForm = document.getElementById("learning-catalog-filters");
   const updateCatalog = () => {
