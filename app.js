@@ -3003,6 +3003,7 @@ function route() {
   else if (key === "learn") renderLearn(param);
   else if (key === "learn-track") renderLearningTrackPage(param);
   else if (key === "learn-plan") renderLearningPlanPage(param);
+  else if (key === "curriculum-overview") renderCurriculumOverviewPage();
   else if (key === "learning-pathways") renderLearningPathwaysPage();
   else if (key === "learning-assessment") renderPersonalizedLearningAssessment();
   else if (key === "use-areas") renderLearn("ai-support-areas");
@@ -3180,6 +3181,9 @@ function breadcrumbTrail() {
       contact: "Contact Us",
       references: "Resources",
       glossary: "Glossary",
+      "curriculum-overview": "Curriculum Overview",
+      "learning-pathways": "Learning Pathways",
+      "learning-assessment": "Personalized Learning Assessment",
       news: "In the News"
     };
     add(labels[key] || "Page");
@@ -4502,7 +4506,7 @@ function filterLearningCatalog() {
   if (meta) meta.textContent = `${visibleModules.size} course${visibleModules.size === 1 ? "" : "s"} shown`;
 }
 
-function renderLearnLanding() {
+function renderLearnLanding(showCurriculumOverview = false) {
   const tracks = learningTracks.filter(track => track.track_id !== "all-modules");
   const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
   const foundationalTrack = trackById["shared-foundational"] || trackById["shared-foundation"];
@@ -4549,6 +4553,7 @@ function renderLearnLanding() {
         <p>Use this section to choose a learning plan, explore tracks, and understand how the modules fit together before opening individual courses.</p>
         <div class="button-row">
           <a class="btn primary" href="#/learn-track/shared-foundation">View Foundational Modules</a>
+          <a class="btn" href="#/curriculum-overview">Curriculum Overview</a>
           <a class="btn" href="#/learning-pathways">Learning Pathways</a>
           <a class="btn" href="#/learning-assessment">Personalized Learning Pathway Assessment</a>
         </div>
@@ -4769,6 +4774,18 @@ function renderLearnLanding() {
   catalogForm?.addEventListener("input", updateCatalog);
   catalogForm?.addEventListener("change", updateCatalog);
   catalogForm?.addEventListener("reset", () => window.setTimeout(updateCatalog, 0));
+  if (!showCurriculumOverview) {
+    [".curriculum-overview-panel", ".start-foundation-panel", ".learning-plan-overview-panel", ".content-section", ".module-features-panel", ".how-to-learn-panel"].forEach(selector => main.querySelector(selector)?.remove());
+  }
+}
+
+function renderCurriculumOverviewPage() {
+  renderLearnLanding(true);
+  const page = main.querySelector(".learn-landing-page");
+  page?.querySelector(".learn-hero")?.remove();
+  page?.querySelector(".learning-catalog-section")?.remove();
+  const breadcrumbs = page?.querySelector(".breadcrumbs");
+  breadcrumbs?.insertAdjacentHTML("afterend", `<section class="panel curriculum-overview-intro"><p class="eyebrow">AI Playbook Curriculum</p><h1>Curriculum Overview</h1><p class="lead">Understand how foundational courses, functional and role-based tracks, and ready-made learning plans fit together before choosing an individual course sequence.</p><div class="button-row"><a class="btn primary" href="#/learn">Course Catalog</a><a class="btn" href="#/learning-pathways">Learning Pathways</a><a class="btn" href="#/learning-assessment">Personalized Assessment</a></div></section>`);
 }
 
 function courseCatalogReturnButton() {
