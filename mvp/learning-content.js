@@ -30,3 +30,4 @@ if (pathsCta) {
 document.querySelectorAll(".training-cards span").forEach(label => { label.textContent = "Available in other editions"; });
 const moduleNotice = document.querySelector(".module-notice p");
 if (moduleNotice) moduleNotice.textContent = "This page provides the public module overview. The complete lesson, knowledge check, practical exercise, and downloadable training materials are complete and available through organizational release pathways.";
+if (typeof normalizeFoundationModuleTerminology === "function") normalizeFoundationModuleTerminology();

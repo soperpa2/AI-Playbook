@@ -17,6 +17,16 @@ function readFoundationJson(key, fallback) {
   catch { return fallback; }
 }
 
+function normalizeModuleTerminology(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    if (["SCRIPT", "STYLE"].includes(node.parentElement?.tagName)) return;
+    node.nodeValue = node.nodeValue.replace(/\bCourses\b/g, "Modules").replace(/\bcourses\b/g, "modules").replace(/\bCourse\b/g, "Module").replace(/\bcourse\b/g, "module");
+  });
+}
+
 const foundationCourseLinks = {"INT 100":"module.html?id=int-100","INT 105":"module.html?id=int-105","INT 190":"module.html?id=int-190","INT 200":"module.html?id=int-200","INT 250":"module.html?id=int-250","GOV 100":"module.html?id=gov-100","GOV 110":"module.html?id=gov-110","COM 200":"module.html?id=com-200","COM 210":"module.html?id=com-210"};
 
 function renderFoundationAccount() {
@@ -43,6 +53,7 @@ function renderFoundationAccount() {
       <div class="wide button-row"><button class="btn primary" type="submit">${member ? "Update account" : "Create free account"}</button></div><p class="wide tool-save-status" id="account-status" role="status"></p>
     </form></section><aside class="panel"><h2>Free member benefits</h2><ul class="member-benefits"><li>Download all 13 Foundation Tools.</li><li>Save tool responses in this browser.</li><li>Receive a clear pathway through the 13 plays.</li><li>Take the personalized learning assessment and save recommendations.</li><li>Apply to review new tools and learning resources before release.</li></ul><p><strong>Reviewer prerequisite:</strong> a free member account must be active before a reviewer application can be submitted.</p><div class="button-row"><a class="btn" href="toolkit.html">Open Toolkit</a><a class="btn" href="learning-assessment.html">Learning Assessment</a><a class="btn ${member ? "primary" : ""}" href="${member ? "reviewer.html" : "account.html"}">${member ? "Reviewer opportunities" : "Join to review"}</a></div></aside>
     <section class="panel foundation-learning-account"><h2>My Learning Pathway</h2>${learningAssessment ? `<p><strong>Latest assessment:</strong> ${learningAssessment.savedAt} · ${learningAssessment.role} · ${learningAssessment.score}%</p>${learningAssessment.roleGaps?.length ? `<p><strong>Role-specific priorities:</strong> ${learningAssessment.roleGaps.join("; ")}</p>` : ""}<p><strong>Recommended progress:</strong> ${completedRecommended} of ${recommended.length} courses complete</p><ol>${recommended.map(item => `<li><strong>${item.courseId}: ${item.title}</strong><small>${item.reason}</small>${item.foundation ? `<a href="${foundationCourseLinks[item.courseId] || "learning.html"}">Available in Foundation course catalog</a>` : `<span class="edition-note">Recommended — available in other editions</span>`}</li>`).join("")}</ol><div class="button-row"><a class="btn primary" href="learning-assessment.html">Review or Retake Assessment</a><a class="btn" href="learning.html">Course Catalog</a></div>` : `<p>${member ? "Take the personalized learning assessment to identify strengths and gaps and save an ordered course pathway." : "Create a free account before taking the personalized learning assessment."}</p><a class="btn ${member ? "primary" : ""}" href="${member ? "learning-assessment.html" : "account.html?return=learning-assessment.html"}">${member ? "Take Learning Assessment" : "Create Free Account"}</a>`}</section></div>`;
+  normalizeModuleTerminology(accountMain);
   document.querySelector("#foundation-member-form").addEventListener("submit", event => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.currentTarget).entries());

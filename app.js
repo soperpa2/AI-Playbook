@@ -3391,7 +3391,7 @@ async function downloadLearningModulePdf(moduleId) {
     [
       ["Audience", "Individual learners in state, territorial, local, and tribal public health departments"],
       ["Recommended use", learnerRecommendedUse(moduleLmsCard(module).when_to_use || "Use this module for self-paced learning, role preparation, governance readiness, and implementation planning.", "module")],
-      ["Course ID", module.course_id || "Not specified"],
+      ["Module code", module.course_id || "Not specified"],
       ["Primary track", module.primary_track_title || "Not specified"],
       ["Appears in tracks", (module.tracks || []).join(", ") || "Not specified"],
       ["Related plays", (module.plays || []).map(id => `Play ${id}`).join(", ") || "Not specified"],
@@ -3795,7 +3795,7 @@ function aiFeedbackPrompt(moduleId) {
   const liveAssignment = document.getElementById(`exercise-evidence-${moduleId}`)?.value || "";
   const submission = liveAssignment || progress.exerciseEvidence || "";
   const rubric = moduleFeedbackRubricPromptText(moduleFeedbackRubric(module, application));
-  return `You are providing formative learning feedback on a public health AI training practical exercise. Do not approve, certify, grade, or make legal, privacy, procurement, security, or governance determinations. Use the rubric below to provide constructive feedback. Evaluate each criterion on this 1-4 performance scale: 1 Needs Improvement, 2 Fair, 3 Good, 4 Excellent. Identify strengths, missing information, risks or safeguards, suggested revisions, and questions for human review.\n\nCourse ID:\n${module.course_id || module.course_code || module.id}\n\nModule title:\n${module.title}\n\nPractical exercise:\n${application.exercise || "No practical exercise text was found for this module."}\n\nExpected assignment:\n${(application.artifacts || []).join("; ") || "A practical assignment that supports responsible AI planning, governance, implementation, monitoring, or accountability."}\n\nRubric:\n${rubric}\n\nLearner assignment:\n${submission || "[Save or enter the learner assignment on the practical exercise page before generating this prompt.]"}\n\nReturn feedback using this structure:\n1. Overall formative score summary\n2. Criterion-level ratings using the 1-4 scale\n3. Strengths\n4. Missing or unclear information\n5. Risks or safeguards to consider\n6. Suggested revisions\n7. Questions for human review\n8. Recommended next step`;
+  return `You are providing formative learning feedback on a public health AI training practical exercise. Do not approve, certify, grade, or make legal, privacy, procurement, security, or governance determinations. Use the rubric below to provide constructive feedback. Evaluate each criterion on this 1-4 performance scale: 1 Needs Improvement, 2 Fair, 3 Good, 4 Excellent. Identify strengths, missing information, risks or safeguards, suggested revisions, and questions for human review.\n\nModule code:\n${module.course_id || module.course_code || module.id}\n\nModule title:\n${module.title}\n\nPractical exercise:\n${application.exercise || "No practical exercise text was found for this module."}\n\nExpected assignment:\n${(application.artifacts || []).join("; ") || "A practical assignment that supports responsible AI planning, governance, implementation, monitoring, or accountability."}\n\nRubric:\n${rubric}\n\nLearner assignment:\n${submission || "[Save or enter the learner assignment on the practical exercise page before generating this prompt.]"}\n\nReturn feedback using this structure:\n1. Overall formative score summary\n2. Criterion-level ratings using the 1-4 scale\n3. Strengths\n4. Missing or unclear information\n5. Risks or safeguards to consider\n6. Suggested revisions\n7. Questions for human review\n8. Recommended next step`;
 }
 
 function generateAiFeedbackPrompt(moduleId) {
@@ -4349,9 +4349,10 @@ function learnerRecommendedUse(value = "", itemType = "module") {
 function moduleTrackTitles(module) {
   const data = window.CURRICULUM_DATA;
   const fromCrosswalk = data?.module_to_track_crosswalk?.find(item => item.module_id === module.id);
-  if (fromCrosswalk?.tracks?.length) return fromCrosswalk.tracks.map(track => track.track_title);
+  const asModuleTitle = title => String(title || "").replace(/\bCourses\b/g, "Modules").replace(/\bcourses\b/g, "modules").replace(/\bCourse\b/g, "Module").replace(/\bcourse\b/g, "module");
+  if (fromCrosswalk?.tracks?.length) return fromCrosswalk.tracks.map(track => asModuleTitle(track.track_title));
   const trackById = Object.fromEntries(learningTracks.map(track => [track.track_id, track]));
-  return (module.tracks || []).map(id => trackById[id]?.title).filter(Boolean);
+  return (module.tracks || []).map(id => asModuleTitle(trackById[id]?.title)).filter(Boolean);
 }
 
 function prerequisiteItems(module, type = "required") {
@@ -4503,7 +4504,7 @@ function filterLearningCatalog() {
     group.hidden = ![...group.querySelectorAll(".module-catalog-card")].some(card => !card.hidden);
   });
   const meta = document.getElementById("catalog-results-meta");
-  if (meta) meta.textContent = `${visibleModules.size} course${visibleModules.size === 1 ? "" : "s"} shown`;
+  if (meta) meta.textContent = `${visibleModules.size} module${visibleModules.size === 1 ? "" : "s"} shown`;
 }
 
 function renderLearnLanding(showCurriculumOverview = false) {
@@ -4550,7 +4551,7 @@ function renderLearnLanding(showCurriculumOverview = false) {
         <p class="eyebrow">AI Playbook Curriculum</p>
         <h1>Learn</h1>
         <p class="lead">Build practical AI knowledge for public health through foundational modules, technical tracks, governance and security training, and role-based modules. The curriculum is designed to help staff, leaders, and partners apply AI responsibly in real public health workflows.</p>
-        <p>Use this section to choose a learning plan, explore tracks, and understand how the modules fit together before opening individual courses.</p>
+        <p>Use this section to choose a learning plan, explore tracks, and understand how the modules fit together before opening individual modules.</p>
         <div class="button-row">
           <a class="btn primary" href="#/learn-track/shared-foundation">View Foundational Modules</a>
           <a class="btn" href="#/curriculum-overview">Curriculum Overview</a>
@@ -4634,18 +4635,18 @@ function renderLearnLanding(showCurriculumOverview = false) {
 
     <section class="learning-catalog-section" id="course-catalog">
       <div class="section-heading">
-        <p class="eyebrow">Course Finder</p>
-        <h2>Search All Courses</h2>
-        <p>Search by course title, code, topic, audience, track, or keyword. Use the filters to narrow the catalog.</p>
+        <p class="eyebrow">Module Finder</p>
+        <h2>Search All Learning Modules</h2>
+        <p>Search by module title, code, topic, audience, track, or keyword. Use the filters to narrow the catalog.</p>
       </div>
       <div class="course-finder-layout">
-        <aside class="panel course-finder-panel" aria-label="Course search and filters">
+        <aside class="panel course-finder-panel" aria-label="Learning module search and filters">
           <form id="learning-catalog-filters">
             <div class="course-finder-heading">
-              <h3>Find a Course</h3>
+              <h3>Find a Module</h3>
               <button class="text-button" type="reset">Clear all</button>
             </div>
-            <label for="catalog-search">Search courses</label>
+            <label for="catalog-search">Search modules</label>
             <input id="catalog-search" type="search" placeholder="Try equity, privacy, INT 250…" autocomplete="off">
 
             <label for="catalog-track">Learning track</label>
@@ -4654,15 +4655,15 @@ function renderLearnLanding(showCurriculumOverview = false) {
               ${tracks.map(track => `<option value="${track.track_id}">${escapeDoc(track.short_title || track.title)}</option>`).join("")}
             </select>
 
-            <label for="catalog-level">Course level</label>
+            <label for="catalog-level">Module level</label>
             <select id="catalog-level">
               <option value="">All levels</option>
               ${catalogLevels.map(level => `<option value="${escapeDoc(level)}">${escapeDoc(level)}</option>`).join("")}
             </select>
 
-            <label for="catalog-prefix">Course family</label>
+            <label for="catalog-prefix">Module family</label>
             <select id="catalog-prefix">
-              <option value="">All course families</option>
+              <option value="">All module families</option>
               ${catalogPrefixes.map(prefix => `<option value="${escapeDoc(prefix)}">${escapeDoc(prefix)}</option>`).join("")}
             </select>
 
@@ -4684,7 +4685,7 @@ function renderLearnLanding(showCurriculumOverview = false) {
         </aside>
         <div class="course-finder-results">
           <div class="catalog-results-toolbar">
-            <p id="catalog-results-meta" role="status" aria-live="polite">${learningModules.length} courses shown</p>
+            <p id="catalog-results-meta" role="status" aria-live="polite">${learningModules.length} modules shown</p>
           </div>
           <div class="sequenced-course-catalog" id="module-catalog-list">
             ${orderedCatalogTracks.map(track => {
@@ -4694,7 +4695,7 @@ function renderLearnLanding(showCurriculumOverview = false) {
               return `<section class="catalog-track-group${isFoundation ? " foundation" : ""}" data-catalog-track="${track.track_id}">
                 <div class="catalog-track-heading">
                   <div><p class="track-code">${escapeDoc(track.track_code || "Track")}</p><h3>${escapeDoc(isFoundation ? "Foundation" : track.title)}</h3></div>
-                  <p>${isFoundation ? "Complete these courses first, in the order shown." : "Complete this track in the sequence shown after the required foundation."}</p>
+                  <p>${isFoundation ? "Complete these modules first, in the order shown." : "Complete this track in the sequence shown after the required foundation."}</p>
                 </div>
                 <div class="module-catalog-list">
                   ${trackModules.map((module, index) => renderModuleCatalogCard(module, plans, index + 1)).join("")}
@@ -4702,7 +4703,7 @@ function renderLearnLanding(showCurriculumOverview = false) {
               </section>`;
             }).join("")}
           </div>
-          <p class="catalog-no-results" id="catalog-no-results" hidden>No courses match those filters. Try removing a filter or using a broader search term.</p>
+          <p class="catalog-no-results" id="catalog-no-results" hidden>No modules match those filters. Try removing a filter or using a broader search term.</p>
         </div>
       </div>
     </section>
@@ -4785,11 +4786,11 @@ function renderCurriculumOverviewPage() {
   page?.querySelector(".learn-hero")?.remove();
   page?.querySelector(".learning-catalog-section")?.remove();
   const breadcrumbs = page?.querySelector(".breadcrumbs");
-  breadcrumbs?.insertAdjacentHTML("afterend", `<section class="panel curriculum-overview-intro"><p class="eyebrow">AI Playbook Curriculum</p><h1>Curriculum Overview</h1><p class="lead">Understand how foundational courses, functional and role-based tracks, and ready-made learning plans fit together before choosing an individual course sequence.</p><div class="button-row"><a class="btn primary" href="#/learn">Course Catalog</a><a class="btn" href="#/learning-pathways">Learning Pathways</a><a class="btn" href="#/learning-assessment">Personalized Assessment</a></div></section>`);
+  breadcrumbs?.insertAdjacentHTML("afterend", `<section class="panel curriculum-overview-intro"><p class="eyebrow">AI Playbook Curriculum</p><h1>Curriculum Overview</h1><p class="lead">Understand how foundational modules, functional and role-based tracks, and ready-made learning plans fit together before choosing an individual module sequence.</p><div class="button-row"><a class="btn primary" href="#/learn">Module Catalog</a><a class="btn" href="#/learning-pathways">Learning Pathways</a><a class="btn" href="#/learning-assessment">Personalized Assessment</a></div></section>`);
 }
 
 function courseCatalogReturnButton() {
-  return `<a class="btn small" href="#/learn">Back to Course Catalog</a>`;
+  return `<a class="btn small" href="#/learn">Back to Module Catalog</a>`;
 }
 
 function renderLearningPathwaysPage() {
@@ -4797,7 +4798,7 @@ function renderLearningPathwaysPage() {
   main.innerHTML = pageIntro("Learning Pathways", "Choose a ready-made pathway based on your responsibilities, or use the personalized assessment when your role crosses several functions.") + `
     <section class="panel learning-pathways-intro">
       <div class="button-row">${courseCatalogReturnButton()}<a class="btn primary small" href="#/learning-assessment">Take Personalized Assessment</a></div>
-      <p>Every pathway begins with the required foundation. Role-based pathways then sequence courses from the relevant governance, policy, program, epidemiology, communications, operations, data, technical, analytics, leadership, or health-education tracks.</p>
+      <p>Every pathway begins with the required foundation. Role-based pathways then sequence modules from the relevant governance, policy, program, epidemiology, communications, operations, data, technical, analytics, leadership, or health-education tracks.</p>
     </section>
     <div class="learning-pathway-grid">
       ${plans.map(plan => {
@@ -4805,10 +4806,10 @@ function renderLearningPathwaysPage() {
         return `<article class="panel learning-pathway-card">
           <p class="eyebrow">Ready-Made Pathway</p>
           <h2>${escapeDoc(plan.title)}</h2>
-          <p>${escapeDoc(plan.description || "Role-based course sequence.")}</p>
+          <p>${escapeDoc(plan.description || "Role-based module sequence.")}</p>
           ${plan.primary_audience?.length ? `<p><strong>Designed for:</strong> ${plan.primary_audience.map(escapeDoc).join(", ")}</p>` : ""}
           <ol class="pathway-course-preview">${modules.slice(0, 8).map(module => `<li><a href="#/learn/${module.id}">${escapeDoc(module.course_id)}: ${escapeDoc(module.title)}</a></li>`).join("")}</ol>
-          ${modules.length > 8 ? `<p class="plain-meta">+ ${modules.length - 8} additional courses in the complete pathway</p>` : ""}
+          ${modules.length > 8 ? `<p class="plain-meta">+ ${modules.length - 8} additional modules in the complete pathway</p>` : ""}
           <a class="btn small" href="#/learn-plan/${plan.plan_id}">Open Complete Pathway</a>
         </article>`;
       }).join("")}
@@ -4852,7 +4853,7 @@ const learningAssessmentRoleQuestions = {
   "Policy / Legal / Privacy": ["I can document which authorities and requirements apply—including HIPAA applicability, public health permissions, confidentiality, civil rights, records, and procurement rules.", "I can translate the analysis into operational controls, notices, review gates, contract terms, documentation, and assigned decision owners.", "I can establish a process to monitor legal and policy changes and trigger reassessment of affected AI uses."],
   "Governance Committee Member": ["I can lead or participate in a documented risk-tier review and apply approval criteria consistently to a real use case.", "I can assign accountable, responsible, supporting, consulted, and informed roles to named functions or officials—not vague departments.", "I can require evidence and oversee conditions, monitoring, incidents, corrective action, renewal, suspension, and retirement."],
   "Operations / Data Quality": ["I can document the current and proposed workflow, handoffs, exceptions, failure points, workload effects, and human-review controls.", "I can define acceptance thresholds and monitor data quality, usability, timeliness, performance, equity, and operational reliability.", "I can maintain procedures for exceptions, overrides, incidents, corrective action, retraining, escalation, and sustainment."],
-  "Health Educator": ["I can conduct a learning or communication needs assessment across role, literacy, language, accessibility, culture, and community context.", "I can develop and review AI-assisted materials with qualified subject-matter, language, accessibility, and community reviewers.", "I can measure competency through realistic application, feedback, and follow-up—not attendance or course viewing alone."],
+  "Health Educator": ["I can conduct a learning or communication needs assessment across role, literacy, language, accessibility, culture, and community context.", "I can develop and review AI-assisted materials with qualified subject-matter, language, accessibility, and community reviewers.", "I can measure competency through realistic application, feedback, and follow-up—not attendance or module viewing alone."],
   "Researcher / Analyst": ["I can write an analysis plan aligning the question, population, data, method, comparator, outcomes, and intended decision.", "I can conduct or critically review validation, uncertainty, bias, subgroup performance, reproducibility, sensitivity analysis, and limitations.", "I can report methods and findings so decision-makers can judge evidence quality without overstating causality or model capability."],
   "Student / Learner": ["Given a public health scenario, I can explain the proposed AI use, likely benefit, important limitation, and a reasonable non-AI alternative.", "I can demonstrate safe use by protecting information, verifying output, documenting sources, and keeping an accountable person in the decision.", "I can identify the specific supervisor, policy owner, privacy official, security contact, or governance route needed when I cannot proceed safely." ]
 };
@@ -4884,10 +4885,10 @@ function renderRoleLearningQuestions(role = "") {
 function renderPersonalizedLearningAssessment() {
   const state = getMemberState();
   const latest = [...(state.learningPathwayAssessments || [])].reverse()[0];
-  main.innerHTML = pageIntro("Personalized Learning Pathway Assessment", "Identify foundational and role-specific learning priorities and generate an ordered course pathway.") + `
+  main.innerHTML = pageIntro("Personalized Learning Pathway Assessment", "Identify foundational and role-specific learning priorities and generate an ordered module pathway.") + `
     <section class="panel learning-assessment-intro">
       <div class="button-row">${courseCatalogReturnButton()}<a class="btn small" href="#/learning-pathways">View Ready-Made Pathways</a></div>
-      <p>This is an individual learning diagnostic, not the organizational readiness assessment. Rate what you can do now. The results identify strengths and priority gaps, then combine required foundation courses with the track that best matches your responsibilities.</p>
+      <p>This is an individual learning diagnostic, not the organizational readiness assessment. Rate what you can do now. The results identify strengths and priority gaps, then combine required foundation modules with the track that best matches your responsibilities.</p>
       <p class="callout"><strong>Scale:</strong> 0 = New to this; 1 = Need substantial development; 2 = Can apply with support; 3 = Can apply independently and explain to others.</p>
     </section>
     <section class="panel">
@@ -4978,11 +4979,11 @@ function renderLearningAssessmentResult(record) {
   return `<section class="panel personalized-pathway-results">
     <p class="eyebrow">Saved Personalized Pathway</p>
     <h2>Your Recommended Learning Sequence</h2>
-    <div class="member-stats"><article><strong>${record.score}%</strong><span>Current self-assessment</span></article><article><strong>${record.gaps?.length || 0}</strong><span>Priority learning gaps</span></article><article><strong>${record.strengths?.length || 0}</strong><span>Current strengths</span></article><article><strong>${completed}/${record.modules?.length || 0}</strong><span>Recommended courses complete</span></article></div>
+    <div class="member-stats"><article><strong>${record.score}%</strong><span>Current self-assessment</span></article><article><strong>${record.gaps?.length || 0}</strong><span>Priority learning gaps</span></article><article><strong>${record.strengths?.length || 0}</strong><span>Current strengths</span></article><article><strong>${completed}/${record.modules?.length || 0}</strong><span>Recommended modules complete</span></article></div>
     <p><strong>Role:</strong> ${escapeDoc(record.role)} · <strong>Completed:</strong> ${escapeDoc(record.completedAt)}</p>
     ${record.roleGaps?.length ? `<p><strong>Role-specific priorities:</strong> ${record.roleGaps.map(item => escapeDoc(item)).join("; ")}</p>` : ""}
     ${record.gaps?.length ? `<p><strong>Priority gaps:</strong> ${record.gaps.map(id => escapeDoc(domainById[id]?.title || id)).join(", ")}</p>` : `<p><strong>Priority gaps:</strong> No domains were rated 0 or 1. Your pathway reinforces the foundation and role-specific practice.</p>`}
-    <ol class="personalized-course-list">${(record.modules || []).map(item => `<li class="${progress[item.moduleId]?.completed ? "complete" : ""}"><span><strong>${escapeDoc(item.courseId || "Course")}: ${escapeDoc(item.title)}</strong><small>${escapeDoc(item.reason)}</small></span><a href="#/learn/${item.moduleId}">${progress[item.moduleId]?.completed ? "Review" : "Start course"}</a></li>`).join("")}</ol>
+    <ol class="personalized-course-list">${(record.modules || []).map(item => `<li class="${progress[item.moduleId]?.completed ? "complete" : ""}"><span><strong>${escapeDoc(item.courseId || "Module")}: ${escapeDoc(item.title)}</strong><small>${escapeDoc(item.reason)}</small></span><a href="#/learn/${item.moduleId}">${progress[item.moduleId]?.completed ? "Review" : "Start module"}</a></li>`).join("")}</ol>
     <div class="button-row"><a class="btn primary small" href="#/member">View in My Account</a>${courseCatalogReturnButton()}<a class="btn small" href="#/learning-pathways">Compare Ready-Made Pathways</a></div>
   </section>`;
 }
@@ -5247,7 +5248,7 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
             ${paragraphBlock(module.text)}
             ${lessonDownloadButtons}
           </header>
-          <nav class="course-quick-nav no-print" aria-label="Course sections">
+          <nav class="course-quick-nav no-print" aria-label="Module sections">
             <button type="button" onclick="document.getElementById('course-objectives')?.scrollIntoView({behavior:'smooth',block:'start'})">Objectives</button>
             <button type="button" onclick="document.getElementById('course-content')?.scrollIntoView({behavior:'smooth',block:'start'})">Learn</button>
             <button type="button" onclick="document.getElementById('course-apply')?.scrollIntoView({behavior:'smooth',block:'start'})">Apply</button>
@@ -5255,14 +5256,14 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
             <button type="button" onclick="document.getElementById('course-resources')?.scrollIntoView({behavior:'smooth',block:'start'})">Resources</button>
           </nav>
           <section class="content-section course-profile">
-            <h2>Course at a glance</h2>
+            <h2>Module at a glance</h2>
             <div class="course-meta-grid">
               <article><strong>Estimated time</strong><span>${moduleEstimatedTime(module)}</span></article>
               <article><strong>Level</strong><span>${module.level_label || "Module"}</span></article>
               <article><strong>Audience</strong><span>${moduleAudience(module)}</span></article>
             </div>
             <div class="course-purpose-grid">
-              <p><strong>Use this course when:</strong> ${learnerRecommendedUse(moduleLmsCard(module).when_to_use, "module")}</p>
+              <p><strong>Use this module when:</strong> ${learnerRecommendedUse(moduleLmsCard(module).when_to_use, "module")}</p>
               <p><strong>You will complete:</strong> ${moduleCompletionRequirement(module)}</p>
             </div>
           </section>
@@ -7674,8 +7675,8 @@ function renderMember() {
       <div class="member-stats">
         <article><strong>${state.savedAssessments.length}</strong><span>Saved assessments</span></article>
         <article><strong>${state.savedTools.length}</strong><span>Saved tools</span></article>
-        <article><strong>${completedLearning}</strong><span>Courses completed</span></article>
-        <article><strong>${recommendedLearning.length}</strong><span>Recommended courses</span></article>
+        <article><strong>${completedLearning}</strong><span>Modules completed</span></article>
+        <article><strong>${recommendedLearning.length}</strong><span>Recommended modules</span></article>
         <article><strong>${ratingsCount}</strong><span>Tool reviews</span></article>
         <article><strong>${state.profile ? "Eligible" : "Join"}</strong><span>Reviewer status</span></article>
       </div>
@@ -7718,17 +7719,17 @@ function renderMember() {
         ${latestLearningAssessment ? `
           <p><strong>Latest assessment:</strong> ${escapeDoc(latestLearningAssessment.completedAt)} · ${escapeDoc(latestLearningAssessment.role)} · ${latestLearningAssessment.score}%</p>
           ${latestLearningAssessment.roleGaps?.length ? `<p><strong>Role-specific priorities:</strong> ${latestLearningAssessment.roleGaps.map(item => escapeDoc(item)).join("; ")}</p>` : ""}
-          <p><strong>Recommended progress:</strong> ${recommendedLearning.filter(item => state.learningProgress?.[item.moduleId]?.completed).length} of ${recommendedLearning.length} courses complete</p>
-          <ol class="account-recommended-courses">${recommendedLearning.map(item => `<li class="${state.learningProgress?.[item.moduleId]?.completed ? "complete" : ""}"><a href="#/learn/${item.moduleId}">${escapeDoc(item.courseId || "Course")}: ${escapeDoc(item.title)}</a><small>${escapeDoc(item.reason || "Recommended")}</small></li>`).join("")}</ol>
-          <div class="button-row"><a class="btn primary small" href="#/learning-assessment">Review or Retake Assessment</a><a class="btn small" href="#/learn">Open Course Catalog</a></div>
+          <p><strong>Recommended progress:</strong> ${recommendedLearning.filter(item => state.learningProgress?.[item.moduleId]?.completed).length} of ${recommendedLearning.length} modules complete</p>
+          <ol class="account-recommended-courses">${recommendedLearning.map(item => `<li class="${state.learningProgress?.[item.moduleId]?.completed ? "complete" : ""}"><a href="#/learn/${item.moduleId}">${escapeDoc(item.courseId || "Module")}: ${escapeDoc(item.title)}</a><small>${escapeDoc(item.reason || "Recommended")}</small></li>`).join("")}</ol>
+          <div class="button-row"><a class="btn primary small" href="#/learning-assessment">Review or Retake Assessment</a><a class="btn small" href="#/learn">Open Module Catalog</a></div>
         ` : `
-          <p class="plain-meta">No personalized learning assessment has been saved yet. Take the assessment to identify strengths, priority gaps, and an ordered course pathway.</p>
+          <p class="plain-meta">No personalized learning assessment has been saved yet. Take the assessment to identify strengths, priority gaps, and an ordered module pathway.</p>
           <div class="button-row"><a class="btn primary small" href="#/learning-assessment">Take Learning Assessment</a><a class="btn small" href="#/learning-pathways">View Learning Pathways</a></div>
         `}
       </section>
 
       <section class="panel account-course-progress">
-        <h2>Course Progress</h2>
+        <h2>Module Progress</h2>
         <p>Knowledge-check scores, saved exercises, and completion status are recorded for this member profile.</p>
         ${learningProgressCards(state)}
       </section>
@@ -9497,7 +9498,7 @@ function renderLearningModuleNav(activeId = "") {
   const activeTrackIds = new Set(activeModule?.tracks || []);
   return `<aside class="filter-panel learning-topic-panel">
         <h2>Learning Tracks</h2>
-        <a class="side-link prominent" href="#/learn">← Back to Course Catalog</a>
+        <a class="side-link prominent" href="#/learn">← Back to Module Catalog</a>
         <a class="side-link" href="#/learning-pathways">Learning Pathways</a>
         <a class="side-link" href="#/learning-assessment">Personalized Assessment</a>
         <a class="side-link prominent" href="#/glossary">Glossary of Terms</a>
