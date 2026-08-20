@@ -4458,7 +4458,8 @@ function filterLearningCatalog() {
   const list = document.getElementById("module-catalog-list");
   if (!form || !list) return;
   const search = (document.getElementById("catalog-search")?.value || "").trim().toLowerCase();
-  const track = normalizeLearningTrackId(document.getElementById("catalog-track")?.value || "");
+  const selectedTrack = document.getElementById("catalog-track")?.value || "";
+  const track = selectedTrack ? normalizeLearningTrackId(selectedTrack) : "";
   const plan = document.getElementById("catalog-plan")?.value || "";
   const level = document.getElementById("catalog-level")?.value || "";
   const audience = document.getElementById("catalog-audience")?.value || "";
@@ -4493,6 +4494,8 @@ function renderLearnLanding() {
   const roleBasedTrackIds = new Set(["communications", "epidemiology", "policy", "public-health-executive-leadership", "program-management", "health-education"]);
   const technicalTracks = tracks.filter(track => track.track_id !== "shared-foundational" && !roleBasedTrackIds.has(track.track_id));
   const roleTracks = tracks.filter(track => roleBasedTrackIds.has(track.track_id));
+  const catalogLevels = [...new Set(learningModules.map(module => module.level_label).filter(Boolean))].sort();
+  const catalogPrefixes = [...new Set(learningModules.map(coursePrefix).filter(Boolean))].sort();
   const trackGraphicLabel = track => {
     const label = track.short_title || track.title;
     return escapeDoc(label.replace(/\s+Role-Based Track$/i, "").replace(/\s+Track$/i, ""));
@@ -4603,6 +4606,70 @@ function renderLearnLanding() {
       </div>
     </section>
 
+    <section class="learning-catalog-section" id="course-catalog">
+      <div class="section-heading">
+        <p class="eyebrow">Course Finder</p>
+        <h2>Search All Courses</h2>
+        <p>Search by course title, code, topic, audience, track, or keyword. Use the filters to narrow the catalog.</p>
+      </div>
+      <div class="course-finder-layout">
+        <aside class="panel course-finder-panel" aria-label="Course search and filters">
+          <form id="learning-catalog-filters">
+            <div class="course-finder-heading">
+              <h3>Find a Course</h3>
+              <button class="text-button" type="reset">Clear all</button>
+            </div>
+            <label for="catalog-search">Search courses</label>
+            <input id="catalog-search" type="search" placeholder="Try equity, privacy, INT 250…" autocomplete="off">
+
+            <label for="catalog-track">Learning track</label>
+            <select id="catalog-track">
+              <option value="">All tracks</option>
+              ${tracks.map(track => `<option value="${track.track_id}">${escapeDoc(track.short_title || track.title)}</option>`).join("")}
+            </select>
+
+            <label for="catalog-level">Course level</label>
+            <select id="catalog-level">
+              <option value="">All levels</option>
+              ${catalogLevels.map(level => `<option value="${escapeDoc(level)}">${escapeDoc(level)}</option>`).join("")}
+            </select>
+
+            <label for="catalog-prefix">Course family</label>
+            <select id="catalog-prefix">
+              <option value="">All course families</option>
+              ${catalogPrefixes.map(prefix => `<option value="${escapeDoc(prefix)}">${escapeDoc(prefix)}</option>`).join("")}
+            </select>
+
+            <label for="catalog-prereq">Prerequisites</label>
+            <select id="catalog-prereq">
+              <option value="">Any prerequisite status</option>
+              <option value="none">No required prerequisites</option>
+              <option value="required">Has required prerequisites</option>
+            </select>
+
+            <label for="catalog-time">Maximum estimated time</label>
+            <select id="catalog-time">
+              <option value="">Any length</option>
+              <option value="30">30 minutes or less</option>
+              <option value="45">45 minutes or less</option>
+              <option value="60">60 minutes or less</option>
+            </select>
+          </form>
+        </aside>
+        <div class="course-finder-results">
+          <div class="catalog-results-toolbar">
+            <p id="catalog-results-meta" role="status" aria-live="polite">${learningModules.length} modules shown</p>
+          </div>
+          <div class="module-catalog-list" id="module-catalog-list">
+            ${[...learningModules]
+              .sort((a, b) => String(a.course_id || a.title).localeCompare(String(b.course_id || b.title), undefined, { numeric: true }))
+              .map(module => renderModuleCatalogCard(module, plans)).join("")}
+          </div>
+          <p class="catalog-no-results" id="catalog-no-results" hidden>No courses match those filters. Try removing a filter or using a broader search term.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="content-section">
       <div class="section-heading">
         <p class="eyebrow">Learning Tracks</p>
@@ -4654,8 +4721,18 @@ function renderLearnLanding() {
       <div class="callout blue"><strong>Note:</strong> Modules can appear in more than one track to support different roles and levels of responsibility.</div>
     </section>
 
-    <p class="muted">A searchable module catalog, prerequisite view, and completion tracking tools will be added in a later release.</p>
   </section>`;
+
+  const catalogForm = document.getElementById("learning-catalog-filters");
+  const updateCatalog = () => {
+    filterLearningCatalog();
+    const visible = [...document.querySelectorAll("#module-catalog-list .module-catalog-card")].some(card => !card.hidden);
+    const noResults = document.getElementById("catalog-no-results");
+    if (noResults) noResults.hidden = visible;
+  };
+  catalogForm?.addEventListener("input", updateCatalog);
+  catalogForm?.addEventListener("change", updateCatalog);
+  catalogForm?.addEventListener("reset", () => window.setTimeout(updateCatalog, 0));
 }
 
 function renderLearningTrackPage(trackId = "all-modules") {
