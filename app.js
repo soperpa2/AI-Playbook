@@ -4749,19 +4749,14 @@ function renderCurriculumKnowledgeCheck(module) {
   return renderLearningQuiz(module);
 }
 
-function isTechnicalCurriculumModule(module) {
-  const technicalTrackCodes = new Set(["ARC", "ANL", "OPS", "GOV"]);
-  const primaryCode = String(module.primary_track_code || module.course_code || "").toUpperCase();
-  return technicalTrackCodes.has(primaryCode);
-}
-
 function curriculumSectionHeading(module, section) {
   const heading = section?.heading || "";
   if (!heading) return heading;
-  if (isTechnicalCurriculumModule(module)) return heading;
-  return heading
-    .replace(/^Technical and Operational Deep Dive$/i, "Topic Deep Dive")
-    .replace(/^Technical Deep Dive$/i, "Topic Deep Dive");
+  // Legacy source files use several "deep dive" labels even when the material
+  // is policy, governance, equity, programmatic, or operational rather than
+  // technical. Present those sections with a neutral learner-facing title.
+  if (/deep dive/i.test(heading)) return "Core Guidance and Application";
+  return heading;
 }
 
 function curriculumDefinitionEntries(module) {
