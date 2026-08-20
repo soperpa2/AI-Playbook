@@ -4825,6 +4825,28 @@ const learningAssessmentRoleTracks = {
   "Student / Learner": "shared-foundational"
 };
 
+const learningAssessmentRoleQuestions = {
+  "Health Officer / Executive": ["I can set strategic priorities and decide where AI investment is justified.", "I can define risk appetite, accountability, and decision authority for AI use.", "I can communicate AI benefits, limits, and public accountability to governing bodies and communities."],
+  "Epidemiologist": ["I can evaluate whether AI outputs are epidemiologically valid and appropriate for surveillance or response.", "I can assess bias, uncertainty, subgroup performance, and data limitations before using model output.", "I can define human review and escalation when an AI-supported signal could affect a public health action."],
+  "Informatics / Data Director": ["I can assess whether data, interoperability, provenance, and infrastructure are ready for an AI use case.", "I can define data stewardship, access, quality, and lifecycle controls for AI-supported systems.", "I can translate program needs into an appropriate analytics, architecture, or vendor approach."],
+  "Program Manager": ["I can frame an AI use case around a defined program problem and measurable public health value.", "I can plan responsibilities, milestones, workflow changes, adoption, and evaluation for implementation.", "I can recognize when legal, privacy, security, equity, procurement, or governance review is required."],
+  "IT / Technical Lead": ["I can evaluate architecture, integration, identity, logging, security, and system-of-record requirements.", "I can assess vendor claims, model limitations, data flows, permissions, and operational dependencies.", "I can design monitoring, incident response, change control, and retirement controls for an AI system."],
+  "Communications": ["I can use AI-assisted drafting while preserving scientific accuracy, source verification, and named human approval.", "I can manage misinformation, disclosure, accessibility, translation, readability, and community trust risks.", "I can determine when an AI-assisted public message requires program, legal, equity, or leadership review."],
+  "Policy / Legal / Privacy": ["I can identify applicable authority, privacy, civil-rights, records, procurement, and sector-specific requirements.", "I can distinguish HIPAA applicability from broader public health privacy and confidentiality obligations.", "I can translate legal and policy findings into usable controls, contract terms, review gates, and documentation."],
+  "Governance Committee Member": ["I can apply risk tiers, review criteria, decision rights, and documentation requirements consistently.", "I can identify which named officials or specialists must advise, approve, monitor, or receive escalation.", "I can oversee an AI use throughout intake, approval, deployment, monitoring, incidents, and retirement."],
+  "Operations / Data Quality": ["I can map an AI-supported workflow and identify failure points, handoffs, and human-review controls.", "I can define and monitor data-quality, usability, performance, and operational measures.", "I can document standard procedures, exceptions, corrective actions, and sustainment responsibilities."],
+  "Health Educator": ["I can design AI learning or communication for different literacy, language, accessibility, and community needs.", "I can evaluate whether AI-assisted materials preserve meaning, trust, cultural context, and behavioral relevance.", "I can assess learning through practical application rather than course viewing alone."],
+  "Researcher / Analyst": ["I can select methods appropriate to the question, data, population, and intended decision.", "I can evaluate validation, uncertainty, bias, subgroup performance, reproducibility, and limitations.", "I can communicate findings so decision-makers do not overstate causal meaning or model capability."],
+  "Student / Learner": ["I can recognize common public health AI applications without assuming AI is always the right solution.", "I can identify safe-use, privacy, equity, environmental, and human-oversight questions to raise.", "I can explain when I need guidance or approval before using an AI tool for public health work."]
+};
+
+function renderRoleLearningQuestions(role = "") {
+  const target = document.getElementById("learning-role-questions");
+  if (!target) return;
+  const questions = learningAssessmentRoleQuestions[role] || [];
+  target.innerHTML = questions.length ? `<h2>${escapeDoc(role)} Competencies</h2><p>These questions tailor the assessment to decisions and responsibilities commonly associated with your selected role.</p>${questions.map((prompt, index) => `<fieldset class="learning-domain-question role-specific-question"><legend><span>${learningAssessmentDomains.length + index + 1}</span><strong>Role competency ${index + 1}</strong></legend><p>${escapeDoc(prompt)}</p><label for="learning-role-domain-${index}">Current confidence</label><select id="learning-role-domain-${index}" required><option value="">Select a rating</option><option value="0">0 — New to this</option><option value="1">1 — Need substantial development</option><option value="2">2 — Can apply with support</option><option value="3">3 — Can apply independently</option></select></fieldset>`).join("")}` : `<p class="callout">Select a role to display the role-specific portion of the assessment.</p>`;
+}
+
 function renderPersonalizedLearningAssessment() {
   const state = getMemberState();
   const latest = [...(state.learningPathwayAssessments || [])].reverse()[0];
@@ -4837,7 +4859,7 @@ function renderPersonalizedLearningAssessment() {
     <section class="panel">
       <form id="personalized-learning-assessment" class="learning-assessment-form">
         <label for="learning-assessment-role"><strong>Primary role or responsibility</strong></label>
-        <select id="learning-assessment-role" required>
+        <select id="learning-assessment-role" required onchange="renderRoleLearningQuestions(this.value)">
           <option value="">Select your closest role</option>
           ${Object.keys(learningAssessmentRoleTracks).map(role => `<option>${escapeDoc(role)}</option>`).join("")}
         </select>
@@ -4855,15 +4877,17 @@ function renderPersonalizedLearningAssessment() {
             </select>
           </fieldset>`).join("")}
         </div>
+        <div id="learning-role-questions" class="learning-domain-list role-learning-questions"><p class="callout">Select a role to display the role-specific portion of the assessment.</p></div>
         <div class="button-row"><button class="btn primary" type="button" onclick="scorePersonalizedLearningAssessment()">Create My Learning Pathway</button><button class="btn" type="reset">Clear Responses</button></div>
         <p id="learning-assessment-status" class="save-status" role="status" aria-live="polite"></p>
       </form>
     </section>
     <section id="learning-assessment-results">${latest ? renderLearningAssessmentResult(latest) : ""}</section>
   </section>`;
+  document.getElementById("personalized-learning-assessment")?.addEventListener("reset", () => window.setTimeout(() => renderRoleLearningQuestions(""), 0));
 }
 
-function personalizedLearningRecommendations(role, scores) {
+function personalizedLearningRecommendations(role, scores, roleScores = []) {
   const moduleById = Object.fromEntries(learningModules.map(module => [module.id, module]));
   const required = curriculumTrackModules("shared-foundational");
   const gaps = learningAssessmentDomains.filter(domain => Number(scores[domain.id]) <= 1);
@@ -4878,24 +4902,28 @@ function personalizedLearningRecommendations(role, scores) {
   required.forEach(module => add(module, "Required shared foundation", 1));
   gaps.forEach(domain => domain.modules.forEach(id => add(moduleById[id], `Priority gap: ${domain.title}`, 2)));
   developing.forEach(domain => domain.modules.slice(0, 1).forEach(id => add(moduleById[id], `Developing competency: ${domain.title}`, 3)));
-  roleModules.forEach(module => add(module, `${role} pathway`, 4));
-  return { trackId, gaps: gaps.map(domain => domain.id), strengths: learningAssessmentDomains.filter(domain => Number(scores[domain.id]) === 3).map(domain => domain.id), modules: ordered };
+  const roleAverage = roleScores.length ? roleScores.reduce((sum, value) => sum + Number(value), 0) / roleScores.length : 3;
+  const roleReason = roleAverage <= 1 ? `Priority ${role} competency gap` : roleAverage < 3 ? `Developing ${role} competency` : `${role} pathway`;
+  roleModules.forEach(module => add(module, roleReason, roleAverage <= 1 ? 2 : roleAverage < 3 ? 3 : 4));
+  return { trackId, gaps: gaps.map(domain => domain.id), strengths: learningAssessmentDomains.filter(domain => Number(scores[domain.id]) === 3).map(domain => domain.id), roleAverage: Math.round(roleAverage * 10) / 10, modules: ordered };
 }
 
 function scorePersonalizedLearningAssessment() {
   const role = document.getElementById("learning-assessment-role")?.value || "";
   const scores = {};
   learningAssessmentDomains.forEach(domain => { scores[domain.id] = document.getElementById(`learning-domain-${domain.id}`)?.value ?? ""; });
+  const roleScores = (learningAssessmentRoleQuestions[role] || []).map((_, index) => document.getElementById(`learning-role-domain-${index}`)?.value ?? "");
   const status = document.getElementById("learning-assessment-status");
-  if (!role || Object.values(scores).some(value => value === "")) {
-    if (status) status.textContent = "Select a role and answer all eight questions before creating your pathway.";
+  if (!role || Object.values(scores).some(value => value === "") || roleScores.some(value => value === "")) {
+    if (status) status.textContent = "Select a role and answer all foundational and role-specific questions before creating your pathway.";
     return;
   }
-  const recommendation = personalizedLearningRecommendations(role, scores);
-  const total = Object.values(scores).reduce((sum, value) => sum + Number(value), 0);
+  const recommendation = personalizedLearningRecommendations(role, scores, roleScores);
+  const total = [...Object.values(scores), ...roleScores].reduce((sum, value) => sum + Number(value), 0);
   const record = {
-    id: `learning-${Date.now()}`, role, scores,
-    score: Math.round((total / (learningAssessmentDomains.length * 3)) * 100),
+    id: `learning-${Date.now()}`, role, scores, roleScores,
+    roleGaps: (learningAssessmentRoleQuestions[role] || []).filter((_, index) => Number(roleScores[index]) <= 1),
+    score: Math.round((total / ((learningAssessmentDomains.length + roleScores.length) * 3)) * 100),
     completedAt: new Date().toLocaleString(),
     ...recommendation
   };
@@ -4918,6 +4946,7 @@ function renderLearningAssessmentResult(record) {
     <h2>Your Recommended Learning Sequence</h2>
     <div class="member-stats"><article><strong>${record.score}%</strong><span>Current self-assessment</span></article><article><strong>${record.gaps?.length || 0}</strong><span>Priority learning gaps</span></article><article><strong>${record.strengths?.length || 0}</strong><span>Current strengths</span></article><article><strong>${completed}/${record.modules?.length || 0}</strong><span>Recommended courses complete</span></article></div>
     <p><strong>Role:</strong> ${escapeDoc(record.role)} · <strong>Completed:</strong> ${escapeDoc(record.completedAt)}</p>
+    ${record.roleGaps?.length ? `<p><strong>Role-specific priorities:</strong> ${record.roleGaps.map(item => escapeDoc(item)).join("; ")}</p>` : ""}
     ${record.gaps?.length ? `<p><strong>Priority gaps:</strong> ${record.gaps.map(id => escapeDoc(domainById[id]?.title || id)).join(", ")}</p>` : `<p><strong>Priority gaps:</strong> No domains were rated 0 or 1. Your pathway reinforces the foundation and role-specific practice.</p>`}
     <ol class="personalized-course-list">${(record.modules || []).map(item => `<li class="${progress[item.moduleId]?.completed ? "complete" : ""}"><span><strong>${escapeDoc(item.courseId || "Course")}: ${escapeDoc(item.title)}</strong><small>${escapeDoc(item.reason)}</small></span><a href="#/learn/${item.moduleId}">${progress[item.moduleId]?.completed ? "Review" : "Start course"}</a></li>`).join("")}</ol>
     <div class="button-row"><a class="btn primary small" href="#/member">View in My Account</a>${courseCatalogReturnButton()}<a class="btn small" href="#/learning-pathways">Compare Ready-Made Pathways</a></div>
@@ -7654,6 +7683,7 @@ function renderMember() {
         <h2>My Learning Pathway</h2>
         ${latestLearningAssessment ? `
           <p><strong>Latest assessment:</strong> ${escapeDoc(latestLearningAssessment.completedAt)} · ${escapeDoc(latestLearningAssessment.role)} · ${latestLearningAssessment.score}%</p>
+          ${latestLearningAssessment.roleGaps?.length ? `<p><strong>Role-specific priorities:</strong> ${latestLearningAssessment.roleGaps.map(item => escapeDoc(item)).join("; ")}</p>` : ""}
           <p><strong>Recommended progress:</strong> ${recommendedLearning.filter(item => state.learningProgress?.[item.moduleId]?.completed).length} of ${recommendedLearning.length} courses complete</p>
           <ol class="account-recommended-courses">${recommendedLearning.map(item => `<li class="${state.learningProgress?.[item.moduleId]?.completed ? "complete" : ""}"><a href="#/learn/${item.moduleId}">${escapeDoc(item.courseId || "Course")}: ${escapeDoc(item.title)}</a><small>${escapeDoc(item.reason || "Recommended")}</small></li>`).join("")}</ol>
           <div class="button-row"><a class="btn primary small" href="#/learning-assessment">Review or Retake Assessment</a><a class="btn small" href="#/learn">Open Course Catalog</a></div>
