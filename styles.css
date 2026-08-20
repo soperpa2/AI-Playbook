@@ -3320,6 +3320,7 @@ th { color: var(--ink); background: var(--sky); }
 
 @media (max-width: 980px) {
   .menu-button { display: inline-flex; border: 1px solid var(--blue); border-radius: var(--radius); background: white; padding: .5rem .8rem; color: var(--blue); font-weight: 800; }
+  .hero-band { margin-left: 0; margin-right: 0; }
   .primary-nav {
     display: none;
     position: absolute;
@@ -3336,6 +3337,9 @@ th { color: var(--ink); background: var(--sky); }
   }
   .primary-nav.open { display: flex; }
   .hero-grid, .two-col, .toolkit-layout, .learn-layout, .learn-hero, .curriculum-branches, .assessment-grid, .detail-grid, .guide-layout, .plays-overview-grid, .community-layout, .community-hero, .case-study-grid, .support-area-header, .support-area-grid, .member-dashboard, .member-workspace-grid, .member-list.compact, .org-workspace-header, .org-form, .org-grid, .change-profile-grid, .change-metric-grid { grid-template-columns: 1fr; }
+  .hero-band .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid > *, .toolkit-layout > *, .learn-layout > *, .assessment-grid > *, .detail-grid > *, .guide-layout > * { min-width: 0; }
+  .journey-graphic-card { width: min(100%, 600px); }
   .account-admin-handoff { align-items: flex-start; flex-direction: column; }
   .learn-layout > aside.filter-panel {
     position: static;
@@ -3374,7 +3378,7 @@ th { color: var(--ink); background: var(--sky); }
   .brand-logo { width: 58px; height: 48px; }
   .brand strong { font-size: .82rem; }
   .brand small { font-size: .7rem; }
-  .hero-band { padding-top: 1.5rem; }
+  .hero-band { margin-left: 0; margin-right: 0; padding-top: 1.5rem; }
   .hero-grid > div:first-child > h1 { white-space: normal; }
   .page { width: min(100% - 1rem, 1280px); }
   .plays-page > h1 { white-space: normal; }
@@ -3383,6 +3387,12 @@ th { color: var(--ink); background: var(--sky); }
   .domain-row summary, .indicator { grid-template-columns: 1fr; }
   .rating-set { justify-content: space-between; max-width: 240px; }
   .prev-next { flex-direction: column; }
+  img, svg, video, canvas { max-width: 100%; height: auto; }
+  h1, h2, h3, h4, p, li, a, label, legend { overflow-wrap: anywhere; }
+  .button-row { align-items: stretch; flex-direction: column; }
+  .button-row > .btn, .button-row > .button, .button-row > a, .button-row > button { max-width: 100%; min-width: 0; white-space: normal; }
+  .filter-panel, .filter-panel input, .filter-panel select { max-width: 100%; min-width: 0; width: 100%; }
+  table:not(.rubric-table):not(.tool-action-table):not(.tool-task-rollup):not(.organization-workplan-table):not(.training-assignment-table) { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
 
 @media print {

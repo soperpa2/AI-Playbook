@@ -1,4 +1,4 @@
-document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="foundation-content.css?v=20260818-foundation-content">');
+document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="foundation-content.css?v=20260820-mobile-layout-v3">');
 const learningIntro = document.querySelector(".learning-intro");
 if (learningIntro) learningIntro.insertAdjacentHTML("afterend", `<section class="page panel playbook-overview learning-guidance">
   <p class="eyebrow">How learning works</p><h2>Move from shared understanding to responsible workplace practice</h2>
