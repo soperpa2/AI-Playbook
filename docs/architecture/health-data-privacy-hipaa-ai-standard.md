@@ -1,7 +1,7 @@
 # Health Data Privacy, HIPAA, and AI Implementation Standard
 
-Status: Version 1 recommendation  
-Applies to: Full Version and Foundation Edition  
+Status: Version 1 recommendation
+Applies to: Full Version and Foundation Edition
 Last reviewed: 2026-08-18
 
 ## Architectural decision

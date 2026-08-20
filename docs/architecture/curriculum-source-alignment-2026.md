@@ -1,6 +1,6 @@
 # Curriculum Source Alignment: 2026 Update
 
-Status: Review draft  
+Status: Review draft
 Last updated: 2026-08-20
 
 ## Purpose
