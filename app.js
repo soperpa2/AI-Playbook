@@ -1329,6 +1329,8 @@ const references = [
       ["World Health Organization. (2021). Ethics and governance of artificial intelligence for health.", "WHO AI ethics and governance guidance.", "https://www.who.int/publications/i/item/9789240029200"],
       ["World Health Organization. (2023). Regulatory considerations on artificial intelligence for health. Geneva: World Health Organization.", "WHO regulatory considerations for AI in health.", "https://iris.who.int/handle/10665/373421"],
       ["World Health Organization. (2024). Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models.", "Extends WHO's 2021 principles to generative and multi-modal AI, including stakeholder engagement, impact assessment, disaggregated evaluation, independent audit, and post-release monitoring.", "https://www.who.int/publications/i/item/9789240084759"],
+      ["American Public Health Association. (2026). From Problem to Practice: Applying AI Responsibly in Public Health.", "Public program description for an entry-level learning institute addressing AI foundations, public health applications, equity, bias, privacy, accountability, transparent integration, risk assessment, and implementation planning. A public recording was not posted when reviewed.", "https://www.apha.org/events-and-meetings/apha-calendar/applying-ai-responsibly-in-public-health"],
+      ["American Public Health Association Law Section. (2026). AI Technologies & Public Health Law and Practice.", "Public webinar description covering equity, legal risk, privacy, data sharing, data governance, and organizational responsibilities. A public recording was not posted when reviewed.", "https://www.apha.org/events-and-meetings/apha-calendar/ai-technologies-public-health-law"],
       ["WHO Regional Office for Europe. (2025). Health data governance in the age of artificial intelligence: Policy imperatives for the WHO European Region.", "Addresses representative and bias-aware health data, human rights, equity, and accountable data governance for AI.", "https://www.who.int/europe/publications/i/item/WHO-EURO-2025-11462-51234-78079"],
       ["WHO Regional Office for Europe. (2026). Equity across the regulation, implementation and evaluation of digital health: Scoping review.", "Supports equity-by-design, inclusive governance, participatory design, equity metrics, and bias auditing across the technology lifecycle.", "https://www.who.int/europe/publications/i/item/WHO-EURO-2026-13153-52927-82472"],
       ["Panch, T., Pearson-Stuttard, J., Greaves, F., & Atun, R. (2019). Artificial intelligence: Opportunities and risks for public health. The Lancet Digital Health, 1(1), e13-e14.", "AI opportunities and risks for public health.", "https://doi.org/10.1016/S2589-7500(19)30002-0"]
@@ -1392,6 +1394,9 @@ const references = [
   {
     category: "Journal Articles and Peer-Reviewed Research",
     items: [
+      ["King, A., Schwind, J. S., Painter, I. S., et al. (2026). Applying Artificial Intelligence in Public Health: A Field Report on Use Cases and Key Challenges. American Journal of Public Health.", "Full article supplied for review; reports three public-health agency use cases and implementation lessons involving specialization, governance, workforce capacity, validation, and human review.", "https://doi.org/10.2105/AJPH.2026.308671"],
+      ["Hattab, G., Irrgang, C., Körber, N., Kühnert, D., & Ladewig, K. (2025). The Way Forward to Embrace Artificial Intelligence in Public Health. American Journal of Public Health, 115(2), 123–128.", "Open-access AJPH editorial on responsible adoption of AI in public health, available through PubMed Central.", "https://pmc.ncbi.nlm.nih.gov/articles/PMC11715578/"],
+      ["Hodge, J. G., Jr., Piatt, J. L., White, E. N., & Gostin, L. O. (2024). Public Health Legal Protections in an Era of Artificial Intelligence. American Journal of Public Health, 114(6), 559–563.", "Open-access AJPH editorial addressing legal protections and public-health responsibilities in the AI era, available through PubMed Central.", "https://pmc.ncbi.nlm.nih.gov/articles/PMC11079834/"],
       ["Beam, A. L., & Kohane, I. S. (2018). Big data and machine learning in health care. JAMA, 319(13), 1317-1318.", "Machine learning in health care.", "https://doi.org/10.1001/jama.2017.18391"],
       ["Birkhead, G. S., Klompas, M., & Shah, N. R. (2015). Uses of electronic health records for public health surveillance to advance public health. Annual Review of Public Health, 36, 345-359.", "Electronic health records and public health surveillance.", "https://doi.org/10.1146/annurev-publhealth-031914-122747"],
       ["Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1-15.", "Bias and accuracy disparities in commercial AI systems.", "https://proceedings.mlr.press/v81/buolamwini18a.html"],
@@ -1409,6 +1414,18 @@ const references = [
       ["Rajkomar, A., Dean, J., & Kohane, I. (2019). Machine learning in medicine. New England Journal of Medicine, 380(14), 1347-1358.", "Machine learning in medicine.", "https://doi.org/10.1056/NEJMra1814259"],
       ["Shilo, S., Rossman, H., & Segal, E. (2020). Axes of a revolution: Challenges and promises of big data in healthcare. Nature Medicine, 26, 29-38.", "Big data in health care.", "https://doi.org/10.1038/s41591-019-0727-5"],
       ["Vespignani, A., et al. (2020). Modelling COVID-19. Nature Reviews Physics, 2, 279-281.", "COVID-19 modeling.", "https://doi.org/10.1038/s42254-020-0178-4"]
+    ]
+  },
+  {
+    category: "APHA Webinars, Recordings, and Conference Materials",
+    items: [
+      ["From Problem to Practice: Applying AI Responsibly in Public Health (2026)", "Public APHA learning-institute description; no openly posted recording was identified at the review date.", "https://www.apha.org/events-and-meetings/apha-calendar/applying-ai-responsibly-in-public-health"],
+      ["AI Technologies & Public Health Law and Practice (2026)", "Public APHA Law Section webinar description; no openly posted recording was identified at the review date.", "https://www.apha.org/events-and-meetings/apha-calendar/ai-technologies-public-health-law"],
+      ["Data Centers and Health: Understanding the Impacts and Taking Action (2026)", "Public APHA-supported four-part webinar-series page covering health and equity effects, policy, advocacy and coalitions, and misinformation related to AI data centers.", "https://www.apha.org/events-and-meetings/apha-calendar/data-centers-and-health-equity-impacts"],
+      ["Public Health in the Age of Deception: Confronting the Misinformation Crisis (2026)", "Public APHA webinar page with an openly available recording on evidence-based communication, trust, equity, partnerships, and misinformation response.", "https://www.apha.org/events-and-meetings/apha-calendar/nphw-kickoff-forum-public-health-in-the-age-of-deception"],
+      ["Applying Artificial Intelligence in Public Health Practice and Research: Exploring Challenges & Opportunities (APHA 2025)", "Public session document containing presentation abstracts; recordings, where offered, may require APHA conference access.", "https://apha.confex.com/apha/2025/meetingapi.cgi/Session/72690?filename=2025_Session72690.pdf&template=Word"],
+      ["AI Applications in Public Health (APHA 2025)", "Public session document containing abstracts on explainable AI, early-warning systems, and other public-health applications; recordings may require conference access.", "https://apha.confex.com/apha/2025/meetingapi.cgi/Session/74303?filename=2025_Session74303.pdf&template=Word"],
+      ["AI in Public Health: Role, Opportunities, and Challenges (APHA 2025)", "Public presentation abstract; the APHA conference page states that login is required for recordings.", "https://apha.confex.com/apha/2025/meetingapp.cgi/Paper/583928"]
     ]
   }
 ];
@@ -3315,6 +3332,18 @@ const lessonReferenceUrlCatalog = [
 ];
 
 function lessonReferenceParts(item) {
+  if (item && typeof item === "object" && !Array.isArray(item)) {
+    const title = [item.author, item.title, item.publisher, item.year]
+      .filter(Boolean)
+      .filter((value, index, values) => values.indexOf(value) === index)
+      .join(". ");
+    return {
+      title: title || item.url || "Reference resource",
+      url: item.url || "",
+      note: item.access_note || item.note || "",
+      raw: item
+    };
+  }
   const raw = String(item || "").trim();
   const explicitUrl = raw.match(/https?:\/\/[^\s)]+/i)?.[0] || "";
   const withoutUrl = explicitUrl ? raw.replace(explicitUrl, "").replace(/\s*[:,-]\s*$/, "").trim() : raw;
@@ -3322,12 +3351,13 @@ function lessonReferenceParts(item) {
   const catalogMatch = lessonReferenceUrlCatalog.find(([key]) => lower.includes(key));
   const url = explicitUrl || catalogMatch?.[1] || "";
   const title = withoutUrl || raw || url;
-  return { title, url, raw };
+  return { title, url, note: "", raw };
 }
 
 function lessonReferenceText(item) {
   const ref = lessonReferenceParts(item);
-  return ref.url ? `${ref.title}: ${ref.url}` : ref.title;
+  const note = ref.note ? ` (${ref.note})` : "";
+  return ref.url ? `${ref.title}${note}: ${ref.url}` : `${ref.title}${note}`;
 }
 
 function collectLearningModulePdfSections(module, background, deepDive, application, narrative, moduleResources) {
@@ -4175,11 +4205,19 @@ function renderHome() {
     <section class="page">
       <section class="panel playbook-overview hero-overview">
         <p class="eyebrow">Playbook + Toolkit Overview</p>
-        <h2>A practical implementation system for public health AI</h2>
-        <p>The AI Playbook and Toolkit is designed for state, territorial, local, and tribal public health departments that need a clear way to move from early learning to responsible, sustainable AI use. It covers the range of AI approaches that may appear in public health work, including predictive analytics, machine learning, natural language processing, retrieval-augmented generation, generative AI, agentic workflows, automation, and AI-enabled vendor systems.</p>
-        <p>It is a sequenced guide for leaders and cross-functional teams to make decisions, build guardrails, assess readiness, establish governance, prioritize use cases, and govern AI over time.</p>
+        <h2>A complete implementation system—not a software development kit</h2>
+        <p><strong>This is not a package of code, algorithms, or developer components for building finished AI products.</strong> Its primary purpose is to provide the organizational guidance, practical tools, and workforce learning that public health departments need to select, procure, design, implement, use, evaluate, and govern AI-enabled tools effectively, ethically, equitably, securely, and sustainably.</p>
+        <p><strong>The learning modules help create a workforce that can develop, use, and govern AI effectively.</strong> They build the AI competencies appropriate to every health department employee's responsibilities. All staff can develop foundational AI literacy, understand approved and prohibited uses, protect sensitive information, recognize limitations and potential harms, review outputs, preserve human accountability, and know when to ask questions or escalate concerns. Role-based and functional pathways then provide deeper preparation for leaders, supervisors, program teams, epidemiologists, informaticians, communications staff, policy and legal partners, procurement staff, governance participants, data professionals, IT teams, and others involved in AI-supported work.</p>
+        <p>Technical learning is one part of that broader competency system. For staff who help construct or integrate AI-supported solutions, advanced modules address architecture, data pipelines, interoperability and FHIR, analytics and modeling, natural language processing, retrieval-augmented generation, secure integration, MLOps, validation, testing, monitoring, and related implementation practices. These modules support responsible technical work within the larger public health governance and implementation system; they are not a substitute for engineering platforms, source code, or qualified technical expertise.</p>
+        <p>The AI Playbook and Toolkit is designed for state, territorial, local, and tribal public health departments that need a clear way to move from early learning to responsible, sustainable AI use. It addresses the range of AI approaches that may appear in public health work—whether developed internally, purchased from a vendor, embedded in an existing system, or accessed through an approved service—including predictive analytics, machine learning, natural language processing, retrieval-augmented generation, generative AI, agentic workflows, automation, and AI-enabled vendor systems.</p>
+        <p>It is a sequenced guide for leaders and cross-functional teams to make decisions, build guardrails, assess readiness, establish governance, engage affected staff and communities, prepare the workforce, manage organizational change, prioritize use cases, plan funding, evaluate vendors, strengthen procurement and contracting, plan implementation, validate and deploy responsibly, monitor performance and equity, respond to incidents, and govern AI over time.</p>
+        <div class="overview-grid toolkit-scope-grid">
+          <article class="mini-card"><h3>The 13 plays</h3><p>Organize the department's implementation journey from vision, readiness, governance, engagement, AI literacy, workforce preparation, and change management through use-case selection, funding, implementation planning, deployment, oversight, evaluation, and continuous improvement.</p></article>
+          <article class="mini-card"><h3>The practical tools</h3><p>Turn decisions into documented work through assessments, policies, charters, stakeholder and equity reviews, change plans, use-case screens, environmental reviews, vendor evaluations, procurement and contract checklists, implementation plans, validation records, dashboards, audits, incident records, and improvement logs.</p></article>
+          <article class="mini-card"><h3>The learning modules</h3><p>Help create a workforce that can develop, use, and govern AI effectively by building appropriate competencies for every employee—from foundational AI literacy and safe everyday use to role-specific leadership, governance, program, policy, procurement, change-management, evaluation, data, analytics, informatics, IT, and technical capabilities.</p></article>
+        </div>
         <p>Every health department will have a customized path through the plays and tools. The readiness assessment helps identify which gaps need attention first, while work already completed by the department can be documented, validated, and used to move more quickly into the next responsible steps.</p>
-        <p>The integrated toolkit provides ${tools.length} fillable tools, templates, checklists, scoring frameworks, dashboards, and logs. Read the play first to understand the decision and intended output, then use the supporting tools to complete and document the work.</p>
+        <p>The Full Version's integrated toolkit provides ${tools.length} fillable tools, templates, checklists, scoring frameworks, dashboards, and logs. Read the play first to understand the decision and intended output, then use the supporting tools to complete and document the work.</p>
         <p>The tools are meant to fill gaps where a health department does not already have a method, template, policy, checklist, or process. If your department already has a similar tool that works well, use it, adapt it, or document it as evidence for the relevant play. There is no need to recreate the wheel.</p>
         <p>If your department already has data governance, technology governance, privacy review, cybersecurity review, IT governance, records management, or project management infrastructure in place, build on those structures wherever possible. AI governance should connect to existing approval pathways and strengthen them rather than creating a parallel process.</p>
       </section>
@@ -5068,6 +5106,7 @@ function renderCurriculumReferences(module) {
     const ref = lessonReferenceParts(item);
     return `<article class="resource-item">
       <h4>${ref.url ? `<a href="${ref.url}" target="_blank" rel="noopener noreferrer">${ref.title}</a>` : ref.title}</h4>
+      ${ref.note ? `<p>${ref.note}</p>` : ""}
       ${ref.url ? `<p><a href="${ref.url}" target="_blank" rel="noopener noreferrer">${ref.url}</a></p>` : `<p>Use the applicable local, agency, or source document for this resource.</p>`}
     </article>`;
   }).join("")}</div></section>`;
