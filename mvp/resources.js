@@ -1,3 +1,8 @@
+/**
+ * Curated Foundation evidence catalogue. Records contain title, description,
+ * application, related plays, and authoritative URL. Prefer primary and peer-reviewed
+ * sources, verify links/material changes, and do not imply endorsement.
+ */
 const groups=[
  {title:"Public health–specific U.S. foundations",intro:"The closest non-commercial resources to the Playbook's intended users and operating context.",items:[
  ["CDC AI Strategy (FY 2026–2030)","Federal public health direction spanning adoption, governance and trust, enterprise data platforms, workforce capability, and partnerships.","Anchors strategic alignment and the Plan–Build–Deploy–Govern lifecycle.","Plays 1–3, 5, 9, 11–13","https://www.cdc.gov/ai/strategy/index.html"],

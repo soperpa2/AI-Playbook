@@ -1,3 +1,54 @@
+/**
+ * AI Playbook and Toolkit — Full Version application.
+ *
+ * RESPONSIBILITY
+ * This file is the browser application layer for the Full Version. It owns the
+ * canonical play/tool catalogue, hash routing, page renderers, member workspace,
+ * readiness and learning assessments, organization workspace, and download
+ * helpers. Static evidence and curriculum extensions are loaded from /assets;
+ * shared cross-edition navigation and page treatments live in /content.
+ *
+ * CANONICAL CONTENT CONTRACT
+ * - Full Version play names, numbers, phase assignments, tool relationships, and
+ *   graphics are canonical. Foundation must reuse or deliberately subset them.
+ * - A play/tool/module identifier is persistent data. Never renumber it merely to
+ *   change display order; use explicit ordering rules instead.
+ * - Project Summary presentation remains unchanged unless a reviewed schema
+ *   migration is approved.
+ * - Recommendations must be numerically stable: plays by play number and tools by
+ *   tool number after priority rules have selected the applicable records.
+ *
+ * PERSISTENCE CONTRACT
+ * Browser storage currently simulates account persistence for the static site.
+ * Readers must tolerate missing and older fields. Writers merge with defaults and
+ * must not discard unknown fields, because stored records may outlive a release.
+ * Do not treat localStorage as secure storage or place protected health information,
+ * credentials, or confidential agency records in it.
+ *
+ * SECURITY AND ACCESSIBILITY
+ * User-provided values inserted into HTML must be escaped. Interactive controls
+ * require labels, keyboard access, visible focus, and meaningful status updates.
+ * Edition restrictions are product presentation rules, not authorization controls;
+ * real paid access will require server-side enforcement.
+ *
+ * MAINTENANCE MAP
+ * 1. Canonical catalogues and relationships
+ * 2. Shared rendering utilities and routing
+ * 3. Learning catalogue, pathways, and assessments
+ * 4. Readiness assessment and custom implementation pathway
+ * 5. Guided tools and task synchronization
+ * 6. Member and organization workspaces
+ * 7. Community, references, news, and consulting pages
+ *
+ * Test syntax after edits and exercise both root routes and /mvp routes. A change
+ * to shared content must be checked in both editions before release.
+ */
+
+/**
+ * Ordered journey phases used by navigation, the journey graphic, and play lists.
+ * The range is explanatory copy; `phase` on each play is the authoritative link.
+ * @type {Array<{id:string,name:string,range:string,summary:string}>}
+ */
 const phases = [
   { id: "plan", name: "PLAN", range: "Plays 1-7", summary: "Vision, readiness, governance, stakeholders, workforce, change planning, use cases" },
   { id: "build", name: "BUILD", range: "Plays 8-9", summary: "Funding strategy and implementation plan" },
@@ -5,6 +56,22 @@ const phases = [
   { id: "govern", name: "GOVERN", range: "Plays 12-13", summary: "Monitor, evaluate, oversight" }
 ];
 
+/**
+ * Canonical play catalogue.
+ * @typedef {Object} PlayRecord
+ * @property {number} id Stable public play number.
+ * @property {'plan'|'build'|'deploy'|'govern'} phase Journey phase identifier.
+ * @property {string} title Public title shared across editions.
+ * @property {string} output Tangible completion evidence.
+ * @property {number[]} tools Related stable tool identifiers; display code sorts them.
+ * @property {string} goal Intended organizational outcome.
+ * @property {string} matters Rationale for completing the play.
+ * @property {string[]} who Functions that participate; pages should translate these
+ * into named RASCI roles rather than assigning responsibility to vague departments.
+ * @property {string[]} questions Decision questions the play must resolve.
+ * @property {string[]} actions Ordered implementation actions.
+ */
+/** @type {PlayRecord[]} */
 const fullPlayContent = [
   { id: 1, phase: "plan", title: "Vision & Guardrails", output: "AI vision, principles, guardrails, priority areas, unresolved issues, next steps, and governance committee decision", tools: [1,2,3,4,5,6], goal: "Establish a clear strategic vision for how AI will support the agency's public health mission while defining principles that ensure responsible, ethical, and legally compliant use.", matters: "Every AI initiative begins with leadership alignment. Setting guardrails early around equity, human oversight, privacy, and prohibited uses prevents downstream harms and builds institutional trust.", who: ["Executive leadership", "Program leads", "Legal and privacy", "Equity leaders", "IT and data leaders"], questions: ["Which strategic public health problems should AI help address?", "Which uses are prohibited?", "What level of human review is required?"], actions: ["Convene a 60-90 minute leadership session.", "Agree on non-negotiable guardrails for human oversight, equity, privacy, and prohibited uses.", "Draft a 1-2 page AI Vision and Principles document.", "Align principles with NIST AI RMF 1.0.", "Identify executive sponsorship and update annually."] },
   { id: 2, phase: "plan", title: "Validate Readiness and Plan Improvements", output: "Validated readiness findings, evidence register, confirmed gaps, and an assigned readiness improvement plan", tools: [3,4,5,6,7,9,10,20,21,24,26,28,33,35,39], goal: "Turn preliminary Pathway Assessment findings into an evidence-supported organizational understanding of readiness and an actionable plan for addressing gaps.", matters: "The Pathway Assessment identifies where to begin; this play brings the appropriate people together to verify the findings, resolve unknowns or disagreements, document evidence, distinguish blocking from nonblocking gaps, and assign improvement work.", who: ["Health officer or executive sponsor", "IT director or technical lead", "Informatics, epidemiology, data, or evaluation lead", "Directors or managers of affected programs", "Agency counsel and privacy officer", "Health equity director or designated equity reviewer", "Community engagement director or designated engagement manager"], questions: ["Which preliminary findings are supported by organizational evidence?", "Which unknown, partial, or weak conditions require action?", "Which gaps block later plays and which can be addressed in parallel?"], actions: ["Import the latest AI Readiness and Pathway Assessment results, or begin with an equivalent existing assessment.", "Convene a cross-functional validation session and review each domain score, recommendation, and unknown response.", "Confirm or revise findings using policies, inventories, interviews, system documentation, meeting records, and other evidence.", "Classify gaps as blocking, parallel, monitor, or already addressed.", "Assign owners, target dates, dependencies, evidence requirements, and review status for each improvement action.", "Approve the readiness improvement plan and update the customized pathway when validated findings change the recommended sequence."] },
@@ -4158,6 +4225,12 @@ function restoreToolProgress(toolId, blueprint) {
   if (status) status.textContent = `Restored saved progress from ${saved.savedAt}.`;
 }
 
+/**
+ * Serializes a guided/legacy tool form into the member record. Selected actions also
+ * feed the cross-tool task tracker. Preserve stable tool and field identifiers.
+ * @param {Object} tool Canonical tool record.
+ * @param {Array} blueprint Ordered sections/fields shown to the member.
+ */
 function saveToolProgress(tool, blueprint) {
   if (!hasMemberProfile()) return;
   const state = getMemberState();
@@ -4187,7 +4260,7 @@ function renderHome() {
             <a class="btn primary" href="#/plays/1">Start with Vision</a>
             <a class="btn" href="#/assess">Take Readiness Assessment</a>
             <a class="btn" href="#/plays/3">Establish Governance</a>
-            <a class="btn" href="#/consulting">Need More Help?</a>
+            <a class="btn" href="#/consulting">View Consulting Options</a>
           </div>
         </div>
         <figure class="journey-graphic-card">
@@ -4205,21 +4278,16 @@ function renderHome() {
     <section class="page">
       <section class="panel playbook-overview hero-overview">
         <p class="eyebrow">Playbook + Toolkit Overview</p>
-        <h2>A complete implementation system—not a software development kit</h2>
-        <p><strong>This is not a package of code, algorithms, or developer components for building finished AI products.</strong> Its primary purpose is to provide the organizational guidance, practical tools, and workforce learning that public health departments need to select, procure, design, implement, use, evaluate, and govern AI-enabled tools effectively, ethically, equitably, securely, and sustainably.</p>
-        <p><strong>The learning modules help create a workforce that can develop, use, and govern AI effectively.</strong> They build the AI competencies appropriate to every health department employee's responsibilities. All staff can develop foundational AI literacy, understand approved and prohibited uses, protect sensitive information, recognize limitations and potential harms, review outputs, preserve human accountability, and know when to ask questions or escalate concerns. Role-based and functional pathways then provide deeper preparation for leaders, supervisors, program teams, epidemiologists, informaticians, communications staff, policy and legal partners, procurement staff, governance participants, data professionals, IT teams, and others involved in AI-supported work.</p>
-        <p>Technical learning is one part of that broader competency system. For staff who help construct or integrate AI-supported solutions, advanced modules address architecture, data pipelines, interoperability and FHIR, analytics and modeling, natural language processing, retrieval-augmented generation, secure integration, MLOps, validation, testing, monitoring, and related implementation practices. These modules support responsible technical work within the larger public health governance and implementation system; they are not a substitute for engineering platforms, source code, or qualified technical expertise.</p>
-        <p>The AI Playbook and Toolkit is designed for state, territorial, local, and tribal public health departments that need a clear way to move from early learning to responsible, sustainable AI use. It addresses the range of AI approaches that may appear in public health work—whether developed internally, purchased from a vendor, embedded in an existing system, or accessed through an approved service—including predictive analytics, machine learning, natural language processing, retrieval-augmented generation, generative AI, agentic workflows, automation, and AI-enabled vendor systems.</p>
-        <p>It is a sequenced guide for leaders and cross-functional teams to make decisions, build guardrails, assess readiness, establish governance, engage affected staff and communities, prepare the workforce, manage organizational change, prioritize use cases, plan funding, evaluate vendors, strengthen procurement and contracting, plan implementation, validate and deploy responsibly, monitor performance and equity, respond to incidents, and govern AI over time.</p>
+        <h2>One system for planning, implementing, and governing public health AI</h2>
+        <p><strong>This is not a software development kit or package of code for building finished AI products.</strong> It combines an implementation playbook, practical tools, and workforce learning so public health departments can develop, select, procure, implement, use, evaluate, and govern AI effectively, ethically, equitably, securely, and sustainably. Role-specific technical modules support staff who construct or integrate AI-enabled solutions.</p>
+        <p>Designed for state, territorial, local, and tribal public health departments, the system applies to predictive analytics, machine learning, NLP, RAG, generative and agentic AI, automation, and AI capabilities developed internally, purchased from vendors, or embedded in existing systems.</p>
         <div class="overview-grid toolkit-scope-grid">
-          <article class="mini-card"><h3>The 13 plays</h3><p>Organize the department's implementation journey from vision, readiness, governance, engagement, AI literacy, workforce preparation, and change management through use-case selection, funding, implementation planning, deployment, oversight, evaluation, and continuous improvement.</p></article>
-          <article class="mini-card"><h3>The practical tools</h3><p>Turn decisions into documented work through assessments, policies, charters, stakeholder and equity reviews, change plans, use-case screens, environmental reviews, vendor evaluations, procurement and contract checklists, implementation plans, validation records, dashboards, audits, incident records, and improvement logs.</p></article>
-          <article class="mini-card"><h3>The learning modules</h3><p>Help create a workforce that can develop, use, and govern AI effectively by building appropriate competencies for every employee—from foundational AI literacy and safe everyday use to role-specific leadership, governance, program, policy, procurement, change-management, evaluation, data, analytics, informatics, IT, and technical capabilities.</p></article>
+          <article class="mini-card"><h3>Playbook</h3><p>Thirteen sequenced plays guide vision and guardrails, readiness, governance, engagement, workforce preparation, change management, use-case selection, funding, implementation planning, deployment, oversight, evaluation, and continuous improvement.</p></article>
+          <article class="mini-card"><h3>Tools</h3><p>${tools.length} fillable assessments, policies, charters, checklists, plans, vendor and procurement reviews, validation records, dashboards, audits, incident records, and improvement logs turn decisions into documented action.</p></article>
+          <article class="mini-card"><h3>Learning</h3><p>Modules build appropriate competencies for every employee, from AI literacy and safe use to role-based leadership, governance, programs, policy, procurement, change, evaluation, data, informatics, IT, and technical development and integration.</p></article>
         </div>
-        <p>Every health department will have a customized path through the plays and tools. The readiness assessment helps identify which gaps need attention first, while work already completed by the department can be documented, validated, and used to move more quickly into the next responsible steps.</p>
-        <p>The Full Version's integrated toolkit provides ${tools.length} fillable tools, templates, checklists, scoring frameworks, dashboards, and logs. Read the play first to understand the decision and intended output, then use the supporting tools to complete and document the work.</p>
-        <p>The tools are meant to fill gaps where a health department does not already have a method, template, policy, checklist, or process. If your department already has a similar tool that works well, use it, adapt it, or document it as evidence for the relevant play. There is no need to recreate the wheel.</p>
-        <p>If your department already has data governance, technology governance, privacy review, cybersecurity review, IT governance, records management, or project management infrastructure in place, build on those structures wherever possible. AI governance should connect to existing approval pathways and strengthen them rather than creating a parallel process.</p>
+        <p>The readiness assessment creates a customized pathway, allowing completed work to be validated and priority gaps to be addressed first. Read each play to understand the decision and intended output, then use the supporting tools and learning to complete the work.</p>
+        <p>Use, adapt, or document effective existing methods rather than recreating them. AI governance should strengthen established data, technology, privacy, cybersecurity, records, procurement, and project-management processes—not create a parallel system.</p>
       </section>
       <section class="panel playbook-overview">
         <p class="eyebrow">What This Site Helps Agencies Do</p>
@@ -4920,6 +4988,7 @@ function renderRoleLearningQuestions(role = "") {
   target.innerHTML = questions.length ? `<h2>${escapeDoc(role)} Competencies</h2><p>${questions.length} competencies reflect the breadth and risk of decisions commonly associated with this role.</p>${questions.map((prompt, index) => `<fieldset class="learning-domain-question role-specific-question"><legend><span>${learningAssessmentDomains.length + index + 1}</span><strong>Role competency ${index + 1}</strong></legend><p>${escapeDoc(prompt)}</p><label for="learning-role-domain-${index}">Current confidence</label><select id="learning-role-domain-${index}" required><option value="">Select a rating</option><option value="0">0 — New to this</option><option value="1">1 — Need substantial development</option><option value="2">2 — Can apply with support</option><option value="3">3 — Can apply independently</option></select></fieldset>`).join("")}` : `<p class="callout">Select a role to display the role-specific portion of the assessment.</p>`;
 }
 
+/** Renders the role-aware learning assessment or its free-account gate. */
 function renderPersonalizedLearningAssessment() {
   const state = getMemberState();
   const latest = [...(state.learningPathwayAssessments || [])].reverse()[0];
@@ -4981,6 +5050,10 @@ function personalizedLearningRecommendations(role, scores, roleScores = []) {
   return { trackId, gaps: gaps.map(domain => domain.id), strengths: learningAssessmentDomains.filter(domain => Number(scores[domain.id]) === 3).map(domain => domain.id), roleAverage: Math.round(roleAverage * 10) / 10, modules: ordered };
 }
 
+/**
+ * Scores foundational and role competencies. Low confidence elevates mapped modules;
+ * curated pathway order breaks ties for deterministic, pedagogically coherent output.
+ */
 function scorePersonalizedLearningAssessment() {
   const role = document.getElementById("learning-assessment-role")?.value || "";
   const scores = {};
@@ -5590,6 +5663,7 @@ function renderAssess() {
   updateAssessment();
 }
 
+/** Saves partial readiness work without treating unknown evidence as a failed control. */
 function saveAssessmentProgress() {
   if (!hasMemberProfile()) return;
   const state = getMemberState();
@@ -5615,6 +5689,11 @@ function saveAssessmentProgress() {
   if (status) status.textContent = `Saved ${savedAt}.`;
 }
 
+/**
+ * Recalculates readiness scores and the custom pathway. Priority controls inclusion;
+ * display remains numerically ordered. Play 2 remains because it validates findings
+ * and assigns readiness improvements rather than repeating the assessment.
+ */
 function updateAssessment() {
   let total = 0;
   const maxTotal = readinessDomains.length * 12;
@@ -6669,6 +6748,10 @@ function renderImplementationPlayGuide(playId) {
   </section>`;
 }
 
+/**
+ * Creates the handoff from preliminary findings to Play 2 evidence validation.
+ * @returns {string} Application-authored HTML.
+ */
 function play2AssessmentBridge() {
   const state = getMemberState();
   const latest = [...(state.savedAssessments || [])].reverse().find(item => ["AI Readiness and Pathway Assessment", "AI Readiness Self-Assessment"].includes(item.title));
@@ -8211,6 +8294,11 @@ function addOrganizationMilestone(playId) {
   renderOrganizationWorkplan();
 }
 
+/**
+ * Routes tiered organization views. Personal organization context may be visible to
+ * an individual; roster, assignment, aggregate reporting, and multi-user controls
+ * require organization access. Client-side gating is not production authorization.
+ */
 function renderOrganizationHub(view = "") {
   const access = organizationHubContext();
   const hasOrganizationAccess = access.state.accountType === "Organization" && Boolean(access.organization.name) && access.orgRole !== "Individual-only Member";

@@ -1,3 +1,10 @@
+/**
+ * Foundation member dashboard and browser-persistence adapter.
+ * A free member account precedes tool downloads, reviewer applications, and the
+ * personalized learning assessment. This static implementation is a prototype—not
+ * authentication—and must never store PHI, credentials, or confidential records.
+ * Readers must tolerate older records and writers must preserve member history.
+ */
 const FOUNDATION_MEMBER_KEY = "foundation-member-profile";
 const FOUNDATION_LEARNING_ASSESSMENT_KEY = "foundation-learning-pathway-assessment";
 const FOUNDATION_LEARNING_PROGRESS_KEY = "foundation-learning-progress";

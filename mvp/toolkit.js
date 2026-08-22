@@ -1,3 +1,8 @@
+/**
+ * Foundation toolkit catalogue: one released Foundation Tool per canonical play.
+ * Upgrade copy may describe other editions but must not say completed tools are
+ * still under development.
+ */
 const { plays, release } = window.launchContent;
 const main = document.querySelector("#main");
 

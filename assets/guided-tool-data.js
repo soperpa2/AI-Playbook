@@ -1,3 +1,17 @@
+/**
+ * Guided-tool content definitions keyed by stable numeric tool identifier.
+ *
+ * This file contains editorial/schema data only; rendering behavior belongs in
+ * /content/guided-tool-template.js. Preserve IDs, section titles, and field labels
+ * once released because saved responses use section + label as their field key.
+ * Options may omit `Other`: the renderer adds it uniformly and permits multiple
+ * custom categories. Use concrete public-health roles and scenarios. Avoid assigning
+ * RASCI responsibility to broad labels such as “equity” or “governance.”
+ *
+ * @typedef {'select'|'checkboxes'|'text'|'textarea'} GuidedFieldType
+ * @typedef {{label:string,type:GuidedFieldType,options?:string[],guidance?:string,example?:string,inputType?:string}} GuidedField
+ * @typedef {{label:string,intro:string,scenario?:Object,sections:Array<[string,GuidedField[]]>}} GuidedToolDefinition
+ */
 (function defineGuidedToolPrototypes() {
   const select = (label, options, guidance = "") => ({ label, type: "select", options, guidance });
   const checks = (label, options, guidance = "") => ({ label, type: "checkboxes", options, guidance });
@@ -6,6 +20,7 @@
   const status = ["Not reviewed", "No concern identified", "Concern identified", "Mitigation required", "Needs specialist review"];
   const yesNoUnknown = ["Select one", "Yes", "No", "Unknown", "Not applicable"];
 
+  /** @type {Record<number, GuidedToolDefinition>} */
   window.GuidedToolDefinitions = {
     7: {
       label: "Guided Play 2 workspace",

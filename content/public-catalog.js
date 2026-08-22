@@ -1,3 +1,8 @@
+/**
+ * Foundation projection of canonical plays and one released Foundation Tool per play.
+ * Full Version content/graphics are authoritative. Preserve stable numbers and keep
+ * all navigation destinations edition-local in the rendering layer.
+ */
 window.launchContent = {
   schemaVersion: "1.0",
   release: {

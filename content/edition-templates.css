@@ -1,0 +1,88 @@
+/*
+ * Shared page-template adapter. site-shell.js adds these classes to Foundation
+ * legacy markup so spacing, panels, typography, and responsive behavior converge on
+ * the canonical Full Version. Keep rules additive; availability is content logic.
+ */
+.foundation-edition .shared-page-template {
+  display: grid;
+  gap: 2rem;
+}
+
+.foundation-edition .shared-page-template > * {
+  min-width: 0;
+}
+
+.foundation-edition .shared-page-hero {
+  margin: 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fcff, #e8f4fb);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--soft-shadow);
+}
+
+.foundation-edition .shared-page-hero h1 {
+  max-width: 980px;
+  margin: .1rem 0 .8rem;
+  color: var(--blue-deep);
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+}
+
+.foundation-edition .shared-page-hero > p:last-child {
+  max-width: 900px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.foundation-edition .shared-content-panel,
+.foundation-edition .shared-page-section {
+  margin: 0;
+}
+
+.foundation-edition .shared-page-section:not(.form-shell):not(.training-grid):not(.path-principles) {
+  padding: 2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--soft-shadow);
+}
+
+.foundation-edition .shared-page-template > article.panel,
+.foundation-edition .shared-page-template > section.panel {
+  width: 100%;
+  margin: 0;
+}
+
+.foundation-edition .form-shell {
+  padding: 0;
+  gap: 2rem;
+}
+
+.foundation-edition .form-shell > aside,
+.foundation-edition .form-shell > form {
+  margin: 0;
+}
+
+.foundation-edition .path-principles,
+.foundation-edition .training-grid {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .foundation-edition .shared-page-template { gap: 1.25rem; }
+  .foundation-edition .shared-page-hero,
+  .foundation-edition .shared-page-section:not(.form-shell):not(.training-grid):not(.path-principles) { padding: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .foundation-edition .shared-page-template {
+    width: min(100% - 1.25rem, 1280px);
+    padding-top: 1.25rem;
+  }
+  .foundation-edition .shared-page-hero,
+  .foundation-edition .shared-page-section:not(.form-shell):not(.training-grid):not(.path-principles) { padding: 1.15rem; }
+  .foundation-edition .shared-page-hero h1 { font-size: clamp(2rem, 11vw, 3rem); }
+}

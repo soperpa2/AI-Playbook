@@ -1,3 +1,9 @@
+/**
+ * Foundation learning-module catalogue and module renderer.
+ * These are learning modules, not full courses. Codes are persistent identifiers;
+ * array order is instructional. Advanced modules may be described as available in
+ * other editions but are not launched here. Completion is stored in this browser.
+ */
 const modules=[
  {id:"int-100",code:"INT 100",title:"Introduction to AI for Public Health",level:"Introductory",summary:"Build a practical understanding of predictive, generative, analytic, and agentic AI in public health work.",objectives:["Distinguish common forms of AI used in public health","Explain appropriate roles for AI and accountable humans","Recognize why context, data quality, and workflow matter"],topics:["AI and machine learning basics","Public health applications","Human judgment and accountability","Common limitations and misconceptions"],exercise:"Identify one workflow where AI may help and one where it should not be used without substantial safeguards."},
  {id:"int-105",code:"INT 105",title:"All-Staff Safe AI Use and Approved Tools Awareness",level:"Introductory · 35–45 minutes",summary:"Apply department rules for approved tools, sensitive information, output review, escalation, and responsible day-to-day use.",objectives:["Recognize approved and unapproved AI environments","Protect PHI, PII, confidential, and sovereign data","Review outputs and escalate errors or concerns"],topics:["Approved-use boundaries","Data classification","Human review","Incident and concern reporting"],exercise:"Review three common staff scenarios and document the safe action, prohibited action, and escalation path for each."},

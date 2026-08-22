@@ -1,3 +1,4 @@
+/** Foundation play catalogue; phases mirror the canonical four-stop journey. */
 const { plays } = window.launchContent;
 const phaseGuidance = {
   plan: ["PLAN", "Plays 1–7", "Set direction, understand readiness, establish governance, engage affected people, prepare the workforce, plan for change, and select responsible use cases."],

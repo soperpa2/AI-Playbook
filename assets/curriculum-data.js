@@ -1,3 +1,8 @@
+/**
+ * GENERATED/COMPILED curriculum catalogue. Module IDs/codes are persistent and
+ * pathway arrays define instructional order. Prefer updating maintained source data;
+ * validate syntax and every pathway link after regeneration.
+ */
 window.CURRICULUM_DATA = {
   "schema": "public-health-ai-curriculum-browser-data-v1",
   "source": "Public_Health_AI_Curriculum_JSON_Package_TRAIN_Style_with_GOV100.zip",

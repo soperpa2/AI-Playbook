@@ -1,3 +1,7 @@
+/**
+ * Foundation play-detail renderer. Canonical play content comes from
+ * `window.launchContent`; only availability and edition-local destinations differ.
+ */
 const {plays, release} = window.launchContent;
 const requested = Number(new URLSearchParams(location.search).get("play"));
 const play = plays.find(item => item.number === requested) || plays[0];
@@ -16,7 +20,7 @@ main.innerHTML = `<section class="page-hero">
   <h2>Who should participate</h2><ul>${play.people.map(item => `<li>${item}</li>`).join("")}</ul>
   <h2>Questions to work through</h2><ul>${play.questions.map(item => `<li>${item}</li>`).join("")}</ul>
   <section class="development-tools"><p class="eyebrow">Expanded edition</p><h2>Additional implementation resources</h2>
-    <p>The paid organizational edition includes deeper templates, facilitation materials, role-based pathways, reporting, and implementation support that are not yet publicly released. The protected resource inventory and methods are intentionally not included in this public build.</p>
+    <p>The paid Organization Edition includes deeper templates, facilitation materials, role-based pathways, reporting, and implementation support that are not included in this public build. The protected resource inventory and methods are intentionally reserved for that edition.</p>
     <a href="reviewer.html?play=${play.number}">Apply to review unreleased resources for this play →</a>
   </section>
 </article><aside>

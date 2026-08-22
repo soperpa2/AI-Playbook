@@ -1,3 +1,8 @@
+/**
+ * Canonical readiness/pathway assessment schema. IDs and option values are persistent.
+ * Unknown means missing evidence, not a failed safeguard. Mapping changes require
+ * pathway regression cases. Findings precede the journey and hand off to Play 2.
+ */
 (function defineReadinessAssessment() {
   const domains = [
     ["Leadership and Governance", ["Leadership has articulated an AI vision aligned with strategic priorities.", "A clear governance structure exists or is planned.", "AI ethics and equity principles have been established.", "Budget authority exists to support AI infrastructure and workforce."]],

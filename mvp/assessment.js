@@ -1,3 +1,10 @@
+/**
+ * Foundation readiness/pathway assessment controller.
+ * The assessment is the entry step before the journey, not a numbered tool. It
+ * recommends an ordered pathway. Play 2 remains distinct: people validate these
+ * preliminary results with local evidence and create an improvement plan there.
+ * All Foundation result links must remain inside /mvp.
+ */
 (function renderFoundationAssessment() {
   const main = document.querySelector("#assessment-main");
   const assessment = window.ReadinessAssessment;

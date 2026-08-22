@@ -1,3 +1,8 @@
+/**
+ * Foundation fillable-tool page. Each play exposes one released Foundation Tool.
+ * Progress is browser-local after the free-member gate. Preserve IDs and field keys,
+ * keep links edition-local, and never enter PHI or confidential case information.
+ */
 const { plays, release } = window.launchContent;
 document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="foundation-content.css?v=20260818-foundation-content">');
 const toolParams = new URLSearchParams(location.search);

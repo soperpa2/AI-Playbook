@@ -1,3 +1,7 @@
+/**
+ * GENERATED module-to-role/pathway crosswalk. Records connect stable module IDs to
+ * competency sequences. Preserve deliberate ordering and regenerate consistently.
+ */
 window.LESSON_TOOL_CROSSWALK = [
   {
     "course_id": "INT 100",

@@ -1,3 +1,9 @@
+/*
+ * Full Version design system and components. Cascade order: tokens/base, shared
+ * layout, components, states, responsive overrides. Cross-edition template rules
+ * belong in /content/edition-templates.css. Preserve keyboard focus, contrast,
+ * enlarged-text behavior, and non-overlap at 320px when changing layout.
+ */
 :root {
   --ink: #07375f;
   --text: #233646;
@@ -118,6 +124,23 @@ button, input, select, textarea { font: inherit; }
 .primary-nav a.active {
   color: var(--blue);
   border-bottom-color: var(--green);
+}
+.primary-nav a.nav-consulting {
+  min-height: 38px;
+  margin-left: .25rem;
+  padding: .45rem .8rem;
+  color: white;
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 104, 183, .18);
+}
+.primary-nav a.nav-consulting:hover,
+.primary-nav a.nav-consulting:focus-visible,
+.primary-nav a.nav-consulting.active {
+  color: white;
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
 }
 .menu-button { display: none; }
 main { min-height: calc(100vh - 144px); }
@@ -3336,6 +3359,7 @@ th { color: var(--ink); background: var(--sky); }
     align-items: flex-start;
   }
   .primary-nav.open { display: flex; }
+  .primary-nav a.nav-consulting { width: 100%; margin: .35rem 0 0; }
   .hero-grid, .two-col, .toolkit-layout, .learn-layout, .learn-hero, .curriculum-branches, .assessment-grid, .detail-grid, .guide-layout, .plays-overview-grid, .community-layout, .community-hero, .case-study-grid, .support-area-header, .support-area-grid, .member-dashboard, .member-workspace-grid, .member-list.compact, .org-workspace-header, .org-form, .org-grid, .change-profile-grid, .change-metric-grid { grid-template-columns: 1fr; }
   .hero-band .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-grid > *, .toolkit-layout > *, .learn-layout > *, .assessment-grid > *, .detail-grid > *, .guide-layout > * { min-width: 0; }

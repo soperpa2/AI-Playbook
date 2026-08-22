@@ -1,9 +1,34 @@
+/**
+ * Schema-driven renderer for guided, fillable public-health implementation tools.
+ *
+ * DATA CONTRACT
+ * A definition has `{label, intro, scenario?, sections}`. `sections` is an ordered
+ * array of `[sectionTitle, fields]`. A field has `{label, type, options?, guidance?,
+ * example?, inputType?}` where type is select, checkboxes, text, or textarea.
+ * Section title + field label form the persisted legacy key; changing either needs
+ * a data migration or backward-compatible alias.
+ *
+ * PRODUCT RULES
+ * - Every select and checkbox group offers Other.
+ * - Users may add multiple custom categories; those values remain separate records.
+ * - Checkbox choices generate documentation records elsewhere in the tool workflow.
+ * - Help uses one coherent public-health scenario within a tool, supplemented by
+ *   field-specific examples (the approved hybrid example approach).
+ * - RASCI assignments must identify named roles/functions, not ambiguous groups.
+ *
+ * SECURITY/ACCESSIBILITY
+ * All definition and user-derived values entering markup pass through `escape`.
+ * Help cues are keyboard focusable; labels/legends remain associated with controls.
+ */
 (function defineGuidedToolTemplate() {
+  /** @param {*} value @returns {string} HTML-safe text. */
   function escape(value) {
     return String(value || "").replace(/[&<>\"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character]));
   }
 
+  /** Stable legacy persistence key; treat section and label as schema identifiers. */
   function fieldName(section, label) { return `${section}::${label}`; }
+  /** Returns unique options and guarantees the extensibility choice `Other`. */
   function withOther(options = []) {
     const values = [...new Set(options.filter(Boolean))];
     return values.includes("Other") ? values : [...values, "Other"];
@@ -12,6 +37,13 @@
     return `<div class="guided-other-controls"><button class="btn small add-other-category" type="button" data-other-name="${escape(name)}">Add another category</button><div class="guided-other-list" data-other-list="${escape(name)}"></div></div>`;
   }
 
+  /**
+   * Creates concise guidance and a scenario-based example for one field.
+   * Explicit authored guidance/examples always override inferred text.
+   * @param {{label:string,type:string,options?:string[],guidance?:string,example?:string}} field
+   * @param {Object} scenario Tool-wide worked-example context.
+   * @returns {{instruction:string,example:string,tooltip:string}}
+   */
   function fieldAssistance(field, scenario = {}) {
     const label = field.label.toLowerCase();
     const options = field.options || [];
@@ -63,6 +95,7 @@
     const help = fieldAssistance(field, scenario);
     return `<span class="guided-help-cue" tabindex="0" role="note" aria-label="Instructions and example for ${escape(field.label)}" data-tooltip="${escape(help.tooltip)}" title="${escape(help.tooltip)}">?</span>`;
   }
+  /** @returns {string} Accessible control markup for a single schema field. */
   function renderField(section, field, scenario = {}) {
     const name = fieldName(section, field.label), help = fieldAssistance(field, scenario), cue = helpCue(field, scenario);
     const guidance = `<small class="guided-field-help">${escape(help.instruction)}</small>`;
@@ -71,10 +104,16 @@
     if (field.type === "text") return `<label>${escape(field.label)} ${cue}${guidance}<input name="${escape(name)}" type="${escape(field.inputType || "text")}"${field.inputType === "date" ? "" : ` placeholder="${escape(help.example.replace(/^Example:\s*/i, ""))}"`}></label>`;
     return `<label>${escape(field.label)} ${cue}${guidance}<textarea name="${escape(name)}" rows="4" placeholder="${escape(help.example.replace(/^Example:\s*/i, ""))}"></textarea></label>`;
   }
+  /** @param {Object} definition Valid guided-tool definition. @returns {string} */
   function render(definition) {
     return `<section class="guided-tool-intro"><p class="eyebrow">${escape(definition.label)}</p><p>${escape(definition.intro)}</p><p class="guided-tool-key"><strong>Worked example:</strong> Field guidance uses the ${escape(definition.scenario?.name || "public health implementation scenario")} consistently. <strong>Response rule:</strong> Select all that apply for checkboxes. For dropdowns, choose the best supported response; Unknown identifies evidence that still needs to be collected.</p></section>${definition.sections.map(([section, fields]) => `<section class="tool-section guided-tool-section"><h3>${escape(section)}</h3><div class="guided-tool-fields">${fields.map(field => renderField(section, field, definition.scenario)).join("")}</div></section>`).join("")}`;
   }
+  /** Converts the guided schema to the earlier section/label blueprint shape. */
   function asLegacyBlueprint(definition) { return definition.sections.map(([section, fields]) => [section, fields.map(field => field.label)]); }
+  /**
+   * Adds one independently removable custom category input.
+   * @returns {HTMLInputElement|null} Created input, or null when its host is absent.
+   */
   function addOtherValue(root, name, value = "") {
     const list = root.querySelector(`[data-other-list="${CSS.escape(name)}"]`);
     if (!list) return null;
@@ -85,6 +124,7 @@
     list.appendChild(row);
     return row.querySelector("input");
   }
+  /** Binds progressive-enhancement events after rendered markup enters the DOM. */
   function hydrate(root = document) {
     root.querySelectorAll(".add-other-category").forEach(button => button.addEventListener("click", () => { const input = addOtherValue(root, button.dataset.otherName); input?.focus(); }));
   }

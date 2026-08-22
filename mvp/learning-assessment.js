@@ -1,7 +1,17 @@
+/**
+ * Foundation personalized learning-pathway assessment.
+ * A free local profile is required so results appear in My Account; production
+ * access will require server-side identity. Members answer eight foundational and
+ * a role-appropriate number of applied competency prompts. Low-confidence domains
+ * drive an instructional sequence. Foundation modules link locally; advanced
+ * recommendations are labeled as other-edition content. Persisted shapes must stay
+ * backward compatible across releases.
+ */
 const FOUNDATION_MEMBER_KEY="foundation-member-profile",FOUNDATION_LEARNING_ASSESSMENT_KEY="foundation-learning-pathway-assessment",FOUNDATION_LEARNING_PROGRESS_KEY="foundation-learning-progress";
 const assessmentMain=document.querySelector("#learning-assessment-main");
 const foundationCourseIds=new Set(["INT 100","INT 105","INT 190","INT 200","INT 250","GOV 100","GOV 110","COM 200","COM 210"]);
 const foundationModuleHref={"INT 100":"module.html?id=int-100","INT 105":"module.html?id=int-105","INT 190":"module.html?id=int-190","INT 200":"module.html?id=int-200","INT 250":"module.html?id=int-250","GOV 100":"module.html?id=gov-100","GOV 110":"module.html?id=gov-110","COM 200":"module.html?id=com-200","COM 210":"module.html?id=com-210"};
+/** Foundational competencies shared by roles; each maps to remedial modules. */
 const domains=[
  {id:"foundations",title:"AI foundations",prompt:"I can explain AI in plain language, recognize common ways it may appear in public health work, and identify when I need guidance before using it.",modules:["int-100","int-190-ai-for-social-good"]},
  {id:"safe-use",title:"Safe and approved use",prompt:"I can protect sensitive information, use approved environments, review outputs, and recognize when privacy or security escalation is required.",modules:["gov-300-ai-security-prompt-injection-and-data-leakage","gov-310-privacy-preserving-ai-and-de-identification"]},
@@ -12,7 +22,9 @@ const domains=[
  {id:"communication",title:"Communication and transparency",prompt:"I can verify AI-assisted content, communicate limitations, support language access, and explain AI use to affected audiences.",modules:["com-200-ai-for-public-health-communications-and-message-development","com-210-ai-assisted-translation-language-access-and-readability-review"]},
  {id:"implementation",title:"Implementation and evaluation",prompt:"I can frame a use case, map its workflow, define measures, plan human review, and decide whether to continue, modify, scale, pause, or retire it.",modules:["int-200-ai-use-case-intake-and-triage-basics","pgm-100-managing-ai-projects-in-public-health-programs"]}
 ];
+/** Maps the member's closest role to the curated Full Version learning track. */
 const roleTracks={"Health Officer / Executive":"public-health-executive-leadership","Epidemiologist":"epidemiology","Informatics / Data Director":"analytics-modeling","Program Manager":"program-management","IT / Technical Lead":"technical-architecture","Communications":"communications","Policy / Legal / Privacy":"policy","Governance Committee Member":"governance-security","Operations / Data Quality":"operations-data-quality","Health Educator":"health-education","Researcher / Analyst":"analytics-modeling","Student / Learner":"shared-foundational"};
+/** Core applied competency statements by role; extensions below scale breadth. */
 const roleQuestions={
  "Health Officer / Executive":["I can compare an AI proposal with non-AI alternatives using documented public value, evidence, cost, workforce impact, and risk.","I can establish or approve risk tolerance, decision rights, funding conditions, and accountability for an AI portfolio.","I can make and explain an approve, modify, pause, or stop decision to governing bodies, staff, partners, and communities."],
  "Epidemiologist":["I can design a validation plan using appropriate reference data, performance measures, uncertainty, and epidemiologic review.","I can evaluate representativeness, bias, subgroup and intersectional performance, drift, and consequences of false results.","I can define action thresholds, required human review, and escalation before AI-supported output changes surveillance or response."],
