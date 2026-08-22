@@ -52,16 +52,38 @@
   const header = document.querySelector("header");
   if (header) {
     header.className = "site-header";
-    header.innerHTML = `<a class="brand" href="${foundation ? "index.html#top" : "#/"}"><img class="brand-logo" src="${foundation ? "../" : ""}assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt="AI Playbook and Toolkit for Public Health Departments"><span><strong>AI Playbook and Toolkit</strong><small>${foundation ? "Foundation Edition for " : "for "}Public Health Departments</small></span></a><button class="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">${links.map(([label, href, key]) => `<a class="${key === "consulting" ? "nav-consulting" : ""}" href="${href}" data-nav="${key}">${label}</a>`).join("")}</nav>`;
+    /*
+     * Desktop branding intentionally uses the canonical logo without adjacent text.
+     * Repeating the long product name consumed horizontal space needed by the shared
+     * navigation and caused overlap at common laptop widths. A compact text treatment
+     * remains in the markup for mobile display, where navigation is collapsed behind
+     * the Menu button and the additional product identification improves orientation.
+     * The accessible link label preserves the complete name at every viewport size.
+     */
+    header.innerHTML = `<a class="brand" href="${foundation ? "index.html#top" : "#/"}" aria-label="AI Playbook, Toolkit, and Learning Modules home"><img class="brand-logo" src="${foundation ? "../" : ""}assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt=""><span class="mobile-brand-text"><strong>AI Playbook, Toolkit &amp; Learning Modules</strong><small>${foundation ? "Foundation Edition" : "for Public Health Departments"}</small></span></a><button class="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">${links.map(([label, href, key]) => `<a class="${key === "consulting" ? "nav-consulting" : ""}" href="${href}" data-nav="${key}">${label}</a>`).join("")}</nav>`;
     const menu = header.querySelector(".menu-button");
     const nav = header.querySelector("#primary-nav");
-    if (foundation) menu.addEventListener("click", () => { const open = nav.classList.toggle("open"); menu.setAttribute("aria-expanded", String(open)); });
+    /*
+     * Both editions use the same responsive menu. Keeping this listener edition-
+     * neutral prevents the Full Version from displaying a nonfunctional Menu button
+     * when the earlier desktop-to-mobile breakpoint is reached.
+     */
+    menu.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      menu.setAttribute("aria-expanded", String(open));
+    });
+    /* Close the compact menu after navigation so the destination is unobstructed. */
+    nav.addEventListener("click", event => {
+      if (!event.target.closest("a")) return;
+      nav.classList.remove("open");
+      menu.setAttribute("aria-expanded", "false");
+    });
   }
 
   const footer = document.querySelector("footer");
   if (footer) {
     footer.className = "site-footer";
-    footer.innerHTML = foundation ? `<span>AI Playbook and Toolkit for Public Health Departments</span><span>&copy; 2026 Paula Soper. All rights reserved.</span><span>Foundation Edition</span><span><a href="consulting.html">Need More Help?</a> · <a href="foundation-page.html?view=contact">Contact Us</a></span><span><a href="feedback.html">Feedback</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></span>` : `<span>AI Playbook and Toolkit for Public Health Departments</span><span>&copy; 2026 Paula Soper. All rights reserved.</span><span>Updated implementation website</span><span><a href="#/consulting">Need More Help?</a> · <a href="#/contact">Contact Us</a></span><span><a href="#/contribute">Feedback</a> · Playbook: <a href="downloads/AI_Playbook_for_Public_Health_Playbook.pdf">PDF</a> / <a href="downloads/AI_Playbook_for_Public_Health_Playbook.docx">Word</a> · Toolkit: <a href="downloads/AI_Playbook_for_Public_Health_Toolkit.pdf">PDF</a> / <a href="downloads/AI_Playbook_for_Public_Health_Toolkit.docx">Word</a></span>`;
+    footer.innerHTML = foundation ? `<span>AI Playbook, Toolkit, and Learning Modules for Public Health Departments</span><span>&copy; 2026 Paula Soper. All rights reserved.</span><span>Foundation Edition</span><span><a href="consulting.html">Need More Help?</a> · <a href="foundation-page.html?view=contact">Contact Us</a></span><span><a href="feedback.html">Feedback</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></span>` : `<span>AI Playbook, Toolkit, and Learning Modules for Public Health Departments</span><span>&copy; 2026 Paula Soper. All rights reserved.</span><span>Updated implementation website</span><span><a href="#/consulting">Need More Help?</a> · <a href="#/contact">Contact Us</a></span><span><a href="#/contribute">Feedback</a> · Playbook: <a href="downloads/AI_Playbook_for_Public_Health_Playbook.pdf">PDF</a> / <a href="downloads/AI_Playbook_for_Public_Health_Playbook.docx">Word</a> · Toolkit: <a href="downloads/AI_Playbook_for_Public_Health_Toolkit.pdf">PDF</a> / <a href="downloads/AI_Playbook_for_Public_Health_Toolkit.docx">Word</a></span>`;
   }
 
   /** @returns {string} Stable navigation key for the current Foundation page. */

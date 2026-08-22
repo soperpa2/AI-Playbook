@@ -1,153 +1,110 @@
 /**
- * Foundation fillable-tool page. Each play exposes one released Foundation Tool.
- * Progress is browser-local after the free-member gate. Preserve IDs and field keys,
- * keep links edition-local, and never enter PHI or confidential case information.
+ * Foundation renderer for the 13 canonical Full Version tools.
+ *
+ * Tool metadata, ordered sections, fields, output statements, and stable IDs come
+ * only from the generated FoundationToolCatalog. Field controls are rendered only
+ * by the same GuidedToolTemplate used by the Full Version. Foundation may differ in
+ * access, storage, downloads, and organization rollups, but never in the instrument.
+ * Browser storage is demonstrative; never enter PHI or confidential case records.
  */
-const { plays, release } = window.launchContent;
-document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="foundation-content.css?v=20260818-foundation-content">');
-const toolParams = new URLSearchParams(location.search);
-const requestedPlay = Number(toolParams.get("play"));
-const play = plays.find(item => item.number === requestedPlay) || plays[0];
-const storageKey = `foundation-tool-${play.number}`;
-const main = document.querySelector("#tool-main");
-const foundationMember = (() => { try { return JSON.parse(localStorage.getItem("foundation-member-profile") || "null"); } catch { return null; } })();
+(function renderCanonicalFoundationTool() {
+  const { plays, release } = window.launchContent;
+  const catalogue = window.FoundationToolCatalog;
+  if (!catalogue || !window.GuidedToolTemplate || !window.GuidedToolFactory) throw new Error("Canonical tool catalogue or shared guided template did not load.");
+  const play = plays.find(item => item.number === Number(new URLSearchParams(location.search).get("play"))) || plays[0];
+  const toolId = Number(catalogue.playToolMap[play.number]);
+  const tool = catalogue.tools.find(item => item.id === toolId);
+  const definition = window.GuidedToolDefinitions?.[toolId] || window.GuidedToolFactory.create(tool, catalogue.blueprints[toolId]);
+  /* The worked scenario drives the same hover help and placeholders in both editions. */
+  definition.scenario = catalogue.scenarios[toolId];
+  const storageKey = `foundation-canonical-tool-${toolId}`;
+  const main = document.querySelector("#tool-main");
+  const readJson = key => { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch { return null; } };
+  const member = readJson("foundation-member-profile");
+  const escape = value => String(value || "").replace(/[&<>\"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character]));
 
-function pathwayResult() {
-  try { return JSON.parse(localStorage.getItem("foundation-pathway-assessment-result") || "null"); }
-  catch { return null; }
-}
+  /** These four fields deliberately mirror Full Version renderToolDetail. */
+  function administrativeFields() {
+    const fields = [
+      { label: "Owner or facilitator", type: "text", guidance: "Name the person responsible for convening completion and coordinating follow-up." },
+      { label: "Date", type: "text", inputType: "date", guidance: "Record the meeting, review, or approval date." },
+      { label: "Agency / program", type: "text", guidance: "Identify the health department, division, bureau, or program that owns this artifact." },
+      { label: "Review status", type: "select", options: ["Draft", "Ready for review", "Submitted to governance", "Approved", "Needs revision"] }
+    ];
+    return fields.map(field => window.GuidedToolTemplate.renderField("Administrative Details", field, definition.scenario)).join("");
+  }
 
-function pathwayBridge() {
-  if (play.number !== 2) return "";
-  const result = pathwayResult();
-  const summary = result
-    ? `<p><strong>Latest result:</strong> ${result.score ?? "—"}% · ${result.level || "Assessment complete"}</p><p><strong>Recommended plays:</strong> ${(result.recommendedPlays || []).map(item => `Play ${item.number}: ${item.title}`).join("; ") || "Review the assessment pathway"}</p>`
-    : `<p>No saved Pathway Assessment was found in this browser. You can take it first or begin Play 2 with equivalent local evidence.</p>`;
-  return `<section class="pathway-import"><p class="eyebrow">Assessment to action</p><h3>Bring preliminary findings into Play 2</h3><p>The Pathway Assessment identifies a preliminary route. This tool validates those findings with local evidence, resolves unknowns, and assigns readiness improvements.</p>${summary}<div class="button-row no-print"><a class="btn" href="assess.html">${result ? "Review Pathway Assessment" : "Take Pathway Assessment"}</a>${result ? '<button class="btn primary" type="button" id="import-pathway">Import latest findings</button>' : ""}<button class="btn" type="button" id="start-without-pathway">Start without assessment</button></div><p class="tool-save-status" id="pathway-import-status" role="status"></p></section>`;
-}
+  /** Checkbox choices dynamically create detailed documentation below the checklist. */
+  function selectionDocumentation() {
+    return `<section class="tool-section selection-documentation"><div class="selection-documentation-header"><p class="eyebrow">Generated from Checklist Selections</p><h3>Selection documentation</h3><p>Select a checkbox above to create a documentation record below.</p></div><p class="selection-documentation-empty">No checkbox items selected yet.</p><div class="selection-documentation-list"></div></section>`;
+  }
+  function selectionCard(input) {
+    const field = input.name.split("::").slice(-1)[0], key = `${input.name}|||${input.value}`;
+    return `<article class="selection-documentation-card" data-selection-key="${escape(key)}"><div class="selection-documentation-title"><h4>${escape(field)}: ${escape(input.value)}</h4><span>Selected</span></div><div class="selection-documentation-grid"><label>Why this applies<textarea rows="2" data-doc-field="rationale"></textarea></label><label>Evidence or source<textarea rows="2" data-doc-field="evidence"></textarea></label><label>Local details<textarea rows="2" data-doc-field="details"></textarea></label><label>Required follow-up<textarea rows="2" data-doc-field="followUp"></textarea></label><label>Owner<input data-doc-field="owner"></label><label>Target date<input type="date" data-doc-field="dueDate"></label><label>Status<select data-doc-field="status">${["Not started", "In progress", "Blocked", "Ready for review", "Completed"].map(status => `<option>${status}</option>`).join("")}</select></label></div></article>`;
+  }
+  function syncSelectionDocumentation() {
+    const list = document.querySelector(".selection-documentation-list");
+    const selected = [...document.querySelectorAll('#tool-form .guided-checkbox-group input[type="checkbox"]:checked')];
+    const keys = new Set(selected.map(input => `${input.name}|||${input.value}`));
+    [...list.children].forEach(card => { if (!keys.has(card.dataset.selectionKey)) card.remove(); });
+    selected.forEach(input => {
+      const key = `${input.name}|||${input.value}`;
+      if (!list.querySelector(`[data-selection-key="${CSS.escape(key)}"]`)) list.insertAdjacentHTML("beforeend", selectionCard(input));
+    });
+    document.querySelector(".selection-documentation-empty").hidden = Boolean(list.children.length);
+  }
 
-function equityGovernanceFields() {
-  const fields = {
-    4: ["Which communities, including intersecting groups, must participate?", "What decision, review, approval, or pause authority will community representatives have?", "How will missing voices, accessibility, language access, and Tribal or other community data-governance requirements be addressed?"],
-    7: ["Could any input or proxy (such as cost, utilization, attendance, or digital engagement) reflect unequal access or structural barriers?", "What subgroup and intersectional evidence is required, including vendor bias-audit evidence?", "What equity thresholds, approval conditions, or no-go/pause criteria apply?"],
-    13: ["Which subgroup and intersectional measures, sample-size limitations, and proxy outcomes will be monitored?", "What disparity thresholds trigger review, correction, pause, or retirement?", "Who will audit the results, participate in remedies, notify affected communities, and enforce vendor or agency corrective actions?"]
-  }[play.number];
-  if (!fields) return "";
-  return `<fieldset class="foundation-equity-controls"><legend>Equity governance implementation</legend><p>Document the local controls needed to turn equity principles into accountable decisions.</p>${fields.map((field, index) => `<label>${field}<textarea name="equity_${index + 1}" rows="4"></textarea></label>`).join("")}</fieldset>`;
-}
+  /** Repeatable task rows retain the approved activity/owner/date/status structure. */
+  function actionTracker() {
+    return `<section class="tool-section tool-action-tracker"><div class="tool-action-header"><div><p class="eyebrow">Action and Follow-up Tracking</p><h3>Activities, owners, and dates</h3><p>Record each activity, evidence gap, approval, consultation, or corrective action created by this tool.</p></div><button class="btn small" type="button" id="add-tool-action">Add another task</button></div><div class="table-wrap"><table class="tool-action-table"><thead><tr><th>Activity or task</th><th>Assigned individual or team</th><th>Target date</th><th>Status</th><th>Review date</th><th>Notes or dependency</th><th></th></tr></thead><tbody></tbody></table></div></section>`;
+  }
+  function addActionRow(action = {}) {
+    const body = document.querySelector(".tool-action-table tbody"), row = document.createElement("tr");
+    row.className = "tool-action-row";
+    row.innerHTML = `<td><textarea rows="2" data-action="activity">${escape(action.activity)}</textarea></td><td><input data-action="owner" value="${escape(action.owner)}"></td><td><input type="date" data-action="dueDate" value="${escape(action.dueDate)}"></td><td><select data-action="status">${["Not started", "In progress", "Blocked", "Ready for review", "Completed"].map(status => `<option${status === (action.status || "Not started") ? " selected" : ""}>${status}</option>`).join("")}</select></td><td><input type="date" data-action="reviewDate" value="${escape(action.reviewDate)}"></td><td><textarea rows="2" data-action="notes">${escape(action.notes)}</textarea></td><td><button class="btn small remove-tool-action" type="button">Remove</button></td>`;
+    row.querySelector(".remove-tool-action").addEventListener("click", () => { row.remove(); if (!body.children.length) addActionRow(); });
+    body.appendChild(row);
+  }
 
-function healthDataPrivacyFields() {
-  if (play.number !== 2) return "";
-  const fields = [
-    "Is the agency or relevant component a HIPAA covered entity, non-covered entity, hybrid entity, public health authority, or not yet determined? Name the person who confirmed the status.",
-    "What health or person-level information may be used, what authority permits collection or receipt, and what public health or other purpose permits the proposed processing?",
-    "What minimum-necessary or broader data-minimization limits should apply even when HIPAA does not?",
-    "Could an AI or cloud provider create, receive, maintain, or transmit ePHI or other confidential data? Record the BAA or other agreement determination, secondary-use and model-training restrictions, and required follow-up.",
-    "Which AI environments are allowed or prohibited for each data tier, and what event requires this determination to be reviewed again?"
-  ];
-  return `<fieldset class="foundation-privacy-controls"><legend>Health data privacy and HIPAA applicability baseline</legend><p>HIPAA may apply to some, all, or none of an agency's components. Document the determination, but continue the broader privacy review even when HIPAA does not apply.</p>${fields.map((field, index) => `<label>${field}<textarea name="privacy_${index + 1}" rows="4"></textarea></label>`).join("")}</fieldset>`;
-}
+  document.title = `Tool ${tool.id}: ${tool.title} | Foundation Edition`;
+  main.innerHTML = window.PlaybookTemplates.pageOpen({ title: `Tool ${tool.id}: ${tool.title}`, lead: tool.purpose, eyebrow: `Foundation Edition · Canonical Tool for Play ${play.number}`, className: "foundation-tool-page" }) + `
+    <div class="content-meta"><span>Same tool as Full Version</span><span>Version ${release.version}</span><span>Supports Play ${play.number}</span></div>
+    <div class="detail-grid tool-detail-grid"><article class="panel">
+      <section class="tool-guide"><p class="eyebrow">Before you begin</p><h2>Use this tool during the work</h2><p><strong>When:</strong> Complete it when Play ${play.number} requires its documented output. <strong>Why:</strong> It creates a reviewable implementation record. <strong>How:</strong> Name an owner, involve the recommended roles, document evidence, assign follow-up, obtain required approval, and retain the result.</p><p><strong>Who:</strong> ${play.people.map(escape).join("; ")}.</p><p><a href="detail.html?play=${play.number}">Review Play ${play.number}: ${escape(play.title)} before completing the tool →</a></p></section>
+      <h2>Toolkit-Based Fillable Version</h2><p>This is the same guided instrument and field structure used in the Full Version.</p>
+      <form id="tool-form" class="tool-form"><section class="tool-section"><h3>Administrative Details</h3><div class="form-grid">${administrativeFields()}</div></section>${window.GuidedToolTemplate.render(definition)}${selectionDocumentation()}${actionTracker()}</form>
+      <div class="button-row no-print"><button class="btn primary" type="button" id="save-tool-progress">Save Progress</button><button class="btn" type="button" id="download-tool" ${member ? "" : "disabled"}>Download Responses</button><button class="btn" type="button" id="print-tool" ${member ? "" : "disabled"}>Print or Save as PDF</button><button class="btn" type="button" id="clear-tool">Clear</button></div>
+      ${member ? "" : '<p class="member-status locked no-print"><strong>Free membership required for downloads.</strong> <a href="account.html">Create or open My Account</a>.</p>'}<p id="tool-save-status" class="tool-save-status" role="status"></p>
+    </article><aside class="detail-card-list"><section class="panel"><h2>Outputs</h2><ul class="compact-list">${(catalogue.outputs[toolId] || []).map(output => `<li>${escape(output)}</li>`).join("")}</ul></section><section class="panel"><h2>Related play</h2><a href="detail.html?play=${play.number}">Play ${play.number}: ${escape(play.title)}</a></section><section class="panel"><h2>Edition note</h2><p>The instrument is identical across editions. Foundation does not include organization-level task aggregation, analytics, or the complete 49-tool library.</p></section></aside></div></section>`;
 
-document.title = `${play.tool.title} | Foundation Edition`;
-main.innerHTML = window.PlaybookTemplates.pageOpen({ title: play.tool.title, lead: play.tool.purpose, eyebrow: `Foundation Edition · Play ${play.number} Tool`, className: "foundation-tool-page" }) + `
-  <div class="content-meta"><span>Available now</span><span>Version ${release.version}</span><span>Supports Play ${play.number}</span></div>
+  window.GuidedToolTemplate.hydrate(document.getElementById("tool-form"));
+  document.querySelectorAll('#tool-form .guided-checkbox-group input[type="checkbox"]').forEach(input => input.addEventListener("change", syncSelectionDocumentation));
+  document.querySelector("#add-tool-action").addEventListener("click", () => addActionRow());
+  addActionRow();
 
-  <div class="tool-workspace-grid">
-    <form class="panel foundation-tool-form" id="foundation-tool-form">
-      <h2>Complete the tool</h2>
-      <p>Use this workspace with the people responsible for Play ${play.number}. Your entries are stored only in this browser unless you download or print them.</p>
-      ${pathwayBridge()}
-      ${healthDataPrivacyFields()}
-      <label>Organization or department<input name="organization" autocomplete="organization"></label>
-      <label>Facilitator or owner<input name="owner" autocomplete="name"></label>
-      <label>Date<input name="date" type="date"></label>
-      <label>Purpose and local context<textarea name="context" rows="4" placeholder="Describe the public health need, decision, workflow, or local context for this tool."></textarea></label>
-      ${play.questions.map((question, index) => `<label>${question}<textarea name="question_${index + 1}" rows="4"></textarea></label>`).join("")}
-      ${equityGovernanceFields()}
-      <label>Decision or recommended direction<textarea name="decision" rows="4" placeholder="Record the decision, conditions, limitations, or recommendation."></textarea></label>
-      <label>Actions, owners, and target dates<textarea name="actions" rows="5" placeholder="List each next action, responsible owner, and target date."></textarea></label>
-      <label>Evidence, approvals, or follow-up needed<textarea name="follow_up" rows="4"></textarea></label>
-      <div class="button-row no-print">
-        <button class="btn primary" type="submit">Save in this browser</button>
-        <button class="btn" type="button" id="download-tool" ${foundationMember ? "" : "disabled"}>Download responses</button>
-        <button class="btn" type="button" id="print-tool" ${foundationMember ? "" : "disabled"}>Print or save as PDF</button>
-        <button class="btn" type="button" id="clear-tool">Clear</button>
-      </div>
-      ${foundationMember ? "" : '<p class="member-status locked no-print"><strong>Free membership required for downloads.</strong> <a href="account.html">Create or open My Account</a> to enable downloads and printable copies.</p>'}
-      <p class="tool-save-status" id="tool-save-status" role="status"></p>
-    </form>
-    <aside class="tool-sidebar">
-      <section class="panel"><p class="eyebrow">Related play</p><h2>Play ${play.number}: ${play.title}</h2><p>${play.output}</p><a class="btn small" href="detail.html?play=${play.number}">Open the play</a></section>
-      <section class="panel"><h2>Recommended participants</h2><ul>${play.people.map(person => `<li>${person}</li>`).join("")}</ul></section>
-      <section class="panel"><h2>Use and limitations</h2><p>This Foundation Tool provides a practical starting point. Apply local legal, privacy, security, accessibility, equity, procurement, workforce, Tribal governance, community, and scientific review as appropriate.</p></section>
-      <section class="panel"><a href="toolkit.html">View all 13 Foundation Tools →</a></section>
-    </aside>
-  </div>
-</section>`;
-
-const form = document.querySelector("#foundation-tool-form");
-const status = document.querySelector("#tool-save-status");
-
-function formValues() {
-  return Object.fromEntries(new FormData(form).entries());
-}
-
-function restoreValues() {
-  const saved = JSON.parse(localStorage.getItem(storageKey) || "null");
-  if (!saved) return;
-  Object.entries(saved).forEach(([name, value]) => {
-    const field = form.elements.namedItem(name);
-    if (field) field.value = value;
-  });
-  status.textContent = "Saved responses restored from this browser.";
-}
-
-form.addEventListener("submit", event => {
-  event.preventDefault();
-  localStorage.setItem(storageKey, JSON.stringify(formValues()));
-  status.textContent = "Responses saved in this browser.";
-});
-
-document.querySelector("#download-tool").addEventListener("click", () => {
-  if (!foundationMember) return;
-  const values = formValues();
-  const lines = [play.tool.title, `Foundation Edition · Play ${play.number}: ${play.title}`, ""];
-  [...form.elements].filter(field => field.name).forEach(field => {
-    const label = field.closest("label")?.childNodes[0]?.textContent?.trim() || field.name;
-    lines.push(label, values[field.name] || "", "");
-  });
-  const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = `foundation-tool-${String(play.number).padStart(2, "0")}.txt`;
-  link.click();
-  URL.revokeObjectURL(link.href);
-});
-
-document.querySelector("#print-tool").addEventListener("click", () => { if (foundationMember) window.print(); });
-document.querySelector("#clear-tool").addEventListener("click", () => {
-  if (!confirm("Clear all responses saved for this tool in this browser?")) return;
-  form.reset();
-  localStorage.removeItem(storageKey);
-  status.textContent = "Responses cleared.";
-});
-
-restoreValues();
-
-if (play.number === 2) {
-  document.querySelector("#start-without-pathway")?.addEventListener("click", () => {
-    document.querySelector("#pathway-import-status").textContent = "Started without a saved assessment. Record the evidence your team is using below.";
-    form.elements.namedItem("context")?.focus();
-  });
-  document.querySelector("#import-pathway")?.addEventListener("click", () => {
-    const result = pathwayResult();
-    if (!result) return;
-    const domains = Object.entries(result.domainScores || {}).map(([name, value]) => `${name}: ${value}%`).join("\n");
-    const recommendations = (result.recommendedPlays || []).map(item => `Play ${item.number}: ${item.title}`).join("\n");
-    form.elements.namedItem("context").value = `Pathway Assessment completed ${result.date || "in this browser"}. Overall result: ${result.score ?? "—"}% (${result.level || "level not recorded"}).`;
-    if (form.elements.namedItem("question_1")) form.elements.namedItem("question_1").value = domains || "Review the saved assessment evidence and identify what can be verified locally.";
-    if (form.elements.namedItem("question_2")) form.elements.namedItem("question_2").value = recommendations || "Review the preliminary pathway and identify priority readiness gaps.";
-    form.elements.namedItem("actions").value = recommendations ? `Validate these preliminary recommendations and assign owners and dates:\n${recommendations}` : "Assign owners and dates for each validated readiness gap.";
-    document.querySelector("#pathway-import-status").textContent = "Latest pathway findings imported. Validate and revise them with local evidence before saving Play 2.";
-  });
-}
+  /** Preserve checkbox arrays and multiple user-defined Other categories. */
+  function collect() {
+    const fields = {};
+    for (const [name, value] of new FormData(document.querySelector("#tool-form")).entries()) {
+      if (Object.prototype.hasOwnProperty.call(fields, name)) fields[name] = Array.isArray(fields[name]) ? [...fields[name], value] : [fields[name], value]; else fields[name] = value;
+    }
+    const actions = [...document.querySelectorAll(".tool-action-row")].map(row => Object.fromEntries([...row.querySelectorAll("[data-action]")].map(control => [control.dataset.action, control.value]))).filter(action => Object.values(action).some(Boolean));
+    return { toolId, playNumber: play.number, fields, actions, savedAt: new Date().toISOString() };
+  }
+  function restore() {
+    const saved = readJson(storageKey); if (!saved) return;
+    Object.entries(saved.fields || {}).forEach(([name, value]) => {
+      const values = Array.isArray(value) ? value : [value];
+      const controls = [...document.querySelector("#tool-form").elements].filter(control => control.name === name);
+      if (name.endsWith("::Other") && !controls.length) values.forEach(item => window.GuidedToolTemplate.addOtherValue(document.querySelector("#tool-form"), name.replace(/::Other$/, ""), item));
+      else controls.forEach(control => { if (control.type === "checkbox" || control.type === "radio") control.checked = values.includes(control.value); else control.value = values[0] || ""; });
+    });
+    const body = document.querySelector(".tool-action-table tbody"); body.innerHTML = ""; (saved.actions?.length ? saved.actions : [{}]).forEach(addActionRow);
+    syncSelectionDocumentation(); document.querySelector("#tool-save-status").textContent = "Saved responses restored from this browser.";
+  }
+  document.querySelector("#save-tool-progress").addEventListener("click", () => { localStorage.setItem(storageKey, JSON.stringify(collect())); document.querySelector("#tool-save-status").textContent = "Progress saved in this browser."; });
+  document.querySelector("#download-tool").addEventListener("click", () => { if (!member) return; const blob = new Blob([JSON.stringify(collect(), null, 2)], { type: "application/json" }), link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = `tool-${tool.id}-responses.json`; link.click(); URL.revokeObjectURL(link.href); });
+  document.querySelector("#print-tool").addEventListener("click", () => { if (member) window.print(); });
+  document.querySelector("#clear-tool").addEventListener("click", () => { if (!confirm("Clear all responses saved for this tool in this browser?")) return; localStorage.removeItem(storageKey); location.reload(); });
+  restore();
+})();

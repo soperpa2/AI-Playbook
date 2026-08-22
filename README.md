@@ -1,6 +1,6 @@
-# AI Playbook and Toolkit for Public Health Departments
+# AI Playbook, Toolkit, and Learning Modules for Public Health Departments
 
-This repository contains a polished static website prototype for the **AI Playbook and Toolkit for Public Health Departments**.
+This repository contains the **AI Playbook, Toolkit, and Learning Modules for Public Health Departments**.
 
 ## Live Website
 

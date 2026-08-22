@@ -1,5 +1,5 @@
 /**
- * AI Playbook and Toolkit — Full Version application.
+ * AI Playbook, Toolkit, and Learning Modules — Full Version application.
  *
  * RESPONSIBILITY
  * This file is the browser application layer for the Full Version. It owns the
@@ -773,6 +773,23 @@ function outputsForPlay(play) {
   return playOutputDetails[play.id]
     ? `<ul class="compact-list">${playOutputDetails[play.id].map(item=>`<li>${item}</li>`).join("")}</ul>`
     : `<p>${play.output}</p>`;
+}
+
+/*
+ * SHARED 13-TOOL CONTRACT
+ * `foundation-tool-catalog.js` is generated from the canonical records above. The
+ * assignment is deliberately applied back to the Full Version so both editions
+ * consume the same selected metadata, blueprints, and outputs at runtime. This also
+ * makes accidental edits to the generated projection visible immediately instead of
+ * allowing a silent Foundation-only variant.
+ */
+if (window.FoundationToolCatalog) {
+  window.FoundationToolCatalog.tools.forEach(sharedTool => {
+    const canonicalTool = tools.find(tool => tool.id === sharedTool.id);
+    if (canonicalTool) Object.assign(canonicalTool, sharedTool);
+  });
+  Object.assign(toolFormBlueprints, window.FoundationToolCatalog.blueprints);
+  Object.assign(toolOutputOverrides, window.FoundationToolCatalog.outputs);
 }
 
 function outputsForTool(tool, blueprint) {
@@ -4254,7 +4271,7 @@ function renderHome() {
       <div class="page hero-grid">
         <div>
           <h1>Artificial Intelligence for Public Health</h1>
-          <h2>Playbook and Toolkit for Public Health Departments</h2>
+          <h2>Playbook, Toolkit, and Learning Modules for Public Health Departments</h2>
           <p class="lead">A guided implementation website for state, territorial, local, and tribal public health departments to learn AI foundations, establish a vision, assess readiness, establish governance, prioritize use cases, design an implementation plan, fund, deploy, monitor, and sustain oversight.</p>
           <div class="button-row">
             <a class="btn primary" href="#/plays/1">Start with Vision</a>
@@ -7436,7 +7453,7 @@ function buildProfessionalWordHtml(title, status, subtitle, metaRows, sections, 
     <div class="brand-row">
       <div class="brand-logo">${logoDataUrl ? `<img src="${logoDataUrl}" alt="AI Playbook for Public Health logo">` : ""}</div>
       <div class="brand-copy">
-        <div class="kicker">AI Playbook and Toolkit for Public Health Departments${status ? ` | ${escapeDoc(status)}` : ""}</div>
+        <div class="kicker">AI Playbook, Toolkit, and Learning Modules for Public Health Departments${status ? ` | ${escapeDoc(status)}` : ""}</div>
         <h1>${escapeDoc(title)}</h1>
         <p class="subtitle">${escapeDoc(subtitle)}</p>
       </div>
@@ -7447,7 +7464,7 @@ function buildProfessionalWordHtml(title, status, subtitle, metaRows, sections, 
     <h2>${escapeDoc(section.heading)}</h2>
     ${section.rows ? `<table><tbody>${section.rows.map(([field, value]) => `<tr><th>${escapeDoc(field)}</th><td class="${value ? "" : "blank"}">${escapeDoc(value || "Complete this field.")}</td></tr>`).join("")}</tbody></table>` : ""}
     ${section.lines ? `<ul>${section.lines.map(line => `<li>${escapeDoc(line)}</li>`).join("")}</ul>` : ""}`).join("")}
-  <section class="footer">Generated from the AI Playbook and Toolkit for Public Health Departments website.</section>
+  <section class="footer">Generated from the AI Playbook, Toolkit, and Learning Modules for Public Health Departments website.</section>
   <div class="word-footer">
     <span class="footer-left">${escapeDoc(title)}</span>
     <span class="footer-right">Page <span style="mso-field-code: PAGE"></span></span>
@@ -7552,7 +7569,7 @@ function asciiBytes(value) {
 
 function buildPdfBinary(pageStreams, logoInfo = null, footerTitle = "") {
   const footerFor = (stream, pageNumber, pageCount) => {
-    const safeTitle = wrapPdfText(footerTitle, 72)[0] || "AI Playbook and Toolkit for Public Health Departments";
+    const safeTitle = wrapPdfText(footerTitle, 72)[0] || "AI Playbook, Toolkit, and Learning Modules for Public Health Departments";
     return `${stream}
 0.78 0.86 0.92 RG
 0.8 w 54 42 m 558 42 l S
@@ -7663,7 +7680,7 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections,
     if (logo) commands.push(`q ${logoWidth} 0 0 ${logoHeight} ${margin} ${pageHeight - margin - logoHeight} cm /Logo Do Q`);
     const titleX = logo ? margin + logoWidth + 22 : margin;
     y = pageHeight - margin - 2;
-    text("AI Playbook and Toolkit for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
+    text("AI Playbook, Toolkit, and Learning Modules for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
     if (status) text(status, 8.5, "0.29 0.38 0.46", false, titleX);
     wrapPdfText(title, 54).forEach((line, i) => text(line, i === 0 ? 21 : 16, "0 0.24 0.45", true, titleX));
     y = Math.min(y - 6, pageHeight - margin - logoHeight - 20);
@@ -7702,7 +7719,7 @@ async function buildProfessionalPdf(title, status, subtitle, metaRows, sections,
     if (logo) commands.push(`q 108 0 0 ${Math.round(108 * logo.height / logo.width)} ${margin} ${pageHeight - margin - Math.round(108 * logo.height / logo.width)} cm /Logo Do Q`);
     const titleX = logo ? 180 : margin;
     y = pageHeight - margin - 12;
-    text("AI Playbook and Toolkit for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
+    text("AI Playbook, Toolkit, and Learning Modules for Public Health Departments", 10, "0.21 0.56 0.17", true, titleX);
     if (status) text(status, 9, "0.29 0.38 0.46", false, titleX);
     wrapPdfText(title, 48).forEach((line, i) => text(line, i === 0 ? 20 : 15, "0 0.24 0.45", true, titleX));
     wrapPdfText(subtitle, 75).forEach(line => text(line, 10, "0.29 0.38 0.46", false, titleX));
@@ -9231,7 +9248,7 @@ async function downloadMemberWorkspaceExport() {
   const subtitle = "Saved member, organization, planning, and collaboration workspace summary.";
   const metaRows = [
     ["Exported", new Date().toLocaleString()],
-    ["Product", "AI Playbook and Toolkit for Public Health Departments"],
+    ["Product", "AI Playbook, Toolkit, and Learning Modules for Public Health Departments"],
     ["Member", memberDisplayName(state.profile)]
   ];
   const logo = await getLogoDataUrl();
@@ -9747,7 +9764,7 @@ function renderContribute() {
 }
 
 function renderContact() {
-  main.innerHTML = pageIntro("Contact Us", "Use this page for questions about the AI Playbook and Toolkit, membership, organization access, implementation support, training materials, or technical issues with the website.") + `
+  main.innerHTML = pageIntro("Contact Us", "Use this page for questions about the AI Playbook, Toolkit, and Learning Modules, membership, organization access, implementation support, training materials, or technical issues with the website.") + `
     <div class="two-col">
       <form class="panel contribute-form">
         <h2>Send a Message</h2>
