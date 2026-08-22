@@ -71,13 +71,30 @@ button, input, select, textarea { font: inherit; }
 .brand {
   display: inline-flex;
   align-items: center;
+  gap: .55rem;
   color: var(--ink);
   flex: 0 0 auto;
 }
 .brand:hover { text-decoration: none; }
 .mobile-brand-text {
-  /* Hidden on desktop so the full navigation retains the width it needs. */
-  display: none;
+  display: block;
+  max-width: 185px;
+  line-height: 1.1;
+}
+.mobile-brand-text strong {
+  display: block;
+  color: var(--blue-dark);
+  font-size: clamp(.78rem, .85vw, .94rem);
+  letter-spacing: .01em;
+}
+.mobile-brand-text small {
+  display: block;
+  margin-top: .18rem;
+  color: var(--green-dark);
+  font-size: .68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
 }
 .brand-logo {
   /* The logo is the sole visible brand treatment, so it can be larger than before. */
@@ -117,6 +134,53 @@ button, input, select, textarea { font: inherit; }
   text-align: center;
   font: inherit;
   white-space: nowrap;
+}
+.nav-group { position: relative; }
+.nav-primary-row { display: inline-flex; align-items: stretch; }
+.primary-nav .nav-primary { padding-right: .12rem; }
+.nav-submenu-toggle {
+  width: 25px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  color: #41586a;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+.nav-submenu-toggle:hover,
+.nav-submenu-toggle:focus-visible { color: var(--blue); }
+.nav-submenu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% - 2px);
+  left: 0;
+  display: none;
+  min-width: 230px;
+  padding: .45rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 14px 34px rgba(5,46,83,.16);
+  white-space: normal;
+}
+.nav-group:hover .nav-submenu,
+.nav-group:focus-within .nav-submenu,
+.nav-group.submenu-open .nav-submenu { display: grid; }
+.primary-nav .nav-submenu a {
+  justify-content: flex-start;
+  min-height: 38px;
+  padding: .55rem .65rem;
+  border: 0;
+  border-radius: 7px;
+  text-align: left;
+  white-space: normal;
+}
+.primary-nav .nav-submenu a:hover,
+.primary-nav .nav-submenu a:focus-visible { background: var(--sky); }
+.nav-group.active > .nav-primary-row > .nav-primary {
+  color: var(--blue);
+  border-bottom-color: var(--green);
 }
 .primary-nav a.active {
   color: var(--blue);
@@ -3344,7 +3408,7 @@ th { color: var(--ink); background: var(--sky); }
  * This breakpoint covers common laptop and smaller desktop viewports while retaining
  * the larger, full navigation only where every destination has adequate room.
  */
-@media (max-width: 1360px) {
+@media (max-width: 1180px) {
   .menu-button { display: inline-flex; border: 1px solid var(--blue); border-radius: var(--radius); background: white; padding: .5rem .8rem; color: var(--blue); font-weight: 800; }
   .hero-band { margin-left: 0; margin-right: 0; }
   .primary-nav {
@@ -3362,6 +3426,23 @@ th { color: var(--ink); background: var(--sky); }
     align-items: flex-start;
   }
   .primary-nav.open { display: flex; }
+  .nav-group { width: 100%; }
+  .nav-primary-row { display: flex; width: 100%; }
+  .primary-nav .nav-primary { flex: 1 1 auto; justify-content: flex-start; }
+  .nav-submenu-toggle { flex: 0 0 44px; }
+  .nav-submenu {
+    position: static;
+    min-width: 0;
+    margin: 0 0 .35rem .8rem;
+    padding: .2rem 0 .35rem .65rem;
+    border: 0;
+    border-left: 3px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .nav-group:hover .nav-submenu:not(:focus-within) { display: none; }
+  .nav-group.submenu-open .nav-submenu,
+  .nav-group:focus-within .nav-submenu { display: grid; }
   .primary-nav a.nav-consulting { width: 100%; margin: .35rem 0 0; }
   .hero-grid, .two-col, .toolkit-layout, .learn-layout, .learn-hero, .curriculum-branches, .assessment-grid, .detail-grid, .guide-layout, .plays-overview-grid, .community-layout, .community-hero, .case-study-grid, .support-area-header, .support-area-grid, .member-dashboard, .member-workspace-grid, .member-list.compact, .org-workspace-header, .org-form, .org-grid, .change-profile-grid, .change-metric-grid { grid-template-columns: 1fr; }
   .hero-band .hero-grid { grid-template-columns: minmax(0, 1fr); }

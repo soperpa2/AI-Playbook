@@ -7,7 +7,7 @@
  * Organization Hub is intentionally Full-only; Essentials still exposes My Account.
  *
  * When adding or renaming a public destination:
- * 1. update both link arrays in the same change;
+ * 1. update the shared group definitions and their edition-specific routes in the same change;
  * 2. add the Essentials active-key mapping when necessary;
  * 3. verify desktop and mobile menus in both editions; and
  * 4. preserve the conspicuous Consulting Support route.
@@ -17,7 +17,7 @@
  * idempotent: repeated calls may add classes but must not duplicate content.
  */
 (function renderSharedPlaybookShell() {
-  /** True only for pages served from the Essentials Edition pages served from the legacy internal `mvp/` directory. */
+  /** True only for Essentials Edition pages served from the legacy internal `mvp/` directory. */
   const foundation = location.pathname.includes("/mvp/");
   if (foundation) {
     document.body.classList.add("foundation-edition");
@@ -34,19 +34,29 @@
    * Labels and keys should match across editions even when URLs do not.
    * @type {Array<[string,string,string]>}
    */
-  const links = foundation ? [
-    ["Start Here", "index.html#top", "start"], ["Learn", "learning.html", "learn"], ["Assess", "assess.html", "assess"],
-    ["Maturity Model", "foundation-page.html?view=maturity", "maturity"], ["Plays", "plays.html", "plays"], ["Toolkit", "toolkit.html", "toolkit"], ["My Account", "account.html", "member"],
-    ["Case Studies", "foundation-page.html?view=cases", "cases"], ["Community", "foundation-page.html?view=community", "community"],
-    ["Contribute", "feedback.html", "contribute"], ["Contact Us", "foundation-page.html?view=contact", "contact"],
-    ["Resources", "resources.html", "resources"], ["In the News", "foundation-page.html?view=news", "news"],
-    ["Consulting Support", "consulting.html", "consulting"]
-  ] : [
-    ["Start Here", "#/", "start"], ["Learn", "#/learn", "learn"], ["Assess", "#/assess", "assess"], ["Maturity Model", "#/maturity", "maturity"],
-    ["Plays", "#/plays", "plays"], ["Toolkit", "#/toolkit", "toolkit"], ["Case Studies", "#/cases", "cases"], ["My Account", "#/member", "member"],
-    ["Organization Hub", "#/organization", "organization"], ["Community", "#/community", "community"], ["Contribute", "#/contribute", "contribute"],
-    ["Contact Us", "#/contact", "contact"], ["Resources", "#/references", "resources"], ["In the News", "#/news", "news"],
-    ["Consulting Support", "#/consulting", "consulting"]
+  const route = (full, essentials) => foundation ? essentials : full;
+  const groups = [
+    { label: "Start Here", href: route("#/", "index.html#top"), key: "start", items: [
+      ["Home", route("#/", "index.html#top"), "start"], ["Maturity Model", route("#/maturity", "foundation-page.html?view=maturity"), "maturity"]
+    ]},
+    { label: "Learn", href: route("#/learn", "learning.html"), key: "learn", items: [
+      ["Learning Catalog", route("#/learn", "learning.html"), "learn"], ["Learning Pathways", route("#/learning-pathways", "training-paths.html"), "learn"], ["Personalized Learning Assessment", route("#/learning-assessment", "learning-assessment.html"), "learn"]
+    ]},
+    { label: "Assess", href: route("#/assess", "assess.html"), key: "assess", items: [
+      ["Readiness and Pathway Assessment", route("#/assess", "assess.html"), "assess"], ["Maturity Model", route("#/maturity", "foundation-page.html?view=maturity"), "maturity"]
+    ]},
+    { label: "Plays", href: route("#/plays", "plays.html"), key: "plays", items: [
+      ["All 13 Plays", route("#/plays", "plays.html"), "plays"], ["Case Studies", route("#/cases", "foundation-page.html?view=cases"), "cases"]
+    ]},
+    { label: "Toolkit", href: route("#/toolkit", "toolkit.html"), key: "toolkit", items: [
+      ["Browse Toolkit", route("#/toolkit", "toolkit.html"), "toolkit"], ["Evidence and Resources", route("#/references", "resources.html"), "resources"]
+    ]},
+    { label: "Community", href: route("#/community", "foundation-page.html?view=community"), key: "community", items: [
+      ["Community", route("#/community", "foundation-page.html?view=community"), "community"], ["Become a Reviewer", route("#/contribute", "reviewer.html"), "contribute"], ["Feedback", route("#/contribute", "feedback.html"), "contribute"], ["In the News", route("#/news", "foundation-page.html?view=news"), "news"], ["Contact Us", route("#/contact", "foundation-page.html?view=contact"), "contact"]
+    ]},
+    { label: "My Account", href: route("#/member", "account.html"), key: "member", items: foundation ? [
+      ["My Account", "account.html", "member"]
+    ] : [["My Account", "#/member", "member"], ["Organization Hub", "#/organization", "organization"]] }
   ];
 
   const header = document.querySelector("header");
@@ -60,7 +70,8 @@
      * the Menu button and the additional product identification improves orientation.
      * The accessible link label preserves the complete name at every viewport size.
      */
-    header.innerHTML = `<a class="brand" href="${foundation ? "index.html#top" : "#/"}" aria-label="AI Playbook, Toolkit, and Learning Modules home"><img class="brand-logo" src="${foundation ? "../" : ""}assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt=""><span class="mobile-brand-text"><strong>AI Playbook, Toolkit &amp; Learning Modules</strong><small>${foundation ? "Essentials Edition" : "for Public Health Departments"}</small></span></a><button class="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">${links.map(([label, href, key]) => `<a class="${key === "consulting" ? "nav-consulting" : ""}" href="${href}" data-nav="${key}">${label}</a>`).join("")}</nav>`;
+    const groupMarkup = groups.map((group, index) => `<div class="nav-group" data-nav-group="${group.key}"><span class="nav-primary-row"><a class="nav-primary" href="${group.href}" data-nav="${group.key}">${group.label}</a><button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-controls="nav-submenu-${index}" aria-label="Show ${group.label} menu"><span aria-hidden="true">▾</span></button></span><div class="nav-submenu" id="nav-submenu-${index}">${group.items.map(([label, href, key]) => `<a href="${href}" data-nav="${key}">${label}</a>`).join("")}</div></div>`).join("");
+    header.innerHTML = `<a class="brand" href="${foundation ? "index.html#top" : "#/"}" aria-label="AI Playbook for Public Health home"><img class="brand-logo" src="${foundation ? "../" : ""}assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt=""><span class="mobile-brand-text"><strong>AI Playbook for Public Health</strong><small>${foundation ? "Essentials Edition" : "Full Version"}</small></span></a><button class="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">${groupMarkup}<a class="nav-consulting" href="${foundation ? "consulting.html" : "#/consulting"}" data-nav="consulting">Consulting Support</a></nav>`;
     const menu = header.querySelector(".menu-button");
     const nav = header.querySelector("#primary-nav");
     /*
@@ -72,6 +83,16 @@
       const open = nav.classList.toggle("open");
       menu.setAttribute("aria-expanded", String(open));
     });
+    /* Hover/focus opens submenus on desktop; these buttons provide equivalent
+     * disclosure behavior for touch, keyboard, and the compact mobile menu. */
+    nav.querySelectorAll(".nav-submenu-toggle").forEach(toggle => toggle.addEventListener("click", event => {
+      event.stopPropagation();
+      const group = toggle.closest(".nav-group");
+      const open = !group.classList.contains("submenu-open");
+      nav.querySelectorAll(".nav-group.submenu-open").forEach(item => { item.classList.remove("submenu-open"); item.querySelector(".nav-submenu-toggle")?.setAttribute("aria-expanded", "false"); });
+      group.classList.toggle("submenu-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    }));
     /* Close the compact menu after navigation so the destination is unobstructed. */
     nav.addEventListener("click", event => {
       if (!event.target.closest("a")) return;
@@ -120,7 +141,10 @@
    * Public shell API used by edition pages.
    * `setActive` changes presentation/ARIA state only; it does not navigate.
    */
-  window.PlaybookShell = { foundation, applyTemplates: applyEssentialsTemplates, setActive(key) { document.querySelectorAll(".primary-nav a").forEach(link => { const active = link.dataset.nav === key; link.classList.toggle("active", active); if (active) link.setAttribute("aria-current", "page"); else link.removeAttribute("aria-current"); }); } };
+  window.PlaybookShell = { foundation, applyTemplates: applyEssentialsTemplates, setActive(key) {
+    document.querySelectorAll(".primary-nav a").forEach(link => { const active = link.dataset.nav === key; link.classList.toggle("active", active); if (active) link.setAttribute("aria-current", "page"); else link.removeAttribute("aria-current"); });
+    document.querySelectorAll(".nav-group").forEach(group => group.classList.toggle("active", Boolean(group.querySelector(`a[data-nav="${key}"]`))));
+  } };
   if (foundation) {
     window.PlaybookShell.setActive(foundationActiveKey());
     const main = document.querySelector("main");
