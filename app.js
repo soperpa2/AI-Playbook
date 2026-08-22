@@ -5365,6 +5365,24 @@ function renderCurriculumModule(module, moduleNav, lessonDownloadButtons, glossa
     <summary>${curriculumSectionHeading(module, section)}</summary>
     <div class="lesson-prose">${renderLearningSection(section)}</div>
   </details>`).join("");
+  /*
+   * The Full Version and Essentials Edition now share the same canonical
+   * module shell. Full retains its interactive exercise and scored knowledge
+   * check by supplying those controls to the shared presentation template.
+   */
+  if (window.PlaybookCurriculumModuleTemplate) {
+    main.innerHTML = `<section class="page course-page">
+      ${breadcrumbTrail()}
+      <div class="learn-layout">${moduleNav}<div>${window.PlaybookCurriculumModuleTemplate.render(module, {
+        downloads: lessonDownloadButtons,
+        related: `${relatedToolPanelForModule(module.id)}${relatedPlayPanelForModule(module.id)}`,
+        apply: `<div id="course-apply">${renderPracticalExercise(module, exerciseApplication)}</div>`,
+        check: `<div id="course-check">${renderCurriculumKnowledgeCheck(module)}</div>`,
+        resources: `<div id="course-resources">${renderCurriculumReferences(module)}${glossaryCta}</div>`,
+        footer: curriculumModuleTrackLinks(module)
+      })}</div></div></section>`;
+    return;
+  }
   main.innerHTML = `<section class="page course-page">
     ${breadcrumbTrail()}
     <div class="learn-layout">
