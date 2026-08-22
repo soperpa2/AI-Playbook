@@ -1,7 +1,7 @@
 # Equity Governance Implementation Standard
 
 Status: Version 1 recommendation  
-Applies to: Full Version and Foundation Edition  
+Applies to: Full Version and Essentials Edition
 Last reviewed: 2026-08-18
 
 ## Purpose
@@ -52,7 +52,7 @@ The controls are implemented through a connected trio of existing tools:
 2. Tool 32, Vendor Evaluation Checklist, records vendor evidence, independent audits, subgroup performance, contract rights, remediation deadlines, and consequences.
 3. Tool 47, Equity & Disparity Impact Monitoring, tracks post-deployment equity measures, triggers, community feedback, corrective action, escalation, and retirement decisions.
 
-Foundation Edition tools for Plays 4, 7, and 13 ask the corresponding participation, screening, and monitoring questions without exposing the Full Version tool set.
+Essentials Edition tools for Plays 4, 7, and 13 ask the corresponding participation, screening, and monitoring questions without exposing the Full Version tool set.
 
 ## Evidence and publication rules
 

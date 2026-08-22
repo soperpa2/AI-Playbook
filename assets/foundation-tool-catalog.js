@@ -2,7 +2,7 @@
  * GENERATED FILE — DO NOT HAND EDIT.
 + * Source: app.js canonical tool catalogue.
 + * Generator: scripts/generate-foundation-tool-catalog.js.
-+ * The Full and Foundation editions consume these exact selected tool records.
++ * The Full and Essentials editions consume these exact selected tool records.
 + */
 window.FoundationToolCatalog = {
   "schemaVersion": "1.0",

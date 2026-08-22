@@ -3562,7 +3562,7 @@ window.CURRICULUM_DATA = {
       "required_prefixes": [
         "HED"
       ],
-      "recommended_completion": "Complete foundation modules, then complete the HED sequence before using AI in public-facing education or training work."
+      "recommended_completion": "Complete essentials modules, then complete the HED sequence before using AI in public-facing education or training work."
     },
     {
       "plan_id": "policy-ai-readiness",
@@ -39855,7 +39855,7 @@ window.CURRICULUM_DATA = {
           "primary_track": "Shared Foundational / Introductory Course",
           "level_label": "introductory",
           "estimated_time_minutes": 30,
-          "format": "Self-paced foundation module with exercise and knowledge check",
+          "format": "Self-paced essentials module with exercise and knowledge check",
           "audience": [
             "All public health staff",
             "Supervisors",
@@ -40289,7 +40289,7 @@ window.CURRICULUM_DATA = {
           "primary_track": "Shared Foundational / Introductory Course",
           "level_label": "applied/foundational",
           "estimated_time_minutes": 30,
-          "format": "Self-paced foundation module with exercise and knowledge check",
+          "format": "Self-paced essentials module with exercise and knowledge check",
           "audience": [
             "All public health staff",
             "Supervisors",

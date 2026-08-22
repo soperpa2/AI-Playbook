@@ -1,5 +1,5 @@
 /**
- * Foundation projection of canonical plays and one released Foundation Tool per play.
+ * Essentials projection of canonical plays and one released Essentials Tool per play.
  * Full Version content/graphics are authoritative. Preserve stable numbers and keep
  * all navigation destinations edition-local in the rendering layer.
  */
@@ -7,7 +7,7 @@ window.launchContent = {
   schemaVersion: "1.0",
   release: {
     id: "release:foundation-2026-08",
-    label: "Foundation Edition",
+    label: "Essentials Edition",
     version: "0.9",
     status: "beta_review",
     updatedAt: "2026-08-16",
@@ -31,7 +31,7 @@ window.launchContent = {
   ]
 };
 
-// Full Version play names are shared across editions; Foundation changes access depth, not the framework.
+// Full Version play names are shared across editions; Essentials changes access depth, not the framework.
 [
   "Vision & Guardrails",
   "Validate Readiness and Plan Improvements",

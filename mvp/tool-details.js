@@ -1,9 +1,9 @@
 /**
- * Foundation renderer for the 13 canonical Full Version tools.
+ * Essentials renderer for the 13 canonical Full Version tools.
  *
  * Tool metadata, ordered sections, fields, output statements, and stable IDs come
  * only from the generated FoundationToolCatalog. Field controls are rendered only
- * by the same GuidedToolTemplate used by the Full Version. Foundation may differ in
+ * by the same GuidedToolTemplate used by the Full Version. Essentials may differ in
  * access, storage, downloads, and organization rollups, but never in the instrument.
  * Browser storage is demonstrative; never enter PHI or confidential case records.
  */
@@ -66,8 +66,8 @@
     body.appendChild(row);
   }
 
-  document.title = `Tool ${tool.id}: ${tool.title} | Foundation Edition`;
-  main.innerHTML = window.PlaybookTemplates.pageOpen({ title: `Tool ${tool.id}: ${tool.title}`, lead: tool.purpose, eyebrow: `Foundation Edition · Canonical Tool for Play ${play.number}`, className: "foundation-tool-page" }) + `
+  document.title = `Tool ${tool.id}: ${tool.title} | Essentials Edition`;
+  main.innerHTML = window.PlaybookTemplates.pageOpen({ title: `Tool ${tool.id}: ${tool.title}`, lead: tool.purpose, eyebrow: `Essentials Edition · Canonical Tool for Play ${play.number}`, className: "foundation-tool-page" }) + `
     <div class="content-meta"><span>Same tool as Full Version</span><span>Version ${release.version}</span><span>Supports Play ${play.number}</span></div>
     <div class="detail-grid tool-detail-grid"><article class="panel">
       <section class="tool-guide"><p class="eyebrow">Before you begin</p><h2>Use this tool during the work</h2><p><strong>When:</strong> Complete it when Play ${play.number} requires its documented output. <strong>Why:</strong> It creates a reviewable implementation record. <strong>How:</strong> Name an owner, involve the recommended roles, document evidence, assign follow-up, obtain required approval, and retain the result.</p><p><strong>Who:</strong> ${play.people.map(escape).join("; ")}.</p><p><a href="detail.html?play=${play.number}">Review Play ${play.number}: ${escape(play.title)} before completing the tool →</a></p></section>
@@ -75,7 +75,7 @@
       <form id="tool-form" class="tool-form"><section class="tool-section"><h3>Administrative Details</h3><div class="form-grid">${administrativeFields()}</div></section>${window.GuidedToolTemplate.render(definition)}${selectionDocumentation()}${actionTracker()}</form>
       <div class="button-row no-print"><button class="btn primary" type="button" id="save-tool-progress">Save Progress</button><button class="btn" type="button" id="download-tool" ${member ? "" : "disabled"}>Download Responses</button><button class="btn" type="button" id="print-tool" ${member ? "" : "disabled"}>Print or Save as PDF</button><button class="btn" type="button" id="clear-tool">Clear</button></div>
       ${member ? "" : '<p class="member-status locked no-print"><strong>Free membership required for downloads.</strong> <a href="account.html">Create or open My Account</a>.</p>'}<p id="tool-save-status" class="tool-save-status" role="status"></p>
-    </article><aside class="detail-card-list"><section class="panel"><h2>Outputs</h2><ul class="compact-list">${(catalogue.outputs[toolId] || []).map(output => `<li>${escape(output)}</li>`).join("")}</ul></section><section class="panel"><h2>Related play</h2><a href="detail.html?play=${play.number}">Play ${play.number}: ${escape(play.title)}</a></section><section class="panel"><h2>Edition note</h2><p>The instrument is identical across editions. Foundation does not include organization-level task aggregation, analytics, or the complete 49-tool library.</p></section></aside></div></section>`;
+    </article><aside class="detail-card-list"><section class="panel"><h2>Outputs</h2><ul class="compact-list">${(catalogue.outputs[toolId] || []).map(output => `<li>${escape(output)}</li>`).join("")}</ul></section><section class="panel"><h2>Related play</h2><a href="detail.html?play=${play.number}">Play ${play.number}: ${escape(play.title)}</a></section><section class="panel"><h2>Edition note</h2><p>The instrument is identical across editions. Essentials does not include organization-level task aggregation, analytics, or the complete 49-tool library.</p></section></aside></div></section>`;
 
   window.GuidedToolTemplate.hydrate(document.getElementById("tool-form"));
   document.querySelectorAll('#tool-form .guided-checkbox-group input[type="checkbox"]').forEach(input => input.addEventListener("change", syncSelectionDocumentation));

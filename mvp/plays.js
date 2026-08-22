@@ -1,4 +1,4 @@
-/** Foundation play catalogue; phases mirror the canonical four-stop journey. */
+/** Essentials play catalogue; phases mirror the canonical four-stop journey. */
 const { plays } = window.launchContent;
 const phaseGuidance = {
   plan: ["PLAN", "Plays 1–7", "Set direction, understand readiness, establish governance, engage affected people, prepare the workforce, plan for change, and select responsible use cases."],
@@ -17,15 +17,15 @@ const phaseSections = Object.entries(phaseGuidance).map(([phase, [label, range, 
         <h3>${play.title}</h3>
         <p>${play.summary}</p>
         <p><strong>Expected output:</strong> ${play.output}</p>
-        <div class="button-row"><a class="btn primary" href="detail.html?play=${play.number}">Open Play ${play.number}</a><a class="btn" href="tool.html?play=${play.number}">Open Foundation Tool</a></div>
+        <div class="button-row"><a class="btn primary" href="detail.html?play=${play.number}">Open Play ${play.number}</a><a class="btn" href="tool.html?play=${play.number}">Open Essentials Tool</a></div>
       </article>`).join("")}
     </div>
   </section>`).join("");
 
 document.querySelector("#main").innerHTML = window.PlaybookTemplates.pageOpen({
-  eyebrow: "Foundation Edition Playbook",
+  eyebrow: "Essentials Edition Playbook",
   title: "13 plays from vision to continuous improvement.",
-  lead: "Use the plays as a sequenced decision pathway. Start with the earliest unresolved condition, apply governance gates throughout, and document decisions with the available Foundation Tool for each play."
+  lead: "Use the plays as a sequenced decision pathway. Start with the earliest unresolved condition, apply governance gates throughout, and document decisions with the available Essentials Tool for each play."
 }) + `
   <section class="panel playbook-overview">
     <h2>How to use the playbook</h2>
@@ -38,5 +38,5 @@ document.querySelector("#main").innerHTML = window.PlaybookTemplates.pageOpen({
     <p><strong>Customize the sequence responsibly:</strong> work already completed can be documented and validated rather than repeated. Return to earlier plays when a material gap or changed condition affects a later decision.</p>
   </section>
   ${phaseSections}
-  <section class="callout"><div><p class="eyebrow">Foundation Toolkit</p><h2>One usable tool for every play</h2><p>The Foundation Edition provides 13 available tools. Broader editable toolsets, facilitation methods, organizational workspaces, and reporting capabilities are available in other editions.</p></div><div class="button-row"><a class="btn primary" href="toolkit.html">Open the Foundation Toolkit</a><a class="btn" href="consulting.html">Need More Help?</a></div></section>
+  <section class="callout"><div><p class="eyebrow">Essentials Toolkit</p><h2>One usable tool for every play</h2><p>The Essentials Edition provides 13 available tools. Broader editable toolsets, facilitation methods, organizational workspaces, and reporting capabilities are available in other editions.</p></div><div class="button-row"><a class="btn primary" href="toolkit.html">Open the Essentials Toolkit</a><a class="btn" href="consulting.html">Need More Help?</a></div></section>
 </section>`;

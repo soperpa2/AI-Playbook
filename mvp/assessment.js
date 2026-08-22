@@ -1,11 +1,11 @@
 /**
- * Foundation readiness/pathway assessment controller.
+ * Essentials readiness/pathway assessment controller.
  * The assessment is the entry step before the journey, not a numbered tool. It
  * recommends an ordered pathway. Play 2 remains distinct: people validate these
  * preliminary results with local evidence and create an improvement plan there.
- * All Foundation result links must remain inside /mvp.
+ * All Essentials result links must remain inside /mvp.
  */
-(function renderFoundationAssessment() {
+(function renderEssentialsAssessment() {
   const main = document.querySelector("#assessment-main");
   const assessment = window.ReadinessAssessment;
   const plays = window.launchContent.plays;
@@ -54,7 +54,7 @@
     document.querySelector("#readiness-action").textContent = `Recommended: ${interpretation.action}`;
     const recommended = [...recommendations].sort((a, b) => a - b);
     latestResult = { score: percent, rawScore: `${total} / ${maximum}`, level: interpretation.level, action: interpretation.action, recommendedPlays: recommended, domainScores: scores, priorityGaps: gaps };
-    document.querySelector("#assessment-recs").innerHTML = `<h3>Your Customized Pathway</h3><p>${recommended.map(playLink).join("<br>")}</p><h3>Foundation Tools for Those Plays</h3><p>${recommended.map(number => `<a href="tool.html?play=${number}">${plays[number - 1].tool.title}</a>`).join("<br>")}</p><h3>Priority Gap Areas</h3><p>${gaps.length ? gaps.map(gap => `${gap.name}: ${gap.percent} / 100 (raw ${gap.subtotal} / 12)`).join("<br>") : "No domain scored 50 / 100 or below. Use the recommendations to prepare for the next stage."}</p>${recommended.includes(2) ? '<p><a class="btn small" href="tool.html?play=2">Continue to Play 2 validation and improvement planning</a></p>' : ''}`;
+    document.querySelector("#assessment-recs").innerHTML = `<h3>Your Customized Pathway</h3><p>${recommended.map(playLink).join("<br>")}</p><h3>Essentials Tools for Those Plays</h3><p>${recommended.map(number => `<a href="tool.html?play=${number}">${plays[number - 1].tool.title}</a>`).join("<br>")}</p><h3>Priority Gap Areas</h3><p>${gaps.length ? gaps.map(gap => `${gap.name}: ${gap.percent} / 100 (raw ${gap.subtotal} / 12)`).join("<br>") : "No domain scored 50 / 100 or below. Use the recommendations to prepare for the next stage."}</p>${recommended.includes(2) ? '<p><a class="btn small" href="tool.html?play=2">Continue to Play 2 validation and improvement planning</a></p>' : ''}`;
   }
 
   document.querySelector("#assessment").addEventListener("change", update);

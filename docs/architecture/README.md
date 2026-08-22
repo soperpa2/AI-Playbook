@@ -17,7 +17,7 @@ This documentation defines how the current AI Playbook website can evolve into a
 7. [Implementation Roadmap](implementation-roadmap.md) — sequenced delivery, decision gates, migration, acceptance criteria, and measures.
 8. [User Personas](user-personas.md) — priority users, needs, barriers, journeys, and platform implications.
 
-9. [Foundation Edition Alignment Standard](foundation-edition-alignment.md) — shared content, edition boundaries, link rules, and current alignment status.
+9. [Essentials Edition Alignment Standard](essentials-edition-alignment.md) — shared content, edition boundaries, link rules, and current alignment status.
 
 10. [Governmental Public Health AI News Standard](governmental-public-health-ai-news-standard.md) — inclusion criteria, source hierarchy, labeling, automation, shared-edition rules, and governance.
 
@@ -27,15 +27,15 @@ This documentation defines how the current AI Playbook website can evolve into a
 
 13. [Curriculum Source Alignment: 2026 Update](curriculum-source-alignment-2026.md) — updated modules, CDC/WHO/HHS source alignment, template review decisions, and publication sequencing.
 
-14. [Foundation Edition Production Launch Plan](Foundation_Edition_Production_Launch_Plan.docx) — recommended production stack, secure accounts, multi-user persistence, security boundaries, deployment workflow, and implementation roadmap.
+14. [Essentials Edition Production Launch Plan](Essentials_Edition_Production_Launch_Plan.docx) — recommended production stack, secure accounts, multi-user persistence, security boundaries, deployment workflow, and implementation roadmap.
 
-15. [Foundation Edition Launch Budget](Foundation_Edition_Launch_Budget.xlsx) — editable 12-month Lean, Base, and Growth budget scenarios, monthly cash flow, assumptions, sources, and model checks.
+15. [Essentials Edition Launch Budget](Essentials_Edition_Launch_Budget.xlsx) — editable 12-month Lean, Base, and Growth budget scenarios, monthly cash flow, assumptions, sources, and model checks.
 
-16. [Foundation Edition User Persona Storyboards](Foundation_Edition_User_Persona_Storyboards.pptx) — role-based Foundation journeys, storyboards, user stories, and acceptance criteria.
+16. [Essentials Edition User Persona Storyboards](Essentials_Edition_User_Persona_Storyboards.pptx) — role-based Essentials journeys, storyboards, user stories, and acceptance criteria.
 
-17. [Foundation Edition Outreach and Communications Plan](Foundation_Edition_Outreach_and_Communications_Plan.docx) — role-stratified positioning, channels, calls to action, launch cadence, measurement, governance, and trust guardrails.
+17. [Essentials Edition Outreach and Communications Plan](Essentials_Edition_Outreach_and_Communications_Plan.docx) — role-stratified positioning, channels, calls to action, launch cadence, measurement, governance, and trust guardrails.
 
-18. [Foundation Edition Government Purchasing Options](Foundation_Edition_Government_Purchasing_Options.docx) — government payment routes, procurement package, quote-to-renewal workflow, website requirements, and implementation priorities.
+18. [Essentials Edition Government Purchasing Options](Essentials_Edition_Government_Purchasing_Options.docx) — government payment routes, procurement package, quote-to-renewal workflow, website requirements, and implementation priorities.
 
 ## Decisions at a glance
 

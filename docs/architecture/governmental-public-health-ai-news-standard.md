@@ -61,7 +61,7 @@ The controlled registry is `content/news-sources.json`. A source may be included
 
 ## Shared-edition rule
 
-The canonical and Foundation editions use the same news data and page template. External article URLs are identical. Related internal links must resolve within the reader's current edition; Foundation news must never route users into canonical hash routes.
+The Full and Essentials editions use the same news data and page template. External article URLs are identical. Related internal links must resolve within the reader's current edition; Essentials news must never route users into Full Version hash routes.
 
 ## Automation and governance
 

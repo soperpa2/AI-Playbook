@@ -14,14 +14,14 @@ The AI Playbook should evolve from a static website prototype into a public heal
 6. **Progressive enhancement.** Core public content remains accessible without account services or client-side persistence.
 7. **Public-health safeguards.** Accessibility, privacy, security, equity, scientific integrity, records obligations, and human oversight are architecture concerns.
 8. **Portability.** Content uses documented, repository-readable formats and can be exported without vendor lock-in.
-9. **One repository, multiple editions.** The full platform and customer-facing Foundation Edition are separate presentations of the same canonical records and assets, not independently maintained sites.
-10. **Full-site visual authority.** The full site is the canonical source for logos, diagrams, journey graphics, icons, and other shared visual assets. The Foundation Edition references those assets directly and may simplify surrounding presentation, but must not fork the graphic itself.
+9. **One repository, multiple editions.** The full platform and customer-facing Essentials Edition are separate presentations of the same canonical records and assets, not independently maintained sites.
+10. **Full-site visual authority.** The full site is the canonical source for logos, diagrams, journey graphics, icons, and other shared visual assets. The Essentials Edition references those assets directly and may simplify surrounding presentation, but must not fork the graphic itself.
 
-## Full platform and Foundation Edition
+## Full platform and Essentials Edition
 
-The repository supports two front ends: the full platform at the repository root and the Foundation Edition under the internal `mvp/` directory. Both consume the same stable content identities, shared metadata, relationships, and visual assets. Publication policy determines which fields and records the Foundation Edition may expose; it must not create a second editable copy of a play, tool, case study, learning item, or graphic.
+The repository supports two front ends: the full platform at the repository root and the Essentials Edition under the internal `mvp/` directory. Both consume the same stable content identities, shared metadata, relationships, and visual assets. Publication policy determines which fields and records the Essentials Edition may expose; it must not create a second editable copy of a play, tool, case study, learning item, or graphic.
 
-Both front ends also use the same shared site-shell and page-template modules. Edition configuration controls destinations and suppresses `My Account` and `Organization Hub` in the Foundation Edition; it does not fork navigation markup, header/footer behavior, or core page-layout primitives.
+Both front ends also use the same shared site-shell and page-template modules. Edition configuration controls destinations and suppresses `My Account` and `Organization Hub` in the Essentials Edition; it does not fork navigation markup, header/footer behavior, or core page-layout primitives.
 
 For the transitional v1 implementation, `content/public-catalog.js` is the shared public projection for the 13 plays and one approved Starter Tool per play. `content/publication-policy.json` documents edition boundaries. Remaining collections should migrate from application code to typed canonical records in bounded increments. Until migration is complete, the full site remains authoritative and parity checks are required whenever duplicated legacy material changes.
 

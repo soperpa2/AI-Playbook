@@ -10,7 +10,7 @@
  *
  * CANONICAL CONTENT CONTRACT
  * - Full Version play names, numbers, phase assignments, tool relationships, and
- *   graphics are canonical. Foundation must reuse or deliberately subset them.
+ *   graphics are canonical. Essentials must reuse or deliberately subset them.
  * - A play/tool/module identifier is persistent data. Never renumber it merely to
  *   change display order; use explicit ordering rules instead.
  * - Project Summary presentation remains unchanged unless a reviewed schema
@@ -781,7 +781,7 @@ function outputsForPlay(play) {
  * assignment is deliberately applied back to the Full Version so both editions
  * consume the same selected metadata, blueprints, and outputs at runtime. This also
  * makes accidental edits to the generated projection visible immediately instead of
- * allowing a silent Foundation-only variant.
+ * allowing a silent Essentials-only variant.
  */
 if (window.FoundationToolCatalog) {
   window.FoundationToolCatalog.tools.forEach(sharedTool => {
@@ -5012,7 +5012,7 @@ function renderPersonalizedLearningAssessment() {
   main.innerHTML = pageIntro("Personalized Learning Pathway Assessment", "Identify foundational and role-specific learning priorities and generate an ordered module pathway.") + `
     <section class="panel learning-assessment-intro">
       <div class="button-row">${courseCatalogReturnButton()}<a class="btn small" href="#/learning-pathways">View Ready-Made Pathways</a></div>
-      <p>This is an individual learning diagnostic, not the organizational readiness assessment. Rate what you can do now. The results identify strengths and priority gaps, then combine required foundation modules with the track that best matches your responsibilities.</p>
+      <p>This is an individual learning diagnostic, not the organizational readiness assessment. Rate what you can do now. The results identify strengths and priority gaps, then combine required essentials modules with the track that best matches your responsibilities.</p>
       <p class="callout"><strong>Scale:</strong> 0 = New to this; 1 = Need substantial development; 2 = Can apply with support; 3 = Can apply independently and explain to others.</p>
     </section>
     <section class="panel">
@@ -9966,4 +9966,3 @@ function downloadBlob(filename, content, type = "") {
 
 window.addEventListener("hashchange", route);
 route();
-

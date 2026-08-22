@@ -3,21 +3,21 @@
  *
  * This is the cross-edition shell contract. Both editions expose the same public
  * navigation concepts and brand treatment. URLs differ because the Full Version is
- * a hash-routed single-page application while Foundation uses static HTML pages.
- * Organization Hub is intentionally Full-only; Foundation still exposes My Account.
+ * a hash-routed single-page application while Essentials uses static HTML pages.
+ * Organization Hub is intentionally Full-only; Essentials still exposes My Account.
  *
  * When adding or renaming a public destination:
  * 1. update both link arrays in the same change;
- * 2. add the Foundation active-key mapping when necessary;
+ * 2. add the Essentials active-key mapping when necessary;
  * 3. verify desktop and mobile menus in both editions; and
  * 4. preserve the conspicuous Consulting Support route.
  *
- * The MutationObserver exists because several Foundation pages render their main
- * content after this script runs. `applyFoundationTemplates` must therefore remain
+ * The MutationObserver exists because several Essentials pages render their main
+ * content after this script runs. `applyEssentialsTemplates` must therefore remain
  * idempotent: repeated calls may add classes but must not duplicate content.
  */
 (function renderSharedPlaybookShell() {
-  /** True only for pages served from the Foundation edition directory. */
+  /** True only for pages served from the Essentials Edition pages served from the legacy internal `mvp/` directory. */
   const foundation = location.pathname.includes("/mvp/");
   if (foundation) {
     document.body.classList.add("foundation-edition");
@@ -60,7 +60,7 @@
      * the Menu button and the additional product identification improves orientation.
      * The accessible link label preserves the complete name at every viewport size.
      */
-    header.innerHTML = `<a class="brand" href="${foundation ? "index.html#top" : "#/"}" aria-label="AI Playbook, Toolkit, and Learning Modules home"><img class="brand-logo" src="${foundation ? "../" : ""}assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt=""><span class="mobile-brand-text"><strong>AI Playbook, Toolkit &amp; Learning Modules</strong><small>${foundation ? "Foundation Edition" : "for Public Health Departments"}</small></span></a><button class="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">${links.map(([label, href, key]) => `<a class="${key === "consulting" ? "nav-consulting" : ""}" href="${href}" data-nav="${key}">${label}</a>`).join("")}</nav>`;
+    header.innerHTML = `<a class="brand" href="${foundation ? "index.html#top" : "#/"}" aria-label="AI Playbook, Toolkit, and Learning Modules home"><img class="brand-logo" src="${foundation ? "../" : ""}assets/ai-playbook-logo-public-health.png?v=transparent-bg" alt=""><span class="mobile-brand-text"><strong>AI Playbook, Toolkit &amp; Learning Modules</strong><small>${foundation ? "Essentials Edition" : "for Public Health Departments"}</small></span></a><button class="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">${links.map(([label, href, key]) => `<a class="${key === "consulting" ? "nav-consulting" : ""}" href="${href}" data-nav="${key}">${label}</a>`).join("")}</nav>`;
     const menu = header.querySelector(".menu-button");
     const nav = header.querySelector("#primary-nav");
     /*
@@ -83,10 +83,10 @@
   const footer = document.querySelector("footer");
   if (footer) {
     footer.className = "site-footer";
-    footer.innerHTML = foundation ? `<span>AI Playbook, Toolkit, and Learning Modules for Public Health Departments</span><span>&copy; 2026 Paula Soper. All rights reserved.</span><span>Foundation Edition</span><span><a href="consulting.html">Need More Help?</a> · <a href="foundation-page.html?view=contact">Contact Us</a></span><span><a href="feedback.html">Feedback</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></span>` : `<span>AI Playbook, Toolkit, and Learning Modules for Public Health Departments</span><span>&copy; 2026 Paula Soper. All rights reserved.</span><span>Updated implementation website</span><span><a href="#/consulting">Need More Help?</a> · <a href="#/contact">Contact Us</a></span><span><a href="#/contribute">Feedback</a> · Playbook: <a href="downloads/AI_Playbook_for_Public_Health_Playbook.pdf">PDF</a> / <a href="downloads/AI_Playbook_for_Public_Health_Playbook.docx">Word</a> · Toolkit: <a href="downloads/AI_Playbook_for_Public_Health_Toolkit.pdf">PDF</a> / <a href="downloads/AI_Playbook_for_Public_Health_Toolkit.docx">Word</a></span>`;
+    footer.innerHTML = foundation ? `<span>AI Playbook, Toolkit, and Learning Modules for Public Health Departments</span><span>&copy; 2026 Paula Soper. All rights reserved.</span><span>Essentials Edition</span><span><a href="consulting.html">Need More Help?</a> · <a href="foundation-page.html?view=contact">Contact Us</a></span><span><a href="feedback.html">Feedback</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></span>` : `<span>AI Playbook, Toolkit, and Learning Modules for Public Health Departments</span><span>&copy; 2026 Paula Soper. All rights reserved.</span><span>Updated implementation website</span><span><a href="#/consulting">Need More Help?</a> · <a href="#/contact">Contact Us</a></span><span><a href="#/contribute">Feedback</a> · Playbook: <a href="downloads/AI_Playbook_for_Public_Health_Playbook.pdf">PDF</a> / <a href="downloads/AI_Playbook_for_Public_Health_Playbook.docx">Word</a> · Toolkit: <a href="downloads/AI_Playbook_for_Public_Health_Toolkit.pdf">PDF</a> / <a href="downloads/AI_Playbook_for_Public_Health_Toolkit.docx">Word</a></span>`;
   }
 
-  /** @returns {string} Stable navigation key for the current Foundation page. */
+  /** @returns {string} Stable navigation key for the current Essentials page. */
   function foundationActiveKey() {
     const page = location.pathname.split("/").pop() || "index.html";
     const params = new URLSearchParams(location.search);
@@ -103,11 +103,11 @@
   }
 
   /**
-   * Adds shared semantic layout classes to legacy Foundation markup.
+   * Adds shared semantic layout classes to legacy Essentials markup.
    * Safe to invoke repeatedly after dynamic rendering.
    * @returns {void}
    */
-  function applyFoundationTemplates() {
+  function applyEssentialsTemplates() {
     const main = document.querySelector("main");
     if (main && !main.querySelector(":scope > .page") && !main.querySelector(":scope > .hero, :scope > .hero-band")) main.classList.add("page", "shared-page-template");
     document.querySelectorAll(".page-hero, .resource-hero, .learning-hero, .assessment-hero, .account-hero").forEach(element => element.classList.add("panel", "shared-page-hero"));
@@ -120,11 +120,11 @@
    * Public shell API used by edition pages.
    * `setActive` changes presentation/ARIA state only; it does not navigate.
    */
-  window.PlaybookShell = { foundation, applyTemplates: applyFoundationTemplates, setActive(key) { document.querySelectorAll(".primary-nav a").forEach(link => { const active = link.dataset.nav === key; link.classList.toggle("active", active); if (active) link.setAttribute("aria-current", "page"); else link.removeAttribute("aria-current"); }); } };
+  window.PlaybookShell = { foundation, applyTemplates: applyEssentialsTemplates, setActive(key) { document.querySelectorAll(".primary-nav a").forEach(link => { const active = link.dataset.nav === key; link.classList.toggle("active", active); if (active) link.setAttribute("aria-current", "page"); else link.removeAttribute("aria-current"); }); } };
   if (foundation) {
     window.PlaybookShell.setActive(foundationActiveKey());
     const main = document.querySelector("main");
-    applyFoundationTemplates();
-    if (main) new MutationObserver(applyFoundationTemplates).observe(main, { childList: true, subtree: true });
+    applyEssentialsTemplates();
+    if (main) new MutationObserver(applyEssentialsTemplates).observe(main, { childList: true, subtree: true });
   }
 })();

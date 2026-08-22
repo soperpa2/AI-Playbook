@@ -1,9 +1,9 @@
 /**
- * Generate the Foundation Edition's 13-tool projection from the Full Version.
+ * Generate the Essentials Edition's 13-tool projection from the Full Version.
  *
  * WHY THIS EXISTS
  * The Full Version's `tools`, `toolFormBlueprints`, and `toolOutputOverrides` in
- * app.js are canonical. Foundation previously maintained shorter, hand-authored
+ * app.js are canonical. Essentials previously maintained shorter, hand-authored
  * substitutes, which allowed names and fields to drift. This generator extracts
  * the approved one-tool-per-play selection without rewriting or simplifying it.
  *
@@ -25,7 +25,7 @@ const source = fs.readFileSync(sourcePath, "utf8");
 const catalogueEnd = source.indexOf("function outputsForTool");
 if (catalogueEnd < 0) throw new Error("Could not locate the canonical tool catalogue boundary in app.js.");
 
-/* One complete canonical tool is released for each play in Foundation. */
+/* One complete canonical tool is released for each play in Essentials. */
 const playToolMap = Object.freeze({ 1: 1, 2: 7, 3: 11, 4: 21, 5: 25, 6: 30, 7: 49, 8: 33, 9: 36, 10: 29, 11: 43, 12: 46, 13: 45 });
 const selectedIds = Object.values(playToolMap);
 const context = { window: { launchContent: { plays: [] } } };
@@ -52,6 +52,6 @@ const data = {
   scenarios: context.__scenarioExport
 };
 
-const banner = `/**\n * GENERATED FILE — DO NOT HAND EDIT.\n+ * Source: app.js canonical tool catalogue.\n+ * Generator: scripts/generate-foundation-tool-catalog.js.\n+ * The Full and Foundation editions consume these exact selected tool records.\n+ */\n`;
+const banner = `/**\n * GENERATED FILE — DO NOT HAND EDIT.\n+ * Source: app.js canonical tool catalogue.\n+ * Generator: scripts/generate-foundation-tool-catalog.js.\n+ * The Full and Essentials editions consume these exact selected tool records.\n+ */\n`;
 fs.writeFileSync(outputPath, `${banner}window.FoundationToolCatalog = ${JSON.stringify(data, null, 2)};\n`, "utf8");
 console.log(`Generated ${path.relative(root, outputPath)} with ${data.tools.length} canonical tools.`);

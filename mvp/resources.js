@@ -1,5 +1,5 @@
 /**
- * Curated Foundation evidence catalogue. Records contain title, description,
+ * Curated Essentials evidence catalogue. Records contain title, description,
  * application, related plays, and authoritative URL. Prefer primary and peer-reviewed
  * sources, verify links/material changes, and do not imply endorsement.
  */
