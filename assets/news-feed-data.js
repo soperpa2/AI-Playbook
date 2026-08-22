@@ -1,6 +1,6 @@
 window.newsFeedData = {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-08-22T13:02:13.697Z",
+  "updatedAt": "2026-08-22T18:50:02.570Z",
   "updateMode": "curated-fallback",
   "items": [
     {
