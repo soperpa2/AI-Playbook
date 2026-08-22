@@ -31,11 +31,13 @@ This documentation defines how the current AI Playbook website can evolve into a
 
 15. [Essentials Edition Launch Budget](Essentials_Edition_Launch_Budget.xlsx) — editable 12-month Lean, Base, and Growth budget scenarios, monthly cash flow, assumptions, sources, and model checks.
 
-16. [Essentials Edition User Persona Storyboards](Essentials_Edition_User_Persona_Storyboards.pptx) — role-based Essentials journeys, storyboards, user stories, and acceptance criteria.
+16. [Essentials Edition User Personas and Journey Maps](Essentials_Edition_User_Personas_and_Journeys.pptx) — 13 detailed persona profiles and 13 role-specific journey maps recreated with the approved persona and journey-map formats.
 
-17. [Essentials Edition Outreach and Communications Plan](Essentials_Edition_Outreach_and_Communications_Plan.docx) — role-stratified positioning, channels, calls to action, launch cadence, measurement, governance, and trust guardrails.
+17. [Essentials Edition Comprehensive User Stories](Essentials_Edition_Comprehensive_User_Stories.docx) — 10 epics and 34 product-backlog stories with Given-When-Then acceptance criteria, priorities, release assumptions, dependencies, quality standards, and traceability.
 
-18. [Essentials Edition Government Purchasing Options](Essentials_Edition_Government_Purchasing_Options.docx) — government payment routes, procurement package, quote-to-renewal workflow, website requirements, and implementation priorities.
+18. [Essentials Edition Outreach and Communications Plan](Essentials_Edition_Outreach_and_Communications_Plan.docx) — role-stratified positioning, channels, calls to action, launch cadence, measurement, governance, and trust guardrails.
+
+19. [Essentials Edition Government Purchasing Options](Essentials_Edition_Government_Purchasing_Options.docx) — government payment routes, procurement package, quote-to-renewal workflow, website requirements, and implementation priorities.
 
 ## Decisions at a glance
 
