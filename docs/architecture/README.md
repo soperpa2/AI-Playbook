@@ -27,6 +27,12 @@ This documentation defines how the current AI Playbook website can evolve into a
 
 13. [Curriculum Source Alignment: 2026 Update](curriculum-source-alignment-2026.md) — updated modules, CDC/WHO/HHS source alignment, template review decisions, and publication sequencing.
 
+14. [Foundation Edition Production Launch Plan](Foundation_Edition_Production_Launch_Plan.docx) — recommended production stack, secure accounts, multi-user persistence, security boundaries, deployment workflow, and implementation roadmap.
+
+15. [Foundation Edition Launch Budget](Foundation_Edition_Launch_Budget.xlsx) — editable 12-month Lean, Base, and Growth budget scenarios, monthly cash flow, assumptions, sources, and model checks.
+
+16. [Foundation Edition User Persona Storyboards](Foundation_Edition_User_Persona_Storyboards.pptx) — role-based Foundation journeys, storyboards, user stories, and acceptance criteria.
+
 ## Decisions at a glance
 
 - Preserve the current 13-play PLAN–BUILD–DEPLOY–GOVERN framework and tool numbering.
