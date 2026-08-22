@@ -1,5 +1,9 @@
 # User Personas
 
+## Shared-edition standard
+
+These personas are canonical across the Full and Essentials editions. Role definitions, fictional identities, portraits, motivations, goals, frustrations, and core needs must remain the same in both versions. Edition-specific journey touchpoints may differ only where capabilities or access differ. The portraits in `assets/personas/` are AI-generated fictional people and must not be represented as real individuals or research participants.
+
 ## How to use these personas
 
 These are design and content-governance tools grounded in the roles, tasks, learning, governance, workspace, and contribution capabilities visible on the current site. They are hypotheses to validate through interviews and task testing, not stereotypes. Agency size, jurisdiction, authority, resources, accessibility needs, and AI experience may matter more than job title.

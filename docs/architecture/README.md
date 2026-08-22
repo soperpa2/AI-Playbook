@@ -31,7 +31,7 @@ This documentation defines how the current AI Playbook website can evolve into a
 
 15. [Essentials Edition Launch Budget](Essentials_Edition_Launch_Budget.xlsx) — editable 12-month Lean, Base, and Growth budget scenarios, monthly cash flow, assumptions, sources, and model checks.
 
-16. [Essentials Edition User Personas and Journey Maps](Essentials_Edition_User_Personas_and_Journeys.pptx) — 13 detailed persona profiles and 13 role-specific journey maps recreated with the approved persona and journey-map formats.
+16. [AI Playbook User Personas and Journey Maps](AI_Playbook_User_Personas_and_Journeys.pptx) — 13 canonical persona profiles and 13 role-specific journey maps shared across the Full and Essentials editions, recreated with the approved persona and journey-map formats.
 
 17. [Essentials Edition Comprehensive User Stories](Essentials_Edition_Comprehensive_User_Stories.docx) — 10 epics and 34 product-backlog stories with Given-When-Then acceptance criteria, priorities, release assumptions, dependencies, quality standards, and traceability.
 
