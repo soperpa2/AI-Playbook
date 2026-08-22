@@ -33,6 +33,10 @@ This documentation defines how the current AI Playbook website can evolve into a
 
 16. [Foundation Edition User Persona Storyboards](Foundation_Edition_User_Persona_Storyboards.pptx) — role-based Foundation journeys, storyboards, user stories, and acceptance criteria.
 
+17. [Foundation Edition Outreach and Communications Plan](Foundation_Edition_Outreach_and_Communications_Plan.docx) — role-stratified positioning, channels, calls to action, launch cadence, measurement, governance, and trust guardrails.
+
+18. [Foundation Edition Government Purchasing Options](Foundation_Edition_Government_Purchasing_Options.docx) — government payment routes, procurement package, quote-to-renewal workflow, website requirements, and implementation priorities.
+
 ## Decisions at a glance
 
 - Preserve the current 13-play PLAN–BUILD–DEPLOY–GOVERN framework and tool numbering.
